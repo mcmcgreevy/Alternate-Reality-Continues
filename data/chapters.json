@@ -1,0 +1,9 @@
+{
+  "city": {"title": "The City", "status": "playable"},
+  "dungeon": {"title": "The Dungeon", "status": "playable"},
+  "arena": {"title": "The Arena", "status": "planned"},
+  "palace": {"title": "The Palace", "status": "planned"},
+  "wilderness": {"title": "The Wilderness", "status": "planned"},
+  "revelation": {"title": "Revelation", "status": "planned"},
+  "destiny": {"title": "Destiny", "status": "planned"}
+}

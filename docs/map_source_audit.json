@@ -1,0 +1,105 @@
+{
+  "repository": "https://github.com/jduerstock/ardungeon",
+  "expected_revision": "823aaf1bc3b797070cbb0f79223a06b02491e792",
+  "status": "source inventory only; no decoded or verified playable map",
+  "files": [
+    {
+      "file": "21-s011.asm",
+      "sha256": "afda24c3d93a7bb72d0bf26ea218ccc91bb9f33f7540e06d57395c7cd359d202",
+      "line_count": 4436,
+      "anchors": {},
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/21-s011.asm",
+      "segment_number": 1,
+      "placement_status": "unverified; do not infer quadrant from header comments"
+    },
+    {
+      "file": "21-s052.asm",
+      "sha256": "5dd1d7946e3ec3516468d24a1b2aab3235deece74e80772ebb56850044180279",
+      "line_count": 4626,
+      "anchors": {},
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/21-s052.asm",
+      "segment_number": 2,
+      "placement_status": "unverified; do not infer quadrant from header comments"
+    },
+    {
+      "file": "21-s093.asm",
+      "sha256": "fa7764ce970fee1cfa85c968f6506fa3f2d04e4156b44349cf20a7382fb958ab",
+      "line_count": 4564,
+      "anchors": {},
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/21-s093.asm",
+      "segment_number": 3,
+      "placement_status": "unverified; do not infer quadrant from header comments"
+    },
+    {
+      "file": "21-s134.asm",
+      "sha256": "3f27aa96cc8b7a4287d4469f65238b80c12da35d0a5748a9e21cb8f212262cc1",
+      "line_count": 4620,
+      "anchors": {},
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/21-s134.asm",
+      "segment_number": 4,
+      "placement_status": "unverified; do not infer quadrant from header comments"
+    },
+    {
+      "file": "21-s175.asm",
+      "sha256": "72ecac28d0522403bf61bd44ce9a23bf1c01291f144aabb6ed775c84c7f29bb9",
+      "line_count": 4504,
+      "anchors": {},
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/21-s175.asm",
+      "segment_number": 5,
+      "placement_status": "unverified; do not infer quadrant from header comments"
+    },
+    {
+      "file": "21-s216.asm",
+      "sha256": "80a6f7b68b718603299a1b2baf5acb0153db18d50b2dbd845e041f741f81fc9e",
+      "line_count": 3102,
+      "anchors": {},
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/21-s216.asm",
+      "segment_number": 6,
+      "placement_status": "unverified; do not infer quadrant from header comments"
+    },
+    {
+      "file": "21-s257.asm",
+      "sha256": "3fc93b068a27e05d18b4dfa5b62e0cd310a55f9232df28d90029a20586a150c0",
+      "line_count": 1281,
+      "anchors": {},
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/21-s257.asm",
+      "segment_number": 7,
+      "placement_status": "unverified; do not infer quadrant from header comments"
+    },
+    {
+      "file": "11-s002.asm",
+      "sha256": "e0e3fe97dc701c9f9f0a55a075f48823c087feea51641cd12997ac1b2d63850d",
+      "line_count": 117,
+      "anchors": {
+        "; map 1": 47,
+        "; map 7": 53
+      },
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/11-s002.asm"
+    },
+    {
+      "file": "11-s205.asm",
+      "sha256": "51811c4c6736dc4f30f2d4d1220f81ab9d52f4535286306376237899e922cdc1",
+      "line_count": 1318,
+      "anchors": {
+        "loc_F900:": 298,
+        "loc_F953:": 324
+      },
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/11-s205.asm"
+    },
+    {
+      "file": "11-s517.asm",
+      "sha256": "d48935bc28491e3207dae120d6fd3eb213c633382da7a68585ea6859879af5fa",
+      "line_count": 11256,
+      "anchors": {
+        "loc_318C:": 4623,
+        "unk_3225:": 4702,
+        "sub_3531:": 5114,
+        "byte_3B24:": 5695,
+        "byte_3B34:": 5711,
+        "unk_3B64:": 5759,
+        "unk_3B6C:": 5766
+      },
+      "source": "https://github.com/jduerstock/ardungeon/blob/823aaf1bc3b797070cbb0f79223a06b02491e792/11-s517.asm"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "The Tavern",
+  "sources": {
+    "primary": "https://www.mocagh.org/datasoft/arcity-hintbook8bit-book.pdf",
+    "prices_provisional": "https://gamefaqs.gamespot.com/atari8bit/575500-alternate-reality-the-city/faqs/1531",
+    "crosscheck": "ARX 0.82 src/tavern.cpp; later remake, not shipped City code",
+    "notes": "Free water and food/drink/provision services: primary handbook. Other prices: secondary FAQ, partly calculated, cross-checked with ARX. Relief values: ARX. Hourly change is documented; these two menu sets and transaction durations are remake scaffolding."
+  },
+  "menus": [["chili", "pemmican", "food_packet", "water"], ["soup", "sandwich", "water_flask", "water"]],
+  "items": {
+    "chili": {"name": "Bowl of Chili", "copper": 8, "hunger": 6, "thirst": 0, "food": 0, "water": 0, "minutes": 15, "detail": "Eat here; eases hunger."},
+    "pemmican": {"name": "Pemmican", "copper": 16, "hunger": 4, "thirst": 0, "food": 1, "water": 0, "minutes": 15, "detail": "Eat here; also adds one Food Packet."},
+    "food_packet": {"name": "Food Packet", "copper": 20, "hunger": 0, "thirst": 0, "food": 1, "water": 0, "minutes": 1, "detail": "One packet for your provisions."},
+    "soup": {"name": "Vegetable Soup", "copper": 4, "hunger": 8, "thirst": 0, "food": 0, "water": 0, "minutes": 15, "detail": "Eat here; eases hunger."},
+    "sandwich": {"name": "Sandwich", "copper": 8, "hunger": 8, "thirst": 0, "food": 0, "water": 0, "minutes": 15, "detail": "Eat here; eases hunger."},
+    "water_flask": {"name": "Water Flask", "copper": 4, "hunger": 0, "thirst": 0, "food": 0, "water": 1, "minutes": 1, "detail": "One flask for your provisions."},
+    "water": {"name": "Water", "copper": 0, "hunger": 0, "thirst": 8, "food": 0, "water": 0, "minutes": 1, "detail": "Drink here; free at The Tavern."}
+  }
+}
