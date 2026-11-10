@@ -2,7 +2,7 @@
 
 A first-person Godot 4.5.1 prototype joining The City and The Dungeon with one character, inventory and world clock.
 
-The default milestone now follows original geography: **The Tavern → northern City entrance → Dungeon arrival → The Tavern**. The City route is cross-checked against the original 8-bit handbook map; the playable Dungeon northeast quadrant comes from checksum-verified Atari map data. Other City districts remain provisional. Artwork and music are original placeholders.
+The default milestone follows original geography: **The Tavern → northern City entrance → Dungeon level one → The Tavern**. The City route is cross-checked against the original 8-bit handbook map. All four Dungeon level-one quadrants use checksum-verified Atari data, including 50 original transition triggers. Other City districts remain provisional. Artwork and music are original placeholders.
 
 ## Play
 
@@ -12,6 +12,7 @@ Double-click Play.cmd, or open project.godot in Godot 4.5.1 and press F5.
 - **In The Tavern: 1** opens food/drink orders, **2** shows the excursion briefing, **3** leaves, **4** sits for five minutes. Movement keys do not move you around the establishment.
 - **E / Enter outside:** examine/open the boundary ahead or use the entrance. Secret doors require examination too.
 - **G:** route guide. **Tab:** map and route overlay.
+- **V in the Dungeon:** cycle guide destinations northwest → southwest → southeast → City entrance. The optional tour uses original passages and transitions; it adds no shortcuts. See [level-one playtest](docs/DUNGEON_LEVEL_ONE.md).
 - **B:** open food/drink orders in The Tavern. Choose an item, then **Y/N** to order/cancel. **5/Escape** returns from the menu; **T** waits for the next hourly menu.
 - **Space:** wait five minutes. **M:** mute. **C:** chapter registry.
 - **F5/F9:** save/load. This map uses user://original_route.json, separate from old prototype saves.
@@ -39,10 +40,11 @@ The invented brass-token slice remains in scenes/prototype.tscn as a regression 
 Run the portable Godot console executable with --headless --path . --script followed by each of:
 
 - tests/test_original_route.gd
+- tests/test_dungeon_level_one.gd
 - tests/test_tavern.gd
 - tests/test_world.gd
 - tests/test_scene.gd
 
 In a restricted sandbox, set APPDATA to the workspace's tools/appdata directory first. The original-route test drives the full scene through secret and asymmetric doors, save/load, both crossings and the return, checking shared character identity, inventory, clock and audio restart. Run it without --headless and add -- --capture for runtime screenshots in docs/original-*.png.
 
-Combat, original events, encounters, full survival, other shops and exact door mechanics are not implemented. Locked/bolted/enchanted passages remain blocked; other Dungeon segments and floors are not enabled. Geography and original services come before new adventures and audio rearrangement.
+Combat, most original events, encounters, full survival, other shops and exact door mechanics are not implemented. Locked/bolted/enchanted passages remain blocked; floors below Dungeon level one are not enabled. Geography and original services come before new adventures and audio rearrangement.

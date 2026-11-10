@@ -759,6 +759,48 @@
   "source_revision": "823aaf1bc3b797070cbb0f79223a06b02491e792",
   "city_source_sha256": "96d71a9f359dec984cd2f08d0c9f29aa75869d5bac2bd79c487328edcca62585",
   "dungeon_source_sha1": "a967f74e6431f448e55958bf6e21d975c2c8df73",
+  "dungeon_segments": [
+    {
+      "segment": 0,
+      "quadrant": "northwest",
+      "origin": [
+        0,
+        0
+      ],
+      "source": "21-s011.asm",
+      "sha1": "27ff9384d4db071b0169f2b7735937fb5689f316"
+    },
+    {
+      "segment": 1,
+      "quadrant": "northeast",
+      "origin": [
+        32,
+        0
+      ],
+      "source": "21-s052.asm",
+      "sha1": "a967f74e6431f448e55958bf6e21d975c2c8df73"
+    },
+    {
+      "segment": 2,
+      "quadrant": "southwest",
+      "origin": [
+        0,
+        32
+      ],
+      "source": "21-s093.asm",
+      "sha1": "423d7b6c128f6ad354541f26705d5cc815623dae"
+    },
+    {
+      "segment": 3,
+      "quadrant": "southeast",
+      "origin": [
+        32,
+        32
+      ],
+      "source": "21-s134.asm",
+      "sha1": "4b9f5107a2c8b98af2ba153c3f1af2db1835ed9f"
+    }
+  ],
   "dungeon_crosscheck_differences": [
     [
       [
@@ -777,10 +819,28 @@
         13,
         1
       ]
+    ],
+    [
+      [
+        59,
+        61
+      ],
+      [
+        5,
+        1,
+        13,
+        13
+      ],
+      [
+        5,
+        1,
+        3,
+        13
+      ]
     ]
   ],
   "city_status": "ARX geometry; milestone route cross-checked against 8-bit handbook map; other districts provisional",
-  "dungeon_status": "original NE segment, checksum verified; events and other segments not enabled",
+  "dungeon_status": "original level-one quadrants, checksum verified; events and other floors not enabled",
   "tavern_name": "The Tavern",
   "tavern_name_source": "8-bit handbook printed page 7; ARX labels the same cell Lost Oasis"
 }

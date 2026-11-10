@@ -1,0 +1,506 @@
+{
+  "source_revision": "823aaf1bc3b797070cbb0f79223a06b02491e792",
+  "source_sha256": "d48935bc28491e3207dae120d6fd3eb213c633382da7a68585ea6859879af5fa",
+  "links": {
+    "31,0": {
+      "index": 17,
+      "target": [
+        33,
+        0
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "14,22": {
+      "index": 0,
+      "target": [
+        18,
+        30
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "15,22": {
+      "index": 4,
+      "target": [
+        29,
+        23
+      ],
+      "segment": 0,
+      "facing": 0,
+      "enabled": true
+    },
+    "16,22": {
+      "index": 5,
+      "target": [
+        5,
+        26
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "28,22": {
+      "index": 5,
+      "target": [
+        5,
+        26
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "29,22": {
+      "index": 6,
+      "target": [
+        20,
+        31
+      ],
+      "segment": 0,
+      "facing": 0,
+      "enabled": true
+    },
+    "30,22": {
+      "index": 2,
+      "target": [
+        19,
+        27
+      ],
+      "segment": 0,
+      "facing": 1,
+      "enabled": true
+    },
+    "18,23": {
+      "index": 7,
+      "target": [
+        16,
+        1
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "17,26": {
+      "index": 1,
+      "target": [
+        18,
+        27
+      ],
+      "segment": 0,
+      "facing": 3,
+      "enabled": true
+    },
+    "20,26": {
+      "index": 3,
+      "target": [
+        15,
+        23
+      ],
+      "segment": 0,
+      "facing": 0,
+      "enabled": true
+    },
+    "17,27": {
+      "index": 5,
+      "target": [
+        5,
+        26
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "20,27": {
+      "index": 1,
+      "target": [
+        18,
+        27
+      ],
+      "segment": 0,
+      "facing": 3,
+      "enabled": true
+    },
+    "17,28": {
+      "index": 2,
+      "target": [
+        19,
+        27
+      ],
+      "segment": 0,
+      "facing": 1,
+      "enabled": true
+    },
+    "20,28": {
+      "index": 5,
+      "target": [
+        5,
+        26
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "17,29": {
+      "index": 0,
+      "target": [
+        18,
+        30
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "18,29": {
+      "index": 1,
+      "target": [
+        18,
+        27
+      ],
+      "segment": 0,
+      "facing": 3,
+      "enabled": true
+    },
+    "19,29": {
+      "index": 5,
+      "target": [
+        5,
+        26
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "0,31": {
+      "index": 15,
+      "target": [
+        0,
+        33
+      ],
+      "segment": 2,
+      "facing": 255,
+      "enabled": true
+    },
+    "32,0": {
+      "index": 18,
+      "target": [
+        30,
+        0
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "41,1": {
+      "index": 8,
+      "target": [
+        43,
+        1
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "42,7": {
+      "index": 31,
+      "target": [
+        24,
+        59
+      ],
+      "segment": 2,
+      "facing": 3,
+      "enabled": true
+    },
+    "48,7": {
+      "index": 11,
+      "target": [
+        43,
+        28
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "48,10": {
+      "index": 12,
+      "target": [
+        43,
+        31
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "40,15": {
+      "index": 13,
+      "target": [
+        40,
+        15
+      ],
+      "segment": 1,
+      "facing": 128,
+      "enabled": true
+    },
+    "36,17": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "44,28": {
+      "index": 9,
+      "target": [
+        49,
+        7
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "35,31": {
+      "index": 25,
+      "target": [
+        35,
+        33
+      ],
+      "segment": 3,
+      "facing": 255,
+      "enabled": true
+    },
+    "44,31": {
+      "index": 10,
+      "target": [
+        49,
+        10
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "63,31": {
+      "index": 20,
+      "target": [
+        63,
+        33
+      ],
+      "segment": 3,
+      "facing": 255,
+      "enabled": true
+    },
+    "0,32": {
+      "index": 16,
+      "target": [
+        0,
+        30
+      ],
+      "segment": 0,
+      "facing": 255,
+      "enabled": true
+    },
+    "2,50": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "6,50": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "4,51": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "2,52": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "3,52": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "6,52": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "7,52": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "4,53": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "5,53": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "6,53": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "2,54": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "5,54": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "17,54": {
+      "index": 28,
+      "target": [
+        54,
+        7
+      ],
+      "segment": 1,
+      "facing": 2,
+      "enabled": true
+    },
+    "3,55": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "7,55": {
+      "index": 14,
+      "target": [
+        18,
+        41
+      ],
+      "segment": 2,
+      "facing": 128,
+      "enabled": true
+    },
+    "31,63": {
+      "index": 21,
+      "target": [
+        33,
+        63
+      ],
+      "segment": 3,
+      "facing": 255,
+      "enabled": true
+    },
+    "35,32": {
+      "index": 26,
+      "target": [
+        35,
+        30
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "63,32": {
+      "index": 19,
+      "target": [
+        63,
+        30
+      ],
+      "segment": 1,
+      "facing": 255,
+      "enabled": true
+    },
+    "47,58": {
+      "index": 29,
+      "target": [
+        58,
+        5
+      ],
+      "segment": 1,
+      "facing": 0,
+      "enabled": true
+    },
+    "32,63": {
+      "index": 22,
+      "target": [
+        30,
+        63
+      ],
+      "segment": 2,
+      "facing": 255,
+      "enabled": true
+    }
+  }
+}

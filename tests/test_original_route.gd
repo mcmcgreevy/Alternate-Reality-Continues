@@ -45,7 +45,7 @@ func run() -> void:
 	capture = "--capture" in OS.get_cmdline_user_args()
 	var w = World.new()
 	check(w.coordinates() == "63N  21E", "Handbook Tavern coordinate conversion")
-	check(w.maps.city.cells.size() == 4096 and w.maps.dungeon.cells.size() == 1024, "Imported map dimensions")
+	check(w.maps.city.cells.size() == 4096 and w.maps.dungeon.cells.size() == 4096, "Imported map dimensions")
 	w.facing = 0
 	check(not w.step(), "Closed secret door blocks movement")
 	w.interact()

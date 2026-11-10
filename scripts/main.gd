@@ -21,6 +21,10 @@ var guide_path: Array[Vector2i] = []
 var guide_at := Vector2i(-999, -999)
 var guide_chapter := ""
 var guide_return := false
+var tour_index := 3
+var cached_tour_index := -1
+const TOUR_POINTS = [Vector2i(0,0), Vector2i(1,32), Vector2i(36,32), Vector2i(49,3)]
+const TOUR_NAMES = ["northwest", "southwest", "southeast", "City entrance"]
 var viewport := SubViewport.new()
 var first_person = FirstPerson.new()
 
@@ -93,6 +97,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		KEY_R: world.strafe(true)
 		KEY_TAB: show_map = not show_map
 		KEY_G: guide_on = not guide_on
+		KEY_V:
+			if world.chapter == "dungeon":
+				tour_index = (tour_index + 1) % TOUR_POINTS.size()
+				guide_on = true
 		KEY_B: world.meal()
 		KEY_ESCAPE:
 			show_chapters = false
@@ -107,9 +115,11 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		KEY_F5: world.journal = "Journey saved." if world.save_game() == OK else "Could not save the journey."
 		KEY_F9:
 			if not world.load_game(): world.journal = "No valid saved journey found."
+			tour_index = 3
 			show_order = false
 			show_brief = false
 	music.set_tavern(world.in_tavern())
+	if world.chapter != "dungeon": tour_index = 3
 	first_person.sync(world)
 
 func label_at(text: String, x: float, y: float, size: int = 18, color: Color = INK) -> void:
@@ -134,7 +144,7 @@ func _draw() -> void:
 	label_at(world.clock_text(), 815, 76, 21, TEAL)
 	draw_line(Vector2(32, 98), Vector2(1120, 98), Color("35484a"))
 	label_at("01 / THE CITY" if world.chapter == "city" else "02 / THE DUNGEON", 32, 134, 20, AMBER)
-	label_at("The Tavern" if world.in_tavern() else ("Xebec's Demise / northern streets" if world.chapter == "city" else "Level 1 / northeast entrance"), 32, 161, 17, DIM)
+	label_at("The Tavern" if world.in_tavern() else ("Xebec's Demise / northern streets" if world.chapter == "city" else world.dungeon_region()), 32, 161, 17, DIM)
 	panel(Rect2(32, 182, 754, 430))
 	if show_map:
 		draw_map()
@@ -213,22 +223,27 @@ func context_action() -> String:
 	return world.action_text()
 
 func update_guide() -> void:
-	if guide_at == world.position and guide_chapter == world.chapter and guide_return == world.flags.visited_dungeon: return
+	if guide_at == world.position and guide_chapter == world.chapter and guide_return == world.flags.visited_dungeon and cached_tour_index == tour_index: return
+	cached_tour_index = tour_index
 	guide_at = world.position
 	guide_chapter = world.chapter
 	guide_return = world.flags.visited_dungeon
-	guide_path = world.find_route(world.destination())
+	guide_path = world.find_route(TOUR_POINTS[tour_index] if world.chapter == "dungeon" else world.destination())
 
 func guide_text() -> String:
 	if world.flags.returned and world.in_tavern(): return "Round trip complete."
-	if guide_path.is_empty(): return world.hint()
+	if guide_path.is_empty():
+		if world.chapter == "dungeon":
+			if world.position != TOUR_POINTS[tour_index]: return "No route with current door rules. [V] Change destination."
+			if tour_index != 3: return "Reached %s. [V] Guide to the next quadrant." % TOUR_NAMES[tour_index]
+		return world.hint()
 	var d: int = world.DIRECTIONS.find(guide_path[0] - world.position)
 	var instruction := "Step forward."
 	if world.facing != d:
 		instruction = "Turn to face " + world.BEARINGS[d].to_lower() + "."
 	elif world.edge(world.position, d) in [3, 4, 5, 6] and not world.door_open(world.position, d):
 		instruction = "Press E to examine the boundary ahead."
-	return "%s  %d steps to %s." % [instruction, guide_path.size(), "The Tavern" if world.chapter == "city" and world.flags.visited_dungeon else "the entrance"]
+	return "%s  %d steps to %s." % [instruction, guide_path.size(), TOUR_NAMES[tour_index] if world.chapter == "dungeon" else ("The Tavern" if world.flags.visited_dungeon else "the entrance")]
 
 func draw_map() -> void:
 	var origin := Vector2(48, 207)
@@ -250,7 +265,13 @@ func draw_map() -> void:
 		for at in guide_path:
 			var next := origin + (Vector2(at) + Vector2.ONE * 0.5) * scale_px
 			draw_line(previous, next, Color("66bdae"), 2)
-			previous = next
+			previous = origin + (Vector2(world.step_destination(at)) + Vector2.ONE * 0.5) * scale_px
+	if world.chapter == "dungeon":
+		draw_line(origin + Vector2(192, 0), origin + Vector2(192, 384), TEAL, 1)
+		draw_line(origin + Vector2(0, 192), origin + Vector2(384, 192), TEAL, 1)
+		for key in world.dungeon_links:
+			var parts: PackedStringArray = key.split(",")
+			draw_circle(origin + (Vector2(int(parts[0]), int(parts[1])) + Vector2.ONE * 0.5) * scale_px, 2, TEAL)
 	var center := origin + (Vector2(world.position) + Vector2.ONE * 0.5) * scale_px
 	draw_circle(center, 4, AMBER)
 	draw_line(center, center + Vector2(world.DIRECTIONS[world.facing]) * 10, INK, 2)
@@ -259,13 +280,15 @@ func draw_map() -> void:
 		var p := origin + (Vector2(at) + Vector2.ONE * 0.5) * scale_px
 		label_at("T" if at.x == 20 else "D", p.x - 4, p.y - 7, 13, AMBER)
 	label_at("ORIGINAL GEOGRAPHY", 464, 239, 17, AMBER)
-	label_at("T  The Tavern", 464, 276, 17)
+	label_at("Teal dots: original transitions" if world.chapter == "dungeon" else "T  The Tavern", 464, 276, 17)
 	label_at("D  Dungeon entrance", 464, 305, 17)
 	label_at("Gold edges: doors / secrets", 464, 348, 15, DIM)
 	label_at("One-way faces stay one-way.", 464, 375, 15, DIM)
 	label_at("[G] Toggle route guide", 464, 421, 16, TEAL)
+	if world.chapter == "dungeon": label_at("[V] Destination: " + TOUR_NAMES[tour_index], 464, 398, 15, TEAL)
 	label_at("[TAB] Return to first person", 464, 450, 16, TEAL)
-	label_at("Other districts remain in progress.", 464, 502, 14, DIM)
+	label_at("All four level-one quadrants" if world.chapter == "dungeon" else "Other districts remain in progress.", 464, 502, 14, DIM)
+	if world.chapter == "dungeon": label_at("Other floors and encounters pending", 464, 526, 14, DIM)
 	label_at(world.coordinates(), 464, 561, 20, AMBER)
 
 func draw_chapters() -> void:

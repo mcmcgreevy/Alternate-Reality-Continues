@@ -8,12 +8,14 @@ var revision := 0
 var tavern: Dictionary
 var needs := {"hunger": 18, "thirst": 16}
 var provisions := {"food": 0, "water": 0}
+var dungeon_links: Dictionary
 
 func _init() -> void:
 	for id in ["city", "dungeon"]:
 		maps[id] = JSON.parse_string(FileAccess.get_file_as_string("res://data/maps/" + id + ".json"))
 	route = JSON.parse_string(FileAccess.get_file_as_string("res://data/maps/route.json"))
 	tavern = JSON.parse_string(FileAccess.get_file_as_string("res://data/tavern.json"))
+	dungeon_links = JSON.parse_string(FileAccess.get_file_as_string("res://data/maps/dungeon_links.json")).links
 	character.silver = 0
 	character.copper = 0
 	position = Vector2i(20, 1)
@@ -64,12 +66,31 @@ func move(direction: Vector2i) -> bool:
 		return false
 	position += direction
 	advance_time(1)
+	var transitioned := false
+	if chapter == "dungeon":
+		var link: Dictionary = dungeon_links.get("%d,%d" % [position.x, position.y], {})
+		if not link.is_empty() and link.enabled:
+			position = Vector2i(link.target[0], link.target[1])
+			var arrival_facing := int(link.facing)
+			if arrival_facing < 128: facing = arrival_facing
+			elif arrival_facing != 255: facing = randi_range(0, 3)
+			revision += 1
+			transitioned = true
 	if in_tavern(): facing = 2
 	if in_tavern() and flags.visited_dungeon:
 		flags.returned = true
 		journal = "Round trip complete. You have returned to The Tavern."
-	else: journal = hint()
+	else: journal = "The passage leads onward. " + dungeon_region() if transitioned else hint()
 	return true
+
+func dungeon_region() -> String:
+	return "Level 1 / " + ["northwest", "northeast", "southwest", "southeast"][int(position.x / 32) + 2 * int(position.y / 32)]
+
+func step_destination(entry: Vector2i) -> Vector2i:
+	if chapter == "dungeon":
+		var link: Dictionary = dungeon_links.get("%d,%d" % [entry.x, entry.y], {})
+		if not link.is_empty() and link.enabled: return Vector2i(link.target[0], link.target[1])
+	return entry
 
 func interact() -> void:
 	if position == Vector2i(49, 3) and (chapter == "dungeon" or facing == 1):
@@ -166,7 +187,7 @@ func leave_tavern() -> void:
 func hint() -> String:
 	if in_tavern(): return "The Tavern. 1: order. 2: excursion. 3: leave. 4: sit a while."
 	if position == Vector2i(49, 3): return "Face east and press E to descend." if chapter == "city" else "E: return to the City. The original arrival faces west."
-	return "Explore the original entrance corridors; return with E at the arrival point." if chapter == "dungeon" else "Follow the guide, or use Tab to inspect the map."
+	return "Explore level one; the guide leads back to the City entrance." if chapter == "dungeon" else "Follow the guide, or use Tab to inspect the map."
 
 func coordinates() -> String:
 	if chapter == "city": return "%02dN  %02dE" % [64 - position.y, position.x + 1]
@@ -188,16 +209,17 @@ func find_route(target: Vector2i) -> Array[Vector2i]:
 		cursor += 1
 		if p == target: break
 		for d in range(4):
-			var n: Vector2i = p + DIRECTIONS[d]
+			var entry: Vector2i = p + DIRECTIONS[d]
+			var n := step_destination(entry)
 			if can_route(p, d) and not parents.has(n):
-				parents[n] = p
+				parents[n] = [p, entry]
 				queue.append(n)
 	var path: Array[Vector2i] = []
 	if not parents.has(target): return path
 	var p := target
 	while p != position:
-		path.push_front(p)
-		p = parents[p]
+		path.push_front(parents[p][1])
+		p = parents[p][0]
 	return path
 
 func destination() -> Vector2i:
