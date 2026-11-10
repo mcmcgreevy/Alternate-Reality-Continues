@@ -19,3 +19,13 @@ scripts/atmosphere_materials.gd creates the original procedural textures at star
 Launch Play.cmd and inspect the tavern menu, food menu, confirmation and lyrics. Walk to the Dungeon entrance to compare its stone, torch and door. Tab still shows the map. Existing screenshots are refreshed by the original-route capture test; the previous appearance remains in Git history at f3c9535.
 
 The increased render resolution, antialiasing and torch shadows cost more GPU time. Tested with Godot 4.5.1's OpenGL compatibility renderer on this machine; lower-end GPU performance remains to be evaluated. Full-floor and original-route integration tests cover the streamed renderer and gameplay. No performance target is claimed yet.
+
+## City sky and interior follow-up
+
+City streets now use a procedural sky with clouds, a sun, twilight colors and stars. Its appearance, cloud displacement, ambient light and sunlight follow the saved world minute, not the computer clock. Standing still does not advance weather; waiting, travelling and loading a save update it. The fixed 24-hour cycle repeats daily, with sunrise near 06:00 and sunset near 18:00. These are original presentation choices, not reconstructed astronomical/weather rules. There is no rain or gameplay weather effect yet.
+
+Dungeon cells and City building/secret-passage cells receive ceilings. City classification uses ARX location descriptions: secret passage (7), establishments (16–59, 65–66, 68–89) are covered; streets, alleys, yards, gates and arena/palace grounds remain open. The wider City's classification is provisional. It does not infer roofs merely because a space has surrounding walls. Open doorways may reveal sky beyond the roofed cell. The tavern still uses its painted indoor screen.
+
+Outdoor boundary walls use a lower visual profile and the camera has a modest upward pitch/wider field of view so sky is visible between walls. Indoor camera framing stays unchanged. Raw directional boundaries, movement and transitions are untouched. Day/night lighting updates do not rebuild geometry. Test tests/test_city_environment.gd checks classification, roof generation, noon/night, waiting, save restoration, daily rollover and return indoors; -- --capture produces the City sky screenshots.
+
+Implementation reference: [Godot sky shaders](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/sky_shader.html). Sky shader and classification are project-authored code, not original game assets.

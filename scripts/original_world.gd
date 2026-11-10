@@ -42,6 +42,12 @@ func door_open(at: Vector2i, direction: int) -> bool:
 func in_tavern() -> bool:
 	return chapter == "city" and position == Vector2i(20, 1)
 
+func is_inside(at: Vector2i) -> bool:
+	if chapter == "dungeon": return true
+	var location := int(cell(at).get("location", 0))
+	# Presentation classification from ARX descriptions; enclosed yards stay open.
+	return location == 7 or (location >= 16 and location <= 59) or location == 65 or location == 66 or (location >= 68 and location <= 89)
+
 func tile(at: Vector2i) -> String:
 	if not has_cell(at): return "#"
 	if chapter == "city" and at == Vector2i(20, 1): return "T"

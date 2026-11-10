@@ -27,6 +27,8 @@ The Tavern now offers individual food, free water and provisions, with copper pr
 
 The current [visual study](docs/ART_DIRECTION.md) adds a painted tavern backdrop, a larger world view and higher-resolution Dungeon materials and lighting. It changes presentation only; existing saves and controls still work.
 
+Outside in the City, clouds, stars and daylight follow the shared clock. Interiors have ceilings and indoor lighting. Space waits five minutes to advance the sky; loading restores the corresponding time of day.
+
 - data/maps/: directional boundaries, route and provenance hashes.
 - data/tavern.json: menu items, prices, effects and provenance.
 - scripts/original_world.gd: shared state, directional doors, transitions and versioned saves.
@@ -43,6 +45,7 @@ Run the portable Godot console executable with --headless --path . --script foll
 
 - tests/test_original_route.gd
 - tests/test_dungeon_level_one.gd
+- tests/test_city_environment.gd
 - tests/test_tavern.gd
 - tests/test_world.gd
 - tests/test_scene.gd
