@@ -17,6 +17,8 @@ Updated 2026-11-10. See [reconstruction notes](RECONSTRUCTION.md) for decoding e
 
 The former invented Lantern & the Gate maps and brass-token quest remain only in the separate prototype scene.
 
+The 2026-11-10 atmosphere pass adds an original AI-generated tavern painting, procedural material/normal maps, modern torch lighting and a revised interface. These are remake art choices, not recovered game artwork or planned developer features. See [art provenance and scope](ART_DIRECTION.md).
+
 First Excursion uses a tavern interaction screen. Its first meal/briefing/leave scaffold has now gained a limited source-informed food/drink service; exact menu wording, hourly sets and need/timing formulas remain remake choices. The full-healing two-gold meal has been removed. Leaving traverses the existing north boundary; entering restores the screen. Music and timed lyrics continue during menu use. The excursion adds no historical quest, reward or map geometry.
 
 Dungeon JSON derives from original map data. Its source headers credit Jason Duerstock (2008) and the original program to Intellicreations (1987); the repository specifies GPL-2.0. All four level-one map sources/checksums, the runtime reference for transition decoding and upstream license are preserved in third_party/ardungeon. Transition behavior is implemented from the original table and dispatcher evidence. This attribution does not assert blanket rights to original game assets. No ARX implementation code was ported. The V tour and transition dots are invented playtest aids.

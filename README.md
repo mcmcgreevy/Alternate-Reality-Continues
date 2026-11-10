@@ -25,6 +25,8 @@ The Tavern now offers individual food, free water and provisions, with copper pr
 
 ## Implementation and evidence
 
+The current [visual study](docs/ART_DIRECTION.md) adds a painted tavern backdrop, a larger world view and higher-resolution Dungeon materials and lighting. It changes presentation only; existing saves and controls still work.
+
 - data/maps/: directional boundaries, route and provenance hashes.
 - data/tavern.json: menu items, prices, effects and provenance.
 - scripts/original_world.gd: shared state, directional doors, transitions and versioned saves.

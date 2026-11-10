@@ -3,6 +3,37 @@ extends "res://scripts/first_person.gd"
 var built_center := Vector2i(-999, -999)
 var built_revision := -1
 const RADIUS := 8
+const Surfaces = preload("res://scripts/atmosphere_materials.gd")
+
+func make_materials() -> void:
+	super.make_materials()
+	var palette := {"stone": "8c8e8a", "wood": "81634b", "paving": "777f80", "plaster": "b2a48d", "floor": "886346", "ceiling": "514a40"}
+	for key in palette:
+		materials[key] = Surfaces.build(key, Color(palette[key]))
+	materials.iron.metallic = 0.65
+	materials.iron.roughness = 0.48
+
+func torch(at: Vector3) -> void:
+	var handle := block(at - Vector3(0, 0.35, 0), Vector3(0.10, 0.65, 0.10), "wood")
+	var bracket := block(at - Vector3(0, 0.08, 0), Vector3(0.22, 0.10, 0.22), "iron")
+	handle.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	bracket.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	var fire := MeshInstance3D.new()
+	var flame := SphereMesh.new()
+	flame.radius = 0.075
+	flame.height = 0.34
+	fire.mesh = flame
+	fire.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	fire.material_override = materials.flame
+	fire.position = at + Vector3(0, 0.12, 0)
+	geometry.add_child(fire)
+	var light := OmniLight3D.new()
+	light.position = at + Vector3(0, 0.25, 0.15)
+	light.light_color = Color("ffc18a")
+	light.omni_range = 8.0
+	light.shadow_enabled = true
+	geometry.add_child(light)
+	lamps.append(light)
 
 func sync(world) -> void:
 	if built_chapter != world.chapter or built_revision != world.revision or absi(world.position.x - built_center.x) > 2 or absi(world.position.y - built_center.y) > 2:
@@ -24,8 +55,9 @@ func build(world) -> void:
 	var dungeon: bool = world.chapter == "dungeon"
 	environment.background_color = Color("151922") if dungeon else Color("596474")
 	environment.fog_light_color = Color("151922") if dungeon else Color("596474")
-	environment.fog_density = 0.055 if dungeon else 0.028
-	environment.ambient_light_energy = 0.45 if dungeon else 0.8
+	environment.fog_density = 0.035 if dungeon else 0.018
+	environment.ambient_light_color = Color("92a9bb") if dungeon else Color("c3c7c5")
+	environment.ambient_light_energy = 0.26 if dungeon else 0.75
 	for y in range(world.position.y - RADIUS, world.position.y + RADIUS + 1):
 		for x in range(world.position.x - RADIUS, world.position.x + RADIUS + 1):
 			var at := Vector2i(x, y)
@@ -37,7 +69,7 @@ func build(world) -> void:
 				block(p + Vector3(0, 3.25, 0), Vector3(CELL, 0.1, CELL), "ceiling" if tavern else "stone")
 			for d in range(4):
 				boundary(p, d, world.edge(at, d), world.door_open(at, d), dungeon)
-			if dungeon and x % 4 == 0 and y % 3 == 0 and world.edge(at, 0) == 13 and lamps.size() < 8:
+			if dungeon and x % 4 == 0 and y % 3 == 0 and world.edge(at, 0) == 13 and at.distance_to(world.position) <= 4 and lamps.size() < 6:
 				torch(p + Vector3(0.8, 2, -1.25))
 	if dungeon:
 		# The original arrival has a solid east face, not ARX's added return door.
@@ -68,6 +100,13 @@ func boundary(p: Vector3, direction: int, code: int, opened: bool, dungeon: bool
 		if code in [8, 9, 10, 11, 12]: mat = "iron"
 		wall.material_override = materials[mat]
 		frame.add_child(wall)
+		if dungeon and code in [3, 4]:
+			for height in [0.55, 2.2]:
+				block(Vector3(0, height, 0.025), Vector3(2.65, 0.10, 0.05), "iron", frame)
+			block(Vector3(0.92, 1.4, 0.08), Vector3(0.12, 0.24, 0.12), "iron", frame)
+		elif dungeon and code in [5, 6, 13, 14, 15]:
+			block(Vector3(0, 0.13, 0.025), Vector3(3, 0.26, 0.05), "stone", frame)
+			block(Vector3(0, 3.05, 0.025), Vector3(3, 0.22, 0.05), "stone", frame)
 	# Pillars and lintels leave the same single-cell opening as the source.
 	if arch or code in [3, 4, 8, 9, 10, 11, 12]:
 		for side in [-1.0, 1.0]:

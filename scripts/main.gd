@@ -25,6 +25,7 @@ var tour_index := 3
 var cached_tour_index := -1
 const TOUR_POINTS = [Vector2i(0,0), Vector2i(1,32), Vector2i(36,32), Vector2i(49,3)]
 const TOUR_NAMES = ["northwest", "southwest", "southeast", "City entrance"]
+var tavern_art: Texture2D
 var viewport := SubViewport.new()
 var first_person = FirstPerson.new()
 
@@ -32,13 +33,15 @@ func _ready() -> void:
 	chapters = JSON.parse_string(FileAccess.get_file_as_string("res://data/chapters.json"))
 	add_child(music)
 	music.set_tavern(true)
-	viewport.size = Vector2i(375, 210)
+	tavern_art = ImageTexture.create_from_image(Image.load_from_file("res://assets/art/tavern-painted-v1.png"))
+	viewport.size = Vector2i(1024, 576)
+	viewport.msaa_3d = Viewport.MSAA_2X
 	viewport.own_world_3d = true
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	add_child(viewport)
 	viewport.add_child(first_person)
 	first_person.sync(world)
-	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 
 func _process(_delta: float) -> void:
 	first_person.sync(world)
@@ -126,7 +129,7 @@ func label_at(text: String, x: float, y: float, size: int = 18, color: Color = I
 	draw_string(font, Vector2(x, y), text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, color)
 
 func panel(rect: Rect2) -> void:
-	draw_style_box(box(Color("101c22"), Color("2d4146")), rect)
+	draw_style_box(box(Color(0.045, 0.055, 0.060, 0.86), Color("514b40")), rect)
 
 func box(fill: Color, border: Color) -> StyleBoxFlat:
 	var style := StyleBoxFlat.new()
@@ -138,38 +141,40 @@ func box(fill: Color, border: Color) -> StyleBoxFlat:
 
 func _draw() -> void:
 	draw_rect(Rect2(0, 0, 1152, 768), Color("091216"))
-	label_at("A L T E R N A T E   R E A L I T Y", 32, 40, 19, AMBER)
-	label_at("THE WAY BACK", 32, 79, 32)
-	label_at("CITY + DUNGEON  /  FIRST EXCURSION", 720, 38, 15, DIM)
-	label_at(world.clock_text(), 815, 76, 21, TEAL)
-	draw_line(Vector2(32, 98), Vector2(1120, 98), Color("35484a"))
-	label_at("01 / THE CITY" if world.chapter == "city" else "02 / THE DUNGEON", 32, 134, 20, AMBER)
-	label_at("The Tavern" if world.in_tavern() else ("Xebec's Demise / northern streets" if world.chapter == "city" else world.dungeon_region()), 32, 161, 17, DIM)
-	panel(Rect2(32, 182, 754, 430))
+	label_at("A L T E R N A T E   R E A L I T Y", 24, 30, 15, AMBER)
+	label_at("THE WAY BACK", 24, 63, 29)
+	label_at("CITY + DUNGEON  /  FIRST EXCURSION", 720, 30, 13, DIM)
+	label_at(world.clock_text(), 900, 63, 18, TEAL)
+	draw_line(Vector2(24, 76), Vector2(1128, 76), Color("35484a"))
+	label_at("The Tavern" if world.in_tavern() else ("Xebec's Demise / northern streets" if world.chapter == "city" else world.dungeon_region()), 24, 102, 18, AMBER)
+	panel(Rect2(22, 114, 858, 484))
 	if show_map:
 		draw_map()
 	else:
-		draw_texture_rect(viewport.get_texture(), Rect2(34, 184, 750, 420), false)
-		draw_rect(Rect2(34, 578, 750, 26), Color(0.03, 0.05, 0.07, 0.88))
-		label_at(world.BEARINGS[world.facing] + " / " + world.coordinates(), 48, 597, 15, AMBER)
-		label_at("CHOOSE FROM MENU     [TAB] MAP" if world.in_tavern() else "[E] " + context_action() + "     [TAB] MAP", 430, 597, 14, INK)
-		if world.in_tavern(): draw_tavern()
-	panel(Rect2(810, 115, 310, 217))
-	label_at("THE TRAVELLER", 832, 145, 15, AMBER)
-	label_at(world.character.name, 832, 180, 25)
-	label_at("Health  %d / %d" % [world.character.hp, world.character.max_hp], 832, 215)
-	label_at("STR %d     STA %d" % [world.character.strength, world.character.stamina], 832, 247, 17, DIM)
-	label_at(world.wallet_text(), 832, 287, 16, AMBER)
-	label_at(world.needs_text(), 832, 313, 16, TEAL)
-	panel(Rect2(810, 347, 310, 265))
-	label_at("SATCHEL", 832, 379, 15, AMBER)
+		draw_texture_rect(tavern_art if world.in_tavern() else viewport.get_texture(), Rect2(24, 116, 854, 480), false)
+		draw_rect(Rect2(24, 570, 854, 26), Color(0.03, 0.05, 0.07, 0.88))
+		label_at(world.BEARINGS[world.facing] + " / " + world.coordinates(), 40, 589, 15, AMBER)
+		label_at("CHOOSE FROM MENU     [TAB] MAP" if world.in_tavern() else "[E] " + context_action() + "     [TAB] MAP", 510, 589, 14, INK)
+		if world.in_tavern():
+			draw_set_transform(Vector2(0, -8), 0, Vector2(0.85, 0.95))
+			draw_tavern()
+			draw_set_transform(Vector2.ZERO)
+	panel(Rect2(896, 114, 232, 218))
+	label_at("THE TRAVELLER", 910, 145, 15, AMBER)
+	label_at(world.character.name, 910, 180, 25)
+	label_at("Health  %d / %d" % [world.character.hp, world.character.max_hp], 910, 215)
+	label_at("STR %d     STA %d" % [world.character.strength, world.character.stamina], 910, 247, 17, DIM)
+	label_at(world.wallet_text(), 910, 287, 13, AMBER)
+	label_at(world.needs_text(), 910, 313, 16, TEAL)
+	panel(Rect2(896, 347, 232, 251))
+	label_at("SATCHEL", 910, 379, 15, AMBER)
 	for i in range(world.inventory.size()):
-		label_at("+  " + str(world.inventory[i]), 832, 416 + i * 31, 19, TEAL if world.inventory[i] == "Brass token" else INK)
-	label_at("Food Packets: %d" % world.provisions.food, 832, 481, 16, DIM)
-	label_at("Water Flasks: %d" % world.provisions.water, 832, 505, 16, DIM)
-	label_at("OBJECTIVE", 832, 535, 14, AMBER)
-	label_at("Visit the Dungeon entrance.", 832, 563, 17)
-	label_at("COMPLETE — welcome home." if world.flags.returned else "Return to The Tavern.", 832, 588, 15, TEAL if world.flags.returned else DIM)
+		label_at("+  " + str(world.inventory[i]), 910, 416 + i * 31, 19, TEAL if world.inventory[i] == "Brass token" else INK)
+	label_at("Food Packets: %d" % world.provisions.food, 910, 481, 16, DIM)
+	label_at("Water Flasks: %d" % world.provisions.water, 910, 505, 16, DIM)
+	label_at("OBJECTIVE", 910, 535, 14, AMBER)
+	label_at("Explore. Return home.", 910, 563, 16)
+	label_at("COMPLETE — welcome home." if world.flags.returned else "Return to The Tavern.", 910, 588, 13, TEAL if world.flags.returned else DIM)
 	label_at(world.journal, 32, 642, 16, TEAL)
 	if world.in_tavern():
 		var song_t: float = music.song_time()
