@@ -1,0 +1,301 @@
+{
+  "documents": [
+    {
+      "title": "The Official Adventurer's Survival Handbook to The City",
+      "source_url": "https://mocagh.org/datasoft/arcity-hintbook.pdf",
+      "retrieved": "2026-11-15",
+      "edition_platforms": [
+        "Atari ST",
+        "Apple Macintosh",
+        "IBM PC"
+      ],
+      "file": "arcity-survival-handbook-st-mac-pc.pdf",
+      "bytes": 9238165,
+      "sha256": "0ad3af1ac3f3714f8fcc9a9ab2e983e6f19a4fa1d92790256fbb9132d52b7ea9",
+      "relevant_sections": [
+        {
+          "section": "Weather and Clothing",
+          "pdf_page": 4,
+          "printed_page": 4
+        }
+      ]
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Creation",
+      "source_url": "http://bringerp.free.fr/RE/Ar/characterCreation.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/characterCreation.html",
+      "bytes": 14961,
+      "sha256": "9857e97fbf43628e9936f00a1316e8678a968aac7dada87374fcaa6b3adcb7f4",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Items",
+      "source_url": "http://bringerp.free.fr/RE/Ar/characterItems.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/characterItems.html",
+      "bytes": 31646,
+      "sha256": "94570e932ee6095feb69a7d10a6c38bbf4726adef989005f153e0832087e2fec",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Metabolism",
+      "source_url": "http://bringerp.free.fr/RE/Ar/characterMetabolism.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/characterMetabolism.html",
+      "bytes": 23675,
+      "sha256": "9079143a40b3c69c0e848514b136b9355346918363dc67bef5739ad91f2ecfce",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Stats",
+      "source_url": "http://bringerp.free.fr/RE/Ar/characterStats.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/characterStats.html",
+      "bytes": 36085,
+      "sha256": "607c3c371e9b13aaac840a7a57165af316f6d4f7808686a8da3fd69f875ed6f5",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Combat",
+      "source_url": "http://bringerp.free.fr/RE/Ar/encountersCombat.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/encountersCombat.html",
+      "bytes": 33533,
+      "sha256": "d5ac1b05e2d290770f4fac0ed2fc5ca175ae2a4686defaa95db935731d7477b7",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Denizens",
+      "source_url": "http://bringerp.free.fr/RE/Ar/encountersDenizens.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/encountersDenizens.html",
+      "bytes": 155383,
+      "sha256": "f8331353613aa2fc8c97a2233dddf32cb1872eb62c3ea454480e5b829e4bba4f",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Opponent",
+      "source_url": "http://bringerp.free.fr/RE/Ar/encountersOpponent.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/encountersOpponent.html",
+      "bytes": 43717,
+      "sha256": "821a99ec3c28a6fcb24c99f3f3205750fa43553342c48387cd958b93ea28d555",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Rewards",
+      "source_url": "http://bringerp.free.fr/RE/Ar/encountersRewards.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/encountersRewards.html",
+      "bytes": 26989,
+      "sha256": "a1c2b265d87172f35b54c2ce13ef457dd7d210a86e8f199dd7729f91e8c6d9e7",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Banks",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsBanks.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsBanks.html",
+      "bytes": 21558,
+      "sha256": "e50471cba6fb4bbaf30ad27d87124f26054bb488c75c30d595ff7a3dc11e0ac1",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Guilds",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsGuilds.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsGuilds.html",
+      "bytes": 41954,
+      "sha256": "5cbb38be2985743689072a646b5a2467edace3085a3427f20c6de3289379b9e3",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Healers",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsHealers.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsHealers.html",
+      "bytes": 17876,
+      "sha256": "ece5d9dfe3771071c3c5a593cfb3ea9a9b3d3240e2d8d8c93e702edd9265fb71",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Inns",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsInns.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsInns.html",
+      "bytes": 21296,
+      "sha256": "9b5216e16bf0ff51baddbba2368e7bc8999fe065163496c36c56b04d2c24b6d0",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Jobs Summary",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsJobsSummary.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsJobsSummary.html",
+      "bytes": 17936,
+      "sha256": "f90c0ea7e36c7228220fe6e495aa056415fd0467d95ada673b57241eb1360209",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Shops",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsShops.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsShops.html",
+      "bytes": 26326,
+      "sha256": "cd1f59345ff01414890dfac09faf9c10f37c972c96d49598e66a9470349276de",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Smithies",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsSmithies.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsSmithies.html",
+      "bytes": 31625,
+      "sha256": "e722d0371cd21864e16a4373e7fd59545da22f1dc227c65c188d6b172d3efe0e",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Taverns",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsTaverns.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/establishmentsTaverns.html",
+      "bytes": 27875,
+      "sha256": "b8ba93663fc8bdf08f680095d92caf79b62f7479740c610cc5544641db7b882d",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Links",
+      "source_url": "http://bringerp.free.fr/RE/Ar/links.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/links.html",
+      "bytes": 14430,
+      "sha256": "507ebb1fd17d58a4fc7981ae818567078ab6a09f17d479574eb02def1e10d4ee",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - News",
+      "source_url": "http://bringerp.free.fr/RE/Ar/news.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/news.html",
+      "bytes": 14575,
+      "sha256": "4e00dd61f71117a49941e54ba911d087b39478da5a80462c99cea0c9a552303d",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Technical Notes",
+      "source_url": "http://bringerp.free.fr/RE/Ar/technicalNotes.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/technicalNotes.html",
+      "bytes": 31528,
+      "sha256": "1e181bd1f0dc81ebe8e9542b552205f7160371456f9ce19f83131ed9dfcad041",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah's Game Reverse Engineering Page - Alternate Reality - Xebec's Demise",
+      "source_url": "http://bringerp.free.fr/RE/Ar/world.php5",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/world.html",
+      "bytes": 141484,
+      "sha256": "3c49f286cbceb272615fa7f8cbc3bec501da6bd7eedde17c2e14fe0b5a8e3214",
+      "archive_scope": "Unmodified HTML response and separate text extraction; remote images/styles/downloads not included."
+    },
+    {
+      "title": "Kroah: Xebec's Demise map",
+      "source_url": "http://bringerp.free.fr/RE/Ar/Images/Map.png",
+      "retrieved": "2026-11-16",
+      "edition_platforms": [
+        "Atari ST City v2.0"
+      ],
+      "author": "Kroah",
+      "file": "kroah-city-st-v2/Map.png",
+      "bytes": 111227,
+      "sha256": "6f90a1f6ad1da0dabb53b5242f3e112c52dc66f9d273fb684208ae732c8af835",
+      "relevant_markers": {
+        "14": "Lost Oasis",
+        "16": "Tail of the Dog Tavern",
+        "49": "Dungeon Entrance"
+      }
+    }
+  ]
+}

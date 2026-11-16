@@ -1,0 +1,52 @@
+LayoutDocument">
+|
+Healers
+|
+|
+Opening Hours
+| Healer | Opening Hours
+| One Way Soothers | Opened at odd hours
+| Alpha Omega Healers | Opened at even hours
+Both healers aren't opened simultaneously.
+Services
+/!\ Both healers are independant. So, each healer has its own values for 'm' and the date of the previous given service.
+Healers offers several services for different prices:
+| Service | Price (in coppers) | Description
+| Category | Type | Base | Time elapsed since the previous service from the same healer (*)
+| At least 1 day
+(base price x1) | Less than 1 day
+(base price x2) | Less than 1 hour
+(base price x4) | Less than 2 minutes
+(base price x8)
+| Heal | Minor Wounds | 5 | 5 | 10 | 20 | 40 | Restores 1 to 7 hit points.
+| Wounds | 10 | 10 | 20 | 40 | 80 | Restores 2 to 9 hit points.
+| Major Wounds | 20 | 20 | 40 | 80 | 160 | Restores 3 to 11 hit points.
+| Cleanse | Cleanse Poisons | 100 | 100 | 200 | 400 | 800 | Cures poisons (in incubation or not).
+| Cure Diseases | 200 | 200 | 400 | 800 | 1600 | Cures diseases (in incubation or not).
+| Remove Alcohol (**) | 20 * 2^m | 20 * 2^m | 40 * 2^m | 80 * 2^m | 160 * 2^m | Cures inebriation. Clears alcohol blood and intestine concentration, digestion rate and blackouts.
+| Remove Delusions | Restore Clarity | 200 | 200 | 400 | 800 | 1600 | Removes delusion, restores clarity and diagnoses.
+| Diagnose | Diagnose Disease | 10 | 10 | 20 | 40 | 80 | Shows all diseases (in incubation or not) in the ailments status screen.
+(*) The formula to compute the price is:
+price = base price * 2^n
+Where 'n' is equal to 0 increased by one or more of the following cases:
++0 if the previous service has been done another day (A).
++1 if the previous service has been done the same day (B).
++1 if the previous service has been done the same hour (C).
++1 if the previous service has been done the same minute or the same next minute (D).
+With this algorithm, strange results may appear because (B), (C) and (D) can happen simultaneously. For example:
+The character comes next hour, at the same minute: n=2 because of (B) and (D), instead of the logical result of n=1 for (B).
+The character comes several days later, at the same hour: n=1 because of (A) and (C), instead of the logical result of n=0 (A).
+The prices given above don't take into account those strange behaviors. (B), (C) and (D) can't happen simultaneously.
+The fixed algorithm should check:
+Minutes (D) if it's the same day (B) and the same hour (C).
+Hours (C) if it's the same day (B).
+This would give the following values for 'n':
+n=0 if the previous service has been done another day (A).
+n=1 if the previous service has been done the same day (B).
+n=2 if the previous service has been done the same hour (C).
+n=3 if the previous service has been done the same minute or the same next minute (D).
+(**) 'm' is the number of times the healer has removed alcohol. The base price to remove alcohol doubles each time the service is done.
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

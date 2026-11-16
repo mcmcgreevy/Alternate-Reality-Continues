@@ -10,6 +10,8 @@ Controls, save format, movement, doors, transition data, service prices and lyri
 
 ## Asset provenance
 
+The main tavern now uses `assets/art/tavern-grimthorn-v2.png`: Grimthorn Redbeard, the bald dwarf barkeep and singer with a long red beard. This built-in image-generation edit replaces the human figure while retaining the tavern composition. See [the exact prompt and provenance](GRIMTHORN_ART_PROMPT.md).
+
 assets/art/tavern-painted-v1.png was generated with the built-in image-generation tool on 2026-11-10. No original game image was supplied. Brief: original wide illustrated tavern; seated guest's view at an aged oak counter; quiet dark left side for menu; believable middle-aged innkeeper in linen and green waistcoat at right; amber candles/hearth, cool dusk through leaded glass; weathered wood/plaster, restrained palette, no text/UI/logos. The generated image was copied into the project unchanged. It is decorative art and does not depict a historical person or establish game lore.
 
 scripts/atmosphere_materials.gd creates the original procedural textures at startup. The legacy prototype scene keeps its previous materials and rendering settings for comparison.
@@ -22,7 +24,7 @@ The increased render resolution, antialiasing and torch shadows cost more GPU ti
 
 ## City sky and interior follow-up
 
-City streets now use a procedural sky with clouds, a sun, twilight colors and stars. Its appearance, cloud displacement, ambient light and sunlight follow the saved world minute, not the computer clock. Standing still does not advance weather; waiting, travelling and loading a save update it. The fixed 24-hour cycle repeats daily, with sunrise near 06:00 and sunset near 18:00. These are original presentation choices, not reconstructed astronomical/weather rules. There is no rain or gameplay weather effect yet.
+City streets now use a procedural sky with clouds, a sun, twilight colors and stars. Its appearance, cloud displacement, ambient light and sunlight follow the saved world minute, not the computer clock. Standing still does not advance weather; waiting, travelling and loading a save update it. The fixed 24-hour cycle repeats daily, with sunrise near 06:00 and sunset near 18:00. These are original presentation choices, not reconstructed astronomical/weather rules. The subsequent [weather pass](WEATHER.md) adds a saved weather schedule, overcast lighting and outdoor rainfall. Stat effects remain deferred.
 
 Dungeon cells and City building/secret-passage cells receive ceilings. City classification uses ARX location descriptions: secret passage (7), establishments (16–59, 65–66, 68–89) are covered; streets, alleys, yards, gates and arena/palace grounds remain open. The wider City's classification is provisional. It does not infer roofs merely because a space has surrounding walls. Open doorways may reveal sky beyond the roofed cell. The tavern still uses its painted indoor screen.
 

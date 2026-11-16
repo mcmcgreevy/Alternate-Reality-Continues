@@ -1,0 +1,20 @@
+LayoutDocument">
+|
+News
+|
+|
+|
+|
+|
+This reverse engineering work was done on the Atari ST version of Alternate Reality: "The City" (v2.0).
+The initial game was released on Atari 8-bit but the game engine in the City (16-bit) is closer to Alternate Reality: "The Dungeon" (8-bit).
+This leads to many differences between both versions of the City and I hope this work will help finding them.
+Jim Norris has put online a disassembly project of Alternate Reality: "The City" (8-bit) to share disassembly information online.
+Thanks to Acrin, Hicksman, Robert and Wrathchild for their help and support!
+01/06/2009:
+Section opened.
+Reverse engineering work added.
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

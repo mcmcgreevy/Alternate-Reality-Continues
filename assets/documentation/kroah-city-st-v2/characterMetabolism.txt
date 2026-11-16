@@ -1,0 +1,136 @@
+LayoutDocument">
+|
+Metabolism
+|
+The player metabolism is made of 7 elements: Hunger, Thirst, Fatigue, Digestion, Alcohol, Warmth and Encumbrance.
+Depending on their state, they affect more or less in a negative way the player stats.
+Hunger
+Character naturally becomes hungry at a rate of 0.5 every 15 minutes (1 real minute).
+While sleeping, the rate is decreased by 0.25 (50%).
+To reduce hunger, the character must use a food packet, eat at a tavern or cast the spell Curing Hunger.
+The different stages of hunger, the time to reach them naturaly, and their effects are:
+| Hunger | Stage | Time | Effects
+| 0 to 16 |   |   | Removes all hunger penalties.
+| 16 to 48 | Famished | 8 hours |
+| 48 to 96 | Hungry | 24 hours |
+| 96 to 255 | Starving | 48 hours | Probability of 50% to increase by 1 a random primary stat penalty every 15 minutes.
+Thirst
+Character naturally becomes thirsty at a rate of 0.5 every 15 minutes (1 real minute).
+The rate is increased by 1/12.8 ~= 0.08 (+15.6%) when the character warmth is at stage Hot.
+While sleeping, the rate is decreased by 0.25 (50%).
+To reduce thirst, the character must use a water flask, have a drink at a tavern or cast the spell Curing Thirst.
+The different stages of thirst, the time to reach them naturaly, and their effects are:
+| Thirst | Stage | Time | Effects
+| 0 to 16 |   |   | Removes all thirst penalties.
+| 16 to 32 | Thirsty | 8 hours |
+| 32 to 56 | Very Thirsty | 16 hours |
+| 56 to 255 | Parched | 28 hours | Probability of 50% to increase by 1 a random primary stat penalty every 15 minutes.
+Fatigue
+Character naturally becomes tired at a rate of 0.5 every 15 minutes (1 real minute).
+The rate is increased by:
+1/12.8 ~= 0.08 (+15.6%) when the character warmth is at stage Hot.
+0.125 (+25%) when the encumbrance is at stage Burdened.
+While sleeping, the rate is null. To reduce fatigue, the character must sleep at an inn.
+The different stages of fatigue, the time to reach them naturaly, and their effects are:
+| Fatigue | Stage | Time | Effects
+| 0 to 40 |   |   | Removes all fatigue penalties.
+| 40 to 72 | Weary | 20 hours |
+| 72 to 96 | Tired | 36 hours |
+| 96 to 255 | Very Tired | 48 hours | Probability of 50% to increase by 1 a random primary stat penalty every 15 minutes.
+Digestion
+Character naturally digests at a rate of -3 every 15 minutes (1 real minute).
+Stomach bloats when the character uses food packets, water flasks or eats at a tavern.
+If too much is absorbed, the character becomes Bloated:
+| Digestion | Stage | Effects
+| 0 to 127 |   | Removes the bloated penalty.
+| 128 to 255 | Bloated | Increases the speed penalty by 4.
+Inebriation
+Note: I didn't succeed to exactly map the algorithm with the human metabolism. I've tried to give a meaning to the variables, but it's still inconsistent.
+What seems correct:
+Human body eliminates alcohol in blood at a rate of 10 to 15 mg/mL every hour. In the algorithm, the rate is 12 mg/mL (4*3).
+Alcohol concentration in blood affects the character (see below).
+What seems inconsistent:
+The alcohol concentration in intestine is reduced by the "digestion rate" and not by the amount of alcohol absorbed in blood.
+The character becomes drunk when the alcohol concentration in blood reaches the stamina value, which could be 20 mg/mL. Legal limit for driving in France is around 80 mg/mL...
+// this algorithm is called every 15 minutes (1 real minute)
+if ((alcoholBloodConcentration != 0) || (alcoholIntestineConcentration != 0) {
+// intestine -> blood
+alcoholBloodConcentration += alcoholIntestineConcentration; (?)
+// blood -> out
+alcoholBloodConcentration -= 3;
+// if there's something to absorb
+if (alcoholIntestineConcentration != 0) {
+// alcohol digestion rate in intestine increases with time (?)
+alcoholDigestionRate ++;
+// digest partially alcohol in intestine
+alcoholIntestineConcentration -= digestionRate; (?)
+// if no more alcohol in intestine, stop absorption and digestion
+if (alcoholIntestineConcentration < 0) {
+alcoholIntestineConcentration = 0;
+alcoholDigestionRate = 0;
+}
+}
+}
+The different stages of inebriation and their effects are:
+| Alcohol blood
+concentration | Stage | Effects
+| 0 |   |
+| ]0; Sta] | Tipsy | Loss of coordination: bottom status screen randomly changes.
+| ]Sta; 2*Sta] | Drunk | Loss of balance: movement is hampered (random moves).
+Banks and inns jobs are forbidden.
+| [2*Sta; +∞[ | Very Drunk | Loss of sight: random blackouts.
+Entering smithies, shops and taverns are forbidden.
+The character resistance to inebriation depends on its effective stamina.
+The inebriation effects stack.
+The character stealth is temporary reduced by its alcohol blood concentration.
+When the character drinks alcohol in tavern, half of it goes directly in blood too.
+Here are examples of alcohol concentration in blood after some drinks (with a stamina of 20):
+1:00 2 grogs (amount of 6)
+2:30 All alcohol eliminated
+3:00 2 grogs and 2 wine (amount of 10)
+3:45 Character drunk
+6:00 All alcohol eliminated
+7:00 3 grogs (amount of 9)
+8:45 4 grogs (amount of 12)
+9:00 Character drunk
+9:45 Character very drunk
+13:30 All alcohol eliminated
+Warmth
+The warmth perceived by the character depends on two factors: the weather temperature, the clothes worn and the character location. It's computed like this:
+Each article of clothing worn adds to the character's protection.
+If the protection isn't null, an additional protection of 10°F (5.6°C) is given.
+The resulting value is bounded by 80°F (44.4°C), then increased by the weather temperature.
+Warmth in buildings is always 72°F (22.2°C) regardless of the weather and the clothes the character is wearing.
+The different stages of warmth and their effects are:
+| Warmth | Stage | Effects
+| < 48°F | < 8.9°C | Cold! | Increases the speed penalty by 5.
+Increases the skill penalty by 5.
+Character loses clarity.
+Removes all Hot penalties.
+| 48°F to 64°F | 8.9°C to 17.8°C | Cool | Removes all Hot and Cold penalties.
+| 64°F to 79°F | 17.8°C to 26.1°C |
+| 79°F to 99°F | 26.1°C to 37.2°C | Warm
+| > 99°F | > 37.2°C | Hot! | Increases the thirst rate by 1/12.8 ~= 0.08 (+15.6%).
+Increases the fatigue rate by 1/12.8 ~= 0.08 (+15.6%).
+Character loses clarity.
+Removes all Cold penalties.
+Encumbrance
+The total weight is calculated by adding the weight of all carried items. This includes:
+Water Flasks and Food Packets (1 unit for each pack of 16)
+Gold, Silver and Copper coins (1 unit for each pack of 16)
+Gems and Jewelry (1 unit for each pack of 16)
+Items in inventory, equiped or worn (variable weight)
+The character can carry a base weight of 224 units. The encumbrance is defined by the following formula:
+encumbrance = carried weight - (effective strength + 224)
+The different stages of encumbrance and their effects are:
+| Encumbrance | Stage | Effects
+| < 0 |   | Removes all encumbrance penalties.
+| [0; 16[ | Burdened | Increases the fatigue rate by 0.125 (+25%).
+Removes the Encumbered and Immobilized speed penalty penalties.
+| [16; 33[ | Encumbered | Increases the speed penalty by 8.
+Removes the Immobilized speed penalty penalty.
+| [33; +oo[ | Immobilized! | Increases the speed penalty by 50.
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

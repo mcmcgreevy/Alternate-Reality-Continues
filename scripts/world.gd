@@ -1,5 +1,6 @@
 extends RefCounted
-## One authority for both chapters; views never own copies of the character.
+## Shared character state and legacy prototype rules. original_world.gd overrides maps,
+## movement effects, services and persistence for the current game. Views never copy state.
 const MAPS = {
 	"city": ["#############", "#TTT#..#....#", "#TTT#.......#", "#TTT#..#....#", "###.####.####", "#...........#", "#.###.###.#.#", "#.....#D....#", "#############"],
 	"dungeon": ["#############", "#U....#.....#", "#.##..#.###.#", "#.....#...R.#", "###.#####.#.#", "#...........#", "#.#####.###.#", "#...........#", "#############"]
@@ -11,6 +12,7 @@ const BEARINGS = ["NORTH", "EAST", "SOUTH", "WEST"]
 var facing: int = 0
 var character: Dictionary = {"name": "The Stranger", "hp": 24, "max_hp": 24, "strength": 12, "stamina": 12, "gold": 8}
 var inventory: Array = ["Worn sword", "Bread"]
+# Absolute game minutes since day one; independent of frame/audio time.
 var minutes: int = 18 * 60
 var flags: Dictionary = {"visited_dungeon": false, "relic_taken": false, "returned": false}
 var journal: String = "A brass token waits below. Bring it back to the tavern."

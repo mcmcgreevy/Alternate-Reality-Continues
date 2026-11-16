@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <title>Kroah's Game Reverse Engineering Page - Alternate Reality - Opponent</title>
+    <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+    <meta name="Description" content="Reverse Engineering page of old computer games for Atari ST and Atari 8-bit System. Discover all the information, data and algorithms used by these games and some specifically developped utilities." />
+    <meta name="KeyWords" content="reverse engineering,decompilation,disassembling,atari,computer,game,assembler,asm,68000,6502,source code,mule,dragon riders of pern,gateway to apshai,return of heracles,seven cities of gold,archon,time bandit,alternate reality,colonial conquest,phantasie 3,nikademus,axel,magic hammer,pandora,ranarama,chaos engine,grand prix manager,gods,speed ball 2,bard's tale,legend of faerghail,gods,captain blood,first samurai" />
+    <link rel="stylesheet" href="../Globals.css" type="text/css" />
+    <link rel="stylesheet" href="Locals.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/Logo.ico" />
+    <link rel="icon" type="image/png" href="../Images/Logo.png" />
+    <script src="../Globals.js" type="text/javascript"></script>
+  </head>
+<body>
+<table class="LayoutPage"><tr><td class="LayoutPage"><div>
+<table class="LayoutDouble">
+  <tr><td class="LayoutDouble LayoutHeader" colspan="2">
+    <table class="LayoutIndex" style="width: 100%;">
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+<a class="Logo" href="../"><img src="../Images/Logo Big.png" alt="Home" /></a>
+        </td>
+        <td class="LayoutIndex LayoutHeader" style="width: 80%;">
+<h1 class="HeaderTitle1">Kroah's Game Reverse Engineering Page</h1>
+        </td>
+          <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+&nbsp;
+        </td>
+    </tr>
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 100%;" colspan="3">
+<h1 class="HeaderTitle2">~&nbsp;Alternate Reality&nbsp;~</h1>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td class="LayoutDouble LayoutLocation" colspan="2">
+<div class="BoxLocation">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+You are here:&nbsp;&nbsp;<ul><li><a href="../index.php5">Home</a><ul><li>&#187;&nbsp;&nbsp;Alternate Reality<ul><li>&#187;&nbsp;&nbsp;Reverse Engineering<ul><li>&#187;&nbsp;&nbsp;Encounters<ul><li>&#187;&nbsp;&nbsp;<i>Opponent</i></li></ul></li></ul></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+  </td></tr>
+  <tr>
+    <td class="LayoutDouble LayoutMenu">
+<div class="BoxMenu">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Menu</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ul><li><a href='../Ar/news.php5'>News</a></li><li><a href='../Ar/links.php5'>Links</a></li><li><a href='../../forum/'>Forum</a></li><li>&nbsp;</li><li>&nbsp;Reverse Engineering<ul><li><a href='../Ar/technicalNotes.php5'>Technical Notes</a></li><li><a href='../Ar/world.php5'>Xebec's Demise</a><ul><li><a class='Anchor' href='../Ar/world.php5#Calendar'>Calendar</a></li><li><a class='Anchor' href='../Ar/world.php5#TimeSpan'>Time Span</a></li><li><a class='Anchor' href='../Ar/world.php5#Weather'>Weather</a></li><li><a class='Anchor' href='../Ar/world.php5#Temperature'>Temperature</a></li><li><a class='Anchor' href='../Ar/world.php5#Map'>Map</a></li></ul></li><li>&nbsp;Character<ul><li><a href='../Ar/characterCreation.php5'>Creation</a></li><li><a href='../Ar/characterStats.php5'>Stats</a><ul><li><a class='Anchor' href='../Ar/characterStats.php5#Primary'>Primary</a></li><li><a class='Anchor' href='../Ar/characterStats.php5#Secondary'>Secondary</a></li></ul></li><li><a href='../Ar/characterMetabolism.php5'>Metabolism</a><ul><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Hunger'>Hunger</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Thirst'>Thirst</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Fatigue'>Fatigue</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Digestion'>Digestion</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Inebriation'>Inebriation</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Warmth'>Warmth</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Encumbrance'>Encumbrance</a></li></ul></li><li><a href='../Ar/characterItems.php5'>Items</a><ul><li><a class='Anchor' href='../Ar/characterItems.php5#Weapons'>Weapons</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Armor'>Armor</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Clothes'>Clothes</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Potions'>Potions</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Others'>Others</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Curses'>Curses</a></li></ul></li></ul></li><li>&nbsp;Encounters<ul><li><a href='../Ar/encountersDenizens.php5'>Denizens</a></li><li>&nbsp;<i>Opponent</i><ul><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Frequency'>Frequency</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Creation'>Creation</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Melody'>Melody</a></li></ul></li><li><a href='../Ar/encountersCombat.php5'>Combat</a><ul><li><a class='Anchor' href='../Ar/encountersCombat.php5#Awareness'>Awareness</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Sequence'>Sequence</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Engagement'>Engagement</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AlignmentPenalty'>Alignment Penalty</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#CastSpell'>Cast a Spell</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AttackLunge'>Attack & Lunge</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#DamageResolution'>Damage Resolution</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Trick'>Trick</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Charm'>Charm</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Offer'>Offer</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Leave'>Leave</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#OpponentActions'>Opponent Actions</a></li></ul></li><li><a href='../Ar/encountersRewards.php5'>Rewards</a><ul><li><a class='Anchor' href='../Ar/encountersRewards.php5#Experience'>Experience</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#LevelUp'>Level Up</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Treasures'>Treasures</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Statistics'>Statistics</a></li></ul></li></ul></li><li>&nbsp;Establishments<ul><li><a href='../Ar/establishmentsInns.php5'>Inns</a><ul><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Sleeping'>Sleeping</a></li><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsTaverns.php5'>Taverns</a><ul><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#FoodsDrinks'>Foods & Drinks</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#BuyingRound'>Buying a Round</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsBanks.php5'>Banks</a><ul><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Accounts'>Accounts</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Appraisal'>Appraisal</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsShops.php5'>Shops</a><ul><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsSmithies.php5'>Smithies</a><ul><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsHealers.php5'>Healers</a><ul><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#Services'>Services</a></li></ul></li><li><a href='../Ar/establishmentsGuilds.php5'>Guilds</a><ul><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Bonuses'>Bonuses</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Spells'>Spells</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#RemovingCurses'>Removing Curses</a></li></ul></li><li><a href='../Ar/establishmentsJobsSummary.php5'>Jobs Summary</a></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+    <td class="LayoutDouble LayoutDocument">
+<div class="BoxDocument">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Opponent</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ol>
+
+  <li><h3 id="Frequency">Frequency</h3>
+<p>A check is done every 12.5 seconds (0.83 real second):</p>
+<ul><li>The character meets an opponent if a random number between 0 and his unnoticeability is 0 (probability = (1 / (unnoticeability + 1) %).</li></ul>
+<p>For example, at each check:</p>
+<ul>
+  <li>A character having an unnoticeability of 32 (initial value) has a probability of 3% to meet an encounter.</li>
+  <li>A character having an unnoticeability of 0 always meets an opponent.</li>
+</ul>
+<p>The higher the unnoticeability, the lower the encounter frequency.</p>
+<p>The checks are done in establishmeents too, that's why the character often encounters someone when leaving.</p>
+<p>The following graph gives the cumulated probabilities for various unnoticeability values.</p>
+<p><img src="Images/EncounterProbability.png" alt="Encounter Probability" /></p>
+<p>We can see that:</p>
+<table>
+  <tr><th rowspan="2"><b>Unnoticeability</b></th><th colspan="2"><b>~99% reached at</b></th></tr>
+  <tr><th><b>Real</b></th><th><b>Ingame</b></th></tr>
+  <tr><th><i>16</i></th><th>1 mn</th><th>15 mn</th></tr>
+  <tr><th><i>32</i></th><th>2 mn</th><th>30 mn</th></tr>
+  <tr><th><i>48</i></th><th>3 mn</th><th>45 mn</th></tr>
+</table>
+<p>If the character heading is near a wall, another heading is chosen to let the opponent come in (there's no relationship with being surprised).</p>
+  </li>
+
+  <li><h3 id="Creation">Creation</h3>
+<p>The opponent is chosen according to the situation:</p>
+<ul>
+  <li>The location of the character: indoor or outdoor.</li>
+  <li>The weather: rainy or not.</li>
+  <li>The character invisibility (if raining, the character invisibility is cancelled just before the selection).</li>
+  <li>The current time of the day.</li>
+</ul>
+<table>
+  <tr><th><b>Location</b></th><th><b>Rainy</b></th><th><b>Invisible</b></th><th><b>Time</b></th><th><b>Situation</b></th></tr>
+  <tr><td rowspan="3"><i>Indoor</i></td><th rowspan="3">&nbsp;</th><th rowspan="2"><i>N</i></th><th><i>6h - 19h</i></th><td>Day</td></tr>
+  <tr><th><i>19h - 6h</i></th><td>Night</td></tr>
+  <tr><th><i>Y</i></th><th>&nbsp;</th><td>Invisible</td></tr>
+  <tr><td rowspan="4"><i>Outdoor</i></td><th rowspan="3"><i>N</i></th><th rowspan="2"><i>N</i></th><th><i>6h - 19h</i></th><td>Day</td></tr>
+  <tr><th><i>19h - 6h</i></th><td>Night</td></tr>
+  <tr><th><i>Y</i></th><th>&nbsp;</th><td>Invisible</td></tr>
+  <tr><th><i>Y</i></th><th>&nbsp;</th><th>&nbsp;</th><td>Rainy</td></tr>
+</table>
+<p>The opponent type is randomly selected among the list of the current situation:</p>
+<table class="NoBorder"><tr>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Day</b></th></tr><tr><th><b>%</b></th><th><b>Opponent type</b></th></tr><tr><th class="Right"><i>10.16 %</i></b></th><td>Thiefs</td></tr><tr><th class="Right"><i>13.67 %</i></b></th><td>Fighters</td></tr><tr><th class="Right"><i>39.06 %</i></b></th><td>Citizens</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td>Nobility</td></tr><tr><th class="Right"><i>29.30 %</i></b></th><td>Spellcasters and Assassin</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Night</b></th></tr><tr><th><b>%</b></th><th><b>Opponent type</b></th></tr><tr><th class="Right"><i>17.58 %</i></b></th><td>Thiefs</td></tr><tr><th class="Right"><i>11.72 %</i></b></th><td>Fighters</td></tr><tr><th class="Right"><i>1.56 %</i></b></th><td>Citizens</td></tr><tr><th class="Right"><i>0.78 %</i></b></th><td>Nobility</td></tr><tr><th class="Right"><i>3.91 %</i></b></th><td>Spellcasters and Assassin</td></tr><tr><th class="Right"><i>11.72 %</i></b></th><td>Fantasy</td></tr><tr><th class="Right"><i>9.77 %</i></b></th><td>Wandering Animals</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td>Slims</td></tr><tr><th class="Right"><i>1.95 %</i></b></th><td>Specials</td></tr><tr><th class="Right"><i>33.20 %</i></b></th><td>Undeads</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Rainy</b></th></tr><tr><th><b>%</b></th><th><b>Opponent type</b></th></tr><tr><th class="Right"><i>8.98 %</i></b></th><td>Thiefs</td></tr><tr><th class="Right"><i>8.59 %</i></b></th><td>Fighters</td></tr><tr><th class="Right"><i>17.19 %</i></b></th><td>Spellcasters and Assassin</td></tr><tr><th class="Right"><i>16.41 %</i></b></th><td>Fantasy</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td>Wandering Animals</td></tr><tr><th class="Right"><i>41.02 %</i></b></th><td>Undeads</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Invisible</b></th></tr><tr><th><b>%</b></th><th><b>Opponent type</b></th></tr><tr><th class="Right"><i>74.61 %</i></b></th><td>Undeads and Ghost</td></tr><tr><th class="Right"><i>1.95 %</i></b></th><td>Spellcasters and Assassin</td></tr><tr><th class="Right"><i>23.44 %</i></b></th><td>Undeads</td></tr></table></th>
+</tr></table>
+<p>Then the opponent is randomly chosen among the list of the previously selected type:</p>
+<table class="NoBorder"><tr>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Thiefs</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>39.45 %</i></b></th><td class="BadName2">Mugger</td></tr><tr><th class="Right"><i>19.53 %</i></b></th><td class="BadName2">Cutthroat</td></tr><tr><th class="Right"><i>9.77 %</i></b></th><td class="BadName2">Thief</td></tr><tr><th class="Right"><i>4.69 %</i></b></th><td class="BadName2">Robber</td></tr><tr><th class="Right"><i>3.52 %</i></b></th><td class="BadName2">Brigand</td></tr><tr><th class="Right"><i>23.05 %</i></b></th><td class="BadName2">Master Thief</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Fighters</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>21.48 %</i></b></th><td class="BadName2">Fighter</td></tr><tr><th class="Right"><i>17.97 %</i></b></th><td class="BadName2">Swordsman</td></tr><tr><th class="Right"><i>16.41 %</i></b></th><td class="BadName2">Warrior</td></tr><tr><th class="Right"><i>11.72 %</i></b></th><td class="BadName2">Gladiator</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td class="BadName2">Knight (v1)</td></tr><tr><th class="Right"><i>1.95 %</i></b></th><td class="BadName2">Weaponmaster</td></tr><tr><th class="Right"><i>22.66 %</i></b></th><td class="BadName2">Champion</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Citizens</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>4.30 %</i></b></th><td class="NeutralName2">Pauper</td></tr><tr><th class="Right"><i>15.63 %</i></b></th><td class="NeutralName2">Courier</td></tr><tr><th class="Right"><i>19.53 %</i></b></th><td class="NeutralName2">Commoner</td></tr><tr><th class="Right"><i>19.53 %</i></b></th><td class="NeutralName2">Merchant</td></tr><tr><th class="Right"><i>41.02 %</i></b></th><td class="NeutralName2">Guard (v1)</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Nobility</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>23.83 %</i></b></th><td class="GoodName2">Nobleman</td></tr><tr><th class="Right"><i>15.63 %</i></b></th><td class="GoodName2">Guard (v2)</td></tr><tr><th class="Right"><i>60.55 %</i></b></th><td class="GoodName2">Knight (v2)</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Spellcasters and Assassin</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>23.83 %</i></b></th><td class="NeutralName2">Apprentice</td></tr><tr><th class="Right"><i>23.44 %</i></b></th><td class="NeutralName2">Acolyte</td></tr><tr><th class="Right"><i>15.63 %</i></b></th><td class="NeutralName2">Novice</td></tr><tr><th class="Right"><i>10.94 %</i></b></th><td class="NeutralName2">Wizard</td></tr><tr><th class="Right"><i>1.56 %</i></b></th><td class="NeutralName2">Mage</td></tr><tr><th class="Right"><i>1.56 %</i></b></th><td class="EvilName2">Assassin</td></tr><tr><th class="Right"><i>23.05 %</i></b></th><td class="NeutralName2">Arch-Mage</td></tr></table></th>
+</tr></table>
+<table class="NoBorder"><tr>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Fantasy</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>16.02 %</i></b></th><td class="EvilName2">Gnoll</td></tr><tr><th class="Right"><i>11.72 %</i></b></th><td class="EvilName2">Goblin</td></tr><tr><th class="Right"><i>11.72 %</i></b></th><td class="NeutralName2">Hobbit</td></tr><tr><th class="Right"><i>11.72 %</i></b></th><td class="EvilName2">Orc</td></tr><tr><th class="Right"><i>11.72 %</i></b></th><td class="NeutralName2">Dwarf</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td class="EvilName2">Troll</td></tr><tr><th class="Right"><i>29.30 %</i></b></th><td class="NeutralName2">Giant</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Wandering Animals</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>70.70 %</i></b></th><td class="EvilName2">Giant Rat</td></tr><tr><th class="Right"><i>29.30 %</i></b></th><td class="EvilName2">Wolf</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Slims</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>58.98 %</i></b></th><td class="EvilName2">Brown Mold</td></tr><tr><th class="Right"><i>41.02 %</i></b></th><td class="EvilName2">Black Slime</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Specials</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>70.70 %</i></b></th><td class="BadName2">Small Dragon</td></tr><tr><th class="Right"><i>29.30 %</i></b></th><td class="EvilName2">Nightstalker</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Undeads</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>20.70 %</i></b></th><td class="EvilName2">Skeleton</td></tr><tr><th class="Right"><i>18.75 %</i></b></th><td class="EvilName2">Zombie</td></tr><tr><th class="Right"><i>17.19 %</i></b></th><td class="EvilName2">Gremlin</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td class="EvilName2">Imp</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td class="EvilName2">Ghoul</td></tr><tr><th class="Right"><i>3.13 %</i></b></th><td class="EvilName2">Wraith</td></tr><tr><th class="Right"><i>1.56 %</i></b></th><td class="EvilName2">Specter</td></tr><tr><th class="Right"><i>23.05 %</i></b></th><td class="EvilName2">Ghost (v1)</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Undeads and Ghost</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>4.30 %</i></b></th><td class="EvilName2">Ghost (v2)</td></tr><tr><th class="Right"><i>16.41 %</i></b></th><td class="EvilName2">Skeleton</td></tr><tr><th class="Right"><i>18.75 %</i></b></th><td class="EvilName2">Zombie</td></tr><tr><th class="Right"><i>17.19 %</i></b></th><td class="EvilName2">Gremlin</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td class="EvilName2">Imp</td></tr><tr><th class="Right"><i>7.81 %</i></b></th><td class="EvilName2">Ghoul</td></tr><tr><th class="Right"><i>3.13 %</i></b></th><td class="EvilName2">Wraith</td></tr><tr><th class="Right"><i>1.56 %</i></b></th><td class="EvilName2">Specter</td></tr><tr><th class="Right"><i>23.05 %</i></b></th><td class="EvilName2">Ghost (v1)</td></tr></table></th>
+</tr></table>
+<p>The following table is obtained by combining the types with the situations. It gives the opponent distribution according to the situation:</p>
+<table class="NoBorder"><tr>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Day</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>16.02 %</i></b></th><td class="NeutralName2">Guard (v1)</td></tr><tr><th class="Right"><i>7.63 %</i></b></th><td class="NeutralName2">Commoner</td></tr><tr><th class="Right"><i>7.63 %</i></b></th><td class="NeutralName2">Merchant</td></tr><tr><th class="Right"><i>6.98 %</i></b></th><td class="NeutralName2">Apprentice</td></tr><tr><th class="Right"><i>6.87 %</i></b></th><td class="NeutralName2">Acolyte</td></tr><tr><th class="Right"><i>6.75 %</i></b></th><td class="NeutralName2">Arch-Mage</td></tr><tr><th class="Right"><i>6.10 %</i></b></th><td class="NeutralName2">Courier</td></tr><tr><th class="Right"><i>4.73 %</i></b></th><td class="GoodName2">Knight (v2)</td></tr><tr><th class="Right"><i>4.58 %</i></b></th><td class="NeutralName2">Novice</td></tr><tr><th class="Right"><i>4.01 %</i></b></th><td class="BadName2">Mugger</td></tr><tr><th class="Right"><i>3.20 %</i></b></th><td class="NeutralName2">Wizard</td></tr><tr><th class="Right"><i>3.10 %</i></b></th><td class="BadName2">Champion</td></tr><tr><th class="Right"><i>2.94 %</i></b></th><td class="BadName2">Fighter</td></tr><tr><th class="Right"><i>2.46 %</i></b></th><td class="BadName2">Swordsman</td></tr><tr><th class="Right"><i>2.34 %</i></b></th><td class="BadName2">Master Thief</td></tr><tr><th class="Right"><i>2.24 %</i></b></th><td class="BadName2">Warrior</td></tr><tr><th class="Right"><i>1.98 %</i></b></th><td class="BadName2">Cutthroat</td></tr><tr><th class="Right"><i>1.86 %</i></b></th><td class="GoodName2">Nobleman</td></tr><tr><th class="Right"><i>1.68 %</i></b></th><td class="NeutralName2">Pauper</td></tr><tr><th class="Right"><i>1.60 %</i></b></th><td class="BadName2">Gladiator</td></tr><tr><th class="Right"><i>1.22 %</i></b></th><td class="GoodName2">Guard (v2)</td></tr><tr><th class="Right"><i>1.07 %</i></b></th><td class="BadName2">Knight (v1)</td></tr><tr><th class="Right"><i>0.99 %</i></b></th><td class="BadName2">Thief</td></tr><tr><th class="Right"><i>0.48 %</i></b></th><td class="BadName2">Robber</td></tr><tr><th class="Right"><i>0.46 %</i></b></th><td class="NeutralName2">Mage</td></tr><tr><th class="Right"><i>0.46 %</i></b></th><td class="EvilName2">Assassin</td></tr><tr><th class="Right"><i>0.36 %</i></b></th><td class="BadName2">Brigand</td></tr><tr><th class="Right"><i>0.27 %</i></b></th><td class="BadName2">Weaponmaster</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Night</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>7.65 %</i></b></th><td class="EvilName2">Ghost (v1)</td></tr><tr><th class="Right"><i>6.94 %</i></b></th><td class="BadName2">Mugger</td></tr><tr><th class="Right"><i>6.90 %</i></b></th><td class="EvilName2">Giant Rat</td></tr><tr><th class="Right"><i>6.87 %</i></b></th><td class="EvilName2">Skeleton</td></tr><tr><th class="Right"><i>6.23 %</i></b></th><td class="EvilName2">Zombie</td></tr><tr><th class="Right"><i>5.71 %</i></b></th><td class="EvilName2">Gremlin</td></tr><tr><th class="Right"><i>4.61 %</i></b></th><td class="EvilName2">Brown Mold</td></tr><tr><th class="Right"><i>4.05 %</i></b></th><td class="BadName2">Master Thief</td></tr><tr><th class="Right"><i>3.43 %</i></b></th><td class="BadName2">Cutthroat</td></tr><tr><th class="Right"><i>3.43 %</i></b></th><td class="NeutralName2">Giant</td></tr><tr><th class="Right"><i>3.20 %</i></b></th><td class="EvilName2">Black Slime</td></tr><tr><th class="Right"><i>2.86 %</i></b></th><td class="EvilName2">Wolf</td></tr><tr><th class="Right"><i>2.66 %</i></b></th><td class="BadName2">Champion</td></tr><tr><th class="Right"><i>2.59 %</i></b></th><td class="EvilName2">Imp</td></tr><tr><th class="Right"><i>2.59 %</i></b></th><td class="EvilName2">Ghoul</td></tr><tr><th class="Right"><i>2.52 %</i></b></th><td class="BadName2">Fighter</td></tr><tr><th class="Right"><i>2.11 %</i></b></th><td class="BadName2">Swordsman</td></tr><tr><th class="Right"><i>1.92 %</i></b></th><td class="BadName2">Warrior</td></tr><tr><th class="Right"><i>1.88 %</i></b></th><td class="EvilName2">Gnoll</td></tr><tr><th class="Right"><i>1.72 %</i></b></th><td class="BadName2">Thief</td></tr><tr><th class="Right"><i>1.38 %</i></b></th><td class="BadName2">Small Dragon</td></tr><tr><th class="Right"><i>1.37 %</i></b></th><td class="BadName2">Gladiator</td></tr><tr><th class="Right"><i>1.37 %</i></b></th><td class="EvilName2">Goblin</td></tr><tr><th class="Right"><i>1.37 %</i></b></th><td class="NeutralName2">Hobbit</td></tr><tr><th class="Right"><i>1.37 %</i></b></th><td class="EvilName2">Orc</td></tr><tr><th class="Right"><i>1.37 %</i></b></th><td class="NeutralName2">Dwarf</td></tr><tr><th class="Right"><i>1.04 %</i></b></th><td class="EvilName2">Wraith</td></tr><tr><th class="Right"><i>0.93 %</i></b></th><td class="NeutralName2">Apprentice</td></tr><tr><th class="Right"><i>0.92 %</i></b></th><td class="BadName2">Knight (v1)</td></tr><tr><th class="Right"><i>0.92 %</i></b></th><td class="NeutralName2">Acolyte</td></tr><tr><th class="Right"><i>0.92 %</i></b></th><td class="EvilName2">Troll</td></tr><tr><th class="Right"><i>0.90 %</i></b></th><td class="NeutralName2">Arch-Mage</td></tr><tr><th class="Right"><i>0.82 %</i></b></th><td class="BadName2">Robber</td></tr><tr><th class="Right"><i>0.64 %</i></b></th><td class="NeutralName2">Guard (v1)</td></tr><tr><th class="Right"><i>0.62 %</i></b></th><td class="BadName2">Brigand</td></tr><tr><th class="Right"><i>0.61 %</i></b></th><td class="NeutralName2">Novice</td></tr><tr><th class="Right"><i>0.57 %</i></b></th><td class="EvilName2">Nightstalker</td></tr><tr><th class="Right"><i>0.52 %</i></b></th><td class="EvilName2">Specter</td></tr><tr><th class="Right"><i>0.47 %</i></b></th><td class="GoodName2">Knight (v2)</td></tr><tr><th class="Right"><i>0.43 %</i></b></th><td class="NeutralName2">Wizard</td></tr><tr><th class="Right"><i>0.31 %</i></b></th><td class="NeutralName2">Commoner</td></tr><tr><th class="Right"><i>0.31 %</i></b></th><td class="NeutralName2">Merchant</td></tr><tr><th class="Right"><i>0.24 %</i></b></th><td class="NeutralName2">Courier</td></tr><tr><th class="Right"><i>0.23 %</i></b></th><td class="BadName2">Weaponmaster</td></tr><tr><th class="Right"><i>0.19 %</i></b></th><td class="GoodName2">Nobleman</td></tr><tr><th class="Right"><i>0.12 %</i></b></th><td class="GoodName2">Guard (v2)</td></tr><tr><th class="Right"><i>0.07 %</i></b></th><td class="NeutralName2">Pauper</td></tr><tr><th class="Right"><i>0.06 %</i></b></th><td class="NeutralName2">Mage</td></tr><tr><th class="Right"><i>0.06 %</i></b></th><td class="EvilName2">Assassin</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Rainy</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>9.45 %</i></b></th><td class="EvilName2">Ghost (v1)</td></tr><tr><th class="Right"><i>8.49 %</i></b></th><td class="EvilName2">Skeleton</td></tr><tr><th class="Right"><i>7.69 %</i></b></th><td class="EvilName2">Zombie</td></tr><tr><th class="Right"><i>7.05 %</i></b></th><td class="EvilName2">Gremlin</td></tr><tr><th class="Right"><i>5.52 %</i></b></th><td class="EvilName2">Giant Rat</td></tr><tr><th class="Right"><i>4.81 %</i></b></th><td class="NeutralName2">Giant</td></tr><tr><th class="Right"><i>4.10 %</i></b></th><td class="NeutralName2">Apprentice</td></tr><tr><th class="Right"><i>4.03 %</i></b></th><td class="NeutralName2">Acolyte</td></tr><tr><th class="Right"><i>3.96 %</i></b></th><td class="NeutralName2">Arch-Mage</td></tr><tr><th class="Right"><i>3.54 %</i></b></th><td class="BadName2">Mugger</td></tr><tr><th class="Right"><i>3.20 %</i></b></th><td class="EvilName2">Imp</td></tr><tr><th class="Right"><i>3.20 %</i></b></th><td class="EvilName2">Ghoul</td></tr><tr><th class="Right"><i>2.69 %</i></b></th><td class="NeutralName2">Novice</td></tr><tr><th class="Right"><i>2.63 %</i></b></th><td class="EvilName2">Gnoll</td></tr><tr><th class="Right"><i>2.29 %</i></b></th><td class="EvilName2">Wolf</td></tr><tr><th class="Right"><i>2.07 %</i></b></th><td class="BadName2">Master Thief</td></tr><tr><th class="Right"><i>1.95 %</i></b></th><td class="BadName2">Champion</td></tr><tr><th class="Right"><i>1.92 %</i></b></th><td class="EvilName2">Goblin</td></tr><tr><th class="Right"><i>1.92 %</i></b></th><td class="NeutralName2">Hobbit</td></tr><tr><th class="Right"><i>1.92 %</i></b></th><td class="EvilName2">Orc</td></tr><tr><th class="Right"><i>1.92 %</i></b></th><td class="NeutralName2">Dwarf</td></tr><tr><th class="Right"><i>1.88 %</i></b></th><td class="NeutralName2">Wizard</td></tr><tr><th class="Right"><i>1.85 %</i></b></th><td class="BadName2">Fighter</td></tr><tr><th class="Right"><i>1.75 %</i></b></th><td class="BadName2">Cutthroat</td></tr><tr><th class="Right"><i>1.54 %</i></b></th><td class="BadName2">Swordsman</td></tr><tr><th class="Right"><i>1.41 %</i></b></th><td class="BadName2">Warrior</td></tr><tr><th class="Right"><i>1.28 %</i></b></th><td class="EvilName2">Troll</td></tr><tr><th class="Right"><i>1.28 %</i></b></th><td class="EvilName2">Wraith</td></tr><tr><th class="Right"><i>1.01 %</i></b></th><td class="BadName2">Gladiator</td></tr><tr><th class="Right"><i>0.88 %</i></b></th><td class="BadName2">Thief</td></tr><tr><th class="Right"><i>0.67 %</i></b></th><td class="BadName2">Knight (v1)</td></tr><tr><th class="Right"><i>0.64 %</i></b></th><td class="EvilName2">Specter</td></tr><tr><th class="Right"><i>0.42 %</i></b></th><td class="BadName2">Robber</td></tr><tr><th class="Right"><i>0.32 %</i></b></th><td class="BadName2">Brigand</td></tr><tr><th class="Right"><i>0.27 %</i></b></th><td class="NeutralName2">Mage</td></tr><tr><th class="Right"><i>0.27 %</i></b></th><td class="EvilName2">Assassin</td></tr><tr><th class="Right"><i>0.17 %</i></b></th><td class="BadName2">Weaponmaster</td></tr></table></th>
+  <th class="NoBorder"><table><tr><th colspan="2"><b>Invisible</b></th></tr><tr><th><b>%</b></th><th><b>Opponent</b></th></tr><tr><th class="Right"><i>22.60 %</i></b></th><td class="EvilName2">Ghost (v1)</td></tr><tr><th class="Right"><i>18.38 %</i></b></th><td class="EvilName2">Zombie</td></tr><tr><th class="Right"><i>17.09 %</i></b></th><td class="EvilName2">Skeleton</td></tr><tr><th class="Right"><i>16.85 %</i></b></th><td class="EvilName2">Gremlin</td></tr><tr><th class="Right"><i>7.66 %</i></b></th><td class="EvilName2">Imp</td></tr><tr><th class="Right"><i>7.66 %</i></b></th><td class="EvilName2">Ghoul</td></tr><tr><th class="Right"><i>3.21 %</i></b></th><td class="EvilName2">Ghost (v2)</td></tr><tr><th class="Right"><i>3.06 %</i></b></th><td class="EvilName2">Wraith</td></tr><tr><th class="Right"><i>1.53 %</i></b></th><td class="EvilName2">Specter</td></tr><tr><th class="Right"><i>0.47 %</i></b></th><td class="NeutralName2">Apprentice</td></tr><tr><th class="Right"><i>0.46 %</i></b></th><td class="NeutralName2">Acolyte</td></tr><tr><th class="Right"><i>0.45 %</i></b></th><td class="NeutralName2">Arch-Mage</td></tr><tr><th class="Right"><i>0.31 %</i></b></th><td class="NeutralName2">Novice</td></tr><tr><th class="Right"><i>0.21 %</i></b></th><td class="NeutralName2">Wizard</td></tr><tr><th class="Right"><i>0.03 %</i></b></th><td class="NeutralName2">Mage</td></tr><tr><th class="Right"><i>0.03 %</i></b></th><td class="EvilName2">Assassin</td></tr></table></th>
+</tr></table>
+<p>Strength, intelligence, skill, speed and hit points stats are increased according to the character level:</p>
+<ul><li>stat = Random [base stat minimum; base stat maximum] + character level / 2</li></ul>
+<p>A primary weapon (and armor) is chosen among the opponent weapons (and armor) list.</p>
+<p>A secondary weapon (and armor) distinct from the primary is chosen if the list contains more than 1 item.</p>
+<p>Even if the opponent holds 2 weapons and 2 pieces of armor, only the primaries are used.</p>
+  </li>
+
+  <li><h3 id="Melody">Melody</h3>
+<p>The type of the melody played when the character encounters someone depends on the opponent alignment. The melody is then randomly selected among the type.</p>
+<p>The 2 last ones of the type C are almost identical, human hearing can't discern the different tone used.</p>
+<table class="NoBorder">
+<tr>
+<td class="NoBorder"><table>
+  <tr><th>Type A<br />(0 - 63)</th></tr>
+  <tr><th>
+<span class="Sound" onmouseover="javascript: this.className='SoundHover';" onmouseout="javascript: this.className='Sound';" onclick="javascript: PlaySound('Sounds/Encounter A1.mp3', 'Player', '../');">&#9835;</span>
+<span class="Sound" onmouseover="javascript: this.className='SoundHover';" onmouseout="javascript: this.className='Sound';" onclick="javascript: PlaySound('Sounds/Encounter A2.mp3', 'Player', '../');">&#9835;</span>
+  </th></tr>
+<tr><td>
+<span class="EvilName2">Nightstalker</span><br />
+<span class="EvilName2">Specter</span><br />
+<span class="EvilName2">Wraith</span><br />
+<span class="EvilName2">Brown Mold</span><br />
+<span class="EvilName2">Gremlin</span><br />
+<span class="EvilName2">Black Slime</span><br />
+<span class="EvilName2">Zombie</span><br />
+<span class="EvilName2">Giant Rat</span><br />
+<span class="EvilName2">Orc</span><br />
+<span class="EvilName2">Imp</span><br />
+<span class="EvilName2">Wolf</span><br />
+<span class="EvilName2">Skeleton</span><br />
+<span class="EvilName2">Ghost (v1)</span><br />
+<span class="EvilName2">Assassin</span><br />
+<span class="EvilName2">Ghost (v2)</span><br />
+<span class="EvilName2">Ghoul</span><br />
+<span class="EvilName2">Gnoll</span><br />
+<span class="EvilName2">Goblin</span><br />
+<span class="EvilName2">Troll</span><br />
+</td></tr></table></td>
+<td class="NoBorder"><table>
+  <tr><th colspan="2">Type B<br />(64 - 175)</th></tr>
+  <tr><th colspan="2">
+<span class="Sound" onmouseover="javascript: this.className='SoundHover';" onmouseout="javascript: this.className='Sound';" onclick="javascript: PlaySound('Sounds/Encounter B1.mp3', 'Player', '../');">&#9835;</span>
+<span class="Sound" onmouseover="javascript: this.className='SoundHover';" onmouseout="javascript: this.className='Sound';" onclick="javascript: PlaySound('Sounds/Encounter B2.mp3', 'Player', '../');">&#9835;</span>
+  </th></tr>
+<tr>
+<td class="NoBorder4">
+<span class="BadName2">Master Thief</span><br />
+<span class="BadName2">Cutthroat</span><br />
+<span class="BadName2">Brigand</span><br />
+<span class="BadName2">Thief</span><br />
+<span class="BadName2">Mugger</span><br />
+<span class="BadName2">Robber</span><br />
+<span class="BadName2">Fighter</span><br />
+<span class="BadName2">Gladiator</span><br />
+<span class="BadName2">Warrior</span><br />
+<span class="BadName2">Small Dragon</span><br />
+<span class="BadName2">Knight (v1)</span><br />
+<span class="BadName2">Swordsman</span><br />
+<span class="BadName2">Weaponmaster</span><br />
+<span class="BadName2">Champion</span><br />
+</td>
+<td class="NoBorder4">
+<span class="NeutralName2">Pauper</span><br />
+<span class="NeutralName2">Merchant</span><br />
+<span class="NeutralName2">Hobbit</span><br />
+<span class="NeutralName2">Dwarf</span><br />
+<span class="NeutralName2">Giant</span><br />
+<span class="NeutralName2">Commoner</span><br />
+<span class="NeutralName2">Acolyte</span><br />
+<span class="NeutralName2">Courier</span><br />
+<span class="NeutralName2">Apprentice</span><br />
+<span class="NeutralName2">Novice</span><br />
+<span class="NeutralName2">Wizard</span><br />
+<span class="NeutralName2">Mage</span><br />
+</td>
+</tr></table></td>
+<td class="NoBorder"><table>
+  <tr><th colspan="2">Type C<br />(176 - 255)</th></tr>
+  <tr><th colspan="2">
+<span class="Sound" onmouseover="javascript: this.className='SoundHover';" onmouseout="javascript: this.className='Sound';" onclick="javascript: PlaySound('Sounds/Encounter C1.mp3', 'Player', '../');">&#9835;</span>
+<span class="Sound" onmouseover="javascript: this.className='SoundHover';" onmouseout="javascript: this.className='Sound';" onclick="javascript: PlaySound('Sounds/Encounter C2.mp3', 'Player', '../');">&#9835;</span>
+<span class="Sound" onmouseover="javascript: this.className='SoundHover';" onmouseout="javascript: this.className='Sound';" onclick="javascript: PlaySound('Sounds/Encounter C3.mp3', 'Player', '../');">&#9835;</span>
+  </th></tr>
+<tr>
+<td class="NoBorder4">
+<span class="NeutralName2">Arch-Mage</span><br />
+<span class="NeutralName2">Guard (v1)</span><br />
+</td>
+<td class="NoBorder4">
+<span class="GoodName2">Nobleman</span><br />
+<span class="GoodName2">Knight (v2)</span><br />
+<span class="GoodName2">Guard (v2)</span><br />
+</td>
+</tr></table></td>
+<td class="NoBorder"><span id="Player"></span></td>
+</tr></table>
+<p>Music of type A is only played with evil opponents. Type B is used by bad and neutral opponents (besides Arch-Mage and Guard). Type C corresponds to Arch-Mage, Guard and good opponents.</p>
+<table>
+  <tr>
+    <th class="NoBorder3">&nbsp;</th>
+    <th class="NoBorder3">
+      <table class="NoBorder" style="width: 100%">
+        <tr>
+          <th class="NoBorder" style="text-align: left;">0</th>
+          <th class="NoBorder">Alignment</th>
+          <th class="NoBorder" style="text-align: right;">255</th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+  <tr>
+    <td class="NoBorder3">Behavior</td>
+    <td class="Sound">
+      <table class="Sound">
+        <tr>
+          <th class="NoBorder">&nbsp;</th>
+          <th class="Sound" style="background-color: rgb(240,16,16); width: 64px;">Evil</th>
+          <th class="Sound" style="background-color: rgb(240,144,16); width: 64px;">Bad</th>
+          <th class="Sound" style="background-color: rgb(208,144,240); width: 64px;">Neutral</th>
+          <th class="Sound" style="background-color: rgb(16,176,16); width: 64px;">Good</th>
+          <th class="NoBorder">&nbsp;</th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="NoBorder3">Music</td>
+    <td class="Sound">
+      <table class="Sound">
+        <tr>
+          <th class="NoBorder">&nbsp;</th>
+          <th class="Sound" style="background-color: rgb(240,16,16); width: 64px;">Type A</th>
+          <th class="Sound" style="background-color: rgb(176,176,176); width: 112px;">Type B</th>
+          <th class="Sound" style="background-color: rgb(16,176,16); width: 80px;">Type C</th>
+          <th class="NoBorder">&nbsp;</th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+  </li>
+
+</ol>
+      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+  </tr>
+  <tr><td class="LayoutDouble LayoutFooter" colspan="2">
+<div class="FooterVisitors">
+<img height="9.9px" src="http://perso0.free.fr/cgi-bin/wwwcount.cgi?df=bringerp.dat&amp;dd=atari8&amp;ft=0&amp;negate=F&amp;pad=F&amp;srgb=8CDEFF&amp;prgb=10D0D0&amp;tr=T&amp;trgb=1873C6" alt="Visitors" /> visitors since 05/01/2006. <a href="../sitemap.php5">Sitemap</a><br />
+</div>
+<div class="FooterCopyright">
+Copyright &copy; 2006-2020 by Kroah. Total or partial reproduction forbidden.<br />All trademarks and copyrights are the property of their respective owners. All rights reserved.<br />
+</div>
+<div class="FooterPartners">
+<a class="Picture" href="javascript: return (false);"><img width="80px" height="15px" src="../Images/Buttons/email.png" alt="Email Me" title="Email Me" onmouseover="javascript: this.src='../Images/Buttons/bringerp.png';" onmouseout="javascript: this.src='../Images/Buttons/email.png';" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://www.mozilla.org/products/firefox/"><img width="80px" height="15px" src="../Images/Buttons/Firefox.png" alt="Get Firefox" title="Get Firefox" /></a>
+<a class="Picture" href="http://www.waterproof.fr/products/PHPEdit/"><img width="80px" height="15px" src="../Images/Buttons/PHPEdit.png" alt="Powered by PHPEdit" title="Powered by PHPEdit" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://validator.w3.org/check?uri=referer&amp;verbose=1"><img width="80px" height="15px" src="../Images/Buttons/xhtml.png" alt="Valid XHTML 1.1" title="Valid XHTML 1.1" /></a>
+<a class="Picture" href="http://jigsaw.w3.org/css-validator/validator?uri=bringerp.free.fr/RE/Ar/encountersOpponent.php5&amp;warning=2&amp;profile=css3&amp;usermedium=all"><img width="80px" height="15px" src="../Images/Buttons/css.png" alt="Valid CSS" title="Valid CSS" /></a>
+</div>
+  </td></tr>
+</table>
+</div>
+</td></tr></table>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

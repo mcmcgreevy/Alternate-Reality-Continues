@@ -1,0 +1,104 @@
+LayoutDocument">
+|
+Banks
+|
+|
+Opening Hours
+| Bank | Opening Hours
+| First City Bank | 08h to 15h
+| Granite Bank | 09h to 18h
+| Gram's Gold Exchange | 08h to 16h
+Accounts
+Three accounts can be opened in each bank, for a total of 9 accounts. An account is defined by its interest rate, mean failure rate and minimum balance.
+| Bank | Account
+type | Interest | Failure
+probability | Min balance
+(in coppers)
+| First City Bank | Low | 0.5 % | 0.3 % | 2
+| Med. | 0.9 % | 0.9 % | 4
+| High | 2.6 % | 3.0 % | 4
+| Granite Bank | Low | 0.5 % | 0.2 % | 2
+| Med. | 1.0 % | 1.0 % | 4
+| High | 2.7 % | 3.1 % | 4
+| Gram's Gold Exchange | Low | 0.6 % | 0.1 % | 6
+| Med. | 1.3 % | 1.0 % | 8
+| High | 3.2 % | 3.3 % | 8
+Failures and interests of bank accounts are computed when the character enters the establishment, even if it's closed:
+Failures are first checked, from low to high failure accounts. For each day since last visit, a failure occurs if a random number is < to the failure probability of the account. In this case, the account is closed and all the deposit lost.
+Next, interests are checked for remaining accounts, from low to high failure accounts. For each day since last visit, interests are added to the account balance.
+The algorithm seems to contain a bug: when a failure occurs, the last visit date becomes the day after the failure. This gives the following strange behavior:
+Days 1 2 3 4 5 6 7 8 9
+Low  K K F . . . . . . Step 1: Checking failure for low failure account.
+A failure occurs 3 days after the last visit. Following checks will start from day 3.
+Med. . . K K K K K K K Step 2: Checking failure for medium failure account, starting at day 3 instead of day 1!
+No failure occurs.
+High . . K K F . . . . Step 3: Checking failure for high failure account, starting at day 3 instead of day 1!
+A failure occurs at day 5. Following checks will start at day 5.
+Int. . . . . % % % % % Step 4: Adding interests for medium failure accounts, starting at day 5 instead of day 1!
+Low and high failure accounts have been closed because of their failure.
+For each step, the start should be day 1.
+Appraisal
+Gems and Jewelry can be appraised and sold at any bank, but each one appraises differently and for a different cost.
+| Bank | Gems |   | Jewelry
+| Appraisal cost
+(in coppers) | Quantity | Worth each
+(in gold pieces) | Average price
+(in gold pieces) | Appraisal cost
+(in coppers) | Quantity | Worth each
+(in gold pieces) | Average price
+(in gold pieces)
+| First City Bank | 12 | [0; 3]
+~ 1.5 | 3 | ~ 4.5 | 100 | [1; 32]
+~ 8.75
+(See formula below) | 1 (50 %)
+3 (50 %)
+~ 2 | ~ 17.5
+| Granite Bank | 10 | 3 (50 %)
+4 (50 %)
+~ 3.5 | ~ 5.25 | 120 | 1 (50 %)
+3 (50 %)
+~ 2 | ~ 17.5
+| Gram's Gold Exchange | 2 | 3 (37.5 %)
+4 (12.5 %)
+5 (37.5 %)
+6 (12.5 %)
+~ 4.25 | ~ 6.375 | 4 | 1 (50 %)
+2 (25 %)
+3 (25 %)
+~ 1.75 | ~ 15.3125
+The formula used to get the number of Jewelry is:
+Random [0; 31] & Random [0; 31] + 1
+For example:
+25 & 12 + 1 = 11001b & 01100b + 1 = 01000b + 1 = 8 + 1 = 9
+The probability depends on the number of bits set when "anding" both random numbers (without adding the 1):
+0.75 ^ NbBitsAt0 * 0.25 ^ NbBitsAt1
+For example with 8 (01000b):
+0.75 ^ 4 * 0.25 ^ 1 = 7.91 %
+This gives the following probabilities:
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16
+| 23.73 % | 7.91 % | 7.91 % | 2.64 % | 7.91 % | 2.64 % | 2.64 % | 0.88 % | 7.91 % | 2.64 % | 2.64 % | 0.88 % | 2.64 % | 0.88 % | 0.88 % | 0.29 %
+| 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32
+| 7.91 % | 2.64 % | 2.64 % | 0.88 % | 2.64 % | 0.88 % | 0.88 % | 0.29 % | 2.64 % | 0.88 % | 0.88 % | 0.29 % | 0.88 % | 0.29 % | 0.29 % | 0.10 %
+Jobs
+Every day, a roll is made for each bank to determine if it offers a job:
+| Bank | Probability to offer a job
+| /256 | %
+| First City Bank | 102 | 40 %
+| Granite Bank | 179 | 70 %
+| Gram's Gold Exchange | 26 | 10 %
+In the case a job is available, a random one is chosen.
+| Job | Income per hour
+(in coppers) | Requirement | Fatigue rate
+while working | Hurt probability
+| Stat | Min | Minor wound (4 HP) | Major wound (8 HP) | Total
+| Guard | 30 to 36 | Strength | 15 | 0.6875 | 15.95 % | 3.97 % | 19.92 %
+| File Clerk | 50 to 56 | Intelligence | 20 | 0.5625 | 2.29 % | 0.05 % | 2.34 %
+| Coin Roller | 22 to 28 | Alignment | 144 | 0.59375 | 2.29 % | 0.05 % | 2.34 %
+Remarks:
+The duration of the job is randomly chosen between 3 to 8 hours.
+The character has to sober up before applying for a job (he must not be Drunk or Very Drunk, but Tipsy is allowed).
+The game contains unused (bugged?) code where the character alignment is increased by 1 after working (probability of 23.8%).
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

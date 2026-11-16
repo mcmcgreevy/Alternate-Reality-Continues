@@ -9,60 +9,72 @@ from import_dungeon_maps import assemble, REV, tokens, number
 ROOT = Path(__file__).resolve().parents[1]
 REF = ROOT / 'tools/reference'
 OUT = ROOT / 'data/maps'
+TAVERN_CELLS = {(39, 33), (39, 34)}
 DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]
 
 
 def parse_arx(path):
+    """Read ARX map records as data; require the complete 64-by-64 grid."""
     result = {}
     for block in path.read_text().split('# Map Cell Item: ')[1:]:
         head, *lines = block.splitlines()
         match = re.match(r'(\d+),(\d+)', head)
-        xy = tuple(map(int, match.groups()))
+        cell_coordinates = tuple(map(int, match.groups()))
         record = {key: int(value) for key, value in re.findall(r'^(.+?) = (\d+)', '\n'.join(lines), re.M)}
-        result[xy] = record
+        result[cell_coordinates] = record
     if len(result) != 4096: raise ValueError('Expected full 64x64 source map')
     return result
 
 
 def path_between(cells, start, end):
-    queue = deque([start]); parents = {start: None}
+    """Find a cardinal City route through open or examinable source boundaries."""
+    queue = deque([start])
+    parents = {start: None}
     while queue:
-        p = queue.popleft()
-        if p == end: break
-        for d, (dx, dy) in enumerate(DIRECTIONS):
-            n = p[0] + dx, p[1] + dy
-            if n in cells and n not in parents and cells[p]['edges'][d] in range(8):
-                parents[n] = p; queue.append(n)
+        current_position = queue.popleft()
+        if current_position == end: break
+        for direction, (dx, dy) in enumerate(DIRECTIONS):
+            neighbor_position = current_position[0] + dx, current_position[1] + dy
+            # Service screens are destinations, not shortcuts through a building.
+            if neighbor_position in TAVERN_CELLS and end not in TAVERN_CELLS:
+                continue
+            if neighbor_position in cells and neighbor_position not in parents and (cells[current_position]['edges'][direction] in range(8) or (cells[current_position]['edges'][direction] == 29 and neighbor_position in TAVERN_CELLS)):
+                parents[neighbor_position] = current_position
+                queue.append(neighbor_position)
     if end not in parents: raise ValueError(f'No route from {start} to {end}')
-    path = []; p = end
-    while p is not None: path.append(list(p)); p = parents[p]
+    path = []
+    current_position = end
+    while current_position is not None:
+        path.append(list(current_position))
+        current_position = parents[current_position]
     return path[::-1]
 
 
 def build():
     city_file = REF / 'arx/data/map/cityCells.txt'
     city_raw = parse_arx(city_file)
-    city = {xy: {'edges': [r[d + ' wall'] for d in ['North', 'East', 'South', 'West']],
-                 'location': r['Location'], 'special': r['Special']} for xy, r in city_raw.items()}
+    city = {cell_coordinates: {'edges': [source_record[direction + ' wall'] for direction in ['North', 'East', 'South', 'West']],
+                 'location': source_record['Location'], 'special': source_record['Special']} for cell_coordinates, source_record in city_raw.items()}
     dungeon = {}
     segments = []
-    for segment, (stem, ox, oy, quadrant) in enumerate([
+    for segment, (stem, origin_x, origin_y, quadrant) in enumerate([
             ('21-s011', 0, 0, 'northwest'), ('21-s052', 32, 0, 'northeast'),
             ('21-s093', 0, 32, 'southwest'), ('21-s134', 32, 32, 'southeast')]):
         raw = assemble(ROOT / 'third_party/ardungeon' / (stem + '.asm'))
-        segments.append({'segment': segment, 'quadrant': quadrant, 'origin': [ox, oy],
+        segments.append({'segment': segment, 'quadrant': quadrant, 'origin': [origin_x, origin_y],
                          'source': stem + '.asm', 'sha1': hashlib.sha1(raw).hexdigest()})
         for y in range(32):
             for x in range(32):
-                a, b, location, special = raw[1024 + (y * 32 + x) * 4:1028 + (y * 32 + x) * 4]
-                dungeon[x + ox, y + oy] = {'edges': [a & 15, a >> 4, b & 15, b >> 4],
+                # Each cell stores N/E in one packed byte, then S/W in the next.
+                north_east_edges, south_west_edges, location, special = raw[1024 + (y * 32 + x) * 4:1028 + (y * 32 + x) * 4]
+                dungeon[x + origin_x, y + origin_y] = {'edges': [north_east_edges & 15, north_east_edges >> 4, south_west_edges & 15, south_west_edges >> 4],
                                         'location': location, 'special': special, 'segment': segment}
     # ARX added return doors at both City arrivals; retain both original walls.
     comparison = parse_arx(REF / 'arx/data/map/dungeon1Cells.txt')
     differences = []
-    for xy, cell in dungeon.items():
-        other = [comparison[xy][d + ' wall'] for d in ['North', 'East', 'South', 'West']]
-        if other != cell['edges']: differences.append([list(xy), cell['edges'], other])
+    for cell_coordinates, cell in dungeon.items():
+        other = [comparison[cell_coordinates][direction + ' wall'] for direction in ['North', 'East', 'South', 'West']]
+        if other != cell['edges']: differences.append([list(cell_coordinates), cell['edges'], other])
     assert differences == [[[49, 3], [13, 13, 13, 1], [13, 3, 13, 1]],
                            [[59, 61], [5, 1, 13, 13], [5, 1, 3, 13]]], differences
     OUT.mkdir(parents=True, exist_ok=True)
@@ -92,18 +104,20 @@ def build():
         if name == 'dungeon': payload['segments'] = segments
         (OUT / (name + '.json')).write_text(json.dumps(payload, separators=(',', ':')) + '\n')
     # Only the geometry is imported. Original events and economies are not guessed.
-    route = {'tavern': [20, 1], 'city_entrance_front': [49, 3], 'city_entrance_door': [50, 3],
+    route = {'tavern': [39, 34], 'tavern_cells': [[39, 33], [39, 34]], 'tavern_exit_facing': 2, 'city_entrance_front': [49, 3], 'city_entrance_door': [50, 3],
              'dungeon_arrival': [49, 3], 'dungeon_facing': 3,
-             'outward': path_between(city, (20, 1), (49, 3)),
-             'return': path_between(city, (49, 3), (20, 1)),
+             'outward': [[39, 34]] + path_between(city, (39, 35), (49, 3)),
+             'return': path_between(city, (49, 3), (39, 34)),
              'source_revision': REV, 'city_source_sha256': hashlib.sha256(city_file.read_bytes()).hexdigest(),
              'dungeon_source_sha1': segments[1]['sha1'],
              'dungeon_segments': segments,
              'dungeon_crosscheck_differences': differences,
-             'city_status': 'ARX geometry; milestone route cross-checked against 8-bit handbook map; other districts provisional',
+             'city_status': 'ARX geometry; endpoints checked against Kroah ST map markers 16 and 49; full edge fidelity remains provisional',
+             'city_map_source': 'http://bringerp.free.fr/RE/Ar/Images/Map.png',
+             'dungeon_entrance_marker': 49,
              'dungeon_status': 'original level-one quadrants, checksum verified; events and other floors not enabled',
-             'tavern_name': 'The Tavern',
-             'tavern_name_source': '8-bit handbook printed page 7; ARX labels the same cell Lost Oasis'}
+             'tavern_name': 'Tail of the Dog Tavern',
+             'tavern_name_source': 'Kroah ST City v2.0 map marker 16; cells (39,33) and (39,34). Previous (20,1) is marker 14 Lost Oasis.'}
     (OUT / 'route.json').write_text(json.dumps(route, indent=2) + '\n')
     print(f"Built City and original Dungeon level one: {len(city)} + {len(dungeon)} cells.")
     print(f"Outward: {len(route['outward'])-1} steps; return: {len(route['return'])-1} steps.")

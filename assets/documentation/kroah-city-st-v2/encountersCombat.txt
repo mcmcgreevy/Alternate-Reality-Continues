@@ -1,0 +1,253 @@
+LayoutDocument">
+|
+Combat
+|
+|
+Awareness
+When the character encounters an opponent, they are more or less aware of each other. The awareness is defined by comparing the character stealth and inebriation with the opponent stealth:
+The character combat stealth is equal to a random number between 0 and his stealth added by his alcohol blood concentration:
+[0; character stealth + alcohol blood concentration].
+The opponent combat stealth is equal to a random number between 0 and his negative stealth:
+[-opponent stealth; 0].
+The resulting awareness is given by summing both numbers:
+| Sum | Awareness | Impact
+| ]-∞; -21] | The character is surprised by the opponent.
+| No alignment penalty for charm, trick, attack and lunge action for the whole combat.
+The character skips his first turn and can't parry until the next one.
+| [-20; -11] | The character is noticed by the opponent. |
+| [-10; 9] |   |
+| [10; 19] | The character has noticed the opponent. |
+| [20; +∞[ | The character has surprised the opponent. | The character offensive modifier is increased by 1.0 for the whole combat.
+Remarks:
+The character initial stealth is 22.
+The awareness is computed once and stands for the whole combat.
+Used by: Sequence, Alignment Penalty, Attack & Lunge Initialization.
+Sequence
+The combat loops between the character and the opponent turn until:
+The opponent or the character dies.
+The opponent or the character leaves.
+The opponent accepts an offer.
+The character skips his turn if:
+He is paralyzed.
+He is surprised by the opponent (first turn only).
+He waits 4 seconds.
+The opponent skips his turn if:
+He is paralyzed.
+He is surprised by the character (first turn only).
+Engagement
+The game keeps track of the engaging side (the character or the opponent). The combat is engaged as soon as an engaging action is taken:
+For the character: Attack, Lunge and Charm actions. Tricking and casting spells (even offensive) do not engage the combat.
+For the opponent: Attack and Lunge actions.
+The combat is engaged even if the engaging action fails.
+Used by: Offer, Leave, Opponent Actions.
+Affected by: Attack & Lunge Initialization, Charm.
+Alignment Penalty
+An alignment penalty occurs if the character isn't surprised and he tries to trick, charm, attack or lunge the opponent. Casting spells (even offensive) do not involve an alignment penalty.
+The penalty occurs even if the action fails.
+The character alignment is decreased according to the opponent alignment:
+| Opponent
+alignment | Penalty
+| Evil | None
+| Bad | -1
+| Neutral | -2
+| Good | -3
+Used by: Attack & Lunge Initialization, Trick, Charm.
+Cast a Spell
+The spell can be offensive or defensive. If it inflicts damage, it's resolved as a standard damage resolution.
+The character parrying state remains unchanged.
+See Spells for more details on spell casting.
+Attack & Lunge
+Physical attack resolution is split in 6 steps:
+Initialization
+Hit Probability
+Strength Bonus
+Damage
+Armor Protection
+Magical Protection
+Then damage resolution is applied.
+Initialization
+Both attack and lunge engage the combat (even it fails).
+The attack factor is set to 1.00.
+You:       Opponent:
+If the attacker lunges, a bonus factor of 0.25 is added, but he will not be able to parry until he attacks.
+You:       Opponent:
+Additional rules for the character:
+The attack factor is increased by 1.00 if the opponent is surprised.
+There's a probability of 1/256 % that the character strength is increased by 1/256.
+The character receives an alignment penalty if he isn't surprised by the opponent (even it fails).
+Bare hands are used if the character wields no primary weapon.
+If the character is the defender, a random target is chosen. Skin is used if no armor part is equipped at the specified location.
+| Location | %
+| Head | 14.84 %
+| Torso | 39.84 %
+| Arms | 25.00 %
+| Legs | 20.32 %
+The opponent always wears a full armor which protects all locations.
+Hit Probability
+The probability to hit or miss the opponent depends on the difference between the attacker and defender effective skill:
+You:       Opponent:
+| Difference | To hit %
+| ]-oo; -128[ | 0.4 %
+| [-128; -64[ | 19.1 %
+| [-64; 0[ | 50.4 %
+| [0; 64[ | 62.9 %
+| [64; 128[ | 69.1 %
+| [128; 192[ | 75.4 %
+| [192; +oo[ | 100.0 %
+Strength Bonus
+If the weapon uses strength to deal damage, an additional bonus is applied to the attack factor.
+This bonus depends on the difference between the effective strength of the attacker and defender:
+| Difference | Attack factor
+bonus
+| ]-oo; -128[ | +0.0625
+| [-128; -64[ | +0.1250
+| [-64; 0[ | +0.5000
+| [0; 64[ | +0.7500
+| [64; 128[ | +0.8750
+| [128; 192[ | +1.0000
+| [192; +oo[ | +1.0000
+Damage
+For each type (Blunt, Sharp, Earth, Air, Fire, Water, Power, Mental, Cleric and Evil (?)), damage is computed:
+damage [type] = Random [0; Round (base weapon damage [type] * attack factor)]
+If the sum of all damage types is null, the weapon does no effect.
+Armor Protection
+For each type, damage is multiplied by a factor depending on the defender armor efficiency toward this damage type:
+damage [type] *= defender armor efficiency factor [type]
+| Efficiency | Factor
+| Low | x 2.0
+| Normal | x 1.0
+| High | x 0.5
+| Immune | x 0.0
+Then, for each type, damage is reduced by the defender armor protection toward this damage type:
+damage [type] -= Random [0; defender armor protection [type]]
+If the sum of all damage types is null, the weapon is stopped by the armor.
+You:       Opponent:
+Magical Protection
+For each type, damage is multiplied by a factor depending on the defender magical protection efficiency toward this damage type:
+damage [type] *= defender magical protection efficiency factor [type]
+| Efficiency | Factor
+| Low | x 2.0
+| Normal | x 1.0
+| High | x 0.5
+| Immune | x 0.0
+Then, for each type, damage is reduced by the defender magical protection:
+damage [type] -= Random [0; defender magical protection [type]]
+Only the character can have a magical protection.
+If the sum of all damage types is null, the weapon is stopped by the magical protection.
+Damage Resolution
+Damage resolution is called by magical or physical attacks.
+Before applying damage to the defender, a parry check is done:
+The defender can't parry if he is paralyzed (Check missing for the character! He can parry even paralyzed!).
+If the defender last attack was lunge, he can't parry.
+The probability to parry is defined by the parry probability of his current weapon.
+In the case the damage includes blunt damage, the attacker can break the block if the blunt damage is greater than Random [0; max blockable blunt damage (MBBD)]
+You:       Opponent:
+Because offensive spells use this rule, they can be parried too.
+If the parry is unsuccessful:
+Damage is inflicted to the defender.
+The character experience is increased by the amount of damage dealt.
+If the attacker weapon holds effects, they have a probability of 25% to occur (Check missing for the character, but needed?).
+Trick
+This action does not engage combat.
+The character receives an alignment penalty if he isn't surprised by the opponent (even it fails).
+The trick always fails if the opponent intelligence is <= 3 or the character effective intelligence is 0.
+The probability to trick the opponent depends on the difference between the character and opponent effective intelligence:
+| Difference | %
+| ]-oo; -128[ | 0.8 %
+| [-128; -64[ | 0.8 %
+| [-64; 0[ | 6.6 %
+| [0; 64[ | 19.1 %
+| [64; 128[ | 47.3 %
+| [128; 192[ | 75.4 %
+| [192; +oo[ | 90.2 %
+If the trick fails, there's a probability of 50% that following tries will never succeed.
+When successfull, character base intelligence is increased by 1/256.
+Charm
+This action engages combat (even it fails).
+The character receives an alignment penalty if he isn't surprised by the opponent (even it fails).
+The charm always fails if the opponent intelligence is <= 5 or the character charisma is 0.
+The probability to trick the opponent depends on the difference between the character charisma and opponent intelligence:
+| Difference | %
+| ]-oo; -128[ | 0.8 %
+| [-128; -64[ | 1.2 %
+| [-64; 0[ | 6.6 %
+| [0; 64[ | 25.4 %
+| [64; 128[ | 50.4 %
+| [128; 192[ | 70.3 %
+| [192; +oo[ | 80.1 %
+If the charm fails, there's a probability of 50% that following tries will never succeed.
+When successfull, character base charisma is increased by 1/256.
+Offer
+The opponent's behavior toward an offer is:
+If the opponent's intelligence >= 4:
+If the opponent's alignment is Evil:
+The opponent takes the item and stays.
+If the opponent's alignment is Bad:
+The opponent takes the item.
+If the opponent evaluates the item OK (requested = character money / 16 + (128 - opponent alignment)): the opponent leaves.
+Else the opponent stays.
+If the opponent's alignment is Neutral:
+If the character has engaged the combat: same behavior as Bad alignment.
+Else if the opponent is a Pauper:
+The character's alignment is increased by 1.
+The Pauper takes the item and leaves.
+Else if the opponent is a Merchant:
+If the Merchant doesn't want to trade (50%): the Merchant refuses the item and leaves.
+Else if the Merchant evaluates the item OK (requested = 50 coppers):
+The Merchant gives either a compass or a watch.
+The Merchant takes the item and leaves.
+Else the Merchant refuses the item and leaves.
+Else the opponent takes the item and leaves.
+If the opponent's alignment is Good:
+The opponent refuses the item.
+If the character's alignment >= 64: the opponent leaves.
+Else the opponent stays.
+Else (the opponent's intelligence < 4):
+If the item is a food packet or a water flask: the opponent takes the item and leaves.
+Else the opponent refuses the offer and stays.
+Remarks:
+When the opponent refuses the offer, the item is dropped on the floor.
+The opponent's evaluation of an item is OK if:
+| Item type | Evaluation is OK if
+| Money | Given >= Requested
+| Weapon | 75.00 %
+| Armor | 50.00 %
+| Cloth | 93.75 %
+| Potion | 93.75 %
+| Other | Never
+Leave
+The character and the opponent don't use the same rule for leaving:
+The character successfully leaves if his value A is greater than the opponent value B, with:
+A = Random [0; character effective speed]. If the character has engaged the combat, this value is halved.
+B = Random [0; opponent speed]. If the opponent alignment is Evil or Bad, this value is halved.
+The opponent successfully leaves if: Random [0; opponent speed] > Random [0; character effective speed]
+If the opponent wants to leave because of an offer, he always succeeds.
+Opponent Actions
+At his turn, the opponent can perform one of the following actions:
+Attack
+Lunge
+Wait
+Leave
+The Fight action is randomly:
+Attack (87.5%)
+Lunge (12.5%)
+The algorithm used to choose the action is:
+If the spell Fear has been cast during the encounter: Leave
+If the opponent alignment is Evil:
+If the opponent hit points is inferior to the character hit points and less than 25% of the opponent hit points remains: Leave
+Else: Fight
+If the opponent alignment is Bad:
+Leave (12.5%)
+Fight (87.5%)
+If the opponent alignment is Neutral:
+If the combat is not engaged and the character alignment >= 88:
+If Random [0; 255] < character alignment: Wait
+Else: Leave
+Else: Fight
+If the opponent alignment is Good:
+If the combat is not engaged: Leave
+Else: Fight
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

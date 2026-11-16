@@ -1,0 +1,322 @@
+LayoutDocument">
+|
+Stats
+|
+Primary
+The character is defined by 7 primary stats (6 visible and 1 hidden): Stamina, Charisma, Strength, Intelligence, Wisdom, Skill and Speed.
+Each primary stat is split in 5 sub-stats: Base, Effective, Displayed, Bonus and Penalty.
+When a primary stat is used by the game engine and no additional information is given about the concerned sub-stat (base, effective, displayed, ...), the effective one is taken into account.
+| Primary stat | Description
+| Stamina
+|
+Used by: Level Up for Effective, Inebriation for Effective.
+Affected by: Stamina Spell for Bonus, Slimed! Disease for Base.
+| Charisma
+|
+Used by: Charm for Effective.
+Affected by: Charm for Base, Potion of Charisma for Base, Potion of Ugliness for Base, Glamour Spell for Bonus.
+| Strength
+|
+Used by: Combat Strength Bonus for Effective, Encumbrance for Effective.
+Affected by: Potion of Strength for Base, Potion of Weakness for Base, 'a bone-chilling touch' Disease for Base, Attack & Lunge Initialization for Base, Strength Spell for Bonus.
+| Intelligence
+|
+Used by: Trick for Effective.
+Affected by: Trick for Base, Potion of Intelligence for Base, Potion of Dumbness for Base, Intelligence Spell for Bonus.
+| Wisdom
+|
+Used by: Potion Sip for Effective.
+Affected by: Wisdom Spell for Bonus.
+| Skill
+|
+Used by: Hit Probability for Effective.
+Affected by: Dexterity Spell for Bonus, Warmth for Penalty.
+| Speed
+(Hidden)
+|
+Speed is revealed when the character receives the base speed bonus of the Blue Wizards' guild.
+Used by: Walking Speed for Effective, Leave for Effective.
+Affected by: Potion of Fleetness for Base, Potion of Slowness for Base, Physical Speed Spell for Bonus, Digestion for Penalty, Warmth for Penalty, Encumbrance for Malus.
+| Sub-Stat | Description
+| Base
+(real)
+|
+This is the intrinsic value of the stat. It evolves throughout the game.
+Affected by: Level Up, Guilds Bonuses for Base.
+| Effective
+(integer)
+|
+This is the real value of the stat, including the bonus and penalty values:
+effective value = integer part of the base value + bonus - penalty
+| Displayed
+|
+This is the perceived value by the player and shown in the upper stats bar.
+Same as the effective value when the character is not affected by delusion.
+Affected by: Delusion State.
+| Bonus
+|
+The bonus is added to the effective value to reflect a temporary stat enhancement.
+| Penalty
+|
+The penalty is subtracted to the effective value to reflect a temporary stat penalty.
+Affected by: Hunger, Fatigue, Thirst.
+Secondary
+In addition to the primary stats, the character features several secondary stats:
+| Secondary stat | Description
+| General
+| Level
+|
+Used by: Opponent Creation.
+Affected by: Level Up.
+| Hit Points
+|
+Used by: Opponent Actions.
+Affected by:
+Level Up,
+Delusion State for onscreen display,
+Casting Spells,
+Inns Jobs,
+Taverns Jobs,
+Banks Jobs,
+Damage Resolution,
+Sleeping,
+Guilds Bonuses,
+Heal Service,
+Potion of ACID!,
+Potion of Weak Poison,
+Potion of Poison!,
+Potion of Strong Poison!,
+Potion of DEADLY POISION!,
+Potion of Healing Minor Wounds,
+Potion of Healing Wounds,
+Potion of Healing Major Wounds,
+Potion of Healing All Wounds,
+Healing Minor Wounds Spell,
+Healing Moderate Wounds Spell,
+Healing Major Wounds Spell,
+Gangrene Disease,
+Rabies Disease,
+Brown Mold Disease,
+Slimed! Disease.
+| Hit Points Maximum
+|
+Used by: .
+Affected by: Level Up,
+Guilds Bonuses.
+| Experience
+|
+Used by: Level Up.
+Affected by: Experience Reward.
+| Required Experience
+|
+Used by: Level Up.
+Affected by: Level Up.
+| Alignment
+|
+An unfinished section of code exists using a minimum or maximum alignment for activating entity effects.
+Actually, it seems the only way to increase alignment is by offering something to a pauper. The assembly code used to handle jobs and increase alignment is (voluntary?) bugged.
+Used by: Opponent Actions, Offer.
+Affected by: Attack & Lunge Initialization,
+Trick,
+Charm,
+Offer,
+Inns Jobs,
+Taverns Jobs,
+Banks Jobs.
+| Stealth
+|
+Used by: Awareness.
+Affected by: Guilds Bonuses for Base.
+| Unnoticeability
+|
+Used by: Encounter Frequency.
+Affected by: Potion of Noticeability,
+Potion of Unnoticeability,
+Noticeability Spell.
+| Treasure Finding
+|
+Used by: Treasure Reward.
+Affected by: Treasure Reward,
+Potion of TREASURE FINDING,
+Luck Spell.
+| Walking Speed
+|
+The character walking speed is proportional to his effective speed:
+walking speed = ((effective speed + 5) / 6) * 2
+Because the character starts with a base speed of 13, initial walking speed is 6.
+Maximum value is 36.
+Affected by: Effective Speed.
+| Metabolism (see Metabolism for more details)
+| Hunger
+|
+Used by: Waitress,
+Primary Stats for Penalty.
+Affected by: Hunger Rate,
+Waitress,
+Foods,
+Food Packet,
+Curing Hunger Spell.
+| Hunger Rate
+|
+Used by: Hunger.
+Affected by: Sleeping.
+| Thirst
+|
+Used by: Barkeeper,
+Primary Stats for Penalty.
+Affected by:
+Thirst Rate,
+Barkeeper,
+Drinks,
+Water Flask,
+Potion of Water,
+Potion of Milk,
+Potion of Fruit Juice,
+Potion of Mineral Water,
+Potion of Saltwater,
+Potion of Vinegar,
+Curing Thirst Spell.
+| Thirst Rate
+|
+Used by: Thirst.
+Affected by: Sleeping,
+Warmth.
+| Fatigue
+|
+Used by: Primary Stats for Penalty.
+Affected by: Fatigue Rate,
+Sleeping,
+Casting Spells.
+| Fatigue Rate
+|
+Used by: Fatigue.
+Affected by: Sleeping,
+Warmth,
+Encumbrance,
+Inns Jobs,
+Taverns Jobs,
+Banks Jobs,
+Endurance.
+| Digestion
+|
+Used by: Speed for Penalty.
+Affected by: Foods,
+Food Packet,
+Water Flask.
+| Alcohol Blood Concentration
+|
+Used by: Inebriation,
+Awareness,
+Coordination,
+Balance,
+Coordination,
+Blackout Duration.
+Affected by: Inebriation,
+Tavern Foods & Drinks,
+Remove Alcohol Service,
+Removing Alcohol Spell,
+Potion of Wine,
+Potion of Spirits,
+Potion of Inebriation.
+| Alcohol Intestine Concentration
+|
+Used by: Inebriation.
+Affected by: Inebriation,
+Tavern Foods & Drinks,
+Remove Alcohol Service,
+Removing Alcohol Spell.
+| Alcohol Digestion Rate
+|
+Used by: Inebriation.
+Affected by: Inebriation,
+Remove Alcohol Service,
+Removing Alcohol Spell.
+| Alcohol Blackout Duration
+|
+Duration of the blackout.
+Affected by: Inebriation,
+Stamina for Effective,
+Remove Alcohol Service,
+Removing Alcohol Spell.
+| Coordination
+|
+When affected, bottom status screen randomly changes.
+Affected by: Inebriation,
+Stamina for Effective.
+| Balance
+|
+When affected, movement is hampered (Random moves).
+Affected by: Inebriation,
+Stamina for Effective.
+| Warmth
+|
+Used by: Speed for Penalty,
+Skill for Penalty,
+Thirst Rate,
+Fatigue Rate,
+Clarity State.
+Affected by: Clothes,
+Weather Temperature.
+| Encumbrance
+|
+Used by: Speed for Penalty,
+Fatigue Rate.
+Affected by: Items,
+Strength for Effective.
+| Temporary
+| Clarity State
+|
+Used by: Nothing?
+Affected by: Warmth,
+Restore Clarity Service.
+| Delusion State
+|
+When the character suffers delusion, all his primary displayed stats and hit points are faked:
+primary displayed stat += Random [0; 255]
+onscreen hit points ~= Random [0; 65535]
+This update has a probability of 1/256 % to occur every 1/60 real seconds.
+Affected by: Potion of Delusion,
+Clear Vision Spell,
+Remove Delusions Service.
+| Invisibility State
+|
+Used by: Opponent Creation.
+Affected by: Potion of Invisibility,
+Rain.
+| Paralysis
+|
+Number of remaining turns the player stays paralyzed. Decreased by 1 each turn. If a combat ends with remaining paralyzed turns, the next combat the character will begin paralyzed.
+Used by: Combat Sequence.
+Affected by: Combat Sequence,
+'its poisonous tail' Poison.
+| Magical Protection
+|
+Character magical protection for each damage type (Blunt, Sharp, Earth, Air, Fire, Water, Power, Mental, Cleric, Evil (?)).
+Used by: Combat Magical Protection.
+Affected by: Potion of Protection+1 (*),
+Potion of Protection+2 (*).
+| Magical Protection Efficiencies
+|
+Character magical protection efficiency (Low, Normal, High, Immune) for each damage type (Blunt, Sharp, Earth, Air, Fire, Water, Power, Mental, Cleric, Evil (?)).
+Used by: Combat Magical Protection.
+Affected by:
+Potion of Invulnerability Blunt,
+Potion of Invulnerability Sharp,
+Potion of Invulnerability Earth,
+Potion of Invulnerability Air,
+Potion of Invulnerability Fire,
+Potion of Invulnerability Water,
+Potion of Invulnerability Power,
+Potion of Invulnerability Mental,
+Potion of Invulnerability Cleric,
+Stone Flesh Spell,
+Deflecting Weapons Spell,
+Iron Flesh Spell,
+The Force Field Spell,
+The Ice Shield Spell,
+The Energy Shield Spell,
+The Flame Shield Spell.
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

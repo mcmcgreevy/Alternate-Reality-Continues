@@ -1,5 +1,19 @@
 # Short source log
 
+**Current source policy:** [Atari ST City v2.0 via Kroah is the canonical City rules baseline](SOURCE_BASELINE.md), accepted 2026-11-16. Earlier entries below preserve implementation provenance; they do not supersede this decision.
+
+## Archived documentation
+
+- 2026-11-16: [Kroah map image](../assets/documentation/kroah-city-st-v2/Map.png) and its existing archived legend verify Tail of the Dog at marker 16, Lost Oasis at marker 14, and the northern Dungeon entrance at marker 49. [Location correction and coordinate evidence](ST_LOCATION_CORRECTION.md) supersede the earlier starting-tavern identification below.
+
+- 2026-11-16: [Kroah's Atari ST City v2.0 reverse engineering](http://bringerp.free.fr/RE/Ar/news.php5), [20-page local archive](../assets/documentation/kroah-city-st-v2/README.md). Detailed research on world/weather, character systems, equipment, encounters and establishments. Edition-specific research, not yet independently verified against the ST executable by this project. See [review and reconstruction implications](KROAH_ST_REVIEW.md); do not silently merge ST rules with 8-bit sources.
+
+Reference documents are now preserved in [the assets documentation library](../assets/documentation/README.md), with provenance and hashes in its catalog. Future documents used for reconstruction should be archived there as well.
+
+- 2026-11-15: [Official City Survival Handbook — ST/Mac/PC edition](../assets/documentation/arcity-survival-handbook-st-mac-pc.pdf), PDF page 4, **Weather and Clothing**. Supports temperature/rain exposure, clothing protection and indoor shelter. Edition-specific qualitative evidence; exact algorithms and 8-bit equivalence remain unverified. See library notes for the weather summary.
+
+## Earlier source log
+
 Updated 2026-11-10. See [reconstruction notes](RECONSTRUCTION.md) for decoding evidence and reproduction.
 
 | Status | Evidence | Use here |
@@ -24,3 +38,5 @@ The City sky, stars, clouds, fixed sunrise/sunset and clock-based lighting are r
 First Excursion uses a tavern interaction screen. Its first meal/briefing/leave scaffold has now gained a limited source-informed food/drink service; exact menu wording, hourly sets and need/timing formulas remain remake choices. The full-healing two-gold meal has been removed. Leaving traverses the existing north boundary; entering restores the screen. Music and timed lyrics continue during menu use. The excursion adds no historical quest, reward or map geometry.
 
 Dungeon JSON derives from original map data. Its source headers credit Jason Duerstock (2008) and the original program to Intellicreations (1987); the repository specifies GPL-2.0. All four level-one map sources/checksums, the runtime reference for transition decoding and upstream license are preserved in third_party/ardungeon. Transition behavior is implemented from the original table and dispatcher evidence. This attribution does not assert blanket rights to original game assets. No ARX implementation code was ported. The V tour and transition dots are invented playtest aids.
+
+The 2026-11-15 [weather pass](WEATHER.md) presents the handbook's five conditions, rain and shelter. Hourly equal-probability selection, seeded scheduling, haze and rain rendering are remake choices, not recovered original algorithms. Character penalties and clothing protection remain pending.

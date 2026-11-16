@@ -1,0 +1,30 @@
+LayoutDocument">
+|
+Creation
+|
+Creation
+8 random numbers scroll at the portal screen:
+The 7 upper character stats (Stamina, Charisma, Strength, Intelligence, Wisdom, Skill and Hit Points) are equal to:
+stat = 3 + Random [0; 7] + Random [0; 7] + Random [0; 7] ∈ [3; 24]
+The stat has an average value of 13.5 and follows a normal distribution:
+The character wealth is equal to:
+wealth = 63 + Random [0; 63] + Random [0; 63] + Random [0; 63] ∈ [63; 252]
+The wealth has an average value of 157.5 coppers and follows a normal distribution:
+4 hidden character stats are initialized:
+| Stat | Value
+| Speed | 13
+| Alignement | 128
+| Unnoticeability | 32
+| Treasure Finding | 0
+The character joins the city with the following items in its inventory:
+3 food packets
+3 water flasks
+1 gold coin (in addition to the random coppers)
+No weapon
+No armor
+No cloth
+He is level 0, with no experience points. It's the 29th of May, 6:00 am, Year 0.
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

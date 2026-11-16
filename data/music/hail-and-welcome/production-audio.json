@@ -1,0 +1,32 @@
+{
+  "full": {
+    "source_filename": "Alternate Reality The City tavern song Hail and Welcome.wav",
+    "sha256": "f465b10a6c2c1ab2ec5652e502c8de5ac2805bd4e163287f994fb4b63469fdf2",
+    "game_asset_sha256": "1dd474fc688f6e274e743ba3f8c6b035d4725d8545dd48b0acc79a0ae11ae73d",
+    "sample_rate": 48000,
+    "frames": 8974080,
+    "channels": 2,
+    "seconds": 186.96,
+    "game_asset": "assets/audio/hail-and-welcome/full.ogg"
+  },
+  "instrumental": {
+    "source_filename": "Alternate Reality The City tavern song Hail and Welcome (Without Lead Vocal).wav",
+    "sha256": "6f9a7c140cf0ccbec01b5259860baa994c3c264cbc5709a1e360c2cbda7e6f01",
+    "game_asset_sha256": "0fefa5dfe8eda6dd90f15ef5144ab5a9cb21c7449043db9ca425ce583dc9de66",
+    "sample_rate": 48000,
+    "frames": 8974080,
+    "channels": 2,
+    "seconds": 186.96,
+    "game_asset": "assets/audio/hail-and-welcome/instrumental.ogg"
+  },
+  "vocal": {
+    "source_filename": "Alternate Reality The City tavern song Hail and Welcome (Lead Vocal).wav",
+    "sha256": "2e92f6225a6a481d1c1492701c089483a2b016eb43114e6a2343408226428991",
+    "game_asset_sha256": "6bc676c0d37b2c55e86761b193a7c1c6de02e6afd38077e5f2333a9b87f3148f",
+    "sample_rate": 48000,
+    "frames": 8974080,
+    "channels": 2,
+    "seconds": 186.96,
+    "game_asset": "assets/audio/hail-and-welcome/vocal.ogg"
+  }
+}

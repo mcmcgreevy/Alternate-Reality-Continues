@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <title>Kroah's Game Reverse Engineering Page - Alternate Reality - Taverns</title>
+    <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+    <meta name="Description" content="Reverse Engineering page of old computer games for Atari ST and Atari 8-bit System. Discover all the information, data and algorithms used by these games and some specifically developped utilities." />
+    <meta name="KeyWords" content="reverse engineering,decompilation,disassembling,atari,computer,game,assembler,asm,68000,6502,source code,mule,dragon riders of pern,gateway to apshai,return of heracles,seven cities of gold,archon,time bandit,alternate reality,colonial conquest,phantasie 3,nikademus,axel,magic hammer,pandora,ranarama,chaos engine,grand prix manager,gods,speed ball 2,bard's tale,legend of faerghail,gods,captain blood,first samurai" />
+    <link rel="stylesheet" href="../Globals.css" type="text/css" />
+    <link rel="stylesheet" href="Locals.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/Logo.ico" />
+    <link rel="icon" type="image/png" href="../Images/Logo.png" />
+    <script src="../Globals.js" type="text/javascript"></script>
+  </head>
+<body>
+<table class="LayoutPage"><tr><td class="LayoutPage"><div>
+<table class="LayoutDouble">
+  <tr><td class="LayoutDouble LayoutHeader" colspan="2">
+    <table class="LayoutIndex" style="width: 100%;">
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+<a class="Logo" href="../"><img src="../Images/Logo Big.png" alt="Home" /></a>
+        </td>
+        <td class="LayoutIndex LayoutHeader" style="width: 80%;">
+<h1 class="HeaderTitle1">Kroah's Game Reverse Engineering Page</h1>
+        </td>
+          <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+&nbsp;
+        </td>
+    </tr>
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 100%;" colspan="3">
+<h1 class="HeaderTitle2">~&nbsp;Alternate Reality&nbsp;~</h1>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td class="LayoutDouble LayoutLocation" colspan="2">
+<div class="BoxLocation">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+You are here:&nbsp;&nbsp;<ul><li><a href="../index.php5">Home</a><ul><li>&#187;&nbsp;&nbsp;Alternate Reality<ul><li>&#187;&nbsp;&nbsp;Reverse Engineering<ul><li>&#187;&nbsp;&nbsp;Establishments<ul><li>&#187;&nbsp;&nbsp;<i>Taverns</i></li></ul></li></ul></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+  </td></tr>
+  <tr>
+    <td class="LayoutDouble LayoutMenu">
+<div class="BoxMenu">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Menu</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ul><li><a href='../Ar/news.php5'>News</a></li><li><a href='../Ar/links.php5'>Links</a></li><li><a href='../../forum/'>Forum</a></li><li>&nbsp;</li><li>&nbsp;Reverse Engineering<ul><li><a href='../Ar/technicalNotes.php5'>Technical Notes</a></li><li><a href='../Ar/world.php5'>Xebec's Demise</a><ul><li><a class='Anchor' href='../Ar/world.php5#Calendar'>Calendar</a></li><li><a class='Anchor' href='../Ar/world.php5#TimeSpan'>Time Span</a></li><li><a class='Anchor' href='../Ar/world.php5#Weather'>Weather</a></li><li><a class='Anchor' href='../Ar/world.php5#Temperature'>Temperature</a></li><li><a class='Anchor' href='../Ar/world.php5#Map'>Map</a></li></ul></li><li>&nbsp;Character<ul><li><a href='../Ar/characterCreation.php5'>Creation</a></li><li><a href='../Ar/characterStats.php5'>Stats</a><ul><li><a class='Anchor' href='../Ar/characterStats.php5#Primary'>Primary</a></li><li><a class='Anchor' href='../Ar/characterStats.php5#Secondary'>Secondary</a></li></ul></li><li><a href='../Ar/characterMetabolism.php5'>Metabolism</a><ul><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Hunger'>Hunger</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Thirst'>Thirst</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Fatigue'>Fatigue</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Digestion'>Digestion</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Inebriation'>Inebriation</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Warmth'>Warmth</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Encumbrance'>Encumbrance</a></li></ul></li><li><a href='../Ar/characterItems.php5'>Items</a><ul><li><a class='Anchor' href='../Ar/characterItems.php5#Weapons'>Weapons</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Armor'>Armor</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Clothes'>Clothes</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Potions'>Potions</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Others'>Others</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Curses'>Curses</a></li></ul></li></ul></li><li>&nbsp;Encounters<ul><li><a href='../Ar/encountersDenizens.php5'>Denizens</a></li><li><a href='../Ar/encountersOpponent.php5'>Opponent</a><ul><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Frequency'>Frequency</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Creation'>Creation</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Melody'>Melody</a></li></ul></li><li><a href='../Ar/encountersCombat.php5'>Combat</a><ul><li><a class='Anchor' href='../Ar/encountersCombat.php5#Awareness'>Awareness</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Sequence'>Sequence</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Engagement'>Engagement</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AlignmentPenalty'>Alignment Penalty</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#CastSpell'>Cast a Spell</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AttackLunge'>Attack & Lunge</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#DamageResolution'>Damage Resolution</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Trick'>Trick</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Charm'>Charm</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Offer'>Offer</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Leave'>Leave</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#OpponentActions'>Opponent Actions</a></li></ul></li><li><a href='../Ar/encountersRewards.php5'>Rewards</a><ul><li><a class='Anchor' href='../Ar/encountersRewards.php5#Experience'>Experience</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#LevelUp'>Level Up</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Treasures'>Treasures</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Statistics'>Statistics</a></li></ul></li></ul></li><li>&nbsp;Establishments<ul><li><a href='../Ar/establishmentsInns.php5'>Inns</a><ul><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Sleeping'>Sleeping</a></li><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Jobs'>Jobs</a></li></ul></li><li>&nbsp;<i>Taverns</i><ul><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#FoodsDrinks'>Foods & Drinks</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#BuyingRound'>Buying a Round</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsBanks.php5'>Banks</a><ul><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Accounts'>Accounts</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Appraisal'>Appraisal</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsShops.php5'>Shops</a><ul><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsSmithies.php5'>Smithies</a><ul><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsHealers.php5'>Healers</a><ul><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#Services'>Services</a></li></ul></li><li><a href='../Ar/establishmentsGuilds.php5'>Guilds</a><ul><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Bonuses'>Bonuses</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Spells'>Spells</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#RemovingCurses'>Removing Curses</a></li></ul></li><li><a href='../Ar/establishmentsJobsSummary.php5'>Jobs Summary</a></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+    <td class="LayoutDouble LayoutDocument">
+<div class="BoxDocument">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Taverns</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<table class="NoBorder" style="width: 100%;">
+  <tr>
+    <th class="NoBorder">
+      <img width="640" height="144" src="Images/EstablishmentTavern.png" alt="Tavern Establishment" />
+    </th>
+  </tr>
+</table>
+<ol>
+
+  <li><h3 id="Acceptance">Acceptance</h3>
+<p>Several checks are done when the character enters the tavern and as long as he is inside:</p>
+<ul>
+  <li>Opening hours:
+<table>
+  <tr><th><b>Tavern</b></th><th><b>Opening hours</b></th><th><b>Membership<br />(in coppers)</b></th></tr>
+  <tr><td><i>Flaming Dragon Tavern</i></td><th>00h to 23h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Misty Mountain Tavern</i></td><th>11h to 02h</th><th>3000</th></tr>
+  <tr><td><i>Screaming Siren Bar</i></td><th>16h to 03h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Happy Hunter Rest Stop</i></td><th>00h to 07h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Dancing Nymph Tavern</i></td><th>16h to 07h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Club</i></td><th>18h to 22h</th><th>1500</th></tr>
+  <tr><td><i>Black Devil Tavern</i></td><th>00h to 05h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Lost Oasis</i></td><th>00h to 23h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Last Stop</i></td><th>00h to 23h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Tail of the Dog Tavern</i></td><th>00h to 23h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Club Babylon</i></td><th>10h to 04h</th><th>50000</th></tr>
+  <tr><td><i>Lost Tears Tavern</i></td><th>00h to 23h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Mom's Bar</i></td><th>00h to 23h</th><th>&nbsp;</th></tr>
+  <tr><td><i>Lusty Lloyds Tavern</i></td><th>00h to 23h</th><th>&nbsp;</th></tr>
+</table>
+  </li>
+  <li>Membership:
+<p>Some taverns require the character to be a member to enter.</p>
+  </li>
+  <li>Character inebriation:
+<p>If the character is or becomes Very Drunk, he is shut-out and friendship is decreased by 0.09 (23/256).</p>
+  </li>
+  <li>Friendship:
+<p>If the friendship is or becomes &lt; 1.0, the character is shut-out by the barkeeper.</p>
+  </li>
+</ul>
+  </li>
+
+  <li><h3 id="Friendship">Friendship</h3>
+<p>Initially 2.0 for each tavern.</p>
+<p>When the character enters the tavern after 30 days without visiting it, the friendship may be updated:</p>
+<table>
+  <tr><th><b>Friendship</b></th><th><b>Result</b></th></tr>
+  <tr><td><i>[0.0; 1.0[</i></td><td>Friendship reset to 1.0.</td></tr>
+  <tr><td><i>[1.0; 2.0[</i></td><td>&nbsp;</td></tr>
+  <tr><td><i>[2.0; +oo[</i></td><td>Friendship decreased by 1.0.</td></tr>
+</table>
+<p>Friendship is used by:</p>
+<ul>
+  <li>The acceptance.</li>
+  <li>The welcome message.</li>
+  <li>The barkeeper and waitress message.</li>
+  <li>People reaction when buying a round.</li>
+</ul>
+  </li>
+
+  <li><h3 id="WelcomeMessage">Welcome Message</h3>
+<p>The welcome message is determined by the friendship and frequency:</p>
+<table>
+  <tr><th><b>Friendship</b></th><th><b>Frequency</b></th><th><b>Message</b></th></tr>
+  <tr><th><i>[1.0; 2.0[</i></th><th>&nbsp;</th><td>What do you want?</td></tr>
+  <tr><th rowspan="2"><i>[2.0; 3.0[</i></th><th>1 or 2</th><td>Welcome Stranger!</td></tr>
+  <tr><th>&gt; 2</th><td>Welcome Adventurer!</td></tr>
+  <tr><th><i>[3.0; 4.0[</i></th><th>&nbsp;</th><td>Hello {name}!</td></tr>
+  <tr><th><i>[4.0; +oo[</i></th><th>&nbsp;</th><td>Hello Dear Friend, glad you came!</td></tr>
+</table>
+<p>The frequency is initially 0 for each tavern and is only used by the welcome and 'buying a round' message.</p>
+<p>It's set to 2 if the character becomes a member.</p>
+<p>It's reset when the character enters the tavern with a friendship &gt;= 1.0 after 30 days without visiting it.</p>
+<p>It's increased by 1 when entering (even if closed or if the character is shut-out for drunkness or low friendship).</p>
+  </li>
+
+  <li><h3 id="FoodsDrinks">Foods & Drinks</h3>
+<p>Food is sold by the barkeeper and drinks by the waitress. If the friendship is &gt;= 4.0, they will help the character under the following conditions:</p>
+<ul>
+  <li>The barkeeper: "Friend, you thirst. Let me get you a drink."
+<p>If the character is Parched, has no copper and no water flask: the barkeeper gives a water flask and clears the thirst.</p>
+  </li>
+  <li>The waitress: "Friend, you look hungry. Let me get you some food."
+<p>If the character is Starving, has no copper and no food packet: the waitress gives a food packet and clears the hunger.</p>
+  </li>
+</ul>
+<p>The message depends on the friendship:</p>
+<table>
+  <tr><th><b>Friendship</b></th><th><b>Message</b></th></tr>
+  <tr><td><i>[0.0; 2.0[</i></td><td>What do you want?</td></tr>
+  <tr><td><i>[2.0; 5.0[</i></td><td>What can I get for you?</td></tr>
+  <tr><td><i>[5.0; +oo[</i></td><td>Dear Friend, How may I serve you?</td></tr>
+</table>
+<p>Every hour, when the characters enters the tavern, 6 distinct foods and drinks are randomly chosen.</p>
+<table class="NoBorder"><tr>
+  <th class="NoBorder">
+<table>
+  <tr><th><b>Drink</b></th><th><b>Base price<br />(in coppers)</b></th><th><b>Alcohol<br />(added)</b></th><th><b>Thirst<br />(removed)</b></th><th><b>Water<br />flask</b></th></tr>
+  <tr><td><i>a Water Flask</i></td><th>5</th><th>&nbsp;</th><th>&nbsp;</th><th>1</th></tr>
+  <tr><td><i>Milk</i></td><th>2</th><th>&nbsp;</th><th>6</th><th>&nbsp;</th></tr>
+  <tr><td><i>Beer</i></td><th>2</th><th>1</th><th>2</th><th>&nbsp;</th></tr>
+  <tr><td><i>Ale</i></td><th>3</th><th>1</th><th>3</th><th>&nbsp;</th></tr>
+  <tr><td><i>Wine</i></td><th>4</th><th>2</th><th>2</th><th>&nbsp;</th></tr>
+  <tr><td><i>Grog</i></td><th>2</th><th>2</th><th>2</th><th>&nbsp;</th></tr>
+  <tr><td><i>Spirits</i></td><th>5</th><th>2</th><th>2</th><th>&nbsp;</th></tr>
+  <tr><td><i>Water</i></td><th>1</th><th>&nbsp;</th><th>8</th><th>&nbsp;</th></tr>
+  <tr><td><i>Sarsaparilla</i></td><th>3</th><th>&nbsp;</th><th>5</th><th>&nbsp;</th></tr>
+  <tr><td><i>Orange Juice</i></td><th>3</th><th>&nbsp;</th><th>5</th><th>&nbsp;</th></tr>
+  <tr><td><i>Grape Juice</i></td><th>3</th><th>&nbsp;</th><th>5</th><th>&nbsp;</th></tr>
+  <tr><td><i>Mineral Water</i></td><th>2</th><th>&nbsp;</th><th>8</th><th>&nbsp;</th></tr>
+</table>
+  </th>
+  <th class="NoBorder">
+<table>
+  <tr><th><b>Food</b></th><th><b>Base price<br />(in coppers)</b></th><th><b>Hunger<br />(removed)</b></th><th><b>Food<br />packet</b></th></tr>
+  <tr><td><i>Rack of Lamb</i></td><th>40</th><th>16</th><th>&nbsp;</th></tr>
+  <tr><td><i>Roast Beef</i></td><th>50</th><th>18</th><th>&nbsp;</th></tr>
+  <tr><td><i>Roast Chicken</i></td><th>25</th><th>16</th><th>&nbsp;</th></tr>
+  <tr><td><i>Roast Dragon</i></td><th>150</th><th>22</th><th>1</th></tr>
+  <tr><td><i>Pork Ribs</i></td><th>30</th><th>12</th><th>&nbsp;</th></tr>
+  <tr><td><i>Leg of Lamb</i></td><th>80</th><th>19</th><th>&nbsp;</th></tr>
+  <tr><td><i>Fried Chicken</i></td><th>50</th><th>15</th><th>&nbsp;</th></tr>
+  <tr><td><i>Leg of Dragon</i></td><th>300</th><th>22</th><th>2</th></tr>
+  <tr><td><i>Ham</i></td><th>60</th><th>14</th><th>&nbsp;</th></tr>
+  <tr><td><i>Lamb</i></td><th>56</th><th>17</th><th>&nbsp;</th></tr>
+  <tr><td><i>Filet of Beef</i></td><th>70</th><th>19</th><th>&nbsp;</th></tr>
+  <tr><td><i>Vegetable Soup</i></td><th>5</th><th>8</th><th>&nbsp;</th></tr>
+  <tr><td><i>Ragout of Beef</i></td><th>33</th><th>10</th><th>&nbsp;</th></tr>
+  <tr><td><i>Ragout of Dragon</i></td><th>50</th><th>11</th><th>1</th></tr>
+  <tr><td><i>a Bowl of Fruit</i></td><th>25</th><th>7</th><th>&nbsp;</th></tr>
+  <tr><td><i>a Plate of Greens</i></td><th>18</th><th>6</th><th>&nbsp;</th></tr>
+  <tr><td><i>Smoked Fish</i></td><th>30</th><th>12</th><th>&nbsp;</th></tr>
+  <tr><td><i>Apple Pie</i></td><th>12</th><th>4</th><th>&nbsp;</th></tr>
+  <tr><td><i>Lemon Pie</i></td><th>12</th><th>4</th><th>&nbsp;</th></tr>
+  <tr><td><i>Chocolate Cake</i></td><th>10</th><th>4</th><th>&nbsp;</th></tr>
+  <tr><td><i>a Loaf of Bread</i></td><th>8</th><th>6</th><th>&nbsp;</th></tr>
+  <tr><td><i>a Block of Cheese</i></td><th>15</th><th>9</th><th>&nbsp;</th></tr>
+  <tr><td><i>a Food Packet</i></td><th>25</th><th>&nbsp;</th><th>1</th></tr>
+  <tr><td><i>Gruel</i></td><th>4</th><th>8</th><th>&nbsp;</th></tr>
+  <tr><td><i>a Bagel</i></td><th>6</th><th>5</th><th>&nbsp;</th></tr>
+  <tr><td><i>Pemmican</i></td><th>20</th><th>4</th><th>1</th></tr>
+  <tr><td><i>a Bowl of Chili</i></td><th>10</th><th>6</th><th>&nbsp;</th></tr>
+  <tr><td><i>Pasta</i></td><th>30</th><th>10</th><th>&nbsp;</th></tr>
+  <tr><td><i>Lasagna</i></td><th>30</th><th>10</th><th>&nbsp;</th></tr>
+  <tr><td><i>Crayfish</i></td><th>40</th><th>9</th><th>&nbsp;</th></tr>
+  <tr><td><i>Lobster</i></td><th>100</th><th>14</th><th>&nbsp;</th></tr>
+  <tr><td><i>a Sandwich</i></td><th>10</th><th>8</th><th>&nbsp;</th></tr>
+</table>
+  </th>
+</tr></table>
+<p>Remarks on drinks:</p>
+<ul>
+  <li>Alcohol intestine concentration is increased by the drink alcohol value.</li>
+  <li>Alcohol blood concentration is increased by the half of the drink alcohol value.</li>
+  <li>Digestion is unchanged when drinking anything else than a water flask.</li>
+  <li>Water flasks reduce thirst by 15 and adds 14 to digestion.</li>
+</ul>
+<p>Remarks on foods:</p>
+<ul>
+  <li>Digestion is increased by twice the food hunger value.</li>
+  <li>Food packets reduce hunger by 16 and adds 28 to digestion.</li>
+</ul>
+<p>Each tavern applies a factor to the base price. Additionally, a tavern may be classy or not.</p>
+<table>
+  <tr><th><b>Tavern</b></th><th><b>Price factor</b></th><th><b>Classy</b></th></tr>
+  <tr><td><i>Flaming Dragon Tavern</i></td><th>1.2</th><th>&nbsp;</th></tr>
+  <tr><td><i>Misty Mountain Tavern</i></td><th>3.5</th><th>Yes</th></tr>
+  <tr><td><i>Screaming Siren Bar</i></td><th>1.2</th><th>&nbsp;</th></tr>
+  <tr><td><i>Happy Hunter Rest Stop</i></td><th>1.4</th><th>&nbsp;</th></tr>
+  <tr><td><i>Dancing Nymph Tavern</i></td><th>1.6</th><th>&nbsp;</th></tr>
+  <tr><td><i>Club</i></td><th>3.5</th><th>Yes</th></tr>
+  <tr><td><i>Black Devil Tavern</i></td><th>1.4</th><th>Yes</th></tr>
+  <tr><td><i>Lost Oasis</i></td><th>0.8</th><th>Yes</th></tr>
+  <tr><td><i>Last Stop</i></td><th>1.2</th><th>&nbsp;</th></tr>
+  <tr><td><i>Tail of the Dog Tavern</i></td><th>2.0</th><th>&nbsp;</th></tr>
+  <tr><td><i>Club Babylon</i></td><th>5.0</th><th>Yes</th></tr>
+  <tr><td><i>Lost Tears Tavern</i></td><th>1.8</th><th>Yes</th></tr>
+  <tr><td><i>Mom's Bar</i></td><th>1.6</th><th>&nbsp;</th></tr>
+  <tr><td><i>Lusty Lloyds Tavern</i></td><th>1.0</th><th>&nbsp;</th></tr>
+</table>
+<table>
+  <tr><th><b>Classy</b></th><th><b>Private booth<br >light type</b></th><th><b>Starters</b></th></tr>
+  <tr><td><i>Yes</i></td><td>Lit candles</td><td>Breadsticks or Hors d'oeuvres</td></tr>
+  <tr><td><i>No</i></td><td>A smokey torch</td><td>A few nuts or Popcorn</td></tr>
+</table>
+<p>Locations in the tavern (bar, table or booth) affect nothing else besides the lights (only present in the private booth).</p>
+<p>If the character does not have enough money when buying foods or drinks, friendship is decreased by 0.09 (23/256).</p>
+  </li>
+
+  <li><h3 id="BuyingRound">Buying a Round</h3>
+<p>The character can buy a round for the house for a base price of 80 coppers.</p>
+<p>If the character does not have enough money, friendship is decreased by 0.36 (93/256). Otherwise, this will increases the friendship by 0.27 (70/256).</p>
+<p>The people reaction is determined by the friendship and frequency:</p>
+<table>
+  <tr><th><b>Friendship</b></th><th><b>Message</b></th></tr>
+  <tr><td><i>[0.0; 3.0[</i></td><td>A few people take up your offer.<br />or<br />The patrons go up to the bar.</td></tr>
+  <tr><td><i>[3.0; 4.0[</i></td><td>Our hearty thanks.<br />or<br />You have won yourself some friends, {Stranger if frequency &lt;=2, Adventurer otherwise}<br /></td></tr>
+  <tr><td><i>[4.0; 5.0[</i></td><td>Hip Hip Hooray!<br />or<br />All the patrons applaud your generosity!</td></tr>
+  <tr><td><i>[5.0; +oo[</i></td><td>Three cheers for {name}<br />or<br />A toast to our friend, {name}</td></tr>
+</table>
+  </li>
+
+  <li><h3 id="Jobs">Jobs</h3>
+<p>Every day, a roll is made for each tavern to determine if it offers a job:</p>
+<table>
+  <tr><th rowspan="2"><b>Tavern</b></th><th colspan="2"><b>Probability to offer a job</b></th></tr>
+  <tr><th><b>/256</b></th><th><b>%</b></th></tr>
+  <tr><td><i>Flaming Dragon Tavern</i></td><th>51</th><th>20 %</th></tr>
+  <tr><td><i>Misty Mountain Tavern</i></td><th>51</th><th>20 %</th></tr>
+  <tr><td><i>Screaming Siren Bar</i></td><th>64</th><th>25 %</th></tr>
+  <tr><td><i>Happy Hunter Rest Stop</i></td><th>77</th><th>30 %</th></tr>
+  <tr><td><i>Dancing Nymph Tavern</i></td><th>72</th><th>28 %</th></tr>
+  <tr><td><i>Club</i></td><th>182</th><th>71 %</th></tr>
+  <tr><td><i>Black Devil Tavern</i></td><th>64</th><th>25 %</th></tr>
+  <tr><td><i>Lost Oasis</i></td><th>26</th><th>10 %</th></tr>
+  <tr><td><i>Last Stop</i></td><th>38</th><th>15 %</th></tr>
+  <tr><td><i>Tail of the Dog Tavern</i></td><th>192</th><th>75 %</th></tr>
+  <tr><td><i>Club Babylon</i></td><th>77</th><th>30 %</th></tr>
+  <tr><td><i>Lost Tears Tavern</i></td><th>56</th><th>22 %</th></tr>
+  <tr><td><i>Mom's Bar</i></td><th>128</th><th>50 %</th></tr>
+  <tr><td><i>Lusty Lloyds Tavern</i></td><th>46</th><th>18 %</th></tr>
+</table>
+<p>In the case a job is available, a random one is chosen.</p>
+<table>
+  <tr><th rowspan="2"><b>Job</b></th><th rowspan="2"><b>Income per hour<br />(in coppers)</b></th><th colspan="2"><b>Requirement</b></th><th rowspan="2"><b>Fatigue rate<br />while working</b></th><th colspan="3"><b>Hurt probability</b></th></tr>
+  <tr><th><b>Stat</b></th><th><b>Min</b></th><th><b>Minor wound (4 HP)</b></th><th><b>Major wound (8 HP)</b></th><th><b>Total</b></th></tr>
+  <tr><td><i>Bouncer</i></td><th>40 to 44</th><td>Strength</td><th>22</th><th>0.75</th><th>19.69 %</th><th>7.26 %</th><th>26.95 %</th></tr>
+  <tr><td><i>Host</i></td><th>20 to 24</th><td>Charisma</td><th>12</th><th>0.5625</th><th>0.77 %</th><th>0.01 %</th><th>0.78 %</th></tr>
+  <tr><td><i>Dish Washer</i></td><th>8 to 12</th><td>Skill</td><th>9</th><th>0.65625</th><th>12.64 %</th><th>2.20 %</th><th>14.84 %</th></tr>
+</table>
+<p>Remarks:</p>
+<ul>
+  <li>The duration of the job is randomly chosen between 3 to 8 hours.</li>
+  <li>The character can be Drunk or Very Drunk when applying for a job.</li>
+  <li>The game contains unused (bugged?) code where the character alignment is increased by 1 after working (probability of 23.8%).</li>
+</ul>
+  </li>
+
+</ol>
+      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+  </tr>
+  <tr><td class="LayoutDouble LayoutFooter" colspan="2">
+<div class="FooterVisitors">
+<img height="9.9px" src="http://perso0.free.fr/cgi-bin/wwwcount.cgi?df=bringerp.dat&amp;dd=atari8&amp;ft=0&amp;negate=F&amp;pad=F&amp;srgb=8CDEFF&amp;prgb=10D0D0&amp;tr=T&amp;trgb=1873C6" alt="Visitors" /> visitors since 05/01/2006. <a href="../sitemap.php5">Sitemap</a><br />
+</div>
+<div class="FooterCopyright">
+Copyright &copy; 2006-2020 by Kroah. Total or partial reproduction forbidden.<br />All trademarks and copyrights are the property of their respective owners. All rights reserved.<br />
+</div>
+<div class="FooterPartners">
+<a class="Picture" href="javascript: return (false);"><img width="80px" height="15px" src="../Images/Buttons/email.png" alt="Email Me" title="Email Me" onmouseover="javascript: this.src='../Images/Buttons/bringerp.png';" onmouseout="javascript: this.src='../Images/Buttons/email.png';" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://www.mozilla.org/products/firefox/"><img width="80px" height="15px" src="../Images/Buttons/Firefox.png" alt="Get Firefox" title="Get Firefox" /></a>
+<a class="Picture" href="http://www.waterproof.fr/products/PHPEdit/"><img width="80px" height="15px" src="../Images/Buttons/PHPEdit.png" alt="Powered by PHPEdit" title="Powered by PHPEdit" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://validator.w3.org/check?uri=referer&amp;verbose=1"><img width="80px" height="15px" src="../Images/Buttons/xhtml.png" alt="Valid XHTML 1.1" title="Valid XHTML 1.1" /></a>
+<a class="Picture" href="http://jigsaw.w3.org/css-validator/validator?uri=bringerp.free.fr/RE/Ar/establishmentsTaverns.php5&amp;warning=2&amp;profile=css3&amp;usermedium=all"><img width="80px" height="15px" src="../Images/Buttons/css.png" alt="Valid CSS" title="Valid CSS" /></a>
+</div>
+  </td></tr>
+</table>
+</div>
+</td></tr></table>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+LayoutDocument">
+|
+Items
+|
+Weapons
+The character can wield 2 weapons, but only the primary weapon is used. He can switch to the secondary weapon at any moment.
+If the character doesn't wield any primary weapon, Bare Hands are used.
+| Weapon | Weight | Parry | Base
+damage | Uses
+STR
+| Probability | Max blockable
+blunt damage
+| Bare Hands | 0 |   |   | Blunt: 1 | Y
+| Tower Shield | 10 | 86 % | 2 | Blunt: 3 | Y
+| War Net | 4 | 67 % | 0 | Blunt: 1 | Y
+| Spiked Shield | 7 | 80 % | 1 | Blunt: 2
+Sharp: 3 | Y
+| Shield | 6 | 80 % | 1 | Blunt: 1 | Y
+| Small Shield | 5 | 75 % | 1 | Blunt: 1 | Y
+| Stilletto | 1 |   |   | Sharp: 3 |
+| Dagger | 1 |   |   | Sharp: 4 |
+| Whip | 2 | 50 % | 0 | Blunt: 2 |
+| Short Sword | 4 | 50 % | 0 | Blunt: 1
+Sharp: 5 |
+| Flail | 3 | 67 % | 0 | Blunt: 4 |
+| Battle Axe | 7 | 67 % | 0 | Blunt: 3 | Y
+| Sword | 5 | 50 % | 0 | Blunt: 1
+Sharp: 4 | Y
+| Battle Hammer | 8 | 67 % | 0 | Blunt: 4 | Y
+| Longsword | 6 | 67 % | 0 | Blunt: 1
+Sharp: 5 | Y
+| Magical Flamesword | 6 | 67 % | 0 | Sharp: 2
+Fire: 5 |
+There are 10 damage types: Blunt, Sharp, Earth, Air, Fire, Water, Power, Mental, Cleric and Evil (?).
+There's no Cold damage type in the city.
+Armor
+The character can equip 4 pieces of armor, one at each body location: Head, Torso, Arms and Legs.
+If the character doesn't wear any protection at the targetted body location when hit, the skin is used.
+| Armor | Weight | Body location | Protections | Ware name
+| skin | 0 | Any | None |
+|
+| Padded Helmet | 2 | Head | Blunt: 6
+Sharp: 8 | Padded Armor
+| Padded Breastplate | 12 | Torso | Blunt: 6
+Sharp: 8
+| Padded Gauntlets | 2 | Arms | Blunt: 6
+Sharp: 8
+| Padded Greaves | 4 | Legs | Blunt: 6
+Sharp: 8
+|
+| Leather Helmet | 3 | Head | Blunt: 7
+Sharp: 11 | Leather Armor
+| Leather Breastplate | 18 | Torso | Blunt: 7
+Sharp: 11
+| Leather Gauntlets | 3 | Arms | Blunt: 7
+Sharp: 11
+| Leather Greaves | 6 | Legs | Blunt: 7
+Sharp: 11
+|
+| Studded Helmet | 4 | Head | Blunt: 7
+Sharp: 14 | Studded Leather Armor
+| Studded Breastplate | 24 | Torso | Blunt: 7
+Sharp: 14
+| Studded Gauntlets | 4 | Arms | Blunt: 7
+Sharp: 14
+| Studded Greaves | 8 | Legs | Blunt: 7
+Sharp: 14
+|
+| Ringmail Hood | 5 | Head | Blunt: 8
+Sharp: 17 | Ring Mail
+| Ringmail Coat | 30 | Torso | Blunt: 8
+Sharp: 17
+| Ringmail Leggings | 15 | Legs | Blunt: 8
+Sharp: 17
+|
+| Scalemail Hood | 6 | Head | Blunt: 9
+Sharp: 20 | Scale Mail
+| Scalemail Coat | 36 | Torso | Blunt: 9
+Sharp: 20
+| Scalemail Leggings | 18 | Legs | Blunt: 9
+Sharp: 20
+|
+| Splintmail Hood | 7 | Head | Blunt: 10
+Sharp: 23 | Splint Mail
+| Splintmail Coat | 42 | Torso | Blunt: 10
+Sharp: 23
+| Splintmail Leggings | 21 | Legs | Blunt: 10
+Sharp: 23
+|
+| Elfinmail Hood | 4 | Head | Blunt: 11
+Sharp: 26 |
+| Elfinmail Coat | 24 | Torso | Blunt: 11
+Sharp: 26
+| Elfinmail Leggings | 12 | Legs | Blunt: 11
+Sharp: 26
+|
+| Chainmail Hood | 8 | Head | Blunt: 11
+Sharp: 26 | Chain Mail
+| Chainmail Coat | 48 | Torso | Blunt: 11
+Sharp: 26
+| Chainmail Leggings | 24 | Legs | Blunt: 11
+Sharp: 26
+|
+| Banded Helmet | 9 | Head | Blunt: 12
+Sharp: 29 | Banded Armor
+| Banded Breastplate | 54 | Torso | Blunt: 12
+Sharp: 29
+| Banded Gauntlets | 9 | Arms | Blunt: 12
+Sharp: 29
+| Banded Greaves | 18 | Legs | Blunt: 12
+Sharp: 29
+|
+| Crystal Helmet | 9 | Head | Blunt: 12
+Sharp: 29 |
+| Crystal Breastplate | 54 | Torso | Blunt: 12
+Sharp: 29
+| Crystal Gauntlets | 9 | Arms | Blunt: 12
+Sharp: 29
+| Crystal Greaves | 18 | Legs | Blunt: 12
+Sharp: 29
+|
+| Plated Helmet | 10 | Head | Blunt: 13
+Sharp: 32 | Plated Armor
+| Plated Breastplate | 60 | Torso | Blunt: 13
+Sharp: 32
+| Plated Gauntlets | 10 | Arms | Blunt: 13
+Sharp: 32
+| Plated Greaves | 20 | Legs | Blunt: 13
+Sharp: 32
+There are 10 protection types: Blunt, Sharp, Earth, Air, Fire, Water, Power, Mental, Cleric and Evil (?).
+There's no Cold protection type in the city.
+Clothes
+The character can wear 4 items of clothing, whatever it is and wherever he wants.
+See Shops - Wares List for more details on clothes.
+Potions
+There are 42 different potion types.
+A potion is defined by 5 properties:
+a weight: always 2
+a color: clear, amber, silver, black, red, white, green, yellow or orange
+a taste: bitter, sweet, plain, sour, salty, acidic, alkaline or dry
+a risk: safe, caution or dangerous
+an effect
+The triplet (color, taste and sip) is specific for each potion type.
+When the character uses a Potion, the following actions are available:
+Examine: reveals the color.
+Taste: reveals the taste.
+Sip:
+If the potion is already identified, shows its name.
+Else the result depends on the character wisdom and a random value:
+| Wisdom/2 +
+Random [0; 255] | Result
+| [0; 128[ | The character is unsure.
+| [128; 256[ | The risk is revealed.
+| [256; +oo[ | The potion is identified.
+Quaff: drinks the potion. Drinking an unidentified or identified potion has the same result.
+Save: keeps the potion.
+Taste, Sip, Quaff and Save actions have 15.625% probability to 'POOF!' (destroy) the potion.
+| Potion | Weight | Color | Taste | Sip | Effect
+| Potion of Water | 2 | clear | plain | safe | Decreases thirst by 2 (1 hour).
+| Potion of Wine | 2 | red | dry | caution | Increases inebriation by 3 (alcohol blood concentration).
+| Potion of Spirits | 2 | amber | sour | caution | Increases inebriation by 4 (alcohol blood concentration)
+| Potion of Milk | 2 | white | alkaline | safe | Decreases thirst by 3 (1.5 hours).
+| Potion of Fruit Juice | 2 | red | sweet | safe | Decreases thirst by 3 (1.5 hours).
+| Potion of Mineral Water | 2 | clear | dry | safe | Decreases thirst by 2 (1 hour).
+| Potion of Saltwater | 2 | clear | salty | caution | Increases thirst by 3 (1.5 hours).
+| Potion of Invisibility | 2 | clear | dry | safe | Character becomes invisible (no time limit).
+| Potion of Vinegar | 2 | red | acidic | caution | Increases thirst by 2 (1 hour).
+| Potion of ACID! | 2 | clear | acidic | dangerous | Removes 5 hit points.
+| Potion of Weak Poison | 2 | silver | bitter | dangerous | Removes 2 hit points every 30 minutes for 128 hours (5 days and 8 hours).
+| Potion of Poison! | 2 | white | alkaline | dangerous | Removes 5 hit points every 30 minutes for 128 hours (5 days and 8 hours).
+| Potion of Strong Poison! | 2 | black | sour | dangerous | Removes 5 hit points every 15 minutes for 64 hours (2 days and 16 hours).
+| Potion of DEADLY POISION! | 2 | red | sweet | dangerous | Removes 5 hit points every 5 minutes for 32 hours (1 day and 8 hours).
+| Potion of Healing Minor Wounds | 2 | green | sour | safe | Restores 5 hit points.
+| Potion of Healing Wounds | 2 | yellow | plain | safe | Restores 8 hit points.
+| Potion of Healing Major Wounds | 2 | silver | plain | safe | Restores 11 hit points.
+| Potion of Healing All Wounds | 2 | white | salty | safe | Restores 255 hit points.
+| Potion of Curing Poison | 2 | black | bitter | caution | Cures poisons (in incubation or not)
+| Potion of Cleansing | 2 | black | bitter | caution | Cures diseases (in incubation or not)
+| Potion of Delusion | 2 | black | bitter | caution | Character suffers delusion.
+| Potion of Invulnerability Blunt | 2 | black | sweet | safe | Immunizes to blunt damage for 8 hours.
+| Potion of Invulnerability Sharp | 2 | black | plain | safe | Immunizes to sharp damage for 8 hours.
+| Potion of Invulnerability Earth | 2 | black | sour | safe | Immunizes to earth damage for 8 hours.
+| Potion of Invulnerability Air | 2 | black | salty | safe | Immunizes to air damage for 8 hours.
+| Potion of Invulnerability Fire | 2 | black | acidic | safe | Immunizes to fire damage for 8 hours.
+| Potion of Invulnerability Water | 2 | black | alkaline | safe | Immunizes to water damage for 8 hours.
+| Potion of Invulnerability Power | 2 | black | dry | safe | Immunizes to power damage for 8 hours.
+| Potion of Invulnerability Mental | 2 | black | plain | safe | Immunizes to mental damage for 8 hours.
+| Potion of Invulnerability Cleric | 2 | black | sweet | safe | Immunizes to cleric damage for 8 hours.
+| Potion of Noticeability | 2 | yellow | bitter | dangerous | Decreases unnoticeability by 2 (Increases noticeability by 2).
+| Potion of Inebriation | 2 | orange | plain | caution | Increases inebriation by 65 (alcohol blood concentration).
+| Potion of Strength | 2 | red | bitter | safe | Increases base strength by 1.
+| Potion of Intelligence | 2 | silver | bitter | safe | Increases base intelligence by 1.
+| Potion of Charisma | 2 | silver | sweet | safe | Increases base charisma by 1.
+| Potion of Ugliness | 2 | green | sweet | dangerous | Decreases base charisma by 2.
+| Potion of Weakness | 2 | yellow | dry | dangerous | Decreases base strength by 2.
+| Potion of Dumbness | 2 | orange | sweet | dangerous | Decreases base intelligence by 2.
+| Potion of Fleetness | 2 | black | plain | safe | Increases base speed by 1.
+| Potion of Slowness | 2 | white | bitter | dangerous | Decreases base speed by 2.
+| Potion of Protection+1 (*) | 2 | orange | sweet | safe | Increases magical protection to each damage type by 1 for 90 minutes (bugged).
+| Potion of Protection+2 (*) | 2 | orange | sour | safe | Increases magical protection to each damage type by 2 for 90 minutes.
+| Potion of TREASURE FINDING | 2 | red | sweet | safe | Increases treasure finding by 5.
+| Potion of Unnoticeability | 2 | clear | bitter | safe | Increases unnoticeability by 2 (Decreases noticeability by 2).
+Others
+| Item | Weight | Description
+| Copper | 1 for each
+pack of 16 | The smallest coin in the City.
+| Silver | Worths 10 copper coins.
+| Gold | Worths 10 silver coins (100 copper coins).
+| Gem | Can be appraised and sold in banks.
+| Jewelry
+| Food Packet | When used, reduces hunger by 16 and adds 28 to digestion.
+| Water Flask | When used, reduces thirst by 15 and adds 14 to digestion.
+| Watch | 0 | When used, shows time (smallest unit is hour):
+| Compass | 0 | Shows a compass rose giving the cardinal directions:
+| Crystals | 0 | Not used in the City.
+| Keys | 0 | Not used in the City.
+Curses
+Only weapons and armor can be cursed (there's no personal curse in the city).
+There are 3 types of curses, each one triggers a different effect:
+Both weapons are unequipped.
+All 4 pieces of armor are unequipped.
+All 4 clothes are unequipped.
+Remarks:
+Each curse has the same probability to occur.
+A curse on an item does not prevent the character to drop it, even if equipped.
+A curse on an item is triggered when the item is equipped.
+Curses seem unfinished in the City.
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

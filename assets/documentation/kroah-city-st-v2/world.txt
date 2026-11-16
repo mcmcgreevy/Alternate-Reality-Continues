@@ -1,0 +1,261 @@
+LayoutDocument">
+|
+Xebec's Demise
+|
+Calendar
+The calendar system is composed of months and days:
+A year has 12 months.
+A month has 31 days.
+Months are named like this:
+| Months
+| January | Rebirth
+| February | Awakening
+| March | Winds
+| April | Rains
+| May | Sowings
+| June | First Fruits
+| July | Harvest
+| August | Final Reaping
+| September | The Fall
+| October | Darkness
+| November | Cold Winds
+| December | Lights
+A day is composed of hours, minutes and seconds like in real life.
+Time can be checked at any Inns. A watch only gives the hour.
+The character joins the city on the 29th of May at 6:00 am, Year 0:
+Time Span
+Time elapses 15 times faster than in real life.
+The correspondence between ingame and real time is the following:
+| Ingame | Real
+| 1 minute | 4 seconds
+| 1 hour | 4 minutes
+| 15 hours | 1 hour
+| 1 day | 1h 36mn
+If not specified, durations are ingame.
+Time is stopped when paused or speeded up while working, sleeping and learning a spell. In this case, it elapses 240 times faster (1 ingame hour lasts 1 real second) and the metabolism is still updated.
+Weather
+Type
+The weather type ranges from A (sunny) to P (stormy).
+A new type is chosen when the duration of the previous one expires. The current month determines the duration and the probability a specific type is selected.
+For example, during the month of Harvest, the type 'A' has a probability of 13/16=81.25% to be selected.
+| Months | Weather type |   | Duration
+| Sunny | Rainy | Stormy | Duration | Average
+| A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P |   |
+| January | Rebirth | 1 | 2 | 2 |   | 1 | 2 | 2 |   | 1 | 2 | 3 |   |   |   |   |   | 1 day to 5 days | 3.0 days
+| February | Awakening | 2 | 3 | 3 |   | 1 | 3 | 3 |   |   |   | 1 |   |   |   |   |   | 12 hours to 4 days | 2.3 days
+| March | Winds | 4 | 2 | 3 | 2 |   | 3 | 2 |   |   |   |   |   |   |   |   |   | 6 hours to 3 days | 1.7 days
+| April | Rains | 4 | 1 | 1 | 1 | 2 | 3 |   |   |   | 1 |   |   | 1 |   | 1 | 1 | 3 hours to 2 days | 1.1 days
+| May | Sowings | 10 | 1 | 1 |   |   | 1 |   |   | 1 | 1 | 1 |   |   |   |   |   | 3 hours to 2 days | 1.1 days
+| June | First Fruits | 11 | 1 | 1 |   | 1 | 2 |   |   |   |   |   |   |   |   |   |   | 6 hours to 3 days | 1.7 days
+| July | Harvest | 13 | 2 |   |   |   |   |   |   |   |   |   |   | 1 |   |   |   | 12 hours to 4 days | 2.3 days
+| August | Final Reaping | 13 | 2 |   |   |   |   |   |   |   |   |   |   | 1 |   |   |   | 1 day to 5 days | 3.0 days
+| September | The Fall (*) | 10 | 2 |   |   |   |   |   |   |   |   |   |   |   |   |   | 1 | 12 hours to 4 days | 2.3 days
+| October | Darkness | 7 | 2 | 1 | 1 |   | 1 |   | 1 |   | 1 | 1 |   | 1 |   |   |   | 6 hours to 3 days | 1.7 days
+| November | Cold Winds | 7 | 2 | 1 | 1 |   | 1 |   | 1 |   | 1 | 1 |   | 1 |   |   |   | 3 hours to 2 days | 1.1 days
+| December | Lights | 4 | 1 | 2 | 2 | 1 | 1 |   |   |   |   | 1 | 1 | 1 |   | 1 | 1 | 6 hours to 3 days | 1.7 days
+(*) There's 3 additional types for this month: 2 are bugged (random crash), and the last one sets a rainy weather (drops quantity of 50), with no lightning nor temperature penalty.
+Rain ♫
+The rain strength corresponds to the number of drops falling (quantity = 24 + strength * 6):
+|   | Weather type
+| Sunny | Rainy | Stormy
+| A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P
+| Rain strength |   |   |   |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+| Drops quantity |   |   |   |   | 30 | 36 | 42 | 48 | 54 | 60 | 66 | 72 | 78 | 84 | 90 | 96
+Raining weather cancels the character invisilibity (see Opponent Creation).
+Storm ♫
+♫
+The storm strength corresponds to the lightning storm frequency:
+|   | Weather type
+| Sunny | Rainy | Stormy
+| A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P
+| Storm strength |   |   |   |   |   |   |   |   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+| Lightning
+storm
+frequency | Ingame (minutes) |   |   |   |   |   |   |   |   | 50 to 100 | 30 to 50 | 20 to 30 | 12 to 18 | 10 to 16 | 6 to 12 | 3 to 8 | 1 to 5
+| Real (seconds) |   |   |   |   |   |   |   |   | 200 to 400 | 120 to 200 | 80 to 120 | 48 to 72 | 40 to 64 | 24 to 48 | 12 to 32 | 4 to 20
+The duration of a lightning flash is between 0.1 and 0.23 second.
+Palette
+2 palette types are used to simulate the day/night cycle:
+one for sunny weather:
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 0 |   | 1 |   | 2 |   | 3 |   | 4 |   | 5 |   | 6 |   | 7 |   | 8 |   | 9 |   | 10 |   | 11 |   | 12 |   | 13 |   | 14 |   | 15 |   | 16 |   | 17 |   | 18 |   | 19 |   | 20 |   | 21 |   | 22 |   | 23 |
+one for cloudy weather (rainy or stormy):
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 0 |   | 1 |   | 2 |   | 3 |   | 4 |   | 5 |   | 6 |   | 7 |   | 8 |   | 9 |   | 10 |   | 11 |   | 12 |   | 13 |   | 14 |   | 15 |   | 16 |   | 17 |   | 18 |   | 19 |   | 20 |   | 21 |   | 22 |   | 23 |
+Each column represents half an hour, from 00:00 on the left side to 23:30 on the right. Every 30 minutes, the palette shifts to the next column.
+Temperature
+Several factors affect the weather temperature:
+the current month
+the current weather type
+the current time
+The temperature is obtained by combining each of these factors:
+T (°F) = month base temperature + weather type temperature variation + time temperature variation
+The result is bounded by 0°F (-17.8°C) and ranges up to 106°F (41.1°C).
+| Months | Base temperature
+| Min | Max |   | Min | Max
+| January | Rebirth | 0 °F | 20 °F | -17.8 °C | -6.7 °C
+| February | Awakening | 10 °F | 30 °F | -12.2 °C | -1.1 °C
+| March | Winds | 20 °F | 40 °F | -6.7 °C | -4.4 °C
+| April | Rains | 30 °F | 50 °F | -1.1 °C | 10.0 °C
+| May | Sowings | 40 °F | 60 °F | 4.4 °C | 15.6 °C
+| June | First Fruits | 50 °F | 70 °F | 10.0 °C | 21.1 °C
+| July | Harvest | 60 °F | 80 °F | 15.6 °C | 26.7 °C
+| August | Final Reaping | 70 °F | 90 °F | 21.1 °C | 32.2 °C
+| September | The Fall | 60 °F | 80 °F | 15.6 °C | 26.7 °C
+| October | Darkness | 50 °F | 70 °F | 10.0 °C | 21.1 °C
+| November | Cold Winds | 30 °F | 50 °F | -1.1 °C | 10.0 °C
+| December | Lights | 10 °F | 30 °F | -12.2 °C | -1.1 °C
+|   | Weather type
+| Sunny | Rainy | Stormy
+| A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P
+| Variation (°F) | Max | +6 | +5 | +4 | +3 | +2 | +1 | +0 | -1 | -2 | -3 | -4 | -5 | -6 | -7 | -8 | -9
+| Min | -1 | -2 | -3 | -4 | -5 | -6 | -7 | -8 | -9 | -10 | -11 | -12 | -13 | -14 | -15 | -16
+| Variation (°C) | Max | +3.3 | +2.8 | +2.2 | +1.7 | +1.1 | +0.6 | +0 | -0.6 | -1.1 | -1.7 | -2.2 | -2.8 | -3.3 | -3.9 | -4.4 | -5.0
+| Min | -0.6 | -1.1 | -1.7 | -2.2 | -2.8 | -3.3 | -3.9 | -4.4 | -5.0 | -5.6 | -6.1 | -6.7 | -7.2 | -7.8 | -8.3 | -8.9
+| Time | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23
+| Variation (°F) | -6 | -8 | -6 | -4 | -2 | +0 | +0 | +1 | +2 | +2 | +3 | +5 | +7 | +10 | +7 | +5 | +3 | +2 | +2 | +1 | +0 | +0 | -2 | -4
+| Variation (°C) | -3.3 | -4.4 | -3.3 | -2.2 | -1.1 | +0 | +0 | +0.6 | +1.1 | +1.1 | +1.7 | +2.8 | +3.9 | +5.6 | +3.9 | +2.8 | +1.7 | +1.1 | +1.1 | +0.6 | +0 | +0 | -1.1 | -2.2
+Map
+|
+| # | Description
+| Inns
+| 0 | Green Boar Inn
+| 1 | Lazy Griffin Inn
+| 2 | Sleeping Dragon Inn
+| 3 | Traveller's Inn
+| 4 | Midnight Inn
+| 5 | Warrior's Retreat
+| 6 | Royal Resort Inn
+| Taverns
+| 7 | Flaming Dragon Tavern
+| 8 | Misty Mountain Tavern
+| 9 | Screaming Siren Bar
+| 10 | Happy Hunter Rest Stop
+| 11 | Dancing Nymph Tavern
+| 12 | Club
+| 13 | Black Devil Tavern
+| 14 | Lost Oasis
+| 15 | Last Stop
+| 16 | Tail of the Dog Tavern
+| 17 | Club Babylon
+| 18 | Lost Tears Tavern
+| 19 | Mom's Bar
+| 20 | Lusty Lloyds Tavern
+| Banks
+| 21 | First City Bank
+| 22 | Granite Bank
+| 23 | Gram's Gold Exchange
+| Shops
+| 24 | Smiley's Shop
+| 25 | Honest Trader
+| 26 | Adventurer's Outfitters
+| 27 | Warrior's Supplies
+| 28 | General Store
+| 29 | Exclusive Outfitters
+| 30 | Rocky's Emporium
+| 31 | Best Bargain Store
+| 32 | Special Imports Store
+| 33 | Betelgeuse Sales
+| 34 | Merchant's Grotto
+| 35 | Sunset Market
+| 36 | Pauline's Emporium
+| 37 | Da Place!
+| (38) | Trade Winds
+| Smithies
+| 39 | Sharp Weaponsmiths
+| 40 | Occum's Weaponsmiths
+| 41 | Best Armorers
+| 42 | Knight's Armorers
+| Healers
+| 53 | One Way Soothers
+| 54 | Alpha Omega Healers
+| Guilds
+| 55 | Thieves' Guild
+| 56 | Blue Wizards' Guild
+| 57 | Light Wizards' Guild
+| 58 | Green Wizards' Academy
+| 59 | Red Wizards' University
+| 60 | Dark Wizards' Guild
+| 61 | Star Wizards' Guild
+| 62 | Wizards' of Chaos
+| 63 | Wizards of Law
+| 64 | Guild of Order
+| 65 | Physicians' Guild
+| 66 | Assassins' Guild
+| Scenarios
+| 43 | House of Ill Repute (QUARANTINED!)
+| 46 | Arena
+(Arena)
+| 47 | Palace
+(Palace)
+| 48 | Palace Gates
+(Palace)
+| 49 | Dungeon Entrance
+(Dungeon)
+| 50 | Maximum Casino
+(Closed by Order of the Palace)
+| 52 | Jack's Fitness Academy
+(Closed due to Chapter VII of the Bankruptcy Laws)
+| 73 | Southern Gate
+(Wilderness)
+| 74 | Northern Gate
+(Wilderness)
+| 75 | Western Gate
+(Wilderness)
+|
+|
+Map of Xebec's Demise (Show full size)
+Remarks:
+There are 2 shops #37 'Da Place!' (top right and bottom left) but no shop #38 'Trade Winds'. I think one of the 2 shops #37 should be #38.
+Near the Arena, #53 is marked as Scenario, is not accessible and already exists elsewhere. This location replaces 'Armstrong Builders (Closed by Order of the Palace)'.
+Near the Arena, #54 is marked as Scenario, is not accessible and already exists elsewhere. This location replaces 'Apollo Trainers (Closed by Order of the Palace)'.
+Near the Arena, #57 is marked as Scenario, is not accessible and already exists elsewhere. This location replaces 'Davids Weapons Trainers (Closed by Order of the Palace)'.
+Near the Arena, the guild #65 'Physicians' Guild.' is not accessible and already exists elsewhere (at the bottom left). This guild replaces the 13th guild 'Mercenary Guild' (Strength).
+Near the Arena, the guild #58 'Green Wizards' Academy.' is not accessible and already exists elsewhere (on its left). This guild replaces the 14th guild 'Power Wizards Institute' (Stamina).
+|
+Palace fanfare ♫
+is heard every hour on these highlighted squares:
+Two other fanfares ♫
+♫
+exist but seem to never be used.
+|
+Smithy hammer ♫
+is heard up to three squares north west and 2 squares south east:
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

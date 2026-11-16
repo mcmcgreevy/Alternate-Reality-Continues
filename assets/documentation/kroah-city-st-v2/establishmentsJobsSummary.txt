@@ -1,0 +1,54 @@
+LayoutDocument">
+|
+Jobs Summary
+|
+Jobs Summary
+| Establishment | Probability to offer a job
+| /256 | %
+| Inns
+| Green Boar Inn | 64 | 25 %
+| Lazy Griffin Inn | 154 | 60 %
+| Sleeping Dragon Inn | 64 | 25 %
+| Traveller's Inn | 179 | 70 %
+| Midnight Inn | 56 | 22 %
+| Warrior's Retreat | 77 | 30 %
+| Royal Resort Inn | 102 | 40 %
+| Taverns
+| Flaming Dragon Tavern | 51 | 20 %
+| Misty Mountain Tavern | 51 | 20 %
+| Screaming Siren Bar | 64 | 25 %
+| Happy Hunter Rest Stop | 77 | 30 %
+| Dancing Nymph Tavern | 72 | 28 %
+| Club | 182 | 71 %
+| Black Devil Tavern | 64 | 25 %
+| Lost Oasis | 26 | 10 %
+| Last Stop | 38 | 15 %
+| Tail of the Dog Tavern | 192 | 75 %
+| Club Babylon | 77 | 30 %
+| Lost Tears Tavern | 56 | 22 %
+| Mom's Bar | 128 | 50 %
+| Lusty Lloyds Tavern | 46 | 18 %
+| Banks
+| First City Bank | 102 | 40 %
+| Granite Bank | 179 | 70 %
+| Gram's Gold Exchange | 26 | 10 %
+| Job | Income per hour
+(in coppers) | Requirement | Fatigue rate
+while working | Hurt probability
+| Stat | Min | Minor wound (4 HP) | Major wound (8 HP) | Total
+| Inns
+| Bellhop | 10 to 24 | Strength | 18 | 0.6875 | 15.95 % | 3.97 % | 19.92 %
+| Desk Clerk | 18 to 20 | Charisma | 16 | 0.5625 | 3.75 % | 0.15 % | 3.90 %
+| Janitor | 12 to 15 | Stamina | 17 | 0.6250 | 8.50 % | 0.88 % | 9.38 %
+| Taverns
+| Bouncer | 40 to 44 | Strength | 22 | 0.75 | 19.69 % | 7.26 % | 26.95 %
+| Host | 20 to 24 | Charisma | 12 | 0.5625 | 0.77 % | 0.01 % | 0.78 %
+| Dish Washer | 8 to 12 | Skill | 9 | 0.65625 | 12.64 % | 2.20 % | 14.84 %
+| Banks
+| Guard | 30 to 36 | Strength | 15 | 0.6875 | 15.95 % | 3.97 % | 19.92 %
+| File Clerk | 50 to 56 | Intelligence | 20 | 0.5625 | 2.29 % | 0.05 % | 2.34 %
+| Coin Roller | 22 to 28 | Alignment | 144 | 0.59375 | 2.29 % | 0.05 % | 2.34 %
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.
