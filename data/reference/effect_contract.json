@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "edition_platform": "Atari ST City v2.0",
+  "sources": {
+    "TECH": {
+      "path": "assets/documentation/kroah-city-st-v2/technicalNotes.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/technicalNotes.php5",
+      "catalog_file": "kroah-city-st-v2/technicalNotes.html",
+      "sha256": "1e181bd1f0dc81ebe8e9542b552205f7160371456f9ce19f83131ed9dfcad041",
+      "locator": "Entity / +02 Events; Effect / introduction, +00 flags, +01 Active index, +02 Required events, +03 Counter, +04 Timer, +06 Interval, +08 Natural cure, +09 Action, +10 Offset, +12 Blocks, +13 Gap, +14 Parameter, +15 Linked slot"
+    },
+    "STATS": {
+      "path": "assets/documentation/kroah-city-st-v2/characterStats.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/characterStats.php5",
+      "catalog_file": "kroah-city-st-v2/characterStats.html",
+      "sha256": "607c3c371e9b13aaac840a7a57165af316f6d4f7808686a8da3fd69f875ed6f5",
+      "locator": "Primary / Sub-Stat table; Secondary / Walking Speed"
+    },
+    "TIME": {
+      "path": "assets/documentation/kroah-city-st-v2/world.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/world.php5",
+      "catalog_file": "kroah-city-st-v2/world.html",
+      "sha256": "3c49f286cbceb272615fa7f8cbc3bec501da6bd7eedde17c2e14fe0b5a8e3214",
+      "locator": "Time Span / correspondence table and final paragraph"
+    },
+    "SPELL": {
+      "path": "assets/documentation/kroah-city-st-v2/establishmentsGuilds.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsGuilds.php5",
+      "catalog_file": "kroah-city-st-v2/establishmentsGuilds.html",
+      "sha256": "5cbb38be2985743689072a646b5a2467edace3085a3427f20c6de3289379b9e3",
+      "locator": "Spells / List table / Physical Speed row, Duration and Description columns"
+    }
+  },
+  "decisions": [
+    {
+      "id": "ER01",
+      "origin_questions": [
+        "IDENTITY-Q1"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect introduction; +01 Active index",
+      "status": "partially_documented",
+      "finding": "Templates are copied into active records; FF becomes own active-list index; 00 links to previous activated effect.",
+      "unknown": "Original capacity, reuse, first-00 and skipped-predecessor behavior remain unknown.",
+      "blocks": [
+        "S29",
+        "S31"
+      ],
+      "disposition": "Resolve edge cases or explicitly exclude unsupported definitions; stable owner/definition/instance IDs are reconstruction architecture, not original indices."
+    },
+    {
+      "id": "ER02",
+      "origin_questions": [
+        "EVENT-Q1"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Entity +02 Events; Effect +02 Required events",
+      "status": "partially_documented",
+      "finding": "A\u2013E name Get, Drop, Use/Cast, Unuse, Delete. Entity events clear after handling.",
+      "unknown": "F/G/H entity meanings and full opposing-pair map are not established; effect H is a different flag (duplicate suppression).",
+      "blocks": [
+        "S29"
+      ],
+      "disposition": "Do not guess Use/Unuse or Get/Drop pairs from names. Required opposing-event fixture remains conditional until verified."
+    },
+    {
+      "id": "ER03",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect introductory paragraph; Entity +02 Events",
+      "status": "unresolved",
+      "finding": "Prose describes opposing removal and listener activation.",
+      "unknown": "Bit priority, concurrent event order, inter-entity order, timer/event ties and dispatch-time reentrancy are unspecified.",
+      "blocks": [
+        "S29",
+        "S30"
+      ],
+      "disposition": "Require evidence or explicit behavior-policy approval before dispatch with coincident work."
+    },
+    {
+      "id": "ER04",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect +02 Allow multiple & Required events",
+      "status": "partially_documented",
+      "finding": "Flag H compares eight listed fields; a matching instance suppresses current and all following definitions at activation.",
+      "unknown": "Flag-H-off stacking consequences, repeated-cast refresh and active-list comparison scope details are not spelled out.",
+      "blocks": [
+        "S29",
+        "S31"
+      ],
+      "disposition": "Preserve exact comparison fields; do not substitute owner or definition identity. Single-cast slice does not approve repeat-cast behavior."
+    },
+    {
+      "id": "ER05",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect introduction; +00 disease/poison/curse removal examples; +01 Active index",
+      "status": "partially_documented",
+      "finding": "Opposing-event removal and named RemoveEffectWithLinkedToIt routines exist; 00 links text to prior effect.",
+      "unknown": "General inverse-action/undo, deletion ordering, link traversal and removing one contribution among multiple are unspecified.",
+      "blocks": [
+        "S29",
+        "S31"
+      ],
+      "disposition": "Removal is not automatically subtraction of Parameter. S08 must settle contribution ownership; linked cleanup needs evidence or approved policy."
+    },
+    {
+      "id": "ER06",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect +04 Timer; +06 Interval",
+      "status": "partially_documented",
+      "finding": "Initial timer may differ from interval; at zero counter decreases and effect executes; timer restarts from interval.",
+      "unknown": "Timer tick unit, signedness, decrement cadence, initial zero and zero interval behavior unknown.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Abstract-tick fixtures are conditional and cannot be wired to game minutes yet."
+    },
+    {
+      "id": "ER07",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect +03 Counter; +04 Timer",
+      "status": "partially_documented",
+      "finding": "Finite counter counts executions before deactivation; 00 is never removed by execution.",
+      "unknown": "Order of final execution/deactivation/reset and cure on that same tick not fully stated.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Check final observable execution count without claiming an internal total ordering."
+    },
+    {
+      "id": "ER08",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect +00 B and E; +04 Timer",
+      "status": "partially_documented",
+      "finding": "Incubation ends on first timer expiry; linked invisible text becomes visible when incubation ends.",
+      "unknown": "Whether that first expiry also applies every action, and visibility/removal ties, remain unknown.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Reject incubation definitions until behavior is resolved; no implicit immediate first execution."
+    },
+    {
+      "id": "ER09",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect +08 Probability of natural cure",
+      "status": "unresolved",
+      "finding": "Natural cure is checked when an effect executes.",
+      "unknown": "Byte-to-probability mapping, RNG sampling, comparison endpoints, cure/execution order unknown.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Cure-bearing definitions deferred to S09/S13/S21; reject them in bounded runtime rather than treating raw zero as proven no-cure."
+    },
+    {
+      "id": "ER10",
+      "origin_questions": [
+        "TIME-Q1"
+      ],
+      "source_refs": [
+        "TIME"
+      ],
+      "locator": "Time Span / ordinary table and pause sentence",
+      "status": "partially_documented",
+      "finding": "Ordinary time is 15 game seconds per real second; pause stops time.",
+      "unknown": "Exact pause contexts, accumulator resolution and scheduler/metabolism ordering not specified.",
+      "blocks": [
+        "S30",
+        "S31"
+      ],
+      "disposition": "S03 supplies elapsed game time once; no runtime clock or pause-policy inference."
+    },
+    {
+      "id": "ER11",
+      "origin_questions": [
+        "TIME-Q2"
+      ],
+      "source_refs": [
+        "TIME"
+      ],
+      "locator": "Time Span / final paragraph",
+      "status": "partially_documented",
+      "finding": "Working/sleeping/learning accelerate time; one game hour per real second is stated and metabolism continues.",
+      "unknown": "240 times faster has an unstated comparison base: 240 times ordinary 15x gives 3600x real, agreeing with the explicit example. Effect ordering still unknown.",
+      "blocks": [
+        "S30",
+        "S31"
+      ],
+      "disposition": "Record this as an interpretation for S03 reconciliation, not an independently measured rate or timer-unit deduction."
+    },
+    {
+      "id": "ER12",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect +09 Action, +10 Offset, +12 Number of blocks, +13 Gap, +14 Parameter, +15 Linked slot",
+      "status": "partially_documented",
+      "finding": "Set and indexed Add/Sub/Rts/Rts/Xor/And/Or with sized targets are described.",
+      "unknown": "Width/overflow semantics, entity-relative offsets and linked slot are uncertain; operation names do not establish safe inverse actions.",
+      "blocks": [
+        "S29",
+        "S30"
+      ],
+      "disposition": "Map a bounded typed target set; unsupported native layouts fail validation. No raw address interpreter."
+    },
+    {
+      "id": "ER13",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "SPELL",
+        "STATS",
+        "TIME"
+      ],
+      "locator": "Spells / List / Physical Speed, Duration and Description; Stats / Primary and Walking Speed; World / Time Span",
+      "status": "partially_documented",
+      "finding": "Physical Speed adds 5 to Speed bonus and lasts 30 game minutes (TIME supplies duration convention).",
+      "unknown": "Raw effect definition, flag H, exact activation/expiry boundary and cleanup mechanism not provided by spell row.",
+      "blocks": [
+        "S30",
+        "S31"
+      ],
+      "disposition": "Single-effect outcome is documented; implementing an immediate grant plus deadline/revoke remains a proposal requiring evidence or approval."
+    }
+  ]
+}

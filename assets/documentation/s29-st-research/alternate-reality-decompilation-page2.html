@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<title>Kroah's Game Reverse Engineering Forum &bull; View topic - Alternate Reality: The Decompilation</title>
+<link rel="shortcut icon" type="image/x-icon" href="../RE/Images/Logo.ico" />
+<link rel="icon" type="image/png" href="../RE/Images/Logo.png" />
+
+
+<!--
+	phpBB style name: prosilver Special Edition
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subblue.com/ )
+	Modified by:      phpBB Styles Team     
+-->
+
+<script type="text/javascript">
+// <![CDATA[
+	var jump_page = 'Enter the page number you wish to go to:';
+	var on_page = '2';
+	var per_page = '15';
+	var base_url = './viewtopic.php?f=1&amp;t=58&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '; path=/; domain=bringerp.free.fr';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	};
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	};
+
+// ]]>
+</script>
+<script type="text/javascript" src="./styles/prosilver/template/styleswitcher.js"></script>
+<script type="text/javascript" src="./styles/prosilver/template/forum_fn.js"></script>
+
+<link href="./styles/prosilver_se/theme/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<link href="./style.php?id=2&amp;lang=en&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" rel="stylesheet" type="text/css" media="screen, projection" />
+
+<link href="./styles/prosilver_se/theme/normal.css" rel="stylesheet" type="text/css" title="A" />
+<link href="./styles/prosilver_se/theme/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="./styles/prosilver_se/theme/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+
+
+
+</head>
+
+<body id="phpbb" class="section-viewtopic ltr">
+
+<div id="wrap">
+    <div class="border-left">
+    <div class="border-right">
+    <div class="border-top">
+    <div class="border-top-left">
+    <div class="border-top-right">
+        <div class="inside" style="direction: ltr;">
+        	<a id="top" name="top" accesskey="t"></a>
+        	<div id="page-header">
+        		<div class="headerbar">
+        			<div class="inner"><span class="corners-top"><span></span></span>
+        
+        			<div id="site-description">
+        				<a href="../RE/" title="Homepage" id="logo"><img src="./styles/prosilver_se/imageset/Logo%20Big.png" width="52" height="52" alt="" title="" /></a>
+        				<h1>Kroah's Game Reverse Engineering Forum</h1>
+        				<p>Reverse engineering forum of old computer games for Atari ST, Atari 8-bit and Amiga systems.</p>
+        				<p class="skiplink"><a href="#start_here">Skip to content</a></p>
+        			</div>
+        
+        		
+        			<div id="search-box">
+        				<form action="./search.php?sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" method="get" id="search">
+        				<fieldset>
+        					<input name="keywords" id="keywords" type="text" maxlength="128" title="Search for keywords" class="inputbox search" value="Search…" onclick="if(this.value=='Search…')this.value='';" onblur="if(this.value=='')this.value='Search…';" /> 
+        					<input class="button2" value="Search" type="submit" /><br />
+        					<a href="./search.php?sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" title="View the advanced search options">Advanced search</a> <input type="hidden" name="sid" value="0ca0ba9dfc5c1979b182c1f6ef0b0206" />
+
+        				</fieldset>
+        				</form>
+        			</div>
+        		
+        
+        			<span class="corners-bottom"><span></span></span></div>
+        		</div>
+        
+        		<div class="navbar">
+        			<div class="inner"><span class="corners-top"><span></span></span>
+        
+        			<ul class="linklist navlinks">
+        				<li class="icon-home"><a href="../RE/">Return to Homepage</a> <strong>&#8249;</strong> <a href="./index.php?sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" accesskey="h">Board index</a>  <strong>&#8249;</strong> <a href="./viewforum.php?f=3&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Reverse Engineering Forum Index</a> <strong>&#8249;</strong> <a href="./viewforum.php?f=1&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">General Discussion</a></li>
+        
+        				<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="Change font size">Change font size</a></li>
+        
+        				<li class="rightside"><a href="./viewtopic.php?f=1&amp;t=58&amp;start=15&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206&amp;view=print" title="Print view" accesskey="p" class="print">Print view</a></li>
+        			</ul>
+        
+        			
+        
+        			<ul class="linklist rightside">
+        				<li class="icon-faq"><a href="./faq.php?sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" title="Frequently Asked Questions">FAQ</a></li>
+        				<li class="icon-register"><a href="./ucp.php?mode=register&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Register</a></li>
+							<li class="icon-logout"><a href="./ucp.php?mode=login&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" title="Login" accesskey="x">Login</a></li>
+        				
+        			</ul>
+        
+        			<span class="corners-bottom"><span></span></span></div>
+        		</div>
+        
+        	</div>
+        
+        	<a name="start_here"></a>
+        	<div id="page-body">
+        		
+				
+<h2><a href="./viewtopic.php?f=1&amp;t=58&amp;start=15&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Alternate Reality: The Decompilation</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body --><div style="display: none !important;">Talk about everything related to general reverse engineering of computer games!<br /></div>
+<p>
+	<strong>Moderator:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" style="color: #AA0000;" class="username-coloured">Kroah</a>
+</p>
+
+
+<div class="topic-actions">
+
+	<div class="buttons">
+	
+		<div class="reply-icon"><a href="./posting.php?mode=reply&amp;f=1&amp;t=58&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" title="Post a reply"><span></span>Post a reply</a></div>
+	
+	</div>
+
+	
+		<div class="search-box">
+			<form method="get" id="topic-search" action="./search.php?sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">
+			<fieldset>
+				<input class="inputbox search tiny"  type="text" name="keywords" id="search_keywords" size="20" value="Search this topic…" onclick="if(this.value=='Search this topic…')this.value='';" onblur="if(this.value=='')this.value='Search this topic…';" />
+				<input class="button2" type="submit" value="Search" />
+				<input type="hidden" name="t" value="58" />
+<input type="hidden" name="sf" value="msgonly" />
+<input type="hidden" name="sid" value="0ca0ba9dfc5c1979b182c1f6ef0b0206" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+		<div class="pagination">
+			23 posts
+			 &bull; <a href="#" onclick="jumpto(); return false;" title="Click to jump to page…">Page <strong>2</strong> of <strong>2</strong></a> &bull; <span><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">1</a><span class="page-sep">, </span><strong>2</strong></span>
+		</div>
+	
+
+</div>
+<div class="clear"></div>
+
+
+	<div id="p402" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 class="first"><a href="#p402"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=402&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p402"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=102&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" style="color: #AA00AA;" class="username-coloured">Monty</a></strong> &raquo; 03 Jun 2009, 00:13 </p>
+
+			
+
+			<div class="content">Never played the game but your section looks awesome!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile402">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=102&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" style="color: #AA00AA;" class="username-coloured">Monty</a>
+			</dt>
+
+			<dd>CoCoNet Beta Tester</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 70</dd><dd><strong>Joined:</strong> 24 Jun 2007, 23:03</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p413" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p413">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=413&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p413"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=98&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Trilog</a></strong> &raquo; 22 Jul 2009, 14:04 </p>
+
+			
+
+			<div class="content">Hi,<br /><br />Just to add my comments to this thread - This is great work. The level of detail you've recorded here is amazing. They webpages look really good too! <br /><br />I'm hoping that in time this will spark lots of interesting AR related projects besides my own AR remake project.<br /><br />Quick question for you - sorry if it sounds a bit stupid - it's regarding buying bits of armor from the Smithy - it's displayed as &quot;some leather armor&quot; when you're asked if you want to buy but what do you actually get if you say yes as your table lists the four possible items of armor (head, body etc). All four items as a set? I've been unable to test this in the real 16bit game so far due to lack of in-game funds. <br /><br />Looking forward to some of the other games you're documenting too - particularly the RPGs.<br /><br />All the best,<br /><br />Guilherme</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile413">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=98&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Trilog</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 2</dd><dd><strong>Joined:</strong> 12 Apr 2007, 17:32</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p415" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p415">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=415&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p415"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 03 Aug 2009, 20:42 </p>
+
+			
+
+			<div class="content">Hello Guilherme,<br /><br />Sorry to reply you so late, but i was a busy moving to my new house.<br /><br /><blockquote><div><cite>Trilog wrote:</cite>Just to add my comments to this thread - This is great work. The level of detail you've recorded here is amazing. They webpages look really good too! </div></blockquote><br />Thank you. It was really fun to work on AR, even if it tooks me several years to put everything on my site.<br /><br /><blockquote><div><cite>Trilog wrote:</cite>I'm hoping that in time this will spark lots of interesting AR related projects besides my own AR remake project.</div></blockquote><br />I hope so! I just saw you've released the first demo of your project at the AR mailing list:<br /><a href="http://listserv.genesistwo.com/scripts/wa.exe?A2=ind0908&amp;L=ALTERNATEREALITY&amp;T=0&amp;F=&amp;S=&amp;P=85" class="postlink">http://listserv.genesistwo.com/scripts/wa.exe?A2=ind0908&amp;L=ALTERNATEREALITY&amp;T=0&amp;F=&amp;S=&amp;P=85</a><br /><br />For all AR fans, you must check the AR remake that Guilherme is working on at his website: <a href="http://www.crpgdev.com/" class="postlink">http://www.crpgdev.com/</a><br />... and download the first demo. What a good job  <img src="./images/smilies/icon_surprised.gif" alt=":o" title="Surprised" /> !<br /><br /><blockquote><div><cite>Trilog wrote:</cite>Quick question for you - sorry if it sounds a bit stupid - it's regarding buying bits of armor from the Smithy - it's displayed as &quot;some leather armor&quot; when you're asked if you want to buy but what do you actually get if you say yes as your table lists the four possible items of armor (head, body etc). All four items as a set? I've been unable to test this in the real 16bit game so far due to lack of in-game funds. </div></blockquote><br />Yes, you are right. When you buy some &quot;Leather Armor&quot;, you get the full armor set: Leather Helmet, Leather Breastplate, Leather Gauntlets and Leather Greaves. But some set have only 3 pieces (Ring Mail).<br /><br />Cheers,<br />Kroah</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile415">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p416" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p416">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=416&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p416"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=98&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Trilog</a></strong> &raquo; 04 Aug 2009, 20:17 </p>
+
+			
+
+			<div class="content"><blockquote><div><cite>Kroah wrote:</cite>Yes, you are right. When you buy some &quot;Leather Armor&quot;, you get the full armor set: Leather Helmet, Leather Breastplate, Leather Gauntlets and Leather Greaves. But some set have only 3 pieces (Ring Mail).<br /></div></blockquote><br />That's great - thanks for confirming it. I didn't get as far as I hoped with adding the Smithy to the demo but hopefully I'll finish this part of the game off for the second demo. With all the information you've posted on the site it's hard to know what to do next!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile416">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=98&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Trilog</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 2</dd><dd><strong>Joined:</strong> 12 Apr 2007, 17:32</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p1033" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p1033">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=1033&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p1033"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=308&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">heberhammon</a></strong> &raquo; 04 Dec 2013, 18:33 </p>
+
+			
+
+			<div class="content">Hello Kroah !<br />Thanks for the awesome work you have done on AR. I have been an avid fan since its first release. I most enjoy the Atari ST versions. I was browsing your reverse engineering page and noticed that you have found the location of the character Alignment. I know your busy, but I was wondering if there is a way to change that to good. There is no practical way to raise your alignment in game and I cannot join some guilds because of this.  I use steem emulator, but I am no good at hacking. Thanks again for the nostalgia !!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile1033">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=308&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">heberhammon</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 3</dd><dd><strong>Joined:</strong> 04 Dec 2013, 18:24</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p1034" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><img src="./images/icons/smile/mrgreen.gif" width="16" height="16" alt="" /> <a href="#p1034">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=1034&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p1034"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=308&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">heberhammon</a></strong> &raquo; 04 Dec 2013, 20:15 </p>
+
+			
+
+			<div class="content">Nevermind, I downloaded a debugger for steem and with your decomp notes was able to make my AR character totally Lawful Good and am now in the good guilds. Thanks very much! <img src="./images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /></div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile1034">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=308&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">heberhammon</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 3</dd><dd><strong>Joined:</strong> 04 Dec 2013, 18:24</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p1035" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p1035">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=1035&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p1035"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 04 Dec 2013, 21:50 </p>
+
+			
+
+			<div class="content"><blockquote><div><cite>heberhammon wrote:</cite>Nevermind, I downloaded a debugger for steem and with your decomp notes was able to make my AR character totally Lawful Good and am now in the good guilds. Thanks very much! <img src="./images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /></div></blockquote><br />Hello Heberhammon,<br />Glad you were able to set your character alignment.<br />Using the Steem Debugger was the best way to do it.<br />Have a nice game !</div>
+
+			<div id="sig1035" class="signature"><a href="http://bringerp.free.fr/RE/" class="postlink">Kroah's Game Reverse Engineering Page</a></div>
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile1035">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p1155" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p1155">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=1155&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206#p1155"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=308&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">heberhammon</a></strong> &raquo; 28 Nov 2015, 04:55 </p>
+
+			
+
+			<div class="content">Hey Kroah <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" /><br />     I have been trying to hack the spell index of AR, but have had no success.  I would like to max my &quot;The Fireball&quot; spell, but cannot locate the memory address.  You put the spell ID at +03.b, but what is the spell(s) memory range(s)?  I am pretty sure there at 0x70000, but cannot locate the exact range.  Thanks in advance. I've played this game as much since finding your decomp as I did in the late 80's!!!  There's nothing like the oldies.  Autoduel (ST) is my next hack challenge. TY.<br />Heber</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile1155">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=308&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">heberhammon</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 3</dd><dd><strong>Joined:</strong> 04 Dec 2013, 18:24</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<form id="viewtopic" method="post" action="./viewtopic.php?f=1&amp;t=58&amp;start=15&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">
+
+	<fieldset class="display-options" style="margin-top: 0; ">
+		<a href="./viewtopic.php?f=1&amp;t=58&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206&amp;start=0" class="left-box left">Previous</a>
+		<label>Display posts from previous: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+		<label>Sort by <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label> <label><select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select> <input type="submit" name="sort" value="Go" class="button2" /></label>
+		
+	</fieldset>
+
+	</form>
+	<hr />
+
+
+<div class="topic-actions">
+	<div class="buttons">
+	
+		<div class="reply-icon"><a href="./posting.php?mode=reply&amp;f=1&amp;t=58&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" title="Post a reply"><span></span>Post a reply</a></div>
+	
+	</div>
+
+	
+		<div class="pagination">
+			23 posts
+			 &bull; <a href="#" onclick="jumpto(); return false;" title="Click to jump to page…">Page <strong>2</strong> of <strong>2</strong></a> &bull; <span><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">1</a><span class="page-sep">, </span><strong>2</strong></span>
+		</div>
+	
+</div>
+
+
+	<p></p><p><a href="./viewforum.php?f=1&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" class="left-box left" accesskey="r">Return to General Discussion</a></p>
+
+	<form method="post" id="jumpbox" action="./viewforum.php?sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" onsubmit="if(this.f.value == -1){return false;}">
+
+	
+		<fieldset class="jumpbox">
+	
+			<label for="f" accesskey="j">Jump to:</label>
+			<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+			
+				<option value="-1">Select a forum</option>
+			<option value="-1">------------------</option>
+				<option value="3">Reverse Engineering Forum Index</option>
+			
+				<option value="1" selected="selected">&nbsp; &nbsp;General Discussion</option>
+			
+				<option value="2">&nbsp; &nbsp;CoCoNet Discussion</option>
+			
+				<option value="4">&nbsp; &nbsp;&nbsp; &nbsp;Custom Maps</option>
+			
+			</select>
+			<input type="submit" value="Go" class="button2" />
+		</fieldset>
+	</form>
+
+
+	<h3>Who is online</h3>
+	<p>Users browsing this forum: No registered users and 9 guests</p>
+</div>
+    
+                <div id="page-footer">
+                
+                	<div class="navbar">
+                		<div class="inner"><span class="corners-top"><span></span></span>
+                
+                		<ul class="linklist">
+                			<li class="icon-home"><a href="./index.php?sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" accesskey="h">Board index</a></li>
+                				
+                            <li class="rightside"><a href="./memberlist.php?mode=leaders&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">The team</a> &bull; <a href="./ucp.php?mode=delete_cookies&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206">Delete all board cookies</a> &bull; All times are UTC + 1 hour [ <abbr title="Daylight Saving Time">DST</abbr> ]</li>
+                		</ul>
+                
+                		<span class="corners-bottom"><span></span></span></div>
+                	</div>
+                </div>
+            </div>
+        <div class="border-bottom"><span><span></span></span></div>
+    </div></div></div></div></div>
+</div>
+	
+	<div class="copyright">Powered by <a href="http://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+		
+	</div>
+
+
+
+<div>
+	<a id="bottom" name="bottom" accesskey="z"></a>
+	<img src="./cron.php?cron_type=tidy_sessions&amp;sid=0ca0ba9dfc5c1979b182c1f6ef0b0206" width="1" height="1" alt="cron" />
+</div>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

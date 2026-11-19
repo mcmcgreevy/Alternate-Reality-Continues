@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "id": "STAT-001",
+      "subsystem": "primary stats",
+      "edition_platform": "Atari ST City v2.0",
+      "evidence": "documented",
+      "sources": [
+        {
+          "kind": "archive",
+          "path": "assets/documentation/kroah-city-st-v2/characterStats.html",
+          "source_url": "http://bringerp.free.fr/RE/Ar/characterStats.php5",
+          "catalog_path": "assets/documentation/catalog.json",
+          "catalog_file": "kroah-city-st-v2/characterStats.html",
+          "sha256": "607c3c371e9b13aaac840a7a57165af316f6d4f7808686a8da3fd69f875ed6f5",
+          "locator": "Primary: introduction and Sub-Stat table (Base, Effective, Displayed, Bonus, Penalty)"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "base",
+          "unit": "stat points (real)"
+        },
+        {
+          "name": "bonus",
+          "unit": "stat points"
+        },
+        {
+          "name": "penalty",
+          "unit": "stat points"
+        },
+        {
+          "name": "delusion",
+          "unit": "state"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "effective",
+          "unit": "stat points (integer)"
+        },
+        {
+          "name": "displayed",
+          "unit": "perceived stat points"
+        }
+      ],
+      "behavior": "effective = integer_part(base) + bonus - penalty. Base remains fractional. Displayed equals effective without delusion; it is a separate perceived value. Unqualified engine stat references mean effective.",
+      "precision_rounding": "Take integer part of base before modifiers; negative-value rounding and storage precision unknown.",
+      "bounds": "unknown: clamps and overflow behavior are not established by this section.",
+      "trigger_cadence": "When an effective stat is needed; exact recomputation cadence unknown.",
+      "update_order": "Integer part of base, then add bonus and subtract penalty; ordering among modifier sources unknown.",
+      "implementation": {
+        "status": "partial",
+        "locations": [
+          "scripts/original_world.gd",
+          "scripts/world.gd"
+        ],
+        "notes": "effective_speed() uses integer fields and an extra minimum-zero clamp. Full seven-stat model and delusion display are absent; existing clamp is not source evidence."
+      },
+      "questions": [
+        {
+          "id": "STAT-Q1",
+          "question": "What are storage precision, negative rounding, clamps and overflow rules?",
+          "blocks": [
+            "S08"
+          ]
+        },
+        {
+          "id": "STAT-Q2",
+          "question": "When are modifiers recomputed, and how do delusion and multiple modifier sources interact?",
+          "blocks": [
+            "S08",
+            "S09",
+            "S10"
+          ]
+        }
+      ],
+      "fixture_ids": [
+        "STAT-EX1"
+      ]
+    },
+    {
+      "id": "MOVE-001",
+      "subsystem": "walking rate",
+      "edition_platform": "Atari ST City v2.0",
+      "evidence": "documented",
+      "sources": [
+        {
+          "kind": "archive",
+          "path": "assets/documentation/kroah-city-st-v2/characterStats.html",
+          "source_url": "http://bringerp.free.fr/RE/Ar/characterStats.php5",
+          "catalog_path": "assets/documentation/catalog.json",
+          "catalog_file": "kroah-city-st-v2/characterStats.html",
+          "sha256": "607c3c371e9b13aaac840a7a57165af316f6d4f7808686a8da3fd69f875ed6f5",
+          "locator": "Secondary: Walking Speed row"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "effective_speed",
+          "unit": "stat points (integer)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "walking_rate",
+          "unit": "relative walking units; absolute distance/time scale unknown"
+        }
+      ],
+      "behavior": "walking_rate = min(36, ((effective_speed + 5) div 6) * 2). Initial base Speed is 13 and initial walking rate is 6.",
+      "precision_rounding": "Integer division before multiplication, consistent with the explicitly stated initial rate 6 at Speed 13. Negative operands unknown.",
+      "bounds": "Maximum 36; lower bound/input domain unknown.",
+      "trigger_cadence": "Derived from effective Speed; recomputation cadence unknown.",
+      "update_order": "Add 5, integer divide by 6, multiply by 2, cap at 36.",
+      "implementation": {
+        "status": "implemented",
+        "locations": [
+          "scripts/original_world.gd"
+        ],
+        "notes": "walking_speed() implements the nonnegative rate formula; effective_speed() upstream adds an unverified clamp. Absolute travel scale belongs to MOVE-002."
+      },
+      "questions": [
+        {
+          "id": "MOVE-Q1",
+          "question": "What is the original physical distance/time scale and lower-domain behavior?",
+          "blocks": [
+            "S08",
+            "S03"
+          ]
+        }
+      ],
+      "fixture_ids": [
+        "MOVE-EX7",
+        "MOVE-EX13",
+        "MOVE-EX25",
+        "MOVE-EXCAP"
+      ]
+    },
+    {
+      "id": "MOVE-002",
+      "subsystem": "tile travel",
+      "edition_platform": "Remake City and Dungeon traversal",
+      "evidence": "adaptation",
+      "sources": [
+        {
+          "kind": "implementation",
+          "path": "scripts/original_world.gd",
+          "source_url": "not applicable: local reconstruction",
+          "catalog_path": "not applicable",
+          "catalog_file": "not applicable",
+          "sha256": "not applicable: mutable implementation",
+          "locator": "WALKING_UNITS_PER_TILE; advance_travel(); tile_travel_seconds()"
+        },
+        {
+          "kind": "implementation",
+          "path": "docs/MOVEMENT.md",
+          "source_url": "not applicable: local reconstruction",
+          "catalog_path": "not applicable",
+          "catalog_file": "not applicable",
+          "sha256": "not applicable: mutable implementation",
+          "locator": "Calibration paragraph"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "walking_rate",
+          "unit": "reconstruction walking units per real second"
+        },
+        {
+          "name": "units_per_tile",
+          "unit": "reconstruction walking units per tile"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "tile_duration",
+          "unit": "real seconds per tile"
+        }
+      ],
+      "behavior": "For positive rate, tile_duration = 6 / walking_rate; advance_travel adds real_seconds * walking_rate / 6 to tile progress. The same calibration applies to City and Dungeon.",
+      "precision_rounding": "Floating-point travel progress; arrival clamps progress to 1. Zero rate prevents travel; tile_travel_seconds uses max(1, rate) as a helper safeguard, not an actual zero-rate duration.",
+      "bounds": "Six units per tile; committed progress capped at 1.",
+      "trigger_cadence": "Each travel update while a tile step is active.",
+      "update_order": "Advance progress, then commit the destination at completion.",
+      "implementation": {
+        "status": "implemented",
+        "locations": [
+          "scripts/original_world.gd",
+          "docs/MOVEMENT.md"
+        ],
+        "notes": "Reconstruction calibration only; not measured ST or verified 8-bit Dungeon distance."
+      },
+      "questions": [
+        {
+          "id": "TILE-Q1",
+          "question": "Can original tile timing be measured separately for ST City and 8-bit Dungeon?",
+          "blocks": [
+            "S03"
+          ]
+        }
+      ],
+      "fixture_ids": [
+        "TILE-EX1"
+      ],
+      "adapts": [
+        "MOVE-001"
+      ],
+      "rationale": "Six units per tile gives the starting rate 6 a one-real-second stride. Reusing it in Dungeon is a shared remake policy, not original Dungeon evidence."
+    },
+    {
+      "id": "TIME-001",
+      "subsystem": "ordinary clock",
+      "edition_platform": "Atari ST City v2.0",
+      "evidence": "documented",
+      "sources": [
+        {
+          "kind": "archive",
+          "path": "assets/documentation/kroah-city-st-v2/world.html",
+          "source_url": "http://bringerp.free.fr/RE/Ar/world.php5",
+          "catalog_path": "assets/documentation/catalog.json",
+          "catalog_file": "kroah-city-st-v2/world.html",
+          "sha256": "3c49f286cbceb272615fa7f8cbc3bec501da6bd7eedde17c2e14fe0b5a8e3214",
+          "locator": "Time Span: ordinary rate and Ingame / Real correspondence table"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "elapsed_real_seconds",
+          "unit": "real seconds"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "elapsed_game_minutes",
+          "unit": "game minutes"
+        }
+      ],
+      "behavior": "Ordinary unpaused game time runs at 15 game seconds per real second: game_minutes = real_seconds / 4. Source durations default to game time unless specified.",
+      "precision_rounding": "Preserve fractional game minutes; original accumulator precision unknown.",
+      "bounds": "Applicable to ordinary elapsed time; calendar bounds not applicable to conversion.",
+      "trigger_cadence": "Continuous ordinary unpaused passage of time; service acceleration excluded.",
+      "update_order": "Conversion known; ordering relative to metabolism and other scheduled systems unknown.",
+      "implementation": {
+        "status": "implemented",
+        "locations": [
+          "scripts/original_world.gd"
+        ],
+        "notes": "advance_real_seconds() retains minute_fraction and advances whole minutes. Source pause situations, calendar and accelerated service reconciliation remain S03 work."
+      },
+      "questions": [
+        {
+          "id": "TIME-Q1",
+          "question": "Which exact situations pause time, and what accumulator precision and scheduler ordering apply?",
+          "blocks": [
+            "S03",
+            "S09"
+          ],
+          "research": {
+            "path": "data/reference/effect_contract.json",
+            "decision_ids": [
+              "ER10"
+            ]
+          }
+        },
+        {
+          "id": "TIME-Q2",
+          "question": "How should accelerated services reconcile with ordinary time and metabolism?",
+          "blocks": [
+            "S03",
+            "S09"
+          ],
+          "research": {
+            "path": "data/reference/effect_contract.json",
+            "decision_ids": [
+              "ER11"
+            ]
+          }
+        }
+      ],
+      "fixture_ids": [
+        "TIME-EX1"
+      ]
+    },
+    {
+      "id": "EFFECT-001",
+      "subsystem": "effect identity",
+      "edition_platform": "Atari ST City v2.0",
+      "evidence": "documented",
+      "sources": [
+        {
+          "kind": "archive",
+          "path": "assets/documentation/kroah-city-st-v2/technicalNotes.html",
+          "source_url": "http://bringerp.free.fr/RE/Ar/technicalNotes.php5",
+          "catalog_path": "assets/documentation/catalog.json",
+          "catalog_file": "kroah-city-st-v2/technicalNotes.html",
+          "sha256": "1e181bd1f0dc81ebe8e9542b552205f7160371456f9ce19f83131ed9dfcad041",
+          "locator": "Entity: +Offset Effects; Effect: introductory paragraphs and +01.b Active index"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "entity_effect_definitions",
+          "unit": "ordered template list"
+        },
+        {
+          "name": "activation",
+          "unit": "event"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "active_effect_instances",
+          "unit": "copied active records"
+        }
+      ],
+      "behavior": "An entity holds zero or more effect definitions. Activation copies a definition to the active list. Active index initially FF becomes its own active-list index; initially 00 becomes the previous entity effect active index, usually linking text to a preceding non-text effect.",
+      "precision_rounding": "Discrete records and byte index descriptions; stable runtime identifiers are not specified.",
+      "bounds": "Zero or more definitions; active-list capacity unknown.",
+      "trigger_cadence": "On effect activation.",
+      "update_order": "Previous-effect linkage is documented; other allocation/update ordering unknown.",
+      "implementation": {
+        "status": "not implemented",
+        "locations": [],
+        "notes": "Future design must distinguish definition identity from each active copy; no runtime effects engine exists."
+      },
+      "questions": [
+        {
+          "id": "IDENTITY-Q1",
+          "question": "What are capacity, index reuse and first-effect 00 behavior?",
+          "blocks": [
+            "S10",
+            "S08"
+          ],
+          "research": {
+            "path": "data/reference/effect_contract.json",
+            "decision_ids": [
+              "ER01"
+            ]
+          }
+        }
+      ],
+      "fixture_ids": [
+        "EFFECT-COPY"
+      ]
+    },
+    {
+      "id": "EFFECT-002",
+      "subsystem": "effect events",
+      "edition_platform": "Atari ST City v2.0",
+      "evidence": "documented",
+      "sources": [
+        {
+          "kind": "archive",
+          "path": "assets/documentation/kroah-city-st-v2/technicalNotes.html",
+          "source_url": "http://bringerp.free.fr/RE/Ar/technicalNotes.php5",
+          "catalog_path": "assets/documentation/catalog.json",
+          "catalog_file": "kroah-city-st-v2/technicalNotes.html",
+          "sha256": "1e181bd1f0dc81ebe8e9542b552205f7160371456f9ce19f83131ed9dfcad041",
+          "locator": "Entity: +02.b Events; Effect: introduction, +02.b Allow multiple & Required events, +03.b Counter, +04.w Timer, +06.w Interval, +08.b Probability of natural cure"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "entity_event",
+          "unit": "event bits"
+        },
+        {
+          "name": "required_events",
+          "unit": "event mask"
+        },
+        {
+          "name": "disallow_multiple",
+          "unit": "boolean flag H"
+        },
+        {
+          "name": "active_effects",
+          "unit": "records"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "activation_removal",
+          "unit": "active-list changes"
+        }
+      ],
+      "behavior": "Set entity events are handled then cleared. Events are forwarded to definitions: opposing-event active effects are removed and listeners are activated by copying. Known events A-E are Get, Drop, Use (& Cast), Unuse, Delete. With effect flag H set, equality compares Type/Interval/ProbToRemove/Action/Offset/NbBlocks/Gab/Param; a match prevents activation of the current and all following effects. This is an activation check, not a general stacking rule.",
+      "precision_rounding": "Bit flags and discrete records. Timer/interval units unknown. Counter 0 means never removed by execution; finite counter counts executions before deactivation.",
+      "bounds": "Multiplicity conditional on flag H; other limits unknown.",
+      "trigger_cadence": "Event handling; timer reaching zero decreases counter and executes effect, then timer restarts using interval. Natural cure is checked on execution; initial timer may differ from interval.",
+      "update_order": "Source describes opposing removal then listener activation, but exact event-bit priority, simultaneous events, cure/execution/deactivation order and full opposing-event mapping are unknown.",
+      "implementation": {
+        "status": "partial",
+        "locations": [
+          "scripts/effect_definitions.gd"
+        ],
+        "notes": "S29 implements only the immutable definition registry and documented eight-field duplicate gate. No event dispatch, active instance list, opposing removal, timers or gameplay hook. H-off gate result is not a stacking policy."
+      },
+      "questions": [
+        {
+          "id": "EVENT-Q1",
+          "question": "What do F/G/H entity event bits mean and which events oppose one another?",
+          "blocks": [
+            "S10"
+          ],
+          "research": {
+            "path": "data/reference/effect_contract.json",
+            "decision_ids": [
+              "ER02"
+            ]
+          }
+        },
+        {
+          "id": "EVENT-Q2",
+          "question": "What are timer units, simultaneous-event ordering and cure/execution/deactivation ordering?",
+          "blocks": [
+            "S03",
+            "S09",
+            "S08"
+          ],
+          "research": {
+            "path": "data/reference/effect_contract.json",
+            "decision_ids": [
+              "ER03",
+              "ER06",
+              "ER07",
+              "ER08",
+              "ER09"
+            ]
+          }
+        },
+        {
+          "id": "EVENT-Q3",
+          "question": "Does removal undo a modifier, and how are repeated activations and linked removals processed?",
+          "blocks": [
+            "S08",
+            "S10"
+          ],
+          "research": {
+            "path": "data/reference/effect_contract.json",
+            "decision_ids": [
+              "ER04",
+              "ER05",
+              "ER12",
+              "ER13"
+            ]
+          }
+        }
+      ],
+      "fixture_ids": [
+        "EFFECT-EVENT",
+        "EFFECT-DUPLICATE"
+      ]
+    }
+  ]
+}

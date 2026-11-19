@@ -1,5 +1,12 @@
 # Code guide
 
+Rule/effect work starts with [RULE_MODEL.md](RULE_MODEL.md), the development-only
+[six-rule catalog](../data/reference/rules.json), and
+[source-derived examples](../tests/fixtures/rule_examples.json).
+[validate_rule_catalog.py](../tools/validate_rule_catalog.py) checks provenance
+and references without running gameplay; `data/reference/.gdignore` keeps the
+catalog out of game imports. This contract does not add a runtime effects engine.
+
 Before changing City mechanics, consult [the canonical ST source baseline](SOURCE_BASELINE.md). Existing prototype behavior and tests describe current implementation; they do not override the selected historical reference. Reconcile affected tests deliberately when adopting documented ST behavior.
 
 Start with `project.godot`, which opens `scenes/main.tscn` and attaches `scripts/main.gd`. The current game uses imported City/Dungeon geography. The older invented-map prototype remains a separate regression fixture; it is not the default scene.
@@ -71,6 +78,7 @@ F6 cycles a session-only weather override through the five conditions and back t
 
 | Tool | Purpose and output |
 | --- | --- |
+| `tools/publish_github_backlog.py` | Publishes the reviewed local backlog as repository issues, milestones and native sub-issue links. Reuses stable IDs on reruns; reads Git credentials only into memory and writes the public issue mapping to `docs/GITHUB_BACKLOG_INDEX.json`. Does not create a GitHub Project. |
 | `tools/import_dungeon_maps.py` | Restricted data-only assembly reader; verifies upstream SHA-1 payloads before exporting map data. |
 | `tools/build_original_route.py` | Combines verified Dungeon segments and local ARX City records into `data/maps/`, preserving original transition/edge evidence. Requires the ignored ARX reference checkout. |
 | `tools/audit_map_sources.py` | Inventories source hashes and evidence anchors; it does not infer gameplay rules. |
@@ -99,3 +107,32 @@ Use the portable Godot 4.5.1 console executable with `--headless --path . --scri
 | `test_world`, `test_scene` | Legacy state and scene regressions, including shared renderer helpers. |
 
 For shader/rendering changes, run the relevant capture test without `--headless`; headless tests alone do not exercise the GPU shader. `test_weather.gd -- --capture` creates a rain screenshot. In restricted environments set `APPDATA` to the project's ignored `tools/appdata` before running Godot.
+
+S28 adds the [bounded effect runtime contract](EFFECT_RUNTIME_CONTRACT.md), a source-linked decision ledger and classified event/timer traces. These are research inputs, not a runtime engine; S29–S31 readiness gates are explicit.
+
+
+## S29 effect-definition foundation
+
+`scripts/effect_definitions.gd` is an unwired RefCounted registry. It deep-copies
+registered definitions and returned snapshots; stable definition IDs and revisions
+are remake architecture. `check_duplicate_gate` compares all eight source fields
+against the caller-supplied complete active-list comparison view and returns
+`suppress_current_and_following`. It does not activate or remove effects.
+
+Raw nonnegative integer encodings are opaque comparison data, not permission to
+execute an action. The comparison preserves source Action/Offset values instead
+of interpreting them as typed stat operations. Unknown fields are rejected so a
+caller cannot mistake this limited definition shape for an executable template.
+The caller must not pass only one owner's active records: the documented gate
+checks the active list. H-off disables only this duplicate gate; it grants no
+stacking/refresh semantics. Failed registration does not mutate the registry.
+
+`tests/test_effect_definitions.gd` runs 29 headless checks, including research
+fixtures ET02/ET03, all eight equality fields, deep-copy isolation and malformed
+input. Run with the standard portable Godot command documented above. Event
+opposition, active-instance identity/linkage, dispatch, cleanup and stat rollback
+remain S29 work blocked by the S28 evidence gaps. There is no gameplay/save hook.
+
+### S29 executable evidence extractor
+
+`tools/extract_s29_st_evidence.py` reads the pinned archived STX candidate, rejects missing sectors, verifies the original loader checksum and extracts decoded records under ignored `tools/reference/s29-verified/`. Optional Capstone disassembly treats inline engine dispatch words as data. This development-only tool changes no game state. Interpretation and unresolved discrepancies: `docs/S29_ST_EFFECT_RESEARCH.md`.

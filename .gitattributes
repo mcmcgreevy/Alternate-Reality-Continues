@@ -8,3 +8,6 @@
 *.cmd text eol=crlf
 *.png binary
 *.wav binary
+
+# Preserve archived source bytes so catalog SHA-256 values survive checkout.
+assets/documentation/**/*.html -text

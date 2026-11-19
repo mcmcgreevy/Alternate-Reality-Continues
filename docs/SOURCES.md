@@ -4,6 +4,19 @@
 
 ## Archived documentation
 
+- 2026-11-18: [F01 runtime plan](F01_RULE_EFFECT_PLAN.md) uses the existing unchanged
+  `establishmentsGuilds.html`, Spells / Physical Speed row (+5 Speed bonus for
+  30 game minutes), together with Stats and Technical Notes, for a bounded future
+  integration scenario. Runtime ordering and removal details remain S28 research;
+  the table alone does not establish those semantics.
+
+
+- 2026-11-18: [S01 rule model and effect contract](RULE_MODEL.md) links the
+  [six seed records](../data/reference/rules.json) to unchanged Kroah Stats,
+  World and Technical Notes HTML and catalog hashes. [Examples](../tests/fixtures/rule_examples.json)
+  distinguish documented rules from the tile-distance adaptation; unresolved
+  bounds, event ordering and timer units are tracked for downstream stories.
+
 - 2026-11-16: [Kroah map image](../assets/documentation/kroah-city-st-v2/Map.png) and its existing archived legend verify Tail of the Dog at marker 16, Lost Oasis at marker 14, and the northern Dungeon entrance at marker 49. [Location correction and coordinate evidence](ST_LOCATION_CORRECTION.md) supersede the earlier starting-tavern identification below.
 
 - 2026-11-16: [Kroah's Atari ST City v2.0 reverse engineering](http://bringerp.free.fr/RE/Ar/news.php5), [20-page local archive](../assets/documentation/kroah-city-st-v2/README.md). Detailed research on world/weather, character systems, equipment, encounters and establishments. Edition-specific research, not yet independently verified against the ST executable by this project. See [review and reconstruction implications](KROAH_ST_REVIEW.md); do not silently merge ST rules with 8-bit sources.
@@ -40,3 +53,13 @@ First Excursion uses a tavern interaction screen. Its first meal/briefing/leave 
 Dungeon JSON derives from original map data. Its source headers credit Jason Duerstock (2008) and the original program to Intellicreations (1987); the repository specifies GPL-2.0. All four level-one map sources/checksums, the runtime reference for transition decoding and upstream license are preserved in third_party/ardungeon. Transition behavior is implemented from the original table and dispatcher evidence. This attribution does not assert blanket rights to original game assets. No ARX implementation code was ported. The V tour and transition dots are invented playtest aids.
 
 The 2026-11-15 [weather pass](WEATHER.md) presents the handbook's five conditions, rain and shelter. Hourly equal-probability selection, seeded scheduling, haze and rain rendering are remake choices, not recovered original algorithms. Character penalties and clothing protection remain pending.
+
+- 2026-11-17: Planning taxonomy follows the navigation in the existing Kroah `news.html` archive. [Backlog](BACKLOG.md), [roadmap](ROADMAP.md), and [GitHub planning proposal](GITHUB_PLANNING.md) distinguish source categories from project adaptations. GitHub planning documentation URLs are cataloged; direct archival downloads failed (DNS), so no local copies are claimed.
+
+- 2026-11-17: GitHub About Projects, Adding sub-issues and REST sub-issues API documentation now archived unchanged in `assets/documentation/github-planning/`; catalog includes hashes and original URLs. This supersedes the earlier failed-download limitation.
+
+2026-11-19 — [S28 effect-runtime research](EFFECT_RUNTIME_CONTRACT.md): reviewed unchanged Technical Notes, Stats, World and Guilds HTML. Thirteen source-linked dispositions and thirteen classified traces document what is known and what still blocks S29–S31. Physical Speed is +5 bonus for 30 game minutes; timer units, scheduler order and rollback are not established by that spell row.
+
+2026-11-19 — S29 definition/duplicate-gate foundation uses archived `technicalNotes.html`, Effect / +02 Allow multiple & Required events. Opaque raw eight-field equality is implemented; event/cleanup gaps from S28 remain unresolved.
+
+2026-11-19 — [S29 original-ST executable research](S29_ST_EFFECT_RESEARCH.md): archived Kroah forum/current notes, AtariMania v2.0 listing and unchanged candidate disk. Reproducible extraction verifies all sectors in 32 encoded records against the loader checksum. Static analysis identifies opposing pairs, event branch order, linkage allocation and removal without arithmetic rollback. Candidate/prose discrepancies remain explicit; no gameplay rule was silently replaced.

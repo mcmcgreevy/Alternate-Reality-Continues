@@ -296,6 +296,145 @@
         "16": "Tail of the Dog Tavern",
         "49": "Dungeon Entrance"
       }
+    },
+    {
+      "title": "GitHub Docs: About Projects",
+      "source_url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+      "retrieved": "2026-11-17",
+      "edition_platforms": [
+        "GitHub.com web documentation; planning reference"
+      ],
+      "file": "github-planning/about-projects.html",
+      "bytes": 167250,
+      "sha256": "c69705003cda01bb35abe7acac4c6108fd519eb8f694b566385c9d2f0a6e496f",
+      "notes": "Unmodified HTML response; external assets not mirrored. Tooling documentation, not game-rule evidence."
+    },
+    {
+      "title": "GitHub Docs: Adding sub-issues",
+      "source_url": "https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues",
+      "retrieved": "2026-11-17",
+      "edition_platforms": [
+        "GitHub.com web documentation; planning reference"
+      ],
+      "file": "github-planning/adding-sub-issues.html",
+      "bytes": 155026,
+      "sha256": "63720b144e9b84525a68e816a242bde8277eefaf29d32de29307f9271d87b33b",
+      "notes": "Unmodified HTML response; external assets not mirrored. Tooling documentation, not game-rule evidence."
+    },
+    {
+      "title": "GitHub Docs: REST sub-issues API",
+      "source_url": "https://docs.github.com/en/rest/issues/sub-issues",
+      "retrieved": "2026-11-17",
+      "edition_platforms": [
+        "GitHub.com web documentation; planning reference"
+      ],
+      "file": "github-planning/sub-issues.html",
+      "bytes": 597327,
+      "sha256": "f559166e82818758e661b4a74a85021280ad1db8cecb97aa6e5ecb5434d0e42a",
+      "notes": "Unmodified HTML response; external assets not mirrored. Tooling documentation, not game-rule evidence."
+    },
+    {
+      "title": "kroah-forum.html",
+      "source_url": "http://bringerp.free.fr/forum/",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Kroah ST research site; page scope must be verified"
+      ],
+      "file": "s29-st-research/kroah-forum.html",
+      "bytes": 13104,
+      "sha256": "63e26e53bb99cf8fabb406a03bcccca4725df6976eb951415017c3a2c3900fd1",
+      "notes": "Unmodified HTTP response; analysis separate. No gameplay assertion from site navigation."
+    },
+    {
+      "title": "kroah-technicalNotes-2026-11-19.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/technicalNotes.php5",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Kroah ST research site; page scope must be verified"
+      ],
+      "file": "s29-st-research/kroah-technicalNotes-2026-11-19.html",
+      "bytes": 31528,
+      "sha256": "1e181bd1f0dc81ebe8e9542b552205f7160371456f9ce19f83131ed9dfcad041",
+      "notes": "Unmodified HTTP response; analysis separate. No gameplay assertion from site navigation."
+    },
+    {
+      "title": "kroah-sitemap.html",
+      "source_url": "http://bringerp.free.fr/RE/sitemap.php5",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Kroah ST research site; page scope must be verified"
+      ],
+      "file": "s29-st-research/kroah-sitemap.html",
+      "bytes": 23194,
+      "sha256": "e8f2b86fa56a7cd72572328964b55cc6934842f3d80465fcba4a8e5aa8f7d746",
+      "notes": "Unmodified HTTP response; analysis separate. No gameplay assertion from site navigation."
+    },
+    {
+      "title": "Kroah forum: General Discussion",
+      "source_url": "http://bringerp.free.fr/forum/viewforum.php?f=1",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Mixed platforms; source discovery only"
+      ],
+      "file": "s29-st-research/kroah-general-forum.html",
+      "bytes": 69210,
+      "sha256": "9c370647c2693a987e586a922049b2f443a0fa77e2776727e9f6401c40c2e505"
+    },
+    {
+      "title": "Kroah forum: Alternate Reality The Decompilation, page 1",
+      "source_url": "http://bringerp.free.fr/forum/viewtopic.php?f=1&t=58",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Alternate Reality; verify platform per post"
+      ],
+      "file": "s29-st-research/alternate-reality-decompilation-page1.html",
+      "bytes": 44726,
+      "sha256": "7d1a02a12c5d45b0d8e283664c1bdc6e0f7cc980b3f3b676975184d714d80b03"
+    },
+    {
+      "title": "Kroah forum: Alternate Reality The Decompilation, page 2",
+      "source_url": "http://bringerp.free.fr/forum/viewtopic.php?f=1&t=58&start=15",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Alternate Reality; verify platform per post"
+      ],
+      "file": "s29-st-research/alternate-reality-decompilation-page2.html",
+      "bytes": 28204,
+      "sha256": "07eab7ad340aeaea2bfc7ec9bd4eb89602dc670dcdc184629724a64af116212a"
+    },
+    {
+      "title": "Atarimania: Alternate Reality The City record 20759",
+      "source_url": "https://www.atarimania.com/games/atari-st-games-alternate-reality-the-city-20759",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Atari ST; candidate media metadata"
+      ],
+      "file": "s29-st-research/atarimania-city-20759.html",
+      "bytes": 148869,
+      "sha256": "659296167a89302f01fc43cc3e557e865e2f8a75ace7a9c606c679c56f20293f"
+    },
+    {
+      "title": "Alternate Reality The City ST v2.0 candidate original disk image",
+      "source_url": "https://www.atarimania.com/st/dumps/alternate_reality_-_the_city_2_0_datasoft.zip",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "Atari ST v2.0 per AtariMania record 20759; executable not yet verified"
+      ],
+      "file": "s29-st-research/alternate-reality-city-st-v2-candidate.zip",
+      "bytes": 344514,
+      "sha256": "1ee57ea2362345c6b6389f4ff5c813ea1c4ca311311d6d503ea7d507368a9000",
+      "notes": "Unmodified downloaded ZIP; development evidence excluded from game imports. Raw bootstrap includes V2.0; 32 encoded records pass loader sector checksums. Not proven identical to Kroah\u2019s copy. See docs/S29_ST_EFFECT_RESEARCH.md; static analysis only."
+    },
+    {
+      "title": "Hatari STX header/sector structures",
+      "source_url": "https://hatari.frama.io/hatari/doxygen/stx_8h_source.html",
+      "retrieved": "2026-11-19",
+      "edition_platforms": [
+        "STX container format; not game-rule evidence"
+      ],
+      "file": "s29-st-research/hatari-stx-format.html",
+      "bytes": 90658,
+      "sha256": "27bf054ae1c87a5788693f5befe488f80b33db809aa89749b40352fbbca994f8"
     }
   ]
 }

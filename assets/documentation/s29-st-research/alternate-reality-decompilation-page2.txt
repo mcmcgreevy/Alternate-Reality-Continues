@@ -1,0 +1,115 @@
+Kroah's Game Reverse Engineering Forum • View topic - Alternate Reality: The Decompilation
+Kroah's Game Reverse Engineering Forum
+Reverse engineering forum of old computer games for Atari ST, Atari 8-bit and Amiga systems.
+Skip to content
+Advanced search
+Return to Homepage ‹ Board index  ‹ Reverse Engineering Forum Index ‹ General Discussion
+Change font size
+Print view
+FAQ
+Register
+Login
+Alternate Reality: The Decompilation
+Talk about everything related to general reverse engineering of computer games!
+Moderator: Kroah
+Post a reply
+23 posts
+• Page 2 of 2 • 1, 2
+by Monty » 03 Jun 2009, 00:13
+Never played the game but your section looks awesome!
+Monty
+CoCoNet Beta Tester
+Posts: 70Joined: 24 Jun 2007, 23:03
+Top
+Re: Alternate Reality: The Decompilation
+by Trilog » 22 Jul 2009, 14:04
+Hi,
+Just to add my comments to this thread - This is great work. The level of detail you've recorded here is amazing. They webpages look really good too!
+I'm hoping that in time this will spark lots of interesting AR related projects besides my own AR remake project.
+Quick question for you - sorry if it sounds a bit stupid - it's regarding buying bits of armor from the Smithy - it's displayed as "some leather armor" when you're asked if you want to buy but what do you actually get if you say yes as your table lists the four possible items of armor (head, body etc). All four items as a set? I've been unable to test this in the real 16bit game so far due to lack of in-game funds.
+Looking forward to some of the other games you're documenting too - particularly the RPGs.
+All the best,
+Guilherme
+Trilog
+Posts: 2Joined: 12 Apr 2007, 17:32
+Top
+Re: Alternate Reality: The Decompilation
+by Kroah » 03 Aug 2009, 20:42
+Hello Guilherme,
+Sorry to reply you so late, but i was a busy moving to my new house.
+Trilog wrote:Just to add my comments to this thread - This is great work. The level of detail you've recorded here is amazing. They webpages look really good too!
+Thank you. It was really fun to work on AR, even if it tooks me several years to put everything on my site.
+Trilog wrote:I'm hoping that in time this will spark lots of interesting AR related projects besides my own AR remake project.
+I hope so! I just saw you've released the first demo of your project at the AR mailing list:
+http://listserv.genesistwo.com/scripts/wa.exe?A2=ind0908&L=ALTERNATEREALITY&T=0&F=&S=&P=85
+For all AR fans, you must check the AR remake that Guilherme is working on at his website: http://www.crpgdev.com/
+... and download the first demo. What a good job   !
+Trilog wrote:Quick question for you - sorry if it sounds a bit stupid - it's regarding buying bits of armor from the Smithy - it's displayed as "some leather armor" when you're asked if you want to buy but what do you actually get if you say yes as your table lists the four possible items of armor (head, body etc). All four items as a set? I've been unable to test this in the real 16bit game so far due to lack of in-game funds.
+Yes, you are right. When you buy some "Leather Armor", you get the full armor set: Leather Helmet, Leather Breastplate, Leather Gauntlets and Leather Greaves. But some set have only 3 pieces (Ring Mail).
+Cheers,
+Kroah
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+Re: Alternate Reality: The Decompilation
+by Trilog » 04 Aug 2009, 20:17
+Kroah wrote:Yes, you are right. When you buy some "Leather Armor", you get the full armor set: Leather Helmet, Leather Breastplate, Leather Gauntlets and Leather Greaves. But some set have only 3 pieces (Ring Mail).
+That's great - thanks for confirming it. I didn't get as far as I hoped with adding the Smithy to the demo but hopefully I'll finish this part of the game off for the second demo. With all the information you've posted on the site it's hard to know what to do next!
+Trilog
+Posts: 2Joined: 12 Apr 2007, 17:32
+Top
+Re: Alternate Reality: The Decompilation
+by heberhammon » 04 Dec 2013, 18:33
+Hello Kroah !
+Thanks for the awesome work you have done on AR. I have been an avid fan since its first release. I most enjoy the Atari ST versions. I was browsing your reverse engineering page and noticed that you have found the location of the character Alignment. I know your busy, but I was wondering if there is a way to change that to good. There is no practical way to raise your alignment in game and I cannot join some guilds because of this.  I use steem emulator, but I am no good at hacking. Thanks again for the nostalgia !!
+heberhammon
+Posts: 3Joined: 04 Dec 2013, 18:24
+Top
+Re: Alternate Reality: The Decompilation
+by heberhammon » 04 Dec 2013, 20:15
+Nevermind, I downloaded a debugger for steem and with your decomp notes was able to make my AR character totally Lawful Good and am now in the good guilds. Thanks very much!
+heberhammon
+Posts: 3Joined: 04 Dec 2013, 18:24
+Top
+Re: Alternate Reality: The Decompilation
+by Kroah » 04 Dec 2013, 21:50
+heberhammon wrote:Nevermind, I downloaded a debugger for steem and with your decomp notes was able to make my AR character totally Lawful Good and am now in the good guilds. Thanks very much!
+Hello Heberhammon,
+Glad you were able to set your character alignment.
+Using the Steem Debugger was the best way to do it.
+Have a nice game !
+Kroah's Game Reverse Engineering Page
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+Re: Alternate Reality: The Decompilation
+by heberhammon » 28 Nov 2015, 04:55
+Hey Kroah
+I have been trying to hack the spell index of AR, but have had no success.  I would like to max my "The Fireball" spell, but cannot locate the memory address.  You put the spell ID at +03.b, but what is the spell(s) memory range(s)?  I am pretty sure there at 0x70000, but cannot locate the exact range.  Thanks in advance. I've played this game as much since finding your decomp as I did in the late 80's!!!  There's nothing like the oldies.  Autoduel (ST) is my next hack challenge. TY.
+Heber
+heberhammon
+Posts: 3Joined: 04 Dec 2013, 18:24
+Top
+Previous
+Display posts from previous: All posts1 day7 days2 weeks1 month3 months6 months1 year
+Sort by AuthorPost timeSubject AscendingDescending
+Post a reply
+23 posts
+• Page 2 of 2 • 1, 2
+Return to General Discussion
+Jump to:
+Select a forum
+------------------
+Reverse Engineering Forum Index
+General Discussion
+CoCoNet Discussion
+Custom Maps
+Who is online
+Users browsing this forum: No registered users and 9 guests
+Board index
+The team • Delete all board cookies • All times are UTC + 1 hour [ DST ]
+Powered by phpBB® Forum Software © phpBB Group
