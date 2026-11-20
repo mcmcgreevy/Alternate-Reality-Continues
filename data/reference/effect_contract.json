@@ -84,14 +84,14 @@
         "TECH",
         "ST_BINARY"
       ],
-      "locator": "Effect introductory paragraph; Entity +02 Events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "locator": "Effect introductory paragraph; Entity +02 Events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
-      "finding": "Candidate captures and clears pending events before processing Get, Drop, Use, Unuse, Delete in that branch order. Get can exit early; alignment processing precedes these branches.",
-      "unknown": "Full inter-entity timing, reentrancy and timer/event ties remain unresolved; clear-before-processing differs from archive wording.",
+      "finding": "Owner events run before timers at module 05 $03a2/$03a6. Owner table scans descending slots ($267a); timers scan ascending live slots ($244c/$252a). Captured bits retain Get/Drop/Use/Unuse/Delete order. S32 probes verify newly activated effects and explicit-bound Delete before expiry.",
+      "unknown": "Reentrant callbacks and special-use hooks are outside the bounded slice; original enchanted-item group-binding creation remains unresolved.",
       "blocks": [
         "S30"
       ],
-      "disposition": "Adopt no blanket all-bits execution claim. Separate established branch order from full scheduler and reentrancy policies. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
+      "disposition": "Bounded ordering resolved. Supply timestamped event batches/source-order ranks and separate scheduling slots from monotonic instance IDs; no reentrant callbacks."
     },
     {
       "id": "ER04",
@@ -135,16 +135,17 @@
         "EVENT-Q2"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect +04 Timer; +06 Interval",
+      "locator": "Effect +04 Timer; +06 Interval; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
-      "finding": "Initial timer may differ from interval; at zero counter decreases and effect executes; timer restarts from interval.",
-      "unknown": "Timer tick unit, signedness, decrement cadence, initial zero and zero interval behavior unknown.",
+      "finding": "Calendar and effect countdowns reload 240 ($1654/$2446); accelerated flag bypasses both. One raw timer unit has one game-minute steady-state period. Successful casting resets shared effect phase to 1 ($0b8c). Unsigned timer/interval words are 0..65535; initial zero is dormant, interval zero disarms after current execution. Missed scheduler polls lose updates in the candidate.",
+      "unknown": "Full hardware/service emulation is not claimed. Original shared phase and polling loss are intentionally not reproduced.",
       "blocks": [
         "S30"
       ],
-      "disposition": "Abstract-tick fixtures are conditional and cannot be wired to game minutes yet."
+      "disposition": "User decision 2026-11-20 preserves all elapsed time: activation-relative integer game-microsecond deadlines; 60,000,000 units per positive raw timer unit. Zero remains dormant, not immediate."
     },
     {
       "id": "ER07",
@@ -152,16 +153,17 @@
         "EVENT-Q2"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect +03 Counter; +04 Timer",
+      "locator": "Effect +03 Counter; +04 Timer; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
-      "finding": "Finite counter counts executions before deactivation; 00 is never removed by execution.",
-      "unknown": "Order of final execution/deactivation/reset and cure on that same tick not fully stated.",
+      "finding": "On expiry: reload interval, finish incubation/show linked text, check cure, execute action, decrement finite counter, then remove at exhaustion ($2476..2528). Counter zero does not expire by execution. Removed later due slots are skipped; root removal clears its linked group.",
+      "unknown": "Complete natural-cure random-stream behavior remains outside this slice.",
       "blocks": [
         "S30"
       ],
-      "disposition": "Check final observable execution count without claiming an internal total ordering."
+      "disposition": "Bounded order resolved by S32 original-code probes. Reject nonzero cure. Removal performs no inverse arithmetic."
     },
     {
       "id": "ER08",
@@ -169,16 +171,17 @@
         "EVENT-Q2"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect +00 B and E; +04 Timer",
+      "locator": "Effect +00 B and E; +04 Timer; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
-      "finding": "Incubation ends on first timer expiry; linked invisible text becomes visible when incubation ends.",
-      "unknown": "Whether that first expiry also applies every action, and visibility/removal ties, remain unknown.",
+      "finding": "First expiry clears incubation and enables linked text before action ($253e..256a). With cure zero the same expiry executes the action. Counter exhaustion can remove the newly visible linked text in that pass; no rendered frame is guaranteed.",
+      "unknown": "Renderer presentation and arbitrary malformed original text layouts are not modeled.",
       "blocks": [
         "S30"
       ],
-      "disposition": "Reject incubation definitions until behavior is resolved; no implicit immediate first execution."
+      "disposition": "Support boolean incubation/text visibility and explicit group links; preserve first-expiry action and same-pass cleanup. S32 probes cover counter zero and one."
     },
     {
       "id": "ER09",
@@ -203,17 +206,18 @@
         "TIME-Q1"
       ],
       "source_refs": [
-        "TIME"
+        "TIME",
+        "ST_BINARY"
       ],
-      "locator": "Time Span / ordinary table and pause sentence",
+      "locator": "Time Span / ordinary table and pause sentence; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
-      "finding": "Ordinary time is 15 game seconds per real second; pause stops time.",
-      "unknown": "Exact pause contexts, accumulator resolution and scheduler/metabolism ordering not specified.",
+      "finding": "Kroah ordinary conversion is 15 game seconds per real second. Candidate pause flag gates calendar and main-loop effects; calendar increments every 240 ordinary interrupts. Scheduler compares counter inequality rather than elapsed delta; missing polls loses effect updates.",
+      "unknown": "Individual gameplay pause contexts and S03 production interface implementation remain outstanding, not the bounded scheduler cadence.",
       "blocks": [
         "S30",
         "S31"
       ],
-      "disposition": "S03 supplies elapsed game time once; no runtime clock or pause-policy inference."
+      "disposition": "S03-CLOCK must provide nonnegative integer game microseconds, fractional conversion remainder, timestamp boundaries and overflow validation. User approved processing all elapsed time instead of candidate polling loss."
     },
     {
       "id": "ER11",
@@ -221,17 +225,18 @@
         "TIME-Q2"
       ],
       "source_refs": [
-        "TIME"
+        "TIME",
+        "ST_BINARY"
       ],
-      "locator": "Time Span / final paragraph",
+      "locator": "Time Span / final paragraph; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
-      "finding": "Working/sleeping/learning accelerate time; one game hour per real second is stated and metabolism continues.",
-      "unknown": "240 times faster has an unstated comparison base: 240 times ordinary 15x gives 3600x real, agreeing with the explicit example. Effect ordering still unknown.",
+      "finding": "Accelerated flag at global $1801 bypasses both calendar and effect countdowns. Each observed interrupt advances one game minute/effect update; static service callers set/clear this flag. This is 240 times ordinary, agreeing with Kroah one game hour per real second.",
+      "unknown": "Whole working/sleeping/learning scenes and downstream metabolism routines were not dynamically emulated.",
       "blocks": [
         "S30",
         "S31"
       ],
-      "disposition": "Record this as an interpretation for S03 reconciliation, not an independently measured rate or timer-unit deduction."
+      "disposition": "S03 converts accelerated time once at 3600 game seconds per real second; S30 consumes the same elapsed input and processes every due action. No second scheduler or metabolism update."
     },
     {
       "id": "ER12",
@@ -262,15 +267,15 @@
         "TIME",
         "ST_BINARY"
       ],
-      "locator": "Spells / List / Physical Speed, Duration and Description; Stats / Primary and Walking Speed; World / Time Span; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "locator": "Spells / List / Physical Speed, Duration and Description; Stats / Primary and Walking Speed; World / Time Span; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
-      "finding": "Module 15 entity at 0x2a0e is Physical Speed: H-gated Sub 5 with timer 30, linked long text, then H-gated Add 5 with timer 1. Original-code execution yields bonus five after update 1 through 29 and zero after update 30.",
-      "unknown": "Forced effect updates do not establish scheduler units or exact cast-to-first-update game-time boundary. Early cancellation follows removal evidence, not generic undo.",
+      "finding": "Physical Speed raw records have timer 1 Add5 and timer 30 Sub5. Successful-cast phase reset produces observed transitions at interrupt 1 and 6961, a 29-minute bonus window. This disagrees with Kroah documented 30 minutes. User explicitly selected documented duration and reliable elapsed time on 2026-11-20.",
+      "unknown": "General spell content and full cast UI/RNG remain outside scope. Save representation remains S31 work.",
       "blocks": [
         "S30",
         "S31"
       ],
-      "disposition": "Replace the proposed immediate-grant/deadline-revoke assumption with explicit original Add/Sub records in future timing fixtures; retain the documented 30-game-minute duration separately."
+      "disposition": "Normalize successful activation to one Add5 and explicit Sub5 at +1800 game seconds; active interval is [activation, deadline). Save at +600 leaves 1200 with no replayed grant. Do not replay raw records as an exact content schedule or invent removal rollback."
     }
   ]
 }

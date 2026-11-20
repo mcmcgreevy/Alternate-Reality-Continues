@@ -128,7 +128,8 @@
       },
       "unresolved": [
         "Abstract units do not establish seconds/minutes conversion; exact engine tick phase unknown"
-      ]
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
     },
     {
       "id": "ET07",
@@ -153,7 +154,8 @@
       },
       "unresolved": [
         "Within-final-tick reset/execution/deactivation sequence not asserted"
-      ]
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
     },
     {
       "id": "ET08",
@@ -173,7 +175,8 @@
       },
       "unresolved": [
         "Whether action also executes on this expiry not asserted"
-      ]
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
     },
     {
       "id": "ET09",
@@ -194,7 +197,8 @@
       },
       "unresolved": [
         "No invented inverse operation; blocks full S29 removal contract"
-      ]
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
     },
     {
       "id": "ET10",
@@ -221,7 +225,8 @@
       },
       "unresolved": [
         "Exact boundary and raw lifecycle/rollback mechanism unknown"
-      ]
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
     },
     {
       "id": "ET11",
@@ -265,7 +270,8 @@
       },
       "unresolved": [
         "No expected damage/stat value until ordering and probability semantics resolved"
-      ]
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
     },
     {
       "id": "ET13",

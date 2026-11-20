@@ -4,6 +4,13 @@ Parent: F01 (#8) · Epic: E01 (#1) · Milestone: M1 — Character and world foun
 
 <!-- ar-planning-baseline-2026-11-17 -->
 
+## Completion
+
+Completed 2026-11-20. [Acceptance review](../S32_ACCEPTANCE_REVIEW.md) and
+[research/approved handoff](../S32_ST_TIMING_RESEARCH.md): 18 original-code cases,
+13 prior probes and 23 validation tests pass. S30 remains Backlog pending the
+S03-CLOCK and S08-SPEED implementations.
+
 ## User story
 
 As a developer, I can implement S30's timed effects using verified timing and ordering rules rather than guessing how the original scheduler works.
@@ -16,11 +23,11 @@ S29 is complete. Its probes deliberately forced effect updates; they did not est
 
 ## Acceptance criteria
 
-- [ ] **S32-AC1 — Unit and phase:** trace the original updater's callers and clock/counter sources; establish raw timer units, cadence and first-update phase, including ordinary versus accelerated operation. Record exact module offsets, source hashes and derivations.
-- [ ] **S32-AC2 — Execution order:** establish local expiry/incubation/action/counter/removal order and the order of coincident effects, linked cleanup and entity-event/timer ties. Explain which conclusions are measured, statically derived or still limited by the probe environment.
-- [ ] **S32-AC3 — Boundary fixtures:** provide reproducible executable research cases for initial zero, interval zero, finite versus zero counter, first expiry with incubation, simultaneous expiry/removal and Physical Speed's first/last update. Use synthetic inputs explicitly; do not claim a forced update establishes a time unit.
-- [ ] **S32-AC4 — Bounded support contract:** update the research ledger, runtime contract and fixtures with the units/precision/valid domains required by S30. Specify supported timer/counter/text state and required versus rejected operations, including the permitted exclusion of natural cure. Record discrepancies and any explicitly approved adaptation; do not invent unresolved rules.
-- [ ] **S32-AC5 — Handoff:** identify the exact elapsed-time semantics S03 must supply and the operation ordering S08's Speed-bonus API must support. Update S30's readiness checklist with evidence links, then verify provenance checks and the research probes.
+- [x] **S32-AC1 — Unit and phase:** trace the original updater's callers and clock/counter sources; establish raw timer units, cadence and first-update phase, including ordinary versus accelerated operation. Record exact module offsets, source hashes and derivations.
+- [x] **S32-AC2 — Execution order:** establish local expiry/incubation/action/counter/removal order and the order of coincident effects, linked cleanup and entity-event/timer ties. Explain which conclusions are measured, statically derived or still limited by the probe environment.
+- [x] **S32-AC3 — Boundary fixtures:** provide reproducible executable research cases for initial zero, interval zero, finite versus zero counter, first expiry with incubation, simultaneous expiry/removal and Physical Speed's first/last update. Use synthetic inputs explicitly; do not claim a forced update establishes a time unit.
+- [x] **S32-AC4 — Bounded support contract:** update the research ledger, runtime contract and fixtures with the units/precision/valid domains required by S30. Specify supported timer/counter/text state and required versus rejected operations, including the permitted exclusion of natural cure. Record discrepancies and any explicitly approved adaptation; do not invent unresolved rules.
+- [x] **S32-AC5 — Handoff:** identify the exact elapsed-time semantics S03 must supply and the operation ordering S08's Speed-bonus API must support. Update S30's readiness checklist with evidence links, then verify provenance checks and the research probes.
 
 ## Completion rule
 

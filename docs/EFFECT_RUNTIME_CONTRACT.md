@@ -1,5 +1,18 @@
 # Bounded effect runtime contract — S28
 
+## Current S32 timing handoff — 2026-11-20
+
+[S32 research and bounded contract](S32_ST_TIMING_RESEARCH.md) supersede the
+historical timing unknowns below. Eighteen unchanged-code probes establish
+ordinary/accelerated cadence, pause, first-update phase, event-before-timer and
+slot order, zero timer/interval, counter and incubation behavior. The user chose
+the documented 30-minute Physical Speed duration and processing all elapsed time
+over the candidate's 29-minute window and missed-update loss. The report specifies
+activation-relative integer-game-microsecond deadlines, supported typed Add/Sub,
+ordering, text state and atomic rejection of unsupported operations/natural cure.
+S03-CLOCK and S08-SPEED implementation/verification still gate S30; S29 is Done.
+Do not use the original S28 readiness table below as current status.
+
 Research completed 2026-11-19 against the unchanged Kroah Atari ST City v2.0
 archive. This is a design/research deliverable, not runtime code or authorization
 to invent historical behavior. S28 can close with explicit unresolved findings;

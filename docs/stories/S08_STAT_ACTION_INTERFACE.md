@@ -3,6 +3,16 @@
 ## S30 prerequisite: S08-SPEED
 Status: outstanding; completing this deliverable does not close all of S08.
 
+S32 research is complete: see [timing contract](../S32_ST_TIMING_RESEARCH.md).
+The bounded target is named `speed_bonus`, unsigned byte 0..255; Add/Sub take
+byte parameters 0..255 and saturate at 255/0. One block and zero gap only.
+Apply actions synchronously in the supplied order, without reentrant callbacks.
+Reject other targets, operations, widths or layouts atomically. S30 owns timer
+ordering; this API must not reorder operations or synthesize rollback on removal.
+Physical Speed's normalized activation grants five once; the explicit subtraction
+occurs 1800 game seconds later. S31 owns content and save integration, including
+no replayed activation after loading. No callable implementation is claimed yet.
+
 - [ ] Define a bounded typed Speed-bonus state/action interface for one-byte saturating Add/Sub. Specify accepted targets, widths and values; unsupported operations must fail without partial mutation.
 - [ ] Preserve explicit Add/Sub execution order. Removing a linked group must not invent an inverse operation: saturation makes generic rollback incorrect. Specify owner isolation and cleanup separately from stat arithmetic.
 - [ ] Supply a callable interface/reference implementation and fixtures: 253 + 5 = 255; 2 - 5 = 0; Physical Speed's explicit Add-5/Sub-5 sequence starting at zero ends at zero; invalid inputs leave all state unchanged and other stat fields remain untouched.

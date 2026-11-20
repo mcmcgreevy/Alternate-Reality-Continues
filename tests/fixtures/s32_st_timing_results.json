@@ -1,0 +1,149 @@
+{
+  "evidence": "Unchanged module-05 fragments and synthetic RAM; not full ST emulation",
+  "module_05_sha256": "8dcd198113217567d412f50af3ce7b2dd33a8981d14a8cde5b8545b319e56190",
+  "emulator": "Unicorn 2.1.4, M68000",
+  "scenarios": {
+    "ordinary_cadence": {
+      "interrupts_per_calendar_minute": 240,
+      "scheduler_calls_per_effect_update": 240,
+      "bonuses_at_240_480": [
+        5,
+        10
+      ]
+    },
+    "accelerated_cadence": {
+      "calendar_minutes_per_interrupt": 1,
+      "effect_updates_per_observed_interrupt": 1,
+      "bonus_after_three": 15
+    },
+    "pause": {
+      "paused_interrupts": 300,
+      "calendar_minutes": 0,
+      "effect_countdown_after_resume_poll": 239,
+      "limitation": "Resume observes one changed counter; not a backlog of 300 updates."
+    },
+    "missed_polls": {
+      "interrupts": 480,
+      "calendar_minutes": 2,
+      "effect_countdown": 239,
+      "duplicate_poll_no_work": true,
+      "discrepancy": "The caller compares counters for inequality, not elapsed delta."
+    },
+    "initial_zero": {
+      "bonus_by_forced_update": [
+        0,
+        0,
+        0
+      ],
+      "live_slots": [
+        0
+      ],
+      "first_slot_hex": "8300040100000001008118ae01000502"
+    },
+    "interval_zero": {
+      "bonus_by_forced_update": [
+        5,
+        5,
+        5
+      ],
+      "live_slots": [
+        0
+      ],
+      "first_slot_hex": "8300040000000000008118ae01000502"
+    },
+    "finite_counter": {
+      "bonus_by_forced_update": [
+        5,
+        10,
+        10
+      ],
+      "live_slots": [],
+      "first_slot_hex": "8000040000010001008118ae01000502"
+    },
+    "zero_counter": {
+      "bonus_by_forced_update": [
+        5,
+        10,
+        15
+      ],
+      "live_slots": [
+        0
+      ],
+      "first_slot_hex": "8300040000010001008118ae01000502"
+    },
+    "incubation_action": {
+      "bonus_by_forced_update": [
+        5,
+        10,
+        15
+      ],
+      "live_slots": [
+        0
+      ],
+      "first_slot_hex": "8300040000010001008118ae01000502"
+    },
+    "add_then_subtract": {
+      "initial_bonus": 253,
+      "final_bonus": 250
+    },
+    "subtract_then_add": {
+      "initial_bonus": 253,
+      "final_bonus": 253
+    },
+    "root_removes_later_due_child": {
+      "bonus": 5,
+      "live_slots": [],
+      "child_action_executed": false
+    },
+    "owner_events_before_due_timers": {
+      "owner_order": [
+        2,
+        1
+      ],
+      "actions": [
+        "Add 5",
+        "Subtract 5"
+      ],
+      "initial_bonus": 253,
+      "final_bonus": 250,
+      "newly_activated_effects_execute_same_pass": true
+    },
+    "delete_before_due_timer": {
+      "bonus": 0,
+      "live_slots": [],
+      "limitation": "Synthetic explicit template group binding; does not resolve historical binding creation."
+    },
+    "unsigned_timer_word": {
+      "initial": 65535,
+      "after_update": 65534,
+      "counter_unchanged": 255
+    },
+    "incubation_text_counter_0": {
+      "action_executed": true,
+      "text_marker": 232,
+      "live_slots": [
+        0,
+        1
+      ]
+    },
+    "incubation_text_counter_1": {
+      "action_executed": true,
+      "text_marker": 128,
+      "live_slots": []
+    },
+    "physical_speed_cast_phase": {
+      "transitions_by_observed_interrupt": [
+        [
+          1,
+          5
+        ],
+        [
+          6961,
+          0
+        ]
+      ],
+      "duration_between_add_subtract_calendar_minute_periods": 29,
+      "limitation": "Activation helper plus successful-cast reset fragment; not full spell UI/RNG."
+    }
+  }
+}

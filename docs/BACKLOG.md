@@ -40,7 +40,7 @@ Acceptance: Agreed timer/action semantics, single game-time input, deterministic
 
 Acceptance: Physical Speed +5 for 30 game minutes through production runtime; save at minute 10 resumes with 20 remaining without duplicate contribution; migration and integrated regressions pass. [Specification](stories/S31_EFFECT_SAVE_INTEGRATION.md).
 
-**S32:** Resolve original effect timing and scheduler order. Backlog; prerequisite for S30.
+**S32:** Resolve original effect timing and scheduler order. Completed; [evidence and approved timing contract](S32_ST_TIMING_RESEARCH.md). S03-CLOCK/S08-SPEED implementation still gates S30.
 
 Acceptance: Verify raw timer units, first-update phase, incubation and simultaneous-work order with reproducible original-code evidence; settle the bounded support contract and hand off clock/stat requirements. [Specification](stories/S32_EFFECT_TIMING_RESEARCH.md). S30 also requires S03-CLOCK and S08-SPEED below.
 

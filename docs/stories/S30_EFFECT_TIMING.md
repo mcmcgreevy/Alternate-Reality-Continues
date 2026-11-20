@@ -1,6 +1,26 @@
 # S30 — Execute timed effects through the game clock
 
-## Owned prerequisites for S30
+## Current readiness after S32
+
+**Backlog; not Ready.** S32's bounded timing research is complete. Its
+[evidence and approved contract](../S32_ST_TIMING_RESEARCH.md) supersede the
+historical timing unknowns below. S03-CLOCK and S08-SPEED still require callable
+implementations/reference adapters and passing fixtures before S30 starts.
+
+- [x] S32: timer cadence/phase, incubation, expiry and simultaneous-work order,
+  supported domains and rejection policy; original probes and explicit user
+  reconciliation preserve 30-minute Physical Speed and all elapsed time.
+- [ ] S03-CLOCK: implement/verify integer game-microsecond input and timestamped
+  boundaries, fractional conversion, pause and accelerated time.
+- [ ] S08-SPEED: implement/verify typed saturating byte Add/Sub in supplied order.
+
+Use activation-relative deadlines, one raw positive timer unit = 60,000,000 game
+microseconds; zero remains dormant. Physical Speed's immediate grant plus
+1800-second expiry is a normalized content schedule, not literal raw-template
+replay. Preserve owner-event-before-timer ties and ascending scheduling-slot
+order independently of instance IDs. See the complete S32 contract before coding.
+
+## Prerequisites recorded before S32 research
 S30 remains **Backlog, not Ready**. The required follow-up work is now explicitly tracked:
 
 - [ ] **S32 (#66):** resolve timer units/first-update phase (ER06/ER13), verify incubation and local expiry boundaries (ER07/ER08/ER09), and settle simultaneous timers, linked removal and timer/entity-event ties (ER03). Deliver the supported state/operation contract and reproducible evidence.
