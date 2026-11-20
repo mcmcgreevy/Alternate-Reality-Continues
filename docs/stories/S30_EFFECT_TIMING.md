@@ -1,19 +1,17 @@
 # S30 — Execute timed effects through the game clock
 
-## Current readiness after S03
+## Current readiness after S08
 
-**Backlog; not Ready.** S32's bounded timing research is complete. Its
-[evidence and approved contract](../S32_ST_TIMING_RESEARCH.md) supersede the
-historical timing unknowns below. [S03-CLOCK](../S03_CLOCK.md) is now complete;
-S08-SPEED still requires a callable implementation and passing fixtures before
-S30 starts.
+**Ready; implementation has not started.** All listed prerequisites now have
+completed deliverables and passing checks. The historical reviews below are
+retained as history, not current blockers.
 
-- [x] S32: timer cadence/phase, incubation, expiry and simultaneous-work order,
-  supported domains and rejection policy; original probes and explicit user
-  reconciliation preserve 30-minute Physical Speed and all elapsed time.
-- [x] S03-CLOCK: integer game-microsecond input, timestamped boundaries,
-  fractional conversion, pause and accelerated time; 65 focused checks pass.
-- [ ] S08-SPEED: implement/verify typed saturating byte Add/Sub in supplied order.
+- [x] S29: generic-owner lifecycle and scoped cleanup; 303 regression checks pass.
+- [x] S32: verified timing/order, supported domains and explicit user reconciliation.
+- [x] [S03-CLOCK](../S03_CLOCK.md): exact elapsed input and timestamp boundaries,
+  fractional conversion, ordinary/pause/accelerated time and save compatibility.
+- [x] [S08-SPEED](../S08_STATS.md): typed saturating byte Add/Sub, supplied-order
+  execution, atomic rejection and no implicit rollback; 107 focused checks pass.
 
 Use activation-relative deadlines, one raw positive timer unit = 60,000,000 game
 microseconds; zero remains dormant. Physical Speed's immediate grant plus
@@ -57,7 +55,7 @@ Sources: technicalNotes.html Effect / incubation, Counter, Timer, Interval, Prob
 S28 timing/action decisions, S29 core and the relevant S03 clock interface/semantics are prerequisites, not completion of every S03 calendar task. S08 supplies typed stat targets and contribution semantics. S09 retains metabolism formulas and cadence. Save/reload integration belongs to S31. Undefined timer units or execution order block Ready; do not guess them.
 
 ## Validation and readiness
-Headless deterministic trace and clock-integration checks; rule-catalog validation; relevant clock regressions when wiring changes. Planning status: Backlog, dependency-gated. No production timer unit or unspecified source behavior is selected by this plan.
+Headless deterministic trace and clock-integration checks; rule-catalog validation; relevant clock regressions when wiring changes. Planning status: Ready after S08; implementation not started. No production timer unit or unspecified source behavior is selected by this plan.
 
 ## Live tracking
 

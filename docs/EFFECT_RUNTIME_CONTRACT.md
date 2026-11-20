@@ -1,7 +1,7 @@
 # Bounded effect runtime contract — S28
 
-Latest handoff: [S03-CLOCK is implemented and verified](S03_CLOCK.md); S30 now
-waits only for S08-SPEED among the prerequisites identified by S32.
+Latest handoff: [S03-CLOCK](S03_CLOCK.md) and [S08-SPEED](S08_STATS.md) are
+implemented and verified. S30 is Ready; historical blockers below are superseded.
 
 ## Current S32 timing handoff — 2026-11-20
 

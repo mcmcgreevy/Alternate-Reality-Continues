@@ -20,7 +20,7 @@ Accepted by the user on **2026-11-16**.
 | Calendar and time | S03 reconciles the ST start date, calendar, ordinary/accelerated clock and explicit pause policy; see S03_CLOCK.md. Service content and movement distance calibration remain separately owned. |
 | Weather | Five combined conditions and hourly equal probabilities versus separate weather types, seasonal selection, durations and ambient temperature. |
 | Storms | Cosmetic prototype timing; reconcile ordinary rain versus storm strength and documented frequency. |
-| Stats and metabolism | Flat/minimal stats and provisional needs; implement the documented base/effective/displayed/modifier structure and timed effects. |
+| Stats and metabolism | S08 supplies fractional base/effective/displayed views, hidden Speed and typed Speed actions; see S08_STATS.md. Metabolism formulas, delusion producers and timed content remain separately owned. |
 | Clothing and equipment | Not implemented; derive protection, warmth and modifiers from the ST reference. |
 | Taverns | Existing 8-bit/ARX-informed prices, free water and simplified menus require ST reconciliation, including local price factors and friendship. |
 | City geography | Tail of the Dog and the northern Dungeon entrance are now checked against ST markers 16 and 49; see `ST_LOCATION_CORRECTION.md`. Wider ARX geometry and other establishment identities still need ST validation. |

@@ -25,6 +25,54 @@ var dungeon_links: Dictionary
 signal game_time_advanced(start_game_microseconds: int, end_game_microseconds: int)
 var _advancing_clock := false
 
+const CharacterStats = preload("res://scripts/character_stats.gd")
+
+func stat_snapshot(stat: String) -> Dictionary:
+	return CharacterStats.primary_snapshot(character, stat)
+
+func apply_stat_actions(actions: Array) -> Dictionary:
+	return CharacterStats.apply_actions(character, actions)
+
+func set_stat_base(stat: String, value: Variant) -> Dictionary:
+	return CharacterStats.set_base(character, stat, value)
+
+func set_stat_modifiers(stat: String, bonus: Variant, penalty: Variant) -> Dictionary:
+	return CharacterStats.set_modifiers(character, stat, bonus, penalty)
+
+func set_stat_display(overrides: Dictionary) -> Dictionary:
+	return CharacterStats.set_display(character, overrides)
+
+func secondary_stat_snapshot(stat: String) -> Dictionary:
+	# Needs already have an authoritative owner. Never create shadow hunger/thirst.
+	if stat in ["hunger", "thirst"]:
+		return {"ok": true, "value": needs[stat]}
+	return CharacterStats.secondary_snapshot(character, stat)
+
+func set_secondary_stat(stat: String, value: Variant) -> Dictionary:
+	if stat in ["hunger", "thirst"]:
+		if not CharacterStats.integer_value(value, 100):
+			return {"ok": false, "error": "invalid_need"}
+		needs[stat] = int(value)
+		return {"ok": true}
+	return CharacterStats.set_secondary(character, stat, value)
+
+func displayed_hit_points() -> int:
+	return int(CharacterStats.secondary_snapshot(character, "hp").displayed)
+
+func primary_stats_text() -> String:
+	var text := "STR %d     STA %d" % [stat_snapshot("strength").displayed, stat_snapshot("stamina").displayed]
+	var speed := stat_snapshot("speed")
+	if speed.ok and speed.visible:
+		text += "  SPD %d" % speed.displayed
+	return text
+
+func effective_speed() -> int:
+	var speed := stat_snapshot("speed")
+	return speed.effective if speed.ok else 0
+
+func walking_speed() -> int:
+	return CharacterStats.walking_speed(character)
+
 func _init() -> void:
 	minutes = 360  # Kroah ST City: Sowings 29, Year 0, 06:00.
 	for chapter_id in ["city", "dungeon"]:
@@ -387,11 +435,11 @@ func save_game(path: String = SAVE_PATH) -> Error:
 	var save_file := FileAccess.open(path, FileAccess.WRITE)
 	if save_file == null:
 		return FileAccess.get_open_error()
-	save_file.store_string(JSON.stringify({"version": 5, "map_set": "original-route-1", "chapter": chapter,
+	save_file.store_string(JSON.stringify({"version": 6, "map_set": "original-route-1", "chapter": chapter,
 		"position": [position.x, position.y], "facing": facing, "character": character,
 		"inventory": inventory, "minutes": minutes, "flags": flags, "doors": doors,
 		"needs": needs, "provisions": provisions, "weather_seed": weather_seed,
-		"minute_fraction": minute_fraction, "clock": game_clock.snapshot()}))
+		"minute_fraction": minute_fraction, "clock": game_clock.snapshot()}, "", true, true))
 	return OK
 
 ## Validate and migrate a temporary dictionary before changing the live journey.
@@ -402,7 +450,7 @@ func load_game(path: String = SAVE_PATH) -> bool:
 	var save_data = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not save_data is Dictionary or save_data.get("map_set") != "original-route-1":
 		return false
-	if save_data.get("version") != 3 and save_data.get("version") != 4 and save_data.get("version") != 5:
+	if save_data.get("version") != 3 and save_data.get("version") != 4 and save_data.get("version") != 5 and save_data.get("version") != 6:
 		return false
 	if not maps.has(save_data.get("chapter", "")):
 		return false
@@ -431,16 +479,10 @@ func load_game(path: String = SAVE_PATH) -> bool:
 				return false
 			if group == "needs" and value > 100:
 				return false
-	for key in character:
-		if not save_data.character.has(key):
-			return false
-		if key == "name":
-			if not save_data.character[key] is String:
-				return false
-		elif not (save_data.character[key] is float or save_data.character[key] is int):
-			return false
-		elif not is_finite(float(save_data.character[key])) or save_data.character[key] != int(save_data.character[key]) or save_data.character[key] < 0:
-			return false
+	var stats_candidate := CharacterStats.normalize_character(save_data.character)
+	if not stats_candidate.ok:
+		return false
+	save_data.character = stats_candidate.character
 	for key in flags:
 		if not save_data.flags.get(key) is bool:
 			return false
@@ -464,7 +506,7 @@ func load_game(path: String = SAVE_PATH) -> bool:
 	if not (saved_minute_fraction is float or saved_minute_fraction is int) or not is_finite(float(saved_minute_fraction)) or saved_minute_fraction < 0 or saved_minute_fraction >= 1:
 		return false
 	var saved_clock = GameClock.new(0)
-	if save_data.version == 5:
+	if save_data.version >= 5:
 		if not saved_clock.restore(save_data.get("clock")):
 			return false
 		if saved_clock.whole_minutes() != int(save_data.minutes) or absf(saved_clock.minute_fraction() - float(saved_minute_fraction)) > 0.000000000001:
@@ -478,8 +520,6 @@ func load_game(path: String = SAVE_PATH) -> bool:
 	position = saved_position
 	facing = int(save_data.facing)
 	character = save_data.character
-	for key in character:
-		if key != "name": character[key] = int(character[key])
 	inventory = save_data.inventory
 	minutes = int(save_data.minutes)
 	flags = save_data.flags

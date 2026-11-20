@@ -40,7 +40,7 @@ Acceptance: Agreed timer/action semantics, single game-time input, deterministic
 
 Acceptance: Physical Speed +5 for 30 game minutes through production runtime; save at minute 10 resumes with 20 remaining without duplicate contribution; migration and integrated regressions pass. [Specification](stories/S31_EFFECT_SAVE_INTEGRATION.md).
 
-**S32:** Resolve original effect timing and scheduler order. Completed; [evidence and approved timing contract](S32_ST_TIMING_RESEARCH.md). S03-CLOCK/S08-SPEED implementation still gates S30.
+**S32:** Resolve original effect timing and scheduler order. Completed; [evidence and approved timing contract](S32_ST_TIMING_RESEARCH.md). S03-CLOCK/S08-SPEED are complete; S30 is Ready.
 
 Acceptance: Verify raw timer units, first-update phase, incubation and simultaneous-work order with reproducible original-code evidence; settle the bounded support contract and hand off clock/stat requirements. [Specification](stories/S32_EFFECT_TIMING_RESEARCH.md). S30 also requires S03-CLOCK and S08-SPEED below.
 
@@ -106,7 +106,7 @@ Acceptance: Extract creation rules and initial state; test valid ranges and dete
 
 Parent: E03 · Milestone: M1 · Coverage: Prototype · Source: [characterStats](../assets/documentation/kroah-city-st-v2/characterStats.html).
 
-**S08:** As a player, my abilities reflect base values, temporary effects and earned changes.
+**S08:** As a player, my abilities reflect base values, temporary effects and earned changes. Completed; [implementation and acceptance](S08_STATS.md). Completed; [implementation and acceptance](S08_STATS.md).
 
 S30 prerequisite: [S08-SPEED — typed Speed-bonus actions and fixtures](stories/S08_STAT_ACTION_INTERFACE.md). This narrow deliverable does not require completion of every stat system.
 

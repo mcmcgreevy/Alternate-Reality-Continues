@@ -254,7 +254,7 @@
       "blocks": [
         "S30"
       ],
-      "disposition": "A bounded speed_bonus unsigned-byte Add/Sub target now has evidence; reject unsupported operations instead of adding a raw-memory interpreter. Saturation makes general inverse cleanup unsafe. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
+      "disposition": "A bounded speed_bonus unsigned-byte Add/Sub target now has evidence; reject unsupported operations instead of adding a raw-memory interpreter. Saturation makes general inverse cleanup unsafe. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior. S08 implements the bounded typed Speed API and atomic ordered action batches; see docs/S08_STATS.md and tests/test_character_stats.gd. S30 action-interface prerequisite is met."
     },
     {
       "id": "ER13",

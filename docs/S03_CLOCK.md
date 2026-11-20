@@ -1,4 +1,4 @@
-# S03 â€” Calendar and shared elapsed time
+# S03 — Calendar and shared elapsed time
 
 Implemented and reviewed 2026-11-20. Canonical evidence is the unchanged archived
 Kroah ST City v2.0 `world.html`, Calendar and Time Span; source SHA-256

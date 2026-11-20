@@ -58,7 +58,7 @@ Hold movement routes through the same action handler as a tap. A release, fresh 
 
 ## State and persistence
 
-`user://original_route.json` is the current journey save, now version 5 with a precise clock snapshot. Versions 3/4 preserve elapsed time on migration; see S03 below. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
+`user://original_route.json` is the current journey save, now version 6 with precise clock and stat state. Versions 3/4/5 preserve elapsed time on migration; see S03 below. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
 
 Movement preferences live in `user://controls.cfg`, and audio preferences in `user://music_settings.cfg`. They are intentionally independent of journey saves. The legacy prototype uses `user://journey.json` with its own versions and coordinates.
 
@@ -144,3 +144,7 @@ Registration and queue validation precede mutation. Dispatch runs synchronously 
 ## S03 shared clock and calendar
 
 `game_clock.gd` owns integer game microseconds and the real-conversion remainder. `world.gd` exposes legacy `minutes`/`minute_fraction` views; OriginalWorld selects the ST 06:00 start, calendar labels and one advancement path for explicit costs, ordinary frames and accelerated services. `game_time_advanced(start, end)` supplies S30 with timestamp intervals before counting needs boundaries once; reentrant time advancement is rejected. The calendar uses twelve 31-day months, starting Sowings 29, Year 0. UI overview/focus loss pause; other active menus remain live. Version 5 saves preserve precision and validate before commit; versions 3/4 migrate existing elapsed time without resetting it. See `docs/S03_CLOCK.md` for APIs, bounds, source/adaptation distinctions and the 65 focused checks in `test_game_clock.gd` / `test_clock_scene.gd`.
+
+## S08 shared stat views and actions
+
+`character_stats.gd` separates fractional primary base, aggregate bonus/penalty, integer effective, displayed and visibility state. OriginalWorld exposes `stat_snapshot`, `set_stat_base`, `set_stat_modifiers`, `set_stat_display`, secondary access and `apply_stat_actions`. The latter accepts only ordered byte Speed-bonus Add/Sub; it validates an entire batch before mutation and never performs removal rollback. Existing `needs` owns hunger/thirst; missing creation/secondary values stay uninitialized. The HUD consumes displayed values and reveals Speed only when flagged. Version 6 uses full-precision JSON and validates detached character state; versions 3/4/5 migrate without truncating base fractions. Source/representation boundaries, deferred producers and the 107 focused checks are documented in `docs/S08_STATS.md`.
