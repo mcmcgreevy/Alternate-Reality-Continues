@@ -37,3 +37,19 @@ Headless deterministic trace and clock-integration checks; rule-catalog validati
 - [S29 — issue #63](https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/63)
 - [S30 — issue #64](https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/64)
 - [S31 — issue #65](https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/65)
+
+## Readiness review after S29 completion
+
+**Not Ready; keep Backlog.** S29's non-timed lifecycle is complete, but S30's timing/clock/stat prerequisites are not yet settled. Implementation has not started.
+
+| Gate | Current evidence | Required before In Progress |
+| --- | --- | --- |
+| S29 lifecycle | Complete; acceptance review and all tests pass. | Met. |
+| Raw timer unit/phase (ER06/ER13) | Physical Speed uses timers 1 and 30; probes force effect updates. | Trace scheduler cadence and map raw ticks to elapsed game time, including first-update phase. Spell duration alone does not prove the mapping. |
+| Local expiry sequence (ER07/ER08/ER09) | Candidate reloads interval, handles incubation, checks cure, executes action, then decrements finite counter/removes. Zero timer is skipped. | Convert static findings into boundary/incubation fixtures; do not repeat the older blanket claim that local order is wholly unknown. |
+| Simultaneous work (ER03) | S29 establishes per-owner event-bit order only. | Settle coincident timer execution, linked removal and timer/entity-event ties. |
+| Clock input (S03, ER10/ER11) | Working tree has uncommitted continuous real-seconds/fractional-minute edits; committed world has integer-minute advancement. | Settle a single elapsed-game-time interface and precision, pause and accelerated-service behavior. Preserve unrelated changes. |
+| Typed actions (S08, ER12) | Original one-byte Speed-bonus saturating Add/Sub is verified; world has flat fields. | Establish bounded typed action API and state schema. S29 stores comparison data, not executable targets or timers. |
+| Natural cure | Existing S30 criterion permits explicit rejection. | No need to complete all RNG research if this exclusion is encoded and tested; never silently ignore a cure-bearing definition. |
+
+S03 and S08 do not need to finish every feature before S30 starts. Their narrow elapsed-time and Speed-bonus contracts do need to be settled. Next: trace the original scheduler/cadence, specify those interfaces and supported state/operations, add exact-boundary/order expectations, then reassess readiness. No production code or project status was changed by this review.
