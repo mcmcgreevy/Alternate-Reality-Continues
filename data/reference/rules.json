@@ -320,9 +320,11 @@
       "trigger_cadence": "On effect activation.",
       "update_order": "Previous-effect linkage is documented; other allocation/update ordering unknown.",
       "implementation": {
-        "status": "not implemented",
-        "locations": [],
-        "notes": "Future design must distinguish definition identity from each active copy; no runtime effects engine exists."
+        "status": "partial",
+        "locations": [
+          "scripts/effect_instances.gd"
+        ],
+        "notes": "S29 now stores independent owner-tagged active copies and linked groups, with first-00 handling, non-recycled session IDs and explicit scoped removal. Ordered activation input is already selected by the caller. Event selection, native text-slot layout, timer state, stat execution and saves remain deferred."
       },
       "questions": [
         {
@@ -392,9 +394,10 @@
       "implementation": {
         "status": "partial",
         "locations": [
-          "scripts/effect_definitions.gd"
+          "scripts/effect_definitions.gd",
+          "scripts/effect_instances.gd"
         ],
-        "notes": "S29 implements only the immutable definition registry and documented eight-field duplicate gate. No event dispatch, active instance list, opposing removal, timers or gameplay hook. H-off gate result is not a stacking policy."
+        "notes": "Immutable registry and eight-field H gate now drive ordered activation: a match suppresses current and following entries; earlier successful entries remain. Gate scope includes all owners and newly activated prefix. No entity-event dispatch, opposing-event lookup, timer execution, stat rollback or gameplay hook."
       },
       "questions": [
         {

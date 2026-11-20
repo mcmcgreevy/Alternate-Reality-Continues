@@ -110,6 +110,20 @@
     "one_byte_arithmetic": {
       "add_253_and_5": 255,
       "subtract_5_from_2": 0
+    },
+    "ordinary_equipment_dagger": {
+      "module": 12,
+      "offset": 2157,
+      "effect_records": 0,
+      "live_slots": [],
+      "limitation": "Activation helper only; does not settle enchanted equipment or dispatcher bookkeeping."
+    },
+    "ordinary_equipment_leather_helmet": {
+      "module": 12,
+      "offset": 2565,
+      "effect_records": 0,
+      "live_slots": [],
+      "limitation": "Activation helper only; does not settle enchanted equipment or dispatcher bookkeeping."
     }
   }
 }

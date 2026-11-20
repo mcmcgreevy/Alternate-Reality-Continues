@@ -1,7 +1,7 @@
 # S29 original ST executable research — 2026-11-19
 
 **Current status:** the initial static analysis below has now been followed by
-10 passing isolated original-code scenarios. See **Isolated execution follow-up**
+12 passing isolated original-code scenarios. See **Isolated execution follow-up**
 at the end for the current answers and remaining blockers.
 
 User direction: research original ST behavior before choosing remake policies.
@@ -198,3 +198,9 @@ findings for ER01–ER05, ER12 and ER13. S29 still lacks the full lifecycle; the
 remaining blockers are specific owner/group binding and dispatcher edge cases,
 not a blanket absence of evidence for all six questions. No gameplay or save
 behavior changed in this research pass.
+
+## Ordinary equipment follow-up and bounded implementation
+
+Candidate module 12 SHA-256: `dab9bea9b00c97f1b64522bab8ff371e83f5e5a68ca33bfb5d98c624d2fae392`. Dagger starts at `$086d`, Leather Helmet at `$0a05`. Each header points to an immediate zero terminator for its effect list. Calling original activation for Get, Drop, Use and Unuse allocates no records. Two additional executable scenarios capture this result (12 total). These ordinary items do not resolve byte-15 linkage for enchanted equipment; no general negative claim about equipment effects is made.
+
+The implementation can independently represent documented active-copy/group semantics without emulating the unresolved raw-byte lookup. `effect_instances.gd` now supplies explicit owner-scoped group storage and removal with monotonic session IDs. This is reconstruction architecture supporting the documented isolation requirement. It does not claim to reproduce the original opposing-removal helper, dispatch events or undo stats. Event integration remains gated by the discrepancies above.

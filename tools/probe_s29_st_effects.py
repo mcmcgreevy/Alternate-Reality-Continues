@@ -158,6 +158,20 @@ def main():
     assert probe.tick() == 0
     results['one_byte_arithmetic'] = dict(add_253_and_5=255, subtract_5_from_2=0)
 
+    smithy = (DIRECTORY / 'module-12.bin').read_bytes()
+    assert hashlib.sha256(smithy).hexdigest() == 'dab9bea9b00c97f1b64522bab8ff371e83f5e5a68ca33bfb5d98c624d2fae392'
+    for name, offset in [('Dagger', 0x86d), ('Leather Helmet', 0xa05)]:
+        equipment = smithy[offset:offset + smithy[offset + 1]]
+        assert equipment[6:].split(b'\0')[0].decode('ascii') == name
+        assert equipment[equipment[5]] == 0  # Terminator: no attached effects.
+        probe = Probe(equipment)
+        for event_mask in [1, 2, 4, 8]:
+            probe.call(0x29e8, A0=ENTITY, D0=event_mask)
+        assert probe.live() == []
+        results['ordinary_equipment_' + name.lower().replace(' ', '_')] = dict(
+            module=12, offset=offset, effect_records=0, live_slots=[],
+            limitation='Activation helper only; does not settle enchanted equipment or dispatcher bookkeeping.')
+
     output = dict(evidence='Isolated original-code execution with synthetic RAM; not full ST emulation',
                   emulator='Unicorn 2.1.4, M68000', scheduler='forced update calls; no game-time mapping',
                   scenarios=results)

@@ -76,3 +76,9 @@ ER references are local research-ledger entries, not GitHub sub-issues. See [cur
 - Open: trace template byte-15 group binding with real equipment; reconcile Delete/held-state and clear-before-processing behavior; constrain long-text traversal.
 - Candidate defect reproduced: duplicate suppression can compare a skipped definition. Preserve Kroah's current-effect rule, not that defect.
 - Validation: 10 isolated original-code scenarios; not full-game emulation. No whole S29 lifecycle acceptance criterion is newly complete.
+
+## Instance ownership implementation
+
+Added `scripts/effect_instances.gd`: independent active definition copies, explicit owner/group identities, FF/00-style sequence linkage, global H-gated tail suppression and idempotent owner-scoped record removal. Input sequences are already eligible; selecting event listeners is not implemented. Invalid input is rejected before allocation. No stat mutation/undo, timers or save changes. This advances the identity and removal portions of the criteria without completing the whole event lifecycle.
+
+Ordinary Dagger and Leather Helmet records were checked in candidate module 12: both effect lists terminate immediately, so neither resolves enchanted-equipment byte-15 ownership. The original-code harness now has 12 passing scenarios. Further research must target effect-bearing item construction, not assume ordinary equipment exercises it.
