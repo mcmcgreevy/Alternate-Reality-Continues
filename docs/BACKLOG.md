@@ -28,7 +28,7 @@ Acceptance: Six-rule catalog, effect contract, source-derived fixtures and valid
 
 Acceptance: Source-linked decisions, trace fixtures and operation support matrix; unresolved findings explicitly gate implementation. [Specification](stories/S28_EFFECT_SEMANTICS.md).
 
-**S29:** Instantiate effects and handle entity events.
+**S29 (Done):** Instantiate effects and handle entity events.
 
 Acceptance: Definition/instance/owner separation, supported event lifecycle, linked removal and duplicate suppression with deterministic tests. [Specification](stories/S29_EFFECT_EVENTS.md).
 
@@ -278,7 +278,7 @@ Dependencies: F24 presentation/audio controls; title/menu entry and return flow 
 
 ## First stories to refine
 
-- S28 research is complete. Resolve the recorded S29/S30/S31 evidence and interface gates before marking implementation Ready.
+- S28 research is complete. S29 is complete; resolve the remaining S30/S31 evidence and interface gates before marking implementation Ready.
 - S08: base/effective/displayed stats and modifier lifecycle, including Speed.
 - S03: calendar and remaining clock/service reconciliation.
 - S10: inventory instances and clothing equipment, then S04/S09 exposure and metabolism.

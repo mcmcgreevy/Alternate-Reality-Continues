@@ -3,7 +3,9 @@
 Research completed 2026-11-19 against the unchanged Kroah Atari ST City v2.0
 archive. This is a design/research deliverable, not runtime code or authorization
 to invent historical behavior. S28 can close with explicit unresolved findings;
-**S29, S30 and S31 are not Ready under their current acceptance criteria.**
+**Initial archive-only review:** S29-S31 were not Ready at that stage.
+**Current disposition:** S29 is complete for the non-timed generic-owner slice;
+see [acceptance review](S29_ACCEPTANCE_REVIEW.md). S30/S31 remain dependency-gated.
 
 The machine-readable [decision ledger](../data/reference/effect_contract.json)
 contains original URLs, catalog hashes, precise locators, findings, dispositions
@@ -199,3 +201,7 @@ The [S29 executable research](S29_ST_EFFECT_RESEARCH.md) adds evidence beyond th
 ## Bounded Use/Unuse implementation contract
 
 S29 now implements generic effect-owner Use/Cast and Unuse dispatch using the documented opposition semantics and candidate branch order. Explicit owner/group/listener-mask bindings replace the unresolved raw template-byte-15 mechanism as reconstruction architecture. Processing is synchronous with no callbacks: capture/clear then Use, then Unuse; remove opposing groups before activation. No timer/event ties or reentrancy policy is inferred. Get/Drop/Delete, special-use hooks and other bits fail validation. Stat execution and undo are absent. The ledger's broader historical gaps remain open. See CODE_GUIDE for API details and tests/test_effect_events.gd for executable bounded cases.
+
+## Final S29 disposition
+
+S29 now supports generic-owner Get/Drop/Use/Unuse and terminal Delete. The earlier Use/Unuse-only subsection records the intermediate increment, not the final support boundary. Unknown entity bits and Delete listeners are rejected. The explicit owner/group map resolves the bounded lifecycle through reconstruction architecture; no original-byte-layout fidelity is claimed. Callback-free processing uses the candidate order and held guard. Removal performs no arithmetic. See S29_ACCEPTANCE_REVIEW.md for the complete criterion audit and downstream owners for remaining historical/action/timing questions.

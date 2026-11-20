@@ -53,10 +53,9 @@
       "finding": "Candidate allocates the first free of 96 slots; long text occupies two consecutive slots. First-00 starts its own group; later 00 links to the preceding activated group, skipping non-listeners. Isolated original-code probes confirm these cases.",
       "unknown": "Byte-15 template-to-group lifecycle remains unresolved; slot exhaustion and reuse across owners require bounded-runtime validation.",
       "blocks": [
-        "S29",
         "S31"
       ],
-      "disposition": "Use stable owner/instance/group identities as reconstruction architecture. First-00 and skipped predecessor are no longer research blockers; do not reproduce fatal capacity failures."
+      "disposition": "Use stable owner/instance/group identities as reconstruction architecture. First-00 and skipped predecessor are no longer research blockers; do not reproduce fatal capacity failures. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
     },
     {
       "id": "ER02",
@@ -72,9 +71,9 @@
       "finding": "Candidate dispatcher removes Drop before Get, Get before Drop, Unuse before Use, and Use before Unuse. Delete removes all four listener classes then deletes the entity; it does not activate Delete listeners.",
       "unknown": "Deletion/held-item bookkeeping and byte-15 group lookup need end-to-end tracing; undocumented bits stay unsupported.",
       "blocks": [
-        "S29"
+        "S31"
       ],
-      "disposition": "Opposing pairs are established by static code, not inferred names. Reconcile Delete against baseline before treating it as an ordinary listener event."
+      "disposition": "Opposing pairs are established by static code, not inferred names. Reconcile Delete against baseline before treating it as an ordinary listener event. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
     },
     {
       "id": "ER03",
@@ -90,10 +89,9 @@
       "finding": "Candidate captures and clears pending events before processing Get, Drop, Use, Unuse, Delete in that branch order. Get can exit early; alignment processing precedes these branches.",
       "unknown": "Full inter-entity timing, reentrancy and timer/event ties remain unresolved; clear-before-processing differs from archive wording.",
       "blocks": [
-        "S29",
         "S30"
       ],
-      "disposition": "Adopt no blanket all-bits execution claim. Separate established branch order from full scheduler and reentrancy policies."
+      "disposition": "Adopt no blanket all-bits execution claim. Separate established branch order from full scheduler and reentrancy policies. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
     },
     {
       "id": "ER04",
@@ -109,10 +107,9 @@
       "finding": "H-off allocates fresh copies; isolated repeated activation yields separate linked groups. Repeating Physical Speed with H set does not allocate extra copies. Eight-field gate remains the canonical rule.",
       "unknown": "A skipped predecessor can leave a stale candidate pointer in original code; isolated probe reproduces duplicate admission. Other real-data reachability and cross-owner reuse need tracing.",
       "blocks": [
-        "S29",
         "S31"
       ],
-      "disposition": "Retain documented equality in effect_definitions.gd; do not reproduce the demonstrated stale-pointer defect. Fresh allocation does not imply linear stat stacking."
+      "disposition": "Retain documented equality in effect_definitions.gd; do not reproduce the demonstrated stale-pointer defect. Fresh allocation does not imply linear stat stacking. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
     },
     {
       "id": "ER05",
@@ -128,10 +125,9 @@
       "finding": "Original group removal marks matching slots free and does not invert arithmetic. Physical Speed has separate delayed Sub and Add records. Normal expiry returns bonus to zero; early removal of its delayed group leaves bonus at five in isolated execution.",
       "unknown": "Opposing helper reads template byte 15, but activation leaves that template unchanged in isolated execution. Full creation/update path and cross-owner cleanup remain open.",
       "blocks": [
-        "S29",
         "S31"
       ],
-      "disposition": "Do not use generic undo-on-remove. Separate explicit effect execution from record removal; trace owner/group binding before claiming lifecycle completion."
+      "disposition": "Do not use generic undo-on-remove. Separate explicit effect execution from record removal; trace owner/group binding before claiming lifecycle completion. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
     },
     {
       "id": "ER06",
@@ -251,10 +247,9 @@
       "finding": "Physical Speed targets global offset 0x18ae (Speed bonus), width one, Add=0x81 and Sub=0x91. Original-code probes confirm saturating Add 253+5=255 and Sub 2-5=0.",
       "unknown": "Other typed targets, wider operations and entity-relative addressing are not approved for runtime execution.",
       "blocks": [
-        "S29",
         "S30"
       ],
-      "disposition": "A bounded speed_bonus unsigned-byte Add/Sub target now has evidence; reject unsupported operations instead of adding a raw-memory interpreter. Saturation makes general inverse cleanup unsafe."
+      "disposition": "A bounded speed_bonus unsigned-byte Add/Sub target now has evidence; reject unsupported operations instead of adding a raw-memory interpreter. Saturation makes general inverse cleanup unsafe. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
     },
     {
       "id": "ER13",

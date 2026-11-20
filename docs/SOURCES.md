@@ -69,3 +69,5 @@ The 2026-11-15 [weather pass](WEATHER.md) presents the handbook's five condition
 2026-11-19 - S29 ownership follow-up: candidate module 12 Dagger/Leather Helmet records have empty effect lists (12 original-code scenarios total). New instance storage follows documented copy/link/H semantics with explicit reconstruction owner/group IDs; it does not resolve raw template byte-15 lookup. See S29_ST_EFFECT_RESEARCH.md.
 
 2026-11-19 - Bounded S29 Use/Unuse dispatch follows Kroah’s opposing-removal/activation intent and the candidate dispatcher’s Use-before-Unuse branch order. Explicit listener/group bindings are reconstruction architecture, not a claim that the ambiguous original byte-15 mechanism was recovered. Get/Drop/Delete remain unsupported; no new source download.
+
+S29 completion: [acceptance review](S29_ACCEPTANCE_REVIEW.md) reconciles generic Get/Drop/Use/Unuse/Delete with explicit owner/group bindings and records all adaptations. Thirteen original-code probes include held-state and actual owner deletion; no new external source was needed. Remaining timed/action/content questions are assigned downstream.

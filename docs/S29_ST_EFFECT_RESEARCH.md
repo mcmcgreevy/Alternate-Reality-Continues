@@ -1,8 +1,8 @@
 # S29 original ST executable research — 2026-11-19
 
-**Current status:** the initial static analysis below has now been followed by
-12 passing isolated original-code scenarios. See **Isolated execution follow-up**
-at the end for the current answers and remaining blockers.
+**Current status:** 13 isolated original-code scenarios pass. S29’s bounded
+non-timed lifecycle is complete; see [acceptance review](S29_ACCEPTANCE_REVIEW.md).
+The chronological research notes below retain the earlier gaps and observations.
 
 User direction: research original ST behavior before choosing remake policies.
 This research establishes several missing details and exposes discrepancies that
@@ -204,3 +204,9 @@ behavior changed in this research pass.
 Candidate module 12 SHA-256: `dab9bea9b00c97f1b64522bab8ff371e83f5e5a68ca33bfb5d98c624d2fae392`. Dagger starts at `$086d`, Leather Helmet at `$0a05`. Each header points to an immediate zero terminator for its effect list. Calling original activation for Get, Drop, Use and Unuse allocates no records. Two additional executable scenarios capture this result (12 total). These ordinary items do not resolve byte-15 linkage for enchanted equipment; no general negative claim about equipment effects is made.
 
 The implementation can independently represent documented active-copy/group semantics without emulating the unresolved raw-byte lookup. `effect_instances.gd` now supplies explicit owner-scoped group storage and removal with monotonic session IDs. This is reconstruction architecture supporting the documented isolation requirement. It does not claim to reproduce the original opposing-removal helper, dispatch events or undo stats. Event integration remains gated by the discrepancies above.
+
+## Final generic-owner probe and reconciliation
+
+The thirteenth probe places an empty non-stackable entity at `a5+$2800`, supplies its real owner-table offset and heap end, and invokes the original dispatcher at module 05 `$283c`. Drop/Get/Drop/Drop produces held states false/true/false/false and clears pending bits each time. Delete clears its owner-table entry and returns the heap end to the entity start. This verifies the generic held guard and deletion rather than extrapolating from event names. It does not verify item special-use/consumption or group lookup for enchanted equipment.
+
+The reconstruction implements all five generic event paths with explicit owner/listener/group bindings, not the ambiguous original byte-15 mechanism. Delete invalidates that owner's active records and tombstones its identity; no inverse stat operation occurs. This is the safe lifecycle architecture already required by S29, with source limitations documented rather than hidden. The stale-pointer duplicate defect is not reproduced. Timer/action/content integration remains downstream; those open historical questions no longer block the completed non-timed slice. See S29_ACCEPTANCE_REVIEW.md.

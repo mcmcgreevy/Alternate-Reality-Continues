@@ -124,6 +124,24 @@
       "effect_records": 0,
       "live_slots": [],
       "limitation": "Activation helper only; does not settle enchanted equipment or dispatcher bookkeeping."
+    },
+    "generic_owner_dispatch": {
+      "events": [
+        2,
+        1,
+        2,
+        2,
+        16
+      ],
+      "held_before_delete": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "pending_cleared": true,
+      "owner_unlinked_on_delete": true,
+      "limitation": "Empty generic non-stackable owner; no special-use or linked-effect deletion claim."
     }
   }
 }

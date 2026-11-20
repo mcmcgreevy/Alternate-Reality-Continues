@@ -172,6 +172,31 @@ def main():
             module=12, offset=offset, effect_records=0, live_slots=[],
             limitation='Activation helper only; does not settle enchanted equipment or dispatcher bookkeeping.')
 
+    # Register an empty generic non-stackable entity in the original owner table.
+    # No special-use/item hooks are involved. The original heap/table layout is
+    # necessary here because Delete actually unlinks and compacts the owner heap.
+    entity_address = GLOBAL + 0x2800
+    generic = bytes([1, 7, 0, 0, 0, 6, 0])
+    probe = Probe(generic)
+    probe.cpu.mem_write(entity_address, generic)
+    probe.cpu.mem_write(GLOBAL + 0x2280, (0x2800 - 0x227e).to_bytes(2, 'big'))
+    probe.cpu.mem_write(GLOBAL + 0x1922, (entity_address + len(generic)).to_bytes(4, 'big'))
+    probe.cpu.mem_write(GLOBAL + 0x18ee, b'\xff' * 10)
+    held_trace = []
+    for event_mask in [2, 1, 2, 2]:
+        probe.cpu.mem_write(entity_address + 2, bytes([event_mask]))
+        probe.call(0x283c, A0=entity_address)
+        held_trace.append(bool(probe.cpu.mem_read(entity_address, 1)[0] & 0x80))
+        assert probe.cpu.mem_read(entity_address + 2, 1)[0] == 0
+    assert held_trace == [False, True, False, False]
+    probe.cpu.mem_write(entity_address + 2, b'\x10')
+    probe.call(0x283c, A0=entity_address)
+    assert bytes(probe.cpu.mem_read(GLOBAL + 0x2280, 2)) == b'\0\0'
+    assert int.from_bytes(probe.cpu.mem_read(GLOBAL + 0x1922, 4), 'big') == entity_address
+    results['generic_owner_dispatch'] = dict(events=[2, 1, 2, 2, 16],
+        held_before_delete=held_trace, pending_cleared=True, owner_unlinked_on_delete=True,
+        limitation='Empty generic non-stackable owner; no special-use or linked-effect deletion claim.')
+
     output = dict(evidence='Isolated original-code execution with synthetic RAM; not full ST emulation',
                   emulator='Unicorn 2.1.4, M68000', scheduler='forced update calls; no game-time mapping',
                   scenarios=results)

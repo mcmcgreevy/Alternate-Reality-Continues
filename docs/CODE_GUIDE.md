@@ -111,46 +111,28 @@ For shader/rendering changes, run the relevant capture test without `--headless`
 S28 adds the [bounded effect runtime contract](EFFECT_RUNTIME_CONTRACT.md), a source-linked decision ledger and classified event/timer traces. These are research inputs, not a runtime engine; S29–S31 readiness gates are explicit.
 
 
-## S29 effect-definition foundation
+## S29 non-timed effect lifecycle
 
-`scripts/effect_definitions.gd` is an unwired RefCounted registry. It deep-copies
-registered definitions and returned snapshots; stable definition IDs and revisions
-are remake architecture. `check_duplicate_gate` compares all eight source fields
-against the caller-supplied complete active-list comparison view and returns
-`suppress_current_and_following`. It does not activate or remove effects.
+Three unwired RefCounted modules separate definitions, owners and active copies:
 
-Raw nonnegative integer encodings are opaque comparison data, not permission to
-execute an action. The comparison preserves source Action/Offset values instead
-of interpreting them as typed stat operations. Unknown fields are rejected so a
-caller cannot mistake this limited definition shape for an executable template.
-The caller must not pass only one owner's active records: the documented gate
-checks the active list. H-off disables only this duplicate gate; it grants no
-stacking/refresh semantics. Failed registration does not mutate the registry.
+| Module | API and responsibility |
+| --- | --- |
+| `scripts/effect_definitions.gd` | `register_definition`, `definition_snapshot`, `check_duplicate_gate`: immutable registry and source eight-field H comparison. Raw values are opaque comparison evidence, not executable addresses. |
+| `scripts/effect_instances.gd` | `activate_sequence(owner_id, entries)`, `remove_group`, `remove_owner`, `snapshot`: independent active copies, group linkage, global H suppression and explicit scoped record removal. |
+| `scripts/effect_events.gd` | `register_entity(owner_id, listeners, initially_held=false)`, `queue_events`, `dispatch_pending`, `entity_snapshot`, `active_snapshot`: owner lifecycle and pending event dispatch. |
 
-`tests/test_effect_definitions.gd` runs 29 headless checks, including research
-fixtures ET02/ET03, all eight equality fields, deep-copy isolation and malformed
-input. Run with the standard portable Godot command documented above. Event
-opposition, active-instance identity/linkage, dispatch, cleanup and stat rollback
-remain S29 work blocked by the S28 evidence gaps. There is no gameplay/save hook.
+Definitions contain `definition_id`, `definition_revision`, `disallow_multiple` and the eight-field `comparison`. Instances own a deep copy plus `instance_id`, `owner_id` and `group_id`. All snapshots are deep copies. Sequence entries contain `definition_id` and boolean `link_to_previous` (FF=false, 00=true). The first linked record becomes a group root; later linked records join the latest activated group in this call. Calls never inherit a prior group. IDs are monotonically increasing per store and never recycled; they are not original slot numbers.
 
-### S29 executable evidence extractor
+Listeners contain `definition_id`, `required_events` and `link_to_previous`. Get=1, Drop=2, Use/Cast=4, Unuse=8 are allowed listener bits, singly or combined. Delete=16 is a terminal event, not a listener bit. Unknown bits, zero masks, malformed fields, unknown definitions, duplicate owner IDs and non-boolean held state fail before mutation. Queued masks must be integers (no float/string/bool coercion). Pending masks coalesce repeated bits.
 
-`tools/extract_s29_st_evidence.py` reads the pinned archived STX candidate, rejects missing sectors, verifies the original loader checksum and extracts decoded records under ignored `tools/reference/s29-verified/`. Optional Capstone disassembly treats inline engine dispatch words as data. This development-only tool changes no game state. Interpretation and unresolved discrepancies: `docs/S29_ST_EFFECT_RESEARCH.md`.
+Dispatch captures/clears bits, then processes Get, Drop, Use, Unuse, Delete. Get sets held; Drop is skipped if unheld and otherwise clears held. Get/Drop and Use/Unuse oppose each other. For each ordinary event, remove the owner's groups containing a listener for the opposing bit, then select matching listeners in definition order and activate. Bindings retain listener masks, not just the event that activated them; a listener for both bits can oppose itself. The H gate sees every owner's active copies plus this call's successful prefix. A match preserves that prefix but suppresses the current and all following selected entries.
 
-`tools/probe_s29_st_effects.py` runs isolated original 68000 routines using Unicorn 2.1.4 with pinned extracted modules. Ten scenarios check original linkage, repeated activation, scoped group removal, Physical Speed expiry and one-byte saturation. Synthetic RAM and forced updates isolate behavior; they do not establish game-time scheduling. Captured evidence: `tests/fixtures/s29_st_probe_results.json`.
+Delete removes all of this owner's records and leaves an inert tombstone with no pending bits. Repeating Delete succeeds without action; other events and reuse of a deleted owner ID fail. Owner identity, explicit listener/group bindings, tombstones, non-recycled IDs and atomic input rejection are reconstruction architecture. They avoid unresolved raw-byte lookup and stale-reference hazards without asserting byte-for-byte original behavior. Removal never executes arithmetic or reverses stat changes.
 
-### S29 active instances and ownership
+Registration and queue validation precede mutation. Dispatch runs synchronously without callbacks against immutable, prevalidated definitions; no failure-capable external operation occurs after pending bits clear. There is no reentrancy or timer/event tie policy here. Generic owners have no inventory/floor/stackable or special-use hooks. Binary long-text layout, original fixed slot capacity, timed state, action decoding, serialization and gameplay wiring are deferred to their owning stories. This is not a native memory interpreter.
 
-`scripts/effect_instances.gd` accepts an `effect_definitions.gd` registry and an ordered, already-selected sequence of `{definition_id, link_to_previous}` entries. It does not select listeners or dispatch events. Every input is validated before allocation, including entries following a potential duplicate match. Successful earlier entries remain if a later H gate suppresses the rest, as documented. The gate sees the complete active list across owners and the newly created prefix.
+### S29 verification and research
 
-Each active record owns a deep copy of its registered definition plus `instance_id`, `owner_id` and `group_id`. First-00 starts a group; later linked entries join the most recent group in this call. A new call never links to an old group. Session IDs increase monotonically and are never reused, preventing stale group handles from targeting new instances. This identity scheme is reconstruction architecture, not ST slot numbering; there is no binary slot-capacity or long-text-layout emulation.
+`tests/test_effect_definitions.gd` has 29 checks; `test_effect_instances.gd` has 41; `test_effect_events.gd` has 233, including ten cases from `tests/fixtures/effect_lifecycle_traces.json`. They cover ownership/isolation, linkage, all five events, pending state, first-00, global suppression, ordered opposition and atomic rejection. Run each through the portable headless Godot command above. The acceptance review is in `docs/S29_ACCEPTANCE_REVIEW.md`.
 
-`remove_group(owner_id, group_id)` and `remove_owner(owner_id)` remove only matching records and are idempotent. They never reverse an action or modify character stats. Deep-copy snapshots prevent external mutation. Unknown/stale group handles produce an empty removal list. The caller supplies owner identity; there is no entity manager, event dispatch, timer state, execution or save integration yet. `tests/test_effect_instances.gd` covers atomic failure, linkage, global duplicate suppression, same-owner separate groups, cross-owner isolation and stale handles.
-
-### S29 bounded event dispatch
-
-`scripts/effect_events.gd` owns an entity-listener registry, pending event masks and its private `effect_instances.gd` store. `register_entity(owner_id, listeners)` accepts only ordered `{definition_id, required_events, link_to_previous}` bindings; masks may contain Use/Cast (4), Unuse (8), or both. It validates the complete list before registration and copies it. Unknown references, extra fields, unsupported bits and duplicate owners fail explicitly. `queue_events` ORs valid bits into pending state without touching active instances.
-
-`dispatch_pending` captures and clears pending bits, then processes Use before Unuse. For each event it removes the owner's groups containing a listener for the opposing bit, selects matching listeners in definition order, and activates them through the global H gate. Bindings track the original listener mask, not merely the triggering event: a listener for both bits can oppose itself on a repeated event. The same owner may have several groups; all matching opposing groups are removed. No callbacks occur, so this bounded synchronous API cannot observe a reentrant clear-order difference. Returned event records describe created/removed IDs and suppression position within the selected sequence. Snapshots are deep copies.
-
-Explicit listener/group bindings are reconstruction architecture implementing Kroah's owner-scoped opposition intent. They do not claim equivalence to the candidate's unresolved template-byte-15 lookup. Supported owners are generic effect containers: no inventory state or special-use behavior is implied. Get, Drop, Delete and unknown bits are rejected, including mixed masks containing them. There is no stat action/undo, timer state, binary text handling, serialization or gameplay hook. `tests/test_effect_events.gd` covers 60 checks for non-listeners, ordering, opposition-before-H, duplicate/repeated events, atomic invalid input and owner isolation.
+`tools/extract_s29_st_evidence.py` reads the pinned archived STX candidate, verifies the loader checksum and extracts decoded records under ignored `tools/reference/s29-verified/`. Optional Capstone 5.0.9 disassembly recognizes inline engine dispatch words. `tools/probe_s29_st_effects.py` uses Unicorn 2.1.4/M68000 to execute 13 isolated original-code scenarios with synthetic RAM. Captured evidence is `tests/fixtures/s29_st_probe_results.json`. These establish bounded observations, not a full-game playthrough or timer-unit mapping. See `docs/S29_ST_EFFECT_RESEARCH.md` for provenance and discrepancies.

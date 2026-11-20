@@ -320,11 +320,13 @@
       "trigger_cadence": "On effect activation.",
       "update_order": "Previous-effect linkage is documented; other allocation/update ordering unknown.",
       "implementation": {
-        "status": "partial",
+        "status": "implemented",
         "locations": [
-          "scripts/effect_instances.gd"
+          "scripts/effect_definitions.gd",
+          "scripts/effect_instances.gd",
+          "scripts/effect_events.gd"
         ],
-        "notes": "S29 now stores independent owner-tagged active copies and linked groups, with first-00 handling, non-recycled session IDs and explicit scoped removal. Ordered activation input is already selected by the caller. Event selection, native text-slot layout, timer state, stat execution and saves remain deferred."
+        "notes": "S29 non-timed copy/link lifecycle implemented. Definitions, owners and active copies are distinct; FF/00 group behavior, snapshots and scoped removal tested. Stable session identities are reconstruction architecture; native slot capacity/layout, timer state and saves are excluded."
       },
       "questions": [
         {
@@ -398,7 +400,7 @@
           "scripts/effect_instances.gd",
           "scripts/effect_events.gd"
         ],
-        "notes": "Bounded generic-owner Use/Unuse dispatch now registers immutable listener bindings, queues supported bits, removes owner-scoped opposing groups, activates listeners with global H suppression and clears captured events. Explicit masks/group IDs implement canonical removal intent without claiming original template-byte-15 equivalence. Get/Drop/Delete, special item use, timers, actions and gameplay/save wiring remain unsupported."
+        "notes": "S29 event portion implemented for generic owners: Get/Drop/Use/Unuse/terminal Delete, held guard, explicit owner-scoped opposition and global H-tail suppression. Unknown bits/Delete listeners rejected. Timer/cure/action fields in this broader rule remain S30 work, so overall coverage stays partial. No gameplay or save hook."
       },
       "questions": [
         {

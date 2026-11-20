@@ -56,10 +56,13 @@ func _initialize() -> void:
 	send(runtime, "b", Events.USE)
 	var before: Array = runtime.active_snapshot()
 	check(runtime.queue_events("a", Events.USE).ok, "queue pending before invalid input")
-	for invalid_mask in [0, -1, 1, 2, 16, 32, 64, 128, Events.USE | 16]:
+	for invalid_mask in [0, -1, 32, 64, 128, Events.USE | 32, 4.0, "4", true]:
 		check(not runtime.queue_events("a", invalid_mask).ok, "unsupported mask rejected")
 	check(runtime.entity_snapshot("a").entity.pending_events == Events.USE, "failed queue preserves pending work")
 	check(runtime.active_snapshot() == before, "failed queue leaves active records unchanged")
+	for invalid_held in [0, "false", null]:
+		check(not runtime.register_entity("invalid-held", [], invalid_held).ok, "held state cannot be coerced")
+		check(not runtime.entity_snapshot("invalid-held").ok, "invalid held state creates no owner")
 	check(not runtime.queue_events("missing", Events.USE).ok and not runtime.dispatch_pending("missing").ok, "unknown owner fails explicitly")
 	var combined: Dictionary = send(runtime, "a", Events.UNUSE)
 	check(combined.events.size() == 2 and combined.events[0].event == Events.USE
@@ -88,5 +91,68 @@ func _initialize() -> void:
 	send(filtered, "filtered", Events.USE)
 	check(filtered.active_snapshot()[0].instance_id == filtered.active_snapshot()[0].group_id,
 		"skipped non-listener does not become linked predecessor")
+	var possession = Events.new(definitions)
+	check(possession.register_entity("item", [listener("use", Events.GET), listener("extra", Events.DROP)]).ok,
+		"register Get/Drop listeners")
+	check(send(possession, "item", Events.DROP).events[0].skipped, "Drop while unheld is skipped")
+	check(not possession.entity_snapshot("item").entity.held, "skipped Drop preserves held state")
+	var acquired: Dictionary = send(possession, "item", Events.GET)
+	check(possession.entity_snapshot("item").entity.held and acquired.events[0].created_ids.size() == 1, "Get holds owner and activates")
+	var dropped: Dictionary = send(possession, "item", Events.DROP)
+	check(dropped.events[0].removed_ids == acquired.events[0].created_ids, "Drop removes Get group")
+	check(not possession.entity_snapshot("item").entity.held and dropped.events[0].created_ids.size() == 1, "Drop releases and activates")
+	var repeated_drop: Dictionary = send(possession, "item", Events.DROP)
+	check(repeated_drop.events[0].skipped and possession.active_snapshot().size() == 1, "repeat Drop does not re-activate")
+	var reacquired: Dictionary = send(possession, "item", Events.GET)
+	check(reacquired.events[0].removed_ids == dropped.events[0].created_ids, "Get removes prior Drop group")
+	check(possession.register_entity("other", [listener("extra", Events.USE)], true).ok, "explicit initially held owner supported")
+	send(possession, "other", Events.USE)
+	var deleted: Dictionary = send(possession, "item", Events.DELETE)
+	check(deleted.events[0].removed_ids == reacquired.events[0].created_ids, "Delete removes owner's remaining records")
+	check(deleted.events[0].created_ids.is_empty(), "Delete never activates listeners")
+	check(possession.entity_snapshot("item").entity.deleted and not possession.entity_snapshot("item").entity.held,
+		"Delete leaves inert owner tombstone")
+	check(possession.active_snapshot().size() == 1 and possession.active_snapshot()[0].owner_id == "other", "Delete preserves other owner")
+	check(send(possession, "item", Events.DELETE).events.is_empty(), "repeat Delete is idempotent")
+	check(not possession.queue_events("item", Events.USE).ok, "deleted owner cannot receive fresh work")
+	check(not possession.register_entity("item", []).ok, "deleted owner ID cannot be reused")
+	var all_events = Events.new(definitions)
+	all_events.register_entity("all", [listener("use", Events.GET), listener("extra", Events.DROP),
+		listener("use", Events.USE), listener("extra", Events.UNUSE)])
+	var all_result: Dictionary = send(all_events, "all", Events.SUPPORTED_EVENTS)
+	var event_order: Array = []
+	for event in all_result.events:
+		event_order.append(event.event)
+	check(event_order == [1, 2, 4, 8, 16], "full supported order ends in Delete")
+	check(all_events.active_snapshot().is_empty(), "combined events leave no records after Delete")
+	check(all_events.entity_snapshot("all").entity.pending_events == 0, "combined events cleared")
+	_run_lifecycle_traces(definitions)
 	print("Effect event dispatch: %d checks, %d failures" % [checks, failures])
 	quit(1 if failures else 0)
+
+func _run_lifecycle_traces(definitions: RefCounted) -> void:
+	var fixture = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/effect_lifecycle_traces.json"))
+	check(fixture != null and fixture.schema_version == 1, "load reviewed S29 trace fixtures")
+	for trace in fixture.cases:
+		var runtime = Events.new(definitions)
+		for owner in trace.owners:
+			# JSON numbers are floats in Godot; convert only the fixture's known
+			# integer mask field. The public API itself still rejects malformed data.
+			var bindings: Array = owner.listeners.duplicate(true)
+			for binding in bindings:
+				binding.required_events = int(binding.required_events)
+			check(runtime.register_entity(owner.owner_id, bindings).ok, trace.id + " register owner")
+		for step in trace.steps:
+			check(runtime.queue_events(step.owner_id, int(step.event_mask)).ok, trace.id + " queue")
+			check(runtime.dispatch_pending(step.owner_id).ok, trace.id + " dispatch")
+			var active: Array = []
+			var groups: Dictionary = {}
+			for instance in runtime.active_snapshot():
+				active.append(instance.owner_id + ":" + instance.definition.definition_id)
+				groups[instance.group_id] = true
+			check(active == step.expected_active, trace.id + " active copies")
+			check(groups.size() == int(step.expected_groups), trace.id + " independent groups")
+			var entity: Dictionary = runtime.entity_snapshot(step.owner_id).entity
+			check(entity.held == step.expected_held and entity.deleted == step.expected_deleted,
+				trace.id + " owner state")
+			check(entity.pending_events == 0, trace.id + " cleared pending events")
