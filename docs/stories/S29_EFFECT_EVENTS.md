@@ -82,3 +82,9 @@ ER references are local research-ledger entries, not GitHub sub-issues. See [cur
 Added `scripts/effect_instances.gd`: independent active definition copies, explicit owner/group identities, FF/00-style sequence linkage, global H-gated tail suppression and idempotent owner-scoped record removal. Input sequences are already eligible; selecting event listeners is not implemented. Invalid input is rejected before allocation. No stat mutation/undo, timers or save changes. This advances the identity and removal portions of the criteria without completing the whole event lifecycle.
 
 Ordinary Dagger and Leather Helmet records were checked in candidate module 12: both effect lists terminate immediately, so neither resolves enchanted-equipment byte-15 ownership. The original-code harness now has 12 passing scenarios. Further research must target effect-bearing item construction, not assume ordinary equipment exercises it.
+
+## Bounded event dispatcher implemented
+
+Added `scripts/effect_events.gd` for generic-owner Use/Cast and Unuse only. It registers immutable ordered listeners, queues supported bits, removes opposing owner groups before activation, applies global duplicate suppression, processes Use before Unuse and clears captured events. Explicit listener/group bindings implement canonical removal intent as reconstruction architecture; raw template-byte-15 equivalence is not claimed.
+
+Sixty focused checks cover non-listeners, repeated events, suppression, simultaneous supported bits, multi-group opposition, owner isolation and atomic rejection. Get/Drop/Delete and special item behavior remain rejected. S29 remains In Progress pending the full acceptance review and remaining event-path reconciliation; no gameplay/save behavior changes.

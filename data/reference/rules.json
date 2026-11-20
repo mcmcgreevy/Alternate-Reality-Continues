@@ -395,9 +395,10 @@
         "status": "partial",
         "locations": [
           "scripts/effect_definitions.gd",
-          "scripts/effect_instances.gd"
+          "scripts/effect_instances.gd",
+          "scripts/effect_events.gd"
         ],
-        "notes": "Immutable registry and eight-field H gate now drive ordered activation: a match suppresses current and following entries; earlier successful entries remain. Gate scope includes all owners and newly activated prefix. No entity-event dispatch, opposing-event lookup, timer execution, stat rollback or gameplay hook."
+        "notes": "Bounded generic-owner Use/Unuse dispatch now registers immutable listener bindings, queues supported bits, removes owner-scoped opposing groups, activates listeners with global H suppression and clears captured events. Explicit masks/group IDs implement canonical removal intent without claiming original template-byte-15 equivalence. Get/Drop/Delete, special item use, timers, actions and gameplay/save wiring remain unsupported."
       },
       "questions": [
         {

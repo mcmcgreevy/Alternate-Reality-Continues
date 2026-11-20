@@ -195,3 +195,7 @@ runtime modification or save migration is part of this story.
 ## Original executable follow-up — 2026-11-19
 
 The [S29 executable research](S29_ST_EFFECT_RESEARCH.md) adds evidence beyond this original archive-only decision ledger: opposing Get/Drop and Use/Unuse pairs, branch order, first-00 linkage, capacity and slot invalidation. It also identifies clear-before-processing and Delete behavior requiring reconciliation. ER01–ER05 and the conditional fixtures have not yet been promoted to a complete runtime contract. Do not interpret their original unknowns as an absence of this new evidence.
+
+## Bounded Use/Unuse implementation contract
+
+S29 now implements generic effect-owner Use/Cast and Unuse dispatch using the documented opposition semantics and candidate branch order. Explicit owner/group/listener-mask bindings replace the unresolved raw template-byte-15 mechanism as reconstruction architecture. Processing is synchronous with no callbacks: capture/clear then Use, then Unuse; remove opposing groups before activation. No timer/event ties or reentrancy policy is inferred. Get/Drop/Delete, special-use hooks and other bits fail validation. Stat execution and undo are absent. The ledger's broader historical gaps remain open. See CODE_GUIDE for API details and tests/test_effect_events.gd for executable bounded cases.

@@ -13,8 +13,8 @@ func _init(definitions: Definitions) -> void:
 	_definitions = definitions
 
 ## Each entry has exactly definition_id and link_to_previous (FF=false, 00=true).
-## Only eligible definitions belong here: event selection is a separate pending
-## subsystem. Linkage starts afresh per call and never crosses an owner/call.
+## Only eligible definitions belong here; effect_events.gd selects Use/Unuse
+## listeners. Linkage starts afresh per call and never crosses an owner/call.
 func activate_sequence(owner_id: String, entries: Array) -> Dictionary:
 	if owner_id.strip_edges().is_empty():
 		return {"ok": false, "error": "invalid_owner_id"}
