@@ -44,22 +44,25 @@ func run():
     corridor()
     var start: Vector2i = scene.world.position
     var minutes: int = scene.world.minutes
+    var direction: Vector2i = scene.world.DIRECTIONS[scene.world.facing]
     key(KEY_W)
-    check(scene.world.position != start and scene.world.minutes == minutes + 1, 'Immediate step retains original time cost')
+    check(scene.world.position == start + direction and scene.world.minutes == minutes, 'Keyboard step adds no action-time charge')
     scene.advance_held_movement(0.34)
-    check(scene.world.minutes == minutes + 1, 'Initial repeat delay')
+    check(scene.world.position == start + direction, 'Initial repeat delay')
     scene.advance_held_movement(0.02)
-    check(scene.world.minutes == minutes + 2, 'Holding repeats after delay')
+    check(scene.world.position == start + direction * 2, 'Holding repeats after delay')
     key(KEY_W, true, true)
-    check(scene.world.minutes == minutes + 2, 'OS echo does not add moves')
+    check(scene.world.position == start + direction * 2, 'OS echo does not add moves')
     key(KEY_W, false)
     scene.advance_held_movement(10)
-    check(scene.world.minutes == minutes + 2, 'Release stops immediately')
+    check(scene.world.position == start + direction * 2, 'Release stops immediately')
     corridor()
     key(KEY_W)
     minutes = scene.world.minutes
+    start = scene.world.position
+    direction = scene.world.DIRECTIONS[scene.world.facing]
     scene.advance_held_movement(10)
-    check(scene.world.minutes == minutes + 1, 'Frame stall cannot burst multiple steps')
+    check(scene.world.position == start + direction and scene.world.minutes == minutes, 'Frame stall cannot burst multiple steps or charge clock')
     key(KEY_E)
     check(scene.held_key == 0, 'Interaction clears held movement')
     corridor()
@@ -78,7 +81,7 @@ func run():
     minutes = scene.world.minutes
     key(KEY_W)
     scene.advance_held_movement(0.36)
-    check(scene.show_map and scene.world.position != start and scene.world.minutes == minutes + 2, 'Map remains live during held movement')
+    check(scene.show_map and scene.world.position != start and scene.world.minutes == minutes, 'Map remains live during held movement')
     key(KEY_W, false)
     key(KEY_C)
     facing = scene.world.facing
@@ -90,10 +93,12 @@ func run():
     check(scene.held_key == 0, 'Focus loss cancels repeat')
     corridor()
     key(KEY_H)
+    start = scene.world.position
+    direction = scene.world.DIRECTIONS[scene.world.facing]
     minutes = scene.world.minutes
     key(KEY_W)
     scene.advance_held_movement(1)
-    check(not scene.hold_movement and scene.world.minutes == minutes + 1 and scene.held_key == 0, 'Classic mode only steps once')
+    check(not scene.hold_movement and scene.world.position == start + direction and scene.world.minutes == minutes and scene.held_key == 0, 'Classic mode only steps once')
     var config := ConfigFile.new()
     check(config.load(scene.controls_path) == OK and not config.get_value('movement','hold',true), 'Classic preference saved')
     scene.hold_movement = true

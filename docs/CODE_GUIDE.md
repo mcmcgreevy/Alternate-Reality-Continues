@@ -50,15 +50,15 @@ Door state keys include chapter, cell coordinates **and facing**. Opening one fa
 
 ## Three clocks
 
-- **Simulation minutes:** `world.minutes` is absolute time since day one. Successful steps, services and waiting advance it. Turning and render frames do not. Needs count crossed intervals, while weather derives its hourly selection from this clock and a saved seed.
-- **Frame seconds:** `_process(delta)` animates rain/torches and schedules held keys. A delayed frame can produce at most one repeated action, never a burst of catch-up steps.
+- **Simulation time:** `game_clock.gd` owns integer game microseconds; `minutes` and `minute_fraction` are compatibility views. Ordinary frames, accelerated services and explicit costs share one advancement path. Overview/focus loss pause; map/tavern menus stay live. See S03 below.
+- **Frame seconds:** `_process(delta)` advances the shared clock, animates rain/torches and schedules held keys. A delayed frame can produce at most one repeated action, never a burst of catch-up steps.
 - **Audio seconds:** the synchronized audio playhead drives lyric cues and song progress. Moving the simulation clock does not seek the song.
 
 Hold movement routes through the same action handler as a tap. A release, fresh key, focus loss, blocked step or transition cancels it. The map allows movement; tavern and modal menus do not. Interactions and purchases are never repeated by the hold timer.
 
 ## State and persistence
 
-`user://original_route.json` is the current journey save. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
+`user://original_route.json` is the current journey save, now version 5 with a precise clock snapshot. Versions 3/4 preserve elapsed time on migration; see S03 below. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
 
 Movement preferences live in `user://controls.cfg`, and audio preferences in `user://music_settings.cfg`. They are intentionally independent of journey saves. The legacy prototype uses `user://journey.json` with its own versions and coordinates.
 
@@ -140,3 +140,7 @@ Registration and queue validation precede mutation. Dispatch runs synchronously 
 ## S32 timing research tools
 
 `tools/extract_s32_st_timing.py` generates focused clock, scheduler and service listings from the checksum-verified S29 modules, checking five module hashes. `tools/probe_s32_st_timing.py` executes 18 unchanged-code scenarios with synthetic RAM using the existing Unicorn dependency. It observes bounded fragments rather than replacing engine/OS calls. Captured results are `tests/fixtures/s32_st_timing_results.json`; reproduce commands, domains, approved normalization and limits are in `docs/S32_ST_TIMING_RESEARCH.md`. These tools do not implement production timing. S03-CLOCK and S08-SPEED still gate S30.
+
+## S03 shared clock and calendar
+
+`game_clock.gd` owns integer game microseconds and the real-conversion remainder. `world.gd` exposes legacy `minutes`/`minute_fraction` views; OriginalWorld selects the ST 06:00 start, calendar labels and one advancement path for explicit costs, ordinary frames and accelerated services. `game_time_advanced(start, end)` supplies S30 with timestamp intervals before counting needs boundaries once; reentrant time advancement is rejected. The calendar uses twelve 31-day months, starting Sowings 29, Year 0. UI overview/focus loss pause; other active menus remain live. Version 5 saves preserve precision and validate before commit; versions 3/4 migrate existing elapsed time without resetting it. See `docs/S03_CLOCK.md` for APIs, bounds, source/adaptation distinctions and the 65 focused checks in `test_game_clock.gd` / `test_clock_scene.gd`.

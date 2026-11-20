@@ -1,5 +1,8 @@
 # Bounded effect runtime contract — S28
 
+Latest handoff: [S03-CLOCK is implemented and verified](S03_CLOCK.md); S30 now
+waits only for S08-SPEED among the prerequisites identified by S32.
+
 ## Current S32 timing handoff — 2026-11-20
 
 [S32 research and bounded contract](S32_ST_TIMING_RESEARCH.md) supersede the

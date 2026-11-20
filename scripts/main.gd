@@ -18,6 +18,7 @@ const TURN_INTERVAL := 0.30
 var hold_movement := true
 var controls_path := "user://controls.cfg"
 var rain_time := 0.0
+var application_focused := true
 var held_key: int = 0
 var repeat_remaining := 0.0
 var world = World.new()
@@ -63,10 +64,12 @@ func _ready() -> void:
 	first_person.sync(world)
 	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 
-## Render time animates rain and schedules held keys; only world actions spend game time.
+## Simulation time runs while active; chapter overview and focus loss pause it.
 func _process(delta: float) -> void:
 	rain_time = fmod(rain_time + delta, 60.0)
-	advance_held_movement(delta)
+	if application_focused and not show_chapters:
+		world.advance_real_seconds(delta)
+		advance_held_movement(delta)
 	weather_effects.advance(world, delta, music.muted)
 	first_person.sync(world)
 	update_guide()
@@ -77,7 +80,10 @@ func cancel_held_movement() -> void:
 	repeat_remaining = 0.0
 
 func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		application_focused = true
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		application_focused = false
 		cancel_held_movement()
 
 func _input(event: InputEvent) -> void:
@@ -209,12 +215,13 @@ func _handle_key(event: InputEvent) -> void:
 				world.journal = "You are visiting Tail of the Dog Tavern. Choose an option from the menu."
 				return
 	match event.keycode:
-		KEY_W, KEY_UP: world.step()
-		KEY_S, KEY_DOWN: world.step(true)
+		# Frame-driven keyboard travel must not add a second action-time charge.
+		KEY_W, KEY_UP: world.move(world.DIRECTIONS[world.facing], false)
+		KEY_S, KEY_DOWN: world.move(-world.DIRECTIONS[world.facing], false)
 		KEY_A, KEY_LEFT: world.turn(-1)
 		KEY_D, KEY_RIGHT: world.turn(1)
-		KEY_Q: world.strafe(false)
-		KEY_R: world.strafe(true)
+		KEY_Q: world.move(world.DIRECTIONS[posmod(world.facing - 1, 4)], false)
+		KEY_R: world.move(world.DIRECTIONS[posmod(world.facing + 1, 4)], false)
 		KEY_TAB: show_map = not show_map
 		KEY_G: guide_on = not guide_on
 		KEY_V:
@@ -262,7 +269,7 @@ func _draw() -> void:
 	label_at("A L T E R N A T E   R E A L I T Y", 24, 30, 15, AMBER)
 	label_at("THE WAY BACK", 24, 63, 29)
 	label_at("CITY + DUNGEON  /  FIRST EXCURSION", 720, 30, 13, DIM)
-	label_at(world.clock_text(), 900, 63, 18, TEAL)
+	label_at(world.clock_text(), 730, 63, 16, TEAL)
 	draw_line(Vector2(24, 76), Vector2(1128, 76), Color("35484a"))
 	label_at("Tail of the Dog Tavern" if world.in_tavern() else ("Xebec's Demise / City streets" if world.chapter == "city" else world.dungeon_region()), 24, 102, 18, AMBER)
 	label_at("[H] Movement: " + ("HOLD" if hold_movement else "SINGLE STEP"), 650, 102, 14, DIM)

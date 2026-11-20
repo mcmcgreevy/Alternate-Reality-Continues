@@ -17,7 +17,7 @@ Accepted by the user on **2026-11-16**.
 
 | Area | Current departure / next verification |
 | --- | --- |
-| Calendar and time | Action-based minutes and prototype starting time versus documented ST calendar and continuous clock. |
+| Calendar and time | S03 reconciles the ST start date, calendar, ordinary/accelerated clock and explicit pause policy; see S03_CLOCK.md. Service content and movement distance calibration remain separately owned. |
 | Weather | Five combined conditions and hourly equal probabilities versus separate weather types, seasonal selection, durations and ambient temperature. |
 | Storms | Cosmetic prototype timing; reconcile ordinary rain versus storm strength and documented frequency. |
 | Stats and metabolism | Flat/minimal stats and provisional needs; implement the documented base/effective/displayed/modifier structure and timed effects. |

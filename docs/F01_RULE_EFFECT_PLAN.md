@@ -2,14 +2,15 @@
 
 Current 2026-11-20 status: S32 research is complete; see
 [timing evidence and reconciliation](S32_ST_TIMING_RESEARCH.md). S30 remains
-Backlog pending callable S03-CLOCK and S08-SPEED interfaces and their checks.
+Backlog pending S08-SPEED. S03-CLOCK is complete with 65 focused checks; see
+[S03 acceptance](S03_CLOCK.md).
 F01 remains open for S30 timing implementation and S31 gameplay/save integration.
 
 ## Owned prerequisites for S30
 S30 remains **Backlog, not Ready**. The required follow-up work is now explicitly tracked:
 
 - [x] **S32 (#66):** timing units/phase, incubation/expiry and simultaneous-work order resolved for the bounded slice; supported contract, reproducible probes and user reconciliation recorded in S32_ST_TIMING_RESEARCH.md.
-- [ ] **S03-CLOCK in S03 (#36):** deliver the elapsed-game-time interface and clock fixtures described in `docs/stories/S03_CLOCK_INTERFACE.md`.
+- [x] **S03-CLOCK in S03 (#36):** elapsed-game-time interface, calendar, pause/services and save migration complete; see `docs/S03_CLOCK.md`.
 - [ ] **S08-SPEED in S08 (#41):** deliver the typed Speed-bonus Add/Sub interface and action fixtures described in `docs/stories/S08_STAT_ACTION_INTERFACE.md`.
 
 S29 and S32 are complete. S03 and S08 need not close in full; implement their narrow interfaces against the S32 handoff. Reassess S30 only when these deliverables have evidence and passing checks. ER identifiers refer to research-ledger entries, not additional GitHub sub-issues.

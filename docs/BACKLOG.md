@@ -60,11 +60,11 @@ Menu: Xebec’s Demise.
 
 Parent: E02 · Milestone: M1 · Coverage: Partial · Source: [world](../assets/documentation/kroah-city-st-v2/world.html).
 
-**S03:** As a player, I experience the documented calendar and passage of time while exploring and using services.
+**S03:** As a player, I experience the documented calendar and passage of time while exploring and using services. Completed; [implementation and acceptance](S03_CLOCK.md).
 
 Acceptance: Verify start date, calendar rollover, pause rules and accelerated service time; preserve continuous clock without double charging.
 
-S30 prerequisite: [S03-CLOCK — elapsed-time interface and fixtures](stories/S03_CLOCK_INTERFACE.md). This narrow deliverable does not require completion of all calendar work.
+S30 prerequisite complete: [S03-CLOCK — elapsed-time interface and fixtures](stories/S03_CLOCK_INTERFACE.md).
 
 ### F04 — Weather and Temperature
 

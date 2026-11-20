@@ -1,17 +1,18 @@
 # S30 — Execute timed effects through the game clock
 
-## Current readiness after S32
+## Current readiness after S03
 
 **Backlog; not Ready.** S32's bounded timing research is complete. Its
 [evidence and approved contract](../S32_ST_TIMING_RESEARCH.md) supersede the
-historical timing unknowns below. S03-CLOCK and S08-SPEED still require callable
-implementations/reference adapters and passing fixtures before S30 starts.
+historical timing unknowns below. [S03-CLOCK](../S03_CLOCK.md) is now complete;
+S08-SPEED still requires a callable implementation and passing fixtures before
+S30 starts.
 
 - [x] S32: timer cadence/phase, incubation, expiry and simultaneous-work order,
   supported domains and rejection policy; original probes and explicit user
   reconciliation preserve 30-minute Physical Speed and all elapsed time.
-- [ ] S03-CLOCK: implement/verify integer game-microsecond input and timestamped
-  boundaries, fractional conversion, pause and accelerated time.
+- [x] S03-CLOCK: integer game-microsecond input, timestamped boundaries,
+  fractional conversion, pause and accelerated time; 65 focused checks pass.
 - [ ] S08-SPEED: implement/verify typed saturating byte Add/Sub in supplied order.
 
 Use activation-relative deadlines, one raw positive timer unit = 60,000,000 game

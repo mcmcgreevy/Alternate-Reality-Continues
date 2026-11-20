@@ -22,8 +22,11 @@ var tavern: Dictionary
 var needs := {"hunger": 18, "thirst": 16}
 var provisions := {"food": 0, "water": 0}
 var dungeon_links: Dictionary
+signal game_time_advanced(start_game_microseconds: int, end_game_microseconds: int)
+var _advancing_clock := false
 
 func _init() -> void:
+	minutes = 360  # Kroah ST City: Sowings 29, Year 0, 06:00.
 	for chapter_id in ["city", "dungeon"]:
 		maps[chapter_id] = JSON.parse_string(FileAccess.get_file_as_string("res://data/maps/" + chapter_id + ".json"))
 	route = JSON.parse_string(FileAccess.get_file_as_string("res://data/maps/route.json"))
@@ -128,7 +131,7 @@ func can_route(cell_position: Vector2i, direction_index: int) -> bool:
 
 ## Validate one cardinal step, charge time only on success, then resolve any arrival link.
 ## revision invalidates rendered geometry and stops held input after automatic transitions.
-func move(direction: Vector2i) -> bool:
+func move(direction: Vector2i, charge_travel_time: bool = true) -> bool:
 	var direction_index := DIRECTIONS.find(direction)
 	if direction_index == -1:
 		return false
@@ -143,7 +146,8 @@ func move(direction: Vector2i) -> bool:
 		journal = "The door is barred. Its original mechanism is not implemented." if boundary_code in UNSUPPORTED_DOOR_CODES else "Stone blocks your way."
 		return false
 	position += direction
-	advance_time(1)
+	if charge_travel_time:
+		advance_time(1)
 	var transitioned := false
 	if chapter == "dungeon":
 		var transition_link: Dictionary = dungeon_links.get("%d,%d" % [position.x, position.y], {})
@@ -200,13 +204,53 @@ func meal() -> void:
 	if in_tavern():
 		journal = "Choose an item from the food and drink menu."
 
-## Advance simulation minutes, counting each crossed hunger/thirst interval once.
-## This is separate from rendering seconds; weather effects on stats remain deferred.
-func advance_time(elapsed_minutes: int) -> void:
-	# Slow, nonlethal placeholder needs; original rates remain unverified.
-	needs.hunger = mini(100, int(needs.hunger) + int((minutes + elapsed_minutes) / 60) - int(minutes / 60))
-	needs.thirst = mini(100, int(needs.thirst) + int((minutes + elapsed_minutes) / 30) - int(minutes / 30))
-	minutes += elapsed_minutes
+## Single time-consumer boundary: S30 consumes the timestamp pair before the
+## provisional needs update, matching the source effect-before-metabolism order.
+## Observers cannot reenter and charge time twice.
+func _finish_clock_advance(result: Dictionary) -> Dictionary:
+	if result.ok and result.elapsed_game_microseconds > 0:
+		var before: int = result.start_game_microseconds / GameClock.GAME_MICROSECONDS_PER_MINUTE
+		var after: int = result.end_game_microseconds / GameClock.GAME_MICROSECONDS_PER_MINUTE
+		game_time_advanced.emit(result.start_game_microseconds, result.end_game_microseconds)
+		# Provisional needs rates remain S09's responsibility.
+		needs.hunger = mini(100, int(needs.hunger) + after / 60 - before / 60)
+		needs.thirst = mini(100, int(needs.thirst) + after / 30 - before / 30)
+	_advancing_clock = false
+	return result
+
+func advance_game_microseconds(elapsed: int) -> Dictionary:
+	if _advancing_clock:
+		return game_clock.rejected("Clock consumers cannot advance time reentrantly.")
+	_advancing_clock = true
+	return _finish_clock_advance(game_clock.advance_game_microseconds(elapsed))
+
+func advance_real_seconds(real_seconds: float, mode: String = "ordinary") -> Dictionary:
+	if _advancing_clock:
+		return game_clock.rejected("Clock consumers cannot advance time reentrantly.")
+	_advancing_clock = true
+	return _finish_clock_advance(game_clock.advance_real_seconds(real_seconds, mode))
+
+## Future work/sleep/learning scenes use this adapter, never also advance_time().
+func advance_service_seconds(real_seconds: float, paused: bool = false) -> Dictionary:
+	return advance_real_seconds(real_seconds, "paused" if paused else "accelerated")
+
+## An event stamped here belongs before timers at this exact boundary. S30 owns
+## queued event/deadline ordering; this clock never invokes an effect scheduler.
+func game_time_boundary() -> int:
+	return game_clock.game_microseconds
+
+func calendar() -> Dictionary:
+	return game_clock.calendar()
+
+func clock_text() -> String:
+	var date := calendar()
+	return "%s %d, Y%d  /  %02d:%02d" % [date.month_name, date.day, date.year, date.hour, date.minute]
+
+## Explicit service/wait costs are already game minutes, not accelerated real time.
+func advance_time(elapsed_minutes: int) -> bool:
+	if elapsed_minutes < 0 or elapsed_minutes > GameClock.MAX_GAME_MICROSECONDS / GameClock.GAME_MICROSECONDS_PER_MINUTE:
+		return false
+	return advance_game_microseconds(elapsed_minutes * GameClock.GAME_MICROSECONDS_PER_MINUTE).ok
 
 func wallet_copper() -> int:
 	return int(character.gold) * 100 + int(character.silver) * 10 + int(character.copper)
@@ -233,12 +277,13 @@ func order_tavern(item_id: String, quoted_hour: int) -> bool:
 	if balance_copper < cost_copper:
 		journal = "You need %d copper for %s; you have %d." % [cost_copper, menu_item.name, balance_copper]
 		return false
+	if not advance_time(int(menu_item.minutes)):
+		return false
 	if cost_copper > 0:
 		balance_copper -= cost_copper
 		character.gold = int(balance_copper / 100)
 		character.silver = int((balance_copper % 100) / 10)
 		character.copper = balance_copper % 10
-	advance_time(int(menu_item.minutes))
 	needs.hunger = maxi(0, int(needs.hunger) - int(menu_item.hunger))
 	needs.thirst = maxi(0, int(needs.thirst) - int(menu_item.thirst))
 	provisions.food += int(menu_item.food)
@@ -251,7 +296,8 @@ func order_tavern(item_id: String, quoted_hour: int) -> bool:
 	return true
 
 func wait_minutes(elapsed_minutes: int = 5) -> void:
-	advance_time(elapsed_minutes)
+	if not advance_time(elapsed_minutes):
+		return
 	journal = "You wait %d minutes." % elapsed_minutes
 	if in_tavern():
 		if needs.hunger >= 8 and provisions.food > 0:
@@ -341,10 +387,11 @@ func save_game(path: String = SAVE_PATH) -> Error:
 	var save_file := FileAccess.open(path, FileAccess.WRITE)
 	if save_file == null:
 		return FileAccess.get_open_error()
-	save_file.store_string(JSON.stringify({"version": 4, "map_set": "original-route-1", "chapter": chapter,
+	save_file.store_string(JSON.stringify({"version": 5, "map_set": "original-route-1", "chapter": chapter,
 		"position": [position.x, position.y], "facing": facing, "character": character,
 		"inventory": inventory, "minutes": minutes, "flags": flags, "doors": doors,
-		"needs": needs, "provisions": provisions, "weather_seed": weather_seed}))
+		"needs": needs, "provisions": provisions, "weather_seed": weather_seed,
+		"minute_fraction": minute_fraction, "clock": game_clock.snapshot()}))
 	return OK
 
 ## Validate and migrate a temporary dictionary before changing the live journey.
@@ -355,7 +402,7 @@ func load_game(path: String = SAVE_PATH) -> bool:
 	var save_data = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not save_data is Dictionary or save_data.get("map_set") != "original-route-1":
 		return false
-	if save_data.get("version") != 3 and save_data.get("version") != 4:
+	if save_data.get("version") != 3 and save_data.get("version") != 4 and save_data.get("version") != 5:
 		return false
 	if not maps.has(save_data.get("chapter", "")):
 		return false
@@ -406,14 +453,26 @@ func load_game(path: String = SAVE_PATH) -> bool:
 		if not item is String:
 			return false
 	for key in ["minutes", "facing"]:
-		if not (save_data.get(key) is int or save_data.get(key) is float) or save_data[key] != int(save_data[key]):
+		if not (save_data.get(key) is int or save_data.get(key) is float) or not is_finite(float(save_data[key])) or save_data[key] != int(save_data[key]):
 			return false
 	if save_data.minutes < 0 or save_data.facing < 0 or save_data.facing > 3:
 		return false
 	var saved_weather_seed = save_data.get("weather_seed", 1701)
 	if not (saved_weather_seed is int or saved_weather_seed is float) or not is_finite(float(saved_weather_seed)) or saved_weather_seed != int(saved_weather_seed) or saved_weather_seed < 1 or saved_weather_seed > 2147483646:
 		return false
+	var saved_minute_fraction = save_data.get("minute_fraction", 0.0)
+	if not (saved_minute_fraction is float or saved_minute_fraction is int) or not is_finite(float(saved_minute_fraction)) or saved_minute_fraction < 0 or saved_minute_fraction >= 1:
+		return false
+	var saved_clock = GameClock.new(0)
+	if save_data.version == 5:
+		if not saved_clock.restore(save_data.get("clock")):
+			return false
+		if saved_clock.whole_minutes() != int(save_data.minutes) or absf(saved_clock.minute_fraction() - float(saved_minute_fraction)) > 0.000000000001:
+			return false
+	elif not saved_clock.set_minutes(int(save_data.minutes)) or not saved_clock.set_minute_fraction(float(saved_minute_fraction)):
+		return false
 	# Commit only after every field has passed validation.
+	game_clock = saved_clock
 	weather_seed = int(saved_weather_seed)
 	chapter = save_data.chapter
 	position = saved_position
