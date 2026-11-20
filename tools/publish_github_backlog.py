@@ -50,7 +50,7 @@ def build():
                 sid,story=match.groups()
                 suffix=' — storyboard and attribution' if sid=='S26' else (' — playback, skip and replay' if sid=='S27' else '')
                 stories.append(dict(key=sid,title=f'[{sid}] {name}{suffix}',body=source_links(meta)+'\n\n'+story.strip(),parent=fid,kind='story',area=area,phase=phase,coverage=coverage))
-    assert (len(epics),len(features),len(stories))==(7,26,31)
+    assert (len(epics),len(features),len(stories))==(7,26,32)
     return epics+features+stories
 
 def main():

@@ -1,5 +1,14 @@
 # S30 — Execute timed effects through the game clock
 
+## Owned prerequisites for S30
+S30 remains **Backlog, not Ready**. The required follow-up work is now explicitly tracked:
+
+- [ ] **S32 (#66):** resolve timer units/first-update phase (ER06/ER13), verify incubation and local expiry boundaries (ER07/ER08/ER09), and settle simultaneous timers, linked removal and timer/entity-event ties (ER03). Deliver the supported state/operation contract and reproducible evidence.
+- [ ] **S03-CLOCK in S03 (#36):** deliver the elapsed-game-time interface and clock fixtures described in `docs/stories/S03_CLOCK_INTERFACE.md`.
+- [ ] **S08-SPEED in S08 (#41):** deliver the typed Speed-bonus Add/Sub interface and action fixtures described in `docs/stories/S08_STAT_ACTION_INTERFACE.md`.
+
+S29 is complete. S03 and S08 need not close in full. S32 is research work that can begin first; interface refinement may proceed in parallel, but final contracts must reflect its findings. Reassess S30 only when these deliverables have evidence and passing checks. ER identifiers refer to research-ledger entries, not additional GitHub sub-issues.
+
 Parent: F01 (#8) · Epic: E01 (#1) · Milestone: M1 — Character and world foundations
 
 <!-- ar-planning-baseline-2026-11-17 -->

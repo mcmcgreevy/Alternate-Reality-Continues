@@ -28,7 +28,7 @@ Acceptance: Six-rule catalog, effect contract, source-derived fixtures and valid
 
 Acceptance: Source-linked decisions, trace fixtures and operation support matrix; unresolved findings explicitly gate implementation. [Specification](stories/S28_EFFECT_SEMANTICS.md).
 
-**S29 (Done):** Instantiate effects and handle entity events.
+**S29:** Instantiate effects and handle entity events. Completed.
 
 Acceptance: Definition/instance/owner separation, supported event lifecycle, linked removal and duplicate suppression with deterministic tests. [Specification](stories/S29_EFFECT_EVENTS.md).
 
@@ -39,6 +39,10 @@ Acceptance: Agreed timer/action semantics, single game-time input, deterministic
 **S31:** Preserve a timed stat effect across save and load.
 
 Acceptance: Physical Speed +5 for 30 game minutes through production runtime; save at minute 10 resumes with 20 remaining without duplicate contribution; migration and integrated regressions pass. [Specification](stories/S31_EFFECT_SAVE_INTEGRATION.md).
+
+**S32:** Resolve original effect timing and scheduler order. Backlog; prerequisite for S30.
+
+Acceptance: Verify raw timer units, first-update phase, incubation and simultaneous-work order with reproducible original-code evidence; settle the bounded support contract and hand off clock/stat requirements. [Specification](stories/S32_EFFECT_TIMING_RESEARCH.md). S30 also requires S03-CLOCK and S08-SPEED below.
 
 ### F02 — Persistence and deterministic tests
 
@@ -59,6 +63,8 @@ Parent: E02 · Milestone: M1 · Coverage: Partial · Source: [world](../assets/d
 **S03:** As a player, I experience the documented calendar and passage of time while exploring and using services.
 
 Acceptance: Verify start date, calendar rollover, pause rules and accelerated service time; preserve continuous clock without double charging.
+
+S30 prerequisite: [S03-CLOCK — elapsed-time interface and fixtures](stories/S03_CLOCK_INTERFACE.md). This narrow deliverable does not require completion of all calendar work.
 
 ### F04 — Weather and Temperature
 
@@ -101,6 +107,8 @@ Acceptance: Extract creation rules and initial state; test valid ranges and dete
 Parent: E03 · Milestone: M1 · Coverage: Prototype · Source: [characterStats](../assets/documentation/kroah-city-st-v2/characterStats.html).
 
 **S08:** As a player, my abilities reflect base values, temporary effects and earned changes.
+
+S30 prerequisite: [S08-SPEED — typed Speed-bonus actions and fixtures](stories/S08_STAT_ACTION_INTERFACE.md). This narrow deliverable does not require completion of every stat system.
 
 Acceptance: Separate base/effective/displayed values, modifiers and hidden stats; preserve documented precision; prevent modifier stacking and removal errors.
 
