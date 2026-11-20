@@ -136,3 +136,5 @@ remain S29 work blocked by the S28 evidence gaps. There is no gameplay/save hook
 ### S29 executable evidence extractor
 
 `tools/extract_s29_st_evidence.py` reads the pinned archived STX candidate, rejects missing sectors, verifies the original loader checksum and extracts decoded records under ignored `tools/reference/s29-verified/`. Optional Capstone disassembly treats inline engine dispatch words as data. This development-only tool changes no game state. Interpretation and unresolved discrepancies: `docs/S29_ST_EFFECT_RESEARCH.md`.
+
+`tools/probe_s29_st_effects.py` runs isolated original 68000 routines using Unicorn 2.1.4 with pinned extracted modules. Ten scenarios check original linkage, repeated activation, scoped group removal, Physical Speed expiry and one-byte saturation. Synthetic RAM and forced updates isolate behavior; they do not establish game-time scheduling. Captured evidence: `tests/fixtures/s29_st_probe_results.json`.

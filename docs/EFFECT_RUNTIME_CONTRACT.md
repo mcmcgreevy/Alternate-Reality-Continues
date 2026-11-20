@@ -12,6 +12,8 @@ separate documented conditional outcomes, synthetic conditional inputs,
 unresolved outcomes and proposed adaptations. S01 question records link to the
 ledger. All reference artifacts remain development-only.
 
+The [original-code follow-up](S29_ST_EFFECT_RESEARCH.md#isolated-execution-follow-up) now supplies narrower answers for ER01-ER05/ER12 and Physical Speed. The machine-readable ledger includes that follow-up; the archive-only tables below preserve the initial review context.
+
 ## Evidence reviewed
 
 | Key | Unchanged source and locator | Supports |
@@ -27,7 +29,7 @@ found no general timer-unit or ordering definition beyond TECH. Content-level
 durations do not establish the binary timer tick scale. No new external sources
 were needed; no executable verification or broad disassembly was performed.
 
-## Question dispositions
+## Original archive-only question dispositions
 
 Each ID below has a source locator and affected story in the ledger. “Partial”
 means some facts are documented; the remaining question is still a blocker.

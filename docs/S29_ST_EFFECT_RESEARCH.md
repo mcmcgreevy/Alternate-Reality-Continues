@@ -1,5 +1,9 @@
 # S29 original ST executable research — 2026-11-19
 
+**Current status:** the initial static analysis below has now been followed by
+10 passing isolated original-code scenarios. See **Isolated execution follow-up**
+at the end for the current answers and remaining blockers.
+
 User direction: research original ST behavior before choosing remake policies.
 This research establishes several missing details and exposes discrepancies that
 must be reconciled before the complete S29 lifecycle can be called compliant.
@@ -21,8 +25,8 @@ are independently reproducible evidence, not a silent replacement baseline.
   Contained STX SHA-256: `e8088c06a27e87369aaabc714a22b1964787c0c344134a5c5fde5931302eca56`.
 - Reproduce with `python tools/extract_s29_st_evidence.py`. Optional
   `--disassemble` requires Capstone 5.0.9. Outputs go to the ignored
-  `tools/reference/s29-verified/` directory. No emulator or original runtime was
-  executed; findings are static analysis, not observed playthrough traces.
+  `tools/reference/s29-verified/` directory. The initial pass was static analysis;
+  the follow-up below executes isolated routines, not a full-game playthrough.
 
 The extractor pins both source hashes, checks STX boundaries and sector status,
 and rejects missing or ambiguous sectors. The three absent sectors are track 79,
@@ -103,3 +107,94 @@ the verified bounded behavior into lifecycle fixtures. Update the S28 decision
 ledger and S29 acceptance wording explicitly when those discrepancies are
 resolved; the old ledger is a record of the original archive-only review, not a
 claim that the new evidence was already incorporated.
+
+## Isolated execution follow-up
+
+`tools/probe_s29_st_effects.py` executes the extracted original module-05 machine
+code using **Unicorn 2.1.4 with the M68000 CPU model**. It pins module hashes and
+uses synthetic RAM, an owner slot and a return sentinel. Unexpected engine/OS
+calls are not stubbed into success. Every call must return within an instruction
+limit. The captured results are in
+`tests/fixtures/s29_st_probe_results.json`; these are executable-research results,
+not assertions that the reconstruction already supports these behaviors.
+
+Run the extractor first, install Unicorn into the ignored research dependency
+directory, and run with that directory on `PYTHONPATH`:
+
+```powershell
+python tools/extract_s29_st_evidence.py
+python -m pip install --target tools/reference/s29-python unicorn==2.1.4
+$env:PYTHONPATH = 'tools/reference/s29-python'
+python tools/probe_s29_st_effects.py
+```
+
+The effect updater is forced by setting `a5+$1801`; one call means one effect
+update, **not a verified game minute**. This test isolates effect behavior from
+the unresolved scheduler. The harness does not emulate the complete Atari ST,
+its operating system, disk protection or all caller state.
+
+### Answers now established
+
+| Research question | Answer and evidence | Remaining limit |
+| --- | --- | --- |
+| ER01: identity and links | First-00 allocates its own group; a later 00 joins the last activated group. A skipped non-listener does not become a parent. Two repeated H-off activations create separate groups; removing the first preserves the second. | Cross-owner lifecycle and stale slot references still require validation. |
+| ER02: opposing events | Get/Drop and Use/Unuse are opposing pairs in the dispatcher. | Actual group lookup for those removals remains open; Delete has a separate deletion path. |
+| ER03: simultaneous events | Branch order is Get, Drop, Use, Unuse, Delete, with pending bits captured and cleared first. | Early exits and held-state guards matter. Timer ties/reentrancy are not settled by this branch order. |
+| ER04: repeat activation | H-off allocates fresh groups. A second Physical Speed activation before an update creates no additional records. | A reproduced candidate defect after a skipped definition must not replace Kroah's documented gate. |
+| ER05: cleanup | Removal frees slots without arithmetic undo. Physical Speed's normal expiry executes its separate subtraction record first. | Template byte-15 binding and safe owner-scoped opposing removal are still unresolved. |
+| ER12: named operations | The bounded `speed_bonus` target is global `$18ae`; one-byte Add/Sub use actions `$81`/`$91` and saturate at 255/0. | Wider targets, other operations and entity-relative writes remain outside this approved evidence set. |
+
+### Physical Speed's actual records
+
+Module 15 SHA-256:
+`6c2c2738fe15eb862f92adf6df7c65da95d877a81a4a78d71c883aabdb8b8cbb`.
+The 91-byte entity begins at `$2a0e`, identifies itself as Physical Speed, and
+locates its effects at entity offset 21:
+
+| Module offset | Role | Initial timer | Action/target | Counter/link |
+| --- | --- | --- | --- | --- |
+| `$2a23` | Delayed subtraction | 30 | Subtract 5 from one-byte Speed bonus | 1 execution; FF starts group; H set |
+| `$2a33` | Long status text | n/a | Physical Speed | 00 links to subtraction group |
+| `$2a53` | Initial addition | 1 | Add 5 to one-byte Speed bonus | 1 execution; FF starts separate group; H set |
+
+After activation, live records occupy slots 0, 1 and 3 (slot 2 is the text's
+continuation). Their group values are 0, 0 and 3. The entity template is unchanged.
+Starting with bonus zero, update 1 yields five and removes the one-shot Add
+record; updates 2–29 preserve five; update 30 subtracts five and removes the
+subtraction/text group. No generic rollback occurs.
+
+Removing group 0 after update 1 leaves the bonus at five, including after repeated
+removal. This proves the isolated removal routine is not a reversible-modifier
+service. It does not establish which full-game actions can prematurely remove
+this particular spell. Saturation is independently demonstrated: 253+5 becomes
+255, while 2−5 becomes zero. Therefore an inverse operation cannot generally
+recover the prior value either.
+
+### Two concrete remaining discrepancies
+
+**Opposing removal binding:** activating a synthetic single Use-listener leaves
+the entity definition's byte 15 at FF. Calling the original opposing-removal
+helper for Use then leaves its active copy present, because the helper skips FF.
+The activation routine writes the owner slot into the active copy, not the
+template. Next step: trace entity creation/callers and byte-15 initialization
+with real equipment. Do not assume a general owner-to-group map was recovered.
+
+**Duplicate pointer after a skipped definition:** a synthetic non-listener with
+Parameter 6 precedes an H-enabled listener with Parameter 5; an existing active
+record already matches the latter. Original activation nevertheless allocates a
+duplicate. This confirms that `$2a16` can pass the stale `a0` pointer to `$2acc`.
+Kroah's documented comparison of the current effect remains our implementation
+rule. The existing pure gate already follows it; no bug-compatibility change is
+made. Whether original shipped entities can trigger this setup remains open.
+
+The previously flagged text stride at `$2a6c` also remains a concern, although
+the actual Physical Speed text/three-record activation succeeds. This test does
+not establish safe handling of arbitrary text padding.
+
+### Updated delivery boundary
+
+The decision ledger now includes `ST_BINARY` provenance and these narrower
+findings for ER01–ER05, ER12 and ER13. S29 still lacks the full lifecycle; the
+remaining blockers are specific owner/group binding and dispatcher edge cases,
+not a blanket absence of evidence for all six questions. No gameplay or save
+behavior changed in this research pass.

@@ -66,3 +66,13 @@ start work. Current lifecycle criteria remain unchanged.
 ## Original ST research follow-up — 2026-11-19
 
 The user chose original-ST research before remake-policy decisions. See [the executable evidence report](../S29_ST_EFFECT_RESEARCH.md) and `tools/extract_s29_st_evidence.py`. The candidate has a V2.0 banner; 32 encoded records pass the original loader sector checksums. Static analysis establishes opposing pairs, event branch order, first-00 linkage and slot-only group removal. Byte-15 ownership, H-call pointer handling and long-text traversal require further reconciliation. This supersedes the earlier statement that no applicable external evidence was found. S29 remains In Progress; no additional acceptance criterion is marked complete.
+
+## Research questions - current status
+
+ER references are local research-ledger entries, not GitHub sub-issues. See [current answers and executable probes](../S29_ST_EFFECT_RESEARCH.md#isolated-execution-follow-up).
+
+- Answered for bounded cases: first-00/skipped-predecessor linkage; Get/Drop and Use/Unuse pairs; dispatcher branch order; fresh H-off copies; Physical Speed duplicate suppression; one-byte Speed-bonus mapping and saturation.
+- Cleanup finding: removal invalidates records without undo. Physical Speed uses separate Add/Sub records; early removal is not automatic rollback.
+- Open: trace template byte-15 group binding with real equipment; reconcile Delete/held-state and clear-before-processing behavior; constrain long-text traversal.
+- Candidate defect reproduced: duplicate suppression can compare a skipped definition. Preserve Kroah's current-effect rule, not that defect.
+- Validation: 10 isolated original-code scenarios; not full-game emulation. No whole S29 lifecycle acceptance criterion is newly complete.

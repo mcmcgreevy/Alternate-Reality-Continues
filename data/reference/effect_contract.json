@@ -29,6 +29,13 @@
       "catalog_file": "kroah-city-st-v2/establishmentsGuilds.html",
       "sha256": "5cbb38be2985743689072a646b5a2467edace3085a3427f20c6de3289379b9e3",
       "locator": "Spells / List table / Physical Speed row, Duration and Description columns"
+    },
+    "ST_BINARY": {
+      "path": "assets/documentation/s29-st-research/alternate-reality-city-st-v2-candidate.zip",
+      "source_url": "https://www.atarimania.com/st/dumps/alternate_reality_-_the_city_2_0_datasoft.zip",
+      "catalog_file": "s29-st-research/alternate-reality-city-st-v2-candidate.zip",
+      "sha256": "1ee57ea2362345c6b6389f4ff5c813ea1c4ca311311d6d503ea7d507368a9000",
+      "locator": "Candidate ST v2.0; verified decoded module 05 $1ce6-$1d48, $2434-$2b06; module 15 $2a0e-$2a68. Reproduce with tools/extract_s29_st_evidence.py and tools/probe_s29_st_effects.py. See docs/S29_ST_EFFECT_RESEARCH.md."
     }
   },
   "decisions": [
@@ -38,17 +45,18 @@
         "IDENTITY-Q1"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect introduction; +01 Active index",
+      "locator": "Effect introduction; +01 Active index; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
       "status": "partially_documented",
-      "finding": "Templates are copied into active records; FF becomes own active-list index; 00 links to previous activated effect.",
-      "unknown": "Original capacity, reuse, first-00 and skipped-predecessor behavior remain unknown.",
+      "finding": "Candidate allocates the first free of 96 slots; long text occupies two consecutive slots. First-00 starts its own group; later 00 links to the preceding activated group, skipping non-listeners. Isolated original-code probes confirm these cases.",
+      "unknown": "Byte-15 template-to-group lifecycle remains unresolved; slot exhaustion and reuse across owners require bounded-runtime validation.",
       "blocks": [
         "S29",
         "S31"
       ],
-      "disposition": "Resolve edge cases or explicitly exclude unsupported definitions; stable owner/definition/instance IDs are reconstruction architecture, not original indices."
+      "disposition": "Use stable owner/instance/group identities as reconstruction architecture. First-00 and skipped predecessor are no longer research blockers; do not reproduce fatal capacity failures."
     },
     {
       "id": "ER02",
@@ -56,16 +64,17 @@
         "EVENT-Q1"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Entity +02 Events; Effect +02 Required events",
+      "locator": "Entity +02 Events; Effect +02 Required events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
       "status": "partially_documented",
-      "finding": "A\u2013E name Get, Drop, Use/Cast, Unuse, Delete. Entity events clear after handling.",
-      "unknown": "F/G/H entity meanings and full opposing-pair map are not established; effect H is a different flag (duplicate suppression).",
+      "finding": "Candidate dispatcher removes Drop before Get, Get before Drop, Unuse before Use, and Use before Unuse. Delete removes all four listener classes then deletes the entity; it does not activate Delete listeners.",
+      "unknown": "Deletion/held-item bookkeeping and byte-15 group lookup need end-to-end tracing; undocumented bits stay unsupported.",
       "blocks": [
         "S29"
       ],
-      "disposition": "Do not guess Use/Unuse or Get/Drop pairs from names. Required opposing-event fixture remains conditional until verified."
+      "disposition": "Opposing pairs are established by static code, not inferred names. Reconcile Delete against baseline before treating it as an ordinary listener event."
     },
     {
       "id": "ER03",
@@ -73,17 +82,18 @@
         "EVENT-Q2"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect introductory paragraph; Entity +02 Events",
-      "status": "unresolved",
-      "finding": "Prose describes opposing removal and listener activation.",
-      "unknown": "Bit priority, concurrent event order, inter-entity order, timer/event ties and dispatch-time reentrancy are unspecified.",
+      "locator": "Effect introductory paragraph; Entity +02 Events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "status": "partially_documented",
+      "finding": "Candidate captures and clears pending events before processing Get, Drop, Use, Unuse, Delete in that branch order. Get can exit early; alignment processing precedes these branches.",
+      "unknown": "Full inter-entity timing, reentrancy and timer/event ties remain unresolved; clear-before-processing differs from archive wording.",
       "blocks": [
         "S29",
         "S30"
       ],
-      "disposition": "Require evidence or explicit behavior-policy approval before dispatch with coincident work."
+      "disposition": "Adopt no blanket all-bits execution claim. Separate established branch order from full scheduler and reentrancy policies."
     },
     {
       "id": "ER04",
@@ -91,17 +101,18 @@
         "EVENT-Q3"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect +02 Allow multiple & Required events",
+      "locator": "Effect +02 Allow multiple & Required events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
       "status": "partially_documented",
-      "finding": "Flag H compares eight listed fields; a matching instance suppresses current and all following definitions at activation.",
-      "unknown": "Flag-H-off stacking consequences, repeated-cast refresh and active-list comparison scope details are not spelled out.",
+      "finding": "H-off allocates fresh copies; isolated repeated activation yields separate linked groups. Repeating Physical Speed with H set does not allocate extra copies. Eight-field gate remains the canonical rule.",
+      "unknown": "A skipped predecessor can leave a stale candidate pointer in original code; isolated probe reproduces duplicate admission. Other real-data reachability and cross-owner reuse need tracing.",
       "blocks": [
         "S29",
         "S31"
       ],
-      "disposition": "Preserve exact comparison fields; do not substitute owner or definition identity. Single-cast slice does not approve repeat-cast behavior."
+      "disposition": "Retain documented equality in effect_definitions.gd; do not reproduce the demonstrated stale-pointer defect. Fresh allocation does not imply linear stat stacking."
     },
     {
       "id": "ER05",
@@ -109,17 +120,18 @@
         "EVENT-Q3"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect introduction; +00 disease/poison/curse removal examples; +01 Active index",
+      "locator": "Effect introduction; +00 disease/poison/curse removal examples; +01 Active index; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
       "status": "partially_documented",
-      "finding": "Opposing-event removal and named RemoveEffectWithLinkedToIt routines exist; 00 links text to prior effect.",
-      "unknown": "General inverse-action/undo, deletion ordering, link traversal and removing one contribution among multiple are unspecified.",
+      "finding": "Original group removal marks matching slots free and does not invert arithmetic. Physical Speed has separate delayed Sub and Add records. Normal expiry returns bonus to zero; early removal of its delayed group leaves bonus at five in isolated execution.",
+      "unknown": "Opposing helper reads template byte 15, but activation leaves that template unchanged in isolated execution. Full creation/update path and cross-owner cleanup remain open.",
       "blocks": [
         "S29",
         "S31"
       ],
-      "disposition": "Removal is not automatically subtraction of Parameter. S08 must settle contribution ownership; linked cleanup needs evidence or approved policy."
+      "disposition": "Do not use generic undo-on-remove. Separate explicit effect execution from record removal; trace owner/group binding before claiming lifecycle completion."
     },
     {
       "id": "ER06",
@@ -231,17 +243,18 @@
         "EVENT-Q3"
       ],
       "source_refs": [
-        "TECH"
+        "TECH",
+        "ST_BINARY"
       ],
-      "locator": "Effect +09 Action, +10 Offset, +12 Number of blocks, +13 Gap, +14 Parameter, +15 Linked slot",
+      "locator": "Effect +09 Action, +10 Offset, +12 Number of blocks, +13 Gap, +14 Parameter, +15 Linked slot; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
       "status": "partially_documented",
-      "finding": "Set and indexed Add/Sub/Rts/Rts/Xor/And/Or with sized targets are described.",
-      "unknown": "Width/overflow semantics, entity-relative offsets and linked slot are uncertain; operation names do not establish safe inverse actions.",
+      "finding": "Physical Speed targets global offset 0x18ae (Speed bonus), width one, Add=0x81 and Sub=0x91. Original-code probes confirm saturating Add 253+5=255 and Sub 2-5=0.",
+      "unknown": "Other typed targets, wider operations and entity-relative addressing are not approved for runtime execution.",
       "blocks": [
         "S29",
         "S30"
       ],
-      "disposition": "Map a bounded typed target set; unsupported native layouts fail validation. No raw address interpreter."
+      "disposition": "A bounded speed_bonus unsigned-byte Add/Sub target now has evidence; reject unsupported operations instead of adding a raw-memory interpreter. Saturation makes general inverse cleanup unsafe."
     },
     {
       "id": "ER13",
@@ -251,17 +264,18 @@
       "source_refs": [
         "SPELL",
         "STATS",
-        "TIME"
+        "TIME",
+        "ST_BINARY"
       ],
-      "locator": "Spells / List / Physical Speed, Duration and Description; Stats / Primary and Walking Speed; World / Time Span",
+      "locator": "Spells / List / Physical Speed, Duration and Description; Stats / Primary and Walking Speed; World / Time Span; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
       "status": "partially_documented",
-      "finding": "Physical Speed adds 5 to Speed bonus and lasts 30 game minutes (TIME supplies duration convention).",
-      "unknown": "Raw effect definition, flag H, exact activation/expiry boundary and cleanup mechanism not provided by spell row.",
+      "finding": "Module 15 entity at 0x2a0e is Physical Speed: H-gated Sub 5 with timer 30, linked long text, then H-gated Add 5 with timer 1. Original-code execution yields bonus five after update 1 through 29 and zero after update 30.",
+      "unknown": "Forced effect updates do not establish scheduler units or exact cast-to-first-update game-time boundary. Early cancellation follows removal evidence, not generic undo.",
       "blocks": [
         "S30",
         "S31"
       ],
-      "disposition": "Single-effect outcome is documented; implementing an immediate grant plus deadline/revoke remains a proposal requiring evidence or approval."
+      "disposition": "Replace the proposed immediate-grant/deadline-revoke assumption with explicit original Add/Sub records in future timing fixtures; retain the documented 30-game-minute duration separately."
     }
   ]
 }
