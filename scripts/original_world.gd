@@ -26,6 +26,41 @@ signal game_time_advanced(start_game_microseconds: int, end_game_microseconds: i
 var _advancing_clock := false
 
 const CharacterStats = preload("res://scripts/character_stats.gd")
+const JourneyEffects = preload("res://scripts/journey_effects.gd")
+const EffectClock = preload("res://scripts/effect_clock_adapter.gd")
+var journey_effects: RefCounted
+
+## Compatibility setters/test setup can reposition an empty clock. Once effects
+## exist, changing time outside the elapsed API is rejected instead of retiming them.
+func _bind_effect_clock() -> bool:
+	if _advancing_clock or journey_effects.runtime._busy:
+		return false
+	var runtime = journey_effects.runtime
+	if runtime._now_game_microseconds != game_time_boundary() or not is_same(runtime._character, character):
+		if not runtime.snapshot().active.is_empty() or not runtime.snapshot().queued.is_empty():
+			return false
+		runtime._character = character
+		runtime._now_game_microseconds = game_time_boundary()
+	return true
+
+func activate_physical_speed() -> Dictionary:
+	if not _bind_effect_clock():
+		return {"ok": false, "error": "effect_clock_busy_or_misaligned"}
+	return journey_effects.activate_physical_speed()
+
+func physical_speed_remaining_game_microseconds() -> int:
+	return journey_effects.remaining_game_microseconds()
+
+## Test-only input uses production activation; revealing Speed is presentation,
+## not an additional stat grant. Guild acquisition/casting remains later content.
+func test_physical_speed() -> void:
+	var result := activate_physical_speed()
+	if result.ok:
+		character.speed_revealed = true
+		journal = "Physical Speed: +5 for 30 game minutes." if result.activated else "Physical Speed is already active; its remaining time is unchanged."
+	else:
+		journal = "Physical Speed could not be activated."
+
 
 func stat_snapshot(stat: String) -> Dictionary:
 	return CharacterStats.primary_snapshot(character, stat)
@@ -75,6 +110,7 @@ func walking_speed() -> int:
 
 func _init() -> void:
 	minutes = 360  # Kroah ST City: Sowings 29, Year 0, 06:00.
+	journey_effects = JourneyEffects.new(character, game_time_boundary())
 	for chapter_id in ["city", "dungeon"]:
 		maps[chapter_id] = JSON.parse_string(FileAccess.get_file_as_string("res://data/maps/" + chapter_id + ".json"))
 	route = JSON.parse_string(FileAccess.get_file_as_string("res://data/maps/route.json"))
@@ -267,16 +303,22 @@ func _finish_clock_advance(result: Dictionary) -> Dictionary:
 	return result
 
 func advance_game_microseconds(elapsed: int) -> Dictionary:
+	if not _bind_effect_clock():
+		return game_clock.rejected("Effect clock is busy or requires rebinding.")
+	return EffectClock.new(self, journey_effects.runtime).advance_game_microseconds(elapsed)
+
+func advance_real_seconds(real_seconds: float, mode: String = "ordinary") -> Dictionary:
+	if not _bind_effect_clock():
+		return game_clock.rejected("Effect clock is busy or requires rebinding.")
+	return EffectClock.new(self, journey_effects.runtime).advance_real_seconds(real_seconds, mode)
+
+## Adapter-only commit: conversion/effects have already been validated. Calling
+## the public elapsed method here would recurse and execute the interval twice.
+func _advance_clock_only(elapsed: int) -> Dictionary:
 	if _advancing_clock:
 		return game_clock.rejected("Clock consumers cannot advance time reentrantly.")
 	_advancing_clock = true
 	return _finish_clock_advance(game_clock.advance_game_microseconds(elapsed))
-
-func advance_real_seconds(real_seconds: float, mode: String = "ordinary") -> Dictionary:
-	if _advancing_clock:
-		return game_clock.rejected("Clock consumers cannot advance time reentrantly.")
-	_advancing_clock = true
-	return _finish_clock_advance(game_clock.advance_real_seconds(real_seconds, mode))
 
 ## Future work/sleep/learning scenes use this adapter, never also advance_time().
 func advance_service_seconds(real_seconds: float, paused: bool = false) -> Dictionary:
@@ -432,25 +474,32 @@ func destination() -> Vector2i:
 
 ## Persist simulation state only; music and movement preferences have their own files.
 func save_game(path: String = SAVE_PATH) -> Error:
+	if not _bind_effect_clock():
+		return ERR_BUSY
+	if not journey_effects.can_save():
+		return ERR_INVALID_DATA
 	var save_file := FileAccess.open(path, FileAccess.WRITE)
 	if save_file == null:
 		return FileAccess.get_open_error()
-	save_file.store_string(JSON.stringify({"version": 6, "map_set": "original-route-1", "chapter": chapter,
+	save_file.store_string(JSON.stringify({"version": 7, "map_set": "original-route-1", "chapter": chapter,
 		"position": [position.x, position.y], "facing": facing, "character": character,
 		"inventory": inventory, "minutes": minutes, "flags": flags, "doors": doors,
 		"needs": needs, "provisions": provisions, "weather_seed": weather_seed,
-		"minute_fraction": minute_fraction, "clock": game_clock.snapshot()}, "", true, true))
+		"minute_fraction": minute_fraction, "clock": game_clock.snapshot(),
+		"effects": journey_effects.save_payload()}, "", true, true))
 	return OK
 
 ## Validate and migrate a temporary dictionary before changing the live journey.
 ## Version 3 gains neutral needs/provisions; older version 4 saves gain a weather seed.
 func load_game(path: String = SAVE_PATH) -> bool:
+	if _advancing_clock or journey_effects.runtime._busy:
+		return false
 	if not FileAccess.file_exists(path):
 		return false
 	var save_data = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not save_data is Dictionary or save_data.get("map_set") != "original-route-1":
 		return false
-	if save_data.get("version") != 3 and save_data.get("version") != 4 and save_data.get("version") != 5 and save_data.get("version") != 6:
+	if save_data.get("version") != 3 and save_data.get("version") != 4 and save_data.get("version") != 5 and save_data.get("version") != 6 and save_data.get("version") != 7:
 		return false
 	if not maps.has(save_data.get("chapter", "")):
 		return false
@@ -513,7 +562,15 @@ func load_game(path: String = SAVE_PATH) -> bool:
 			return false
 	elif not saved_clock.set_minutes(int(save_data.minutes)) or not saved_clock.set_minute_fraction(float(saved_minute_fraction)):
 		return false
-	# Commit only after every field has passed validation.
+	var saved_effects = JourneyEffects.new(save_data.character, saved_clock.game_microseconds)
+	if save_data.version == 7:
+		if not saved_effects.restore_payload(save_data.get("effects")):
+			return false
+	elif save_data.has("effects"):
+		# A downgraded version must not silently discard an effect payload.
+		return false
+	# Commit only after every field, including effect references, has passed.
+	journey_effects = saved_effects
 	game_clock = saved_clock
 	weather_seed = int(saved_weather_seed)
 	chapter = save_data.chapter

@@ -16,9 +16,11 @@ Menu: Technical Notes.
 
 ### F01 — Rule/effect model
 
+Completed 2026-11-20 for the bounded scope; [feature acceptance](F01_ACCEPTANCE_REVIEW.md).
+
 Parent: E01 · Milestone: M1 · Coverage: Scaffold · Source: [technicalNotes](../assets/documentation/kroah-city-st-v2/technicalNotes.html).
 
-Feature outcome, acceptance and ownership: [F01 completion plan](F01_RULE_EFFECT_PLAN.md). S01 is complete; shared runtime and integrated persistence remain.
+Feature outcome, acceptance and ownership: [F01 completion plan](F01_RULE_EFFECT_PLAN.md). All bounded feature criteria pass, including the shared runtime and integrated persistence.
 
 **S01:** Establish rule provenance and effect contracts. Completed; [specification](stories/S01_RULE_PROVENANCE.md).
 
@@ -36,7 +38,7 @@ Acceptance: Definition/instance/owner separation, supported event lifecycle, lin
 
 Acceptance: Agreed timer/action semantics, single game-time input, deterministic execution and explicit unsupported-definition handling. [Specification](stories/S30_EFFECT_TIMING.md).
 
-**S31:** Preserve a timed stat effect across save and load.
+**S31:** Preserve a timed stat effect across save and load. Completed; [acceptance and playtest](S31_ACCEPTANCE_REVIEW.md).
 
 Acceptance: Physical Speed +5 for 30 game minutes through production runtime; save at minute 10 resumes with 20 remaining without duplicate contribution; migration and integrated regressions pass. [Specification](stories/S31_EFFECT_SAVE_INTEGRATION.md).
 
@@ -286,7 +288,7 @@ Dependencies: F24 presentation/audio controls; title/menu entry and return flow 
 
 ## First stories to refine
 
-- S28 research is complete. S29 is complete; resolve the remaining S30/S31 evidence and interface gates before marking implementation Ready.
+- S28–S32 are complete for F01; remaining operation/content gaps have downstream owners in the feature acceptance review.
 - S08: base/effective/displayed stats and modifier lifecycle, including Speed.
 - S03: calendar and remaining clock/service reconciliation.
 - S10: inventory instances and clothing equipment, then S04/S09 exposure and metabolism.

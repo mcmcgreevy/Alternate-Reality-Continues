@@ -54,9 +54,10 @@
         "status": "partial",
         "locations": [
           "scripts/original_world.gd",
-          "scripts/world.gd"
+          "scripts/world.gd",
+          "scripts/character_stats.gd"
         ],
-        "notes": "effective_speed() uses integer fields and an extra minimum-zero clamp. Full seven-stat model and delusion display are absent; existing clamp is not source evidence."
+        "notes": "S08 implements fractional base/effective/displayed views and typed saturating Speed-bonus Add/Sub. S31 integrates Physical Speed activation/expiry and v7 saves. Wider modifier producers and delusion content remain separately owned; see docs/S08_STATS.md and docs/S31_ACCEPTANCE_REVIEW.md."
       },
       "questions": [
         {
@@ -118,7 +119,7 @@
         "locations": [
           "scripts/original_world.gd"
         ],
-        "notes": "walking_speed() implements the nonnegative rate formula; effective_speed() upstream adds an unverified clamp. Absolute travel scale belongs to MOVE-002."
+        "notes": "S08 derives walking rate from effective Speed without the previous upstream clamp. Physical Speed at base 13 produces effective 18 but walking rate remains 6. Absolute travel scale and lower-domain historical fidelity remain separately owned."
       },
       "questions": [
         {
@@ -324,9 +325,12 @@
         "locations": [
           "scripts/effect_definitions.gd",
           "scripts/effect_instances.gd",
-          "scripts/effect_events.gd"
+          "scripts/effect_events.gd",
+          "scripts/effect_timing.gd",
+          "scripts/journey_effects.gd",
+          "scripts/effect_clock_adapter.gd"
         ],
-        "notes": "S29 non-timed copy/link lifecycle implemented. Definitions, owners and active copies are distinct; FF/00 group behavior, snapshots and scoped removal tested. Stable session identities are reconstruction architecture; native slot capacity/layout, timer state and saves are excluded."
+        "notes": "S29 lifecycle, S30 timed operations and S31 Physical Speed production/save integration are complete for the bounded F01 slice. Stable IDs, explicit owner/group links, reusable scheduling slots, approved 30-minute duration and reliable elapsed processing are documented reconstruction choices. Versioned saves retain references and runtime state without executable definitions. Unknown actions/cure are rejected; general content, item hooks and RNG remain deferred. See docs/F01_ACCEPTANCE_REVIEW.md."
       },
       "questions": [
         {
@@ -398,9 +402,12 @@
         "locations": [
           "scripts/effect_definitions.gd",
           "scripts/effect_instances.gd",
-          "scripts/effect_events.gd"
+          "scripts/effect_events.gd",
+          "scripts/effect_timing.gd",
+          "scripts/journey_effects.gd",
+          "scripts/effect_clock_adapter.gd"
         ],
-        "notes": "S29 event portion implemented for generic owners: Get/Drop/Use/Unuse/terminal Delete, held guard, explicit owner-scoped opposition and global H-tail suppression. Unknown bits/Delete listeners rejected. Timer/cure/action fields in this broader rule remain S30 work, so overall coverage stays partial. No gameplay or save hook."
+        "notes": "S29 lifecycle, S30 timed operations and S31 Physical Speed production/save integration are complete for the bounded F01 slice. Stable IDs, explicit owner/group links, reusable scheduling slots, approved 30-minute duration and reliable elapsed processing are documented reconstruction choices. Versioned saves retain references and runtime state without executable definitions. Unknown actions/cure are rejected; general content, item hooks and RNG remain deferred. See docs/F01_ACCEPTANCE_REVIEW.md."
       },
       "questions": [
         {

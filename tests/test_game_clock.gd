@@ -85,6 +85,7 @@ func _initialize() -> void:
 	check(restored.load_game("user://s03-clock.json"), "Load version 5 clock")
 	check(restored.game_clock.snapshot() == world.game_clock.snapshot(), "Timestamp and conversion remainder survive reload")
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("user://s03-clock.json"))
+	data.erase("effects")  # Legacy fixtures predate the v7 effect payload.
 	data.version = 4
 	data.erase("clock")
 	data.minutes = 1080

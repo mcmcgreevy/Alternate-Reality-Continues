@@ -65,6 +65,7 @@ func _initialize() -> void:
 	before = loaded.minutes
 	check(not loaded.order_tavern("water", loaded.menu_hour()) and loaded.minutes == before, "No tavern purchases in Dungeon")
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("user://test_tavern_services.json"))
+	data.erase("effects")  # Legacy fixtures predate the v7 effect payload.
 	data.version = 3
 	data.character.erase("silver")
 	data.character.erase("copper")

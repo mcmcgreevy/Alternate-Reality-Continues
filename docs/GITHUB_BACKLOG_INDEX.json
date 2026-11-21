@@ -71,7 +71,8 @@
       "node_id": "I_kwDOVooUmM8AAAABgFIjWw",
       "url": "https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/8",
       "parent": "E01",
-      "phase": "M1"
+      "phase": "M1",
+      "status": "Done"
     },
     "F02": {
       "number": 9,
@@ -532,7 +533,8 @@
       "node_id": "I_kwDOVooUmM8AAAABgd53fQ",
       "url": "https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/65",
       "parent": "F01",
-      "phase": "M1"
+      "phase": "M1",
+      "status": "Done"
     }
   },
   "project": {

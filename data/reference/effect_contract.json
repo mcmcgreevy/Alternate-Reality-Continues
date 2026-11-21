@@ -270,12 +270,12 @@
       "locator": "Spells / List / Physical Speed, Duration and Description; Stats / Primary and Walking Speed; World / Time Span; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
       "status": "partially_documented",
       "finding": "Physical Speed raw records have timer 1 Add5 and timer 30 Sub5. Successful-cast phase reset produces observed transitions at interrupt 1 and 6961, a 29-minute bonus window. This disagrees with Kroah documented 30 minutes. User explicitly selected documented duration and reliable elapsed time on 2026-11-20.",
-      "unknown": "General spell content and full cast UI/RNG remain outside scope. Save representation remains S31 work.",
+      "unknown": "General spell content and full cast UI/RNG remain outside scope. S31 implements bounded Physical Speed persistence; arbitrary content restoration remains deferred.",
       "blocks": [
         "S30",
         "S31"
       ],
-      "disposition": "Normalize successful activation to one Add5 and explicit Sub5 at +1800 game seconds; active interval is [activation, deadline). Save at +600 leaves 1200 with no replayed grant. Do not replay raw records as an exact content schedule or invent removal rollback."
+      "disposition": "Normalize successful activation to one Add5 and explicit Sub5 at +1800 game seconds; active interval is [activation, deadline). Save at +600 leaves 1200 with no replayed grant. Do not replay raw records as an exact content schedule or invent removal rollback. S31 now verifies this production path through world ticking, v7 saves, legacy migration, malformed-reference rejection and the integrated F7/F5/F9 playtest; see docs/S31_ACCEPTANCE_REVIEW.md."
     }
   ]
 }

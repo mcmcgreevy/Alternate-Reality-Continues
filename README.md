@@ -63,3 +63,7 @@ Run the portable Godot console executable with --headless --path . --script foll
 In a restricted sandbox, set APPDATA to the workspace's tools/appdata directory first. The original-route test drives the full scene through secret and asymmetric doors, save/load, both crossings and the return, checking shared character identity, inventory, clock and audio restart. Run it without --headless and add -- --capture for runtime screenshots in docs/original-*.png.
 
 Combat, most original events, encounters, full survival, other shops and exact door mechanics are not implemented. Locked/bolted/enchanted passages remain blocked; floors below Dungeon level one are not enabled. Geography and original services come before new adventures and audio rearrangement.
+
+## Physical Speed playtest (F01 complete)
+
+In a debug build, **F7** activates Physical Speed through the production effect runtime and reveals Speed. It grants +5 for 30 game minutes; repeated F7 does not stack or restart it. **F5/F9** preserve the exact remaining duration without another grant. At ordinary speed, 40 focused real seconds equals 10 game minutes. See [the reproducible playtest and save migration notes](docs/S31_ACCEPTANCE_REVIEW.md). Guild acquisition and combat casting remain later work.

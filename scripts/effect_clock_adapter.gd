@@ -52,7 +52,7 @@ func _advance(preview: RefCounted, interval: Dictionary) -> Dictionary:
 	_runtime._busy = true
 	_runtime._commit(prepared.candidate)
 	_world.game_clock.conversion_remainder = preview.conversion_remainder
-	var result: Dictionary = _world.advance_game_microseconds(interval.elapsed_game_microseconds)
+	var result: Dictionary = _world._advance_clock_only(interval.elapsed_game_microseconds)
 	assert(result.ok, "Prevalidated synchronous clock commit must succeed")
 	_runtime._busy = false
 	_busy = false

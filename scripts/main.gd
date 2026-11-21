@@ -139,6 +139,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_echo():
 		return
 	cancel_held_movement()
+	if event.keycode == KEY_F7 and OS.is_debug_build():
+		world.test_physical_speed()
+		queue_redraw()
+		return
 	if event.keycode == KEY_F6:
 		world.cycle_test_weather()
 		first_person.sync(world)
