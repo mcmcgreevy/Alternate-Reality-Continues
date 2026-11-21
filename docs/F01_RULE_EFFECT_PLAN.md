@@ -2,8 +2,8 @@
 
 Current 2026-11-20 status: S29/S32, S03-CLOCK and S08-SPEED are complete.
 [S03 acceptance](S03_CLOCK.md) and [S08 acceptance](S08_STATS.md) verify the
-interfaces. S30 is **Ready**, not started; S31 remains dependent on S30.
-F01 remains open for timed runtime and gameplay/save integration.
+interfaces. S30 is **Done**; [acceptance evidence](S30_ACCEPTANCE_REVIEW.md).
+F01 remains open for S31 gameplay/save integration.
 
 ## Owned prerequisites for S30
 - [x] S29: non-timed lifecycle and scoped record cleanup.
@@ -31,13 +31,13 @@ pass. This feature is not a complete emulator of every original effect operation
 | S28 | Resolve bounded runtime semantics and operation support matrix | Research complete 2026-11-19; unresolved blockers recorded. |
 | S29 | Active instances, entity events and removal | Complete (#63); see S29_ACCEPTANCE_REVIEW.md. |
 | S32 | Resolve original timing and scheduler order | Done (#66); 18 original-code scenarios and explicit reconciliation. |
-| S30 | Timed execution and game-clock adapter | S32, S29, S03-CLOCK and S08-SPEED. |
+| S30 | Timed execution and game-clock adapter | Done (#64); S30_ACCEPTANCE_REVIEW.md. |
 | S31 | Physical Speed effect and save/load integration | S29/S30; relevant S02, S03 and S08 slices. |
 
 Detailed acceptance criteria and source locators live in the corresponding
 `docs/stories/S28_EFFECT_SEMANTICS.md`, `S29_EFFECT_EVENTS.md`,
 `S30_EFFECT_TIMING.md` and `S31_EFFECT_SAVE_INTEGRATION.md` specifications.
-S28 research and S29 non-timed lifecycle are complete. S30 is Ready; S31 remains Backlog and depends on S30. S28 may finish with unresolved findings, but blocked implementation
+S28 research and S29 non-timed lifecycle are complete. S30 is complete; S31 remains Backlog pending its integration readiness review. S28 may finish with unresolved findings, but blocked implementation
 cannot proceed until an evidence-backed resolution or explicitly approved
 adaptation is recorded. No deadline or estimate is implied.
 
@@ -45,7 +45,7 @@ adaptation is recorded. No deadline or estimate is implied.
 - [x] F01-AC1: provenance, examples and classification foundation delivered by S01.
 - [ ] F01-AC2: S28 delivers a source-linked contract and required/deferred/unresolved operation matrix; no unresolved blocker remains for the implemented slice at feature closure.
 - [x] F01-AC3: S29 implements definition/instance/owner separation, supported event activation/removal, linked effects and documented duplicate suppression, with passing trace tests.
-- [ ] F01-AC4: S30 implements the agreed timed operation set with deterministic execution, explicit rejection of unsupported definitions and exactly one game-clock input; elapsed-time partition tests pass.
+- [x] F01-AC4: S30 implements the agreed timed operation set with deterministic execution, explicit rejection of unsupported definitions and exactly one game-clock input; elapsed-time partition tests pass.
 - [ ] F01-AC5: S31 demonstrates Physical Speed through the production world/stat/effect/save paths: +5 for 30 game minutes, 20 remaining after saving at minute 10, no duplicated contribution and correct expiry after reload.
 - [ ] F01-AC6: legacy/invalid-save behavior and relevant stat/clock/travel regressions pass; integrated test-hook playtest is recorded; code guide, rule coverage, adaptations and deferred ownership are current.
 

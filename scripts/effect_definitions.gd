@@ -11,7 +11,7 @@ const DEFINITION_FIELDS := ["definition_id", "definition_revision", "disallow_mu
 var _definitions: Dictionary = {}
 
 ## Values remain opaque nonnegative raw encodings; acceptance here is NOT approval
-## to execute a native action/target. The runtime decoder remains blocked by ER12.
+## to execute a native action/target. S30 validates its separate typed profile.
 func register_definition(candidate: Dictionary) -> Dictionary:
 	var error := _definition_error(candidate)
 	if not error.is_empty():

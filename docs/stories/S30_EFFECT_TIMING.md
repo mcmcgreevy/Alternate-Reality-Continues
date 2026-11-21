@@ -1,23 +1,10 @@
 # S30 — Execute timed effects through the game clock
 
-## Current readiness after S08
+## Completion — 2026-11-20
 
-**Ready; implementation has not started.** All listed prerequisites now have
-completed deliverables and passing checks. The historical reviews below are
-retained as history, not current blockers.
-
-- [x] S29: generic-owner lifecycle and scoped cleanup; 303 regression checks pass.
-- [x] S32: verified timing/order, supported domains and explicit user reconciliation.
-- [x] [S03-CLOCK](../S03_CLOCK.md): exact elapsed input and timestamp boundaries,
-  fractional conversion, ordinary/pause/accelerated time and save compatibility.
-- [x] [S08-SPEED](../S08_STATS.md): typed saturating byte Add/Sub, supplied-order
-  execution, atomic rejection and no implicit rollback; 107 focused checks pass.
-
-Use activation-relative deadlines, one raw positive timer unit = 60,000,000 game
-microseconds; zero remains dormant. Physical Speed's immediate grant plus
-1800-second expiry is a normalized content schedule, not literal raw-template
-replay. Preserve owner-event-before-timer ties and ascending scheduling-slot
-order independently of instance IDs. See the complete S32 contract before coding.
+**Done.** All six criteria pass; see [acceptance evidence and API contract](../S30_ACCEPTANCE_REVIEW.md).
+S29, S32, S03-CLOCK and S08-SPEED prerequisites are complete. The reviews below
+are historical. S31 retains gameplay activation and save/load integration.
 
 ## Prerequisites recorded before S32 research
 S30 remains **Backlog, not Ready**. The required follow-up work is now explicitly tracked:
@@ -44,18 +31,18 @@ As a system developer, I can advance effects by elapsed game time with repeatabl
 Sources: technicalNotes.html Effect / incubation, Counter, Timer, Interval, Probability of natural cure, Action and updated variable; world.html Time Span. Implement the bounded operation set approved in S28, including the timed Physical Speed path required by S31. This is not all spell, poison or disease content.
 
 ## Acceptance criteria
-- [ ] Consume one explicit elapsed-game-time input; retain the precision/unit agreed in S28. No wall-clock, rendering or audio clock drives effects. S03 owns real/game conversion, pause and accelerated services; effects must not perform a second conversion.
-- [ ] Implement distinct initial timer and repeat interval, finite counters and counter-zero non-expiry-by-execution, incubation and required action dispatch according to approved traces. A zero counter remains removable by other supported causes.
-- [ ] Implement required natural-cure handling with injected deterministic randomness and the resolved probability scale/order, or explicitly reject cure-bearing definitions if S28 excludes them from this bounded operation set. A rejection must be tested and documented, not a silent omission.
-- [ ] Tests compare one large elapsed update with equivalent smaller updates for the same event schedule and random stream, covering multiple due executions, exact boundaries, no elapsed time, removal during execution and linked cleanup. For a synthetic first timer 3 and interval 2 in agreed timer units with no cure/expiry, trace executions at 3, 5 and 7; these numbers are test inputs, not historical constants.
-- [ ] Preserve the resolved order of simultaneous timers/events and avoid executing removed instances or skipping due work. Invalid negative elapsed time and unsupported operations follow the documented robustness policy.
-- [ ] Validate clock adapter behavior for ordinary, paused and accelerated time against S03's settled interface; update CODE_GUIDE and provenance coverage. Add no second scheduler or duplicate metabolism updates.
+- [x] Consume one explicit elapsed-game-time input; retain the precision/unit agreed in S28. No wall-clock, rendering or audio clock drives effects. S03 owns real/game conversion, pause and accelerated services; effects must not perform a second conversion.
+- [x] Implement distinct initial timer and repeat interval, finite counters and counter-zero non-expiry-by-execution, incubation and required action dispatch according to approved traces. A zero counter remains removable by other supported causes.
+- [x] Implement required natural-cure handling with injected deterministic randomness and the resolved probability scale/order, or explicitly reject cure-bearing definitions if S28 excludes them from this bounded operation set. A rejection must be tested and documented, not a silent omission.
+- [x] Tests compare one large elapsed update with equivalent smaller updates for the same event schedule and random stream, covering multiple due executions, exact boundaries, no elapsed time, removal during execution and linked cleanup. For a synthetic first timer 3 and interval 2 in agreed timer units with no cure/expiry, trace executions at 3, 5 and 7; these numbers are test inputs, not historical constants.
+- [x] Preserve the resolved order of simultaneous timers/events and avoid executing removed instances or skipping due work. Invalid negative elapsed time and unsupported operations follow the documented robustness policy.
+- [x] Validate clock adapter behavior for ordinary, paused and accelerated time against S03's settled interface; update CODE_GUIDE and provenance coverage. Add no second scheduler or duplicate metabolism updates.
 
 ## Dependencies and exclusions
 S28 timing/action decisions, S29 core and the relevant S03 clock interface/semantics are prerequisites, not completion of every S03 calendar task. S08 supplies typed stat targets and contribution semantics. S09 retains metabolism formulas and cadence. Save/reload integration belongs to S31. Undefined timer units or execution order block Ready; do not guess them.
 
 ## Validation and readiness
-Headless deterministic trace and clock-integration checks; rule-catalog validation; relevant clock regressions when wiring changes. Planning status: Ready after S08; implementation not started. No production timer unit or unspecified source behavior is selected by this plan.
+Headless deterministic trace and clock-integration checks; rule-catalog validation; relevant clock regressions when wiring changes. Status: Done. Runtime uses the approved S32 timing contract and S03/S08 interfaces. See the acceptance review for evidence and explicit exclusions.
 
 ## Live tracking
 

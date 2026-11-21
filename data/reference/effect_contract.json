@@ -91,7 +91,7 @@
       "blocks": [
         "S30"
       ],
-      "disposition": "Bounded ordering resolved. Supply timestamped event batches/source-order ranks and separate scheduling slots from monotonic instance IDs; no reentrant callbacks."
+      "disposition": "Bounded ordering resolved. Supply timestamped event batches/source-order ranks and separate scheduling slots from monotonic instance IDs; no reentrant callbacks. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
     },
     {
       "id": "ER04",
@@ -145,7 +145,7 @@
       "blocks": [
         "S30"
       ],
-      "disposition": "User decision 2026-11-20 preserves all elapsed time: activation-relative integer game-microsecond deadlines; 60,000,000 units per positive raw timer unit. Zero remains dormant, not immediate."
+      "disposition": "User decision 2026-11-20 preserves all elapsed time: activation-relative integer game-microsecond deadlines; 60,000,000 units per positive raw timer unit. Zero remains dormant, not immediate. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
     },
     {
       "id": "ER07",
@@ -163,7 +163,7 @@
       "blocks": [
         "S30"
       ],
-      "disposition": "Bounded order resolved by S32 original-code probes. Reject nonzero cure. Removal performs no inverse arithmetic."
+      "disposition": "Bounded order resolved by S32 original-code probes. Reject nonzero cure. Removal performs no inverse arithmetic. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
     },
     {
       "id": "ER08",
@@ -181,7 +181,7 @@
       "blocks": [
         "S30"
       ],
-      "disposition": "Support boolean incubation/text visibility and explicit group links; preserve first-expiry action and same-pass cleanup. S32 probes cover counter zero and one."
+      "disposition": "Support boolean incubation/text visibility and explicit group links; preserve first-expiry action and same-pass cleanup. S32 probes cover counter zero and one. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
     },
     {
       "id": "ER09",
@@ -198,7 +198,7 @@
       "blocks": [
         "S30"
       ],
-      "disposition": "Cure-bearing definitions deferred to S09/S13/S21; reject them in bounded runtime rather than treating raw zero as proven no-cure."
+      "disposition": "Cure-bearing definitions deferred to S09/S13/S21; reject them in bounded runtime rather than treating raw zero as proven no-cure. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
     },
     {
       "id": "ER10",
@@ -217,7 +217,7 @@
         "S30",
         "S31"
       ],
-      "disposition": "S03-CLOCK must provide nonnegative integer game microseconds, fractional conversion remainder, timestamp boundaries and overflow validation. User approved processing all elapsed time instead of candidate polling loss."
+      "disposition": "S03-CLOCK must provide nonnegative integer game microseconds, fractional conversion remainder, timestamp boundaries and overflow validation. User approved processing all elapsed time instead of candidate polling loss. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
     },
     {
       "id": "ER11",
@@ -236,7 +236,7 @@
         "S30",
         "S31"
       ],
-      "disposition": "S03 converts accelerated time once at 3600 game seconds per real second; S30 consumes the same elapsed input and processes every due action. No second scheduler or metabolism update."
+      "disposition": "S03 converts accelerated time once at 3600 game seconds per real second; S30 consumes the same elapsed input and processes every due action. No second scheduler or metabolism update. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
     },
     {
       "id": "ER12",

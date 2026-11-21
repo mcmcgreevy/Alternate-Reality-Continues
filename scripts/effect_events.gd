@@ -76,7 +76,7 @@ func entity_snapshot(owner_id: String) -> Dictionary:
 func active_snapshot() -> Array:
 	return _instances.snapshot()
 
-func dispatch_pending(owner_id: String) -> Dictionary:
+func dispatch_pending(owner_id: String, include_step_snapshots: bool = false) -> Dictionary:
 	if not _entities.has(owner_id):
 		return {"ok": false, "error": "unknown_owner"}
 	var captured_events: int = _entities[owner_id].pending_events
@@ -96,6 +96,8 @@ func dispatch_pending(owner_id: String) -> Dictionary:
 			_entities[owner_id].held = false
 			events.append({"event": DELETE, "removed_ids": removal.removed_ids,
 				"created_ids": [], "suppressed_at": -1, "skipped": false})
+			if include_step_snapshots:
+				events[-1]["active_records"] = _instances.snapshot()
 			continue
 		# Generic owners have no stackable-item consumption or inventory/floor
 		# callbacks. Those belong to later integration; only the ST held guard is
@@ -103,6 +105,8 @@ func dispatch_pending(owner_id: String) -> Dictionary:
 		if event_mask == DROP and not _entities[owner_id].held:
 			events.append({"event": DROP, "removed_ids": [], "created_ids": [],
 				"suppressed_at": -1, "skipped": true})
+			if include_step_snapshots:
+				events[-1]["active_records"] = _instances.snapshot()
 			continue
 		if event_mask == GET:
 			_entities[owner_id].held = true
@@ -124,6 +128,8 @@ func dispatch_pending(owner_id: String) -> Dictionary:
 		events.append({"event": event_mask, "removed_ids": removed_ids,
 			"created_ids": activation.created_ids, "suppressed_at": activation.suppressed_at,
 			"skipped": false})
+		if include_step_snapshots:
+			events[-1]["active_records"] = _instances.snapshot()
 	return {"ok": true, "events": events}
 
 func _remove_opposing(owner_id: String, opposing_event: int) -> Array:
@@ -138,3 +144,18 @@ func _remove_opposing(owner_id: String, opposing_event: int) -> Array:
 			_listener_masks.erase(instance_id)
 			removed_ids.append(instance_id)
 	return removed_ids
+
+func expire_instance(instance_id: int) -> Dictionary:
+	var result := _instances.expire_instance(instance_id)
+	for removed_id in result.removed_ids:
+		_listener_masks.erase(removed_id)
+	return result
+
+## Snapshots after each event let S30 reproduce transient allocation/removal
+## without callbacks or changing S29's public trace format for existing callers.
+func fork() -> RefCounted:
+	var copy = get_script().new(_definitions)
+	copy._instances = _instances.fork()
+	copy._entities = _entities.duplicate(true)
+	copy._listener_masks = _listener_masks.duplicate(true)
+	return copy

@@ -84,3 +84,21 @@ func _remove_matching(owner_id: String, group_id: int) -> Dictionary:
 
 func snapshot() -> Array:
 	return _active.values().duplicate(true)
+
+## Expiring a child removes only that record; expiring a root removes its group.
+## Identity and scheduling slots are separate: IDs are never recycled.
+func expire_instance(instance_id: int) -> Dictionary:
+	if not _active.has(instance_id):
+		return {"ok": true, "removed_ids": []}
+	var instance: Dictionary = _active[instance_id]
+	if instance.group_id == instance_id:
+		return remove_group(instance.owner_id, instance.group_id)
+	_active.erase(instance_id)
+	return {"ok": true, "removed_ids": [instance_id]}
+
+## In-memory transaction copy, deliberately not a persistence/import API.
+func fork() -> RefCounted:
+	var copy = get_script().new(_definitions)
+	copy._active = _active.duplicate(true)
+	copy._next_instance_id = _next_instance_id
+	return copy

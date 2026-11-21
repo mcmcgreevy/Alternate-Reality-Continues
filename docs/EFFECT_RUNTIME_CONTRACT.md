@@ -1,7 +1,9 @@
 # Bounded effect runtime contract — S28
 
 Latest handoff: [S03-CLOCK](S03_CLOCK.md) and [S08-SPEED](S08_STATS.md) are
-implemented and verified. S30 is Ready; historical blockers below are superseded.
+implemented and verified. [S30 is complete](S30_ACCEPTANCE_REVIEW.md), including timed
+execution and the explicit clock adapter. S31 retains gameplay/save integration.
+Historical blockers below are superseded for the implemented operation set.
 
 ## Current S32 timing handoff — 2026-11-20
 
@@ -13,7 +15,7 @@ the documented 30-minute Physical Speed duration and processing all elapsed time
 over the candidate's 29-minute window and missed-update loss. The report specifies
 activation-relative integer-game-microsecond deadlines, supported typed Add/Sub,
 ordering, text state and atomic rejection of unsupported operations/natural cure.
-S03-CLOCK and S08-SPEED implementation/verification still gate S30; S29 is Done.
+S03-CLOCK, S08-SPEED, S29 and S30 are now complete.
 Do not use the original S28 readiness table below as current status.
 
 Research completed 2026-11-19 against the unchanged Kroah Atari ST City v2.0
@@ -21,7 +23,8 @@ archive. This is a design/research deliverable, not runtime code or authorizatio
 to invent historical behavior. S28 can close with explicit unresolved findings;
 **Initial archive-only review:** S29-S31 were not Ready at that stage.
 **Current disposition:** S29 is complete for the non-timed generic-owner slice;
-see [acceptance review](S29_ACCEPTANCE_REVIEW.md). S30/S31 remain dependency-gated.
+see [acceptance review](S29_ACCEPTANCE_REVIEW.md). S30 is complete; S31 needs its
+integration readiness review.
 
 The machine-readable [decision ledger](../data/reference/effect_contract.json)
 contains original URLs, catalog hashes, precise locators, findings, dispositions
