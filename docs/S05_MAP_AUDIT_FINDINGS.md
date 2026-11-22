@@ -53,3 +53,7 @@ The CSVs are derived analysis artifacts, not source documents or runtime assets.
 ## Subsequent research
 
 The earlier candidate-only backlog wording is superseded by [75 actual location stories](LOCATION_STORIES.md). The [current access and dispatch inventory](S05_LOCATION_ACCESS.md) adds 710 perimeter faces across all 81 components. Neither update completes historical directional verification.
+
+## Candidate ST map comparison — 2026-11-22
+
+[Executable/data evidence](S05_ST_MAP_DATA.md) identifies a four-byte-per-cell map block matching all 463 canonical numbered cells. All 16384 directed faces now have a separate candidate-data comparison: 16128 raw equal, 256 raw different. Canonical image verification and full passage semantics remain open; no gameplay corrections made.

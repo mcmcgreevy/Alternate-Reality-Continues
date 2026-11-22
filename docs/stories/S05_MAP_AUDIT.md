@@ -33,3 +33,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Current-build access inventory — 2026-11-22
 
 [Access and dispatch report](../S05_LOCATION_ACCESS.md) now records all 81 current components and 710 perimeter faces, with independent entry/exit codes. Static movement connectivity and service dispatch are separated from historical ST accessibility. Full ST directional comparison and runtime identity reconciliation remain open; no code changed.
+
+## Candidate ST map comparison — 2026-11-22
+
+[Executable/data evidence](../S05_ST_MAP_DATA.md) identifies a four-byte-per-cell map block matching all 463 canonical numbered cells. All 16384 directed faces now have a separate candidate-data comparison: 16128 raw equal, 256 raw different. Canonical image verification and full passage semantics remain open; no gameplay corrections made.

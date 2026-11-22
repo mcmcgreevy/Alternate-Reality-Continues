@@ -85,3 +85,7 @@ S29 completion: [acceptance review](S29_ACCEPTANCE_REVIEW.md) reconciles generic
 2026-11-20 — [S30 implementation and acceptance](S30_ACCEPTANCE_REVIEW.md) applies the archived Kroah Effect/Time Span rules and S32 ordering/reconciliation to the bounded timer runtime. Tests cover elapsed partitions, slot/event order, incubation, linked expiry and explicit cure rejection. Physical Speed duration is the approved 30-minute normalization; gameplay/save integration remains S31. Existing source files and hashes are unchanged.
 
 2026-11-20 — [S31 Physical Speed integration](S31_ACCEPTANCE_REVIEW.md) completes [F01](F01_ACCEPTANCE_REVIEW.md) against the unchanged Kroah Physical Speed row (+5, 30 minutes), stat/effect notes and S32-approved timing normalization. Versioned save representation, explicit owner/instance IDs and chapter carryover are labeled remake architecture. No new historical sources were introduced; coverage and the ER13 handoff now point to production tests.
+
+### S05 candidate ST map evidence
+
+[Map extraction and directional comparison](S05_ST_MAP_DATA.md) uses the unchanged, cataloged S29 ST v2.0 candidate ZIP and checksum-verified module 05. All 463 Kroah numbered cells agree; this does not establish byte identity with Kroah's disk or replace the canonical baseline. No new source download.
