@@ -78,6 +78,8 @@ Acceptance: Extract documented types, weights, durations and temperature calcula
 
 ### F05 — Map and establishments
 
+2026-11-22 refinement: [S05 evidence inventory and correction gates](stories/S05_MAP_AUDIT.md). Ready for research, not city-wide implementation.
+
 Parent: E02 · Milestone: M1 · Coverage: Partial · Source: [world](../assets/documentation/kroah-city-st-v2/world.html).
 
 **S05:** As a traveler, I can navigate to correctly identified establishments through the original passages.
@@ -85,6 +87,8 @@ Parent: E02 · Milestone: M1 · Coverage: Partial · Source: [world](../assets/d
 Acceptance: Audit remaining City cells and establishment identities against ST evidence; test directional boundaries and entrances; record unresolved geometry.
 
 ### F06 — Speed and incremental travel
+
+2026-11-22 refinement: [S06 control/calibration and integration gates](stories/S06_MOVEMENT_REFINEMENT.md). Awaiting user feedback; original-folder movement changes are not yet integrated.
 
 Parent: E02 · Milestone: M1 · Coverage: Partial · Source: [characterStats](../assets/documentation/kroah-city-st-v2/characterStats.html).
 
@@ -98,6 +102,8 @@ Menu: Character.
 
 ### F07 — Creation
 
+2026-11-22 refinement: [S07 source contract and initialization gaps](stories/S07_CREATION_REFINEMENT.md). Research-ready; full implementation remains gated.
+
 Parent: E03 · Milestone: M1 · Coverage: Not built · Source: [characterCreation](../assets/documentation/kroah-city-st-v2/characterCreation.html).
 
 **S07:** As a new player, I create a character using the original generation rules.
@@ -108,7 +114,7 @@ Acceptance: Extract creation rules and initial state; test valid ranges and dete
 
 Parent: E03 · Milestone: M1 · Coverage: Prototype · Source: [characterStats](../assets/documentation/kroah-city-st-v2/characterStats.html).
 
-**S08:** As a player, my abilities reflect base values, temporary effects and earned changes. Completed; [implementation and acceptance](S08_STATS.md). Completed; [implementation and acceptance](S08_STATS.md).
+**S08:** As a player, my abilities reflect base values, temporary effects and earned changes. Completed; [implementation and acceptance](S08_STATS.md). F08 still needs bounded feature-level acceptance reconciliation; do not duplicate creation/metabolism/combat work here.
 
 S30 prerequisite: [S08-SPEED — typed Speed-bonus actions and fixtures](stories/S08_STAT_ACTION_INTERFACE.md). This narrow deliverable does not require completion of every stat system.
 

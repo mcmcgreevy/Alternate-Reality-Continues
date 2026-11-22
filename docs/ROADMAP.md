@@ -30,7 +30,7 @@ Milestones describe dependency order and playable exit criteria, not promised da
 
 ## First development slice
 
-S01 is complete. F01 now has a [bounded completion plan](F01_RULE_EFFECT_PLAN.md): S28 evidence/design, S29 event runtime, S30 timed execution and S31 saved-effect integration. S28 research is complete with [explicit implementation blockers](EFFECT_RUNTIME_CONTRACT.md). Refine S08/S03 and resolve the F01 evidence gates next: document quantities and effect ordering, establish base/effective/displayed stats with reversible modifiers, and close the calendar/clock gaps. Then refine S10/S04/S09 into a clothing-and-weather survival slice. This directly connects the systems already visible in the game to real character consequences.
+Updated 2026-11-22: F01 and stories S03/S08 are implemented. F02/F03 have [automated acceptance evidence](F02_F03_ACCEPTANCE.md), with user playtest and merge pending. The user has paused all new code until testing. Continue [backlog refinement](NEXT_BACKLOG_REFINEMENT.md): reconcile F08's bounded acceptance, inventory S05 map evidence, settle S07 creation initialization, and refine S06 against movement feedback. Refine the S10/S04/S09 survival slice after those foundation boundaries are clear; do not mark broad placeholders Ready prematurely.
 
 ## Planning cadence
 
