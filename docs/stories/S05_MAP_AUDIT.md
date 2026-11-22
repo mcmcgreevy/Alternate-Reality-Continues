@@ -37,3 +37,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Candidate ST map comparison — 2026-11-22
 
 [Executable/data evidence](../S05_ST_MAP_DATA.md) identifies a four-byte-per-cell map block matching all 463 canonical numbered cells. All 16384 directed faces now have a separate candidate-data comparison: 16128 raw equal, 256 raw different. Canonical image verification and full passage semantics remain open; no gameplay corrections made.
+
+## Priority passage review — 2026-11-22
+
+[Review of all 16 priority faces](../S05_PRIORITY_PASSAGES.md) identifies three visually corroborated missing doorways and one wall pair as proposed correction scope. Arena directionality, one unresolved face and four outer edges are classified separately. Hypothetical graph/save impact is documented; no implementation or playtest occurred.

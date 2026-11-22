@@ -1,0 +1,17 @@
+x,y,direction,current_raw_edge,candidate_nibble,group,visual_observation,disposition,save_door_key,note
+14,0,N,5,13,outer_map_faces,map_edge_does_not_resolve_outward_semantics,no_current_travel_fix_needed,"city:14,0:0",Destination absent from current 64x64 map; movement already rejects it.
+15,0,N,5,13,outer_map_faces,map_edge_does_not_resolve_outward_semantics,no_current_travel_fix_needed,"city:15,0:0",Destination absent from current 64x64 map; movement already rejects it.
+6,7,E,3,14,arena_directionality,visible_doorway_direction_unresolved,hold_for_directional_rule_reconciliation,"city:6,7:1",Opposite candidate face is 3; preserve asymmetry. Pixels do not prove blocking direction.
+16,12,E,3,14,arena_directionality,visible_doorway_direction_unresolved,hold_for_directional_rule_reconciliation,"city:16,12:1",Opposite candidate face is 3; preserve asymmetry. Pixels do not prove blocking direction.
+16,12,W,3,14,arena_directionality,visible_doorway_direction_unresolved,hold_for_directional_rule_reconciliation,"city:16,12:3",Opposite candidate face is 3; preserve asymmetry. Pixels do not prove blocking direction.
+10,30,S,13,3,three_missing_doorways,visible_doorway,candidate_correction_scope_after_playtest,"city:10,30:2","Both faces independently recorded; canonical image supports doorway, not interaction procedure."
+10,31,N,13,3,three_missing_doorways,visible_doorway,candidate_correction_scope_after_playtest,"city:10,31:0","Both faces independently recorded; canonical image supports doorway, not interaction procedure."
+11,31,E,13,3,three_missing_doorways,visible_doorway,candidate_correction_scope_after_playtest,"city:11,31:1","Both faces independently recorded; canonical image supports doorway, not interaction procedure."
+12,31,W,13,3,three_missing_doorways,visible_doorway,candidate_correction_scope_after_playtest,"city:12,31:3","Both faces independently recorded; canonical image supports doorway, not interaction procedure."
+10,32,E,13,3,three_missing_doorways,visible_doorway,candidate_correction_scope_after_playtest,"city:10,32:1","Both faces independently recorded; canonical image supports doorway, not interaction procedure."
+11,32,W,13,3,three_missing_doorways,visible_doorway,candidate_correction_scope_after_playtest,"city:11,32:3","Both faces independently recorded; canonical image supports doorway, not interaction procedure."
+26,34,S,5,13,closed_wall_pair,continuous_wall_line,candidate_closure_after_save_policy_review,"city:26,34:2",Image supports wall; both candidate faces are 13.
+26,35,N,5,13,closed_wall_pair,continuous_wall_line,candidate_closure_after_save_policy_review,"city:26,35:0",Image supports wall; both candidate faces are 13.
+34,46,W,5,13,single_asymmetric_current_face,not_resolved_in_visual_review,hold_for_clearer_canonical_evidence,"city:34,46:3",Candidate opposite is 13; current opposite already 13. No reciprocal edit presumed.
+0,49,W,5,13,outer_map_faces,map_edge_does_not_resolve_outward_semantics,no_current_travel_fix_needed,"city:0,49:3",Destination absent from current 64x64 map; movement already rejects it.
+12,63,S,5,13,outer_map_faces,map_edge_does_not_resolve_outward_semantics,no_current_travel_fix_needed,"city:12,63:2",Destination absent from current 64x64 map; movement already rejects it.
