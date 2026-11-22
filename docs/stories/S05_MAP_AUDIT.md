@@ -45,3 +45,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Service-identity research — 2026-11-22
 
 [Service identity and encoding evidence](../S05_SERVICE_IDENTITIES.md) reconciles all 79 service-code faces with candidate ordinary doors and exact destination categories. Marker-to-service indices are traced in candidate routines, including shared computed Da Place! index and reversed healer record offsets. Full dispatch/state behavior and 177 non-service raw differences remain under review.
+
+## Shared state and complete difference triage — 2026-11-22
+
+[Follow-up research](../S05_SHOP_STATE_AND_TRIAGE.md) identifies the exact shared Da Place! friendship, frequency, visit-day, refresh-hour and stock addresses. All 256 raw differences are assigned initial categories; seven special-code passage candidates extend the earlier 16 ordinary-code cases. Classification is not fidelity completion.
