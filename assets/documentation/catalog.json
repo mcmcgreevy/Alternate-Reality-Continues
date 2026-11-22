@@ -423,7 +423,7 @@
       "file": "s29-st-research/alternate-reality-city-st-v2-candidate.zip",
       "bytes": 344514,
       "sha256": "1ee57ea2362345c6b6389f4ff5c813ea1c4ca311311d6d503ea7d507368a9000",
-      "notes": "Unmodified downloaded ZIP; development evidence excluded from game imports. Raw bootstrap includes V2.0; 32 encoded records pass loader sector checksums. Not proven identical to Kroah\u2019s copy. See docs/S29_ST_EFFECT_RESEARCH.md; static analysis only."
+      "notes": "Unmodified downloaded ZIP; development evidence excluded from game imports. Raw bootstrap includes V2.0; 32 encoded records pass loader sector checksums. Not proven identical to Kroah’s copy. See docs/S29_ST_EFFECT_RESEARCH.md; static analysis only."
     },
     {
       "title": "Hatari STX header/sector structures",
@@ -435,6 +435,39 @@
       "file": "s29-st-research/hatari-stx-format.html",
       "bytes": 90658,
       "sha256": "27bf054ae1c87a5788693f5befe488f80b33db809aa89749b40352fbbca994f8"
+    },
+    {
+      "title": "Godot 4.5 RandomNumberGenerator",
+      "source_url": "https://docs.godotengine.org/en/4.5/classes/class_randomnumbergenerator.html",
+      "reviewed": "2026-11-22",
+      "edition_platforms": [
+        "Godot 4.5 engine; not historical gameplay"
+      ],
+      "file": null,
+      "sha256": null,
+      "archive_scope": "URL only. Direct archival request failed DNS; no local copy claimed. See docs/S02_ACCEPTANCE_REVIEW.md."
+    },
+    {
+      "title": "Godot 4.5 DirAccess",
+      "source_url": "https://docs.godotengine.org/en/4.5/classes/class_diraccess.html",
+      "reviewed": "2026-11-22",
+      "edition_platforms": [
+        "Godot 4.5 engine; not historical gameplay"
+      ],
+      "file": null,
+      "sha256": null,
+      "archive_scope": "URL only. Direct archival request failed DNS; no local copy claimed. See docs/S02_ACCEPTANCE_REVIEW.md."
+    },
+    {
+      "title": "Godot Windows directory implementation 4.5-stable",
+      "source_url": "https://raw.githubusercontent.com/godotengine/godot/4.5-stable/drivers/windows/dir_access_windows.cpp",
+      "reviewed": "2026-11-22",
+      "edition_platforms": [
+        "Godot 4.5 engine; not historical gameplay"
+      ],
+      "file": null,
+      "sha256": null,
+      "archive_scope": "URL only. Direct archival request failed DNS; no local copy claimed. See docs/S02_ACCEPTANCE_REVIEW.md."
     }
   ]
 }

@@ -1,6 +1,6 @@
 # S02 — Reliable journey persistence and deterministic replay
 
-Readiness review: 2026-11-22. Implementation-ready after this refinement; not implemented or accepted by this review.
+Implemented 2026-11-22; [automated acceptance and remaining manual follow-up](../S02_ACCEPTANCE_REVIEW.md). Feature closure/merge remain pending; original readiness specification follows.
 Parent: F02 (#9). Existing story: #35. These are three implementation tasks within S02, not additional or hidden sub-issues.
 
 ## Player outcome and scope

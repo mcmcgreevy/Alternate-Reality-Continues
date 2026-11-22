@@ -110,6 +110,7 @@ func _initialize() -> void:
 		var legacy: Dictionary = data.duplicate(true)
 		legacy.version = version
 		legacy.erase("effects")  # Legacy fixtures predate v7.
+		legacy.erase("gameplay_random")  # Legacy fixtures predate v8.
 		for field in ["speed", "speed_bonus", "speed_penalty", "speed_revealed", "stat_display"]:
 			legacy.character.erase(field)
 		write_save(legacy)

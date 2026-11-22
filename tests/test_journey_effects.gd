@@ -39,7 +39,7 @@ func _initialize() -> void:
 	check(not world.activate_physical_speed().activated and world.journey_effects.save_payload() == expected and world.character.speed_bonus == 5, "Repeat activation neither stacks nor refreshes")
 	check(world.save_game(SAVE) == OK, "Save active effect at minute ten")
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(SAVE))
-	check(data.version == 7 and data.effects.version == 1, "Versioned effect save format")
+	check(data.version == 8 and data.effects.version == 1, "Versioned effect save format")
 	var loaded = World.new()
 	check(loaded.load_game(SAVE), "Load active effect")
 	check(loaded.physical_speed_remaining_game_microseconds() == 20 * M and loaded.character.speed_bonus == 5, "Reload retains twenty minutes and one grant")
@@ -91,6 +91,7 @@ func _initialize() -> void:
 		var legacy := data.duplicate(true)
 		legacy.version = version
 		legacy.erase("effects")
+		legacy.erase("gameplay_random")  # Legacy fixtures predate v8.
 		write_save(legacy)
 		check(loaded.load_game(INVALID) and loaded.physical_speed_remaining_game_microseconds() == 0 and loaded.character.speed_bonus == 5, "Legacy save keeps character byte without inventing an effect")
 		loaded.advance_game_microseconds(30 * M)

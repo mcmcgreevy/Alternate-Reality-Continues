@@ -13,6 +13,10 @@ var route: Dictionary
 var doors: Dictionary = {}
 # Increment after door/transition/load changes so the view can invalidate cached geometry.
 var revision := 0
+const JourneyRandom = preload("res://scripts/journey_random.gd")
+const SaveStore = preload("res://scripts/journey_save_store.gd")
+var gameplay_random = JourneyRandom.new(randi())
+var save_store = SaveStore.new()
 var weather_seed: int = randi_range(1, 2147483646)
 const WEATHER_CONDITIONS := ["Hot", "Warm", "Cool", "Cold", "Rainy"]
 # Session-only playtest override; -1 resumes the saved automatic schedule.
@@ -241,7 +245,7 @@ func move(direction: Vector2i, charge_travel_time: bool = true) -> bool:
 			if arrival_facing < 128:
 				facing = arrival_facing
 			elif arrival_facing != 255:
-				facing = randi_range(0, 3)
+				facing = gameplay_random.next_facing()
 			revision += 1
 			transitioned = true
 	if in_tavern():
@@ -478,103 +482,42 @@ func save_game(path: String = SAVE_PATH) -> Error:
 		return ERR_BUSY
 	if not journey_effects.can_save():
 		return ERR_INVALID_DATA
-	var save_file := FileAccess.open(path, FileAccess.WRITE)
-	if save_file == null:
-		return FileAccess.get_open_error()
-	save_file.store_string(JSON.stringify({"version": 7, "map_set": "original-route-1", "chapter": chapter,
-		"position": [position.x, position.y], "facing": facing, "character": character,
-		"inventory": inventory, "minutes": minutes, "flags": flags, "doors": doors,
-		"needs": needs, "provisions": provisions, "weather_seed": weather_seed,
+	var serialized := JSON.stringify(save_snapshot(), "", true, true)
+	# Validate the serialized representation too: JSON can change numeric types.
+	if _validated_save(JSON.parse_string(serialized)).is_empty():
+		return ERR_INVALID_DATA
+	return save_store.write(path, serialized)
+
+func save_snapshot() -> Dictionary:
+	return {"version": 8, "map_set": "original-route-1", "chapter": chapter,
+		"position": [position.x, position.y], "facing": facing, "character": character.duplicate(true),
+		"inventory": inventory.duplicate(true), "minutes": minutes, "flags": flags.duplicate(true), "doors": doors.duplicate(true),
+		"needs": needs.duplicate(true), "provisions": provisions.duplicate(true), "weather_seed": weather_seed,
 		"minute_fraction": minute_fraction, "clock": game_clock.snapshot(),
-		"effects": journey_effects.save_payload()}, "", true, true))
-	return OK
+		"effects": journey_effects.save_payload(), "gameplay_random": gameplay_random.snapshot()}
 
 ## Validate and migrate a temporary dictionary before changing the live journey.
 ## Version 3 gains neutral needs/provisions; older version 4 saves gain a weather seed.
 func load_game(path: String = SAVE_PATH) -> bool:
 	if _advancing_clock or journey_effects.runtime._busy:
 		return false
-	if not FileAccess.file_exists(path):
+	var readable_path: String = save_store.readable_path(path)
+	if not FileAccess.file_exists(readable_path):
 		return false
-	var save_data = JSON.parse_string(FileAccess.get_file_as_string(path))
-	if not save_data is Dictionary or save_data.get("map_set") != "original-route-1":
+	var parser := JSON.new()
+	if parser.parse(FileAccess.get_file_as_string(readable_path)) != OK:
 		return false
-	if save_data.get("version") != 3 and save_data.get("version") != 4 and save_data.get("version") != 5 and save_data.get("version") != 6 and save_data.get("version") != 7:
+	var candidate := _validated_save(parser.data)
+	if candidate.is_empty():
 		return false
-	if not maps.has(save_data.get("chapter", "")):
-		return false
-	if not save_data.get("position") is Array or save_data.position.size() != 2:
-		return false
-	for coordinate_component in save_data.position:
-		if not (coordinate_component is float or coordinate_component is int) or coordinate_component != int(coordinate_component):
-			return false
-	var saved_position := Vector2i(save_data.position[0], save_data.position[1])
-	if cell(saved_position, save_data.chapter).is_empty():
-		return false
-	for key in ["character", "flags", "doors"]:
-		if not save_data.get(key) is Dictionary:
-			return false
-	if save_data.version == 3:
-		save_data.character["silver"] = 0
-		save_data.character["copper"] = 0
-		save_data["needs"] = {"hunger": 0, "thirst": 0}
-		save_data["provisions"] = {"food": 0, "water": 0}
-	for group in ["needs", "provisions"]:
-		if not save_data.get(group) is Dictionary:
-			return false
-		for key in (needs if group == "needs" else provisions):
-			var value = save_data[group].get(key)
-			if not (value is int or value is float) or not is_finite(float(value)) or value != int(value) or value < 0:
-				return false
-			if group == "needs" and value > 100:
-				return false
-	var stats_candidate := CharacterStats.normalize_character(save_data.character)
-	if not stats_candidate.ok:
-		return false
-	save_data.character = stats_candidate.character
-	for key in flags:
-		if not save_data.flags.get(key) is bool:
-			return false
-	for key in save_data.doors:
-		if not save_data.doors[key] is bool:
-			return false
-	if not save_data.get("inventory") is Array:
-		return false
-	for item in save_data.inventory:
-		if not item is String:
-			return false
-	for key in ["minutes", "facing"]:
-		if not (save_data.get(key) is int or save_data.get(key) is float) or not is_finite(float(save_data[key])) or save_data[key] != int(save_data[key]):
-			return false
-	if save_data.minutes < 0 or save_data.facing < 0 or save_data.facing > 3:
-		return false
-	var saved_weather_seed = save_data.get("weather_seed", 1701)
-	if not (saved_weather_seed is int or saved_weather_seed is float) or not is_finite(float(saved_weather_seed)) or saved_weather_seed != int(saved_weather_seed) or saved_weather_seed < 1 or saved_weather_seed > 2147483646:
-		return false
-	var saved_minute_fraction = save_data.get("minute_fraction", 0.0)
-	if not (saved_minute_fraction is float or saved_minute_fraction is int) or not is_finite(float(saved_minute_fraction)) or saved_minute_fraction < 0 or saved_minute_fraction >= 1:
-		return false
-	var saved_clock = GameClock.new(0)
-	if save_data.version >= 5:
-		if not saved_clock.restore(save_data.get("clock")):
-			return false
-		if saved_clock.whole_minutes() != int(save_data.minutes) or absf(saved_clock.minute_fraction() - float(saved_minute_fraction)) > 0.000000000001:
-			return false
-	elif not saved_clock.set_minutes(int(save_data.minutes)) or not saved_clock.set_minute_fraction(float(saved_minute_fraction)):
-		return false
-	var saved_effects = JourneyEffects.new(save_data.character, saved_clock.game_microseconds)
-	if save_data.version == 7:
-		if not saved_effects.restore_payload(save_data.get("effects")):
-			return false
-	elif save_data.has("effects"):
-		# A downgraded version must not silently discard an effect payload.
-		return false
+	var save_data: Dictionary = candidate.data
 	# Commit only after every field, including effect references, has passed.
-	journey_effects = saved_effects
-	game_clock = saved_clock
-	weather_seed = int(saved_weather_seed)
+	journey_effects = candidate.effects
+	gameplay_random = candidate.random
+	game_clock = candidate.clock
+	weather_seed = int(save_data.get("weather_seed", 1701))
 	chapter = save_data.chapter
-	position = saved_position
+	position = Vector2i(save_data.position[0], save_data.position[1])
 	facing = int(save_data.facing)
 	character = save_data.character
 	inventory = save_data.inventory
@@ -588,3 +531,96 @@ func load_game(path: String = SAVE_PATH) -> bool:
 	revision += 1
 	journal = "Journey restored. " + hint()
 	return true
+
+## Build detached candidates; never mutate live state or caller-owned dictionaries.
+func _validated_save(input: Variant) -> Dictionary:
+	var save_data = input.duplicate(true) if input is Dictionary else input
+
+	if not save_data is Dictionary or save_data.get("map_set") != "original-route-1":
+		return {}
+	if not CharacterStats.integer_value(save_data.get("version"), 8) or save_data.version < 3:
+		return {}
+	if not save_data.get("chapter") is String or not maps.has(save_data.chapter):
+		return {}
+	if not save_data.get("position") is Array or save_data.position.size() != 2:
+		return {}
+	for coordinate_component in save_data.position:
+		if not CharacterStats.integer_value(coordinate_component, 63):
+			return {}
+	var saved_position := Vector2i(save_data.position[0], save_data.position[1])
+	if cell(saved_position, save_data.chapter).is_empty():
+		return {}
+	for key in ["character", "flags", "doors"]:
+		if not save_data.get(key) is Dictionary:
+			return {}
+	if save_data.version == 3:
+		save_data.character["silver"] = 0
+		save_data.character["copper"] = 0
+		save_data["needs"] = {"hunger": 0, "thirst": 0}
+		save_data["provisions"] = {"food": 0, "water": 0}
+	for group in ["needs", "provisions"]:
+		if not save_data.get(group) is Dictionary:
+			return {}
+		for key in save_data[group]:
+			var value = save_data[group].get(key)
+			if not CharacterStats.integer_value(value, 9000000000000000):
+				return {}
+			if group == "needs" and value > 100:
+				return {}
+	for key in ["hunger", "thirst"]:
+		if not save_data.needs.has(key):
+			return {}
+	for key in ["food", "water"]:
+		if not save_data.provisions.has(key):
+			return {}
+	var stats_candidate := CharacterStats.normalize_character(save_data.character)
+	if not stats_candidate.ok:
+		return {}
+	save_data.character = stats_candidate.character
+	for key in ["visited_dungeon", "returned"]:
+		if not save_data.flags.get(key) is bool:
+			return {}
+	for key in save_data.flags:
+		if not save_data.flags[key] is bool:
+			return {}
+	for key in save_data.doors:
+		if not save_data.doors[key] is bool:
+			return {}
+	if not save_data.get("inventory") is Array:
+		return {}
+	for item in save_data.inventory:
+		if not item is String:
+			return {}
+	for key in ["minutes", "facing"]:
+		if not CharacterStats.integer_value(save_data.get(key), 150000000 if key == "minutes" else 3):
+			return {}
+	if save_data.minutes < 0 or save_data.facing < 0 or save_data.facing > 3:
+		return {}
+	var saved_weather_seed = save_data.get("weather_seed", 1701)
+	if not (saved_weather_seed is int or saved_weather_seed is float) or not is_finite(float(saved_weather_seed)) or saved_weather_seed != int(saved_weather_seed) or saved_weather_seed < 1 or saved_weather_seed > 2147483646:
+		return {}
+	var saved_minute_fraction = save_data.get("minute_fraction", 0.0)
+	if not (saved_minute_fraction is float or saved_minute_fraction is int) or not is_finite(float(saved_minute_fraction)) or saved_minute_fraction < 0 or saved_minute_fraction >= 1:
+		return {}
+	var saved_clock = GameClock.new(0)
+	if save_data.version >= 5:
+		if not saved_clock.restore(save_data.get("clock")):
+			return {}
+		if saved_clock.whole_minutes() != int(save_data.minutes) or absf(saved_clock.minute_fraction() - float(saved_minute_fraction)) > 0.000000000001:
+			return {}
+	elif not saved_clock.set_minutes(int(save_data.minutes)) or not saved_clock.set_minute_fraction(float(saved_minute_fraction)):
+		return {}
+	var saved_effects = JourneyEffects.new(save_data.character, saved_clock.game_microseconds)
+	if save_data.version >= 7:
+		if not saved_effects.restore_payload(save_data.get("effects")):
+			return {}
+	elif save_data.has("effects"):
+		# A downgraded version must not silently discard an effect payload.
+		return {}
+	var saved_random = JourneyRandom.new(1701)
+	if save_data.version == 8:
+		if not saved_random.restore(save_data.get("gameplay_random")):
+			return {}
+	elif save_data.has("gameplay_random"):
+		return {} # Do not silently discard continuation state on a downgraded save.
+	return {"data": save_data, "clock": saved_clock, "effects": saved_effects, "random": saved_random}
