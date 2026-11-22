@@ -1,6 +1,8 @@
 # S05 — City geography and establishment audit
 Parent: F05 (#12). Refined 2026-11-22. Ready for evidence gathering; implementation is on hold until the user's playtest. Existing issue #38 remains the story; checklist items below are not hidden sub-issues.
 
+Research started 2026-11-22: [first-pass inventory and findings](../S05_MAP_AUDIT_FINDINGS.md). Source legend/current faces inventoried; full ST occurrence and directional comparison remains in progress.
+
 ## Outcome
 Identify City establishments and traverse source-supported directional passages, with unknown geometry explicitly visible in the development evidence.
 
