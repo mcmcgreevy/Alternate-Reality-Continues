@@ -49,3 +49,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Shared state and complete difference triage — 2026-11-22
 
 [Follow-up research](../S05_SHOP_STATE_AND_TRIAGE.md) identifies the exact shared Da Place! friendship, frequency, visit-day, refresh-hour and stock addresses. All 256 raw differences are assigned initial categories; seven special-code passage candidates extend the earlier 16 ordinary-code cases. Classification is not fidelity completion.
+
+## Special approaches — 2026-11-22
+
+[Seven-face review and scenario handlers](../S05_SPECIAL_PASSAGES.md) distinguishes five ordinary-City approach cells from two scenario destinations. Candidate request/refusal/position-restore paths are documented; all seven faces remain held for full dispatch/directional verification. No correction added or implemented.

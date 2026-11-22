@@ -1,0 +1,8 @@
+x,y,direction,current_raw_edge,candidate_nibble,destination_x,destination_y,destination_marker,destination_type,candidate_opposite,visual,disposition
+16,1,S,38,4,16,2,51,0,4,door_like_feature_direction_unresolved,hold_for_dispatch_and_directional_verification
+5,7,E,38,4,6,7,51,0,4,door_like_feature_direction_unresolved,hold_for_dispatch_and_directional_verification
+5,8,E,38,4,6,8,51,0,4,door_like_feature_direction_unresolved,hold_for_dispatch_and_directional_verification
+25,8,W,38,4,24,8,46,6,13,wall_like_boundary_direction_unresolved,hold_for_dispatch_and_directional_verification
+16,13,N,38,4,16,12,51,0,4,door_like_feature_direction_unresolved,hold_for_dispatch_and_directional_verification
+59,16,S,37,6,59,17,47,6,13,door_like_feature_direction_unresolved,hold_for_dispatch_and_directional_verification
+52,22,E,38,4,53,22,48,0,4,door_like_feature_direction_unresolved,hold_for_dispatch_and_directional_verification
