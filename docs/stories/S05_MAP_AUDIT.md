@@ -5,6 +5,8 @@ Research started 2026-11-22: [first-pass inventory and findings](../S05_MAP_AUDI
 
 Follow-up: [numbered-location comparison](../S05_LOCATION_COMPARISON.md) now accounts for all visible markers and current location components. Unnumbered runtime identities, access/entrance semantics and the directed-face comparison remain open. No gameplay changes authorized.
 
+Location delivery is now represented by [actual stories S33–S107](../LOCATION_STORIES.md), grouped under their service/scenario feature owners. S05 retains identity/dispatch and directional-map research; it does not own implementing all City services.
+
 ## Outcome
 Identify City establishments and traverse source-supported directional passages, with unknown geometry explicitly visible in the development evidence.
 

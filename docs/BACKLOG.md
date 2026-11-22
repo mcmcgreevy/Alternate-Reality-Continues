@@ -1,5 +1,7 @@
 # Development backlog
 
+2026-11-22: [Location-specific stories S33–S107](LOCATION_STORIES.md) expand the S05 inventory into real GitHub sub-issues under F05, F15–F21 and F23. Existing S15–S21 own shared service behavior; location stories own configuration, integration and acceptance. All new issues remain Backlog and code is paused pending user testing. The original feature/story outline below remains the baseline, not the exhaustive current story list.
+
 Published to GitHub on 2026-11-17: [live roadmap and epic index](https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/61). Live issues are the workflow-status authority; this file preserves the planning baseline. See [issue ID mapping](GITHUB_BACKLOG_INDEX.json) and the [live GitHub Project](https://github.com/users/mcmcgreevy/projects/1).
 
 Draft for review — 2026-11-17. Planning only; no new gameplay is authorized by a backlog entry. This is a scoped first pass, not a claim that every source algorithm has been analyzed.
