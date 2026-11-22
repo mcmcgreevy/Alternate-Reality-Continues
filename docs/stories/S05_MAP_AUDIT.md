@@ -29,3 +29,7 @@ Use archived Kroah ST City v2.0 world.html map legend and Map.png; docs/ST_LOCAT
 
 ## Readiness gate
 Evidence gathering has no code dependency. Any correction must wait for test results and use the isolated development baseline. Full implementation readiness requires the discrepancy inventory, supported correction scope and save policy; broad city-wide fidelity is not currently Ready.
+
+## Current-build access inventory — 2026-11-22
+
+[Access and dispatch report](../S05_LOCATION_ACCESS.md) now records all 81 current components and 710 perimeter faces, with independent entry/exit codes. Static movement connectivity and service dispatch are separated from historical ST accessibility. Full ST directional comparison and runtime identity reconciliation remain open; no code changed.

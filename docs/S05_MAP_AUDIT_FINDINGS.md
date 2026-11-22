@@ -49,3 +49,7 @@ Unchanged local sources already cataloged; no new download:
 - Current data/maps/city.json SHA-256: `2ff715f0272dc469ba1d86f670d049b5d2ac3e2907e2143c4b0db5ebda715914` — ARX-derived representation, not an ST dump.
 
 The CSVs are derived analysis artifacts, not source documents or runtime assets. Source legend extraction uses the existing convenience text; the Map Remarks and numbered cells were also inspected in the archive/image. No executable analysis tool was added to the repository.
+
+## Subsequent research
+
+The earlier candidate-only backlog wording is superseded by [75 actual location stories](LOCATION_STORIES.md). The [current access and dispatch inventory](S05_LOCATION_ACCESS.md) adds 710 perimeter faces across all 81 components. Neither update completes historical directional verification.
