@@ -468,6 +468,18 @@
       "file": null,
       "sha256": null,
       "archive_scope": "URL only. Direct archival request failed DNS; no local copy claimed. See docs/S02_ACCEPTANCE_REVIEW.md."
+    },
+    {
+      "title": "ARX 0.82 City descriptions - comparison reference",
+      "source_url": "https://www.crpgdev.com/game_downloads/AR_X_0.82.zip",
+      "retrieved": "2026-11-22",
+      "edition_platforms": [
+        "ARX 0.82 remake; not canonical ST"
+      ],
+      "file": "s05-arx-reference/cityDescriptions.txt",
+      "bytes": 2044,
+      "sha256": "4d8c7d98766e48cf19dc77016edd464bd392ae9a3510ba7dbb0ef8ee3cdd0be6",
+      "archive_scope": "Unchanged data/map/cityDescriptions.txt copied from existing local ARX extraction on this date; original network retrieval date unknown. Full release not newly downloaded. Positional description index is comparison evidence, not proof of current runtime UI names."
     }
   ]
 }

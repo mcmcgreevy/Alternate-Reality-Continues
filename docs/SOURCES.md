@@ -4,6 +4,8 @@
 
 ## Archived documentation
 
+- 2026-11-22: [S05 labeled-location comparison](S05_LOCATION_COMPARISON.md) uses the unchanged Kroah ST map/legend and preserves the existing ARX 0.82 description file in `assets/documentation/s05-arx-reference/` as comparison evidence. Catalog records its hash and local-extraction provenance. Numbered footprints do not establish runtime accessibility or door semantics; no game data changed.
+
 - 2026-11-22: [S02 persistence](S02_ACCEPTANCE_REVIEW.md) retains historical rules and adds remake save/replay architecture. Godot 4.5 RNG/DirAccess documentation and Windows rename code informed implementation; URLs and failed-archive limitation are recorded in the catalog. No new historical source was introduced.
 
 - 2026-11-18: [F01 runtime plan](F01_RULE_EFFECT_PLAN.md) uses the existing unchanged

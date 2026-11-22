@@ -11,3 +11,4 @@
 
 # Preserve archived source bytes so catalog SHA-256 values survive checkout.
 assets/documentation/**/*.html -text
+assets/documentation/s05-arx-reference/cityDescriptions.txt -text

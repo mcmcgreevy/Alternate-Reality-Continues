@@ -3,6 +3,8 @@ Parent: F05 (#12). Refined 2026-11-22. Ready for evidence gathering; implementat
 
 Research started 2026-11-22: [first-pass inventory and findings](../S05_MAP_AUDIT_FINDINGS.md). Source legend/current faces inventoried; full ST occurrence and directional comparison remains in progress.
 
+Follow-up: [numbered-location comparison](../S05_LOCATION_COMPARISON.md) now accounts for all visible markers and current location components. Unnumbered runtime identities, access/entrance semantics and the directed-face comparison remain open. No gameplay changes authorized.
+
 ## Outcome
 Identify City establishments and traverse source-supported directional passages, with unknown geometry explicitly visible in the development evidence.
 
