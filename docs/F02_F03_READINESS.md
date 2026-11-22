@@ -1,5 +1,7 @@
 # F02/F03 story readiness — 2026-11-22
 
+Follow-up: implementation and automated feature review are now complete; see [current acceptance](F02_F03_ACCEPTANCE.md). The readiness findings below preserve the pre-implementation review.
+
 Reviewed live GitHub issues #9, #10, #35 and #36 against the isolated sprint baseline. This is a readiness review, not a completion review or new test run.
 
 | Feature/story | Verdict | Required next work |

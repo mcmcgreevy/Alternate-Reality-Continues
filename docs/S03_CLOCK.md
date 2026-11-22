@@ -105,5 +105,6 @@ tests/test_game_clock.gd` (or `test_clock_scene.gd`). For the visual check run
 `tools/reference/s03-calendar.png`. In restricted environments set APPDATA to
 the project's ignored `tools/appdata` before running tests.
 
-S03 and S03-CLOCK are complete. S30 remains Backlog pending S08-SPEED; this change
-does not implement effects, complete S08 or close F01.
+S03 and S03-CLOCK are complete. The original S30/S08 dependency note is now
+superseded: S08, S30, S31 and F01 subsequently completed. See
+[F02/F03 feature acceptance](F02_F03_ACCEPTANCE.md) for current integration evidence.
