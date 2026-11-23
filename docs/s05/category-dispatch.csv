@@ -1,0 +1,11 @@
+location_type,category,module,init_dispatch,update_dispatch,leave_dispatch,init_module_offset,update_module_offset,leave_module_offset,fourth_module_offset
+0,City,7,01b2,01b8,01be,000a,016a,02d8,02d4
+1,Inn,8,01ca,01d0,01d6,000a,0084,00b8,00bc
+2,Tavern,9,01e2,01e8,01ee,000a,00d8,010c,0110
+3,Bank,10,01fa,0200,0206,000a,0160,0194,0198
+4,Shop,11,0212,0218,021e,000a,00a4,00d8,00dc
+5,Smithy,12,022a,0230,0236,000a,00b4,00e8,00ec
+6,Special,13,0242,0248,024e,000a,0048,0070,0074
+7,Healer,14,025a,0260,0266,000a,0086,00c8,00cc
+8,Guild,15,0272,0278,027e,000a,00ac,00e0,00e4
+9,Combat,16,028a,0290,0296,000a,01da,023e,023e
