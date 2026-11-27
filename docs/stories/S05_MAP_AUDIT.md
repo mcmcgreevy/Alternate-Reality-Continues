@@ -61,3 +61,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## City helper review — 2026-11-23
 
 [Bounded helper/control-flow review](../S05_CITY_HELPERS.md) separates rendering/category artwork, input handling and coordinate-triggered feedback from scenario activation. Remaining ranges and resident calls are listed explicitly; no claim that all gate behavior is absent.
+
+## Boundary rendering — 2026-11-27
+
+[Drawing-versus-movement research](../S05_BOUNDARY_RENDERING.md) classifies candidate drawing variants for all 154 same-threshold differences. In particular 6/14 share a draw selector while only 6 passes the movement check. Visual equivalence and full canonical face review remain unresolved; no map or rendering changes made.
