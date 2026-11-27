@@ -65,3 +65,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Boundary rendering — 2026-11-27
 
 [Drawing-versus-movement research](../S05_BOUNDARY_RENDERING.md) classifies candidate drawing variants for all 154 same-threshold differences. In particular 6/14 share a draw selector while only 6 passes the movement check. Visual equivalence and full canonical face review remain unresolved; no map or rendering changes made.
+
+## Candidate boundary artwork — 2026-11-27
+
+[Decoded drawing-bank evidence](../S05_BOUNDARY_ARTWORK.md) identifies stone walls, doors in stone, colonnades, and doors between columns. Candidate6/14 share colonnade artwork despite different movement blocking. The grayscale contact sheet is analysis only; no renderer/map changes or full canonical visual verification claimed.
