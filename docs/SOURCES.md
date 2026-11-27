@@ -1,6 +1,6 @@
 # Short source log
 
-**Current source policy:** [Atari ST City v2.0 via Kroah is the canonical City rules baseline](SOURCE_BASELINE.md), accepted 2026-11-16. Earlier entries below preserve implementation provenance; they do not supersede this decision.
+**Current source policy:** [Atari ST City v2.0 via Kroah is the canonical City rules baseline](SOURCE_BASELINE.md), accepted 2026-11-16. Shared-mechanics precedence across chapters was approved 2026-11-27: default to ST City unless a documented Dungeon-specific requirement justifies a recorded exception. Verified 8-bit Dungeon evidence remains authoritative for Dungeon-specific content. Earlier entries below preserve implementation provenance; they do not supersede this decision.
 
 ## Archived documentation
 
