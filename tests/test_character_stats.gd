@@ -29,7 +29,7 @@ func _initialize() -> void:
 		var view: Dictionary = world.stat_snapshot(stat)
 		check(view.base == 13.75 and view.effective == 16 and view.displayed == 16, "Separate base/effective/displayed " + stat)
 	check(not world.stat_snapshot("speed").visible, "Speed hidden until revealed")
-	check(not world.primary_stats_text().contains("SPD"), "Hidden Speed absent from HUD")
+	check(world.primary_stats_text().contains("SPD"), "Remake HUD shows Speed before a reveal event")
 	world.character.speed_revealed = true
 	check(world.stat_snapshot("speed").visible and world.primary_stats_text().contains("SPD"), "Reveal makes Speed available to HUD")
 	var original: Dictionary = world.character.duplicate(true)

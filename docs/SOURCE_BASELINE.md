@@ -26,3 +26,7 @@ Accepted by the user on **2026-11-16**.
 | City geography | Tail of the Dog and the northern Dungeon entrance are now checked against ST markers 16 and 49; see `ST_LOCATION_CORRECTION.md`. Wider ARX geometry and other establishment identities still need ST validation. |
 
 This decision establishes direction; it does not claim those systems have already been converted. The existing playable build remains a scaffold until each subsystem is reconciled and tested.
+
+## Playtest UI choices — 2026-11-27
+
+User approved always displaying SPD in the remake HUD. The underlying historical reveal flag remains intact for saves and rules. Dungeon geometry beyond the rendered neighborhood uses black background/fog without City sky contribution.

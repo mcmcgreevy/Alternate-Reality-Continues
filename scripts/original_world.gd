@@ -101,7 +101,8 @@ func displayed_hit_points() -> int:
 func primary_stats_text() -> String:
 	var text := "STR %d     STA %d" % [stat_snapshot("strength").displayed, stat_snapshot("stamina").displayed]
 	var speed := stat_snapshot("speed")
-	if speed.ok and speed.visible:
+	# Remake HUD choice: show Speed even before a historical reveal event.
+	if speed.ok:
 		text += "  SPD %d" % speed.displayed
 	return text
 

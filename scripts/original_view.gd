@@ -43,9 +43,14 @@ func sync_environment(world) -> void:
 	sky_material.set_shader_parameter("daylight", daylight)
 	sky_material.set_shader_parameter("twilight", twilight)
 	environment.background_mode = Environment.BG_SKY if outdoors else Environment.BG_COLOR
+	# The finite Dungeon geometry must disappear into darkness, not the City sky.
+	var underground: bool = world.chapter == "dungeon"
+	environment.background_color = Color.BLACK if underground else Color("151922")
+	environment.fog_sky_affect = 1.0 if outdoors else 0.0
+	environment.fog_light_energy = 0.0 if underground else 1.0
 	environment.ambient_light_color = Color("8298bd").lerp(Color("d0d9e0"), daylight) if outdoors else Color("92a9bb")
 	environment.ambient_light_energy = lerpf(0.19, 0.72, daylight) * (1.0 - overcast * 0.35) if outdoors else 0.26
-	environment.fog_light_color = Color("18253b").lerp(Color("a1b5c5"), daylight) if outdoors else Color("151922")
+	environment.fog_light_color = Color("18253b").lerp(Color("a1b5c5"), daylight) if outdoors else (Color.BLACK if underground else Color("151922"))
 	environment.fog_density = lerpf(0.008, 0.028, overcast) if outdoors else 0.035
 	sun.visible = outdoors
 	sun.light_energy = daylight * 0.65 * (1.0 - overcast * 0.85)

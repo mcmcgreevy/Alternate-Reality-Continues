@@ -56,6 +56,11 @@ func run() -> void:
 	w.position = Vector2i(49,3)
 	view.sync(w)
 	check(not view.outdoors and view.ceiling_cells.has(w.position), "Dungeon remains roofed")
+	check(view.environment.background_color == Color.BLACK and view.environment.fog_sky_affect == 0.0 and view.environment.fog_light_energy == 0.0, "Dungeon distance stays black without sky contribution")
+	w.chapter = "city"
+	w.position = Vector2i(35,35)
+	view.sync(w)
+	check(view.environment.background_mode == Environment.BG_SKY and view.environment.fog_sky_affect == 1.0 and view.environment.fog_light_energy == 1.0, "Returning to City restores outdoor fog and sky")
 	scene.music.stop()
 	scene.music.stream = null
 	await create_timer(0.15).timeout
