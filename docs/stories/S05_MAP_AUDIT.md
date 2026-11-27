@@ -57,3 +57,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Category dispatch bindings — 2026-11-22
 
 [Resident dispatch trace](../S05_CATEGORY_DISPATCH.md) verifies all ten category-to-module bindings and connects category6 update to the scenario marker switch. This resolves the prior binding gap in candidate static evidence. Type0 gate/approach cells use City dispatch; City-specific event paths and full runtime behavior remain open.
+
+## City helper review — 2026-11-23
+
+[Bounded helper/control-flow review](../S05_CITY_HELPERS.md) separates rendering/category artwork, input handling and coordinate-triggered feedback from scenario activation. Remaining ranges and resident calls are listed explicitly; no claim that all gate behavior is absent.
