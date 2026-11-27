@@ -48,3 +48,13 @@ Module07 `$0b0e..$0b2e` completes the previously truncated input-affecting routi
 A material remaining path is module05 `$0376..$038a`, which conditionally calls `$02d8` when category/flag conditions permit. Earlier inspection of `$02d8..$031c` found a coordinate/scenario registry comparison: X, Y, Z and loaded-scenario values are checked against arrays relative to `a5+$2300`. Therefore marker-only branch searches cannot settle absence of gate behavior. Next investigate who populates that registry, the match/miss behavior and whether gate coordinates occur in its runtime data. Do not label this a gate registry without that evidence.
 
 This narrows three opaque calls to concrete targets and identifies a specific remaining event path. It does not claim all callbacks are covered or that dormant-looking gates can be closed as research issues. Original-game execution, canonical boundary verification and implementation acceptance remain pending.
+
+## Coordinate registry identified — 2026-11-27
+
+Followed the candidate registry's readers and writers. Module05 Drop-event path `$28d0..$2940` clears the held flag, selects slot from `a5+$22fe`, handles an occupied slot through entity deletion, then stores current X/Y/Z, loaded scenario and entity ID in parallel arrays based at `a5+$2300`. The write cursor increments and masks with `$0f`, giving16 slots. Module05 `$2b2c..$2b4c` searches those16 entity IDs and clears matching scenario/ID fields. The reader `$04e6..$0538` matches position/scenario and uses the stored entity ID to find entity data.
+
+The earlier `$02d8..$031c` comparison selects the embedded message “There is something here.” at `$7776` on a match; its other branch selects a short clearing/control string at `$7792`. Taken with the Drop-event writer and entity reader, this identifies dropped/ground-item presence handling, not evidence of a gate-trigger registry. The earlier generic “coordinate/scenario registry” description is superseded by this identification for the inspected paths.
+
+A separate detail remains unresolved: the presence reader starts its loop counter at16 while the writer wraps across16 slots and the removal reader starts at15. Do not normalize this apparent extra comparison or reproduce any defect without examining initialization/layout. It does not turn the registry into gate behavior.
+
+This removes one suspected gate path from the research queue. It does not establish absence of all gate behavior: remaining update callbacks and full rendering/input paths retain the limitations above. No item or gate code was changed. Evidence is static candidate module05 inspection, cross-referenced with the existing S29 Get/Drop dispatcher analysis.

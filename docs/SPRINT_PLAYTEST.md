@@ -1,6 +1,6 @@
 # F02/F03 sprint playtest handoff
 
-Status: **Not run by the user**. Allow about 10 minutes. This supplements the earlier [full F01 playtest](LATEST_BUILD_PLAYTEST.md); it does not silently replace that pending test.
+Status: **User reported completing the playtest on 2026-11-27**, with two findings: SPD appeared only after F7, and distant Dungeon gaps looked bright. Fixes are in local commit `a9d7ada`; their visual retest is pending. Individual results for the original checklist were not recorded. This supplements the [full F01 playtest](LATEST_BUILD_PLAYTEST.md); it does not claim that separate checklist passed.
 
 ## Launch the correct build
 
@@ -8,9 +8,31 @@ Open **Play-Sprint.cmd** from the sprint checkout (`builds/worktrees/f02-f03` in
 
 Record branch `codex/f02-f03-sprint`, exact commit, date, and Pass/Fail/Blocked for each step. Start only one sprint game instance at a time. Future launches through Play-Sprint.cmd reuse this isolated manual-test save.
 
+
+## Quick retest for 2026-11-28 (about 3–5 minutes)
+
+Use the unmerged `codex/f02-f03-sprint` checkout and its **Play-Sprint.cmd**. The two fixes are included in commit `a9d7ada` and later commits. Research-only commits do not change the build behavior. Close any older game instance first; restarting is needed to load the updated scripts. No merge is required.
+
 | Step | Action | Expected |
 | --- | --- | --- |
-| 1 | Start fresh and inspect the date | Sowings 29, Year 0, 06:00; readable HUD |
+| A | Launch and inspect stats before pressing F7 or F9 | SPD is already visible, normally 13 on a fresh launch. |
+| B | If you have an existing sprint save, press F9 and inspect SPD | SPD remains visible. Its value follows the saved effect state: normally 13, or 18 while Physical Speed is active. Loading must not add another bonus. |
+| C | Travel to the Dungeon using the existing guide/entrance route; face a long corridor and turn through several views | Gaps beyond rendered geometry are black, with no white/outdoor-looking glow. Nearby walls and torch-lit geometry remain readable. |
+| D | Walk far enough to refresh the rendered neighborhood, then inspect the distance again | The black background persists; no bright gap appears as geometry refreshes. |
+| E | Return to City streets | City sky and normal outdoor lighting return. Dungeon darkness must not persist outdoors. |
+| F | Optionally press F7 and let the effect expire while focused | SPD changes to18, then returns to13 while remaining visible. No need to repeat the full save/pause checklist unless another problem appears. |
+
+For each step record Pass / Fail / Blocked. If travel prevents checking the Dungeon, record Blocked rather than Pass. You do not need to overwrite your existing save for this short retest. Report chapter, coordinates, facing and a screenshot if a bright gap remains; those details let us reproduce the exact view.
+
+Quick retest results: date/build ______; A ______ B ______ C ______ D ______ E ______ F ______; notes ______.
+
+The automated stat checks and environment-setting checks pass, but they do not replace this visual retest. This checklist does not test S05 research findings: no S05 map corrections have been implemented.
+
+## Original sprint regression checklist (about 10 minutes)
+
+| Step | Action | Expected |
+| --- | --- | --- |
+| 1 | Start fresh and inspect the date | Sowings 29, Year 0, 06:00; readable HUD with SPD visible before F7 |
 | 2 | Watch roughly eight focused real seconds | About two game minutes pass |
 | 3 | Press F7, wait roughly forty focused seconds, then F5 | SPD 18; save succeeds with roughly twenty effect minutes remaining |
 | 4 | Wait another twenty seconds, then F9 twice | Saved clock returns; SPD stays 18, not 23; loading does not stack bonus |
