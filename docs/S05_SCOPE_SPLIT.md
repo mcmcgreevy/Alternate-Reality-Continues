@@ -1,5 +1,7 @@
 # S05 scope split
 
+November 28 acceptance update: the retained inventory/identity criteria pass. See [S05 acceptance](S05_ACCEPTANCE_REVIEW.md) and the rebuilt 81-component identity inventory. Earlier open/pending statements below are historical. S108–S111 and existing location owners retain the unfinished work; F05 is not complete.
+
 November 28, 2026. Authorized before sprint commitment. S05 remains open; no gameplay changed and no new story is marked Ready.
 
 ## Ownership

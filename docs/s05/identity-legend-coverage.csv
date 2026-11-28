@@ -1,0 +1,68 @@
+marker,source_name,category,occurrence_count,owners,disposition,source
+0,Green Boar Inn,Inns,1,S33,inventoried_occurrences,world.html Map legend
+1,Lazy Griffin Inn,Inns,1,S34,inventoried_occurrences,world.html Map legend
+2,Sleeping Dragon Inn,Inns,1,S35,inventoried_occurrences,world.html Map legend
+3,Traveller's Inn,Inns,1,S36,inventoried_occurrences,world.html Map legend
+4,Midnight Inn,Inns,1,S37,inventoried_occurrences,world.html Map legend
+5,Warrior's Retreat,Inns,1,S38,inventoried_occurrences,world.html Map legend
+6,Royal Resort Inn,Inns,1,S39,inventoried_occurrences,world.html Map legend
+7,Flaming Dragon Tavern,Taverns,1,S40,inventoried_occurrences,world.html Map legend
+8,Misty Mountain Tavern,Taverns,1,S41,inventoried_occurrences,world.html Map legend
+9,Screaming Siren Bar,Taverns,1,S42,inventoried_occurrences,world.html Map legend
+10,Happy Hunter Rest Stop,Taverns,1,S43,inventoried_occurrences,world.html Map legend
+11,Dancing Nymph Tavern,Taverns,1,S44,inventoried_occurrences,world.html Map legend
+12,Club,Taverns,1,S45,inventoried_occurrences,world.html Map legend
+13,Black Devil Tavern,Taverns,1,S46,inventoried_occurrences,world.html Map legend
+14,Lost Oasis,Taverns,1,S47,inventoried_occurrences,world.html Map legend
+15,Last Stop,Taverns,1,S48,inventoried_occurrences,world.html Map legend
+16,Tail of the Dog Tavern,Taverns,1,S49,inventoried_occurrences,world.html Map legend
+17,Club Babylon,Taverns,1,S50,inventoried_occurrences,world.html Map legend
+18,Lost Tears Tavern,Taverns,1,S51,inventoried_occurrences,world.html Map legend
+19,Mom's Bar,Taverns,1,S52,inventoried_occurrences,world.html Map legend
+20,Lusty Lloyds Tavern,Taverns,1,S53,inventoried_occurrences,world.html Map legend
+21,First City Bank,Banks,1,S54,inventoried_occurrences,world.html Map legend
+22,Granite Bank,Banks,1,S55,inventoried_occurrences,world.html Map legend
+23,Gram's Gold Exchange,Banks,1,S56,inventoried_occurrences,world.html Map legend
+24,Smiley's Shop,Shops,1,S57,inventoried_occurrences,world.html Map legend
+25,Honest Trader,Shops,1,S58,inventoried_occurrences,world.html Map legend
+26,Adventurer's Outfitters,Shops,1,S59,inventoried_occurrences,world.html Map legend
+27,Warrior's Supplies,Shops,1,S60,inventoried_occurrences,world.html Map legend
+28,General Store,Shops,1,S61,inventoried_occurrences,world.html Map legend
+29,Exclusive Outfitters,Shops,1,S62,inventoried_occurrences,world.html Map legend
+30,Rocky's Emporium,Shops,1,S63,inventoried_occurrences,world.html Map legend
+31,Best Bargain Store,Shops,1,S64,inventoried_occurrences,world.html Map legend
+32,Special Imports Store,Shops,1,S65,inventoried_occurrences,world.html Map legend
+33,Betelgeuse Sales,Shops,1,S66,inventoried_occurrences,world.html Map legend
+34,Merchant's Grotto,Shops,1,S67,inventoried_occurrences,world.html Map legend
+35,Sunset Market,Shops,1,S68,inventoried_occurrences,world.html Map legend
+36,Pauline's Emporium,Shops,1,S69,inventoried_occurrences,world.html Map legend
+37,Da Place!,Shops,2,S70;S71,inventoried_occurrences,world.html Map legend
+(38),Trade Winds,Shops,0,,Trade_Winds_absent_no_implementation_story,world.html Map legend
+39,Sharp Weaponsmiths,Smithies,1,S72,inventoried_occurrences,world.html Map legend
+40,Occum's Weaponsmiths,Smithies,1,S73,inventoried_occurrences,world.html Map legend
+41,Best Armorers,Smithies,1,S74,inventoried_occurrences,world.html Map legend
+42,Knight's Armorers,Smithies,1,S75,inventoried_occurrences,world.html Map legend
+53,One Way Soothers,Healers,2,S84;S85,inventoried_occurrences,world.html Map legend
+54,Alpha Omega Healers,Healers,2,S86;S87,inventoried_occurrences,world.html Map legend
+55,Thieves' Guild,Guilds,1,S88,inventoried_occurrences,world.html Map legend
+56,Blue Wizards' Guild,Guilds,1,S89,inventoried_occurrences,world.html Map legend
+57,Light Wizards' Guild,Guilds,2,S90;S91,inventoried_occurrences,world.html Map legend
+58,Green Wizards' Academy,Guilds,2,S92;S93,inventoried_occurrences,world.html Map legend
+59,Red Wizards' University,Guilds,1,S94,inventoried_occurrences,world.html Map legend
+60,Dark Wizards' Guild,Guilds,1,S95,inventoried_occurrences,world.html Map legend
+61,Star Wizards' Guild,Guilds,1,S96,inventoried_occurrences,world.html Map legend
+62,Wizards' of Chaos,Guilds,1,S97,inventoried_occurrences,world.html Map legend
+63,Wizards of Law,Guilds,1,S98,inventoried_occurrences,world.html Map legend
+64,Guild of Order,Guilds,1,S99,inventoried_occurrences,world.html Map legend
+65,Physicians' Guild,Guilds,2,S100;S101,inventoried_occurrences,world.html Map legend
+66,Assassins' Guild,Guilds,1,S102,inventoried_occurrences,world.html Map legend
+43,House of Ill Repute (QUARANTINED!),Scenarios,1,S76,inventoried_occurrences,world.html Map legend
+46,Arena,Scenarios,1,S77,inventoried_occurrences,world.html Map legend
+47,Palace,Scenarios,1,S78,inventoried_occurrences,world.html Map legend
+48,Palace Gates,Scenarios,1,S79,inventoried_occurrences,world.html Map legend
+49,Dungeon Entrance,Scenarios,2,S80;S81,inventoried_occurrences,world.html Map legend
+50,Maximum Casino,Scenarios,1,S82,inventoried_occurrences,world.html Map legend
+52,Jack's Fitness Academy,Scenarios,1,S83,inventoried_occurrences,world.html Map legend
+73,Southern Gate,Scenarios,1,S103,inventoried_occurrences,world.html Map legend
+74,Northern Gate,Scenarios,1,S104,inventoried_occurrences,world.html Map legend
+75,Western Gate,Scenarios,1,S105,inventoried_occurrences,world.html Map legend
