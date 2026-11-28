@@ -1,0 +1,23 @@
+{
+  "legend_entries": 67,
+  "observed_markers": 66,
+  "numbered_cells": 463,
+  "labeled_components": 73,
+  "current_components": 81,
+  "perimeter_faces": 710,
+  "location_owners": 75,
+  "live_issue_links_verified": 75,
+  "missing_owners": [],
+  "duplicate_identities": [],
+  "legacy_inventory_note": "current-location-occurrences.csv is historical 78-component evidence; identity-inventory.csv includes the three gate components",
+  "limitations": "Inventory acceptance only; candidate indices do not prove all state fields or entrance behavior.",
+  "inputs": {
+    "data/maps/city.json": "fd84d2d2f5c597bef7da50872c6e4e646cac41dcb7070552d361efe25d94ead9",
+    "assets/documentation/kroah-city-st-v2/Map.png": "6f90a1f6ad1da0dabb53b5242f3e112c52dc66f9d273fb684208ae732c8af835",
+    "assets/documentation/kroah-city-st-v2/world.html": "3c49f286cbceb272615fa7f8cbc3bec501da6bd7eedde17c2e14fe0b5a8e3214",
+    "docs/s05/candidate-st-cells.csv": "7be352ee51f1d8d64769c48f40f7b9b4b70fbeb37fd07579001fbbc6ebaaa659",
+    "docs/s05/st-occurrences.csv": "0afed8e33b4e1d8dadbb381d3ca1a922e269fde16e2cbd2deed270e25b324266",
+    "docs/s05/st-labeled-cells.csv": "70ef0f2a53eee3b063c0260ef39fb1e0c02d561a914a80c8f3d554783a00be96",
+    "docs/s05/st-legend.csv": "24a99962e6ad9f898caf392931c7acfd781393b702851bbf95f3ebabd9060124"
+  }
+}

@@ -172,3 +172,7 @@ Registration and queue validation precede mutation. Dispatch runs synchronously 
 Playtest presentation (2026-11-27): `original_world.gd` always includes SPD in the HUD as an approved remake choice, independent of the persisted reveal flag. `original_view.gd` removes sky contribution and fog illumination underground so finite geometry ends in black, restoring outdoor settings on return to City.
 
 Dungeon distance follow-up (2026-11-28): `original_view.gd` retains a reusable City Sky resource but assigns it only outdoors. Detaching it indoors prevents the Compatibility renderer from drawing that sky beyond finite geometry despite black background/fog settings. `tests/test_dungeon_distance_render.gd` must run without `--headless`; it checks actual corridor pixels and City sky restoration.
+
+## City inventory audit tooling
+
+`tools/audit_s05_inventory.py` reconstructs 81 equal-location-code components from the unchanged game map and cross-checks canonical occurrences, candidate identity and live issue ownership. It produces the `docs/s05/identity-*` ledgers; these are development evidence, not runtime map inputs. Refresh the ignored issue snapshot before running as described in `docs/S05_ACCEPTANCE_REVIEW.md`. The historical 78-component ledger omitted the three gate components and is not the current inventory authority.
