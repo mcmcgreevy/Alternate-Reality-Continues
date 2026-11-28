@@ -1,5 +1,5 @@
 # S05 — City geography and establishment audit
-Parent: F05 (#12). Refined 2026-11-22. Ready for evidence gathering; implementation is on hold until the user's playtest. Existing issue #38 remains the story; checklist items below are not hidden sub-issues.
+Parent: F05 (#12). Research review consolidated 2026-11-27. See [review decision and exact correction proposal](../S05_REVIEW_HANDOFF.md). All 256 identified differences have dispositions; full historical verification and implementation acceptance remain incomplete. User completed the sprint playtest; two fixes await retest. S05 work remains research-only under the current instruction. Existing issue #38 remains the story; checklist items below are not hidden sub-issues.
 
 Research started 2026-11-22: [first-pass inventory and findings](../S05_MAP_AUDIT_FINDINGS.md). Source legend/current faces inventoried; full ST occurrence and directional comparison remains in progress.
 
@@ -69,3 +69,15 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Candidate boundary artwork — 2026-11-27
 
 [Decoded drawing-bank evidence](../S05_BOUNDARY_ARTWORK.md) identifies stone walls, doors in stone, colonnades, and doors between columns. Candidate6/14 share colonnade artwork despite different movement blocking. The grayscale contact sheet is analysis only; no renderer/map changes or full canonical visual verification claimed.
+
+## Canonical colonnade-face classification — 2026-11-27
+
+[125-face image comparison](../S05_COLONNADE_IMAGE_REVIEW.md) classifies these faces as `not_resolved_by_image`: 99 share their canonical boundary pixels with an opposite candidate13 face; 26 have other opposite codes without a proven image legend mapping. Both face ledgers updated. These are examined unknowns, not fidelity passes.
+
+## Below-threshold face review — 2026-11-27
+
+[19-face directional/category review](../S05_PASSABLE_FACE_REVIEW.md) separates six Wilderness side entries, nine door styles, three wall/colonnade cases and one Southern Gate exit. Both ledgers now contain 144 `not_resolved_by_image` classifications. Exact reverse faces and scenario dependencies recorded; no corrections implemented.
+
+## Consolidated review decision — 2026-11-27
+
+[Review handoff](../S05_REVIEW_HANDOFF.md) accounts for every identified difference, proposes exactly eight correction faces, verifies their static route impact and specifies save/acceptance requirements. The bounded review is concluded with holds; S05 remains open because full canonical verification, implementation and acceptance are not complete.

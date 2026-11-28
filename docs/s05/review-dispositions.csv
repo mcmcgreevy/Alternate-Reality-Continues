@@ -1,0 +1,257 @@
+x,y,direction,current_raw_edge,candidate_value,disposition,evidence_document,player_impact,save_policy
+14,0,N,5,13,no_playable_crossing_change_needed,S05_PRIORITY_PASSAGES.md,No destination cell exists; current movement already blocks leaving the map.,No map change proposed; preserve saves.
+15,0,N,5,13,no_playable_crossing_change_needed,S05_PRIORITY_PASSAGES.md,No destination cell exists; current movement already blocks leaving the map.,No map change proposed; preserve saves.
+34,0,E,0,3,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+36,0,W,0,3,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+16,1,S,38,4,hold_original_access_evidence,S05_SPECIAL_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+60,1,S,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+9,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+10,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+11,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+12,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+13,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+14,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+15,2,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+15,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+16,2,N,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+16,2,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+16,2,S,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+16,2,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,2,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+18,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+19,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+20,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+21,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+22,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+23,2,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+59,2,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+61,2,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+6,3,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+7,3,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+8,3,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+8,3,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+24,3,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+24,3,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+60,3,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+5,4,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,4,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+25,4,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+5,5,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,5,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,5,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,5,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+5,6,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,6,N,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,6,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,6,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,6,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,6,W,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+5,7,E,38,4,hold_original_access_evidence,S05_SPECIAL_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+6,7,N,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+6,7,E,3,14,hold_original_access_evidence,S05_PRIORITY_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+6,7,W,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+25,7,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,7,N,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,7,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,7,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+27,7,W,5,6,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+39,7,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+51,7,E,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+1,8,S,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+5,8,E,38,4,hold_original_access_evidence,S05_SPECIAL_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+6,8,E,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+6,8,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+6,8,W,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+25,8,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,8,W,38,4,hold_original_access_evidence,S05_SPECIAL_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+26,8,N,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,8,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,8,W,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+34,8,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+52,8,N,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+2,9,W,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+5,9,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,9,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,9,N,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,9,E,5,6,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+26,9,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+27,9,E,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+27,9,W,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+32,9,N,32,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+1,10,N,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+5,10,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,10,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,10,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+25,10,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,10,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+26,10,W,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+34,10,W,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+5,11,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+34,11,W,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+6,12,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+7,12,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+8,12,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+8,12,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+16,12,N,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+16,12,E,3,14,hold_original_access_evidence,S05_PRIORITY_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+16,12,S,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+16,12,W,3,14,hold_original_access_evidence,S05_PRIORITY_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+24,12,N,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+24,12,W,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+9,13,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+10,13,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+11,13,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+12,13,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+12,13,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+15,13,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+15,13,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+16,13,N,38,4,hold_original_access_evidence,S05_SPECIAL_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+17,13,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,13,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+20,13,N,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+20,13,W,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+21,13,N,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+22,13,N,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+23,13,N,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+13,14,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+13,14,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+15,14,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,14,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+19,14,N,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+19,14,W,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+14,15,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,15,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+18,15,N,37,13,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,15,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+57,15,N,32,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+62,15,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,16,E,5,6,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+52,16,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+52,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+54,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+54,16,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+55,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+56,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+57,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+58,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+59,16,S,37,6,hold_original_access_evidence,S05_SPECIAL_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+60,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+61,16,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+61,16,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,17,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+51,17,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,18,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+52,18,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+52,18,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,19,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,19,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,19,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+17,20,E,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,20,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+20,21,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+21,21,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+53,21,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,21,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+52,22,E,38,4,hold_original_access_evidence,S05_SPECIAL_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+53,22,N,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,22,E,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+53,22,S,13,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,22,W,3,4,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+53,23,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,23,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,24,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+9,25,S,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+53,25,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+53,25,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+47,26,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+52,26,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+52,26,S,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+51,27,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+4,28,E,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+7,28,W,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+51,28,W,30,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+52,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+52,28,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+54,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+54,28,W,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+55,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+56,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+57,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+58,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+59,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+60,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+61,28,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+61,28,E,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+42,29,W,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+53,29,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+62,29,N,37,14,defer_visual_only_reconciliation,S05_BOUNDARY_ARTWORK.md,No blocking-threshold change established; structural appearance needs reconciliation.,No map change proposed; preserve saves.
+10,30,S,13,3,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+10,31,N,13,3,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+11,31,E,13,3,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+12,31,W,13,3,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+10,32,E,13,3,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+11,32,W,13,3,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+35,32,S,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+29,33,S,33,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+34,33,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+36,33,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+26,34,S,5,13,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+35,34,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+38,34,E,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+0,35,S,0,3,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+26,35,N,5,13,proposed_bounded_geometry_correction,S05_PRIORITY_PASSAGES.md,Doorway restoration or closure supported by image plus candidate data.,Exact patch requires regression and versioned obsolete-door-key policy.
+32,35,S,30,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+38,35,S,31,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+39,35,N,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+31,36,E,30,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+33,36,W,30,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+37,36,E,31,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+39,36,W,31,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+0,37,N,0,3,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+32,37,N,30,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+38,37,N,31,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+32,38,S,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+32,38,W,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+35,38,S,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+34,39,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+36,39,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+35,40,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+32,41,N,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+32,42,E,32,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+4,43,S,33,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+9,43,S,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+32,43,S,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+34,46,W,5,13,hold_original_access_evidence,S05_PRIORITY_PASSAGES.md,Directional or scenario behavior unresolved; no automatic replacement.,No map change proposed; preserve saves.
+55,46,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+25,47,S,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+24,48,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+26,48,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+0,49,W,5,13,no_playable_crossing_change_needed,S05_PRIORITY_PASSAGES.md,No destination cell exists; current movement already blocks leaving the map.,No map change proposed; preserve saves.
+25,49,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+1,50,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+13,50,S,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+2,51,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+12,51,E,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+14,51,W,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+13,52,N,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+26,52,E,32,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+44,53,S,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+43,54,E,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+53,54,E,30,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+53,54,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+51,55,N,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+51,55,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+51,55,W,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+18,58,E,27,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+30,58,N,31,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+60,58,N,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+32,60,W,28,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+60,60,S,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+59,61,E,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+61,61,W,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+60,62,N,29,3,retain_encoding_until_service_integration,S05_SERVICE_IDENTITIES.md,Replacing the boundary alone would open unfinished services.,No map change proposed; preserve saves.
+12,63,S,5,13,no_playable_crossing_change_needed,S05_PRIORITY_PASSAGES.md,No destination cell exists; current movement already blocks leaving the map.,No map change proposed; preserve saves.
+34,63,E,0,3,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+35,63,N,3,0,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
+36,63,W,0,3,hold_directional_and_interaction_semantics,S05_PASSABLE_FACE_REVIEW.md,"May change explicit opening, directional exits or scenario entry.",No map change proposed; preserve saves.
