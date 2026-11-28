@@ -56,6 +56,7 @@ func run() -> void:
 	w.position = Vector2i(49,3)
 	view.sync(w)
 	check(not view.outdoors and view.ceiling_cells.has(w.position), "Dungeon remains roofed")
+	check(view.environment.sky == null, "Dungeon detaches the City sky resource")
 	check(view.environment.background_color == Color.BLACK and view.environment.fog_sky_affect == 0.0 and view.environment.fog_light_energy == 0.0, "Dungeon distance stays black without sky contribution")
 	w.chapter = "city"
 	w.position = Vector2i(35,35)

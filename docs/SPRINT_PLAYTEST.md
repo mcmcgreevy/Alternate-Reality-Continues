@@ -1,6 +1,6 @@
 # F02/F03 sprint playtest handoff
 
-Status: **User reported completing the playtest on 2026-11-27**, with two findings: SPD appeared only after F7, and distant Dungeon gaps looked bright. Fixes are in local commit `a9d7ada`; their visual retest is pending. Individual results for the original checklist were not recorded. This supplements the [full F01 playtest](LATEST_BUILD_PLAYTEST.md); it does not claim that separate checklist passed.
+Status: **User completed playtests and retest on 2026-11-28.** Save/load, including closing/relaunching and recalling the save, worked; movement was responsive and stopped promptly on key release. SPD is visible in the supplied screenshot. The only remaining reported issue was bright Dungeon distance at WEST / 63N 50E. The first background/fog fix was insufficient. The follow-up detaches the City sky indoors and passes actual GPU-rendered pixel checks at that location at dawn, noon and night. User confirmation of this last visual fix remains pending; do not repeat the full save/load playtest for it. See [rendering follow-up](DUNGEON_DISTANCE_RETEST.md).
 
 ## Launch the correct build
 

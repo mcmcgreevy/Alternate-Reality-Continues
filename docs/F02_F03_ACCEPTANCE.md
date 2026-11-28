@@ -1,6 +1,6 @@
 # F02/F03 — Feature acceptance review
 
-Reviewed 2026-11-22 against S02 implementation commit 3533003 and the additional calendar-boundary integration test in this change. **Implementation and automated criteria satisfied; user acceptance and merge pending.** Neither feature is closed by this review.
+Reviewed 2026-11-22 against S02 implementation commit 3533003 and the additional calendar-boundary integration test in this change. **Implementation and automated criteria satisfied. User reported successful playtests on 2026-11-28; merge remains pending.** Neither feature is closed by this review.
 
 ## F02 — Persistence and deterministic tests
 
@@ -32,3 +32,7 @@ S03 remains Done. No new calendar implementation or service-content story is nee
 Reuse the 840 counted checks and passing integration suites recorded for S02; no production code changed in this acceptance review. The new 14-check cross-feature scenario passes, bringing the recorded total to **854 counted checks**, plus the pass/fail suites. The existing Dungeon exit cleanup warning remains documented; no gameplay assertion failed.
 
 The user's earlier F01 playtest is still Not run. It targets the original working folder, which has additional movement/weather changes. It is distinct from the isolated sprint build. Use [the sprint handoff](SPRINT_PLAYTEST.md) when ready to test the new branch. Do not merge or claim user acceptance without results. Reconcile any reported defect to its exact build first.
+
+## User playtest results — 2026-11-28
+
+User completed testing and explicitly confirmed save/load across closing and relaunching, along with responsive movement and prompt stopping on key release. The supplied screenshot confirms visible SPD. The only remaining reported issue is Dungeon distance rendering, handled in [the visual follow-up](DUNGEON_DISTANCE_RETEST.md). No persistence/calendar failure was reported; do not imply a separately recorded result for every original checklist row. No merge or feature closure performed by this record.

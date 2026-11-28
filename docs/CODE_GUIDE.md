@@ -39,8 +39,8 @@ Source-map edge codes are retained rather than renumbered. Current support group
 | 0, 1, 2, 7 | Traversable boundary. |
 | 3, 4 | Door requiring examination/opening before movement. |
 | 5, 6 | Concealed boundary requiring examination. |
-| 8–12 | Unsupported barred/locked mechanisms; remain blocked. |
-| 13–15 | Impassable faces under current rules. |
+| 8â€“12 | Unsupported barred/locked mechanisms; remain blocked. |
+| 13â€“15 | Impassable faces under current rules. |
 
 City code 29 is an exterior tavern door in the imported data. It is examinable only when it leads into the implemented Tail of the Dog footprint; other establishments remain unimplemented. Service cells are route destinations, not street shortcuts. See `ST_LOCATION_CORRECTION.md` for verified coordinates.
 
@@ -58,9 +58,9 @@ Hold movement routes through the same action handler as a tap. A release, fresh 
 
 ## State and persistence
 
-S02 production saves now use version 8, retaining v3–7 readers. `OriginalWorld.save_snapshot()` describes persisted state; `_validated_save()` builds detached candidates used by both save and load. `journey_random.gd` owns the dedicated Dungeon gameplay stream and lossless seed/state encoding. `journey_save_store.gd` owns checked temporary writes, previous-save preservation and interrupted replacement recovery. See [S02 acceptance and schema](S02_ACCEPTANCE_REVIEW.md) for exact boundaries and failure behavior. These are remake persistence choices, not recovered original save layout.
+S02 production saves now use version 8, retaining v3â€“7 readers. `OriginalWorld.save_snapshot()` describes persisted state; `_validated_save()` builds detached candidates used by both save and load. `journey_random.gd` owns the dedicated Dungeon gameplay stream and lossless seed/state encoding. `journey_save_store.gd` owns checked temporary writes, previous-save preservation and interrupted replacement recovery. See [S02 acceptance and schema](S02_ACCEPTANCE_REVIEW.md) for exact boundaries and failure behavior. These are remake persistence choices, not recovered original save layout.
 
-`user://original_route.json` is the current journey save, now version 8 with precise clock, stat, effect and gameplay-random state. Versions 3�7 preserve elapsed time on migration; see S03 below. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
+`user://original_route.json` is the current journey save, now version 8 with precise clock, stat, effect and gameplay-random state. Versions 3–7 preserve elapsed time on migration; see S03 below. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
 
 Movement preferences live in `user://controls.cfg`, and audio preferences in `user://music_settings.cfg`. They are intentionally independent of journey saves. The legacy prototype uses `user://journey.json` with its own versions and coordinates.
 
@@ -110,7 +110,7 @@ Use the portable Godot 4.5.1 console executable with `--headless --path . --scri
 
 For shader/rendering changes, run the relevant capture test without `--headless`; headless tests alone do not exercise the GPU shader. `test_weather.gd -- --capture` creates a rain screenshot. In restricted environments set `APPDATA` to the project's ignored `tools/appdata` before running Godot.
 
-S28 adds the [bounded effect runtime contract](EFFECT_RUNTIME_CONTRACT.md), a source-linked decision ledger and classified event/timer traces. These are research inputs, not a runtime engine; S29–S31 readiness gates are explicit.
+S28 adds the [bounded effect runtime contract](EFFECT_RUNTIME_CONTRACT.md), a source-linked decision ledger and classified event/timer traces. These are research inputs, not a runtime engine; S29â€“S31 readiness gates are explicit.
 
 
 ## S29 non-timed effect lifecycle
@@ -157,6 +157,8 @@ Registration and queue validation precede mutation. Dispatch runs synchronously 
 
 ## S31 production effects and version 7 saves
 
-`journey_effects.gd` owns trusted, revisioned Physical Speed content, atomic grant/activation and validation of its bounded saved shapes. `OriginalWorld` owns the runtime and routes every elapsed-time entry point through `effect_clock_adapter.gd`; its internal `_advance_clock_only` avoids recursion and duplicate needs updates. Save versions 7 and 8 require effect payload version 1; versions 3–6 migrate to empty effect state. Loading reconstructs trusted records without replaying Add5 and commits only after all world/effect validation passes. F7 is a debug-only input using production activation; F5/F9 use the ordinary save handlers. See [S31 contract/tests](S31_ACCEPTANCE_REVIEW.md) and [F01 closure](F01_ACCEPTANCE_REVIEW.md). The earlier S30 handoff described the pre-integration boundary.
+`journey_effects.gd` owns trusted, revisioned Physical Speed content, atomic grant/activation and validation of its bounded saved shapes. `OriginalWorld` owns the runtime and routes every elapsed-time entry point through `effect_clock_adapter.gd`; its internal `_advance_clock_only` avoids recursion and duplicate needs updates. Save versions 7 and 8 require effect payload version 1; versions 3â€“6 migrate to empty effect state. Loading reconstructs trusted records without replaying Add5 and commits only after all world/effect validation passes. F7 is a debug-only input using production activation; F5/F9 use the ordinary save handlers. See [S31 contract/tests](S31_ACCEPTANCE_REVIEW.md) and [F01 closure](F01_ACCEPTANCE_REVIEW.md). The earlier S30 handoff described the pre-integration boundary.
 
 Playtest presentation (2026-11-27): `original_world.gd` always includes SPD in the HUD as an approved remake choice, independent of the persisted reveal flag. `original_view.gd` removes sky contribution and fog illumination underground so finite geometry ends in black, restoring outdoor settings on return to City.
+
+Dungeon distance follow-up (2026-11-28): `original_view.gd` retains a reusable City Sky resource but assigns it only outdoors. Detaching it indoors prevents the Compatibility renderer from drawing that sky beyond finite geometry despite black background/fog settings. `tests/test_dungeon_distance_render.gd` must run without `--headless`; it checks actual corridor pixels and City sky restoration.

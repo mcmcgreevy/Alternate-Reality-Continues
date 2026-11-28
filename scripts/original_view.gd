@@ -5,6 +5,7 @@ var built_revision := -1
 const RADIUS := 8
 const Surfaces = preload("res://scripts/atmosphere_materials.gd")
 var sky_material := ShaderMaterial.new()
+var city_sky := Sky.new()
 var daylight := 1.0
 var outdoors := false
 var last_sky_minute := -1
@@ -16,7 +17,6 @@ var ceiling_cells: Array[Vector2i] = []
 func _ready() -> void:
 	super._ready()
 	sky_material.shader = load("res://scripts/city_sky.gdshader")
-	var city_sky := Sky.new()
 	city_sky.sky_material = sky_material
 	city_sky.radiance_size = Sky.RADIANCE_SIZE_128
 	environment.sky = city_sky
@@ -42,6 +42,9 @@ func sync_environment(world) -> void:
 	sky_material.set_shader_parameter("clock_minutes", float(minute_of_day))
 	sky_material.set_shader_parameter("daylight", daylight)
 	sky_material.set_shader_parameter("twilight", twilight)
+	# Compatibility rendering can still draw the assigned sky beyond finite geometry.
+	# Detach it indoors; background/fog color alone does not hide that resource.
+	environment.sky = city_sky if outdoors else null
 	environment.background_mode = Environment.BG_SKY if outdoors else Environment.BG_COLOR
 	# The finite Dungeon geometry must disappear into darkness, not the City sky.
 	var underground: bool = world.chapter == "dungeon"
