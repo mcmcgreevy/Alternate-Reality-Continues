@@ -81,3 +81,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Consolidated review decision — 2026-11-27
 
 [Review handoff](../S05_REVIEW_HANDOFF.md) accounts for every identified difference, proposes exactly eight correction faces, verifies their static route impact and specifies save/acceptance requirements. The bounded review is concluded with holds; S05 remains open because full canonical verification, implementation and acceptance are not complete.
+
+## Whole-map directional pairs — 2026-11-27
+
+[8064-pair review](../S05_DIRECTIONAL_PAIR_REVIEW.md) finds 450 candidate threshold-one-way pairs, 445 preserved by current potential movement. Of 92 differing movement pairs, 77 involve service encodings and 15 other boundaries. This adds complete pair-level numeric coverage, not historical runtime verification or new approved corrections.
