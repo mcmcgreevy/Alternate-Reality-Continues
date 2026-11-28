@@ -97,7 +97,8 @@ func torch(at: Vector3) -> void:
 func sync(world) -> void:
 	if built_chapter != world.chapter or built_revision != world.revision or absi(world.position.x - built_center.x) > 2 or absi(world.position.y - built_center.y) > 2:
 		build(world)
-	camera.position = Vector3(world.position.x * CELL, EYE, world.position.y * CELL)
+	var player_position: Vector2 = world.travel_position()
+	camera.position = Vector3(player_position.x * CELL, EYE, player_position.y * CELL)
 	camera.rotation.y = -world.facing * PI / 2.0
 	sync_environment(world)
 	camera.rotation.x = deg_to_rad(12.0) if outdoors else 0.0

@@ -12,7 +12,7 @@ The default milestone follows original geography: **Tail of the Dog Tavern → n
 
 Double-click Play.cmd, or open project.godot in Godot 4.5.1 and press F5.
 
-- **W/S:** forward/back. **A/D:** turn. Arrow keys also work; **Q/R:** strafe. Hold to repeat after a short delay; turns repeat more slowly. **H** toggles classic single-step movement and saves your preference. Release, blocked passages, interactions, opening overlays, focus loss, and transitions stop repetition. Movement works with the map open, updating your position and facing. Each step keeps its original world-time cost.
+- **W/S:** forward/back. **A/D:** turn. Arrow keys also work; **Q/R:** strafe. Tap for one animated tile, hold for continuous successive tiles. Speed controls traversal time; releasing finishes the current tile. **H** toggles classic single-stride input and saves your preference. Turns and interactions require a completed stride. The live map tracks fractional movement. **C** and loss of application focus pause simulation.
 - **In Tail of the Dog Tavern: 1** opens food/drink orders, **2** shows the excursion briefing, **3** leaves, **4** sits for five minutes. Movement keys do not move you around the establishment.
 - **E / Enter outside:** examine/open the boundary ahead or use the entrance. Secret doors require examination too.
 - **G:** route guide. **Tab:** map and route overlay.
@@ -23,7 +23,7 @@ Double-click Play.cmd, or open project.godot in Godot 4.5.1 and press F5.
 
 Start in Tail of the Dog Tavern's interaction screen. Press 2 for the First Excursion briefing, then 3 to leave through the mapped south exit. Follow the guide. At the City entrance, face east and press E. At the Dungeon arrival cell, walk west into the corridor, save/load if desired, then return to the arrival point and press E to return to the City. Return to Tail of the Dog Tavern to finish. The return route differs because boundaries can be one-way. See [the playtest checklist](docs/FIRST_EXCURSION.md).
 
-Movement costs one minute, crossing five, meals fifteen, and drinks/provision purchases one. These timings remain prototype rules. Turning does not advance time. Hail and Welcome plays while visiting the tavern. **L** switches the lead vocal on/off without restarting; **K** toggles provisional subtitles; **M** mutes. Preferences persist independently of journey saves. Caption timing covers all supplied lyrics in the revised recording and remains an automatic pass pending listening review; see [music integration](docs/TAVERN_MUSIC_INTEGRATION.md).
+Time advances continuously at one game minute per four real seconds. Movement uses the ST effective-Speed formula; the initial character takes one real second per tile with our tunable distance calibration. See [movement mechanics](docs/MOVEMENT.md). Crossing adds five game minutes, meals fifteen, and drinks/provision purchases one; these service timings remain prototype rules. Hail and Welcome plays while visiting the tavern. **L** switches the lead vocal on/off without restarting; **K** toggles provisional subtitles; **M** mutes. Preferences persist independently of journey saves. Caption timing covers all supplied lyrics in the revised recording and remains an automatic pass pending listening review; see [music integration](docs/TAVERN_MUSIC_INTEGRATION.md).
 
 Tail of the Dog Tavern now offers individual food, free water and provisions, with copper prices and change in gold/silver/copper. Food relieves hunger instead of restoring health. Menus change on the shared clock; sitting consumes carried provisions when needed. Needs are currently nonlethal. Old version 3 saves preserve their gold and migrate with neutral needs and no new provisions. See [tavern evidence and test cases](docs/TAVERN.md) for the distinction between documented services, provisional prices and simplified mechanics.
 
@@ -63,6 +63,10 @@ Run the portable Godot console executable with --headless --path . --script foll
 In a restricted sandbox, set APPDATA to the workspace's tools/appdata directory first. The original-route test drives the full scene through secret and asymmetric doors, save/load, both crossings and the return, checking shared character identity, inventory, clock and audio restart. Run it without --headless and add -- --capture for runtime screenshots in docs/original-*.png.
 
 Combat, most original events, encounters, full survival, other shops and exact door mechanics are not implemented. Locked/bolted/enchanted passages remain blocked; floors below Dungeon level one are not enabled. Geography and original services come before new adventures and audio rearrangement.
+
+## Development planning
+
+[Backlog](docs/BACKLOG.md) · [Roadmap](docs/ROADMAP.md) · [GitHub planning proposal](docs/GITHUB_PLANNING.md). Draft scope follows Kroah’s menu; delivery order follows system dependencies.
 
 ## Physical Speed playtest (F01 complete)
 

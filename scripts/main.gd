@@ -13,7 +13,6 @@ const MOVE_KEYS = [KEY_W, KEY_S, KEY_A, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_R
 const TURN_KEYS = [KEY_A, KEY_D, KEY_LEFT, KEY_RIGHT]
 # Repeat intervals are real seconds, not simulation minutes.
 const HOLD_DELAY := 0.35
-const STEP_INTERVAL := 0.18
 const TURN_INTERVAL := 0.30
 var hold_movement := true
 var controls_path := "user://controls.cfg"
@@ -95,39 +94,43 @@ func _input(event: InputEvent) -> void:
 func movement_allowed() -> bool:
 	return not (world.in_tavern() or show_chapters or show_brief or show_order or not order_id.is_empty())
 
-## Dispatch the same action as a tap, then decide whether holding may continue.
-## A blocked step, entrance arrival or world revision requires a fresh press.
+## Translation begins a Speed-driven stride; turns remain discrete quarter turns.
 func perform_movement(key_code: int) -> bool:
-	var position_before: Vector2i = world.position
-	var chapter_before: String = world.chapter
-	var revision_before: int = world.revision
-	var event := InputEventKey.new()
-	event.keycode = key_code
-	event.pressed = true
-	_handle_key(event)
-	return (
-		movement_allowed()
-		and world.chapter == chapter_before
-		and world.revision == revision_before
-		and (key_code in TURN_KEYS or world.position != position_before)
-		and world.position != Vector2i(49, 3)
-	)
+	if world.is_travelling():
+		return false
+	if key_code in TURN_KEYS:
+		world.turn(-1 if key_code in [KEY_A, KEY_LEFT] else 1)
+		return true
+	var direction: Vector2i = world.DIRECTIONS[world.facing]
+	if key_code in [KEY_S, KEY_DOWN]:
+		direction = -direction
+	elif key_code in [KEY_Q, KEY_R]:
+		direction = world.DIRECTIONS[posmod(world.facing + (1 if key_code == KEY_R else -1), 4)]
+	return world.begin_travel(direction)
 
-## Use our own repeat cadence rather than operating-system keyboard autorepeat.
+## A tap completes one stride. Release cancels subsequent strides, not the current
+## one. Discard excess travel delta after arrival so a stalled frame cannot skip cells.
 func advance_held_movement(delta: float) -> void:
+	var revision_before: int = world.revision
+	if world.is_travelling():
+		if not world.advance_travel(delta):
+			return
+		music.set_tavern(world.in_tavern())
+		if world.revision != revision_before or world.position == Vector2i(49, 3):
+			cancel_held_movement()
 	if held_key == 0:
 		return
 	if not hold_movement or not movement_allowed():
 		cancel_held_movement()
 		return
-	repeat_remaining -= delta
-	if repeat_remaining > 0:
-		return
+	if held_key in TURN_KEYS:
+		repeat_remaining -= delta
+		if repeat_remaining > 0:
+			return
 	if not perform_movement(held_key):
 		cancel_held_movement()
 		return
-	# At most one action per frame: never catch up in a burst after a stall.
-	repeat_remaining = TURN_INTERVAL if held_key in TURN_KEYS else STEP_INTERVAL
+	repeat_remaining = TURN_INTERVAL
 
 ## Handle releases and control preferences before routing gameplay input.
 ## Any fresh key cancels the previous hold; releasing a different key cannot cancel the new one.
@@ -139,6 +142,11 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_echo():
 		return
 	cancel_held_movement()
+	# Do not rotate, interact or save from an uncommitted cell. Audio/map controls
+	# remain usable; there is no queued action that can fire after key release.
+	if world.is_travelling() and event.keycode not in [KEY_M, KEY_L, KEY_K, KEY_TAB, KEY_F6, KEY_H, KEY_C, KEY_ESCAPE]:
+		world.journal = "Finish this stride before turning, interacting or saving."
+		return
 	if event.keycode == KEY_F7 and OS.is_debug_build():
 		world.test_physical_speed()
 		queue_redraw()
@@ -417,7 +425,7 @@ func draw_map() -> void:
 			var edge_end: Vector2 = [Vector2(scale_px, 0), Vector2(scale_px, scale_px), Vector2(scale_px, scale_px), Vector2(0, scale_px)][direction_index]
 			draw_line(cell_screen_position + edge_start, cell_screen_position + edge_end, AMBER if boundary_code in [3, 4, 5, 6, 29] else Color("5d7075"), 1)
 	if guide_on:
-		var previous_screen_position: Vector2 = origin + (Vector2(world.position) + Vector2.ONE * 0.5) * scale_px
+		var previous_screen_position: Vector2 = origin + (world.travel_position() + Vector2.ONE * 0.5) * scale_px
 		for cell_position in guide_path:
 			var next_screen_position := origin + (Vector2(cell_position) + Vector2.ONE * 0.5) * scale_px
 			draw_line(previous_screen_position, next_screen_position, Color("66bdae"), 2)
@@ -428,7 +436,7 @@ func draw_map() -> void:
 		for key in world.dungeon_links:
 			var parts: PackedStringArray = key.split(",")
 			draw_circle(origin + (Vector2(int(parts[0]), int(parts[1])) + Vector2.ONE * 0.5) * scale_px, 2, TEAL)
-	var center := origin + (Vector2(world.position) + Vector2.ONE * 0.5) * scale_px
+	var center: Vector2 = origin + (world.travel_position() + Vector2.ONE * 0.5) * scale_px
 	draw_circle(center, 4, AMBER)
 	draw_line(center, center + Vector2(world.DIRECTIONS[world.facing]) * 10, INK, 2)
 	for cell_position in [World.TAVERN_POSITION, Vector2i(50, 3) if world.chapter == "city" else Vector2i(49, 3)]:

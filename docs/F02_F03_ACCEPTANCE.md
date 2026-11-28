@@ -1,5 +1,9 @@
 # F02/F03 — Feature acceptance review
 
+## Final acceptance — November 28, 2026
+
+The user completed playtesting, confirmed save/load across a full restart and responsive movement, then explicitly accepted the final Dungeon darkness fix: "Looks fantastic. The light effects from the torches are much more noticeable now as well." The user authorized committing and merging all completed work. F02/F03 acceptance criteria are satisfied; the sprint goal is met. Earlier pending-playtest statements below are historical checkpoints, superseded by this acceptance. S05 research is included but its implementation remains open. Final integration verification is recorded in [the sprint closeout](SPRINT_CLOSEOUT_2026-11-28.md).
+
 Reviewed 2026-11-22 against S02 implementation commit 3533003 and the additional calendar-boundary integration test in this change. **Implementation and automated criteria satisfied. User reported successful playtests on 2026-11-28; merge remains pending.** Neither feature is closed by this review.
 
 ## F02 — Persistence and deterministic tests

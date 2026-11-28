@@ -1,5 +1,9 @@
 # S02 — Persistence implementation and acceptance evidence
 
+## Final acceptance — November 28, 2026
+
+The user completed playtesting, confirmed save/load across a full restart and responsive movement, then explicitly accepted the final Dungeon darkness fix: "Looks fantastic. The light effects from the torches are much more noticeable now as well." The user authorized committing and merging all completed work. F02/F03 acceptance criteria are satisfied; the sprint goal is met. Earlier pending-playtest statements below are historical checkpoints, superseded by this acceptance. S05 research is included but its implementation remains open. Final integration verification is recorded in [the sprint closeout](SPRINT_CLOSEOUT_2026-11-28.md).
+
 Implemented 2026-11-22 on `codex/f02-f03-sprint`. Automated acceptance passes; user playtest and feature-level acceptance/merge remain pending. This does not close F02 or F03.
 
 ## Production save version 8

@@ -19,4 +19,4 @@ Keep the City Sky resource for reuse, detach it from the environment indoors, an
 
 ## User confirmation
 
-Close the old game instance, relaunch the sprint checkout with Play-Sprint.cmd, load the existing save and look down the reported corridor. The distant opening should be black. Return to the City to confirm outdoor sky. No need to rerun the successful save/load or movement tests. Manual confirmation of this final fix remains pending; no merge or release is claimed.
+Accepted November 28, 2026. The user reported that the result looks fantastic and that torch lighting is much more noticeable, then authorized final merge and sprint closeout. This confirms the final visual correction; it does not invent individual results for unreported checklist steps.

@@ -8,6 +8,8 @@
 
 - 2026-11-22: [S02 persistence](S02_ACCEPTANCE_REVIEW.md) retains historical rules and adds remake save/replay architecture. Godot 4.5 RNG/DirAccess documentation and Windows rename code informed implementation; URLs and failed-archive limitation are recorded in the catalog. No new historical source was introduced.
 
+- 2026-11-21: [ST Dungeon source search](DUNGEON_ST_SOURCE_SEARCH.md) found unreleased-title evidence and additional Dungeon research leads, but no verified ST Dungeon executable or rules breakdown. Source URLs and archival limitations are recorded in the documentation catalog; no gameplay baseline changed.
+
 - 2026-11-18: [F01 runtime plan](F01_RULE_EFFECT_PLAN.md) uses the existing unchanged
   `establishmentsGuilds.html`, Spells / Physical Speed row (+5 Speed bonus for
   30 game minutes), together with Stats and Technical Notes, for a bounded future
@@ -57,6 +59,8 @@ First Excursion uses a tavern interaction screen. Its first meal/briefing/leave 
 Dungeon JSON derives from original map data. Its source headers credit Jason Duerstock (2008) and the original program to Intellicreations (1987); the repository specifies GPL-2.0. All four level-one map sources/checksums, the runtime reference for transition decoding and upstream license are preserved in third_party/ardungeon. Transition behavior is implemented from the original table and dispatcher evidence. This attribution does not assert blanket rights to original game assets. No ARX implementation code was ported. The V tour and transition dots are invented playtest aids.
 
 The 2026-11-15 [weather pass](WEATHER.md) presents the handbook's five conditions, rain and shelter. Hourly equal-probability selection, seeded scheduling, haze and rain rendering are remake choices, not recovered original algorithms. Character penalties and clothing protection remain pending.
+
+Incremental traversal now uses the archived ST City Walking Speed formula and continuous clock; see [movement implementation and calibration](MOVEMENT.md). Tile-distance conversion and applying this City rule to the Dungeon are explicit reconstruction choices.
 
 - 2026-11-17: Planning taxonomy follows the navigation in the existing Kroah `news.html` archive. [Backlog](BACKLOG.md), [roadmap](ROADMAP.md), and [GitHub planning proposal](GITHUB_PLANNING.md) distinguish source categories from project adaptations. GitHub planning documentation URLs are cataloged; direct archival downloads failed (DNS), so no local copies are claimed.
 

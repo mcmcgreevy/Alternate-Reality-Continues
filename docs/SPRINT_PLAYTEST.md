@@ -1,5 +1,9 @@
 # F02/F03 sprint playtest handoff
 
+## Final acceptance — November 28, 2026
+
+The user completed playtesting, confirmed save/load across a full restart and responsive movement, then explicitly accepted the final Dungeon darkness fix: "Looks fantastic. The light effects from the torches are much more noticeable now as well." The user authorized committing and merging all completed work. F02/F03 acceptance criteria are satisfied; the sprint goal is met. Earlier pending-playtest statements below are historical checkpoints, superseded by this acceptance. S05 research is included but its implementation remains open. Final integration verification is recorded in [the sprint closeout](SPRINT_CLOSEOUT_2026-11-28.md).
+
 Status: **User completed playtests and retest on 2026-11-28.** Save/load, including closing/relaunching and recalling the save, worked; movement was responsive and stopped promptly on key release. SPD is visible in the supplied screenshot. The only remaining reported issue was bright Dungeon distance at WEST / 63N 50E. The first background/fog fix was insufficient. The follow-up detaches the City sky indoors and passes actual GPU-rendered pixel checks at that location at dawn, noon and night. User confirmation of this last visual fix remains pending; do not repeat the full save/load playtest for it. See [rendering follow-up](DUNGEON_DISTANCE_RETEST.md).
 
 ## Launch the correct build

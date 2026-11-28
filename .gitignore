@@ -12,3 +12,5 @@ __pycache__/
 !.env.example
 export_credentials.cfg
 builds/
+
+tools/appdata-sprint-playtest/

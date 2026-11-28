@@ -28,7 +28,6 @@ var provisions := {"food": 0, "water": 0}
 var dungeon_links: Dictionary
 signal game_time_advanced(start_game_microseconds: int, end_game_microseconds: int)
 var _advancing_clock := false
-
 const CharacterStats = preload("res://scripts/character_stats.gd")
 const JourneyEffects = preload("res://scripts/journey_effects.gd")
 const EffectClock = preload("res://scripts/effect_clock_adapter.gd")
@@ -105,13 +104,6 @@ func primary_stats_text() -> String:
 	if speed.ok:
 		text += "  SPD %d" % speed.displayed
 	return text
-
-func effective_speed() -> int:
-	var speed := stat_snapshot("speed")
-	return speed.effective if speed.ok else 0
-
-func walking_speed() -> int:
-	return CharacterStats.walking_speed(character)
 
 func _init() -> void:
 	minutes = 360  # Kroah ST City: Sowings 29, Year 0, 06:00.
@@ -218,9 +210,53 @@ func examinable_boundary(cell_position: Vector2i, direction_index: int) -> bool:
 func can_route(cell_position: Vector2i, direction_index: int) -> bool:
 	return has_cell(cell_position + DIRECTIONS[direction_index]) and (edge(cell_position, direction_index) in ROUTABLE_BOUNDARY_CODES or examinable_boundary(cell_position, direction_index))
 
-## Validate one cardinal step, charge time only on success, then resolve any arrival link.
-## revision invalidates rendered geometry and stops held input after automatic transitions.
-func move(direction: Vector2i, charge_travel_time: bool = true) -> bool:
+## Travel retains the integer cell for source-face checks and arrival services.
+
+# ST documents the relative walking rate, but not its conversion to tiles/second.
+# Six walking units per tile gives the starting character a one-second stride.
+const WALKING_UNITS_PER_TILE := 6.0
+const REAL_SECONDS_PER_GAME_MINUTE := 4.0
+var travel_direction := Vector2i.ZERO
+var travel_progress := 0.0
+
+func effective_speed() -> int:
+	var speed := stat_snapshot("speed")
+	return speed.effective if speed.ok else 0
+
+func walking_speed() -> int:
+	return CharacterStats.walking_speed(character)
+
+func tile_travel_seconds() -> float:
+	return WALKING_UNITS_PER_TILE / maxf(1.0, walking_speed())
+
+func is_travelling() -> bool:
+	return travel_direction != Vector2i.ZERO
+
+func travel_position() -> Vector2:
+	return Vector2(position) + Vector2(travel_direction) * travel_progress
+
+func begin_travel(direction: Vector2i) -> bool:
+	if is_travelling() or walking_speed() == 0 or not can_move(direction):
+		return false
+	travel_direction = direction
+	travel_progress = 0.0
+	return true
+
+## Keep the committed cell until arrival. Links and tavern entry fire exactly once,
+## at the destination center; neither rendering nor the map can trigger them.
+func advance_travel(real_seconds: float) -> bool:
+	if not is_travelling():
+		return false
+	travel_progress = minf(1.0, travel_progress + real_seconds * walking_speed() / WALKING_UNITS_PER_TILE)
+	if travel_progress < 1.0:
+		return false
+	var completed_direction := travel_direction
+	travel_direction = Vector2i.ZERO
+	travel_progress = 0.0
+	move(completed_direction, false)
+	return true
+
+func can_move(direction: Vector2i) -> bool:
 	var direction_index := DIRECTIONS.find(direction)
 	if direction_index == -1:
 		return false
@@ -234,9 +270,15 @@ func move(direction: Vector2i, charge_travel_time: bool = true) -> bool:
 	if boundary_code not in ROUTABLE_BOUNDARY_CODES and not examinable_boundary(position, direction_index):
 		journal = "The door is barred. Its original mechanism is not implemented." if boundary_code in UNSUPPORTED_DOOR_CODES else "Stone blocks your way."
 		return false
+	return true
+
+## Direct model actions use the same travel duration as animated movement.
+func move(direction: Vector2i, charge_travel_time: bool = true) -> bool:
+	if walking_speed() == 0 or not can_move(direction):
+		return false
 	position += direction
 	if charge_travel_time:
-		advance_time(1)
+		advance_real_seconds(tile_travel_seconds())
 	var transitioned := false
 	if chapter == "dungeon":
 		var transition_link: Dictionary = dungeon_links.get("%d,%d" % [position.x, position.y], {})
@@ -481,6 +523,8 @@ func destination() -> Vector2i:
 func save_game(path: String = SAVE_PATH) -> Error:
 	if not _bind_effect_clock():
 		return ERR_BUSY
+	if is_travelling():
+		return ERR_BUSY
 	if not journey_effects.can_save():
 		return ERR_INVALID_DATA
 	var serialized := JSON.stringify(save_snapshot(), "", true, true)
@@ -517,6 +561,8 @@ func load_game(path: String = SAVE_PATH) -> bool:
 	gameplay_random = candidate.random
 	game_clock = candidate.clock
 	weather_seed = int(save_data.get("weather_seed", 1701))
+	travel_direction = Vector2i.ZERO
+	travel_progress = 0.0
 	chapter = save_data.chapter
 	position = Vector2i(save_data.position[0], save_data.position[1])
 	facing = int(save_data.facing)

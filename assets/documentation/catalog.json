@@ -1,5 +1,60 @@
 {
   "documents": [
+{
+  "archive_scope": "URL only. No local source copy: local HTML archival requests failed DNS; magazine PDFs located via indexed text only. See docs/DUNGEON_ST_SOURCE_SEARCH.md.",
+  "sha256": null,
+  "file": null,
+  "title": "AtariMania - Alternate Reality The Dungeon ST",
+  "reviewed": "2026-11-21",
+  "edition_platforms": [
+    "Atari ST Dungeon - unreleased listing"
+  ],
+  "source_url": "https://www.atarimania.com/games/atari-st-games-alternate-reality-the-dungeon-40260"
+},
+{
+  "archive_scope": "URL only. No local source copy: local HTML archival requests failed DNS; magazine PDFs located via indexed text only. See docs/DUNGEON_ST_SOURCE_SEARCH.md.",
+  "sha256": null,
+  "file": null,
+  "title": "ST Amiga Format issue 2",
+  "reviewed": "2026-11-21",
+  "edition_platforms": [
+    "Period advertisement - multiple platforms"
+  ],
+  "source_url": "https://www.stformat.com/staf02/staf02.pdf"
+},
+{
+  "archive_scope": "URL only. No local source copy: local HTML archival requests failed DNS; magazine PDFs located via indexed text only. See docs/DUNGEON_ST_SOURCE_SEARCH.md.",
+  "sha256": null,
+  "file": null,
+  "title": "Current Notes October 1988",
+  "reviewed": "2026-11-21",
+  "edition_platforms": [
+    "Atari ST Dungeon - release forecast"
+  ],
+  "source_url": "https://www.atarimania.com/mags/pdf/Current_Notes_Volume_8_Number_8_Oct_1988.pdf"
+},
+{
+  "archive_scope": "URL only. No local source copy: local HTML archival requests failed DNS; magazine PDFs located via indexed text only. See docs/DUNGEON_ST_SOURCE_SEARCH.md.",
+  "sha256": null,
+  "file": null,
+  "title": "CRPGDev Alternate Reality links",
+  "reviewed": "2026-11-21",
+  "edition_platforms": [
+    "City and Dungeon - multiple platforms"
+  ],
+  "source_url": "https://www.crpgdev.com/links.html"
+},
+{
+  "archive_scope": "URL only. No local source copy: local HTML archival requests failed DNS; magazine PDFs located via indexed text only. See docs/DUNGEON_ST_SOURCE_SEARCH.md.",
+  "sha256": null,
+  "file": null,
+  "title": "Land Beyond - Alternate Reality The Remake",
+  "reviewed": "2026-11-21",
+  "edition_platforms": [
+    "Modern remake - mixed editions"
+  ],
+  "source_url": "https://forums.atariage.com/topic/379316-alternate-reality-the-remake/"
+},
     {
       "title": "The Official Adventurer's Survival Handbook to The City",
       "source_url": "https://mocagh.org/datasoft/arcity-hintbook.pdf",
