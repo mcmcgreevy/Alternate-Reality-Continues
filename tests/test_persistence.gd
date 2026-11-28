@@ -91,7 +91,7 @@ func _initialize() -> void:
 		bad[key] = null
 		write_data(bad)
 		check(not loaded.load_game(BAD) and state(loaded) == before, "Null field rejects atomically: " + key)
-	for mutation in [{"position": [4294967335,34]}, {"position": [1e100,34]}, {"version": true}, {"version": 9}, {"chapter": []}, {"provisions": {"food":1e100,"water":0}}, {"needs":{"hunger":0,"thirst":0,"extra":"bad"}}, {"flags":{"visited_dungeon":false,"returned":false,"extra":12}}, {"inventory":[123]}, {"doors":{"city:39,34:0":12}}, {"facing":1e100}]:
+	for mutation in [{"position": [4294967335,34]}, {"position": [1e100,34]}, {"version": true}, {"version": 10}, {"chapter": []}, {"provisions": {"food":1e100,"water":0}}, {"needs":{"hunger":0,"thirst":0,"extra":"bad"}}, {"flags":{"visited_dungeon":false,"returned":false,"extra":12}}, {"inventory":[123]}, {"doors":{"city:39,34:0":12}}, {"facing":1e100}]:
 		var bad: Dictionary = data.duplicate(true)
 		bad.merge(mutation, true)
 		write_data(bad)
@@ -109,6 +109,7 @@ func _initialize() -> void:
 	for version in range(3,8):
 		var legacy: Dictionary = data.duplicate(true)
 		legacy.version = version
+		legacy.erase("city_geometry_revision")
 		legacy.erase("gameplay_random")
 		if version < 7: legacy.erase("effects")
 		if version < 5: legacy.erase("clock")

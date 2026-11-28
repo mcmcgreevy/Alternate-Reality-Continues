@@ -108,6 +108,7 @@ func run():
     check(scene.world.minutes == minutes + 1, 'Four seconds per game minute')
     check(scene.world.load_game('user://test_speed.json') and is_equal_approx(scene.world.minute_fraction, 0.5) and scene.world.character.speed == 13, 'Speed and fractional clock restore')
     var saved = JSON.parse_string(FileAccess.get_file_as_string('user://test_speed.json'))
+    saved.erase('city_geometry_revision')  # Legacy fixtures predate v9.
     saved.version = 4  # Exercise a legacy save, not a malformed version 5 clock.
     saved.erase('effects')  # Legacy fixtures predate v7.
     saved.erase('gameplay_random')  # Legacy fixtures predate v8.

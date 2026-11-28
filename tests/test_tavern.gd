@@ -67,6 +67,7 @@ func _initialize() -> void:
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("user://test_tavern_services.json"))
 	data.erase("effects")  # Legacy fixtures predate the v7 effect payload.
 	data.erase("gameplay_random")  # Legacy fixtures predate v8.
+	data.erase("city_geometry_revision")  # Legacy fixtures predate v9.
 	data.version = 3
 	data.character.erase("silver")
 	data.character.erase("copper")
