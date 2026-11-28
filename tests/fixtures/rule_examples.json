@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "documented": [
+    {
+      "id": "STAT-EX1",
+      "rule_id": "STAT-001",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "base": 13.75,
+        "bonus": 2,
+        "penalty": 5,
+        "delusion": false
+      },
+      "expected": {
+        "effective": 10,
+        "displayed": 10,
+        "base": 13.75
+      },
+      "derivation": "Integer part 13 + 2 - 5 = 10; base unchanged; no delusion.",
+      "unknowns": []
+    },
+    {
+      "id": "MOVE-EX7",
+      "rule_id": "MOVE-001",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "effective_speed": 7
+      },
+      "expected": {
+        "walking_rate": 4
+      },
+      "derivation": "(7+5) div 6, multiplied by 2, then capped at 36.",
+      "unknowns": []
+    },
+    {
+      "id": "MOVE-EX13",
+      "rule_id": "MOVE-001",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "effective_speed": 13
+      },
+      "expected": {
+        "walking_rate": 6
+      },
+      "derivation": "(13+5) div 6, multiplied by 2, then capped at 36.",
+      "unknowns": []
+    },
+    {
+      "id": "MOVE-EX25",
+      "rule_id": "MOVE-001",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "effective_speed": 25
+      },
+      "expected": {
+        "walking_rate": 10
+      },
+      "derivation": "(25+5) div 6, multiplied by 2, then capped at 36.",
+      "unknowns": []
+    },
+    {
+      "id": "MOVE-EXCAP",
+      "rule_id": "MOVE-001",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "effective_speed": 109
+      },
+      "expected": {
+        "walking_rate": 36
+      },
+      "derivation": "(109+5) div 6, multiplied by 2, then capped at 36. Uncapped result is 38.",
+      "unknowns": []
+    },
+    {
+      "id": "TIME-EX1",
+      "rule_id": "TIME-001",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "real_seconds": 4
+      },
+      "expected": {
+        "game_minutes": 1
+      },
+      "derivation": "Time Span table explicitly equates four real seconds to one game minute.",
+      "unknowns": []
+    },
+    {
+      "id": "EFFECT-COPY",
+      "rule_id": "EFFECT-001",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "definition": "E.template_A",
+        "active_index_initial": "FF",
+        "activation_permitted": true
+      },
+      "expected": {
+        "active_copy_created": true,
+        "definition_remains_template": true,
+        "active_index": "allocated active-list index"
+      },
+      "derivation": "Effect introduction and Active index describe template copying. Symbolic identity is explanatory, not an original engine identifier.",
+      "unknowns": [
+        "IDENTITY-Q1"
+      ]
+    },
+    {
+      "id": "EFFECT-EVENT",
+      "rule_id": "EFFECT-002",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "event": "Use",
+        "listening_definition": "E.template_A",
+        "opposing_active_effect": "E.instance_B (opposition established as precondition)",
+        "activation_permitted": true
+      },
+      "expected": {
+        "opposing_active_effect_removed": true,
+        "listening_definition_copied": true,
+        "event_cleared_after_handling": true
+      },
+      "derivation": "Conditional lifecycle from Effect introduction and Entity Events; this example does not claim a specific opposing bit pair.",
+      "unknowns": [
+        "EVENT-Q1",
+        "EVENT-Q2",
+        "EVENT-Q3"
+      ]
+    },
+    {
+      "id": "EFFECT-DUPLICATE",
+      "rule_id": "EFFECT-002",
+      "evidence": "documented",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "disallow_multiple": true,
+        "matching_fields": [
+          "Type",
+          "Interval",
+          "ProbToRemove",
+          "Action",
+          "Offset",
+          "NbBlocks",
+          "Gab",
+          "Param"
+        ],
+        "matching_instance_exists": true
+      },
+      "expected": {
+        "current_effect_activated": false,
+        "following_effects_activated": false
+      },
+      "derivation": "Required events / flag H explicitly suppresses the current and all following definitions when a matching active instance is found.",
+      "unknowns": [
+        "EVENT-Q2"
+      ]
+    }
+  ],
+  "adaptations": [
+    {
+      "id": "TILE-EX1",
+      "rule_id": "MOVE-002",
+      "evidence": "adaptation",
+      "source_indices": [
+        0
+      ],
+      "inputs": {
+        "walking_rate": 6,
+        "units_per_tile": 6
+      },
+      "expected": {
+        "real_seconds_per_tile": 1
+      },
+      "derivation": "Current calibration: 6 units/tile divided by 6 units/real second. Not historical distance evidence.",
+      "unknowns": []
+    }
+  ]
+}

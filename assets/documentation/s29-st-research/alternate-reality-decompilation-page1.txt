@@ -1,0 +1,197 @@
+Kroah's Game Reverse Engineering Forum • View topic - Alternate Reality: The Decompilation
+Kroah's Game Reverse Engineering Forum
+Reverse engineering forum of old computer games for Atari ST, Atari 8-bit and Amiga systems.
+Skip to content
+Advanced search
+Return to Homepage ‹ Board index  ‹ Reverse Engineering Forum Index ‹ General Discussion
+Change font size
+Print view
+FAQ
+Register
+Login
+Alternate Reality: The Decompilation
+Talk about everything related to general reverse engineering of computer games!
+Moderator: Kroah
+Post a reply
+23 posts
+• Page 1 of 2 • 1, 2
+Alternate Reality: The Decompilation
+by hicksman » 03 May 2007, 13:55
+Kroah
+Just want to say that from the work I see you've done on all the other games on your site, I know your Alternate Reality page is really going to rock!
+There are still a lot of fans of AR out there and figuring out how the game works to the level of detail that you go to is something we have not been able to do on a large scale. (Despite the game being out for over 20 years)
+So, I'm just saying Thanks ahead of time, because I'm so excited to tear into the data you've produced.
+Keep up the good work!
+hicksman
+Posts: 3Joined: 03 May 2007, 13:50
+Top
+Re: Alternate Reality: The Decompilation
+by Kroah » 04 May 2007, 22:56
+Hi hicksman! Glad to read you here
+Thank you for your support. The section is on the way, about 20% done but the hardest is done.
+There are still a lot of fans of AR out there and figuring out how the game works to the level of detail that you go to is something we have not been able to do on a large scale.
+Nice to see i'm not the only one! I think i can't go any further to the decompilation. There's still some unknown variables, but i think they aren't used in the city (since it uses a good part of the dungeon engine). I'll fill the holes when we'll know more about the dungeon engine.
+You know, i was first dispointed when i saw the game engine of the Atari ST Alternate Reality was closest to the dungeon (whatever version) than to the original Atari 8bit City. But in fact, i'm rather pleased: that means the original game will still have its mystery (until one completly disassemble and understand it)   .
+Cheers
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+by hicksman » 29 Jun 2007, 01:21
+Kroah! If i was holding my breath, i would look like this
+You need some assistance? I write user manuals for a living so i know my way around a correctly formatted document.
+Let me know!
+hicksman
+Posts: 3Joined: 03 May 2007, 13:50
+Top
+by Kroah » 29 Jun 2007, 18:02
+hicksman wrote:Kroah! If i was holding my breath, i would look like this
+lol, well said.
+You need some assistance? I write user manuals for a living so i know my way around a correctly formatted document.
+Let me know!
+When i do something about decompilation, i use to take my time, and since decompilation is a long way, it's not a short story. Added to this, i periodically swap to another game to not be fed up. Recently i've done some work on Colonial Conquest and i'll continue AR next week. Doing so, i'm always motivated to go on and I know that if i do something from the start straight to the end, i'll certainly give up.
+It's not the shortest path, but i'm sure to cross the finish line.
+Lots of people are waiting for AR and it's still my priority. I've done the harder but i don't think to put something online before the end of july at best. I prefer to be honest and don't promise you the impossible.
+Can you still wait until then? I hope, and don't hold your breath too much, maybe my work will not be what you're waiting for (ok... i don't think so   ).
+There's one thing you could do to help me. English is not my native language and i'll need someone to read/see/correct my spelling. I need someone knowing well AR to see when something may be wrong according to the game. Sort of beta-reading. What do you think?
+Cheers,
+Pascal
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+by hicksman » 01 Jul 2007, 17:43
+Kroah
+I understand your thinking about making sure you don't get burned out on one project, i just wanted to see what was going on.
+And about doing some "beta-reading". Sure I'd be honored. I'll double check my email account attached to my profile to make sure its correct and when you're ready, just send me an email!
+hicksman
+Posts: 3Joined: 03 May 2007, 13:50
+Top
+by Kroah » 02 Jul 2007, 09:27
+Ok, thank you. I'll get in touch with you in time!
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+by eobet » 10 Mar 2009, 11:05
+Hello!
+I'm not sure if you are aware, but there is a pretty strong AR following online.
+It's quite calm now, but I think we're still about 100 people on the mailing list.
+If you need help, I could put you in touch with Dan Pinal and Ken Jordan, the two coders of The Dungeon. Though I know that they claim they don't remember any details, they have offered great insight into the games via the mailing list and been very helpful (they even coded their own map dumping software for us). You can probably search for their messages at:
+http://www.alternaterealityarchive.com/
+And I could also put you in touch with Jim Norris, who several years ago made a graphical disc viewer for both games. But perhaps it would be best if you joined the mailing list yourself and asked, because new talents pop up from time to time (there's been a few remake attempts and a wrapper project is ongoing, I think).
+Since the last post in this thread is two years old, has there been any progress? Also, which AR game are you decompiling?
+eobet
+Posts: 4Joined: 08 Mar 2009, 20:54
+Top
+by eobet » 10 Mar 2009, 16:31
+Before posting, I should really check my backlog of unread mailing list messages as well... *cough*
+http://www.diaperglu.com/ardisassembly/index.dglu
+eobet
+Posts: 4Joined: 08 Mar 2009, 20:54
+Top
+by Kroah » 10 Mar 2009, 21:34
+eobet wrote:Hello!
+I'm not sure if you are aware, but there is a pretty strong AR following online.
+It's quite calm now, but I think we're still about 100 people on the mailing list.
+If you need help, I could put you in touch with Dan Pinal and Ken Jordan, the two coders of The Dungeon. Though I know that they claim they don't remember any details, they have offered great insight into the games via the mailing list and been very helpful (they even coded their own map dumping software for us). You can probably search for their messages at:
+http://www.alternaterealityarchive.com/
+And I could also put you in touch with Jim Norris, who several years ago made a graphical disc viewer for both games. But perhaps it would be best if you joined the mailing list yourself and asked, because new talents pop up from time to time (there's been a few remake attempts and a wrapper project is ongoing, I think).
+Hello Eobet!
+Thank you for your links, but... even if i'm not an active member, i've subscribed to the AR mailing list several years ago, so i thoroughly read all posts, including your recent one . By the way, as soon as my project is done, i'll post a message there.
+eobet wrote:Since the last post in this thread is two years old, has there been any progress?
+Yes, and i'm still working on it. I should have some free days next week. If anything goes right... i let you guess. But before putting it publicly online, some people have agreed to give me some feedbacks (and mostly spelling errors).
+eobet wrote:Also, which AR game are you decompiling?
+I mainly work on the Atari ST 2.0 version (16bits), which means the game uses almost the same engine than the dungeon (sort of roguelike engine if you read rec.games.roguelike.development newsgroup).
+eobet wrote:Before posting, I should really check my backlog of unread mailing list messages as well... *cough*
+http://www.diaperglu.com/ardisassembly/index.dglu
+I really hope we'll be able to compare the 8bits and 16bits version in depth. I'm curious to see how much the port differs from the original. Anyway, the port has some unfinished elements (WIP engine), like cursed weapons and items with limited number of uses. Those have been finished/completed in the dungeon.
+In addition, i still don't know if the port uses the same rules from the original Gary's game (= exact same algo) or an approximation which seems to give the same result. I know Dan/Ken had some notes from Gary, but with how much details in it? And how much did they use them?
+Cheers,
+Pascal
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+by eobet » 25 Mar 2009, 16:07
+I guess the Atari ST version is easier because there's no custom OS or diabolical copy protection schemes in place (although, those have been decoded now), but I think most people would be more interested in the 8-bit Atari versions.
+Though it could be worse: you could have attempted to decompile the DOS version, which contains an emulator for the Atari version, instead of being an actual port.
+Also, though this is for The Dungeon I think, going through more unread mailing list messages revealed the following site as well:
+http://www.dynamicdiscord.com/ar/
+(Again, I do also believe that most people would like to see The Dungeon decomplied instead of The City, because that game held more secrets.)
+PS. It's more appropriate to call it "Phil's game", since Phillip Price did the design and coding. Gary Gilbertson was the music maestro.
+eobet
+Posts: 4Joined: 08 Mar 2009, 20:54
+Top
+great news
+by acehighness » 25 Mar 2009, 17:28
+This is the most exciting news I have read on the web in a long time for me !! Maybe we will finally uncover ALL the secrets in the great game.
+Hope you find code to explain what exactly determines when the player character gets diseases like Scurvy etc ...
+Good luck with this decompilation project !
+acehighness
+Posts: 1Joined: 25 Mar 2009, 17:24
+Top
+by Kroah » 26 Mar 2009, 00:00
+eobet wrote:I guess the Atari ST version is easier because there's no custom OS or diabolical copy protection schemes in place (although, those have been decoded now)
+You are right, no custom OS nor copy protection. But this Atari ST could be difficult to reverse engineer for someone who doesn't know the principle of 'roguelike engine'.
+eobet wrote:but I think most people would be more interested in the 8-bit Atari versions. [...] (Again, I do also believe that most people would like to see The Dungeon decomplied instead of The City, because that game held more secrets.)
+I agree. Because there's already a project about the 8bits decompilation of AR, i went for the 16bits. I never had the time to play the dungeon. I think to decompile a game, one must perfectly know it with hundred hours of play. This helps a lot, really. Nevertheless, the dungeon uses the same base engine than the 16bits version, my work could be used for it too, and i hope so.
+eobet wrote:http://www.dynamicdiscord.com/ar/
+Thank you, i already read those files few years ago when i begun to work on AR.
+eobet wrote:PS. It's more appropriate to call it "Phil's game", since Phillip Price did the design and coding. Gary Gilbertson was the music maestro.
+Ho, yeah of course, it was a bit late when i wrote that.
+Even if Dan's engine is an impressive effort, phil's game is outstanding on its own, but hard (if not impossible) to port it as is without indepth modifications. So Dan's engine is a good idea to port the game on different systems by keeping most of the code.
+acehighness wrote:This is the most exciting news I have read on the web in a long time for me !! Maybe we will finally uncover ALL the secrets in the great game.
+I think i've done all i can do on the ST version. I'm currently polishing the website, adding some stuffs here and there, cross referencing some keywords...
+acehighness wrote:Hope you find code to explain what exactly determines when the player character gets diseases like Scurvy etc ...
+I think you'll find everything you want, if not, i'll add it. Spells, armors, weapons, effects, metabolism, encounters, combat, establishments, weather... doh, so many thing in this game... incredible.
+acehighness wrote:Good luck with this decompilation project !
+Thank you, and soon the big update!
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+by Voxcon » 01 Apr 2009, 20:05
+You know this the only game i had but never played on my old Atari 800xl and 1050 drive.Because the disk got wiped by brother all those years ago one day im gonna play this on real machine.
+Voxcon
+Posts: 31Joined: 08 Nov 2008, 11:44
+Top
+by Kroah » 01 Jun 2009, 17:18
+My reverse engineering work is now online.
+Have fun!
+Kroah
+Site Admin
+Posts: 430Joined: 07 Feb 2006, 01:01Location: France
+Website
+Top
+by Voxcon » 01 Jun 2009, 21:32
+Kroah wrote:My reverse engineering work is now online.
+Have fun!
+Talk about complete holy crap the amount info
+Voxcon
+Posts: 31Joined: 08 Nov 2008, 11:44
+Top
+Next
+Display posts from previous: All posts1 day7 days2 weeks1 month3 months6 months1 year
+Sort by AuthorPost timeSubject AscendingDescending
+Post a reply
+23 posts
+• Page 1 of 2 • 1, 2
+Return to General Discussion
+Jump to:
+Select a forum
+------------------
+Reverse Engineering Forum Index
+General Discussion
+CoCoNet Discussion
+Custom Maps
+Who is online
+Users browsing this forum: No registered users and 12 guests
+Board index
+The team • Delete all board cookies • All times are UTC + 1 hour [ DST ]
+Powered by phpBB® Forum Software © phpBB Group

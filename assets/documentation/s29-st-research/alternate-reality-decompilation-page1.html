@@ -1,0 +1,986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<title>Kroah's Game Reverse Engineering Forum &bull; View topic - Alternate Reality: The Decompilation</title>
+<link rel="shortcut icon" type="image/x-icon" href="../RE/Images/Logo.ico" />
+<link rel="icon" type="image/png" href="../RE/Images/Logo.png" />
+
+
+<!--
+	phpBB style name: prosilver Special Edition
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subblue.com/ )
+	Modified by:      phpBB Styles Team     
+-->
+
+<script type="text/javascript">
+// <![CDATA[
+	var jump_page = 'Enter the page number you wish to go to:';
+	var on_page = '1';
+	var per_page = '15';
+	var base_url = './viewtopic.php?f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '; path=/; domain=bringerp.free.fr';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	};
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	};
+
+// ]]>
+</script>
+<script type="text/javascript" src="./styles/prosilver/template/styleswitcher.js"></script>
+<script type="text/javascript" src="./styles/prosilver/template/forum_fn.js"></script>
+
+<link href="./styles/prosilver_se/theme/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<link href="./style.php?id=2&amp;lang=en&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" rel="stylesheet" type="text/css" media="screen, projection" />
+
+<link href="./styles/prosilver_se/theme/normal.css" rel="stylesheet" type="text/css" title="A" />
+<link href="./styles/prosilver_se/theme/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="./styles/prosilver_se/theme/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+
+
+
+</head>
+
+<body id="phpbb" class="section-viewtopic ltr">
+
+<div id="wrap">
+    <div class="border-left">
+    <div class="border-right">
+    <div class="border-top">
+    <div class="border-top-left">
+    <div class="border-top-right">
+        <div class="inside" style="direction: ltr;">
+        	<a id="top" name="top" accesskey="t"></a>
+        	<div id="page-header">
+        		<div class="headerbar">
+        			<div class="inner"><span class="corners-top"><span></span></span>
+        
+        			<div id="site-description">
+        				<a href="../RE/" title="Homepage" id="logo"><img src="./styles/prosilver_se/imageset/Logo%20Big.png" width="52" height="52" alt="" title="" /></a>
+        				<h1>Kroah's Game Reverse Engineering Forum</h1>
+        				<p>Reverse engineering forum of old computer games for Atari ST, Atari 8-bit and Amiga systems.</p>
+        				<p class="skiplink"><a href="#start_here">Skip to content</a></p>
+        			</div>
+        
+        		
+        			<div id="search-box">
+        				<form action="./search.php?sid=fbdfaad30c82adb5ffd88a3b717aa75e" method="get" id="search">
+        				<fieldset>
+        					<input name="keywords" id="keywords" type="text" maxlength="128" title="Search for keywords" class="inputbox search" value="Search…" onclick="if(this.value=='Search…')this.value='';" onblur="if(this.value=='')this.value='Search…';" /> 
+        					<input class="button2" value="Search" type="submit" /><br />
+        					<a href="./search.php?sid=fbdfaad30c82adb5ffd88a3b717aa75e" title="View the advanced search options">Advanced search</a> <input type="hidden" name="sid" value="fbdfaad30c82adb5ffd88a3b717aa75e" />
+
+        				</fieldset>
+        				</form>
+        			</div>
+        		
+        
+        			<span class="corners-bottom"><span></span></span></div>
+        		</div>
+        
+        		<div class="navbar">
+        			<div class="inner"><span class="corners-top"><span></span></span>
+        
+        			<ul class="linklist navlinks">
+        				<li class="icon-home"><a href="../RE/">Return to Homepage</a> <strong>&#8249;</strong> <a href="./index.php?sid=fbdfaad30c82adb5ffd88a3b717aa75e" accesskey="h">Board index</a>  <strong>&#8249;</strong> <a href="./viewforum.php?f=3&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Reverse Engineering Forum Index</a> <strong>&#8249;</strong> <a href="./viewforum.php?f=1&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">General Discussion</a></li>
+        
+        				<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="Change font size">Change font size</a></li>
+        
+        				<li class="rightside"><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e&amp;view=print" title="Print view" accesskey="p" class="print">Print view</a></li>
+        			</ul>
+        
+        			
+        
+        			<ul class="linklist rightside">
+        				<li class="icon-faq"><a href="./faq.php?sid=fbdfaad30c82adb5ffd88a3b717aa75e" title="Frequently Asked Questions">FAQ</a></li>
+        				<li class="icon-register"><a href="./ucp.php?mode=register&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Register</a></li>
+							<li class="icon-logout"><a href="./ucp.php?mode=login&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" title="Login" accesskey="x">Login</a></li>
+        				
+        			</ul>
+        
+        			<span class="corners-bottom"><span></span></span></div>
+        		</div>
+        
+        	</div>
+        
+        	<a name="start_here"></a>
+        	<div id="page-body">
+        		
+				
+<h2><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Alternate Reality: The Decompilation</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body --><div style="display: none !important;">Talk about everything related to general reverse engineering of computer games!<br /></div>
+<p>
+	<strong>Moderator:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a>
+</p>
+
+
+<div class="topic-actions">
+
+	<div class="buttons">
+	
+		<div class="reply-icon"><a href="./posting.php?mode=reply&amp;f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" title="Post a reply"><span></span>Post a reply</a></div>
+	
+	</div>
+
+	
+		<div class="search-box">
+			<form method="get" id="topic-search" action="./search.php?sid=fbdfaad30c82adb5ffd88a3b717aa75e">
+			<fieldset>
+				<input class="inputbox search tiny"  type="text" name="keywords" id="search_keywords" size="20" value="Search this topic…" onclick="if(this.value=='Search this topic…')this.value='';" onblur="if(this.value=='')this.value='Search this topic…';" />
+				<input class="button2" type="submit" value="Search" />
+				<input type="hidden" name="t" value="58" />
+<input type="hidden" name="sf" value="msgonly" />
+<input type="hidden" name="sid" value="fbdfaad30c82adb5ffd88a3b717aa75e" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+		<div class="pagination">
+			23 posts
+			 &bull; <a href="#" onclick="jumpto(); return false;" title="Click to jump to page…">Page <strong>1</strong> of <strong>2</strong></a> &bull; <span><strong>1</strong><span class="page-sep">, </span><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e&amp;start=15">2</a></span>
+		</div>
+	
+
+</div>
+<div class="clear"></div>
+
+
+	<div id="p171" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 class="first"><a href="#p171">Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=171&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p171"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=101&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">hicksman</a></strong> &raquo; 03 May 2007, 13:55 </p>
+
+			
+
+			<div class="content">Kroah
+<br />
+<br />Just want to say that from the work I see you've done on all the other games on your site, I know your Alternate Reality page is really going to rock! 
+<br />
+<br />There are still a lot of fans of AR out there and figuring out how the game works to the level of detail that you go to is something we have not been able to do on a large scale. (Despite the game being out for over 20 years)
+<br />
+<br />So, I'm just saying Thanks ahead of time, because I'm so excited to tear into the data you've produced.
+<br />
+<br />Keep up the good work! 
+<br />
+<br /> <img src="./images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /></div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile171">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=101&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">hicksman</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 3</dd><dd><strong>Joined:</strong> 03 May 2007, 13:50</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p173" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p173">Re: Alternate Reality: The Decompilation</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=173&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p173"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 04 May 2007, 22:56 </p>
+
+			
+
+			<div class="content">Hi hicksman! Glad to read you here  <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" /> 
+<br />
+<br />Thank you for your support. The section is on the way, about 20% done but the hardest is done.
+<br />
+<br /><blockquote class="uncited"><div>There are still a lot of fans of AR out there and figuring out how the game works to the level of detail that you go to is something we have not been able to do on a large scale.</div></blockquote>
+<br />
+<br />Nice to see i'm not the only one! I think i can't go any further to the decompilation. There's still some unknown variables, but i think they aren't used in the city (since it uses a good part of the dungeon engine). I'll fill the holes when we'll know more about the dungeon engine.
+<br />
+<br />You know, i was first dispointed when i saw the game engine of the Atari ST Alternate Reality was closest to the dungeon (whatever version) than to the original Atari 8bit City. But in fact, i'm rather pleased: that means the original game will still have its mystery (until one completly disassemble and understand it)  <img src="./images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /> .
+<br />
+<br />Cheers</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile173">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p201" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p201"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=201&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p201"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=101&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">hicksman</a></strong> &raquo; 29 Jun 2007, 01:21 </p>
+
+			
+
+			<div class="content">Kroah! If i was holding my breath, i would look like this  <img src="./images/smilies/icon_redface.gif" alt=":oops:" title="Embarassed" /> 
+<br />
+<br />You need some assistance? I write user manuals for a living so i know my way around a correctly formatted document.
+<br />
+<br />Let me know!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile201">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=101&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">hicksman</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 3</dd><dd><strong>Joined:</strong> 03 May 2007, 13:50</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p202" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p202"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=202&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p202"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 29 Jun 2007, 18:02 </p>
+
+			
+
+			<div class="content"><blockquote><div><cite>hicksman wrote:</cite>Kroah! If i was holding my breath, i would look like this  <img src="./images/smilies/icon_redface.gif" alt=":oops:" title="Embarassed" /> </div></blockquote><br />lol, well said.<br /><br /><blockquote class="uncited"><div>You need some assistance? I write user manuals for a living so i know my way around a correctly formatted document.<br /><br />Let me know!</div></blockquote>
+<br />
+<br />When i do something about decompilation, i use to take my time, and since decompilation is a long way, it's not a short story. Added to this, i periodically swap to another game to not be fed up. Recently i've done some work on Colonial Conquest and i'll continue AR next week. Doing so, i'm always motivated to go on and I know that if i do something from the start straight to the end, i'll certainly give up.
+<br />
+<br />It's not the shortest path, but i'm sure to cross the finish line.
+<br />
+<br />Lots of people are waiting for AR and it's still my priority. I've done the harder but i don't think to put something online before the end of july at best. I prefer to be honest and don't promise you the impossible.
+<br />
+<br />Can you still wait until then? I hope, and don't hold your breath too much, maybe my work will not be what you're waiting for (ok... i don't think so  <img src="./images/smilies/icon_wink.gif" alt=":wink:" title="Wink" /> ).
+<br />
+<br />There's one thing you could do to help me. English is not my native language and i'll need someone to read/see/correct my spelling. I need someone knowing well AR to see when something may be wrong according to the game. Sort of beta-reading. What do you think?
+<br />
+<br />Cheers,
+<br />Pascal</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile202">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p203" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p203"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=203&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p203"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=101&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">hicksman</a></strong> &raquo; 01 Jul 2007, 17:43 </p>
+
+			
+
+			<div class="content">Kroah
+<br />I understand your thinking about making sure you don't get burned out on one project, i just wanted to see what was going on.
+<br />
+<br />And about doing some &quot;beta-reading&quot;. Sure I'd be honored. I'll double check my email account attached to my profile to make sure its correct and when you're ready, just send me an email!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile203">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=101&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">hicksman</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 3</dd><dd><strong>Joined:</strong> 03 May 2007, 13:50</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p204" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p204"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=204&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p204"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 02 Jul 2007, 09:27 </p>
+
+			
+
+			<div class="content">Ok, thank you. I'll get in touch with you in time!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile204">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p375" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p375"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=375&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p375"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=120&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">eobet</a></strong> &raquo; 10 Mar 2009, 11:05 </p>
+
+			
+
+			<div class="content">Hello!
+<br />
+<br />I'm not sure if you are aware, but there is a pretty strong AR following online.
+<br />
+<br />It's quite calm now, but I think we're still about 100 people on the mailing list.
+<br />
+<br />If you need help, I could put you in touch with Dan Pinal and Ken Jordan, the two coders of The Dungeon. Though I know that they claim they don't remember any details, they have offered great insight into the games via the mailing list and been very helpful (they even coded their own map dumping software for us). You can probably search for their messages at:
+<br />
+<br /><!-- m --><a class="postlink" href="http://www.alternaterealityarchive.com/">http://www.alternaterealityarchive.com/</a><!-- m -->
+<br />
+<br />And I could also put you in touch with Jim Norris, who several years ago made a graphical disc viewer for both games. But perhaps it would be best if you joined the mailing list yourself and asked, because new talents pop up from time to time (there's been a few remake attempts and a wrapper project is ongoing, I think).
+<br />
+<br />Since the last post in this thread is two years old, has there been any progress? Also, which AR game are you decompiling?</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile375">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=120&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">eobet</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 4</dd><dd><strong>Joined:</strong> 08 Mar 2009, 20:54</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p376" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p376"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=376&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p376"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=120&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">eobet</a></strong> &raquo; 10 Mar 2009, 16:31 </p>
+
+			
+
+			<div class="content">Before posting, I should really check my backlog of unread mailing list messages as well... *cough*
+<br />
+<br /><!-- m --><a class="postlink" href="http://www.diaperglu.com/ardisassembly/index.dglu">http://www.diaperglu.com/ardisassembly/index.dglu</a><!-- m --></div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile376">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=120&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">eobet</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 4</dd><dd><strong>Joined:</strong> 08 Mar 2009, 20:54</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p377" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p377"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=377&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p377"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 10 Mar 2009, 21:34 </p>
+
+			
+
+			<div class="content"><blockquote><div><cite>eobet wrote:</cite>Hello!<br /><br />I'm not sure if you are aware, but there is a pretty strong AR following online.<br /><br />It's quite calm now, but I think we're still about 100 people on the mailing list.<br /><br />If you need help, I could put you in touch with Dan Pinal and Ken Jordan, the two coders of The Dungeon. Though I know that they claim they don't remember any details, they have offered great insight into the games via the mailing list and been very helpful (they even coded their own map dumping software for us). You can probably search for their messages at:<br /><br /><!-- m --><a class="postlink" href="http://www.alternaterealityarchive.com/">http://www.alternaterealityarchive.com/</a><!-- m --><br /><br />And I could also put you in touch with Jim Norris, who several years ago made a graphical disc viewer for both games. But perhaps it would be best if you joined the mailing list yourself and asked, because new talents pop up from time to time (there's been a few remake attempts and a wrapper project is ongoing, I think).</div></blockquote><br />Hello Eobet!<br /><br />Thank you for your links, but... even if i'm not an active member, i've subscribed to the AR mailing list several years ago, so i thoroughly read all posts, including your recent one <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" />. By the way, as soon as my project is done, i'll post a message there.<br /><br /><blockquote><div><cite>eobet wrote:</cite>Since the last post in this thread is two years old, has there been any progress?</div></blockquote><br />Yes, and i'm still working on it. I should have some free days next week. If anything goes right... i let you guess. But before putting it publicly online, some people have agreed to give me some feedbacks (and mostly spelling errors).<br /><br /><blockquote><div><cite>eobet wrote:</cite>Also, which AR game are you decompiling?</div></blockquote><br />I mainly work on the Atari ST 2.0 version (16bits), which means the game uses almost the same engine than the dungeon (sort of roguelike engine if you read rec.games.roguelike.development newsgroup).<br /><br /><blockquote><div><cite>eobet wrote:</cite>Before posting, I should really check my backlog of unread mailing list messages as well... *cough*<br /><br /><!-- m --><a class="postlink" href="http://www.diaperglu.com/ardisassembly/index.dglu">http://www.diaperglu.com/ardisassembly/index.dglu</a><!-- m --></div></blockquote>
+<br />I really hope we'll be able to compare the 8bits and 16bits version in depth. I'm curious to see how much the port differs from the original. Anyway, the port has some unfinished elements (WIP engine), like cursed weapons and items with limited number of uses. Those have been finished/completed in the dungeon.
+<br />
+<br />In addition, i still don't know if the port uses the same rules from the original Gary's game (= exact same algo) or an approximation which seems to give the same result. I know Dan/Ken had some notes from Gary, but with how much details in it? And how much did they use them?
+<br />
+<br />Cheers,
+<br />Pascal</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile377">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p379" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p379"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=379&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p379"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=120&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">eobet</a></strong> &raquo; 25 Mar 2009, 16:07 </p>
+
+			
+
+			<div class="content">I guess the Atari ST version is easier because there's no custom OS or diabolical copy protection schemes in place (although, those have been decoded now), but I think most people would be more interested in the 8-bit Atari versions.
+<br />
+<br />Though it could be worse: you could have attempted to decompile the DOS version, which contains an emulator for the Atari version, instead of being an actual port. <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" />
+<br />
+<br />Also, though this is for The Dungeon I think, going through more unread mailing list messages revealed the following site as well:
+<br />
+<br /><!-- m --><a class="postlink" href="http://www.dynamicdiscord.com/ar/">http://www.dynamicdiscord.com/ar/</a><!-- m -->
+<br />
+<br />(Again, I do also believe that most people would like to see The Dungeon decomplied instead of The City, because that game held more secrets.)
+<br />
+<br />PS. It's more appropriate to call it &quot;Phil's game&quot;, since Phillip Price did the design and coding. Gary Gilbertson was the music maestro. <img src="./images/smilies/icon_wink.gif" alt=";)" title="Wink" /></div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile379">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=120&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">eobet</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 4</dd><dd><strong>Joined:</strong> 08 Mar 2009, 20:54</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p380" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p380">great news</a></h3>
+			<p class="author"><a href="./viewtopic.php?p=380&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p380"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=121&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">acehighness</a></strong> &raquo; 25 Mar 2009, 17:28 </p>
+
+			
+
+			<div class="content">This is the most exciting news I have read on the web in a long time for me !! Maybe we will finally uncover ALL the secrets in the great game.
+<br />Hope you find code to explain what exactly determines when the player character gets diseases like Scurvy etc ...
+<br />
+<br />Good luck with this decompilation project !</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile380">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=121&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">acehighness</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 1</dd><dd><strong>Joined:</strong> 25 Mar 2009, 17:24</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p381" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p381"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=381&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p381"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 26 Mar 2009, 00:00 </p>
+
+			
+
+			<div class="content"><blockquote><div><cite>eobet wrote:</cite>I guess the Atari ST version is easier because there's no custom OS or diabolical copy protection schemes in place (although, those have been decoded now)</div></blockquote><br />You are right, no custom OS nor copy protection. But this Atari ST could be difficult to reverse engineer for someone who doesn't know the principle of 'roguelike engine'.<br /><br /><blockquote><div><cite>eobet wrote:</cite>but I think most people would be more interested in the 8-bit Atari versions. [...] (Again, I do also believe that most people would like to see The Dungeon decomplied instead of The City, because that game held more secrets.)</div></blockquote><br />I agree. Because there's already a project about the 8bits decompilation of AR, i went for the 16bits. I never had the time to play the dungeon. I think to decompile a game, one must perfectly know it with hundred hours of play. This helps a lot, really. Nevertheless, the dungeon uses the same base engine than the 16bits version, my work could be used for it too, and i hope so.<br /><br /><blockquote><div><cite>eobet wrote:</cite>http://www.dynamicdiscord.com/ar/</div></blockquote><br />Thank you, i already read those files few years ago when i begun to work on AR.<br /><br /><blockquote><div><cite>eobet wrote:</cite>PS. It's more appropriate to call it &quot;Phil's game&quot;, since Phillip Price did the design and coding. Gary Gilbertson was the music maestro. <img src="./images/smilies/icon_wink.gif" alt=";)" title="Wink" /></div></blockquote><br />Ho, yeah of course, it was a bit late when i wrote that.<br /><br />Even if Dan's engine is an impressive effort, phil's game is outstanding on its own, but hard (if not impossible) to port it as is without indepth modifications. So Dan's engine is a good idea to port the game on different systems by keeping most of the code.<br /><br /><blockquote><div><cite>acehighness wrote:</cite>This is the most exciting news I have read on the web in a long time for me !! Maybe we will finally uncover ALL the secrets in the great game.</div></blockquote><br />I think i've done all i can do on the ST version. I'm currently polishing the website, adding some stuffs here and there, cross referencing some keywords...<br /><br /><blockquote><div><cite>acehighness wrote:</cite>Hope you find code to explain what exactly determines when the player character gets diseases like Scurvy etc ...</div></blockquote><br />I think you'll find everything you want, if not, i'll add it. Spells, armors, weapons, effects, metabolism, encounters, combat, establishments, weather... doh, so many thing in this game... incredible.<br /><br /><blockquote><div><cite>acehighness wrote:</cite>Good luck with this decompilation project !</div></blockquote>
+<br />Thank you, and soon the big update!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile381">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p387" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p387"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=387&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p387"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=116&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Voxcon</a></strong> &raquo; 01 Apr 2009, 20:05 </p>
+
+			
+
+			<div class="content">You know this the only game i had but never played on my old Atari 800xl and 1050 drive.Because the disk got wiped by brother all those years ago one day im gonna play this on real machine.</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile387">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=116&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Voxcon</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 31</dd><dd><strong>Joined:</strong> 08 Nov 2008, 11:44</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p398" class="post bg1">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p398"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=398&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p398"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a></strong> &raquo; 01 Jun 2009, 17:18 </p>
+
+			
+
+			<div class="content">My reverse engineering work is now online.
+<br />
+<br />Have fun!</div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile398">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" style="color: #AA0000;" class="username-coloured">Kroah</a>
+			</dt>
+
+			<dd>Site Admin</dd>
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 430</dd><dd><strong>Joined:</strong> 07 Feb 2006, 01:01</dd><dd><strong>Location:</strong> France</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="web-icon"><a href="http://bringerp.free.fr/RE/" title="WWW: http://bringerp.free.fr/RE/"><span>Website</span></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<div id="p399" class="post bg2">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			
+
+			<h3 ><a href="#p399"></a></h3>
+			<p class="author"><a href="./viewtopic.php?p=399&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e#p399"><img src="./styles/prosilver_se/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" /></a>by <strong><a href="./memberlist.php?mode=viewprofile&amp;u=116&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Voxcon</a></strong> &raquo; 01 Jun 2009, 21:32 </p>
+
+			
+
+			<div class="content"><blockquote><div><cite>Kroah wrote:</cite>My reverse engineering work is now online.<br /><br />Have fun!</div></blockquote>
+<br />
+<br />Talk about complete holy crap the amount info  <img src="./images/smilies/icon_eek.gif" alt=":shock:" title="Shocked" /></div>
+
+			
+
+		</div>
+
+		
+			<dl class="postprofile" id="profile399">
+			<dt>
+				<a href="./memberlist.php?mode=viewprofile&amp;u=116&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Voxcon</a>
+			</dt>
+
+			
+
+		<dd>&nbsp;</dd>
+
+		<dd><strong>Posts:</strong> 31</dd><dd><strong>Joined:</strong> 08 Nov 2008, 11:44</dd>
+
+		</dl>
+	
+
+		<div class="back2top"><a href="#wrap" class="top" title="Top">Top</a></div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+
+	<hr class="divider" />
+
+	<form id="viewtopic" method="post" action="./viewtopic.php?f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">
+
+	<fieldset class="display-options" style="margin-top: 0; ">
+		<a href="./viewtopic.php?f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e&amp;start=15" class="right-box right">Next</a>
+		<label>Display posts from previous: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+		<label>Sort by <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label> <label><select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select> <input type="submit" name="sort" value="Go" class="button2" /></label>
+		
+	</fieldset>
+
+	</form>
+	<hr />
+
+
+<div class="topic-actions">
+	<div class="buttons">
+	
+		<div class="reply-icon"><a href="./posting.php?mode=reply&amp;f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" title="Post a reply"><span></span>Post a reply</a></div>
+	
+	</div>
+
+	
+		<div class="pagination">
+			23 posts
+			 &bull; <a href="#" onclick="jumpto(); return false;" title="Click to jump to page…">Page <strong>1</strong> of <strong>2</strong></a> &bull; <span><strong>1</strong><span class="page-sep">, </span><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e&amp;start=15">2</a></span>
+		</div>
+	
+</div>
+
+
+	<p></p><p><a href="./viewforum.php?f=1&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" class="left-box left" accesskey="r">Return to General Discussion</a></p>
+
+	<form method="post" id="jumpbox" action="./viewforum.php?sid=fbdfaad30c82adb5ffd88a3b717aa75e" onsubmit="if(this.f.value == -1){return false;}">
+
+	
+		<fieldset class="jumpbox">
+	
+			<label for="f" accesskey="j">Jump to:</label>
+			<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+			
+				<option value="-1">Select a forum</option>
+			<option value="-1">------------------</option>
+				<option value="3">Reverse Engineering Forum Index</option>
+			
+				<option value="1" selected="selected">&nbsp; &nbsp;General Discussion</option>
+			
+				<option value="2">&nbsp; &nbsp;CoCoNet Discussion</option>
+			
+				<option value="4">&nbsp; &nbsp;&nbsp; &nbsp;Custom Maps</option>
+			
+			</select>
+			<input type="submit" value="Go" class="button2" />
+		</fieldset>
+	</form>
+
+
+	<h3>Who is online</h3>
+	<p>Users browsing this forum: No registered users and 12 guests</p>
+</div>
+    
+                <div id="page-footer">
+                
+                	<div class="navbar">
+                		<div class="inner"><span class="corners-top"><span></span></span>
+                
+                		<ul class="linklist">
+                			<li class="icon-home"><a href="./index.php?sid=fbdfaad30c82adb5ffd88a3b717aa75e" accesskey="h">Board index</a></li>
+                				
+                            <li class="rightside"><a href="./memberlist.php?mode=leaders&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">The team</a> &bull; <a href="./ucp.php?mode=delete_cookies&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e">Delete all board cookies</a> &bull; All times are UTC + 1 hour [ <abbr title="Daylight Saving Time">DST</abbr> ]</li>
+                		</ul>
+                
+                		<span class="corners-bottom"><span></span></span></div>
+                	</div>
+                </div>
+            </div>
+        <div class="border-bottom"><span><span></span></span></div>
+    </div></div></div></div></div>
+</div>
+	
+	<div class="copyright">Powered by <a href="http://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+		
+	</div>
+
+
+
+<div>
+	<a id="bottom" name="bottom" accesskey="z"></a>
+	<img src="./cron.php?cron_type=tidy_sessions&amp;sid=fbdfaad30c82adb5ffd88a3b717aa75e" width="1" height="1" alt="cron" />
+</div>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

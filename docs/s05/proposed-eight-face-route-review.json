@@ -1,0 +1,92 @@
+{
+  "proposed_faces": 8,
+  "start_reachable_before": 3267,
+  "start_reachable_after": 3287,
+  "lost_start_cells": [],
+  "gained_start_cells": [
+    [
+      7,
+      32
+    ],
+    [
+      8,
+      28
+    ],
+    [
+      8,
+      29
+    ],
+    [
+      8,
+      30
+    ],
+    [
+      8,
+      32
+    ],
+    [
+      9,
+      28
+    ],
+    [
+      9,
+      29
+    ],
+    [
+      9,
+      32
+    ],
+    [
+      10,
+      29
+    ],
+    [
+      10,
+      30
+    ],
+    [
+      10,
+      32
+    ],
+    [
+      10,
+      33
+    ],
+    [
+      11,
+      29
+    ],
+    [
+      11,
+      33
+    ],
+    [
+      12,
+      31
+    ],
+    [
+      12,
+      33
+    ],
+    [
+      13,
+      31
+    ],
+    [
+      14,
+      31
+    ],
+    [
+      14,
+      32
+    ],
+    [
+      14,
+      33
+    ]
+  ],
+  "returnable_before": 3790,
+  "returnable_after": 3810,
+  "lost_return_cells": [],
+  "limitation": "Static current-rule graph with examinable doors assumed open; not original execution or a playtest."
+}

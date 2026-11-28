@@ -1,0 +1,82 @@
+raw_location,component,description,cells,reachable_cells,perimeter_faces,supported_entry_faces,reachable_entry_faces,incoming_raw_codes,st_access_status
+16,1,at the Green Boar Inn,4,0,10,0,0,13;28,not_verified
+17,1,at the Lazy Griffin Inn,2,0,6,0,0,13;28,not_verified
+18,1,at the Sleeping Dragon Inn,2,0,6,0,0,13;28,not_verified
+19,1,at the Travellers Inn,3,0,8,0,0,13;28,not_verified
+20,1,at the Midnight Inn,4,0,10,0,0,13;28,not_verified
+21,1,at the Warriors Retreat Inn,1,0,4,0,0,13;28,not_verified
+22,1,at the Royal Resort,2,0,6,0,0,13;28,not_verified
+23,1,at the Flaming Dragon Tavern,1,0,4,0,0,29,not_verified
+24,1,at the Misty Mountain Tavern,1,0,4,0,0,13;29,not_verified
+25,1,at the Screaming Siren Bar,1,0,4,1,0,0;13;29,not_verified
+26,1,at the Happy Hunter Rest Stop,4,4,10,1,1,5;13,not_verified
+27,1,at the Dancing Nymph Tavern,1,1,4,2,2,3;5;13;29,not_verified
+28,1,at the Club,2,0,6,0,0,13;29,not_verified
+29,1,at the Black Devil Tavern,4,0,10,0,0,13;29,not_verified
+30,1,at the Lost Oasis Tavern,1,1,4,1,1,5;13,not_verified
+31,1,at the Last Stop,1,1,4,1,1,5;13;29,not_verified
+32,1,at the Tail of the Dog,2,2,6,2,2,13;29,not_verified
+33,1,at Club Babalyon,1,1,4,1,1,5;13,not_verified
+34,1,at the Lost Tears Tavern,1,0,4,0,0,29,not_verified
+35,1,at Mom's Bar,2,0,6,0,0,13;29,not_verified
+36,1,at Lusty Lloyds,2,2,6,1,1,5;13,not_verified
+37,1,at the First City Bank,1,0,4,0,0,13;31,not_verified
+38,1,at the Granite Bank,1,0,4,0,0,31,not_verified
+39,1,at the Grams Gold Exchange,1,1,4,1,1,5;13,not_verified
+40,1,at Smiley's Shop,1,0,4,0,0,27,not_verified
+41,1,at the Honest Trader,1,0,4,0,0,27,not_verified
+42,1,at the Adventurers Outfitters,1,0,4,0,0,13;27,not_verified
+43,1,at the Warrior's Supplies,1,0,4,0,0,13;27,not_verified
+44,1,at the General Store,5,0,12,0,0,13;27,not_verified
+45,1,at the Exclusive Outfitters,4,0,10,0,0,13;27,not_verified
+46,1,at the Ono Goods,13,0,28,0,0,13;27,not_verified
+47,1,at the Best Bargain Store,1,0,4,0,0,27,not_verified
+48,1,at the Grubron Imports,1,0,4,0,0,13;27,not_verified
+49,1,at the Betelguese Sales,2,2,6,1,1,5;13;27,not_verified
+50,1,at the Merchants Grotto,5,0,12,0,0,13;27,not_verified
+51,1,at the Sunset Market,2,0,6,0,0,13;27,not_verified
+52,1,at Pauline's Emporium,4,0,10,0,0,13;27,not_verified
+53,1,at Da Place,1,0,4,0,0,13;27,not_verified
+53,2,at Da Place,1,0,4,0,0,27,not_verified
+55,1,at the Sharp Weaponsmiths,3,0,8,0,0,13;30,not_verified
+56,1,at Occum's Weaponsmiths,1,1,4,1,1,5;13,not_verified
+57,1,at the Best Armorers,1,0,4,0,0,30,not_verified
+58,1,at the Knights Armorers,1,0,4,0,0,13;30,not_verified
+59,1,at the House of Ill-Repute,6,6,12,5,5,3;5;13,not_verified
+60,1,at Acrinimiril's Gate,1,1,4,1,1,5;13,not_verified
+61,1,at the Floating Gate,1,1,4,4,4,0,not_verified
+62,1,at the Arena,184,0,72,7,0,0;3;13;37,not_verified
+63,1,at the Palace,102,0,72,14,0,0;3;5;13;37,not_verified
+64,1,at the Palace Gate,1,0,4,1,0,3;37;38,not_verified
+64,2,at the Palace Gate,1,0,4,3,0,0;13,not_verified
+65,1,at an entrance to The Dungeon,1,1,4,1,1,3;13,not_verified
+65,2,at an entrance to The Dungeon,1,1,4,1,1,5;13,not_verified
+66,1,at the Maximum Casino,5,5,10,5,5,3;5;13,not_verified
+67,1,at the Arena Entrance,2,0,6,2,0,3;13;38,not_verified
+67,2,at the Arena Entrance,1,0,4,1,0,3;37;38,not_verified
+67,3,at the Arena Entrance,1,0,4,3,0,3;38,not_verified
+67,4,at the Arena Entrance,2,1,6,3,2,0;13,not_verified
+68,1,at Jack's Fitness Academy,1,1,4,1,1,3;13,not_verified
+69,1,at the Armstrong Builders,1,0,4,1,0,5;13,not_verified
+70,1,at the Apollo Trainers,2,0,6,1,0,3;13,not_verified
+73,1,at David's Weapons Trainers,5,0,12,3,0,3;5;13,not_verified
+74,1,at the One Way Soothers,9,0,12,0,0,13;33,not_verified
+75,1,at the Alpha Omega Healers,9,0,12,0,0,13;33,not_verified
+76,1,at the Thieves Guild,7,7,14,2,2,5;13,not_verified
+77,1,at the Blue Wizards Guild,1,1,4,1,1,5;13,not_verified
+78,1,at the Light Wizards Guild,1,1,4,4,4,0,not_verified
+79,1,at the Paladins Guild,4,0,10,1,0,5;13,not_verified
+80,1,at the Green Wizards Academy,7,7,16,1,1,5;13,not_verified
+81,1,at the Red Wizards University,7,7,14,1,1,5;13,not_verified
+82,1,at the Dark Wizards Guild,3,0,8,0,0,13;32,not_verified
+83,1,at the Star Wizards Guild,1,0,4,0,0,13;32,not_verified
+84,1,at the Wizards of Chaos Guild,1,1,4,1,1,5;13,not_verified
+85,1,at the Wizards of Law Guild,1,1,4,1,1,3;13,not_verified
+86,1,at the Mercenary Guild,2,0,6,0,0,13;32,not_verified
+87,1,at the Guild of Order,1,0,4,0,0,13;32,not_verified
+88,1,at the Physicians Guild,1,1,4,1,1,5;13,not_verified
+89,1,at the Assassins Guild,1,1,4,1,1,5;13,not_verified
+90,1,by an entrance to The Dungeon,1,1,4,2,2,0;3;13,not_verified
+9,1,at the Northern Gate,12,12,24,20,20,0;5;13,not_verified
+10,1,at the Southern Gate,13,13,26,25,25,0,not_verified
+11,1,at the Western Gate,11,11,22,21,21,0,not_verified

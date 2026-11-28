@@ -1,6 +1,8 @@
 extends Node2D
+## Retained Lantern & the Gate prototype controller, used by scenes/prototype.tscn.
+## The playable original-map game uses main.gd; this scene remains a regression fixture.
 const World = preload("res://scripts/world.gd")
-const Music = preload("res://scripts/tavern_music.gd")
+const Music = preload("res://scripts/legacy_tavern_music.gd")
 const FirstPerson = preload("res://scripts/first_person.gd")
 const INK := Color("d9e0d9")
 const DIM := Color("8b9b9b")

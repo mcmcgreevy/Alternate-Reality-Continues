@@ -1,0 +1,414 @@
+LayoutDocument">
+|
+Opponent
+|
+Frequency
+A check is done every 12.5 seconds (0.83 real second):
+The character meets an opponent if a random number between 0 and his unnoticeability is 0 (probability = (1 / (unnoticeability + 1) %).
+For example, at each check:
+A character having an unnoticeability of 32 (initial value) has a probability of 3% to meet an encounter.
+A character having an unnoticeability of 0 always meets an opponent.
+The higher the unnoticeability, the lower the encounter frequency.
+The checks are done in establishmeents too, that's why the character often encounters someone when leaving.
+The following graph gives the cumulated probabilities for various unnoticeability values.
+We can see that:
+| Unnoticeability | ~99% reached at
+| Real | Ingame
+| 16 | 1 mn | 15 mn
+| 32 | 2 mn | 30 mn
+| 48 | 3 mn | 45 mn
+If the character heading is near a wall, another heading is chosen to let the opponent come in (there's no relationship with being surprised).
+Creation
+The opponent is chosen according to the situation:
+The location of the character: indoor or outdoor.
+The weather: rainy or not.
+The character invisibility (if raining, the character invisibility is cancelled just before the selection).
+The current time of the day.
+| Location | Rainy | Invisible | Time | Situation
+| Indoor |   | N | 6h - 19h | Day
+| 19h - 6h | Night
+| Y |   | Invisible
+| Outdoor | N | N | 6h - 19h | Day
+| 19h - 6h | Night
+| Y |   | Invisible
+| Y |   |   | Rainy
+The opponent type is randomly selected among the list of the current situation:
+|
+| Day
+| % | Opponent type
+| 10.16 % | Thiefs
+| 13.67 % | Fighters
+| 39.06 % | Citizens
+| 7.81 % | Nobility
+| 29.30 % | Spellcasters and Assassin
+|
+| Night
+| % | Opponent type
+| 17.58 % | Thiefs
+| 11.72 % | Fighters
+| 1.56 % | Citizens
+| 0.78 % | Nobility
+| 3.91 % | Spellcasters and Assassin
+| 11.72 % | Fantasy
+| 9.77 % | Wandering Animals
+| 7.81 % | Slims
+| 1.95 % | Specials
+| 33.20 % | Undeads
+|
+| Rainy
+| % | Opponent type
+| 8.98 % | Thiefs
+| 8.59 % | Fighters
+| 17.19 % | Spellcasters and Assassin
+| 16.41 % | Fantasy
+| 7.81 % | Wandering Animals
+| 41.02 % | Undeads
+|
+| Invisible
+| % | Opponent type
+| 74.61 % | Undeads and Ghost
+| 1.95 % | Spellcasters and Assassin
+| 23.44 % | Undeads
+Then the opponent is randomly chosen among the list of the previously selected type:
+|
+| Thiefs
+| % | Opponent
+| 39.45 % | Mugger
+| 19.53 % | Cutthroat
+| 9.77 % | Thief
+| 4.69 % | Robber
+| 3.52 % | Brigand
+| 23.05 % | Master Thief
+|
+| Fighters
+| % | Opponent
+| 21.48 % | Fighter
+| 17.97 % | Swordsman
+| 16.41 % | Warrior
+| 11.72 % | Gladiator
+| 7.81 % | Knight (v1)
+| 1.95 % | Weaponmaster
+| 22.66 % | Champion
+|
+| Citizens
+| % | Opponent
+| 4.30 % | Pauper
+| 15.63 % | Courier
+| 19.53 % | Commoner
+| 19.53 % | Merchant
+| 41.02 % | Guard (v1)
+|
+| Nobility
+| % | Opponent
+| 23.83 % | Nobleman
+| 15.63 % | Guard (v2)
+| 60.55 % | Knight (v2)
+|
+| Spellcasters and Assassin
+| % | Opponent
+| 23.83 % | Apprentice
+| 23.44 % | Acolyte
+| 15.63 % | Novice
+| 10.94 % | Wizard
+| 1.56 % | Mage
+| 1.56 % | Assassin
+| 23.05 % | Arch-Mage
+|
+| Fantasy
+| % | Opponent
+| 16.02 % | Gnoll
+| 11.72 % | Goblin
+| 11.72 % | Hobbit
+| 11.72 % | Orc
+| 11.72 % | Dwarf
+| 7.81 % | Troll
+| 29.30 % | Giant
+|
+| Wandering Animals
+| % | Opponent
+| 70.70 % | Giant Rat
+| 29.30 % | Wolf
+|
+| Slims
+| % | Opponent
+| 58.98 % | Brown Mold
+| 41.02 % | Black Slime
+|
+| Specials
+| % | Opponent
+| 70.70 % | Small Dragon
+| 29.30 % | Nightstalker
+|
+| Undeads
+| % | Opponent
+| 20.70 % | Skeleton
+| 18.75 % | Zombie
+| 17.19 % | Gremlin
+| 7.81 % | Imp
+| 7.81 % | Ghoul
+| 3.13 % | Wraith
+| 1.56 % | Specter
+| 23.05 % | Ghost (v1)
+|
+| Undeads and Ghost
+| % | Opponent
+| 4.30 % | Ghost (v2)
+| 16.41 % | Skeleton
+| 18.75 % | Zombie
+| 17.19 % | Gremlin
+| 7.81 % | Imp
+| 7.81 % | Ghoul
+| 3.13 % | Wraith
+| 1.56 % | Specter
+| 23.05 % | Ghost (v1)
+The following table is obtained by combining the types with the situations. It gives the opponent distribution according to the situation:
+|
+| Day
+| % | Opponent
+| 16.02 % | Guard (v1)
+| 7.63 % | Commoner
+| 7.63 % | Merchant
+| 6.98 % | Apprentice
+| 6.87 % | Acolyte
+| 6.75 % | Arch-Mage
+| 6.10 % | Courier
+| 4.73 % | Knight (v2)
+| 4.58 % | Novice
+| 4.01 % | Mugger
+| 3.20 % | Wizard
+| 3.10 % | Champion
+| 2.94 % | Fighter
+| 2.46 % | Swordsman
+| 2.34 % | Master Thief
+| 2.24 % | Warrior
+| 1.98 % | Cutthroat
+| 1.86 % | Nobleman
+| 1.68 % | Pauper
+| 1.60 % | Gladiator
+| 1.22 % | Guard (v2)
+| 1.07 % | Knight (v1)
+| 0.99 % | Thief
+| 0.48 % | Robber
+| 0.46 % | Mage
+| 0.46 % | Assassin
+| 0.36 % | Brigand
+| 0.27 % | Weaponmaster
+|
+| Night
+| % | Opponent
+| 7.65 % | Ghost (v1)
+| 6.94 % | Mugger
+| 6.90 % | Giant Rat
+| 6.87 % | Skeleton
+| 6.23 % | Zombie
+| 5.71 % | Gremlin
+| 4.61 % | Brown Mold
+| 4.05 % | Master Thief
+| 3.43 % | Cutthroat
+| 3.43 % | Giant
+| 3.20 % | Black Slime
+| 2.86 % | Wolf
+| 2.66 % | Champion
+| 2.59 % | Imp
+| 2.59 % | Ghoul
+| 2.52 % | Fighter
+| 2.11 % | Swordsman
+| 1.92 % | Warrior
+| 1.88 % | Gnoll
+| 1.72 % | Thief
+| 1.38 % | Small Dragon
+| 1.37 % | Gladiator
+| 1.37 % | Goblin
+| 1.37 % | Hobbit
+| 1.37 % | Orc
+| 1.37 % | Dwarf
+| 1.04 % | Wraith
+| 0.93 % | Apprentice
+| 0.92 % | Knight (v1)
+| 0.92 % | Acolyte
+| 0.92 % | Troll
+| 0.90 % | Arch-Mage
+| 0.82 % | Robber
+| 0.64 % | Guard (v1)
+| 0.62 % | Brigand
+| 0.61 % | Novice
+| 0.57 % | Nightstalker
+| 0.52 % | Specter
+| 0.47 % | Knight (v2)
+| 0.43 % | Wizard
+| 0.31 % | Commoner
+| 0.31 % | Merchant
+| 0.24 % | Courier
+| 0.23 % | Weaponmaster
+| 0.19 % | Nobleman
+| 0.12 % | Guard (v2)
+| 0.07 % | Pauper
+| 0.06 % | Mage
+| 0.06 % | Assassin
+|
+| Rainy
+| % | Opponent
+| 9.45 % | Ghost (v1)
+| 8.49 % | Skeleton
+| 7.69 % | Zombie
+| 7.05 % | Gremlin
+| 5.52 % | Giant Rat
+| 4.81 % | Giant
+| 4.10 % | Apprentice
+| 4.03 % | Acolyte
+| 3.96 % | Arch-Mage
+| 3.54 % | Mugger
+| 3.20 % | Imp
+| 3.20 % | Ghoul
+| 2.69 % | Novice
+| 2.63 % | Gnoll
+| 2.29 % | Wolf
+| 2.07 % | Master Thief
+| 1.95 % | Champion
+| 1.92 % | Goblin
+| 1.92 % | Hobbit
+| 1.92 % | Orc
+| 1.92 % | Dwarf
+| 1.88 % | Wizard
+| 1.85 % | Fighter
+| 1.75 % | Cutthroat
+| 1.54 % | Swordsman
+| 1.41 % | Warrior
+| 1.28 % | Troll
+| 1.28 % | Wraith
+| 1.01 % | Gladiator
+| 0.88 % | Thief
+| 0.67 % | Knight (v1)
+| 0.64 % | Specter
+| 0.42 % | Robber
+| 0.32 % | Brigand
+| 0.27 % | Mage
+| 0.27 % | Assassin
+| 0.17 % | Weaponmaster
+|
+| Invisible
+| % | Opponent
+| 22.60 % | Ghost (v1)
+| 18.38 % | Zombie
+| 17.09 % | Skeleton
+| 16.85 % | Gremlin
+| 7.66 % | Imp
+| 7.66 % | Ghoul
+| 3.21 % | Ghost (v2)
+| 3.06 % | Wraith
+| 1.53 % | Specter
+| 0.47 % | Apprentice
+| 0.46 % | Acolyte
+| 0.45 % | Arch-Mage
+| 0.31 % | Novice
+| 0.21 % | Wizard
+| 0.03 % | Mage
+| 0.03 % | Assassin
+Strength, intelligence, skill, speed and hit points stats are increased according to the character level:
+stat = Random [base stat minimum; base stat maximum] + character level / 2
+A primary weapon (and armor) is chosen among the opponent weapons (and armor) list.
+A secondary weapon (and armor) distinct from the primary is chosen if the list contains more than 1 item.
+Even if the opponent holds 2 weapons and 2 pieces of armor, only the primaries are used.
+Melody
+The type of the melody played when the character encounters someone depends on the opponent alignment. The melody is then randomly selected among the type.
+The 2 last ones of the type C are almost identical, human hearing can't discern the different tone used.
+|
+| Type A
+(0 - 63)
+|
+♫
+♫
+|
+Nightstalker
+Specter
+Wraith
+Brown Mold
+Gremlin
+Black Slime
+Zombie
+Giant Rat
+Orc
+Imp
+Wolf
+Skeleton
+Ghost (v1)
+Assassin
+Ghost (v2)
+Ghoul
+Gnoll
+Goblin
+Troll
+|
+| Type B
+(64 - 175)
+|
+♫
+♫
+|
+Master Thief
+Cutthroat
+Brigand
+Thief
+Mugger
+Robber
+Fighter
+Gladiator
+Warrior
+Small Dragon
+Knight (v1)
+Swordsman
+Weaponmaster
+Champion
+|
+Pauper
+Merchant
+Hobbit
+Dwarf
+Giant
+Commoner
+Acolyte
+Courier
+Apprentice
+Novice
+Wizard
+Mage
+|
+| Type C
+(176 - 255)
+|
+♫
+♫
+♫
+|
+Arch-Mage
+Guard (v1)
+|
+Nobleman
+Knight (v2)
+Guard (v2)
+|
+Music of type A is only played with evil opponents. Type B is used by bad and neutral opponents (besides Arch-Mage and Guard). Type C corresponds to Arch-Mage, Guard and good opponents.
+|
+|
+| 0
+| Alignment
+| 255
+| Behavior
+|
+|
+| Evil
+| Bad
+| Neutral
+| Good
+|
+| Music
+|
+|
+| Type A
+| Type B
+| Type C
+|
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

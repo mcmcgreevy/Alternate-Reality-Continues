@@ -1,0 +1,91 @@
+# S05 — City geography and establishment audit
+Parent: F05 (#12). Research review consolidated 2026-11-27. See [review decision and exact correction proposal](../S05_REVIEW_HANDOFF.md). All 256 identified differences have dispositions; full historical verification and implementation acceptance remain incomplete. User completed the sprint playtest; two fixes await retest. S05 work remains research-only under the current instruction. Existing issue #38 remains the story; checklist items below are not hidden sub-issues.
+
+Research started 2026-11-22: [first-pass inventory and findings](../S05_MAP_AUDIT_FINDINGS.md). Source legend/current faces inventoried; full ST occurrence and directional comparison remains in progress.
+
+Follow-up: [numbered-location comparison](../S05_LOCATION_COMPARISON.md) now accounts for all visible markers and current location components. Unnumbered runtime identities, access/entrance semantics and the directed-face comparison remain open. No gameplay changes authorized.
+
+Location delivery is now represented by [actual stories S33–S107](../LOCATION_STORIES.md), grouped under their service/scenario feature owners. S05 retains identity/dispatch and directional-map research; it does not own implementing all City services.
+
+## Outcome
+Identify City establishments and traverse source-supported directional passages, with unknown geometry explicitly visible in the development evidence.
+
+## Sources and existing coverage
+Use archived Kroah ST City v2.0 world.html map legend and Map.png; docs/ST_LOCATION_CORRECTION.md already verifies marker 16 Tail of the Dog (39,33)/(39,34), marker 14 Lost Oasis (20,1), and northern marker 49 (50,3). Preserve the repeated southeast marker 49 as a distinct occurrence. Internal coordinates are zero-based northwest origin, X east and Y south. ARX geometry is comparison evidence, not ST authority. Dungeon endpoints remain independently sourced 8-bit data.
+
+## Evidence tasks (allowed during coding pause)
+- Inventory every legend entry and every occurrence, including repeated markers; record source locator, map coordinates, footprint, candidate entrance faces and confidence. Counts come from the source, not assumed IDs.
+- Compare all 4096 City cells / 16384 directed faces with available ST evidence; retain separate classifications: verified match, discrepancy, not resolved by image, outside supported interpretation.
+- Never infer a reciprocal door from the opposite face or claim visual pixels prove runtime passage flags. Record unreadable edges and seek same-edition runtime/data evidence before proposing corrections.
+- Produce a discrepancy ledger with current value, source-supported value, evidence, player impact and proposed migration. Separate identity fixes, geometry fixes and deliberate remake entrances.
+- Keep Tail of the Dog/Grimthorn, music and northern cross-edition travel adaptations explicit.
+
+## Implementation acceptance (not authorized during pause)
+- Each changed identity/edge has evidence and regression anchors; retain directed boundaries and raw source provenance.
+- Previously saved positions and opened doors have a documented policy if corrected geometry makes them invalid; do not silently teleport or strand the player.
+- Verify the existing tavern exit, both established tavern cells, northern City/Dungeon round trip and no accidental extra southeast crossing.
+- Audit coverage is complete only when every cell/face is classified. Unknowns are not fidelity passes; unresolved material behavior blocks claiming the affected passage historically verified.
+- A discrepancy requiring substantial new mechanics becomes a separately visible issue before expanding this story.
+
+## Readiness gate
+Evidence gathering has no code dependency. Any correction must wait for test results and use the isolated development baseline. Full implementation readiness requires the discrepancy inventory, supported correction scope and save policy; broad city-wide fidelity is not currently Ready.
+
+## Current-build access inventory — 2026-11-22
+
+[Access and dispatch report](../S05_LOCATION_ACCESS.md) now records all 81 current components and 710 perimeter faces, with independent entry/exit codes. Static movement connectivity and service dispatch are separated from historical ST accessibility. Full ST directional comparison and runtime identity reconciliation remain open; no code changed.
+
+## Candidate ST map comparison — 2026-11-22
+
+[Executable/data evidence](../S05_ST_MAP_DATA.md) identifies a four-byte-per-cell map block matching all 463 canonical numbered cells. All 16384 directed faces now have a separate candidate-data comparison: 16128 raw equal, 256 raw different. Canonical image verification and full passage semantics remain open; no gameplay corrections made.
+
+## Priority passage review — 2026-11-22
+
+[Review of all 16 priority faces](../S05_PRIORITY_PASSAGES.md) identifies three visually corroborated missing doorways and one wall pair as proposed correction scope. Arena directionality, one unresolved face and four outer edges are classified separately. Hypothetical graph/save impact is documented; no implementation or playtest occurred.
+
+## Service-identity research — 2026-11-22
+
+[Service identity and encoding evidence](../S05_SERVICE_IDENTITIES.md) reconciles all 79 service-code faces with candidate ordinary doors and exact destination categories. Marker-to-service indices are traced in candidate routines, including shared computed Da Place! index and reversed healer record offsets. Full dispatch/state behavior and 177 non-service raw differences remain under review.
+
+## Shared state and complete difference triage — 2026-11-22
+
+[Follow-up research](../S05_SHOP_STATE_AND_TRIAGE.md) identifies the exact shared Da Place! friendship, frequency, visit-day, refresh-hour and stock addresses. All 256 raw differences are assigned initial categories; seven special-code passage candidates extend the earlier 16 ordinary-code cases. Classification is not fidelity completion.
+
+## Special approaches — 2026-11-22
+
+[Seven-face review and scenario handlers](../S05_SPECIAL_PASSAGES.md) distinguishes five ordinary-City approach cells from two scenario destinations. Candidate request/refusal/position-restore paths are documented; all seven faces remain held for full dispatch/directional verification. No correction added or implemented.
+
+## Category dispatch bindings — 2026-11-22
+
+[Resident dispatch trace](../S05_CATEGORY_DISPATCH.md) verifies all ten category-to-module bindings and connects category6 update to the scenario marker switch. This resolves the prior binding gap in candidate static evidence. Type0 gate/approach cells use City dispatch; City-specific event paths and full runtime behavior remain open.
+
+## City helper review — 2026-11-23
+
+[Bounded helper/control-flow review](../S05_CITY_HELPERS.md) separates rendering/category artwork, input handling and coordinate-triggered feedback from scenario activation. Remaining ranges and resident calls are listed explicitly; no claim that all gate behavior is absent.
+
+## Boundary rendering — 2026-11-27
+
+[Drawing-versus-movement research](../S05_BOUNDARY_RENDERING.md) classifies candidate drawing variants for all 154 same-threshold differences. In particular 6/14 share a draw selector while only 6 passes the movement check. Visual equivalence and full canonical face review remain unresolved; no map or rendering changes made.
+
+## Candidate boundary artwork — 2026-11-27
+
+[Decoded drawing-bank evidence](../S05_BOUNDARY_ARTWORK.md) identifies stone walls, doors in stone, colonnades, and doors between columns. Candidate6/14 share colonnade artwork despite different movement blocking. The grayscale contact sheet is analysis only; no renderer/map changes or full canonical visual verification claimed.
+
+## Canonical colonnade-face classification — 2026-11-27
+
+[125-face image comparison](../S05_COLONNADE_IMAGE_REVIEW.md) classifies these faces as `not_resolved_by_image`: 99 share their canonical boundary pixels with an opposite candidate13 face; 26 have other opposite codes without a proven image legend mapping. Both face ledgers updated. These are examined unknowns, not fidelity passes.
+
+## Below-threshold face review — 2026-11-27
+
+[19-face directional/category review](../S05_PASSABLE_FACE_REVIEW.md) separates six Wilderness side entries, nine door styles, three wall/colonnade cases and one Southern Gate exit. Both ledgers now contain 144 `not_resolved_by_image` classifications. Exact reverse faces and scenario dependencies recorded; no corrections implemented.
+
+## Consolidated review decision — 2026-11-27
+
+[Review handoff](../S05_REVIEW_HANDOFF.md) accounts for every identified difference, proposes exactly eight correction faces, verifies their static route impact and specifies save/acceptance requirements. The bounded review is concluded with holds; S05 remains open because full canonical verification, implementation and acceptance are not complete.
+
+## Whole-map directional pairs — 2026-11-27
+
+[8064-pair review](../S05_DIRECTIONAL_PAIR_REVIEW.md) finds 450 candidate threshold-one-way pairs, 445 preserved by current potential movement. Of 92 differing movement pairs, 77 involve service encodings and 15 other boundaries. This adds complete pair-level numeric coverage, not historical runtime verification or new approved corrections.
+
+## One-way integration risk — 2026-11-27
+
+[Five-pair review](../S05_ONE_WAY_INTEGRATION.md) establishes a scenario-handling prerequisite before enabling held Arena/Palace approaches. Pure boundary substitution exposes 334 extra cells in the current graph; the analysis model stopping at scenario cells adds only two destinations. No gameplay changes.

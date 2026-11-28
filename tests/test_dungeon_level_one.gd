@@ -14,6 +14,12 @@ func key(code: Key) -> void:
 	event.keycode = code
 	event.pressed = true
 	scene._unhandled_key_input(event)
+	scene.cancel_held_movement()
+	if scene.world.is_travelling():
+		var stride_seconds: float = scene.world.tile_travel_seconds()
+		scene.world.advance_real_seconds(stride_seconds)
+		scene.advance_held_movement(stride_seconds)
+		scene.first_person.sync(scene.world)
 
 func visit(target: Vector2i) -> void:
 	var path: Array[Vector2i] = scene.world.find_route(target)
@@ -53,10 +59,10 @@ func run() -> void:
 		[Vector2i(30,63), 1, Vector2i(33,63)], [Vector2i(33,63), 3, Vector2i(30,63)]]:
 		w.position = sample[0]
 		w.facing = sample[1]
-		var before: int = w.minutes
+		var before: float = w.minutes + w.minute_fraction
 		if w.edge(w.position, w.facing) in [3,4,5,6]: w.interact()
 		check(w.step() and w.position == sample[2], "Original boundary transition %s" % sample[0])
-		check(w.facing == sample[1] and w.minutes == before + 1, "Preserved facing and one-step clock at crossing")
+		check(w.facing == sample[1] and is_equal_approx(w.minutes + w.minute_fraction, before + 0.25), "Preserved facing and Speed-based clock at crossing")
 	# Every directed physical seam is checked without manufacturing openings.
 	var checked := 0
 	for i in range(64):
@@ -65,13 +71,13 @@ func run() -> void:
 			w.facing = sample[1]
 			w.doors.clear()
 			var code: int = w.edge(w.position, w.facing)
-			var before: int = w.minutes
+			var before: float = w.minutes + w.minute_fraction
 			var expected: Vector2i = w.step_destination(w.position + w.DIRECTIONS[w.facing])
 			if code in [3,4,5,6]: w.interact()
 			var moved: bool = w.step()
 			check(moved == (code < 8), "Directed seam obeys its raw edge code")
 			check(w.position == (expected if moved else sample[0]), "Seam destination is correct")
-			check(w.minutes == before + (1 if moved else 0), "Blocked seam costs no time")
+			check(is_equal_approx(w.minutes + w.minute_fraction, before + (0.25 if moved else 0.0)), "Blocked seam costs no time")
 			checked += 1
 	check(checked == 256, "All 256 directed seam faces tested")
 	for sample in [[Vector2i(0,0),3], [Vector2i(63,63),1], [Vector2i(10,0),0], [Vector2i(10,63),2]]:

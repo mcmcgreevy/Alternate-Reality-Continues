@@ -1,0 +1,199 @@
+LayoutDocument">
+|
+Rewards
+|
+Experience
+The character earns experience points with encounters:
+Each damage inflicted by the character gives 1 experience point (spells included).
+If the opponent is charmed or tricked, half of his remaining hit points is added to the character experience.
+On victory, the character earns the experience value of the opponent: intelligence*3 + skill*3 + strength*3
+Because the opponent stats are scaled up according to the character level, they progressively give more experience points:
+Experience
+~= hit points + (base intelligence + level/2)*3 + (base skill + level/2)*3 + (base strength + level/2)*3
+~= hit points + base intelligence*3 + base skill*3 + base strength*3 + (level/2)*9
+Level Up
+Initial character level is 0.
+The first level needs 200 experience points. Next levels require the double experience points than the previous one:
+| Level | Required
+experience
+| 1 | 200
+| 2 | 400 = Level 1 * 2
+| 3 | 800 = Level 2 * 2
+| n | 200 * 2 n-1
+Hit points (current and maximum) are increased by Random [0; effective stamina]. This means bonus and penalty are included!
+Each of the 7 primary base stats are increased by:
+primary base stat += 0.5 + 0.5 * Random [0; 256 - primary base stat] / 256
+Higher is the primary base stat, lower is the gain (with a minimum of 0.5).
+Treasures
+A defeated opponent may carry items belonging to the following treasure categories:
+Potions
+Equipment (weapons and armor),
+Pieces (copper, silver and gold)
+Gems and jewelry
+See the opponent description for details about its treasure categories (probability and quantity).
+For each of his categories:
+The category probability is used to check if the opponent owns one or more items from this category.
+This probability is increased by the character treasure finding stat.
+If the probability succeeds:
+If the probability have succeeded thanks to the treasure finding stat bonus, the stat is decreased by 1. Otherwise the bonus has not been useful to succeed, so it remains the same.
+The number of items found is randomly chosen according to the category quantity.
+Equipment (weapons and armor) have a probability of 1.17% to be cursed.
+For potions and equipment, the following tables are used to determine the exact type of the item.
+|
+| Potions
+| % | Item
+| 7.42 % | Potion of Water
+| 5.86 % | Potion of Invisibility
+| 5.08 % | Potion of Milk
+| 5.08 % | Potion of Mineral Water
+| 4.69 % | Potion of Spirits
+| 3.91 % | Potion of Weakness
+| 3.13 % | Potion of Dumbness
+| 3.13 % | Potion of Protection+1 (*)
+| 3.13 % | Potion of TREASURE FINDING
+| 3.13 % | Potion of Unnoticeability
+| 2.73 % | Potion of Ugliness
+| 2.73 % | Potion of Fleetness
+| 2.73 % | Potion of Slowness
+| 2.73 % | Potion of Protection+2 (*)
+| 2.34 % | Potion of ACID!
+| 2.34 % | Potion of Poison!
+| 1.95 % | Potion of Wine
+| 1.95 % | Potion of Fruit Juice
+| 1.95 % | Potion of Saltwater
+| 1.95 % | Potion of Vinegar
+| 1.95 % | Potion of Weak Poison
+| 1.95 % | Potion of Strong Poison!
+| 1.95 % | Potion of Healing Minor Wounds
+| 1.95 % | Potion of Healing Wounds
+| 1.95 % | Potion of Noticeability
+| 1.95 % | Potion of Inebriation
+| 1.56 % | Potion of Healing Major Wounds
+| 1.56 % | Potion of Invulnerability Sharp
+| 1.56 % | Potion of Invulnerability Earth
+| 1.56 % | Potion of Invulnerability Air
+| 1.56 % | Potion of Invulnerability Fire
+| 1.56 % | Potion of Invulnerability Water
+| 1.56 % | Potion of Invulnerability Power
+| 1.56 % | Potion of Invulnerability Mental
+| 1.56 % | Potion of Invulnerability Cleric
+| 1.56 % | Potion of Strength
+| 1.56 % | Potion of Intelligence
+| 1.56 % | Potion of Charisma
+| 1.17 % | Potion of DEADLY POISION!
+| 0.39 % | Potion of Invulnerability Blunt
+| 0.00 % | Potion of Healing All Wounds
+| 0.00 % | Potion of Curing Poison
+| 0.00 % | Potion of Cleansing
+| 0.00 % | Potion of Delusion
+|
+| Equipment
+| % | Item
+| 12.50 % | Magical Flamesword
+| 4.30 % | Dagger
+| 2.73 % | Stilletto
+| 2.34 % | Plated Greaves
+| 1.95 % | Longsword
+| 1.95 % | Leather Helmet
+| 1.95 % | Plated Helmet
+| 1.95 % | Plated Breastplate
+| 1.95 % | Plated Gauntlets
+| 1.56 % | Tower Shield
+| 1.56 % | War Net
+| 1.56 % | Spiked Shield
+| 1.56 % | Shield
+| 1.56 % | Small Shield
+| 1.56 % | Whip
+| 1.56 % | Short Sword
+| 1.56 % | Flail
+| 1.56 % | Battle Axe
+| 1.56 % | Sword
+| 1.56 % | Battle Hammer
+| 1.56 % | Padded Helmet
+| 1.56 % | Padded Gauntlets
+| 1.56 % | Padded Greaves
+| 1.56 % | Leather Breastplate
+| 1.56 % | Leather Gauntlets
+| 1.56 % | Leather Greaves
+| 1.56 % | Studded Helmet
+| 1.56 % | Studded Breastplate
+| 1.56 % | Studded Gauntlets
+| 1.56 % | Studded Greaves
+| 1.56 % | Ringmail Hood
+| 1.56 % | Ringmail Coat
+| 1.56 % | Ringmail Leggings
+| 1.56 % | Scalemail Hood
+| 1.56 % | Scalemail Coat
+| 1.56 % | Scalemail Leggings
+| 1.56 % | Splintmail Hood
+| 1.56 % | Splintmail Coat
+| 1.56 % | Splintmail Leggings
+| 1.56 % | Elfinmail Hood
+| 1.56 % | Elfinmail Coat
+| 1.56 % | Elfinmail Leggings
+| 1.56 % | Chainmail Hood
+| 1.56 % | Chainmail Coat
+| 1.56 % | Chainmail Leggings
+| 1.56 % | Banded Helmet
+| 1.56 % | Banded Breastplate
+| 1.56 % | Banded Gauntlets
+| 1.56 % | Banded Greaves
+| 1.17 % | Padded Breastplate
+| 1.17 % | Crystal Helmet
+| 1.17 % | Crystal Breastplate
+| 1.17 % | Crystal Gauntlets
+| 1.17 % | Crystal Greaves
+Statistics
+The following tables show various statistics about rewards according to the situations. They are only valid if the character kills all opponents (even good ones).
+|
+| Day
+| Statistic | Value
+| Experience average | 129.54
+| Potions probability | 1.08 %
+| Equipment probability | 5.96 %
+| Copper average | 2.97
+| Silver average | 0.90
+| Gold average | 0.07
+| Total copper average | 19.48
+| 1 Gem probability | 0.29 %
+| 1 Jewlery probability | 2.25 %
+|
+| Night
+| Statistic | Value
+| Experience average | 124.36
+| Potions probability | 3.83 %
+| Equipment probability | 8.12 %
+| Copper average | 2.11
+| Silver average | 0.71
+| Gold average | 0.10
+| Total copper average | 19.45
+| 1 Gem probability | 0.39 %
+| 1 Jewlery probability | 4.38 %
+|
+| Rain
+| Statistic | Value
+| Experience average | 124.55
+| Potions probability | 4.98 %
+| Equipment probability | 11.65 %
+| Copper average | 2.74
+| Silver average | 0.77
+| Gold average | 0.12
+| Total copper average | 22.08
+| 1 Gem probability | 0.17 %
+| 1 Jewlery probability | 3.41 %
+|
+| Invisible
+| Statistic | Value
+| Experience average | 135.54
+| Potions probability | 11.83 %
+| Equipment probability | 20.95 %
+| Copper average | 1.84
+| Silver average | 0.46
+| Gold average | 0.12
+| Total copper average | 18.07
+| 1 Gem probability | 0.06 %
+| 1 Jewlery probability | 5.28 %
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

@@ -1,5 +1,11 @@
 # First Excursion
 
+**Current manual script:** use [Latest build playtest](LATEST_BUILD_PLAYTEST.md).
+The checklist below is historical and contains superseded clock, exit and price
+examples; do not use those examples as current pass/fail expectations.
+
+Current location correction: see [ST map verification](ST_LOCATION_CORRECTION.md). Tail of the Dog now uses marker 16 at internal (39,34), exiting south. Previous references to (20,1), 63N/21E, or the old north exit describe the superseded Lost Oasis start.
+
 Purpose: test establishment menus, street navigation and the shared character across the City/Dungeon boundary. This is a playtest exercise, not a recovered original quest. There is no combat, reward or new map geometry.
 
 Start a fresh run with Play.cmd. Allow roughly 10–15 minutes with the guide enabled.

@@ -1,0 +1,548 @@
+LayoutDocument">
+|
+Technical Notes
+|
+|
+|
+Copy Protection
+The copy protection is a checksum check.
+If the checksum is bad, the game does not prevent the user to play, but 3 main features are disabled:
+The game can't be saved:
+The character can't enter taverns (his friendship is set to 0):
+The character can't sleep in inns:
+Entity
+Header
++00.b   ABBBBCCC IsHeld & SpecialUse & Type
++01.b   Size
++02.b   HGFEDCBA Events
++03.b   Unk03
++04.b   Weight
++05.b   Offset
++06     Name
++Offset Effects
++??     00
++??     Properties
++00.b   ABBBBCCC IsHeld & SpecialUse & Type
+-------------------------------------------
+A: IsHeld
+1 Held
+0 On floor
+BBBB: SpecialUse
+0: no special use
+others: special use (hardcoded according to full byte +00)
+8E held potion with BBBB = 0001 -> 1168C Poison  | Potion@of Curing Poison
+96 held potion with BBBB = 0010 -> 11692 Disease | Potion@of Cleansing
+91 held spell  with BBBB = 0010 -> 1168C Poison  | Spell of Removing Poison
+89 held spell  with BBBB = 0001 -> 11692 Disease | Spell of Purification
+CCC: Type
+0 Stackable
+1 Spell
+2 Unknown (not used in city, ammo in dungeon)
+3 Weapon
+4 Armor
+5 Cloth
+6 Potion
++01.b   Size
+------------
+In bytes, including header.
++02.b   HGFEDCBA Events
+-----------------------
+A: Get
+B: Drop
+C: Use (& Cast)
+D: Unuse
+E: Delete
+F: ?
+G: Alignement check?
+H: ?
+When set, the entity has been triggered and the engine must handle the event for this entity. When done, the event is cleared.
++03.b   Unk03
+-------------
+Code exists but no entities have alignment effects:
+0: neutral entity
+neg: alignment effect triggers if character alignment is < abs (value)
+pos: aligmment effect triggers if character alignment is > value
++05.b   Offset
+--------------
+Offset to the start of the effects.
++06     Name
+------------
+Null terminated, may include some null characters (like unidentified potions).
++Offset Effects
+---------------
+An entity can hold none or several effects.
+The list of effects is null terminated.
+See Effects for description.
++??     Properties
+------------------
+This is the properties of the entity according to its type.
+See Properties for description.
+Effect
+When an entity received an event, it's forwarded to its effects. The active entity effects of the opposed event are removed from the list of active effects and the entity effects listening to the event are activated. When an effect is activated, it's copied to the list of active effects.
+So, effects are defined inside entities (used as template), and instancied (copied) in the active effects list (activated state).
++00.b  ABCDEFFF
++01.b  Active index
++02.b  HGFEDCBA Allow multiple & Required events
+If the effect is a text:
++03-15 for a short text
++03-31 for a long text
+If the effect is not a text:
++03.b  Counter
++04.w  Timer
++06.w  Interval
++08.b  Probability of natural cure
++09.b  Action of the effect
++10.b  Offset of the updated variable
++12.b  Number of blocks
++13.b  Gap between blocks
++14.b  Parameter value
++15.b  Linked slot? (if get?)
++00.b  ABCDEFFF
+---------------
+A Always 1?
+B Is in incubation. Incubation ends when the timer ends the first time.
+if text, must be 1
+C Is text
+1: text (with A and B at 1?)
+0: not a text
+D Text length
+1: Long text (effect is on 32 bytes)
+0: Short text (effect is on 16 bytes)
+if not a text, must be 0
+E Is text visible
+1: text is visible in Ailments or Active Magic status screen
+0: text is invisible. It will become visible when the incubation of the linked effect is ends.
+if not a text, must be 0
+FFF Type
+0 ? (never used?)
+1 Disease
+2 Poison
+3 Magic
+4 Curse
+5 ?
+6 Potion
+Others ?
+Examples:
+If the effect is a text:
+ABCDE FFF
+FB 11111 011 Magic:       visible | Status active magic list (long text)
+EB 11101 011 Magic:       visible | Status active magic list (short text)
+F9 11111 001 Disease:     visible | Status ailments list (long text)
+E9 11101 001 Disease:     visible | Status ailments list (short text)
+E1 11100 001 Disease: not visible | initial gangrene (not visible)
+If the effect is not a text:
+ABCDE FFF
+84 10000 100 Curse:   not incubation | Status Cursed!
+Guild_MenuRemovePersonalCurses  (RemoveEffectWithLinkedToIt)
+82 10000 010 Poison:  not incubation | Status Poisoned!
+Healer_Cleanse_CleansePoisons   (RemoveEffectWithLinkedToIt)
+Engine_RemovePoisons            (RemoveEffectWithLinkedToIt) by "Potion of Curing Poison" & "Spell of Removing Poison"
+81 10000 001 Disease: not incubation | Status Diseased!
+Healer_Cleanse_CureDiseases     (RemoveEffectWithLinkedToIt)
+Engine_RemoveDiseases           (RemoveEffectWithLinkedToIt) by "Potion of Cleansing"     & "Spell of Purification"
+C2 11000 010 Poison:      incubation | Healer_Cleanse_CleansePoisons   (RemoveEffectWithLinkedToIt)
+Engine_RemovePoisons            (RemoveEffectWithLinkedToIt) by "Potion of Curing Poison" & "Spell of Removing Poison"
+C1 11000 001 Disease:     incubation | Healer_Cleanse_CureDiseases     (RemoveEffectWithLinkedToIt)
+Engine_RemoveDiseases           (RemoveEffectWithLinkedToIt) by "Potion of Cleansing"     & "Spell of Purification"
+Healer_Diagnose_DiagnoseDisease (set E to LinkedToIt, make the text visible)
+initial gangrene
++01.b  Active index
+-------------------
+Initially 00 or FF. When the effect is activated (copied to the list of active effects), this value is updated, according to its initial value:
+If FF, it will be replaced by its index value inside the list of active effects.
+If 00, it will be replaced by the active index of the previous effect of the entity. This means it will be linked to the previous activated effect of the entity.
+Usually, 00 is on a text effect located after a first non-text effect. So, the text is linked to the first non-text effect.
++02.b  HGFEDCBA Allow multiple & Required events
+------------------------------------------------
+H: Disallow multiple instance of the effect in the active effects list. 2 effects are equals if Type/Interval/ProbToRemove/Action/Offset/NbBlocks/Gab/Param are the same.
+If an instance is found, the current and all following effects will not be activated.
+Only used when the effect is activated.
+GFEDCBA: Required events for the effect to activate
+A: Get
+B: Drop
+C: Use (& Cast)
+D: Unuse
+E: Delete
+F: ?
+G: Alignement check?
++03.b  Counter
+--------------
+Number of times the effect is executed before deactivated.
+00 means +oo (never removed by execution).
++04.w  Timer
+------------
+When it reaches 0, the counter is decreased by 1 and the effect is executed.
+Initial value is used and may be different than the interval.
++06.w  Interval
+---------------
+When the timer reaches 0, it starts again with this value.
++08.b  Probability of natural cure
+----------------------------------
+Checked when the effect is executed.
++09.b  Action of the effect
++12.b  Number of blocks
++13.b  Gap between blocks
++14.b  Parameter
+---------------------------
+0BBBBBBB function is Set
+BBBBBBB: Size of the updated variable
+Initializes "Number of blocks" * "Size" bytes with the value "Parameter" at the address "Offset". Each block is separated by the "Gap".
+1BBBCCCC function is one of the following
+BBB: function index
+0 Add
+1 Sub
+2 Rts
+3 Rts
+4 Xor (binary)
+5 And (binary)
+6 Or  (binary)
+CCCC: size of the updated variable
++10.b  Offset of the updated variable
+-------------------------------------
+0BBBBBBB: BBBBBBB is the offset with base address of 70000 (a5)
+1BBBBBBB: BBBBBBB is the offset with base address of the entity (exists in city? bugged in city?)
++15.b  Linked slot? (if get?)
+-----------------------------
+slot when activated, effect index when deactivated??
+Never set in city?
+Initially FF but Spell Blindness (00) and Potion of Protection+1 (*) (10)??
+Properties
+Stackable (type: 0)
+-------------------
++00.w Offset of the variable (base address: 0x70000)
++02.b Size in bytes of the variable
++03.w Quantity
+Spell (type: 1)
+---------------
++00.b Casting cost (fatigue)
++01.b Casting skill (probability of success)
++02.b Failure damage
++03.b ID
++04.b Number of uses before the spell is depleted
++05.b Skill improvement after each completed lesson
++06.b Number of remaining lessons
+Unknown (type: 2)
+-----------------
+Ammo?
+Not used in the City.
+Weapon (type: 3)
+----------------
++00.b Blunt   damage
++01.b Sharp   damage
++02.b Earth   damage
++03.b Air     damage
++04.b Fire    damage
++05.b Water   damage
++06.b Power   damage
++07.b Mental  damage
++08.b Cleric  damage
++09.b Evil(?) damage
++10.b Unk10
++11.b UsesStr (0x00: doesn't use strength, 0x80: uses strength)
++12.b Unk12
++13.b Unk13
++14.b Parry
++15.b Unk15 // Used by Combat_PlayerWeaponUnk always FF?
+Armor (type: 4)
+---------------
++00.b  Blunt   protection
++01.b  Sharp   protection
++02.b  Earth   protection
++03.b  Air     protection
++04.b  Fire    protection
++05.b  Water   protection
++06.b  Power   protection
++07.b  Mental  protection
++08.b  Cleric  protection
++09.b  Evil(?) protection
++10.b  Unk10
++11-13 Efficiencies
++14.b  Locations
+Efficiencies: LLKKJJII HHGGFFEE DDCCBBAA
+AA Blunt   efficiency
+BB Sharp   efficiency
+CC Earth   efficiency
+DD Air     efficiency
+EE Fire    efficiency
+FF Water   efficiency
+GG Power   efficiency
+HH Mental  efficiency
+II Cleric  efficiency
+JJ Evil(?) efficiency
+KK ??
+LL ??
+value for efficiency:
+0 Normal (100% damage) (00)
+1 High   ( 50% damage) (01)
+2 Low    (200% damage) (10)
+3 Immune (  0% damage) (11)
+Locations: ZZZZDCBA
+A: Protect head
+B: Protect Torso
+C: Protect Arms
+D: Protect Legs
+ZZZZ: ?
+FF for encounter
+Cloth (type: 5)
+---------------
++00.b Dapper
++01.b Warmth
++02.b Waterproofness
++03.b Unk03 (bug?: should be shopindex but it's clothQualityIndex)
+Cloths at the shop are built using 13 random bits:
+000AAAAB BBCCCCDD
+AAAA: Article
+BBB:  Fabric
+CCCC: Color
+DD:   Quality
+AAAA: Article
+00 Jerkin
+01 Breechcloth
+02 Toga
+03 Robe
+04 Cloak
+05 Vest
+06 Hat
+07 Pants
+08 Shirt
+09 Dress
+10 Blouse
+11 Skirt
+12 Socks
+13 Scarf
+14 Tie
+15 Raincoat
+BBB: Fabric
+00 (No Fabric)
+01 Linen
+02 Wool
+03 Silk
+04 Cotton
+05 Satin
+06 Fur-lined
+07 Dragonskin
+CCCC: Color
+00 Gray
+01 Green
+02 Gold
+03 Orange
+04 Red
+05 Silver
+06 Black
+07 Brown
+08 White
+09 Purple
+10 Plaid
+11 Yellow
+12 Blue
+13 Pink
+14 Striped
+15 Maroon
+DD: Quality
+00 Cheap
+01 Simple
+02 Fine
+03 Fine
+Potion (type: 6)
+----------------
++00.b Color
++01.b Taste
++02.b Sip
+Color:
+0 clear
+1 amber
+2 silver
+3 black
+4 red
+5 white
+6 green
+7 yellow
+8 orange
+Taste:
+0 bitter
+1 sweet
+2 plain
+3 sour
+4 salty
+5 acidic
+6 alkaline
+7 dry
+Sip:
+0 'and feel it is safe.'
+2 'and know that it is dangerous.'
+4 'and know that caution is advised.'
+The potion name contains for example 'Potion of Cleansing'.
+Unidentified potions have a null character at the 7th position (after the word potion), so the full name is not shown.
+Identified potions have a space character at the 7th position, showing the full name.
+Memory Addresses
+Base address for all variables is 0x70000.
+Core
++1800.b Loaded scenario
++1801.b Fast forward enabled (0: player is ready, FF: player is Working/Sleeping/Learning)
++1826.b Minutes
++1827.b Hours
++1828.b Days
++1829.b Months
++182A.w Years
++182C.b Weather - Type
++182D.b Weather - Temperature
++182E.b Weather - Type timer
++182F.b Weather - Storm timer
+Character
++1830.w Heading
++1832.w X
++1834.w Y
++1836.w Z (Always 0 in the City)
++1838.w X partial (Fixed part for X)
++183A.w Y partial (Fixed part for Y)
++183C.w X previous
++183E.w Y previous
++1840.w Z previous
++1842.w X partial previous (Fixed part for X previous)
++1844.w Y partial previous (Fixed part for Y previous)
++1846.b Location type (City, Inn, Tavern, Bank, Shop, Smith, Special, Healer, Guild, Combat)
++1847.b Location type previous
++1848.w Walking speed ([0-36])
++184A.b Slot number on disk ([0-8] or FF for temporary character)
++184B.b Not used?
++184C-186B Name
++186C.b Stealth
++186D.b Unnoticeatility
++186E.b Strength - Displayed
++186F.b Strength - Effective
++1870.b Strength - Base
++1871.b Strength - Partial (Fixed part for Base)
++1872.b Strength - Bonus
++1873.b Strength - Penalty (Weight, Bloated, Warmth)
++1874.b Strength - Penalty (Hunger)
++1875.b Strength - Penalty (Fatigue)
++1876.b Strength - Penalty (Thirst)
++1877.b Not used?
++1878.b Intelligence - Displayed
++1879.b Intelligence - Effective
++187A.b Intelligence - Base
++187B.b Intelligence - Partial (Fixed part for Base)
++187C.b Intelligence - Bonus
++187D.b Intelligence - Penalty (Weight, Bloated, Warmth)
++187E.b Intelligence - Penalty (Hunger)
++187F.b Intelligence - Penalty (Fatigue)
++1880.b Intelligence - Penalty (Thirst)
++1881.b Not used?
++1882.b Wisdom - Displayed
++1883.b Wisdom - Effective
++1884.b Wisdom - Base
++1885.b Wisdom - Partial (Fixed part for Base)
++1886.b Wisdom - Bonus
++1887.b Wisdom - Penalty (Weight, Bloated, Warmth)
++1888.b Wisdom - Penalty (Hunger)
++1889.b Wisdom - Penalty (Fatigue)
++188A.b Wisdom - Penalty (Thirst)
++188B.b Not used?
++188C.b Skill - Displayed
++188D.b Skill - Effective
++188E.b Skill - Base
++188F.b Skill - Partial (Fixed part for Base)
++1890.b Skill - Bonus
++1891.b Skill - Penalty (Weight, Bloated, Warmth)
++1892.b Skill - Penalty (Hunger)
++1893.b Skill - Penalty (Fatigue)
++1894.b Skill - Penalty (Thirst)
++1895.b Not used?
++1896.b Stamina - Displayed
++1897.b Stamina - Effective
++1898.b Stamina - Base
++1899.b Stamina - Partial (Fixed part for Base)
++189A.b Stamina - Bonus
++189B.b Stamina - Penalty (Weight, Bloated, Warmth)
++189C.b Stamina - Penalty (Hunger)
++189D.b Stamina - Penalty (Fatigue)
++189E.b Stamina - Penalty (Thirst)
++189F.b Not used?
++18A0.b Charisma - Displayed
++18A1.b Charisma - Effective
++18A2.b Charisma - Base
++18A3.b Charisma - Partial (Fixed part for Base)
++18A4.b Charisma - Bonus
++18A5.b Charisma - Penalty (Weight, Bloated, Warmth)
++18A6.b Charisma - Penalty (Hunger)
++18A7.b Charisma - Penalty (Fatigue)
++18A8.b Charisma - Penalty (Thirst)
++18A9.b Not used?
++18AA.b Speed - Displayed
++18AB.b Speed - Effective
++18AC.b Speed - Base
++18AD.b Speed - Partial (Fixed part for Base)
++18AE.b Speed - Bonus
++18AF.b Speed - Penalty (Weight, Bloated, Warmth)
++18B0.b Speed - Penalty (Hunger)
++18B1.b Speed - Penalty (Fatigue)
++18B2.b Speed - Penalty (Thirst)
++18B3.b Not used?
++18B4.b Delusion State(0: no delusion, FF: suffers delusion)
++18B5.b Clarity State (1: Cold, 0: Cool, Normal & Warm, FF: Heat)
++18B6.b Treasure Finding
++18B7.b Invisibility State (0: Visible, FF: Invisible)
++18B8.b Alignment
++18B9.b Paralysis (nb turns left)
++18BA.b Alcohol Blood Concentration
++18BB.b Alcohol Intestine Concentration Temp
++18BC.b Alcohol Digestion Rate
++18BD.b Alcohol Intestine Concentration
++18BE.b Alcohol Blackout Duration
++18BF.b Not used?
++18C0.b Not used?
++18C1.b Level
++18C2.l Experience
++18C6.l Required Experience
++18CA.l Hit Points
++18CE.l Hit Points Max
++18D2.w Gold Coins
++18D4.w Silver Coins
++18D6.w Copper Coins
++18D8.w Gems
++18DA.w Jewelry
++18DC.w Compass Heading
++18DE.b Food Packets
++18DF.b Water Flasks
++18E0.b Crystals
++18E1.b Keys
++18E2.b Compasses
++18E3.b Watches
++18E4.b Hunger
++18E5.b Hunger (Fixed part)
++18E6.b Thirst
++18E7.b Thirst (Fixed part)
++18E8.b Fatigue
++18E9.b Fatigue (Fixed part)
++18EA.b Hunger Rate (Fixed part)
++18EB.b Thirst Rate (Fixed part)
++18EC.b Fatigue Rate (Fixed part)
++18ED.b Digestion
++18EE.b Weapon - Primary
++18EF.b Weapon - Secondary
++18F0.b Armor - Head
++18F1.b Armor - Torso
++18F2.b Armor - Arms
++18F3.b Armor - Legs
++18F4.b Cloth #1
++18F5.b Cloth #2
++18F6.b Cloth #3
++18F7.b Cloth #4
++18F8.b Magical Protection - Blunt
++18F9.b Magical Protection - Sharp
++18FA.b Magical Protection - Earth
++18FB.b Magical Protection - Air
++18FC.b Magical Protection - Fire
++18FD.b Magical Protection - Water
++18FE.b Magical Protection - Power
++18FF.b Magical Protection - Mental
++1900.b Magical Protection - Cleric
++1901.b Magical Protection - Evil (?)
++1902.b Not used?
++1903.b Magical Protection Efficiency - Evil (?) (00001100), Cleric (00000011)
++1904.b Magical Protection Efficiency - Mental   (11000000), Power  (00110000), Water (00001100), Fire  (00000011)
++1905.b Magical Protection Efficiency - Air      (11000000), Earth  (00110000), Sharp (00001100), Blunt (00000011)
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

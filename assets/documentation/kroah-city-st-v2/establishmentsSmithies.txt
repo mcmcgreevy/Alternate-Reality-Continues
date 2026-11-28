@@ -1,0 +1,288 @@
+LayoutDocument">
+|
+Smithies
+|
+|
+Acceptance
+Several checks are done when the character enters the smithy and as long as he is inside:
+Opening hours:
+| Smithy | Opening Hours
+| Sharp Weaponsmiths | 04h to 20h
+| Occum's Weaponsmiths | 05h to 21h
+| Best Armorers | 08h to 19h
+| Knight's Armorers | 11h to 15h
+Character inebriation:
+If the character is or becomes Very Drunk, he is shut-out and friendship is decreased by 0.09 (23/256).
+Friendship:
+If the friendship is or becomes < 1.0, the character is shut-out by the smith.
+Friendship
+Initially 2.0 for each smith.
+When the character enters the smithy after 30 days without visiting it, the friendship may be updated:
+| Friendship | Result
+| [0.0; 1.0[ | Friendship reset to 1.0.
+| [1.0; 2.0[ |
+| [2.0; +oo[ | Friendship decreased by 1.0.
+Friendship is used by:
+The acceptance.
+The welcome message.
+The bargain.
+Welcome Message
+The welcome message is determined by the friendship and frequency:
+| Friendship | Frequency | Message
+| [1.0; 2.0[ |   | What do you want, insect?
+| [2.0; 3.0[ | 1 or 2 | Welcome Stranger!
+| > 2 | Welcome Adventurer!
+| [3.0; 4.0[ |   | Hello {name}!
+| [4.0; +oo[ |   | Dear Friend! Glad you came!
+The frequency is initially 0 for each smithy and is only used by the welcome message.
+It's reset when the character enters the smithy with a friendship >= 1.0 after 30 days without visiting it.
+It's increased:
+When entering (even if closed or if the character is shut-out for drunkness or low friendship).
+After a bargain.
+After the wares list.
+Wares List
+Every hour, when the characters enters the smithy, 10 distinct wares are randomly chosen among the following list:
+| Ware | Base price
+(in coppers) | Corresponding
+items
+| Weapons
+| a Tower Shield | 9488 | Tower Shield
+| a War Net | 908 | War Net
+| a Spiked Shield | 6160 | Spiked Shield
+| a Shield | 4290 | Shield
+| a Small Shield | 2460 | Small Shield
+| a Stiletto | 113 | Stilletto
+| a Dagger | 129 | Dagger
+| a Whip | 396 | Whip
+| a Shortsword | 3146 | Short Sword
+| a Flail | 4620 |
+| a Battle Axe | 6930 | Battle Axe
+| a Sword | 7680 | Sword
+| a Battle Hammer | 10285 | Battle Hammer
+| a Longsword | 11193 | Longsword
+| Armor
+| some Padded Armor | 2200 | Padded Helmet
+Padded Breastplate
+Padded Gauntlets
+Padded Greaves
+| some Leather Armor | 4840 | Leather Helmet
+Leather Breastplate
+Leather Gauntlets
+Leather Greaves
+| some Studded Leather Armor | 7260 | Studded Helmet
+Studded Breastplate
+Studded Gauntlets
+Studded Greaves
+| some Ring Mail | 10010 | Ringmail Hood
+Ringmail Coat
+Ringmail Leggings
+| some Scale Mail | 14245 | Scalemail Hood
+Scalemail Coat
+Scalemail Leggings
+| some Splint Mail | 18975 | Splintmail Hood
+Splintmail Coat
+Splintmail Leggings
+| some Chain Mail | 24640 | Chainmail Hood
+Chainmail Coat
+Chainmail Leggings
+| some Banded Armor | 32000 | Banded Helmet
+Banded Breastplate
+Banded Gauntlets
+Banded Greaves
+| some Plated Armor | 41500 | Plated Helmet
+Plated Breastplate
+Plated Gauntlets
+Plated Greaves
+Magical Flamesword, Elfinmail armor and Crystal armor are not sold at the smithy.
+Bargaining
+Each smith uses a minimum and initial factor to compute the minimum and initial price:
+minimum price = base price * minimum factor
+initial price = base price * initial factor
+| Smithy | Price factor
+| Minimum | Initial
+| Sharp Weaponsmiths | 1.25 | 1.65
+| Occum's Weaponsmiths | 1.10 | 1.35
+| Best Armorers | 1.50 | 2.40
+| Knight's Armorers | 1.60 | 2.35
+The character is allowed to make a limited number of unacceptable offers during a bargain. This number is equal to a random value ∈ [1; 4].
+An unacceptable offer is a price <= to the highest price made by the character during the bargain.
+A bargain is composed of an unlimited number of rounds. It stops when at least one of the following conditions is met:
+The character deliberately stops the bargain (he orders no sale or makes an offer of 0 copper).
+The smith agrees with the character's offer.
+The smith is outrageed because the character's offer is inferior to the minimum price.
+The smith doesn't like the way the character bargains (he has exceeded the number of unacceptable offers).
+A round is composed of 2 actions:
+A proposal made by the smith.
+An offer made by the character.
+The proposal is equal to:
+The initial price for the first round.
+Else, a price resulting from the previous reaction of the smith.
+The reaction of the smith depends on the offer made by the character. The smith grades the character's offer (from A to H):
+|
+0
+|
+|
+Minimum price
+0%
+|
+| Proposal
+100%
+F
+|
++oo
+|
+| A
+| B
+| C
+| D
+| E
+| G
+| H
+|
+|
+| ]0; minimum[
+| [0%; 25%[
+| [25%; 50%[
+| [50%; 75%[
+| [75%; 100%[
+| ]100%; 125%[
+| >= 125%
+|
+|
+The percents shown below the grades are equal to the delta (in percent) between the offer and the proposal (with the minimum price as the origin):
+Δ = (offer - minimum) / (proposal - minimum)
+For example, given a minimum price of 100 coppers with a proposal of 300 coppers, if the character offers 150 coppers, the resulting grade is C:
+Δ = (150 - 100) / (300 - 100) = 50 / 200 = 25%
+Here are the descriptions of the reactions according to the offers:
+| Offer | Smith reaction
+| Grade | Price
+| A
+| price ∈ ]0; minimum[
+|
+friendship -= 0.18
+|
+The smith is outrageed and the character is shut-out.
+| B
+| Δ ∈ [0%; 25%[
+|
+Probability of 25%:
+Friendship -= 0.09
+new proposal = initial price
+|
+If the offer is <= to the highest character's offer (first offer does not count):
+The number of unacceptable offers is increased by 1.
+| C
+| Δ ∈ [25%; 50%[
+|
+friendship -= 0.09
+new proposal = new lower price
+| D
+| Δ ∈ [50%; 75%[
+|
+new proposal = new lower price
+| E
+| Δ ∈ [75%; 100%[
+|
+Probability of 50%:
+friendship -= 0.09
+|
+The smith agrees to sell the ware at the character price.
+Probability of 50%:
+friendship += 0.09
+If the character can't afford the ware, the smith is deeply offended:
+friendship -= 0.45
+If the character's inventory is full, the smith says the item is out of stock.
+| F
+| Δ = 100%
+(Smith's proposal)
+|
+Probability of 50%:
+friendship += 0.09
+| G
+| Δ ∈ ]100%; 125%[
+|
+friendship += 0.09
+| H
+| Δ >= 125%
+|
+friendship += 0.27
+The new lower price depends on the friendship, the last proposal and the minimum price. However, the new proposal for grade C is indirectly dependent of the character's offer, because the friendship is updated before calculation:
+If the friendship is >= 2.0:
+new proposal = minimum price + 87.50% * (last proposal - minimum price)
+If the friendship is < 2.0:
+new proposal = minimum price + 93.75% * (last proposal - minimum price)
+For information, the n-th proposal (for a constant friendship) is an arithmetico-geometric progression with an initial term p1 = initial price and a general term equal to:
+If the friendship is >= 2.0:
+nth proposal pn = minimum price + (87.50% n-1) * (last proposal - minimum price)
+If the friendship is < 2.0:
+nth proposal pn = minimum price + (93.75% n-1) * (last proposal - minimum price)
+The easiest way (and one of the best strategy) to have the best price is:
+Make the first offer at the lowest price at 50% inside grade D (this will not lower the friendship).
+Raise the following offers by 1 every round (this will not count as an unacceptable offer).
+With this tips, the character will be able to buy a ware at almost the price of the first offer:
+~= minimum price + (initial price - minimum price) / 2 = base price * (minimum factor + initial factor) / 2
+Example for a Battle Hammer at the Best Armorers with a friendship >= 2.0:
+minimum price = base price * minimum factor = 10285 * 384/256 ~= 10285 * 1.50 = 15427 coppers
+initial price = base price * initial factor = 10285 * 614/256 ~= 10285 * 2.40 = 24667 coppers
+|
+0
+|
+|
+Minimum price
+(15427 coppers)
+0%
+|
+First offer
+(20047 coppers)
+50%
+| Initial price
+(24667 coppers)
+100%
+F
+|
++oo
+|
+| A
+| B
+| C
+| D
+| E
+| G
+| H
+|
+|
+| ]0; minimum[
+| [0%; 25%[
+| [25%; 50%[
+| [50%; 75%[
+| [75%; 100%[
+| ]100%; 125%[
+| >= 125%
+|
+|
+| Smith's proposal
+(in coppers) | Character's offer
+(in coppers)
+| = p1 = initial price
+= 24667
+| = first offer at 50% inside grade D
+= minimum price + (proposal - minimum price) / 2
+= 15427 + (24667 - 15427) / 2
+= 20047
+| = p2 = minimum price + 93.75% * (last proposal - minimum price)
+= 15427 + 87.50% * (24667 - 15427)
+= 23512
+| = last offer + 1
+= 20048
+| = p3 = 22502 | = last offer + 1
+= 20049
+| = p4 = 21618 | = last offer + 1
+= 20050
+| = p5 = 20845 | = last offer + 1
+= 20051
+Simth agrees for 20051 coppers because the character's offer is at ~85% inside grade E:
+Δ = (offer - minimum) / (proposal - minimum) = (20051 - 15427) / (20845 - 15427) ~= 85%
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

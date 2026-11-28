@@ -1,0 +1,82 @@
+raw_location,component,arx_reference_description,current_cell_count,st_marker_counts,unlabeled_current_cells,status
+16,1,at the Green Boar Inn,4,0:4,,labels_cover_current_component
+17,1,at the Lazy Griffin Inn,2,1:2,,labels_cover_current_component
+18,1,at the Sleeping Dragon Inn,2,2:2,,labels_cover_current_component
+19,1,at the Travellers Inn,3,3:3,,labels_cover_current_component
+20,1,at the Midnight Inn,4,4:4,,labels_cover_current_component
+21,1,at the Warriors Retreat Inn,1,5:1,,labels_cover_current_component
+22,1,at the Royal Resort,2,6:2,,labels_cover_current_component
+23,1,at the Flaming Dragon Tavern,1,7:1,,labels_cover_current_component
+24,1,at the Misty Mountain Tavern,1,8:1,,labels_cover_current_component
+25,1,at the Screaming Siren Bar,1,9:1,,labels_cover_current_component
+26,1,at the Happy Hunter Rest Stop,4,10:4,,labels_cover_current_component
+27,1,at the Dancing Nymph Tavern,1,11:1,,labels_cover_current_component
+28,1,at the Club,2,12:2,,labels_cover_current_component
+29,1,at the Black Devil Tavern,4,13:4,,labels_cover_current_component
+30,1,at the Lost Oasis Tavern,1,14:1,,labels_cover_current_component
+31,1,at the Last Stop,1,15:1,,labels_cover_current_component
+32,1,at the Tail of the Dog,2,16:2,,labels_cover_current_component
+33,1,at Club Babalyon,1,17:1,,labels_cover_current_component
+34,1,at the Lost Tears Tavern,1,18:1,,labels_cover_current_component
+35,1,at Mom's Bar,2,19:2,,labels_cover_current_component
+36,1,at Lusty Lloyds,2,20:2,,labels_cover_current_component
+37,1,at the First City Bank,1,21:1,,labels_cover_current_component
+38,1,at the Granite Bank,1,22:1,,labels_cover_current_component
+39,1,at the Grams Gold Exchange,1,23:1,,labels_cover_current_component
+40,1,at Smiley's Shop,1,24:1,,labels_cover_current_component
+41,1,at the Honest Trader,1,25:1,,labels_cover_current_component
+42,1,at the Adventurers Outfitters,1,26:1,,labels_cover_current_component
+43,1,at the Warrior's Supplies,1,27:1,,labels_cover_current_component
+44,1,at the General Store,5,28:5,,labels_cover_current_component
+45,1,at the Exclusive Outfitters,4,29:4,,labels_cover_current_component
+46,1,at the Ono Goods,13,30:13,,labels_cover_current_component
+47,1,at the Best Bargain Store,1,31:1,,labels_cover_current_component
+48,1,at the Grubron Imports,1,32:1,,labels_cover_current_component
+49,1,at the Betelguese Sales,2,33:2,,labels_cover_current_component
+50,1,at the Merchants Grotto,5,34:5,,labels_cover_current_component
+51,1,at the Sunset Market,2,35:2,,labels_cover_current_component
+52,1,at Pauline's Emporium,4,36:4,,labels_cover_current_component
+53,1,at Da Place,1,37:1,,labels_cover_current_component
+53,2,at Da Place,1,37:1,,labels_cover_current_component
+55,1,at the Sharp Weaponsmiths,3,39:3,,labels_cover_current_component
+56,1,at Occum's Weaponsmiths,1,40:1,,labels_cover_current_component
+57,1,at the Best Armorers,1,41:1,,labels_cover_current_component
+58,1,at the Knights Armorers,1,42:1,,labels_cover_current_component
+59,1,at the House of Ill-Repute,6,43:6,,labels_cover_current_component
+60,1,at Acrinimiril's Gate,1,,"31,27",no_ST_label_in_component
+61,1,at the Floating Gate,1,,"35,36",no_ST_label_in_component
+62,1,at the Arena,184,46:184,,labels_cover_current_component
+63,1,at the Palace,102,47:102,,labels_cover_current_component
+64,1,at the Palace Gate,1,,"53,22",no_ST_label_in_component
+64,2,at the Palace Gate,1,48:1,,labels_cover_current_component
+65,1,at an entrance to The Dungeon,1,49:1,,labels_cover_current_component
+65,2,at an entrance to The Dungeon,1,49:1,,labels_cover_current_component
+66,1,at the Maximum Casino,5,50:5,,labels_cover_current_component
+67,1,at the Arena Entrance,2,,"6,7;6,8",no_ST_label_in_component
+67,2,at the Arena Entrance,1,,"16,2",no_ST_label_in_component
+67,3,at the Arena Entrance,1,,"16,12",no_ST_label_in_component
+67,4,at the Arena Entrance,2,46:1,"25,8",partial_label_coverage
+68,1,at Jack's Fitness Academy,1,52:1,,labels_cover_current_component
+69,1,at the Armstrong Builders,1,53:1,,labels_cover_current_component
+70,1,at the Apollo Trainers,2,54:2,,labels_cover_current_component
+73,1,at David's Weapons Trainers,5,57:5,,labels_cover_current_component
+74,1,at the One Way Soothers,9,53:9,,labels_cover_current_component
+75,1,at the Alpha Omega Healers,9,54:9,,labels_cover_current_component
+76,1,at the Thieves Guild,7,55:7,,labels_cover_current_component
+77,1,at the Blue Wizards Guild,1,56:1,,labels_cover_current_component
+78,1,at the Light Wizards Guild,1,57:1,,labels_cover_current_component
+79,1,at the Paladins Guild,4,58:4,,labels_cover_current_component
+80,1,at the Green Wizards Academy,7,58:7,,labels_cover_current_component
+81,1,at the Red Wizards University,7,59:7,,labels_cover_current_component
+82,1,at the Dark Wizards Guild,3,60:3,,labels_cover_current_component
+83,1,at the Star Wizards Guild,1,61:1,,labels_cover_current_component
+84,1,at the Wizards of Chaos Guild,1,62:1,,labels_cover_current_component
+85,1,at the Wizards of Law Guild,1,63:1,,labels_cover_current_component
+86,1,at the Mercenary Guild,2,65:2,,labels_cover_current_component
+87,1,at the Guild of Order,1,64:1,,labels_cover_current_component
+88,1,at the Physicians Guild,1,65:1,,labels_cover_current_component
+89,1,at the Assassins Guild,1,66:1,,labels_cover_current_component
+90,1,by an entrance to The Dungeon,1,,"49,3",no_ST_label_in_component
+9,1,at the Northern Gate,12,74:1,"35,1;34,2;35,2;36,2;34,3;36,3;34,4;35,4;36,4;35,5;35,6",partial_label_coverage
+10,1,at the Southern Gate,13,73:1,"35,56;35,57;34,58;35,58;36,58;34,59;36,59;34,60;35,60;36,60;35,61;35,62",partial_label_coverage
+11,1,at the Western Gate,11,75:1,"1,35;2,35;3,35;1,36;3,36;4,36;5,36;1,37;2,37;3,37",partial_label_coverage

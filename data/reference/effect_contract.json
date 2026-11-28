@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "edition_platform": "Atari ST City v2.0",
+  "sources": {
+    "TECH": {
+      "path": "assets/documentation/kroah-city-st-v2/technicalNotes.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/technicalNotes.php5",
+      "catalog_file": "kroah-city-st-v2/technicalNotes.html",
+      "sha256": "1e181bd1f0dc81ebe8e9542b552205f7160371456f9ce19f83131ed9dfcad041",
+      "locator": "Entity / +02 Events; Effect / introduction, +00 flags, +01 Active index, +02 Required events, +03 Counter, +04 Timer, +06 Interval, +08 Natural cure, +09 Action, +10 Offset, +12 Blocks, +13 Gap, +14 Parameter, +15 Linked slot"
+    },
+    "STATS": {
+      "path": "assets/documentation/kroah-city-st-v2/characterStats.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/characterStats.php5",
+      "catalog_file": "kroah-city-st-v2/characterStats.html",
+      "sha256": "607c3c371e9b13aaac840a7a57165af316f6d4f7808686a8da3fd69f875ed6f5",
+      "locator": "Primary / Sub-Stat table; Secondary / Walking Speed"
+    },
+    "TIME": {
+      "path": "assets/documentation/kroah-city-st-v2/world.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/world.php5",
+      "catalog_file": "kroah-city-st-v2/world.html",
+      "sha256": "3c49f286cbceb272615fa7f8cbc3bec501da6bd7eedde17c2e14fe0b5a8e3214",
+      "locator": "Time Span / correspondence table and final paragraph"
+    },
+    "SPELL": {
+      "path": "assets/documentation/kroah-city-st-v2/establishmentsGuilds.html",
+      "source_url": "http://bringerp.free.fr/RE/Ar/establishmentsGuilds.php5",
+      "catalog_file": "kroah-city-st-v2/establishmentsGuilds.html",
+      "sha256": "5cbb38be2985743689072a646b5a2467edace3085a3427f20c6de3289379b9e3",
+      "locator": "Spells / List table / Physical Speed row, Duration and Description columns"
+    },
+    "ST_BINARY": {
+      "path": "assets/documentation/s29-st-research/alternate-reality-city-st-v2-candidate.zip",
+      "source_url": "https://www.atarimania.com/st/dumps/alternate_reality_-_the_city_2_0_datasoft.zip",
+      "catalog_file": "s29-st-research/alternate-reality-city-st-v2-candidate.zip",
+      "sha256": "1ee57ea2362345c6b6389f4ff5c813ea1c4ca311311d6d503ea7d507368a9000",
+      "locator": "Candidate ST v2.0; verified decoded module 05 $1ce6-$1d48, $2434-$2b06; module 15 $2a0e-$2a68. Reproduce with tools/extract_s29_st_evidence.py and tools/probe_s29_st_effects.py. See docs/S29_ST_EFFECT_RESEARCH.md."
+    }
+  },
+  "decisions": [
+    {
+      "id": "ER01",
+      "origin_questions": [
+        "IDENTITY-Q1"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect introduction; +01 Active index; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "status": "partially_documented",
+      "finding": "Candidate allocates the first free of 96 slots; long text occupies two consecutive slots. First-00 starts its own group; later 00 links to the preceding activated group, skipping non-listeners. Isolated original-code probes confirm these cases.",
+      "unknown": "Byte-15 template-to-group lifecycle remains unresolved; slot exhaustion and reuse across owners require bounded-runtime validation.",
+      "blocks": [
+        "S31"
+      ],
+      "disposition": "Use stable owner/instance/group identities as reconstruction architecture. First-00 and skipped predecessor are no longer research blockers; do not reproduce fatal capacity failures. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
+    },
+    {
+      "id": "ER02",
+      "origin_questions": [
+        "EVENT-Q1"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Entity +02 Events; Effect +02 Required events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "status": "partially_documented",
+      "finding": "Candidate dispatcher removes Drop before Get, Get before Drop, Unuse before Use, and Use before Unuse. Delete removes all four listener classes then deletes the entity; it does not activate Delete listeners.",
+      "unknown": "Deletion/held-item bookkeeping and byte-15 group lookup need end-to-end tracing; undocumented bits stay unsupported.",
+      "blocks": [
+        "S31"
+      ],
+      "disposition": "Opposing pairs are established by static code, not inferred names. Reconcile Delete against baseline before treating it as an ordinary listener event. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
+    },
+    {
+      "id": "ER03",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect introductory paragraph; Entity +02 Events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
+      "status": "partially_documented",
+      "finding": "Owner events run before timers at module 05 $03a2/$03a6. Owner table scans descending slots ($267a); timers scan ascending live slots ($244c/$252a). Captured bits retain Get/Drop/Use/Unuse/Delete order. S32 probes verify newly activated effects and explicit-bound Delete before expiry.",
+      "unknown": "Reentrant callbacks and special-use hooks are outside the bounded slice; original enchanted-item group-binding creation remains unresolved.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Bounded ordering resolved. Supply timestamped event batches/source-order ranks and separate scheduling slots from monotonic instance IDs; no reentrant callbacks. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
+    },
+    {
+      "id": "ER04",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect +02 Allow multiple & Required events; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "status": "partially_documented",
+      "finding": "H-off allocates fresh copies; isolated repeated activation yields separate linked groups. Repeating Physical Speed with H set does not allocate extra copies. Eight-field gate remains the canonical rule.",
+      "unknown": "A skipped predecessor can leave a stale candidate pointer in original code; isolated probe reproduces duplicate admission. Other real-data reachability and cross-owner reuse need tracing.",
+      "blocks": [
+        "S31"
+      ],
+      "disposition": "Retain documented equality in effect_definitions.gd; do not reproduce the demonstrated stale-pointer defect. Fresh allocation does not imply linear stat stacking. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
+    },
+    {
+      "id": "ER05",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect introduction; +00 disease/poison/curse removal examples; +01 Active index; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "status": "partially_documented",
+      "finding": "Original group removal marks matching slots free and does not invert arithmetic. Physical Speed has separate delayed Sub and Add records. Normal expiry returns bonus to zero; early removal of its delayed group leaves bonus at five in isolated execution.",
+      "unknown": "Opposing helper reads template byte 15, but activation leaves that template unchanged in isolated execution. Full creation/update path and cross-owner cleanup remain open.",
+      "blocks": [
+        "S31"
+      ],
+      "disposition": "Do not use generic undo-on-remove. Separate explicit effect execution from record removal; trace owner/group binding before claiming lifecycle completion. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior."
+    },
+    {
+      "id": "ER06",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect +04 Timer; +06 Interval; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
+      "status": "partially_documented",
+      "finding": "Calendar and effect countdowns reload 240 ($1654/$2446); accelerated flag bypasses both. One raw timer unit has one game-minute steady-state period. Successful casting resets shared effect phase to 1 ($0b8c). Unsigned timer/interval words are 0..65535; initial zero is dormant, interval zero disarms after current execution. Missed scheduler polls lose updates in the candidate.",
+      "unknown": "Full hardware/service emulation is not claimed. Original shared phase and polling loss are intentionally not reproduced.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "User decision 2026-11-20 preserves all elapsed time: activation-relative integer game-microsecond deadlines; 60,000,000 units per positive raw timer unit. Zero remains dormant, not immediate. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
+    },
+    {
+      "id": "ER07",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect +03 Counter; +04 Timer; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
+      "status": "partially_documented",
+      "finding": "On expiry: reload interval, finish incubation/show linked text, check cure, execute action, decrement finite counter, then remove at exhaustion ($2476..2528). Counter zero does not expire by execution. Removed later due slots are skipped; root removal clears its linked group.",
+      "unknown": "Complete natural-cure random-stream behavior remains outside this slice.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Bounded order resolved by S32 original-code probes. Reject nonzero cure. Removal performs no inverse arithmetic. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
+    },
+    {
+      "id": "ER08",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect +00 B and E; +04 Timer; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
+      "status": "partially_documented",
+      "finding": "First expiry clears incubation and enables linked text before action ($253e..256a). With cure zero the same expiry executes the action. Counter exhaustion can remove the newly visible linked text in that pass; no rendered frame is guaranteed.",
+      "unknown": "Renderer presentation and arbitrary malformed original text layouts are not modeled.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Support boolean incubation/text visibility and explicit group links; preserve first-expiry action and same-pass cleanup. S32 probes cover counter zero and one. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
+    },
+    {
+      "id": "ER09",
+      "origin_questions": [
+        "EVENT-Q2"
+      ],
+      "source_refs": [
+        "TECH"
+      ],
+      "locator": "Effect +08 Probability of natural cure",
+      "status": "unresolved",
+      "finding": "Natural cure is checked when an effect executes.",
+      "unknown": "Byte-to-probability mapping, RNG sampling, comparison endpoints, cure/execution order unknown.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "Cure-bearing definitions deferred to S09/S13/S21; reject them in bounded runtime rather than treating raw zero as proven no-cure. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
+    },
+    {
+      "id": "ER10",
+      "origin_questions": [
+        "TIME-Q1"
+      ],
+      "source_refs": [
+        "TIME",
+        "ST_BINARY"
+      ],
+      "locator": "Time Span / ordinary table and pause sentence; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
+      "status": "partially_documented",
+      "finding": "Kroah ordinary conversion is 15 game seconds per real second. Candidate pause flag gates calendar and main-loop effects; calendar increments every 240 ordinary interrupts. Scheduler compares counter inequality rather than elapsed delta; missing polls loses effect updates.",
+      "unknown": "Individual gameplay pause contexts and S03 production interface implementation remain outstanding, not the bounded scheduler cadence.",
+      "blocks": [
+        "S30",
+        "S31"
+      ],
+      "disposition": "S03-CLOCK must provide nonnegative integer game microseconds, fractional conversion remainder, timestamp boundaries and overflow validation. User approved processing all elapsed time instead of candidate polling loss. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
+    },
+    {
+      "id": "ER11",
+      "origin_questions": [
+        "TIME-Q2"
+      ],
+      "source_refs": [
+        "TIME",
+        "ST_BINARY"
+      ],
+      "locator": "Time Span / final paragraph; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
+      "status": "partially_documented",
+      "finding": "Accelerated flag at global $1801 bypasses both calendar and effect countdowns. Each observed interrupt advances one game minute/effect update; static service callers set/clear this flag. This is 240 times ordinary, agreeing with Kroah one game hour per real second.",
+      "unknown": "Whole working/sleeping/learning scenes and downstream metabolism routines were not dynamically emulated.",
+      "blocks": [
+        "S30",
+        "S31"
+      ],
+      "disposition": "S03 converts accelerated time once at 3600 game seconds per real second; S30 consumes the same elapsed input and processes every due action. No second scheduler or metabolism update. S30 implements and tests this bounded contract; see docs/S30_ACCEPTANCE_REVIEW.md and tests/test_effect_timing.gd."
+    },
+    {
+      "id": "ER12",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "TECH",
+        "ST_BINARY"
+      ],
+      "locator": "Effect +09 Action, +10 Offset, +12 Number of blocks, +13 Gap, +14 Parameter, +15 Linked slot; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up",
+      "status": "partially_documented",
+      "finding": "Physical Speed targets global offset 0x18ae (Speed bonus), width one, Add=0x81 and Sub=0x91. Original-code probes confirm saturating Add 253+5=255 and Sub 2-5=0.",
+      "unknown": "Other typed targets, wider operations and entity-relative addressing are not approved for runtime execution.",
+      "blocks": [
+        "S30"
+      ],
+      "disposition": "A bounded speed_bonus unsigned-byte Add/Sub target now has evidence; reject unsupported operations instead of adding a raw-memory interpreter. Saturation makes general inverse cleanup unsafe. S29 bounded non-timed scope is resolved by docs/S29_ACCEPTANCE_REVIEW.md; remaining historical/data-layout questions are not silently promoted to implemented behavior. S08 implements the bounded typed Speed API and atomic ordered action batches; see docs/S08_STATS.md and tests/test_character_stats.gd. S30 action-interface prerequisite is met."
+    },
+    {
+      "id": "ER13",
+      "origin_questions": [
+        "EVENT-Q3"
+      ],
+      "source_refs": [
+        "SPELL",
+        "STATS",
+        "TIME",
+        "ST_BINARY"
+      ],
+      "locator": "Spells / List / Physical Speed, Duration and Description; Stats / Primary and Walking Speed; World / Time Span; original-code follow-up: docs/S29_ST_EFFECT_RESEARCH.md, Isolated execution follow-up; S32: docs/S32_ST_TIMING_RESEARCH.md; tools/probe_s32_st_timing.py; tests/fixtures/s32_st_timing_results.json",
+      "status": "partially_documented",
+      "finding": "Physical Speed raw records have timer 1 Add5 and timer 30 Sub5. Successful-cast phase reset produces observed transitions at interrupt 1 and 6961, a 29-minute bonus window. This disagrees with Kroah documented 30 minutes. User explicitly selected documented duration and reliable elapsed time on 2026-11-20.",
+      "unknown": "General spell content and full cast UI/RNG remain outside scope. S31 implements bounded Physical Speed persistence; arbitrary content restoration remains deferred.",
+      "blocks": [
+        "S30",
+        "S31"
+      ],
+      "disposition": "Normalize successful activation to one Add5 and explicit Sub5 at +1800 game seconds; active interval is [activation, deadline). Save at +600 leaves 1200 with no replayed grant. Do not replay raw records as an exact content schedule or invent removal rollback. S31 now verifies this production path through world ticking, v7 saves, legacy migration, malformed-reference rejection and the integrated F7/F5/F9 playtest; see docs/S31_ACCEPTANCE_REVIEW.md."
+    }
+  ]
+}

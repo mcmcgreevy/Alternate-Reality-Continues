@@ -1,0 +1,301 @@
+LayoutDocument">
+|
+Guilds
+|
+|
+Bonuses
+Each guild gives a bonus at the first visit:
+| Guild | Bonus | Message
+| Thieves' Guild | +1 base skill | Master Thieves show you techniques that improve your skill.
+| Blue Wizards' Guild | +1 base speed | A Mage from The Guild of Blue Wizards uses special magic to increase your physical speed to X.
+| Light Wizards' Guild | +1 base wisdom | A Mage from The Guild of Light Wizards uses special magic to increase your wisdom to X.
+| Green Wizards' Academy | +1 base stamina | A Mage from The Academy of Green Wizards uses special magic to increase your Stamina to X.
+| Red Wizards' University | +1 base strength | A Mage from The University of Red Wizards uses special magic to increase your Strength to X.
+| Dark Wizards' Guild | +1 base charisma | A Mage from The Guild of Dark Wizards uses special magic to increase your Charm to X.
+| Star Wizards' Guild | +1 base strength
++5 max hit points
++5 current hit points | An Arch Mage from The Guild of Star Wizards uses special magic to increase your Hit Points and Strength.
+| Wizards' of Chaos | +1 base charisma | A Mage from The Guild of Chaos uses special magic to increase your Charm to X.
+| Wizards of Law | +1 base wisdom | A Mage from The Guild of Law uses special magic to increase your wisdom to X.
+| Guild of Order | +1 base intelligence | A Mage from The Guild of Order uses special magic to increase your Intelligence to X.
+| Physicians' Guild | +3 max hit points
++3 current hit points | A Doctor from The Guild of Physicians teaches you First Aid beyond what is commonly known. This increase your Hit Points.
+| Assassins' Guild | +30 stealth | Master Assassin shows you some basic forms of hiding and quiet approach which increase your ability to surprise attackers.
+Acceptance
+The character can join any guild to learn spells if he fulfills the prerequisites. In addition, even they are met, guilds may not accept new memberships some days (acceptance probability). If so, try another day.
+| Guild | Acceptance
+Probability |   | Requirements (Displayed value)
+| STR |   | INT |   | WIS |   | SKL |   | STA |   | CHA |   | SPD |   | Alignment |   | Level
+| Min | Max | Min | Max | Min | Max | Min | Max | Min | Max | Min | Max | Min | Max | Min | Max | Min
+| Thieves' Guild | 50 % | 20 |   | 20 |   |   |   | 24 |   | 18 |   | 15 |   | 18 |   | 64 | 128 | 3
+| Blue Wizards' Guild | 25 % |   |   |   |   | 15 |   |   |   |   |   | 15 |   |   | 40 | 120 | 192 | 4
+| Light Wizards' Guild | 90 % | 10 |   | 24 |   | 22 |   | 18 |   | 10 |   | 20 |   | 18 |   | 144 |   | 5
+| Green Wizards' Academy | 25 % | 26 |   | 15 | 30 | 15 | 30 | 22 |   | 24 |   | 18 | 40 | 17 |   | 96 | 160 | 4
+| Red Wizards' University | 20 % | 15 |   | 22 |   | 18 |   | 24 |   | 15 |   | 23 |   | 18 |   | 48 | 127 | 4
+| Dark Wizards' Guild | 33 % | 25 |   | 25 |   | 23 |   | 21 |   | 23 |   | 19 |   | 19 |   |   | 64 | 6
+| Star Wizards' Guild | 98 % | 18 |   | 26 |   | 24 |   | 24 |   | 20 |   | 22 |   | 17 |   | 120 | 176 | 5
+| Wizards' of Chaos | 50 % | 15 |   | 15 |   | 23 |   | 15 |   | 23 |   | 25 |   | 15 |   | 64 | 128 | 3
+| Wizards of Law | 15 % | 18 |   | 26 |   | 26 |   | 22 |   | 20 |   | 24 |   | 15 |   | 152 | 208 | 6
+| Guild of Order | 33 % | 24 |   | 28 |   | 28 |   | 25 |   | 24 |   | 26 |   | 16 |   | 176 |   | 7
+| Physicians' Guild | 10 % | 10 |   | 26 |   | 24 |   | 26 |   | 23 |   | 20 |   | 15 |   | 128 | 224 | 6
+| Assassins' Guild | 80 % | 25 |   | 25 |   | 18 |   | 26 |   | 24 |   | 22 |   | 18 |   | 16 | 112 | 5
+Spells
+Learning
+Rules:
+The character must join the guild to be able to learn spells from it.
+A guild teaches only 1 spell at a time.
+The character can learn more than 1 spell at a time by going to different guilds.
+The character can't learn more than 8 spells. When learning a new one with the limit reached, he will be asked to choose a spell to forget.
+To master a spell, the character must complete all the lessons by coming to the guild the required consecutive days (only one lesson per day).
+The character can cast a spell even if it's not mastered (but the success probability of the spell will not be optimum).
+If the character misses a lesson, it's defered to the following day (shifting the remaining ones).
+When the character completes a lesson, the success probability of the spell is increased.
+Casting
+The character can't cast spells at an inn.
+When the character casts a spell:
+Character's fatigue is increased by the spell fatigue drain.
+If the spell succeeds (using the spell success probability):
+Spell effects are applied.
+Spell success probability is increased by 1/256 (0.39%).
+Spell number of uses is decreased by 1.
+If the number of uses is null, the spell is depleted (removed from the character spell list):
+If the spell fails:
+Character hit points are decreased by the spell failure damage.
+List
+| Spell | Lessons
+number | Success probability
+to cast the spell | Fatigue
+per cast | Failure
+damage | Uses
+number | Duration | Description
+| Base | Increase
+per lesson | Final
+| Dexterity | 6 | 0 % | 14.84 % | 89 % | 3 | 1 | 10 | 1h 30mn | Increases the skill bonus by 5.
+| Noticeability | 8 | 0 % | 11.33 % | 91 % | 1 | 5 | 30 | 8 hours | Decreases your unnoticeability by 5 (Increases your noticeability by 5).
+| Physical Speed | 7 | 0 % | 11.33 % | 79 % | 10 | 2 | 200 | 30 minutes | Increases the speed bonus by 5.
+| Continual Light | 5 | 0 % | 17.58 % | 88 % | 1 | 8 | 30 | 12 hours | No effect.
+| Healing Minor Wounds | 7 | 0 % | 12.11 % | 85 % | 3 | 2 | 10 |   | Restores 5 hit points.
+| Stormy Weather | 8 | 0 % | 11.33 % | 91 % | 12 | 7 | 15 |   | Changes the weather to type P (fully stormy) with a new duration (depending on the current month).
+| Slowness | 10 | 0 % | 7.42 % | 74 % | 4 | 3 | 40 |   | Decreases the encounter speed by 5.
+| The Water Hammer | 11 | 0 % | 7.42 % | 82 % | 11 | 7 | 20 |   | Inflicts 8 water damage to the encounter.
+| The Ice Shield | 11 | 0 % | 6.64 % | 73 % | 6 | 1 | 40 | 45 minutes | Immunizes to fire damage (bugged).
+| Numbness | 8 | 0 % | 10.55 % | 84 % | 5 | 5 | 37 |   | Decreases the encounter speed and skill by 5.
+| Blindness | 7 | 0 % | 10.16 % | 71 % | 8 | 8 | 33 |   | Sets encounter skill to 0.
+| Clear Vision | 7 | 0 % | 10.55 % | 74 % | 3 | 5 | 255 |   | Removes delusion.
+| The Energy Shield | 10 | 0 % | 7.81 % | 78 % | 10 | 9 | 38 | 45 minutes | Immunizes to power damage.
+Increases resistance by 50% to sharp and blunt damage.
+| Curing Hunger | 6 | 0 % | 14.84 % | 89 % | 7 | 5 | 8 |   | Removes hunger.
+| Curing Thirst | 6 | 0 % | 14.84 % | 89 % | 7 | 5 | 11 |   | Removes thirst.
+| Strength | 7 | 0 % | 12.50 % | 88 % | 5 | 1 | 10 | 1h 30mn | Increases the strength bonus by 5.
+| Stone Flesh | 11 | 0 % | 7.42 % | 82 % | 9 | 1 | 43 | 45 minutes | Immunizes to sharp damage.
+| Healing Moderate Wounds | 9 | 0 % | 9.77 % | 88 % | 4 | 3 | 9 |   | Restores 8 hit points.
+| Endurance | 10 | 0 % | 9.77 % | 98 % | 3 | 1 | 16 | 2 days | Decreases fatigue rate by 0.25 (-50%).
+| The Hot Foot | 11 | 0 % | 6.25 % | 69 % | 7 | 4 | 55 |   | Inflicts 4 fire damage to the encounter.
+| Flame | 10 | 0 % | 7.81 % | 78 % | 7 | 6 | 60 |   | Inflicts 8 fire damage to the encounter.
+| The Fireball | 12 | 0 % | 7.03 % | 84 % | 11 | 8 | 20 |   | Inflicts 12 fire damage to the encounter.
+| Heat | 9 | 0 % | 8.59 % | 77 % | 7 | 7 | 77 |   | Sets weather temperature to 75°F (23.9°C).
+| The Flame Shield | 10 | 0 % | 7.42 % | 74 % | 9 | 7 | 109 | 45 minutes | Immunizes to water damage.
+| Paralysis | 12 | 0 % | 6.25 % | 75 % | 11 | 5 | 50 | 3 rounds | Paralyses the encounter.
+| Inflicting Serious Wounds | 13 | 0 % | 6.25 % | 81 % | 13 | 10 | 17 |   | Inflicts 12 'evil' damage to the encounter.
+| Fear | 10 | 0 % | 8.59 % | 86 % | 7 | 5 | 117 |   | Frightens the encounter.
+| Luck | 8 | 0 % | 12.11 % | 97 % | 5 | 3 | 13 | 12 hours | Increases treasure finding by 20 (removes 15 when ended! bug?).
+| Glamour | 12 | 0 % | 7.42 % | 89 % | 3 | 1 | 10 | 1h 30mn | Increases the charisma bonus by 10.
+| Deflecting Weapons | 13 | 0 % | 5.47 % | 71 % | 9 | 7 | 44 | 45 minutes | Immunizes to sharp and blunt damage.
+| Confusion | 10 | 0 % | 7.81 % | 78 % | 5 | 5 | 73 |   | Decreases encounter intelligence by 10.
+| Poisoning | 11 | 0 % | 6.25 % | 69 % | 7 | 10 | 45 | 20 minutes | Removes 2 hit points to the encounter every minutes (probability of 0.3% each minute to naturally cure).
+| Inflicting Moderate Wounds | 13 | 0 % | 5.86 % | 76 % | 9 | 6 | 22 |   | Inflicts 8 'evil' damage to the encounter.
+| Imprisonment | 14 | 0 % | 5.86 % | 82 % | 6 | 5 | 99 |   | Sets encounter speed to 0.
+| Healing Major Wounds | 12 | 0 % | 7.42 % | 89 % | 5 | 5 | 7 |   | Restores 16 hit points.
+| Iron Flesh | 14 | 0 % | 5.08 % | 71 % | 9 | 1 | 46 | 45 minutes | Immunizes to sharp and blunt damage.
+| Fair Weather | 6 | 0 % | 14.84 % | 89 % | 12 | 7 | 21 |   | Changes the weather to type A (fully sunny) with a new duration (depending on the current month).
+| Wisdom | 15 | 0 % | 5.86 % | 88 % | 5 | 1 | 10 | 1h 30mn | Increases the wisdom bonus by 5.
+| Intelligence | 15 | 0 % | 5.86 % | 88 % | 5 | 1 | 10 | 1h 30mn | Increases the intelligence bonus by 5.
+| Purification | 9 | 0 % | 9.77 % | 88 % | 3 | 2 | 5 |   | Cures diseases (in incubation or not).
+| Removing Poison | 9 | 0 % | 10.16 % | 91 % | 3 | 2 | 6 |   | Cures poisons (in incubation or not).
+| Removing Alcohol | 9 | 0 % | 10.16 % | 91 % | 7 | 5 | 12 |   | Cures inebriation. Clears alcohol blood and intestine concentration, digestion rate and blackouts.
+| Stamina | 10 | 0 % | 8.98 % | 90 % | 3 | 1 | 10 | 1h 30mn | Increases the stamina bonus by 5.
+| The Force Field | 14 | 0 % | 5.47 % | 77 % | 9 | 1 | 36 | 45 minutes | Immunizes to sharp and blunt damage.
+|
+Spells taught in each guild:
+| Guild | Spells
+| Thieves' Guild | Dexterity
+Noticeability
+Physical Speed
+Continual Light
+Healing Minor Wounds
+| Blue Wizards' Guild | Stormy Weather
+Slowness
+The Water Hammer
+The Ice Shield
+Numbness
+| Light Wizards' Guild | Continual Light
+Blindness
+Clear Vision
+Noticeability
+The Energy Shield
+Physical Speed
+| Green Wizards' Academy | Curing Hunger
+Curing Thirst
+Strength
+Stone Flesh
+Healing Moderate Wounds
+Endurance
+Dexterity
+| Red Wizards' University | The Hot Foot
+Flame
+The Fireball
+Heat
+The Flame Shield
+Continual Light
+Intelligence
+| Dark Wizards' Guild | Blindness
+Paralysis
+Inflicting Serious Wounds
+Fear
+| Star Wizards' Guild | Luck
+Glamour
+Physical Speed
+The Fireball
+Deflecting Weapons
+| Wizards' of Chaos | Confusion
+Paralysis
+Poisoning
+Inflicting Moderate Wounds
+Slowness
+Stormy Weather
+| Wizards of Law | Imprisonment
+Dexterity
+Strength
+Healing Major Wounds
+Confusion
+| Guild of Order | Iron Flesh
+Continual Light
+Healing Major Wounds
+Fair Weather
+Wisdom
+Intelligence
+| Physicians' Guild | Purification
+Removing Poison
+Removing Alcohol
+Healing Major Wounds
+Strength
+Stamina
+The Force Field
+| Assassins' Guild | Paralysis
+Poisoning
+Inflicting Serious Wounds
+Blindness
+Healing Major Wounds
+Dexterity
+|
+Guilds where spells are taught:
+| Spell | Guilds
+| Dexterity | Thieves' Guild
+Green Wizards' Academy
+Wizards of Law
+Assassins' Guild
+| Noticeability | Thieves' Guild
+Light Wizards' Guild
+| Physical Speed | Thieves' Guild
+Light Wizards' Guild
+Star Wizards' Guild
+| Continual Light | Thieves' Guild
+Light Wizards' Guild
+Red Wizards' University
+Guild of Order
+| Healing Minor Wounds | Thieves' Guild
+| Stormy Weather | Blue Wizards' Guild
+Wizards' of Chaos
+| Slowness | Blue Wizards' Guild
+Wizards' of Chaos
+| The Water Hammer | Blue Wizards' Guild
+| The Ice Shield | Blue Wizards' Guild
+| Numbness | Blue Wizards' Guild
+| Blindness | Light Wizards' Guild
+Dark Wizards' Guild
+Assassins' Guild
+| Clear Vision | Light Wizards' Guild
+| The Energy Shield | Light Wizards' Guild
+| Curing Hunger | Green Wizards' Academy
+| Curing Thirst | Green Wizards' Academy
+| Strength | Green Wizards' Academy
+Wizards of Law
+Physicians' Guild
+| Stone Flesh | Green Wizards' Academy
+| Healing Moderate Wounds | Green Wizards' Academy
+| Endurance | Green Wizards' Academy
+| The Hot Foot | Red Wizards' University
+| Flame | Red Wizards' University
+| The Fireball | Red Wizards' University
+Star Wizards' Guild
+| Heat | Red Wizards' University
+| The Flame Shield | Red Wizards' University
+| Intelligence | Red Wizards' University
+Guild of Order
+| Paralysis | Dark Wizards' Guild
+Wizards' of Chaos
+Assassins' Guild
+| Inflicting Serious Wounds | Dark Wizards' Guild
+Assassins' Guild
+| Fear | Dark Wizards' Guild
+| Luck | Star Wizards' Guild
+| Glamour | Star Wizards' Guild
+| Deflecting Weapons | Star Wizards' Guild
+| Confusion | Wizards' of Chaos
+Wizards of Law
+| Poisoning | Wizards' of Chaos
+Assassins' Guild
+| Inflicting Moderate Wounds | Wizards' of Chaos
+| Imprisonment | Wizards of Law
+| Healing Major Wounds | Wizards of Law
+Guild of Order
+Physicians' Guild
+Assassins' Guild
+| Iron Flesh | Guild of Order
+| Fair Weather | Guild of Order
+| Wisdom | Guild of Order
+| Purification | Physicians' Guild
+| Removing Poison | Physicians' Guild
+| Removing Alcohol | Physicians' Guild
+| Stamina | Physicians' Guild
+| The Force Field | Physicians' Guild
+Removing Curses
+Guilds can remove:
+All visible personal curses (even if personal curses aren't used in the City).
+Curses on weapons and armor.
+|
+The price to remove all visible personal curses is:
+| Guild | Price
+(in coppers)
+| Thieves' Guild | 7000
+| Blue Wizards' Guild | 2000
+| Light Wizards' Guild | 1700
+| Green Wizards' Academy | 1500
+| Red Wizards' University | 1500
+| Dark Wizards' Guild | 2100
+| Star Wizards' Guild | 1300
+| Wizards' of Chaos | 2000
+| Wizards of Law | 1800
+| Guild of Order | 2200
+| Physicians' Guild | 4600
+| Assassins' Guild | 8500
+|
+The price to remove all curses from weapons and armor is:
+| Guild | Price
+(in coppers)
+| Thieves' Guild | 9000
+| Blue Wizards' Guild | 3000
+| Light Wizards' Guild | 2700
+| Green Wizards' Academy | 3000
+| Red Wizards' University | 3000
+| Dark Wizards' Guild | 3100
+| Star Wizards' Guild | 2000
+| Wizards' of Chaos | 4000
+| Wizards of Law | 3800
+| Guild of Order | 4000
+| Physicians' Guild | 7000
+| Assassins' Guild | 11000
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

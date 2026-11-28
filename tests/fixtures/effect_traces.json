@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "traces": [
+    {
+      "id": "ET01",
+      "classification": "documented_conditional",
+      "decision_ids": [
+        "ER01",
+        "ER02"
+      ],
+      "preconditions": [
+        "One listener; activation allowed; no simultaneous events; FF initial active index"
+      ],
+      "steps": [
+        "Deliver matching entity event",
+        "Complete handling"
+      ],
+      "expected": {
+        "active_copy": true,
+        "template_preserved": true,
+        "active_index": "own allocated list index",
+        "handled_event_cleared": true
+      },
+      "unresolved": [
+        "Original index allocation/reuse not asserted"
+      ]
+    },
+    {
+      "id": "ET02",
+      "classification": "documented_conditional",
+      "decision_ids": [
+        "ER04"
+      ],
+      "preconditions": [
+        "H set; all eight comparison fields equal to an existing active effect; IDs differ"
+      ],
+      "steps": [
+        "Attempt activation of current definition then following definitions"
+      ],
+      "expected": {
+        "current_activated": false,
+        "following_activated": false
+      },
+      "unresolved": [
+        "No prediction of unrelated opposing removal"
+      ]
+    },
+    {
+      "id": "ET03",
+      "classification": "documented_conditional",
+      "decision_ids": [
+        "ER04"
+      ],
+      "preconditions": [
+        "H set; only Parameter differs; no other matching instance"
+      ],
+      "steps": [
+        "Apply the documented duplicate check"
+      ],
+      "expected": {
+        "equal_by_eight_fields": false,
+        "blocked_by_this_match": false
+      },
+      "unresolved": [
+        "Other eligibility gates and final activation are not asserted"
+      ]
+    },
+    {
+      "id": "ET04",
+      "classification": "documented_conditional",
+      "decision_ids": [
+        "ER02",
+        "ER05"
+      ],
+      "preconditions": [
+        "An active effect is established to oppose the incoming event; pairing is supplied as a precondition"
+      ],
+      "steps": [
+        "Handle event"
+      ],
+      "expected": {
+        "opposing_active_effect_removed": true
+      },
+      "unresolved": [
+        "No concrete event-bit pair or stat rollback asserted"
+      ]
+    },
+    {
+      "id": "ET05",
+      "classification": "documented_conditional",
+      "decision_ids": [
+        "ER01"
+      ],
+      "preconditions": [
+        "Previous effect activated with index I; following text initial index 00"
+      ],
+      "steps": [
+        "Activate following text"
+      ],
+      "expected": {
+        "text_active_index": "I",
+        "linked_to": "previous activated effect"
+      },
+      "unresolved": [
+        "No skipped-predecessor, root-first-00 or cleanup traversal asserted"
+      ]
+    },
+    {
+      "id": "ET06",
+      "classification": "synthetic_conditional",
+      "decision_ids": [
+        "ER06",
+        "ER07"
+      ],
+      "preconditions": [
+        "Positive abstract timer units; initial timer 3, interval 2, counter 0; no cure, incubation or external events"
+      ],
+      "steps": [
+        "Advance abstract time from 0 to 7"
+      ],
+      "expected": {
+        "execution_times": [
+          3,
+          5,
+          7
+        ],
+        "removed_by_execution": false
+      },
+      "unresolved": [
+        "Abstract units do not establish seconds/minutes conversion; exact engine tick phase unknown"
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
+    },
+    {
+      "id": "ET07",
+      "classification": "synthetic_conditional",
+      "decision_ids": [
+        "ER06",
+        "ER07"
+      ],
+      "preconditions": [
+        "Positive abstract timer units; initial timer 3, interval 2, counter 2; no cure/incubation/external events"
+      ],
+      "steps": [
+        "Advance abstract time through the second execution"
+      ],
+      "expected": {
+        "execution_count_before_deactivation": 2,
+        "execution_times": [
+          3,
+          5
+        ],
+        "eventual_active": false
+      },
+      "unresolved": [
+        "Within-final-tick reset/execution/deactivation sequence not asserted"
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
+    },
+    {
+      "id": "ET08",
+      "classification": "documented_conditional",
+      "decision_ids": [
+        "ER08"
+      ],
+      "preconditions": [
+        "Linked text invisible; linked non-text effect in incubation"
+      ],
+      "steps": [
+        "First timer expiry ends incubation"
+      ],
+      "expected": {
+        "incubation": false,
+        "linked_text_visible": true
+      },
+      "unresolved": [
+        "Whether action also executes on this expiry not asserted"
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
+    },
+    {
+      "id": "ET09",
+      "classification": "unresolved",
+      "decision_ids": [
+        "ER05"
+      ],
+      "preconditions": [
+        "Active effect previously changed a stat by Parameter; explicit removal requested"
+      ],
+      "steps": [
+        "Remove effect"
+      ],
+      "expected": {
+        "active_record": "removal required by supported removal path",
+        "stat_rollback": "unknown",
+        "linked_cleanup_order": "unknown"
+      },
+      "unresolved": [
+        "No invented inverse operation; blocks full S29 removal contract"
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
+    },
+    {
+      "id": "ET10",
+      "classification": "documented_conditional",
+      "decision_ids": [
+        "ER13"
+      ],
+      "preconditions": [
+        "Single Physical Speed effect active; base Speed 13; no other bonus/penalty/delusion"
+      ],
+      "steps": [
+        "Observe during documented effect duration",
+        "Observe after effect has ended with no other changes"
+      ],
+      "expected": {
+        "duration_game_minutes": 30,
+        "base_speed": 13,
+        "during_bonus": 5,
+        "during_effective": 18,
+        "during_displayed": 18,
+        "during_walking_rate": 6,
+        "after_effective": 13,
+        "after_walking_rate": 6
+      },
+      "unresolved": [
+        "Exact boundary and raw lifecycle/rollback mechanism unknown"
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
+    },
+    {
+      "id": "ET11",
+      "classification": "proposed_adaptation",
+      "decision_ids": [
+        "ER13",
+        "ER10"
+      ],
+      "preconditions": [
+        "Proposed S31 save contract; single 30-game-minute duration; 10 game minutes consumed"
+      ],
+      "steps": [
+        "Save snapshot",
+        "Load without replaying activation"
+      ],
+      "expected": {
+        "remaining_game_minutes": 20,
+        "owned_contributions": 1,
+        "replayed_activation": false
+      },
+      "unresolved": [
+        "Save representation and owned contributions are proposed architecture, not original executable evidence"
+      ]
+    },
+    {
+      "id": "ET12",
+      "classification": "unresolved",
+      "decision_ids": [
+        "ER03",
+        "ER09"
+      ],
+      "preconditions": [
+        "Cure check, timer action and explicit removal coincide"
+      ],
+      "steps": [
+        "Process coincident work"
+      ],
+      "expected": {
+        "total_order": "unknown",
+        "rng_draw_count": "unknown"
+      },
+      "unresolved": [
+        "No expected damage/stat value until ordering and probability semantics resolved"
+      ],
+      "followup": "S32 superseding bounded evidence and approved handoff: docs/S32_ST_TIMING_RESEARCH.md; tests/fixtures/s32_st_timing_results.json. This original S28 trace retains its historical classification and limitations."
+    },
+    {
+      "id": "ET13",
+      "classification": "proposed_adaptation",
+      "decision_ids": [
+        "ER12"
+      ],
+      "preconditions": [
+        "Definition requests an unsupported bitwise target/layout"
+      ],
+      "steps": [
+        "Validate before activation"
+      ],
+      "expected": {
+        "accepted": false,
+        "state_changed": false
+      },
+      "unresolved": [
+        "Atomic rejection is remake robustness policy; exact API remains proposed"
+      ]
+    }
+  ]
+}

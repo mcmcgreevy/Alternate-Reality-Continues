@@ -1,0 +1,202 @@
+LayoutDocument">
+|
+Taverns
+|
+|
+Acceptance
+Several checks are done when the character enters the tavern and as long as he is inside:
+Opening hours:
+| Tavern | Opening hours | Membership
+(in coppers)
+| Flaming Dragon Tavern | 00h to 23h |
+| Misty Mountain Tavern | 11h to 02h | 3000
+| Screaming Siren Bar | 16h to 03h |
+| Happy Hunter Rest Stop | 00h to 07h |
+| Dancing Nymph Tavern | 16h to 07h |
+| Club | 18h to 22h | 1500
+| Black Devil Tavern | 00h to 05h |
+| Lost Oasis | 00h to 23h |
+| Last Stop | 00h to 23h |
+| Tail of the Dog Tavern | 00h to 23h |
+| Club Babylon | 10h to 04h | 50000
+| Lost Tears Tavern | 00h to 23h |
+| Mom's Bar | 00h to 23h |
+| Lusty Lloyds Tavern | 00h to 23h |
+Membership:
+Some taverns require the character to be a member to enter.
+Character inebriation:
+If the character is or becomes Very Drunk, he is shut-out and friendship is decreased by 0.09 (23/256).
+Friendship:
+If the friendship is or becomes < 1.0, the character is shut-out by the barkeeper.
+Friendship
+Initially 2.0 for each tavern.
+When the character enters the tavern after 30 days without visiting it, the friendship may be updated:
+| Friendship | Result
+| [0.0; 1.0[ | Friendship reset to 1.0.
+| [1.0; 2.0[ |
+| [2.0; +oo[ | Friendship decreased by 1.0.
+Friendship is used by:
+The acceptance.
+The welcome message.
+The barkeeper and waitress message.
+People reaction when buying a round.
+Welcome Message
+The welcome message is determined by the friendship and frequency:
+| Friendship | Frequency | Message
+| [1.0; 2.0[ |   | What do you want?
+| [2.0; 3.0[ | 1 or 2 | Welcome Stranger!
+| > 2 | Welcome Adventurer!
+| [3.0; 4.0[ |   | Hello {name}!
+| [4.0; +oo[ |   | Hello Dear Friend, glad you came!
+The frequency is initially 0 for each tavern and is only used by the welcome and 'buying a round' message.
+It's set to 2 if the character becomes a member.
+It's reset when the character enters the tavern with a friendship >= 1.0 after 30 days without visiting it.
+It's increased by 1 when entering (even if closed or if the character is shut-out for drunkness or low friendship).
+Foods & Drinks
+Food is sold by the barkeeper and drinks by the waitress. If the friendship is >= 4.0, they will help the character under the following conditions:
+The barkeeper: "Friend, you thirst. Let me get you a drink."
+If the character is Parched, has no copper and no water flask: the barkeeper gives a water flask and clears the thirst.
+The waitress: "Friend, you look hungry. Let me get you some food."
+If the character is Starving, has no copper and no food packet: the waitress gives a food packet and clears the hunger.
+The message depends on the friendship:
+| Friendship | Message
+| [0.0; 2.0[ | What do you want?
+| [2.0; 5.0[ | What can I get for you?
+| [5.0; +oo[ | Dear Friend, How may I serve you?
+Every hour, when the characters enters the tavern, 6 distinct foods and drinks are randomly chosen.
+|
+| Drink | Base price
+(in coppers) | Alcohol
+(added) | Thirst
+(removed) | Water
+flask
+| a Water Flask | 5 |   |   | 1
+| Milk | 2 |   | 6 |
+| Beer | 2 | 1 | 2 |
+| Ale | 3 | 1 | 3 |
+| Wine | 4 | 2 | 2 |
+| Grog | 2 | 2 | 2 |
+| Spirits | 5 | 2 | 2 |
+| Water | 1 |   | 8 |
+| Sarsaparilla | 3 |   | 5 |
+| Orange Juice | 3 |   | 5 |
+| Grape Juice | 3 |   | 5 |
+| Mineral Water | 2 |   | 8 |
+|
+| Food | Base price
+(in coppers) | Hunger
+(removed) | Food
+packet
+| Rack of Lamb | 40 | 16 |
+| Roast Beef | 50 | 18 |
+| Roast Chicken | 25 | 16 |
+| Roast Dragon | 150 | 22 | 1
+| Pork Ribs | 30 | 12 |
+| Leg of Lamb | 80 | 19 |
+| Fried Chicken | 50 | 15 |
+| Leg of Dragon | 300 | 22 | 2
+| Ham | 60 | 14 |
+| Lamb | 56 | 17 |
+| Filet of Beef | 70 | 19 |
+| Vegetable Soup | 5 | 8 |
+| Ragout of Beef | 33 | 10 |
+| Ragout of Dragon | 50 | 11 | 1
+| a Bowl of Fruit | 25 | 7 |
+| a Plate of Greens | 18 | 6 |
+| Smoked Fish | 30 | 12 |
+| Apple Pie | 12 | 4 |
+| Lemon Pie | 12 | 4 |
+| Chocolate Cake | 10 | 4 |
+| a Loaf of Bread | 8 | 6 |
+| a Block of Cheese | 15 | 9 |
+| a Food Packet | 25 |   | 1
+| Gruel | 4 | 8 |
+| a Bagel | 6 | 5 |
+| Pemmican | 20 | 4 | 1
+| a Bowl of Chili | 10 | 6 |
+| Pasta | 30 | 10 |
+| Lasagna | 30 | 10 |
+| Crayfish | 40 | 9 |
+| Lobster | 100 | 14 |
+| a Sandwich | 10 | 8 |
+Remarks on drinks:
+Alcohol intestine concentration is increased by the drink alcohol value.
+Alcohol blood concentration is increased by the half of the drink alcohol value.
+Digestion is unchanged when drinking anything else than a water flask.
+Water flasks reduce thirst by 15 and adds 14 to digestion.
+Remarks on foods:
+Digestion is increased by twice the food hunger value.
+Food packets reduce hunger by 16 and adds 28 to digestion.
+Each tavern applies a factor to the base price. Additionally, a tavern may be classy or not.
+| Tavern | Price factor | Classy
+| Flaming Dragon Tavern | 1.2 |
+| Misty Mountain Tavern | 3.5 | Yes
+| Screaming Siren Bar | 1.2 |
+| Happy Hunter Rest Stop | 1.4 |
+| Dancing Nymph Tavern | 1.6 |
+| Club | 3.5 | Yes
+| Black Devil Tavern | 1.4 | Yes
+| Lost Oasis | 0.8 | Yes
+| Last Stop | 1.2 |
+| Tail of the Dog Tavern | 2.0 |
+| Club Babylon | 5.0 | Yes
+| Lost Tears Tavern | 1.8 | Yes
+| Mom's Bar | 1.6 |
+| Lusty Lloyds Tavern | 1.0 |
+| Classy | Private booth
+light type | Starters
+| Yes | Lit candles | Breadsticks or Hors d'oeuvres
+| No | A smokey torch | A few nuts or Popcorn
+Locations in the tavern (bar, table or booth) affect nothing else besides the lights (only present in the private booth).
+If the character does not have enough money when buying foods or drinks, friendship is decreased by 0.09 (23/256).
+Buying a Round
+The character can buy a round for the house for a base price of 80 coppers.
+If the character does not have enough money, friendship is decreased by 0.36 (93/256). Otherwise, this will increases the friendship by 0.27 (70/256).
+The people reaction is determined by the friendship and frequency:
+| Friendship | Message
+| [0.0; 3.0[ | A few people take up your offer.
+or
+The patrons go up to the bar.
+| [3.0; 4.0[ | Our hearty thanks.
+or
+You have won yourself some friends, {Stranger if frequency <=2, Adventurer otherwise}
+| [4.0; 5.0[ | Hip Hip Hooray!
+or
+All the patrons applaud your generosity!
+| [5.0; +oo[ | Three cheers for {name}
+or
+A toast to our friend, {name}
+Jobs
+Every day, a roll is made for each tavern to determine if it offers a job:
+| Tavern | Probability to offer a job
+| /256 | %
+| Flaming Dragon Tavern | 51 | 20 %
+| Misty Mountain Tavern | 51 | 20 %
+| Screaming Siren Bar | 64 | 25 %
+| Happy Hunter Rest Stop | 77 | 30 %
+| Dancing Nymph Tavern | 72 | 28 %
+| Club | 182 | 71 %
+| Black Devil Tavern | 64 | 25 %
+| Lost Oasis | 26 | 10 %
+| Last Stop | 38 | 15 %
+| Tail of the Dog Tavern | 192 | 75 %
+| Club Babylon | 77 | 30 %
+| Lost Tears Tavern | 56 | 22 %
+| Mom's Bar | 128 | 50 %
+| Lusty Lloyds Tavern | 46 | 18 %
+In the case a job is available, a random one is chosen.
+| Job | Income per hour
+(in coppers) | Requirement | Fatigue rate
+while working | Hurt probability
+| Stat | Min | Minor wound (4 HP) | Major wound (8 HP) | Total
+| Bouncer | 40 to 44 | Strength | 22 | 0.75 | 19.69 % | 7.26 % | 26.95 %
+| Host | 20 to 24 | Charisma | 12 | 0.5625 | 0.77 % | 0.01 % | 0.78 %
+| Dish Washer | 8 to 12 | Skill | 9 | 0.65625 | 12.64 % | 2.20 % | 14.84 %
+Remarks:
+The duration of the job is randomly chosen between 3 to 8 hours.
+The character can be Drunk or Very Drunk when applying for a job.
+The game contains unused (bugged?) code where the character alignment is increased by 1 after working (probability of 23.8%).
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

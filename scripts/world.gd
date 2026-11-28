@@ -1,5 +1,6 @@
 extends RefCounted
-## One authority for both chapters; views never own copies of the character.
+## Shared character state and legacy prototype rules. original_world.gd overrides maps,
+## movement effects, services and persistence for the current game. Views never copy state.
 const MAPS = {
 	"city": ["#############", "#TTT#..#....#", "#TTT#.......#", "#TTT#..#....#", "###.####.####", "#...........#", "#.###.###.#.#", "#.....#D....#", "#############"],
 	"dungeon": ["#############", "#U....#.....#", "#.##..#.###.#", "#.....#...R.#", "###.#####.#.#", "#...........#", "#.#####.###.#", "#...........#", "#############"]
@@ -11,7 +12,16 @@ const BEARINGS = ["NORTH", "EAST", "SOUTH", "WEST"]
 var facing: int = 0
 var character: Dictionary = {"name": "The Stranger", "hp": 24, "max_hp": 24, "strength": 12, "stamina": 12, "gold": 8}
 var inventory: Array = ["Worn sword", "Bread"]
-var minutes: int = 18 * 60
+# Keep the legacy prototype's start time; OriginalWorld selects the ST 06:00 start.
+const GameClock = preload("res://scripts/game_clock.gd")
+var game_clock = GameClock.new(18 * 60)
+# Compatibility views retain the persisted names; integer microseconds own time.
+var minutes: int:
+	get: return game_clock.whole_minutes()
+	set(value): game_clock.set_minutes(value)
+var minute_fraction: float:
+	get: return game_clock.minute_fraction()
+	set(value): game_clock.set_minute_fraction(value)
 var flags: Dictionary = {"visited_dungeon": false, "relic_taken": false, "returned": false}
 var journal: String = "A brass token waits below. Bring it back to the tavern."
 

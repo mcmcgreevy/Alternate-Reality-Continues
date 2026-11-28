@@ -1,0 +1,92 @@
+on a Street
+on a Side Street
+on a Back Alley
+on a Main Street
+in a Street
+at the City Square
+at the City Wall
+in a Secret passage
+in a Secret alley
+at the Northern Gate
+at the Southern Gate
+at the Western Gate
+at the Royale Walkway
+in an Alley
+in an Enclosed Area
+in an Alcove
+at the Green Boar Inn
+at the Lazy Griffin Inn
+at the Sleeping Dragon Inn
+at the Travellers Inn
+at the Midnight Inn
+at the Warriors Retreat Inn
+at the Royal Resort
+at the Flaming Dragon Tavern
+at the Misty Mountain Tavern
+at the Screaming Siren Bar
+at the Happy Hunter Rest Stop
+at the Dancing Nymph Tavern
+at the Club
+at the Black Devil Tavern
+at the Lost Oasis Tavern
+at the Last Stop
+at the Tail of the Dog
+at Club Babalyon
+at the Lost Tears Tavern
+at Mom's Bar
+at Lusty Lloyds
+at the First City Bank
+at the Granite Bank
+at the Grams Gold Exchange
+at Smiley's Shop
+at the Honest Trader
+at the Adventurers Outfitters
+at the Warrior's Supplies
+at the General Store
+at the Exclusive Outfitters
+at the Ono Goods
+at the Best Bargain Store
+at the Grubron Imports
+at the Betelguese Sales
+at the Merchants Grotto
+at the Sunset Market
+at Pauline's Emporium
+at Da Place
+at the Trade Winds
+at the Sharp Weaponsmiths
+at Occum's Weaponsmiths
+at the Best Armorers
+at the Knights Armorers
+at the House of Ill-Repute
+at Acrinimiril's Gate
+at the Floating Gate
+at the Arena
+at the Palace
+at the Palace Gate
+at an entrance to The Dungeon
+at the Maximum Casino
+at the Arena Entrance
+at Jack's Fitness Academy
+at the Armstrong Builders
+at the Apollo Trainers
+at Grog's Weapons Trainers
+at the Flash Weapons Trainers
+at David's Weapons Trainers
+at the One Way Soothers
+at the Alpha Omega Healers
+at the Thieves Guild
+at the Blue Wizards Guild
+at the Light Wizards Guild
+at the Paladins Guild
+at the Green Wizards Academy
+at the Red Wizards University
+at the Dark Wizards Guild
+at the Star Wizards Guild
+at the Wizards of Chaos Guild
+at the Wizards of Law Guild
+at the Mercenary Guild
+at the Guild of Order
+at the Physicians Guild
+at the Assassins Guild
+by an entrance to The Dungeon
+EOF

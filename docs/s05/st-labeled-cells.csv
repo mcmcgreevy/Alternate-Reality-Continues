@@ -1,0 +1,464 @@
+x,y,st_marker,st_legend_name,current_raw_location,arx_reference_description,entrance_runtime_status
+35,0,74,Northern Gate,9,at the Northern Gate,not_verified
+20,1,14,Lost Oasis,30,at the Lost Oasis Tavern,not_verified
+2,2,23,Gram's Gold Exchange,39,at the Grams Gold Exchange,not_verified
+60,2,37,Da Place!,53,at Da Place,not_verified
+9,3,46,Arena,62,at the Arena,not_verified
+10,3,46,Arena,62,at the Arena,not_verified
+11,3,46,Arena,62,at the Arena,not_verified
+12,3,46,Arena,62,at the Arena,not_verified
+13,3,46,Arena,62,at the Arena,not_verified
+14,3,46,Arena,62,at the Arena,not_verified
+15,3,46,Arena,62,at the Arena,not_verified
+16,3,46,Arena,62,at the Arena,not_verified
+17,3,46,Arena,62,at the Arena,not_verified
+18,3,46,Arena,62,at the Arena,not_verified
+19,3,46,Arena,62,at the Arena,not_verified
+20,3,46,Arena,62,at the Arena,not_verified
+21,3,46,Arena,62,at the Arena,not_verified
+22,3,46,Arena,62,at the Arena,not_verified
+23,3,46,Arena,62,at the Arena,not_verified
+50,3,49,Dungeon Entrance,65,at an entrance to The Dungeon,not_verified
+6,4,46,Arena,62,at the Arena,not_verified
+7,4,46,Arena,62,at the Arena,not_verified
+8,4,46,Arena,62,at the Arena,not_verified
+9,4,46,Arena,62,at the Arena,not_verified
+10,4,46,Arena,62,at the Arena,not_verified
+11,4,46,Arena,62,at the Arena,not_verified
+12,4,46,Arena,62,at the Arena,not_verified
+13,4,46,Arena,62,at the Arena,not_verified
+14,4,46,Arena,62,at the Arena,not_verified
+15,4,46,Arena,62,at the Arena,not_verified
+16,4,46,Arena,62,at the Arena,not_verified
+17,4,46,Arena,62,at the Arena,not_verified
+18,4,46,Arena,62,at the Arena,not_verified
+19,4,46,Arena,62,at the Arena,not_verified
+20,4,46,Arena,62,at the Arena,not_verified
+21,4,46,Arena,62,at the Arena,not_verified
+22,4,46,Arena,62,at the Arena,not_verified
+23,4,46,Arena,62,at the Arena,not_verified
+24,4,46,Arena,62,at the Arena,not_verified
+26,4,27,Warrior's Supplies,43,at the Warrior's Supplies,not_verified
+50,4,62,Wizards' of Chaos,84,at the Wizards of Chaos Guild,not_verified
+6,5,46,Arena,62,at the Arena,not_verified
+7,5,46,Arena,62,at the Arena,not_verified
+8,5,46,Arena,62,at the Arena,not_verified
+9,5,46,Arena,62,at the Arena,not_verified
+10,5,46,Arena,62,at the Arena,not_verified
+11,5,46,Arena,62,at the Arena,not_verified
+12,5,46,Arena,62,at the Arena,not_verified
+13,5,46,Arena,62,at the Arena,not_verified
+14,5,46,Arena,62,at the Arena,not_verified
+15,5,46,Arena,62,at the Arena,not_verified
+16,5,46,Arena,62,at the Arena,not_verified
+17,5,46,Arena,62,at the Arena,not_verified
+18,5,46,Arena,62,at the Arena,not_verified
+19,5,46,Arena,62,at the Arena,not_verified
+20,5,46,Arena,62,at the Arena,not_verified
+21,5,46,Arena,62,at the Arena,not_verified
+22,5,46,Arena,62,at the Arena,not_verified
+23,5,46,Arena,62,at the Arena,not_verified
+24,5,46,Arena,62,at the Arena,not_verified
+6,6,46,Arena,62,at the Arena,not_verified
+7,6,46,Arena,62,at the Arena,not_verified
+8,6,46,Arena,62,at the Arena,not_verified
+9,6,46,Arena,62,at the Arena,not_verified
+10,6,46,Arena,62,at the Arena,not_verified
+11,6,46,Arena,62,at the Arena,not_verified
+12,6,46,Arena,62,at the Arena,not_verified
+13,6,46,Arena,62,at the Arena,not_verified
+14,6,46,Arena,62,at the Arena,not_verified
+15,6,46,Arena,62,at the Arena,not_verified
+16,6,46,Arena,62,at the Arena,not_verified
+17,6,46,Arena,62,at the Arena,not_verified
+18,6,46,Arena,62,at the Arena,not_verified
+19,6,46,Arena,62,at the Arena,not_verified
+20,6,46,Arena,62,at the Arena,not_verified
+21,6,46,Arena,62,at the Arena,not_verified
+22,6,46,Arena,62,at the Arena,not_verified
+23,6,46,Arena,62,at the Arena,not_verified
+24,6,46,Arena,62,at the Arena,not_verified
+7,7,46,Arena,62,at the Arena,not_verified
+8,7,46,Arena,62,at the Arena,not_verified
+9,7,46,Arena,62,at the Arena,not_verified
+10,7,46,Arena,62,at the Arena,not_verified
+11,7,46,Arena,62,at the Arena,not_verified
+12,7,46,Arena,62,at the Arena,not_verified
+13,7,46,Arena,62,at the Arena,not_verified
+14,7,46,Arena,62,at the Arena,not_verified
+15,7,46,Arena,62,at the Arena,not_verified
+16,7,46,Arena,62,at the Arena,not_verified
+17,7,46,Arena,62,at the Arena,not_verified
+18,7,46,Arena,62,at the Arena,not_verified
+19,7,46,Arena,62,at the Arena,not_verified
+20,7,46,Arena,62,at the Arena,not_verified
+21,7,46,Arena,62,at the Arena,not_verified
+22,7,46,Arena,62,at the Arena,not_verified
+23,7,46,Arena,62,at the Arena,not_verified
+24,7,46,Arena,62,at the Arena,not_verified
+32,7,65,Physicians' Guild,86,at the Mercenary Guild,not_verified
+33,7,35,Sunset Market,51,at the Sunset Market,not_verified
+37,7,33,Betelgeuse Sales,49,at the Betelguese Sales,not_verified
+38,7,33,Betelgeuse Sales,49,at the Betelguese Sales,not_verified
+52,7,15,Last Stop,31,at the Last Stop,not_verified
+7,8,46,Arena,62,at the Arena,not_verified
+8,8,46,Arena,62,at the Arena,not_verified
+9,8,46,Arena,62,at the Arena,not_verified
+10,8,46,Arena,62,at the Arena,not_verified
+11,8,46,Arena,62,at the Arena,not_verified
+12,8,46,Arena,62,at the Arena,not_verified
+13,8,46,Arena,62,at the Arena,not_verified
+14,8,46,Arena,62,at the Arena,not_verified
+15,8,46,Arena,62,at the Arena,not_verified
+16,8,46,Arena,62,at the Arena,not_verified
+17,8,46,Arena,62,at the Arena,not_verified
+18,8,46,Arena,62,at the Arena,not_verified
+19,8,46,Arena,62,at the Arena,not_verified
+20,8,46,Arena,62,at the Arena,not_verified
+21,8,46,Arena,62,at the Arena,not_verified
+22,8,46,Arena,62,at the Arena,not_verified
+23,8,46,Arena,62,at the Arena,not_verified
+24,8,46,Arena,67,at the Arena Entrance,not_verified
+32,8,65,Physicians' Guild,86,at the Mercenary Guild,not_verified
+33,8,35,Sunset Market,51,at the Sunset Market,not_verified
+1,9,8,Misty Mountain Tavern,24,at the Misty Mountain Tavern,not_verified
+6,9,46,Arena,62,at the Arena,not_verified
+7,9,46,Arena,62,at the Arena,not_verified
+8,9,46,Arena,62,at the Arena,not_verified
+9,9,46,Arena,62,at the Arena,not_verified
+10,9,46,Arena,62,at the Arena,not_verified
+11,9,46,Arena,62,at the Arena,not_verified
+12,9,46,Arena,62,at the Arena,not_verified
+13,9,46,Arena,62,at the Arena,not_verified
+14,9,46,Arena,62,at the Arena,not_verified
+15,9,46,Arena,62,at the Arena,not_verified
+16,9,46,Arena,62,at the Arena,not_verified
+17,9,46,Arena,62,at the Arena,not_verified
+18,9,46,Arena,62,at the Arena,not_verified
+19,9,46,Arena,62,at the Arena,not_verified
+20,9,46,Arena,62,at the Arena,not_verified
+21,9,46,Arena,62,at the Arena,not_verified
+22,9,46,Arena,62,at the Arena,not_verified
+23,9,46,Arena,62,at the Arena,not_verified
+24,9,46,Arena,62,at the Arena,not_verified
+28,9,5,Warrior's Retreat,21,at the Warriors Retreat Inn,not_verified
+33,9,12,Club,28,at the Club,not_verified
+6,10,46,Arena,62,at the Arena,not_verified
+7,10,46,Arena,62,at the Arena,not_verified
+8,10,46,Arena,62,at the Arena,not_verified
+9,10,46,Arena,62,at the Arena,not_verified
+10,10,46,Arena,62,at the Arena,not_verified
+11,10,46,Arena,62,at the Arena,not_verified
+12,10,46,Arena,62,at the Arena,not_verified
+13,10,46,Arena,62,at the Arena,not_verified
+14,10,46,Arena,62,at the Arena,not_verified
+15,10,46,Arena,62,at the Arena,not_verified
+16,10,46,Arena,62,at the Arena,not_verified
+17,10,46,Arena,62,at the Arena,not_verified
+18,10,46,Arena,62,at the Arena,not_verified
+19,10,46,Arena,62,at the Arena,not_verified
+20,10,46,Arena,62,at the Arena,not_verified
+21,10,46,Arena,62,at the Arena,not_verified
+22,10,46,Arena,62,at the Arena,not_verified
+23,10,46,Arena,62,at the Arena,not_verified
+24,10,46,Arena,62,at the Arena,not_verified
+33,10,12,Club,28,at the Club,not_verified
+6,11,46,Arena,62,at the Arena,not_verified
+7,11,46,Arena,62,at the Arena,not_verified
+8,11,46,Arena,62,at the Arena,not_verified
+9,11,46,Arena,62,at the Arena,not_verified
+10,11,46,Arena,62,at the Arena,not_verified
+11,11,46,Arena,62,at the Arena,not_verified
+12,11,46,Arena,62,at the Arena,not_verified
+13,11,46,Arena,62,at the Arena,not_verified
+14,11,46,Arena,62,at the Arena,not_verified
+15,11,46,Arena,62,at the Arena,not_verified
+16,11,46,Arena,62,at the Arena,not_verified
+17,11,46,Arena,62,at the Arena,not_verified
+18,11,46,Arena,62,at the Arena,not_verified
+19,11,46,Arena,62,at the Arena,not_verified
+20,11,46,Arena,62,at the Arena,not_verified
+21,11,46,Arena,62,at the Arena,not_verified
+22,11,46,Arena,62,at the Arena,not_verified
+23,11,46,Arena,62,at the Arena,not_verified
+24,11,46,Arena,62,at the Arena,not_verified
+33,11,1,Lazy Griffin Inn,17,at the Lazy Griffin Inn,not_verified
+9,12,46,Arena,62,at the Arena,not_verified
+10,12,46,Arena,62,at the Arena,not_verified
+11,12,46,Arena,62,at the Arena,not_verified
+12,12,46,Arena,62,at the Arena,not_verified
+13,12,46,Arena,62,at the Arena,not_verified
+14,12,46,Arena,62,at the Arena,not_verified
+15,12,46,Arena,62,at the Arena,not_verified
+17,12,46,Arena,62,at the Arena,not_verified
+18,12,46,Arena,62,at the Arena,not_verified
+19,12,46,Arena,62,at the Arena,not_verified
+20,12,46,Arena,62,at the Arena,not_verified
+21,12,46,Arena,62,at the Arena,not_verified
+22,12,46,Arena,62,at the Arena,not_verified
+23,12,46,Arena,62,at the Arena,not_verified
+33,12,1,Lazy Griffin Inn,17,at the Lazy Griffin Inn,not_verified
+13,13,46,Arena,62,at the Arena,not_verified
+14,13,46,Arena,62,at the Arena,not_verified
+18,13,46,Arena,62,at the Arena,not_verified
+19,13,46,Arena,62,at the Arena,not_verified
+25,13,53,One Way Soothers,69,at the Armstrong Builders,not_verified
+14,14,46,Arena,62,at the Arena,not_verified
+18,14,46,Arena,62,at the Arena,not_verified
+57,14,64,Guild of Order,87,at the Guild of Order,not_verified
+61,14,63,Wizards of Law,85,at the Wizards of Law Guild,not_verified
+22,15,57,Light Wizards' Guild,73,at David's Weapons Trainers,not_verified
+18,16,56,Blue Wizards' Guild,77,at the Blue Wizards Guild,not_verified
+21,16,57,Light Wizards' Guild,73,at David's Weapons Trainers,not_verified
+22,16,57,Light Wizards' Guild,73,at David's Weapons Trainers,not_verified
+23,16,57,Light Wizards' Guild,73,at David's Weapons Trainers,not_verified
+26,16,54,Alpha Omega Healers,70,at the Apollo Trainers,not_verified
+53,16,47,Palace,63,at the Palace,not_verified
+62,16,47,Palace,63,at the Palace,not_verified
+22,17,57,Light Wizards' Guild,73,at David's Weapons Trainers,not_verified
+26,17,54,Alpha Omega Healers,70,at the Apollo Trainers,not_verified
+52,17,47,Palace,63,at the Palace,not_verified
+53,17,47,Palace,63,at the Palace,not_verified
+54,17,47,Palace,63,at the Palace,not_verified
+55,17,47,Palace,63,at the Palace,not_verified
+56,17,47,Palace,63,at the Palace,not_verified
+57,17,47,Palace,63,at the Palace,not_verified
+58,17,47,Palace,63,at the Palace,not_verified
+59,17,47,Palace,63,at the Palace,not_verified
+60,17,47,Palace,63,at the Palace,not_verified
+61,17,47,Palace,63,at the Palace,not_verified
+62,17,47,Palace,63,at the Palace,not_verified
+53,18,47,Palace,63,at the Palace,not_verified
+54,18,47,Palace,63,at the Palace,not_verified
+55,18,47,Palace,63,at the Palace,not_verified
+56,18,47,Palace,63,at the Palace,not_verified
+57,18,47,Palace,63,at the Palace,not_verified
+58,18,47,Palace,63,at the Palace,not_verified
+59,18,47,Palace,63,at the Palace,not_verified
+60,18,47,Palace,63,at the Palace,not_verified
+61,18,47,Palace,63,at the Palace,not_verified
+62,18,47,Palace,63,at the Palace,not_verified
+13,19,58,Green Wizards' Academy,80,at the Green Wizards Academy,not_verified
+25,19,58,Green Wizards' Academy,79,at the Paladins Guild,not_verified
+54,19,47,Palace,63,at the Palace,not_verified
+55,19,47,Palace,63,at the Palace,not_verified
+56,19,47,Palace,63,at the Palace,not_verified
+57,19,47,Palace,63,at the Palace,not_verified
+58,19,47,Palace,63,at the Palace,not_verified
+59,19,47,Palace,63,at the Palace,not_verified
+60,19,47,Palace,63,at the Palace,not_verified
+61,19,47,Palace,63,at the Palace,not_verified
+62,19,47,Palace,63,at the Palace,not_verified
+13,20,58,Green Wizards' Academy,80,at the Green Wizards Academy,not_verified
+19,20,29,Exclusive Outfitters,45,at the Exclusive Outfitters,not_verified
+20,20,29,Exclusive Outfitters,45,at the Exclusive Outfitters,not_verified
+21,20,29,Exclusive Outfitters,45,at the Exclusive Outfitters,not_verified
+22,20,29,Exclusive Outfitters,45,at the Exclusive Outfitters,not_verified
+23,20,58,Green Wizards' Academy,79,at the Paladins Guild,not_verified
+24,20,58,Green Wizards' Academy,79,at the Paladins Guild,not_verified
+25,20,58,Green Wizards' Academy,79,at the Paladins Guild,not_verified
+54,20,47,Palace,63,at the Palace,not_verified
+55,20,47,Palace,63,at the Palace,not_verified
+56,20,47,Palace,63,at the Palace,not_verified
+57,20,47,Palace,63,at the Palace,not_verified
+58,20,47,Palace,63,at the Palace,not_verified
+59,20,47,Palace,63,at the Palace,not_verified
+60,20,47,Palace,63,at the Palace,not_verified
+61,20,47,Palace,63,at the Palace,not_verified
+62,20,47,Palace,63,at the Palace,not_verified
+10,21,58,Green Wizards' Academy,80,at the Green Wizards Academy,not_verified
+11,21,58,Green Wizards' Academy,80,at the Green Wizards Academy,not_verified
+12,21,58,Green Wizards' Academy,80,at the Green Wizards Academy,not_verified
+13,21,58,Green Wizards' Academy,80,at the Green Wizards Academy,not_verified
+54,21,47,Palace,63,at the Palace,not_verified
+55,21,47,Palace,63,at the Palace,not_verified
+56,21,47,Palace,63,at the Palace,not_verified
+57,21,47,Palace,63,at the Palace,not_verified
+58,21,47,Palace,63,at the Palace,not_verified
+59,21,47,Palace,63,at the Palace,not_verified
+60,21,47,Palace,63,at the Palace,not_verified
+61,21,48,Palace Gates,64,at the Palace Gate,not_verified
+62,21,47,Palace,63,at the Palace,not_verified
+12,22,58,Green Wizards' Academy,80,at the Green Wizards Academy,not_verified
+54,22,47,Palace,63,at the Palace,not_verified
+55,22,47,Palace,63,at the Palace,not_verified
+56,22,47,Palace,63,at the Palace,not_verified
+57,22,47,Palace,63,at the Palace,not_verified
+58,22,47,Palace,63,at the Palace,not_verified
+59,22,47,Palace,63,at the Palace,not_verified
+60,22,47,Palace,63,at the Palace,not_verified
+61,22,47,Palace,63,at the Palace,not_verified
+62,22,47,Palace,63,at the Palace,not_verified
+8,23,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+10,23,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+54,23,47,Palace,63,at the Palace,not_verified
+55,23,47,Palace,63,at the Palace,not_verified
+56,23,47,Palace,63,at the Palace,not_verified
+57,23,47,Palace,63,at the Palace,not_verified
+58,23,47,Palace,63,at the Palace,not_verified
+59,23,47,Palace,63,at the Palace,not_verified
+60,23,47,Palace,63,at the Palace,not_verified
+61,23,47,Palace,63,at the Palace,not_verified
+62,23,47,Palace,63,at the Palace,not_verified
+7,24,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+8,24,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+10,24,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+11,24,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+54,24,47,Palace,63,at the Palace,not_verified
+55,24,47,Palace,63,at the Palace,not_verified
+56,24,47,Palace,63,at the Palace,not_verified
+57,24,47,Palace,63,at the Palace,not_verified
+58,24,47,Palace,63,at the Palace,not_verified
+59,24,47,Palace,63,at the Palace,not_verified
+60,24,47,Palace,63,at the Palace,not_verified
+61,24,47,Palace,63,at the Palace,not_verified
+62,24,47,Palace,63,at the Palace,not_verified
+7,25,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+11,25,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+60,25,47,Palace,63,at the Palace,not_verified
+61,25,47,Palace,63,at the Palace,not_verified
+62,25,47,Palace,63,at the Palace,not_verified
+7,26,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+8,26,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+9,26,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+10,26,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+11,26,30,Rocky's Emporium,46,at the Ono Goods,not_verified
+41,26,43,House of Ill Repute (QUARANTINED!),59,at the House of Ill-Repute,not_verified
+42,26,43,House of Ill Repute (QUARANTINED!),59,at the House of Ill-Repute,not_verified
+43,26,43,House of Ill Repute (QUARANTINED!),59,at the House of Ill-Repute,not_verified
+46,26,36,Pauline's Emporium,52,at Pauline's Emporium,not_verified
+53,26,47,Palace,63,at the Palace,not_verified
+54,26,47,Palace,63,at the Palace,not_verified
+55,26,47,Palace,63,at the Palace,not_verified
+56,26,47,Palace,63,at the Palace,not_verified
+57,26,47,Palace,63,at the Palace,not_verified
+58,26,47,Palace,63,at the Palace,not_verified
+59,26,47,Palace,63,at the Palace,not_verified
+60,26,47,Palace,63,at the Palace,not_verified
+61,26,47,Palace,63,at the Palace,not_verified
+62,26,47,Palace,63,at the Palace,not_verified
+39,27,50,Maximum Casino,66,at the Maximum Casino,not_verified
+42,27,43,House of Ill Repute (QUARANTINED!),59,at the House of Ill-Repute,not_verified
+43,27,43,House of Ill Repute (QUARANTINED!),59,at the House of Ill-Repute,not_verified
+44,27,55,Thieves' Guild,76,at the Thieves Guild,not_verified
+46,27,36,Pauline's Emporium,52,at Pauline's Emporium,not_verified
+47,27,36,Pauline's Emporium,52,at Pauline's Emporium,not_verified
+48,27,36,Pauline's Emporium,52,at Pauline's Emporium,not_verified
+52,27,47,Palace,63,at the Palace,not_verified
+53,27,47,Palace,63,at the Palace,not_verified
+54,27,47,Palace,63,at the Palace,not_verified
+55,27,47,Palace,63,at the Palace,not_verified
+56,27,47,Palace,63,at the Palace,not_verified
+57,27,47,Palace,63,at the Palace,not_verified
+58,27,47,Palace,63,at the Palace,not_verified
+59,27,47,Palace,63,at the Palace,not_verified
+60,27,47,Palace,63,at the Palace,not_verified
+61,27,47,Palace,63,at the Palace,not_verified
+62,27,47,Palace,63,at the Palace,not_verified
+5,28,19,Mom's Bar,35,at Mom's Bar,not_verified
+6,28,19,Mom's Bar,35,at Mom's Bar,not_verified
+39,28,50,Maximum Casino,66,at the Maximum Casino,not_verified
+40,28,50,Maximum Casino,66,at the Maximum Casino,not_verified
+42,28,43,House of Ill Repute (QUARANTINED!),59,at the House of Ill-Repute,not_verified
+43,28,55,Thieves' Guild,76,at the Thieves Guild,not_verified
+44,28,55,Thieves' Guild,76,at the Thieves Guild,not_verified
+50,28,42,Knight's Armorers,58,at the Knights Armorers,not_verified
+53,28,47,Palace,63,at the Palace,not_verified
+62,28,47,Palace,63,at the Palace,not_verified
+39,29,50,Maximum Casino,66,at the Maximum Casino,not_verified
+40,29,50,Maximum Casino,66,at the Maximum Casino,not_verified
+41,29,11,Dancing Nymph Tavern,27,at the Dancing Nymph Tavern,not_verified
+43,29,55,Thieves' Guild,76,at the Thieves Guild,not_verified
+44,29,55,Thieves' Guild,76,at the Thieves Guild,not_verified
+45,29,55,Thieves' Guild,76,at the Thieves Guild,not_verified
+44,30,55,Thieves' Guild,76,at the Thieves Guild,not_verified
+57,30,17,Club Babylon,33,at Club Babalyon,not_verified
+19,31,40,Occum's Weaponsmiths,56,at Occum's Weaponsmiths,not_verified
+35,33,31,Best Bargain Store,47,at the Best Bargain Store,not_verified
+39,33,16,Tail of the Dog Tavern,32,at the Tail of the Dog,not_verified
+60,33,20,Lusty Lloyds Tavern,36,at Lusty Lloyds,not_verified
+28,34,53,One Way Soothers,74,at the One Way Soothers,not_verified
+29,34,53,One Way Soothers,74,at the One Way Soothers,not_verified
+30,34,53,One Way Soothers,74,at the One Way Soothers,not_verified
+39,34,16,Tail of the Dog Tavern,32,at the Tail of the Dog,not_verified
+60,34,20,Lusty Lloyds Tavern,36,at Lusty Lloyds,not_verified
+28,35,53,One Way Soothers,74,at the One Way Soothers,not_verified
+29,35,53,One Way Soothers,74,at the One Way Soothers,not_verified
+30,35,53,One Way Soothers,74,at the One Way Soothers,not_verified
+0,36,75,Western Gate,11,at the Western Gate,not_verified
+28,36,53,One Way Soothers,74,at the One Way Soothers,not_verified
+29,36,53,One Way Soothers,74,at the One Way Soothers,not_verified
+30,36,53,One Way Soothers,74,at the One Way Soothers,not_verified
+32,36,41,Best Armorers,57,at the Best Armorers,not_verified
+38,36,22,Granite Bank,38,at the Granite Bank,not_verified
+31,38,3,Traveller's Inn,19,at the Travellers Inn,not_verified
+7,39,10,Happy Hunter Rest Stop,26,at the Happy Hunter Rest Stop,not_verified
+8,39,10,Happy Hunter Rest Stop,26,at the Happy Hunter Rest Stop,not_verified
+9,39,10,Happy Hunter Rest Stop,26,at the Happy Hunter Rest Stop,not_verified
+10,39,10,Happy Hunter Rest Stop,26,at the Happy Hunter Rest Stop,not_verified
+31,39,3,Traveller's Inn,19,at the Travellers Inn,not_verified
+32,39,3,Traveller's Inn,19,at the Travellers Inn,not_verified
+35,39,25,Honest Trader,41,at the Honest Trader,not_verified
+31,40,4,Midnight Inn,20,at the Midnight Inn,not_verified
+32,40,4,Midnight Inn,20,at the Midnight Inn,not_verified
+33,40,4,Midnight Inn,20,at the Midnight Inn,not_verified
+31,41,4,Midnight Inn,20,at the Midnight Inn,not_verified
+33,41,60,Dark Wizards' Guild,82,at the Dark Wizards Guild,not_verified
+33,42,60,Dark Wizards' Guild,82,at the Dark Wizards Guild,not_verified
+31,43,13,Black Devil Tavern,29,at the Black Devil Tavern,not_verified
+33,43,60,Dark Wizards' Guild,82,at the Dark Wizards Guild,not_verified
+3,44,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+4,44,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+5,44,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+8,44,0,Green Boar Inn,16,at the Green Boar Inn,not_verified
+9,44,0,Green Boar Inn,16,at the Green Boar Inn,not_verified
+10,44,0,Green Boar Inn,16,at the Green Boar Inn,not_verified
+31,44,13,Black Devil Tavern,29,at the Black Devil Tavern,not_verified
+32,44,13,Black Devil Tavern,29,at the Black Devil Tavern,not_verified
+33,44,13,Black Devil Tavern,29,at the Black Devil Tavern,not_verified
+3,45,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+4,45,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+5,45,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+8,45,0,Green Boar Inn,16,at the Green Boar Inn,not_verified
+52,45,28,General Store,44,at the General Store,not_verified
+53,45,28,General Store,44,at the General Store,not_verified
+54,45,28,General Store,44,at the General Store,not_verified
+55,45,28,General Store,44,at the General Store,not_verified
+56,45,28,General Store,44,at the General Store,not_verified
+3,46,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+4,46,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+5,46,54,Alpha Omega Healers,75,at the Alpha Omega Healers,not_verified
+49,47,59,Red Wizards' University,81,at the Red Wizards University,not_verified
+50,47,59,Red Wizards' University,81,at the Red Wizards University,not_verified
+25,48,24,Smiley's Shop,40,at Smiley's Shop,not_verified
+49,48,59,Red Wizards' University,81,at the Red Wizards University,not_verified
+50,48,59,Red Wizards' University,81,at the Red Wizards University,not_verified
+5,49,65,Physicians' Guild,88,at the Physicians Guild,not_verified
+47,49,59,Red Wizards' University,81,at the Red Wizards University,not_verified
+48,49,59,Red Wizards' University,81,at the Red Wizards University,not_verified
+49,49,59,Red Wizards' University,81,at the Red Wizards University,not_verified
+0,50,32,Special Imports Store,48,at the Grubron Imports,not_verified
+3,51,26,Adventurer's Outfitters,42,at the Adventurers Outfitters,not_verified
+13,51,18,Lost Tears Tavern,34,at the Lost Tears Tavern,not_verified
+27,52,61,Star Wizards' Guild,83,at the Star Wizards Guild,not_verified
+53,53,39,Sharp Weaponsmiths,55,at the Sharp Weaponsmiths,not_verified
+54,53,39,Sharp Weaponsmiths,55,at the Sharp Weaponsmiths,not_verified
+44,54,9,Screaming Siren Bar,25,at the Screaming Siren Bar,not_verified
+50,54,34,Merchant's Grotto,50,at the Merchants Grotto,not_verified
+51,54,34,Merchant's Grotto,50,at the Merchants Grotto,not_verified
+52,54,34,Merchant's Grotto,50,at the Merchants Grotto,not_verified
+54,54,39,Sharp Weaponsmiths,55,at the Sharp Weaponsmiths,not_verified
+50,55,34,Merchant's Grotto,50,at the Merchants Grotto,not_verified
+52,55,34,Merchant's Grotto,50,at the Merchants Grotto,not_verified
+30,57,21,First City Bank,37,at the First City Bank,not_verified
+59,57,2,Sleeping Dragon Inn,18,at the Sleeping Dragon Inn,not_verified
+60,57,2,Sleeping Dragon Inn,18,at the Sleeping Dragon Inn,not_verified
+19,58,37,Da Place!,53,at Da Place,not_verified
+2,59,57,Light Wizards' Guild,78,at the Light Wizards Guild,not_verified
+31,59,6,Royal Resort Inn,22,at the Royal Resort,not_verified
+54,59,52,Jack's Fitness Academy,68,at Jack's Fitness Academy,not_verified
+31,60,6,Royal Resort Inn,22,at the Royal Resort,not_verified
+55,61,66,Assassins' Guild,89,at the Assassins Guild,not_verified
+60,61,7,Flaming Dragon Tavern,23,at the Flaming Dragon Tavern,not_verified
+59,62,49,Dungeon Entrance,65,at an entrance to The Dungeon,not_verified
+35,63,73,Southern Gate,10,at the Southern Gate,not_verified

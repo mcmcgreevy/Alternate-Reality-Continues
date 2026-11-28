@@ -1,0 +1,60 @@
+{
+  "id": "hail-and-welcome",
+  "title": "Hail and Welcome",
+  "location": "Tail of the Dog Tavern",
+  "status": "user_selected_recording_integrated",
+  "draft_audition": "builds/music/hail-and-welcome-draft/listen.html",
+  "lyrics": "lyrics-source.txt",
+  "lyrics_provenance": "Supplied by user on 2026-11-11; trailing whitespace removed. Both occurrences of 'Is is safe and warm' corrected to 'It is safe and warm' per user clarification.",
+  "reference_audio": "tools/reference/tavern-music/hail-and-welcome-source.mp3",
+  "reference_audio_sha256": "ee6cc90635f5c7a6c6d73cba7fe1728921386042425305ab1bc5479b0b2fcb43",
+  "reference_duration_seconds": 130.218673706055,
+  "reference_video": "https://www.youtube.com/watch?v=7dlPu-MNC7w",
+  "platform_from_video_description": "Atari ST (1986)",
+  "audio_validation": "Godot AudioStreamMP3 load and duration check only; not an auditory or melody-fidelity check.",
+  "sections": [
+    {
+      "label": "Opening refrain",
+      "first_line": 1,
+      "last_line": 6
+    },
+    {
+      "label": "Listeners gather",
+      "first_line": 7,
+      "last_line": 14
+    },
+    {
+      "label": "Repeated refrain",
+      "first_line": 15,
+      "last_line": 20
+    },
+    {
+      "label": "Listeners depart",
+      "first_line": 21,
+      "last_line": 31
+    },
+    {
+      "label": "Closing lines",
+      "first_line": 32,
+      "last_line": 34
+    }
+  ],
+  "section_basis": "Editorial grouping of supplied text; not verified musical form or timing.",
+  "wording_to_verify": [
+    "The anxious heartbeat listeners"
+  ],
+  "confirmed_wording": {
+    "drumfire": "Confirmed by user: dense, continuous artillery bombardment or gunfire resembling a rolling drumbeat.",
+    "It is safe and warm": "User-confirmed correction in both refrains."
+  },
+  "vocal_direction": "Male dwarf; warm, resonant bass-baritone with restrained gravel and clear diction.",
+  "mix_deliverables": [
+    "Backing plus isolated vocal",
+    "Identical backing without vocal"
+  ],
+  "timing_status": "All 34 source lines have provisional cues from local Whisper small.en word timestamps on the revised full mix. User-supplied lyric spelling preserved; phrase ends extended slightly for readability. Listening review required for exact wording and timing.",
+  "production_manifest": "production-audio.json",
+  "performer": "Grimthorn Redbeard",
+  "caption_review_required": true,
+  "recording_revision": "2026-11-13"
+}

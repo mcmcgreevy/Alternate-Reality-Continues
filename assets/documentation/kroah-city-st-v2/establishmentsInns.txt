@@ -1,0 +1,97 @@
+LayoutDocument">
+|
+Inns
+|
+|
+Sleeping
+The character can sleep up to 12 hours at the inn. The room base price does not depend on the rent duration.
+While sleeping:
+Fatigue rate is null.
+Thirst rate is halved.
+Hunger rate is halved.
+Every hour:
+Fatigue is decreased by 1.
+If the sleep for this hour is restful (see below), fatigue is decreased by an extra value of 6 and hit points are increased by 6.
+The probability to have a restful sleep increases with the room quality.
+According to the above rule, the average fatigue recovered per hour while sleeping is:
+average fatigue recovered per hour = 1 + 6 * probability for a restful sleep
+The optimal sleeping time is reached when the daily recover reaches the daily fatigue:
+daily recover = daily fatigue
+Which gives with a time unit of 1 hour:
+average fatigue recovered per hour * number of hours asleep = fatigue increased per hour * number of hours awake
+The character becomes tired at a rate of 2 every hour:
+average fatigue recovered per hour * number of hours asleep = 2 * number of hours awake
+By replacing the average fatigue recovered per hour, it becomes:
+(1 + 6 * probability for a restful sleep) * number of hours asleep = 2 * number of hours awake
+The number of hours the character is awake is equal to 24 minus the number of hours asleep:
+(1 + 6 * probability for a restful sleep) * number of hours asleep = 2 * (24 - number of hours asleep)
+The optimal sleeping time is then deduced:
+(1 + 6 * probability for a restful sleep) * number of hours asleep + 2 * number of hours asleep = 48
+number of hours asleep * (3 + 6 * probability for a restful sleep) = 48
+number of hours asleep = 48 / (3 + 6 * probability for a restful sleep)
+The column 'average needed hours of rest each day' in the following table is the optimal sleeping time.
+| Room | Base price
+(in coppers) | Probability for
+a restful sleep | Base price
+for 1 %
+(in coppers) | Average fatigue
+recovered per hour
+while sleeping | Average needed
+hours of rest
+each day | Average hours
+remaining
+in the day | Average base cost
+for each hour awake
+(in coppers)
+| /256 | %
+| the common area floor | 10 | 30 | 11.72 % | 0.85 | 1.70 | 12.97 hours | 11.03 hours | 1.81
+| a bed with no bath | 20 | 45 | 17.58 % | 1.14 | 2.05 | 11.85 hours | 12.15 hours | 1.65
+| a bed with common bath | 30 | 60 | 23.44 % | 1.28 | 2.41 | 10.88 hours | 13.12 hours | 2.29
+| a room with common bath | 40 | 85 | 33.20 % | 1.20 | 2.99 | 9.62 hours | 14.38 hours | 2.78
+| a room with bath | 50 | 100 | 39.06 % | 1.28 | 3.34 | 8.99 hours | 15.01 hours | 3.33
+| a Premium Room | 100 | 140 | 54.69 % | 1.83 | 4.28 | 7.64 hours | 16.36 hours | 6.11
+| a Deluxe Room | 200 | 170 | 66.41 % | 3.01 | 4.98 | 6.88 hours | 17.12 hours | 11.68
+| a Small Suite | 400 | 200 | 78.13 % | 5.12 | 5.69 | 6.24 hours | 17.76 hours | 22.52
+| a Suite | 800 | 240 | 93.75 % | 8.53 | 6.63 | 5.56 hours | 18.44 hours | 43.39
+| Our BEST Suite | 1600 | 255 | 99.61 % | 16.06 | 6.98 | 5.35 hours | 18.65 hours | 85.77
+Remarks:
+For example, if the character wants to rest an average of 9 hours per day, he must sleep at least in 'a room with bath'.
+The cheapest way to stay healthy is to sleep 12 hours in 'a bed with no bath' (base price of 20 coppers).
+The character can't sleep more than 12 hours in a row, that's why the base price for 'the common area floor' is doubled when calculating the average base cost for each hour awake (average needed hours of rest is > 12, so he must rent the room 2 times).
+Each inn applies a factor to the room base price:
+| Inn | Price
+factor
+| Green Boar Inn | 100 %
+| Lazy Griffin Inn | 200 %
+| Sleeping Dragon Inn | 50 %
+| Traveller's Inn | 600 %
+| Midnight Inn | 300 %
+| Warrior's Retreat | 75 %
+| Royal Resort Inn | 800 %
+Jobs
+Every day, a roll is made for each inn to determine if it offers a job:
+| Inn | Probability to offer a job
+| /256 | %
+| Green Boar Inn | 64 | 25 %
+| Lazy Griffin Inn | 154 | 60 %
+| Sleeping Dragon Inn | 64 | 25 %
+| Traveller's Inn | 179 | 70 %
+| Midnight Inn | 56 | 22 %
+| Warrior's Retreat | 77 | 30 %
+| Royal Resort Inn | 102 | 40 %
+In the case a job is available, a random one is chosen.
+| Job | Income per hour
+(in coppers) | Requirement | Fatigue rate
+while working | Hurt probability
+| Stat | Min | Minor wound (4 HP) | Major wound (8 HP) | Total
+| Bellhop | 10 to 24 | Strength | 18 | 0.6875 | 15.95 % | 3.97 % | 19.92 %
+| Desk Clerk | 18 to 20 | Charisma | 16 | 0.5625 | 3.75 % | 0.15 % | 3.90 %
+| Janitor | 12 to 15 | Stamina | 17 | 0.6250 | 8.50 % | 0.88 % | 9.38 %
+Remarks:
+The duration of the job is randomly chosen between 3 to 8 hours.
+The character has to sober up before applying for a job (he must not be Drunk or Very Drunk, but Tipsy is allowed).
+The game contains unused (bugged?) code where the character alignment is increased by 1 after working (probability of 23.8%).
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

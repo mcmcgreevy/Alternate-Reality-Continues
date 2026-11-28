@@ -1,13 +1,28 @@
 extends Node2D
+## Current-game input controller and immediate-mode HUD. World owns simulation state;
+## OriginalView renders it, and TavernMusic owns the independent audio clock.
 const World = preload("res://scripts/original_world.gd")
 const Music = preload("res://scripts/tavern_music.gd")
+const WeatherEffects = preload("res://scripts/weather_effects.gd")
 const FirstPerson = preload("res://scripts/original_view.gd")
 const INK := Color("d9e0d9")
 const DIM := Color("8b9b9b")
 const AMBER := Color("e5b569")
 const TEAL := Color("73c6bb")
+const MOVE_KEYS = [KEY_W, KEY_S, KEY_A, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_Q, KEY_R]
+const TURN_KEYS = [KEY_A, KEY_D, KEY_LEFT, KEY_RIGHT]
+# Repeat intervals are real seconds, not simulation minutes.
+const HOLD_DELAY := 0.35
+const TURN_INTERVAL := 0.30
+var hold_movement := true
+var controls_path := "user://controls.cfg"
+var rain_time := 0.0
+var application_focused := true
+var held_key: int = 0
+var repeat_remaining := 0.0
 var world = World.new()
 var music = Music.new()
+var weather_effects = WeatherEffects.new()
 var font: Font = ThemeDB.fallback_font
 var chapters: Dictionary
 var show_chapters := false
@@ -25,40 +40,163 @@ var tour_index := 3
 var cached_tour_index := -1
 const TOUR_POINTS = [Vector2i(0,0), Vector2i(1,32), Vector2i(36,32), Vector2i(49,3)]
 const TOUR_NAMES = ["northwest", "southwest", "southeast", "City entrance"]
+var tavern_art: Texture2D
 var viewport := SubViewport.new()
 var first_person = FirstPerson.new()
 
+## Attach one world view and music player; world owns all journey state.
 func _ready() -> void:
+	var controls := ConfigFile.new()
+	if controls.load(controls_path) == OK:
+		hold_movement = bool(controls.get_value("movement", "hold", true))
 	chapters = JSON.parse_string(FileAccess.get_file_as_string("res://data/chapters.json"))
+	add_child(weather_effects)
 	add_child(music)
 	music.set_tavern(true)
-	viewport.size = Vector2i(375, 210)
+	tavern_art = preload("res://assets/art/tavern-grimthorn-v2.png")
+	viewport.size = Vector2i(1024, 576)
+	viewport.msaa_3d = Viewport.MSAA_2X
 	viewport.own_world_3d = true
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	add_child(viewport)
 	viewport.add_child(first_person)
 	first_person.sync(world)
-	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 
-func _process(_delta: float) -> void:
+## Simulation time runs while active; chapter overview and focus loss pause it.
+func _process(delta: float) -> void:
+	rain_time = fmod(rain_time + delta, 60.0)
+	if application_focused and not show_chapters:
+		world.advance_real_seconds(delta)
+		advance_held_movement(delta)
+	weather_effects.advance(world, delta, music.muted)
 	first_person.sync(world)
 	update_guide()
 	queue_redraw()
 
+func cancel_held_movement() -> void:
+	held_key = 0
+	repeat_remaining = 0.0
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		application_focused = true
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		application_focused = false
+		cancel_held_movement()
+
+func _input(event: InputEvent) -> void:
+	# Releases must reach us even when a UI control consumes keyboard input.
+	if event is InputEventKey and not event.pressed and event.keycode == held_key:
+		cancel_held_movement()
+
+## The map is a live navigation aid, not a blocking menu. Tavern and modal screens block travel.
+func movement_allowed() -> bool:
+	return not (world.in_tavern() or show_chapters or show_brief or show_order or not order_id.is_empty())
+
+## Translation begins a Speed-driven stride; turns remain discrete quarter turns.
+func perform_movement(key_code: int) -> bool:
+	if world.is_travelling():
+		return false
+	if key_code in TURN_KEYS:
+		world.turn(-1 if key_code in [KEY_A, KEY_LEFT] else 1)
+		return true
+	var direction: Vector2i = world.DIRECTIONS[world.facing]
+	if key_code in [KEY_S, KEY_DOWN]:
+		direction = -direction
+	elif key_code in [KEY_Q, KEY_R]:
+		direction = world.DIRECTIONS[posmod(world.facing + (1 if key_code == KEY_R else -1), 4)]
+	return world.begin_travel(direction)
+
+## A tap completes one stride. Release cancels subsequent strides, not the current
+## one. Discard excess travel delta after arrival so a stalled frame cannot skip cells.
+func advance_held_movement(delta: float) -> void:
+	var revision_before: int = world.revision
+	if world.is_travelling():
+		if not world.advance_travel(delta):
+			return
+		music.set_tavern(world.in_tavern())
+		if world.revision != revision_before or world.position == Vector2i(49, 3):
+			cancel_held_movement()
+	if held_key == 0:
+		return
+	if not hold_movement or not movement_allowed():
+		cancel_held_movement()
+		return
+	if held_key in TURN_KEYS:
+		repeat_remaining -= delta
+		if repeat_remaining > 0:
+			return
+	if not perform_movement(held_key):
+		cancel_held_movement()
+		return
+	repeat_remaining = TURN_INTERVAL
+
+## Handle releases and control preferences before routing gameplay input.
+## Any fresh key cancels the previous hold; releasing a different key cannot cancel the new one.
 func _unhandled_key_input(event: InputEvent) -> void:
-	if not event.is_pressed() or event.is_echo(): return
-	if show_chapters and event.keycode not in [KEY_C, KEY_ESCAPE]: return
+	if not event.is_pressed():
+		if event.keycode == held_key:
+			cancel_held_movement()
+		return
+	if event.is_echo():
+		return
+	cancel_held_movement()
+	# Do not rotate, interact or save from an uncommitted cell. Audio/map controls
+	# remain usable; there is no queued action that can fire after key release.
+	if world.is_travelling() and event.keycode not in [KEY_M, KEY_L, KEY_K, KEY_TAB, KEY_F6, KEY_H, KEY_C, KEY_ESCAPE]:
+		world.journal = "Finish this stride before turning, interacting or saving."
+		return
+	if event.keycode == KEY_F7 and OS.is_debug_build():
+		world.test_physical_speed()
+		queue_redraw()
+		return
+	if event.keycode == KEY_F6:
+		world.cycle_test_weather()
+		first_person.sync(world)
+		queue_redraw()
+		return
+	if event.keycode == KEY_H:
+		hold_movement = not hold_movement
+		var controls := ConfigFile.new()
+		controls.set_value("movement", "hold", hold_movement)
+		controls.save(controls_path)
+		return
+	if event.keycode in MOVE_KEYS and not world.in_tavern():
+		if movement_allowed() and perform_movement(event.keycode) and hold_movement:
+			held_key = event.keycode
+			repeat_remaining = HOLD_DELAY
+		return
+	_handle_key(event)
+
+## Route a single press through tavern menus first, then normal exploration controls.
+## Repeated movement enters here too; interactions and purchases are never autorepeated.
+func _handle_key(event: InputEvent) -> void:
+	if not event.is_pressed() or event.is_echo():
+		return
+	if event.keycode in [KEY_M, KEY_L, KEY_K]:
+		if event.keycode == KEY_M:
+			music.toggle_mute()
+		elif event.keycode == KEY_L:
+			music.toggle_vocals()
+		else: music.toggle_subtitles()
+		music.set_tavern(world.in_tavern())
+		return
+	if show_chapters and event.keycode not in [KEY_C, KEY_ESCAPE]:
+		return
 	if world.in_tavern() and not show_chapters:
 		if not order_id.is_empty():
 			if event.keycode == KEY_Y:
 				world.order_tavern(order_id, order_hour)
 				order_id = ""
-			elif event.keycode in [KEY_N, KEY_ESCAPE]: order_id = ""
-			elif event.keycode == KEY_M: music.toggle_mute()
+			elif event.keycode in [KEY_N, KEY_ESCAPE]:
+				order_id = ""
 			return
-		if show_map and event.keycode in [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_B, KEY_T]: return
+		if show_map and event.keycode in [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_B, KEY_T]:
+			return
 		if show_order and event.keycode in [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_T, KEY_ESCAPE]:
-			if event.keycode in [KEY_5, KEY_ESCAPE]: show_order = false
+			if event.keycode in [KEY_5, KEY_ESCAPE]:
+				show_order = false
 			elif event.keycode == KEY_T:
 				world.wait_minutes(60 - world.minutes % 60)
 			else:
@@ -86,15 +224,16 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				world.wait_minutes()
 				return
 			KEY_W, KEY_S, KEY_A, KEY_D, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_Q, KEY_R, KEY_E, KEY_ENTER:
-				world.journal = "You are visiting The Tavern. Choose an option from the menu."
+				world.journal = "You are visiting Tail of the Dog Tavern. Choose an option from the menu."
 				return
 	match event.keycode:
-		KEY_W, KEY_UP: world.step()
-		KEY_S, KEY_DOWN: world.step(true)
+		# Frame-driven keyboard travel must not add a second action-time charge.
+		KEY_W, KEY_UP: world.move(world.DIRECTIONS[world.facing], false)
+		KEY_S, KEY_DOWN: world.move(-world.DIRECTIONS[world.facing], false)
 		KEY_A, KEY_LEFT: world.turn(-1)
 		KEY_D, KEY_RIGHT: world.turn(1)
-		KEY_Q: world.strafe(false)
-		KEY_R: world.strafe(true)
+		KEY_Q: world.move(world.DIRECTIONS[posmod(world.facing - 1, 4)], false)
+		KEY_R: world.move(world.DIRECTIONS[posmod(world.facing + 1, 4)], false)
 		KEY_TAB: show_map = not show_map
 		KEY_G: guide_on = not guide_on
 		KEY_V:
@@ -110,23 +249,24 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		KEY_E, KEY_ENTER: world.interact()
 		KEY_SPACE:
 			world.wait_minutes()
-		KEY_M: music.toggle_mute()
 		KEY_C: show_chapters = not show_chapters
 		KEY_F5: world.journal = "Journey saved." if world.save_game() == OK else "Could not save the journey."
 		KEY_F9:
-			if not world.load_game(): world.journal = "No valid saved journey found."
+			if not world.load_game():
+				world.journal = "No valid saved journey found."
 			tour_index = 3
 			show_order = false
 			show_brief = false
 	music.set_tavern(world.in_tavern())
-	if world.chapter != "dungeon": tour_index = 3
+	if world.chapter != "dungeon":
+		tour_index = 3
 	first_person.sync(world)
 
 func label_at(text: String, x: float, y: float, size: int = 18, color: Color = INK) -> void:
 	draw_string(font, Vector2(x, y), text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, color)
 
 func panel(rect: Rect2) -> void:
-	draw_style_box(box(Color("101c22"), Color("2d4146")), rect)
+	draw_style_box(box(Color(0.045, 0.055, 0.060, 0.86), Color("514b40")), rect)
 
 func box(fill: Color, border: Color) -> StyleBoxFlat:
 	var style := StyleBoxFlat.new()
@@ -138,53 +278,70 @@ func box(fill: Color, border: Color) -> StyleBoxFlat:
 
 func _draw() -> void:
 	draw_rect(Rect2(0, 0, 1152, 768), Color("091216"))
-	label_at("A L T E R N A T E   R E A L I T Y", 32, 40, 19, AMBER)
-	label_at("THE WAY BACK", 32, 79, 32)
-	label_at("CITY + DUNGEON  /  FIRST EXCURSION", 720, 38, 15, DIM)
-	label_at(world.clock_text(), 815, 76, 21, TEAL)
-	draw_line(Vector2(32, 98), Vector2(1120, 98), Color("35484a"))
-	label_at("01 / THE CITY" if world.chapter == "city" else "02 / THE DUNGEON", 32, 134, 20, AMBER)
-	label_at("The Tavern" if world.in_tavern() else ("Xebec's Demise / northern streets" if world.chapter == "city" else world.dungeon_region()), 32, 161, 17, DIM)
-	panel(Rect2(32, 182, 754, 430))
+	label_at("A L T E R N A T E   R E A L I T Y", 24, 30, 15, AMBER)
+	label_at("THE WAY BACK", 24, 63, 29)
+	label_at("CITY + DUNGEON  /  FIRST EXCURSION", 720, 30, 13, DIM)
+	label_at(world.clock_text(), 730, 63, 16, TEAL)
+	draw_line(Vector2(24, 76), Vector2(1128, 76), Color("35484a"))
+	label_at("Tail of the Dog Tavern" if world.in_tavern() else ("Xebec's Demise / City streets" if world.chapter == "city" else world.dungeon_region()), 24, 102, 18, AMBER)
+	label_at("[H] Movement: " + ("HOLD" if hold_movement else "SINGLE STEP"), 650, 102, 14, DIM)
+	label_at(world.weather_selector_label(), 430, 102, 13, AMBER if world.weather_override_index >= 0 else DIM)
+	label_at(world.weather_label(), 900, 102, 13, DIM)
+	panel(Rect2(22, 114, 858, 484))
 	if show_map:
 		draw_map()
 	else:
-		draw_texture_rect(viewport.get_texture(), Rect2(34, 184, 750, 420), false)
-		draw_rect(Rect2(34, 578, 750, 26), Color(0.03, 0.05, 0.07, 0.88))
-		label_at(world.BEARINGS[world.facing] + " / " + world.coordinates(), 48, 597, 15, AMBER)
-		label_at("CHOOSE FROM MENU     [TAB] MAP" if world.in_tavern() else "[E] " + context_action() + "     [TAB] MAP", 430, 597, 14, INK)
-		if world.in_tavern(): draw_tavern()
-	panel(Rect2(810, 115, 310, 217))
-	label_at("THE TRAVELLER", 832, 145, 15, AMBER)
-	label_at(world.character.name, 832, 180, 25)
-	label_at("Health  %d / %d" % [world.character.hp, world.character.max_hp], 832, 215)
-	label_at("STR %d     STA %d" % [world.character.strength, world.character.stamina], 832, 247, 17, DIM)
-	label_at(world.wallet_text(), 832, 287, 16, AMBER)
-	label_at(world.needs_text(), 832, 313, 16, TEAL)
-	panel(Rect2(810, 347, 310, 265))
-	label_at("SATCHEL", 832, 379, 15, AMBER)
+		draw_texture_rect(tavern_art if world.in_tavern() else viewport.get_texture(), Rect2(24, 116, 854, 480), false)
+		if world.weather_exposure().rain:
+			draw_rain()
+			draw_rect(Rect2(24, 116, 854, 454), Color(0.78, 0.87, 1.0, weather_effects.flash_opacity()))
+		draw_rect(Rect2(24, 570, 854, 26), Color(0.03, 0.05, 0.07, 0.88))
+		label_at(world.BEARINGS[world.facing] + " / " + world.coordinates(), 40, 589, 15, AMBER)
+		label_at("CHOOSE FROM MENU     [TAB] MAP" if world.in_tavern() else "[E] " + context_action() + "     [TAB] MAP", 510, 589, 14, INK)
+		if world.in_tavern():
+			draw_set_transform(Vector2(0, -8), 0, Vector2(0.85, 0.95))
+			draw_tavern()
+			draw_set_transform(Vector2.ZERO)
+	panel(Rect2(896, 114, 232, 218))
+	label_at("THE TRAVELLER", 910, 145, 15, AMBER)
+	label_at(world.character.name, 910, 180, 25)
+	label_at("Health  %d / %d" % [world.displayed_hit_points(), world.character.max_hp], 910, 215)
+	label_at(world.primary_stats_text(), 910, 247, 15, DIM)
+	label_at(world.wallet_text(), 910, 287, 13, AMBER)
+	label_at(world.needs_text(), 910, 313, 16, TEAL)
+	panel(Rect2(896, 347, 232, 251))
+	label_at("SATCHEL", 910, 379, 15, AMBER)
 	for i in range(world.inventory.size()):
-		label_at("+  " + str(world.inventory[i]), 832, 416 + i * 31, 19, TEAL if world.inventory[i] == "Brass token" else INK)
-	label_at("Food Packets: %d" % world.provisions.food, 832, 481, 16, DIM)
-	label_at("Water Flasks: %d" % world.provisions.water, 832, 505, 16, DIM)
-	label_at("OBJECTIVE", 832, 535, 14, AMBER)
-	label_at("Visit the Dungeon entrance.", 832, 563, 17)
-	label_at("COMPLETE — welcome home." if world.flags.returned else "Return to The Tavern.", 832, 588, 15, TEAL if world.flags.returned else DIM)
+		label_at("+  " + str(world.inventory[i]), 910, 416 + i * 31, 19, TEAL if world.inventory[i] == "Brass token" else INK)
+	label_at("Food Packets: %d" % world.provisions.food, 910, 481, 16, DIM)
+	label_at("Water Flasks: %d" % world.provisions.water, 910, 505, 16, DIM)
+	label_at("OBJECTIVE", 910, 535, 14, AMBER)
+	label_at("Explore. Return home.", 910, 563, 16)
+	label_at("COMPLETE — welcome home." if world.flags.returned else "Return to Tail of the Dog.", 910, 588, 13, TEAL if world.flags.returned else DIM)
 	label_at(world.journal, 32, 642, 16, TEAL)
 	if world.in_tavern():
-		var song_t: float = music.song_time()
-		label_at("TAVERN SONG  /  " + ("MUTED" if music.muted else "ORIGINAL SID-STYLE CUE"), 32, 678, 12, AMBER)
-		label_at(music.LYRICS[int(song_t / 4.0) % 4], 32, 710, 23)
-		draw_rect(Rect2(540, 692, 230, 3), Color("2d4146"))
-		draw_rect(Rect2(540, 692, 230 * fmod(song_t, 4.0) / 4.0, 3), AMBER)
+		var song_time_seconds: float = music.song_time()
+		label_at("HAIL AND WELCOME  /  GRIMTHORN REDBEARD", 32, 675, 14, AMBER)
+		label_at("[L] Lead vocal " + ("ON" if music.vocals_enabled else "OFF") + "   [K] Subtitles " + ("ON" if music.subtitles_enabled else "OFF") + "   [M] " + ("Muted" if music.muted else "Mute"), 650, 675, 13, DIM)
+		label_at(music.current_subtitle(), 32, 710, 22)
+		draw_rect(Rect2(32, 723, 1088, 3), Color("2d4146"))
+		draw_rect(Rect2(32, 723, 1088 * song_time_seconds / music.LENGTH, 3), AMBER)
 	else:
 		label_at(guide_text() if guide_on else "Explore at your own pace. [G] Show guide", 32, 698, 19, DIM)
 	label_at("Choose a numbered option  ESC Back  TAB Map  M Mute  F5/F9 Save/Load  C Chapters" if world.in_tavern() else "W/S Step  A/D Turn  E Use  TAB Map  G Guide  M Mute  F5/F9 Save/Load  C Chapters", 32, 748, 15, DIM)
-	if show_chapters: draw_chapters()
+	if show_chapters:
+		draw_chapters()
+
+func draw_rain() -> void:
+	# Foreground rain stays inside the world view, never over maps or indoor art.
+	for i in range(100):
+		var x := 32.0 + fmod(float(i * 137) + rain_time * 28.0, 830.0)
+		var y := 120.0 + fmod(float(i * 79) + rain_time * (320.0 + float(i % 5) * 35.0), 430.0)
+		draw_line(Vector2(x, y), Vector2(x - 4.0, y + 15.0), Color(0.64, 0.77, 0.86, 0.35), 1.0)
 
 func draw_tavern() -> void:
 	panel(Rect2(65, 216, 680, 334))
-	label_at("THE TAVERN  /  TAKE A SEAT", 89, 250, 23, AMBER)
+	label_at("TAIL OF THE DOG  /  TAKE A SEAT", 89, 250, 23, AMBER)
 	if show_order:
 		if not order_id.is_empty():
 			var item: Dictionary = world.tavern.items[order_id]
@@ -211,7 +368,7 @@ func draw_tavern() -> void:
 		label_at("Your possessions and the world clock should carry through.", 89, 442, 17, DIM)
 		label_at("[2] Back to choices                 [3] Leave the tavern", 89, 511, 19, AMBER)
 	else:
-		label_at("A warm room, a song, and a moment before the journey.", 89, 287, 18, DIM)
+		label_at("Grimthorn Redbeard tends the bar and sings by the fire.", 89, 287, 18, DIM)
 		label_at("[1] Order food or drink", 89, 331, 21)
 		label_at("[2] Review the excursion", 89, 371, 21)
 		label_at("[3] Leave for the City", 89, 411, 21)
@@ -222,8 +379,10 @@ func draw_tavern() -> void:
 func context_action() -> String:
 	return world.action_text()
 
+## Cache pathfinding until position, chapter, return objective or tour destination changes.
 func update_guide() -> void:
-	if guide_at == world.position and guide_chapter == world.chapter and guide_return == world.flags.visited_dungeon and cached_tour_index == tour_index: return
+	if guide_at == world.position and guide_chapter == world.chapter and guide_return == world.flags.visited_dungeon and cached_tour_index == tour_index:
+		return
 	cached_tour_index = tour_index
 	guide_at = world.position
 	guide_chapter = world.chapter
@@ -231,72 +390,80 @@ func update_guide() -> void:
 	guide_path = world.find_route(TOUR_POINTS[tour_index] if world.chapter == "dungeon" else world.destination())
 
 func guide_text() -> String:
-	if world.flags.returned and world.in_tavern(): return "Round trip complete."
+	if world.flags.returned and world.in_tavern():
+		return "Round trip complete."
 	if guide_path.is_empty():
 		if world.chapter == "dungeon":
-			if world.position != TOUR_POINTS[tour_index]: return "No route with current door rules. [V] Change destination."
-			if tour_index != 3: return "Reached %s. [V] Guide to the next quadrant." % TOUR_NAMES[tour_index]
+			if world.position != TOUR_POINTS[tour_index]:
+				return "No route with current door rules. [V] Change destination."
+			if tour_index != 3:
+				return "Reached %s. [V] Guide to the next quadrant." % TOUR_NAMES[tour_index]
 		return world.hint()
-	var d: int = world.DIRECTIONS.find(guide_path[0] - world.position)
+	var direction_index: int = world.DIRECTIONS.find(guide_path[0] - world.position)
 	var instruction := "Step forward."
-	if world.facing != d:
-		instruction = "Turn to face " + world.BEARINGS[d].to_lower() + "."
-	elif world.edge(world.position, d) in [3, 4, 5, 6] and not world.door_open(world.position, d):
+	if world.facing != direction_index:
+		instruction = "Turn to face " + world.BEARINGS[direction_index].to_lower() + "."
+	elif world.examinable_boundary(world.position, direction_index) and not world.door_open(world.position, direction_index):
 		instruction = "Press E to examine the boundary ahead."
-	return "%s  %d steps to %s." % [instruction, guide_path.size(), TOUR_NAMES[tour_index] if world.chapter == "dungeon" else ("The Tavern" if world.flags.visited_dungeon else "the entrance")]
+	return "%s  %d steps to %s." % [instruction, guide_path.size(), TOUR_NAMES[tour_index] if world.chapter == "dungeon" else ("Tail of the Dog Tavern" if world.flags.visited_dungeon else "the entrance")]
 
+## Draw directional source edges and the live player marker from the same world used by movement.
 func draw_map() -> void:
 	var origin := Vector2(48, 207)
 	var scale_px := 6.0
 	var cells: Dictionary = world.maps[world.chapter].cells
 	for key in cells:
 		var parts: PackedStringArray = key.split(",")
-		var at := Vector2i(int(parts[0]), int(parts[1]))
-		var p := origin + Vector2(at) * scale_px
-		draw_rect(Rect2(p, Vector2.ONE * scale_px), Color("18292e"))
-		for d in range(4):
-			var code := world.edge(at, d)
-			if code == 0: continue
-			var a: Vector2 = [Vector2.ZERO, Vector2(scale_px, 0), Vector2(0, scale_px), Vector2.ZERO][d]
-			var b: Vector2 = [Vector2(scale_px, 0), Vector2(scale_px, scale_px), Vector2(scale_px, scale_px), Vector2(0, scale_px)][d]
-			draw_line(p + a, p + b, AMBER if code in [3, 4, 5, 6] else Color("5d7075"), 1)
+		var cell_position := Vector2i(int(parts[0]), int(parts[1]))
+		var cell_screen_position := origin + Vector2(cell_position) * scale_px
+		draw_rect(Rect2(cell_screen_position, Vector2.ONE * scale_px), Color("18292e"))
+		for direction_index in range(4):
+			var boundary_code := world.edge(cell_position, direction_index)
+			if boundary_code == 0:
+				continue
+			var edge_start: Vector2 = [Vector2.ZERO, Vector2(scale_px, 0), Vector2(0, scale_px), Vector2.ZERO][direction_index]
+			var edge_end: Vector2 = [Vector2(scale_px, 0), Vector2(scale_px, scale_px), Vector2(scale_px, scale_px), Vector2(0, scale_px)][direction_index]
+			draw_line(cell_screen_position + edge_start, cell_screen_position + edge_end, AMBER if boundary_code in [3, 4, 5, 6, 29] else Color("5d7075"), 1)
 	if guide_on:
-		var previous: Vector2 = origin + (Vector2(world.position) + Vector2.ONE * 0.5) * scale_px
-		for at in guide_path:
-			var next := origin + (Vector2(at) + Vector2.ONE * 0.5) * scale_px
-			draw_line(previous, next, Color("66bdae"), 2)
-			previous = origin + (Vector2(world.step_destination(at)) + Vector2.ONE * 0.5) * scale_px
+		var previous_screen_position: Vector2 = origin + (world.travel_position() + Vector2.ONE * 0.5) * scale_px
+		for cell_position in guide_path:
+			var next_screen_position := origin + (Vector2(cell_position) + Vector2.ONE * 0.5) * scale_px
+			draw_line(previous_screen_position, next_screen_position, Color("66bdae"), 2)
+			previous_screen_position = origin + (Vector2(world.step_destination(cell_position)) + Vector2.ONE * 0.5) * scale_px
 	if world.chapter == "dungeon":
 		draw_line(origin + Vector2(192, 0), origin + Vector2(192, 384), TEAL, 1)
 		draw_line(origin + Vector2(0, 192), origin + Vector2(384, 192), TEAL, 1)
 		for key in world.dungeon_links:
 			var parts: PackedStringArray = key.split(",")
 			draw_circle(origin + (Vector2(int(parts[0]), int(parts[1])) + Vector2.ONE * 0.5) * scale_px, 2, TEAL)
-	var center := origin + (Vector2(world.position) + Vector2.ONE * 0.5) * scale_px
+	var center: Vector2 = origin + (world.travel_position() + Vector2.ONE * 0.5) * scale_px
 	draw_circle(center, 4, AMBER)
 	draw_line(center, center + Vector2(world.DIRECTIONS[world.facing]) * 10, INK, 2)
-	for at in [Vector2i(20, 1), Vector2i(49, 3)]:
-		if world.chapter == "dungeon" and at.x == 20: continue
-		var p := origin + (Vector2(at) + Vector2.ONE * 0.5) * scale_px
-		label_at("T" if at.x == 20 else "D", p.x - 4, p.y - 7, 13, AMBER)
+	for cell_position in [World.TAVERN_POSITION, Vector2i(50, 3) if world.chapter == "city" else Vector2i(49, 3)]:
+		if world.chapter == "dungeon" and cell_position == World.TAVERN_POSITION:
+			continue
+		var cell_screen_position := origin + (Vector2(cell_position) + Vector2.ONE * 0.5) * scale_px
+		label_at("T" if cell_position == World.TAVERN_POSITION else "D", cell_screen_position.x - 4, cell_screen_position.y - 7, 13, AMBER)
 	label_at("ORIGINAL GEOGRAPHY", 464, 239, 17, AMBER)
-	label_at("Teal dots: original transitions" if world.chapter == "dungeon" else "T  The Tavern", 464, 276, 17)
+	label_at("Teal dots: original transitions" if world.chapter == "dungeon" else "T  Tail of the Dog Tavern", 464, 276, 17)
 	label_at("D  Dungeon entrance", 464, 305, 17)
 	label_at("Gold edges: doors / secrets", 464, 348, 15, DIM)
 	label_at("One-way faces stay one-way.", 464, 375, 15, DIM)
 	label_at("[G] Toggle route guide", 464, 421, 16, TEAL)
-	if world.chapter == "dungeon": label_at("[V] Destination: " + TOUR_NAMES[tour_index], 464, 398, 15, TEAL)
+	if world.chapter == "dungeon":
+		label_at("[V] Destination: " + TOUR_NAMES[tour_index], 464, 398, 15, TEAL)
 	label_at("[TAB] Return to first person", 464, 450, 16, TEAL)
 	label_at("All four level-one quadrants" if world.chapter == "dungeon" else "Other districts remain in progress.", 464, 502, 14, DIM)
-	if world.chapter == "dungeon": label_at("Other floors and encounters pending", 464, 526, 14, DIM)
+	if world.chapter == "dungeon":
+		label_at("Other floors and encounters pending", 464, 526, 14, DIM)
 	label_at(world.coordinates(), 464, 561, 20, AMBER)
 
 func draw_chapters() -> void:
 	panel(Rect2(245, 145, 660, 464))
 	label_at("A WORLD WITH ROOM TO GROW", 275, 188, 24, AMBER)
-	var y := 235
-	for id in chapters:
-		label_at(chapters[id].title, 280, y, 22)
-		label_at("PROTOTYPE" if chapters[id].status == "playable" else "PLANNED / NOT IMPLEMENTED", 545, y, 16, TEAL if chapters[id].status == "playable" else DIM)
-		y += 43
+	var row_y := 235
+	for chapter_id in chapters:
+		label_at(chapters[chapter_id].title, 280, row_y, 22)
+		label_at("PROTOTYPE" if chapters[chapter_id].status == "playable" else "PLANNED / NOT IMPLEMENTED", 545, row_y, 16, TEAL if chapters[chapter_id].status == "playable" else DIM)
+		row_y += 43
 	label_at("Historical chapter names; this connected slice is a new design.  [C] Close", 275, 580, 14, DIM)

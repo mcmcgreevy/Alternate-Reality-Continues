@@ -1,0 +1,469 @@
+{
+  "schema_version": 1,
+  "scope": "S29 non-timed generic owners; comparison-only definitions, explicit group bindings. No special item hooks, stat actions or timer claims.",
+  "definition_key": "use=unguarded parameter5; unuse=guarded parameter5; extra=unguarded parameter6; other seven comparison fields equal",
+  "cases": [
+    {
+      "id": "LF01",
+      "purpose": "Non-listener does not activate",
+      "source": "TECH Effect required events",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "extra",
+              "required_events": 8,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [],
+          "expected_groups": 0,
+          "expected_held": false,
+          "expected_deleted": false
+        }
+      ]
+    },
+    {
+      "id": "LF02",
+      "purpose": "H-off repeats create independent groups",
+      "source": "ST probe h_off_repeat_and_scoped_removal",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 4,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use",
+            "a:use"
+          ],
+          "expected_groups": 2,
+          "expected_held": false,
+          "expected_deleted": false
+        }
+      ]
+    },
+    {
+      "id": "LF03",
+      "purpose": "Equal content across owners/IDs suppresses current and tail",
+      "source": "ET02; TECH H comparison",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 4,
+              "link_to_previous": false
+            }
+          ]
+        },
+        {
+          "owner_id": "b",
+          "listeners": [
+            {
+              "definition_id": "unuse",
+              "required_events": 4,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "extra",
+              "required_events": 4,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "b",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        }
+      ]
+    },
+    {
+      "id": "LF04",
+      "purpose": "Unuse removes opposing linked Use group before equal H activation",
+      "source": "ET04 concrete pair; ST module05 0x2992-0x29a2",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 4,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "extra",
+              "required_events": 4,
+              "link_to_previous": true
+            },
+            {
+              "definition_id": "unuse",
+              "required_events": 8,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use",
+            "a:extra"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 8,
+          "expected_active": [
+            "a:unuse"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        }
+      ]
+    },
+    {
+      "id": "LF05",
+      "purpose": "Skipped non-listener cannot become link parent",
+      "source": "ST probe skipped_predecessor_zero_link",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "extra",
+              "required_events": 8,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "use",
+              "required_events": 4,
+              "link_to_previous": true
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        }
+      ]
+    },
+    {
+      "id": "LF06",
+      "purpose": "Get and Drop oppose one another and obey held guard",
+      "source": "ST generic_owner_dispatch; module05 0x286c-0x2964",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 1,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "extra",
+              "required_events": 2,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 2,
+          "expected_active": [],
+          "expected_groups": 0,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 1,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": true,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 2,
+          "expected_active": [
+            "a:extra"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 2,
+          "expected_active": [
+            "a:extra"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 1,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": true,
+          "expected_deleted": false
+        }
+      ]
+    },
+    {
+      "id": "LF07",
+      "purpose": "Delete cleans only one owner and repeated Delete is safe",
+      "source": "Canonical owner scoping; reconstruction tombstone/idempotency",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 4,
+              "link_to_previous": false
+            }
+          ]
+        },
+        {
+          "owner_id": "b",
+          "listeners": [
+            {
+              "definition_id": "extra",
+              "required_events": 4,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "b",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use",
+            "b:extra"
+          ],
+          "expected_groups": 2,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 16,
+          "expected_active": [
+            "b:extra"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": true
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 16,
+          "expected_active": [
+            "b:extra"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": true
+        }
+      ]
+    },
+    {
+      "id": "LF08",
+      "purpose": "Captured Get/Drop/Use/Unuse/Delete finish with no effects",
+      "source": "ST module05 branch order, generic non-stackable owner",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 1,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "extra",
+              "required_events": 2,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "use",
+              "required_events": 4,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "extra",
+              "required_events": 8,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 31,
+          "expected_active": [],
+          "expected_groups": 0,
+          "expected_held": false,
+          "expected_deleted": true
+        }
+      ]
+    },
+    {
+      "id": "LF09",
+      "purpose": "Shared listener mask participates in opposition on repeat",
+      "source": "TECH required event mask; reconstruction explicit binding",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 12,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        },
+        {
+          "owner_id": "a",
+          "event_mask": 4,
+          "expected_active": [
+            "a:use"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        }
+      ]
+    },
+    {
+      "id": "LF10",
+      "purpose": "Concurrent Use/Unuse is ordered, not exclusive",
+      "source": "ST module05 0x2968-0x29a6",
+      "owners": [
+        {
+          "owner_id": "a",
+          "listeners": [
+            {
+              "definition_id": "use",
+              "required_events": 4,
+              "link_to_previous": false
+            },
+            {
+              "definition_id": "extra",
+              "required_events": 8,
+              "link_to_previous": false
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "owner_id": "a",
+          "event_mask": 12,
+          "expected_active": [
+            "a:extra"
+          ],
+          "expected_groups": 1,
+          "expected_held": false,
+          "expected_deleted": false
+        }
+      ]
+    }
+  ]
+}

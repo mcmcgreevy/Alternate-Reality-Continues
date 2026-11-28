@@ -1,0 +1,1097 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<title>Kroah's Game Reverse Engineering Forum &bull; View forum - General Discussion</title>
+<link rel="shortcut icon" type="image/x-icon" href="../RE/Images/Logo.ico" />
+<link rel="icon" type="image/png" href="../RE/Images/Logo.png" />
+
+
+<!--
+	phpBB style name: prosilver Special Edition
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subblue.com/ )
+	Modified by:      phpBB Styles Team     
+-->
+
+<script type="text/javascript">
+// <![CDATA[
+	var jump_page = 'Enter the page number you wish to go to:';
+	var on_page = '1';
+	var per_page = '50';
+	var base_url = './viewforum.php?f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '; path=/; domain=bringerp.free.fr';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	};
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	};
+
+// ]]>
+</script>
+<script type="text/javascript" src="./styles/prosilver/template/styleswitcher.js"></script>
+<script type="text/javascript" src="./styles/prosilver/template/forum_fn.js"></script>
+
+<link href="./styles/prosilver_se/theme/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<link href="./style.php?id=2&amp;lang=en&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" rel="stylesheet" type="text/css" media="screen, projection" />
+
+<link href="./styles/prosilver_se/theme/normal.css" rel="stylesheet" type="text/css" title="A" />
+<link href="./styles/prosilver_se/theme/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="./styles/prosilver_se/theme/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+
+
+
+</head>
+
+<body id="phpbb" class="section-viewforum ltr">
+
+<div id="wrap">
+    <div class="border-left">
+    <div class="border-right">
+    <div class="border-top">
+    <div class="border-top-left">
+    <div class="border-top-right">
+        <div class="inside" style="direction: ltr;">
+        	<a id="top" name="top" accesskey="t"></a>
+        	<div id="page-header">
+        		<div class="headerbar">
+        			<div class="inner"><span class="corners-top"><span></span></span>
+        
+        			<div id="site-description">
+        				<a href="../RE/" title="Homepage" id="logo"><img src="./styles/prosilver_se/imageset/Logo%20Big.png" width="52" height="52" alt="" title="" /></a>
+        				<h1>Kroah's Game Reverse Engineering Forum</h1>
+        				<p>Reverse engineering forum of old computer games for Atari ST, Atari 8-bit and Amiga systems.</p>
+        				<p class="skiplink"><a href="#start_here">Skip to content</a></p>
+        			</div>
+        
+        		
+        			<div id="search-box">
+        				<form action="./search.php?sid=5a6a93c27fdb962b2d088747e1e4b61f" method="get" id="search">
+        				<fieldset>
+        					<input name="keywords" id="keywords" type="text" maxlength="128" title="Search for keywords" class="inputbox search" value="Search…" onclick="if(this.value=='Search…')this.value='';" onblur="if(this.value=='')this.value='Search…';" /> 
+        					<input class="button2" value="Search" type="submit" /><br />
+        					<a href="./search.php?sid=5a6a93c27fdb962b2d088747e1e4b61f" title="View the advanced search options">Advanced search</a> <input type="hidden" name="sid" value="5a6a93c27fdb962b2d088747e1e4b61f" />
+
+        				</fieldset>
+        				</form>
+        			</div>
+        		
+        
+        			<span class="corners-bottom"><span></span></span></div>
+        		</div>
+        
+        		<div class="navbar">
+        			<div class="inner"><span class="corners-top"><span></span></span>
+        
+        			<ul class="linklist navlinks">
+        				<li class="icon-home"><a href="../RE/">Return to Homepage</a> <strong>&#8249;</strong> <a href="./index.php?sid=5a6a93c27fdb962b2d088747e1e4b61f" accesskey="h">Board index</a>  <strong>&#8249;</strong> <a href="./viewforum.php?f=3&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Reverse Engineering Forum Index</a> <strong>&#8249;</strong> <a href="./viewforum.php?f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">General Discussion</a></li>
+        
+        				<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="Change font size">Change font size</a></li>
+        
+        				
+        			</ul>
+        
+        			
+        
+        			<ul class="linklist rightside">
+        				<li class="icon-faq"><a href="./faq.php?sid=5a6a93c27fdb962b2d088747e1e4b61f" title="Frequently Asked Questions">FAQ</a></li>
+        				<li class="icon-register"><a href="./ucp.php?mode=register&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Register</a></li>
+							<li class="icon-logout"><a href="./ucp.php?mode=login&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" title="Login" accesskey="x">Login</a></li>
+        				
+        			</ul>
+        
+        			<span class="corners-bottom"><span></span></span></div>
+        		</div>
+        
+        	</div>
+        
+        	<a name="start_here"></a>
+        	<div id="page-body">
+        		
+				
+<h2><a href="./viewforum.php?f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">General Discussion</a></h2>
+
+
+<div>
+	<!-- NOTE: remove the style="display: none" when you want to have the forum description on the forum body --><div style="display: none !important;">Talk about everything related to general reverse engineering of computer games!<br /></div><p><strong>Moderator:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a></p>
+</div>
+
+	<div class="topic-actions" >
+
+	
+		<div class="buttons">
+			<div class="post-icon" title="Post a new topic"><a href="./posting.php?mode=post&amp;f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f"><span></span>Post a new topic</a></div>
+		</div>
+	
+		<div class="search-box">
+			<form method="get" id="forum-search" action="./search.php?sid=5a6a93c27fdb962b2d088747e1e4b61f">
+			<fieldset>
+				<input class="inputbox search tiny" type="text" name="keywords" id="search_keywords" size="20" value="Search this forum…" onclick="if (this.value == 'Search this forum…') this.value = '';" onblur="if (this.value == '') this.value = 'Search this forum…';" />
+				<input class="button2" type="submit" value="Search" />
+				<input type="hidden" name="fid[0]" value="1" />
+<input type="hidden" name="sid" value="5a6a93c27fdb962b2d088747e1e4b61f" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+		<div class="pagination">
+			92 topics &bull; <a href="#" onclick="jumpto(); return false;" title="Click to jump to page…">Page <strong>1</strong> of <strong>2</strong></a> &bull; <span><strong>1</strong><span class="page-sep">, </span><a href="./viewforum.php?f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f&amp;start=50">2</a></span>
+		</div>
+	
+
+	</div>
+
+		<div class="forumbg">
+		<div class="inner"><span class="corners-top"><span></span></span>
+		<ul class="topiclist">
+			<li class="header">
+				<dl class="icon">
+					<dt>Topics</dt>
+					<dd class="posts">Replies</dd>
+					<dd class="views">Views</dd>
+					<dd class="lastpost"><span>Last post</span></dd>
+				</dl>
+			</li>
+		</ul>
+		<ul class="topiclist topics">
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt style="background-image: url(./images/icons/smile/question.gif); background-repeat: no-repeat;" title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=195&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Gateway to Apshai map viewer</a>
+					<br />
+					<img src="./styles/prosilver_se/imageset/icon_topic_attach.gif" width="7" height="10" alt="Attachment(s)" title="Attachment(s)" /> by <a href="./memberlist.php?mode=viewprofile&amp;u=302&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Bobach</a> &raquo; 31 Jul 2013, 10:14
+				</dt>
+				<dd class="posts">8 <dfn>Replies</dfn></dd>
+				<dd class="views">3275383 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=381&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Keighn</a>
+					<a href="./viewtopic.php?f=1&amp;t=195&amp;p=1261&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1261"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />12 Aug 2022, 15:53</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=255&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Sidewinder by Arcadia - enemy placement and logic</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=410&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">kuro68k</a> &raquo; 16 Dec 2021, 13:46
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">65156 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=410&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">kuro68k</a>
+					<a href="./viewtopic.php?f=1&amp;t=255&amp;p=1258&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1258"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />20 Jan 2022, 17:26</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt style="background-image: url(./images/icons/misc/fire.gif); background-repeat: no-repeat;" title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=256&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">NEW GAME - IT'S POSSIBLE?</a>
+					<br />
+					<img src="./styles/prosilver_se/imageset/icon_topic_attach.gif" width="7" height="10" alt="Attachment(s)" title="Attachment(s)" /> by <a href="./memberlist.php?mode=viewprofile&amp;u=412&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Backtome</a> &raquo; 06 Jan 2022, 22:07
+				</dt>
+				<dd class="posts">0 <dfn>Replies</dfn></dd>
+				<dd class="views">55771 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=412&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Backtome</a>
+					<a href="./viewtopic.php?f=1&amp;t=256&amp;p=1256&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1256"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />06 Jan 2022, 22:07</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read_hot.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=89&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Any chance of a decompile of Grand Prix Manager Two please?</a>
+					<br />
+					<strong class="pagination"><span><a href="./viewtopic.php?f=1&amp;t=89&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">1</a><span class="page-sep">, </span><a href="./viewtopic.php?f=1&amp;t=89&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f&amp;start=15">2</a><span class="page-sep">, </span><a href="./viewtopic.php?f=1&amp;t=89&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f&amp;start=30">3</a></span></strong><img src="./styles/prosilver_se/imageset/icon_topic_attach.gif" width="7" height="10" alt="Attachment(s)" title="Attachment(s)" /> by <a href="./memberlist.php?mode=viewprofile&amp;u=116&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Voxcon</a> &raquo; 08 Nov 2008, 12:22
+				</dt>
+				<dd class="posts">33 <dfn>Replies</dfn></dd>
+				<dd class="views">483066 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=405&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">sean</a>
+					<a href="./viewtopic.php?f=1&amp;t=89&amp;p=1254&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1254"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />14 Oct 2021, 00:55</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt style="background-image: url(./images/icons/misc/heart.gif); background-repeat: no-repeat;" title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=254&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">DMNet : a Dungeon Master multiplayer remake</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a> &raquo; 21 Apr 2021, 22:37
+				</dt>
+				<dd class="posts">0 <dfn>Replies</dfn></dd>
+				<dd class="views">54034 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=254&amp;p=1253&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1253"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />21 Apr 2021, 22:37</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=215&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">[Kroah] Time Bandit Editor download?</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=343&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">deckards</a> &raquo; 21 May 2015, 21:50
+				</dt>
+				<dd class="posts">5 <dfn>Replies</dfn></dd>
+				<dd class="views">72585 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=106&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA00AA;" class="username-coloured">Symoon</a>
+					<a href="./viewtopic.php?f=1&amp;t=215&amp;p=1250&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1250"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />09 Mar 2021, 16:59</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt style="background-image: url(./images/icons/misc/star.gif); background-repeat: no-repeat;" title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=249&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Drakkhen world map, dungeons &amp; scripts viewer</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a> &raquo; 06 Nov 2020, 14:00
+				</dt>
+				<dd class="posts">0 <dfn>Replies</dfn></dd>
+				<dd class="views">48063 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=249&amp;p=1237&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1237"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />06 Nov 2020, 14:00</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=245&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Gateway to Apshai X</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=302&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Bobach</a> &raquo; 09 Sep 2018, 19:27
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">53432 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=302&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Bobach</a>
+					<a href="./viewtopic.php?f=1&amp;t=245&amp;p=1229&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1229"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />16 Jul 2019, 13:46</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=202&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Cadaver viewer</a>
+					<br />
+					<img src="./styles/prosilver_se/imageset/icon_topic_attach.gif" width="7" height="10" alt="Attachment(s)" title="Attachment(s)" /> by <a href="./memberlist.php?mode=viewprofile&amp;u=316&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Radiant</a> &raquo; 14 Mar 2014, 23:12
+				</dt>
+				<dd class="posts">5 <dfn>Replies</dfn></dd>
+				<dd class="views">72408 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=388&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">sardaukar</a>
+					<a href="./viewtopic.php?f=1&amp;t=202&amp;p=1228&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1228"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />15 Jul 2019, 21:57</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=247&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Deconstruction of Fracas &amp; Ali-baba</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=381&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Keighn</a> &raquo; 21 Nov 2018, 00:09
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">46721 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=247&amp;p=1226&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1226"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />15 Jul 2019, 03:05</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=244&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Deconstructing Armour Geddon</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=378&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">darklight</a> &raquo; 06 Jun 2018, 05:12
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">48141 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=244&amp;p=1224&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1224"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />15 Jul 2019, 01:01</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=246&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Decompiling ABC Basic binary strings</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=382&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">pwiecz</a> &raquo; 19 Sep 2018, 22:29
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">46375 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=382&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">pwiecz</a>
+					<a href="./viewtopic.php?f=1&amp;t=246&amp;p=1219&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1219"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />26 Sep 2018, 20:39</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=243&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">[MS-DOS] Fire &amp; Ice: The Daring Adventures of Cool Coyote</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=375&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">slugatrira</a> &raquo; 25 Nov 2017, 12:04
+				</dt>
+				<dd class="posts">4 <dfn>Replies</dfn></dd>
+				<dd class="views">65177 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=243&amp;p=1214&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1214"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />12 Mar 2018, 12:56</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=220&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Stopping by to say Hi</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=350&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">wietze</a> &raquo; 08 Mar 2016, 12:58
+				</dt>
+				<dd class="posts">7 <dfn>Replies</dfn></dd>
+				<dd class="views">86016 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=326&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">war_doc</a>
+					<a href="./viewtopic.php?f=1&amp;t=220&amp;p=1205&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1205"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />14 Nov 2017, 21:39</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=237&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Star Command</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=326&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">war_doc</a> &raquo; 14 Nov 2017, 21:36
+				</dt>
+				<dd class="posts">0 <dfn>Replies</dfn></dd>
+				<dd class="views">48855 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=326&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">war_doc</a>
+					<a href="./viewtopic.php?f=1&amp;t=237&amp;p=1204&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1204"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />14 Nov 2017, 21:36</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=207&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Road Wars 2000 and Europa</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=326&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">war_doc</a> &raquo; 13 Sep 2014, 17:34
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">54611 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=326&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">war_doc</a>
+					<a href="./viewtopic.php?f=1&amp;t=207&amp;p=1203&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1203"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />14 Nov 2017, 21:34</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt style="background-image: url(./images/icons/smile/question.gif); background-repeat: no-repeat;" title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=236&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Decompiling Apple 2 Games</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=373&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">JM123</a> &raquo; 07 Nov 2017, 14:30
+				</dt>
+				<dd class="posts">0 <dfn>Replies</dfn></dd>
+				<dd class="views">49626 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=373&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">JM123</a>
+					<a href="./viewtopic.php?f=1&amp;t=236&amp;p=1202&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1202"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />07 Nov 2017, 14:30</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=226&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Sundog: Frozen legacy port</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=362&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">witchspace</a> &raquo; 29 Jan 2017, 14:03
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">55947 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=362&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">witchspace</a>
+					<a href="./viewtopic.php?f=1&amp;t=226&amp;p=1193&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1193"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />12 Aug 2017, 18:20</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=228&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Remake</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=356&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Norskat</a> &raquo; 07 Jul 2017, 16:35
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">53142 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=356&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Norskat</a>
+					<a href="./viewtopic.php?f=1&amp;t=228&amp;p=1192&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1192"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />18 Jul 2017, 22:28</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=200&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Pole Position arcade game remake using reverse engineering</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=312&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">chicane</a> &raquo; 04 Jan 2014, 03:36
+				</dt>
+				<dd class="posts">3 <dfn>Replies</dfn></dd>
+				<dd class="views">60111 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=312&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">chicane</a>
+					<a href="./viewtopic.php?f=1&amp;t=200&amp;p=1182&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1182"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />22 Jan 2017, 13:25</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=222&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Some x68000 games with debug infos</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=181&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">hitchhikr</a> &raquo; 29 May 2016, 22:37
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">56387 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=181&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">hitchhikr</a>
+					<a href="./viewtopic.php?f=1&amp;t=222&amp;p=1177&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1177"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />23 Jun 2016, 20:29</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=225&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Changing resolution in Captain Blood's fractal generator</a>
+					<br />
+					<img src="./styles/prosilver_se/imageset/icon_topic_attach.gif" width="7" height="10" alt="Attachment(s)" title="Attachment(s)" /> by <a href="./memberlist.php?mode=viewprofile&amp;u=353&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">sanctified</a> &raquo; 16 Jun 2016, 00:38
+				</dt>
+				<dd class="posts">4 <dfn>Replies</dfn></dd>
+				<dd class="views">64681 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=353&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">sanctified</a>
+					<a href="./viewtopic.php?f=1&amp;t=225&amp;p=1176&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1176"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />17 Jun 2016, 00:45</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=221&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Thank you</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=351&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">kundelstein</a> &raquo; 19 May 2016, 20:46
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">53172 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=351&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">kundelstein</a>
+					<a href="./viewtopic.php?f=1&amp;t=221&amp;p=1171&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1171"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />11 Jun 2016, 00:33</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=223&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Apple 2 and Amstrad CPC commercial games done in BASIC</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=181&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">hitchhikr</a> &raquo; 29 May 2016, 22:51
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">46323 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=181&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">hitchhikr</a>
+					<a href="./viewtopic.php?f=1&amp;t=223&amp;p=1170&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1170"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />31 May 2016, 19:05</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Alternate Reality: The Decompilation</a>
+					<br />
+					<strong class="pagination"><span><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">1</a><span class="page-sep">, </span><a href="./viewtopic.php?f=1&amp;t=58&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f&amp;start=15">2</a></span></strong>by <a href="./memberlist.php?mode=viewprofile&amp;u=101&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">hicksman</a> &raquo; 03 May 2007, 13:55
+				</dt>
+				<dd class="posts">22 <dfn>Replies</dfn></dd>
+				<dd class="views">600740 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=308&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">heberhammon</a>
+					<a href="./viewtopic.php?f=1&amp;t=58&amp;p=1155&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1155"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />28 Nov 2015, 04:55</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=217&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Bard's Tale Compression Algorithm</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=346&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">RevenantBob</a> &raquo; 24 Jul 2015, 21:49
+				</dt>
+				<dd class="posts">5 <dfn>Replies</dfn></dd>
+				<dd class="views">84794 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=217&amp;p=1147&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1147"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />03 Sep 2015, 18:43</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=216&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Seven Cities Map Viewer on Windows 7 or 8.1?</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=345&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Conquistador</a> &raquo; 22 Jul 2015, 07:29
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">50229 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=216&amp;p=1137&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1137"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />26 Jul 2015, 13:16</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=214&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">From where to start?</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=342&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">ijnxsw</a> &raquo; 18 Apr 2015, 23:25
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">53885 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=342&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">ijnxsw</a>
+					<a href="./viewtopic.php?f=1&amp;t=214&amp;p=1116&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1116"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />22 Apr 2015, 11:34</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=203&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Sensible Soccer</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=317&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">asconero</a> &raquo; 24 Apr 2014, 10:46
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">48942 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=203&amp;p=1075&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1075"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />27 Jun 2014, 22:04</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=197&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Imperium Galactum</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=309&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">jaybird3rd</a> &raquo; 05 Dec 2013, 21:27
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">51961 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=309&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">jaybird3rd</a>
+					<a href="./viewtopic.php?f=1&amp;t=197&amp;p=1054&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1054"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />27 Mar 2014, 22:05</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=196&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">SpeedBall 2 SPR</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=305&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">norb</a> &raquo; 12 Nov 2013, 01:28
+				</dt>
+				<dd class="posts">3 <dfn>Replies</dfn></dd>
+				<dd class="views">57296 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=196&amp;p=1032&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1032"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />13 Nov 2013, 23:54</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=194&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Chaos Engine Viewer source code</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=249&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Conundrum</a> &raquo; 12 Jul 2013, 22:46
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">46240 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=194&amp;p=1020&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1020"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />13 Jul 2013, 00:18</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=93&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Completeness of the M.U.L.E. disassembly docs?</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=120&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">eobet</a> &raquo; 02 May 2009, 16:51
+				</dt>
+				<dd class="posts">7 <dfn>Replies</dfn></dd>
+				<dd class="views">84104 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=93&amp;p=1018&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1018"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />08 Jul 2013, 21:55</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=171&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Grandprix 2 dosgame on pc</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=274&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Michael82</a> &raquo; 21 Aug 2012, 10:36
+				</dt>
+				<dd class="posts">3 <dfn>Replies</dfn></dd>
+				<dd class="views">59950 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=282&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">rremedio</a>
+					<a href="./viewtopic.php?f=1&amp;t=171&amp;p=1009&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p1009"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />18 Mar 2013, 17:06</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=100&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Chaos Engine remake</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=185&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">the_coder</a> &raquo; 03 Oct 2009, 21:39
+				</dt>
+				<dd class="posts">7 <dfn>Replies</dfn></dd>
+				<dd class="views">78285 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=292&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">pimox</a>
+					<a href="./viewtopic.php?f=1&amp;t=100&amp;p=991&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p991"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />03 Feb 2013, 19:58</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=183&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">European Super League Football Fortunes II</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=284&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Goldbadger</a> &raquo; 24 Oct 2012, 13:43
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">45426 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=183&amp;p=943&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p943"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />21 Dec 2012, 00:11</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=181&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">probleme partie sauvegardée</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=283&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">alain</a> &raquo; 17 Oct 2012, 18:55
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">42244 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=181&amp;p=942&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p942"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />21 Dec 2012, 00:08</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=176&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Magazine about software reverse engineering</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=278&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">WojciechBusz</a> &raquo; 14 Sep 2012, 15:33
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">43310 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=176&amp;p=901&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p901"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />24 Sep 2012, 01:31</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=166&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">M.U.L.E. for IBM PC</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=3&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">xot</a> &raquo; 21 Jul 2012, 22:52
+				</dt>
+				<dd class="posts">4 <dfn>Replies</dfn></dd>
+				<dd class="views">67760 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=3&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">xot</a>
+					<a href="./viewtopic.php?f=1&amp;t=166&amp;p=862&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p862"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />04 Aug 2012, 17:22</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=165&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">MULE - again.</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=270&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Mattb</a> &raquo; 21 Jul 2012, 08:01
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">51247 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=165&amp;p=849&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p849"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />21 Jul 2012, 14:14</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=164&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Iron Lord - Atari ST versions</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=177&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Petari</a> &raquo; 20 Jul 2012, 14:49
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">45398 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=164&amp;p=846&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p846"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />21 Jul 2012, 04:02</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=127&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Dos games?</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=116&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Voxcon</a> &raquo; 17 Jan 2011, 15:58
+				</dt>
+				<dd class="posts">5 <dfn>Replies</dfn></dd>
+				<dd class="views">63810 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=127&amp;p=685&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p685"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />15 May 2012, 19:26</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=128&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">A list of 92 DOS games containing debug infos</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=181&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">hitchhikr</a> &raquo; 29 Jan 2011, 12:39
+				</dt>
+				<dd class="posts">4 <dfn>Replies</dfn></dd>
+				<dd class="views">71788 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=181&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">hitchhikr</a>
+					<a href="./viewtopic.php?f=1&amp;t=128&amp;p=677&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p677"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />07 May 2012, 18:07</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=136&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Dragonriders of Pern, check my article?</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=252&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Maury Markowitz</a> &raquo; 28 Dec 2011, 18:15
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">47099 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=252&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Maury Markowitz</a>
+					<a href="./viewtopic.php?f=1&amp;t=136&amp;p=655&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p655"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />27 Feb 2012, 17:56</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=140&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">On the Speedball remake</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=249&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Conundrum</a> &raquo; 07 Feb 2012, 21:28
+				</dt>
+				<dd class="posts">2 <dfn>Replies</dfn></dd>
+				<dd class="views">50689 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=249&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Conundrum</a>
+					<a href="./viewtopic.php?f=1&amp;t=140&amp;p=653&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p653"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />27 Feb 2012, 14:37</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=142&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">map, sprites, tiles... *HELP*</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=256&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">RiskyW</a> &raquo; 26 Feb 2012, 01:14
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">45377 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=142&amp;p=651&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p651"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />27 Feb 2012, 12:17</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=139&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Useful info on the MacVenture engine</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=116&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Voxcon</a> &raquo; 30 Jan 2012, 23:57
+				</dt>
+				<dd class="posts">1 <dfn>Replies</dfn></dd>
+				<dd class="views">42638 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=139&amp;p=624&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p624"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />31 Jan 2012, 10:45</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=133&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Help with Chaos Engine Sound Format</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=243&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Pantheon</a> &raquo; 21 Nov 2011, 04:36
+				</dt>
+				<dd class="posts">3 <dfn>Replies</dfn></dd>
+				<dd class="views">51852 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=249&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Conundrum</a>
+					<a href="./viewtopic.php?f=1&amp;t=133&amp;p=606&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p606"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />13 Dec 2011, 00:08</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg1">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=97&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">I made couple disassemblings</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=177&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Petari</a> &raquo; 09 Jun 2009, 15:41
+				</dt>
+				<dd class="posts">3 <dfn>Replies</dfn></dd>
+				<dd class="views">52099 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=177&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Petari</a>
+					<a href="./viewtopic.php?f=1&amp;t=97&amp;p=589&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p589"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />30 Sep 2011, 16:52</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+
+		<li class="row bg2">
+			<dl class="icon" style="background-image: url(./styles/prosilver_se/imageset/topic_read.gif); background-repeat: no-repeat;">
+				<dt title="No unread posts"><a href="./viewtopic.php?f=1&amp;t=12&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" class="topictitle">Decompilation tools</a>
+					<br />
+					by <a href="./memberlist.php?mode=viewprofile&amp;u=5&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Dunk</a> &raquo; 11 Mar 2006, 10:32
+				</dt>
+				<dd class="posts">8 <dfn>Replies</dfn></dd>
+				<dd class="views">107434 <dfn>Views</dfn></dd>
+				<dd class="lastpost"><span><dfn>Last post </dfn>by <a href="./memberlist.php?mode=viewprofile&amp;u=2&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" style="color: #AA0000;" class="username-coloured">Kroah</a>
+					<a href="./viewtopic.php?f=1&amp;t=12&amp;p=587&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f#p587"><img src="./styles/prosilver_se/imageset/icon_topic_latest.gif" width="11" height="9" alt="View the latest post" title="View the latest post" /></a> <br />30 May 2011, 09:51</span>
+				</dd>
+			</dl>
+		</li>
+
+	
+			</ul>
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+	
+	<form method="post" action="./viewforum.php?f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">
+		<fieldset class="display-options">
+			<a href="./viewforum.php?f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f&amp;start=50" class="right-box right">Next</a>
+			<label>Display topics from previous: <select name="st" id="st"><option value="0" selected="selected">All Topics</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+			<label>Sort by <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="r">Replies</option><option value="s">Subject</option><option value="v">Views</option></select></label>
+			<label><select name="sd" id="sd"><option value="a">Ascending</option><option value="d" selected="selected">Descending</option></select> <input type="submit" name="sort" value="Go" class="button2" /></label>
+	
+		</fieldset>
+	</form>
+	<hr />
+
+	<div class="topic-actions">
+		
+		<div class="buttons">
+			<div class="post-icon" title="Post a new topic"><a href="./posting.php?mode=post&amp;f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f"><span></span>Post a new topic</a></div>
+		</div>
+		
+		<div class="pagination">
+			 92 topics &bull;  <a href="#" onclick="jumpto(); return false;" title="Click to jump to page…">Page <strong>1</strong> of <strong>2</strong></a>
+			 &bull;  <span><strong>1</strong><span class="page-sep">, </span><a href="./viewforum.php?f=1&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f&amp;start=50">2</a></span>
+		</div>
+		
+	</div>
+
+	<p></p><p><a href="./index.php?sid=5a6a93c27fdb962b2d088747e1e4b61f" class="left-box left" accesskey="r">Return to Board index</a></p>
+
+	<form method="post" id="jumpbox" action="./viewforum.php?sid=5a6a93c27fdb962b2d088747e1e4b61f" onsubmit="if(this.f.value == -1){return false;}">
+
+	
+		<fieldset class="jumpbox">
+	
+			<label for="f" accesskey="j">Jump to:</label>
+			<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+			
+				<option value="-1">Select a forum</option>
+			<option value="-1">------------------</option>
+				<option value="3">Reverse Engineering Forum Index</option>
+			
+				<option value="1" selected="selected">&nbsp; &nbsp;General Discussion</option>
+			
+				<option value="2">&nbsp; &nbsp;CoCoNet Discussion</option>
+			
+				<option value="4">&nbsp; &nbsp;&nbsp; &nbsp;Custom Maps</option>
+			
+			</select>
+			<input type="submit" value="Go" class="button2" />
+		</fieldset>
+	</form>
+
+
+	<h3>Who is online</h3>
+	<p>Users browsing this forum: No registered users and 12 guests</p>
+
+	<h3>Forum permissions</h3>
+	<p>You <strong>cannot</strong> post new topics in this forum<br />You <strong>cannot</strong> reply to topics in this forum<br />You <strong>cannot</strong> edit your posts in this forum<br />You <strong>cannot</strong> delete your posts in this forum<br />You <strong>cannot</strong> post attachments in this forum<br /></p>
+</div>
+    
+                <div id="page-footer">
+                
+                	<div class="navbar">
+                		<div class="inner"><span class="corners-top"><span></span></span>
+                
+                		<ul class="linklist">
+                			<li class="icon-home"><a href="./index.php?sid=5a6a93c27fdb962b2d088747e1e4b61f" accesskey="h">Board index</a></li>
+                				
+                            <li class="rightside"><a href="./memberlist.php?mode=leaders&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">The team</a> &bull; <a href="./ucp.php?mode=delete_cookies&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f">Delete all board cookies</a> &bull; All times are UTC + 1 hour [ <abbr title="Daylight Saving Time">DST</abbr> ]</li>
+                		</ul>
+                
+                		<span class="corners-bottom"><span></span></span></div>
+                	</div>
+                </div>
+            </div>
+        <div class="border-bottom"><span><span></span></span></div>
+    </div></div></div></div></div>
+</div>
+	
+	<div class="copyright">Powered by <a href="http://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+		
+	</div>
+
+
+
+<div>
+	<a id="bottom" name="bottom" accesskey="z"></a>
+	<img src="./cron.php?cron_type=tidy_sessions&amp;sid=5a6a93c27fdb962b2d088747e1e4b61f" width="1" height="1" alt="cron" />
+</div>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

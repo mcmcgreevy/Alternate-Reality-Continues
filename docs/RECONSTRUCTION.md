@@ -1,5 +1,9 @@
 # Original-map reconstruction
 
+Current location correction: see [ST map verification](ST_LOCATION_CORRECTION.md). Tail of the Dog now uses marker 16 at internal (39,34), exiting south. Previous references to (20,1), 63N/21E, or the old north exit describe the superseded Lost Oasis start.
+
+**Baseline update, 2026-11-16:** [Kroah's Atari ST City v2.0 documentation is now the source of truth for City rules](SOURCE_BASELINE.md). The historical reconstruction notes below describe the current scaffold's sources, not completed ST compliance. Dungeon source data remains unchanged; selected user-approved audio supersedes the earlier C64 audio-target note.
+
 Updated 2026-11-10. Original-map exploration is now the default milestone. Atari data is the Dungeon baseline; C64 remains the audio target. Two-way chapter travel is an intentional unified-remake feature.
 
 ## Evidence and scope

@@ -1,0 +1,2219 @@
+LayoutDocument">
+|
+Denizens
+|
+| Show all denizens
+|
+| Evil opponents
+(0 - 63)
+|
+Nightstalker
+Specter
+Wraith
+Brown Mold
+Gremlin
+Black Slime
+Zombie
+Giant Rat
+Orc
+Imp
+Wolf
+Skeleton
+Ghost (v1)
+Assassin
+Ghost (v2)
+Ghoul
+Gnoll
+Goblin
+Troll
+|
+| Bad opponents
+(64 - 127)
+|
+Master Thief
+Cutthroat
+Brigand
+Thief
+Mugger
+Robber
+Fighter
+Gladiator
+Warrior
+Small Dragon
+Knight (v1)
+Swordsman
+Weaponmaster
+Champion
+|
+| Neutral opponents
+(128 - 191)
+|
+Pauper
+Merchant
+Hobbit
+Dwarf
+Giant
+Commoner
+Acolyte
+Courier
+Apprentice
+Novice
+Wizard
+Mage
+Arch-Mage
+Guard (v1)
+|
+| Good opponents
+(192 - 255)
+|
+Nobleman
+Knight (v2)
+Guard (v2)
+Nightstalker
+|
+|
+| Time | %
+| Day |
+| Night | 0.57 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 7
+| Behaviour | Evil
+| Stealth | 120
+| Experience | 129 - 235 (~182)
+| Hit Points | 3 - 7
+| Strength | 24 - 39
+| Skill | 15 - 30
+| Intelligence | 3 - 7
+| Speed | 5 - 8
+|
+| Treasure | % | Quantity
+| Potions | 9.8 % | 1
+| Equipment | 29.7 % | 1 - 2
+| Copper | 19.9 % | 1 - 20
+| Silver | 9.8 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) | 4.7 % | 1 - 3
+| Jewelry | 0.8 % | 1
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| its claws | 50 % |   |   | Blunt: 1
+Sharp: 2 | Y | Disease: Gangrene
+Incubation: 23 hours
+Effect: -4 hit points each minute
+Natural cure: 0.05% each minute (~2.9% each hour)
+| its blood sucking fangs | 50 % |   |   | Sharp: 8
+Earth: 8 | Y |
+|
+| Armor | Protection | Efficiency
+| thick hide | Blunt: 5
+Sharp: 5
+Earth: 2
+Air: 2
+Fire: 2
+Water: 2
+Power: 2
+Mental: 2
+Cleric: 2 |
+Specter
+|
+|
+| Time | %
+| Day |
+| Night | 0.52 %
+| Rain | 0.64 %
+| Invisible | 1.53 %
+|
+| Stat | Value
+| Alignment | 7
+| Behaviour | Evil
+| Stealth | 100
+| Experience | 55 - 95 (~75)
+| Hit Points | 7 - 14
+| Strength | 3 - 4
+| Skill | 6 - 9
+| Intelligence | 7 - 14
+| Speed | 3 - 12
+|
+| Treasure | % | Quantity
+| Potions | 19.9 % | 1
+| Equipment | 19.9 % | 1 - 2
+| Copper |
+| Silver |
+| Gold | 14.8 % | 1
+| Gem(s) |
+| Jewelry | 4.7 % | 1
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| moans | 30 % |   |   | Mental: 3 | N |
+| invisible chains | 30 % |   |   | Mental: 3 | N |
+| a festering touch | 30 % |   |   | Mental: 2
+Cleric: 2 | N |
+| a soul wrenching grasp | 10 % |   |   | Mental: 1 | N |
+|
+| Armor | Protection | Efficiency
+| etherealness |   | Blunt: Immune
+Sharp: Immune
+Earth: High
+Water: High
+Wraith
+|
+|
+| Time | %
+| Day |
+| Night | 1.04 %
+| Rain | 1.28 %
+| Invisible | 3.06 %
+|
+| Stat | Value
+| Alignment | 18
+| Behaviour | Evil
+| Stealth | 50
+| Experience | 108 - 202 (~155)
+| Hit Points | 6 - 13
+| Strength | 15 - 30
+| Skill | 13 - 20
+| Intelligence | 6 - 13
+| Speed | 10 - 15
+|
+| Treasure | % | Quantity
+| Potions | 9.8 % | 1
+| Equipment | 9.8 % | 1 - 2
+| Copper |
+| Silver |
+| Gold | 9.8 % | 1
+| Gem(s) |
+| Jewelry | 2.7 % | 1
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a crushing blow | 80 % |   |   | Blunt: 4 | Y |
+| a bone-chilling scream | 20 % |   |   | Mental: 3 | N | Paralysed 2 rounds (by magic)
+|
+| Armor | Protection | Efficiency
+| etherealness |   | Blunt: Immune
+Sharp: Immune
+Earth: Immune
+Water: Low
+Power: Low
+Brown Mold
+|
+|
+| Time | %
+| Day |
+| Night | 4.61 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 19
+| Behaviour | Evil
+| Stealth | 30
+| Experience | 64 - 130 (~97)
+| Hit Points | 1
+| Strength | 15 - 30
+| Skill | 6 - 13
+| Intelligence | 0
+| Speed | 1 - 3
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment | 4.7 % | 1
+| Copper |
+| Silver | 0.8 % | 1 - 3
+| Gold | 2.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a burst of spores | 100 % |   |   | Earth: 2 | N | Disease: Brown Mold
+No incubation
+Effect: -2 hit points each hour
+Natural cure: 0.05% each hour (~1.2% each day)
+|
+| Armor | Protection | Efficiency
+| Brown Mold |   | Blunt: High
+Sharp: Immune
+Fire: Low
+Mental: Immune
+Cleric: Immune
+Gremlin
+|
+|
+| Time | %
+| Day |
+| Night | 5.71 %
+| Rain | 7.05 %
+| Invisible | 16.85 %
+|
+| Stat | Value
+| Alignment | 21
+| Behaviour | Evil
+| Stealth | 20
+| Experience | 84 - 163 (~124)
+| Hit Points | 9 - 16
+| Strength | 3 - 5
+| Skill | 13 - 28
+| Intelligence | 9 - 16
+| Speed | 5 - 8
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment | 29.7 % | 1 - 2
+| Copper | 19.9 % | 1 - 20
+| Silver | 9.8 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| its claws | 50 % |   |   | Blunt: 1
+Sharp: 2 | Y |
+| its sharp teeth | 50 % |   |   | Sharp: 3 | Y |
+|
+| Armor | Protection | Efficiency
+| hide |   | Fire: Low
+Water: Immune
+Power: Immune
+Black Slime
+|
+|
+| Time | %
+| Day |
+| Night | 3.2 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 23
+| Behaviour | Evil
+| Stealth | 30
+| Experience | 67 - 137 (~102)
+| Hit Points | 1 - 2
+| Strength | 15 - 30
+| Skill | 6 - 13
+| Intelligence | 1 - 2
+| Speed | 1 - 3
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment | 4.7 % | 1
+| Copper | 2.0 % | 1 - 4
+| Silver | 0.8 % | 1 - 3
+| Gold | 2.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| acid slime | 33 % |   |   | Earth: 1
+Fire: 1
+Water: 1 | N | Disease: Slimed! (Visible during incubation)
+Incubation: 36 hours (1.5days)
+Effect: -1 base stamina every 3 hours
+Natural cure: 0.05% every 3 hours (~0.4% each day)
+Effect:  -2 hit points each hour
+Natural cure: 0.05% each hour (~1.2% each day)
+| corrosive goo | 33 % |   |   | Earth: 1
+Fire: 1
+Water: 1 | N |
+| nauseating gunk | 34 % |   |   | Earth: 1
+Power: 2 | N |
+|
+| Armor | Protection | Efficiency
+| Black Slime |   | Blunt: High
+Sharp: Immune
+Fire: Low
+Mental: Immune
+Cleric: Immune
+Zombie
+|
+|
+| Time | %
+| Day |
+| Night | 6.23 %
+| Rain | 7.69 %
+| Invisible | 18.38 %
+|
+| Stat | Value
+| Alignment | 24
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 77 - 150 (~114)
+| Hit Points | 2 - 3
+| Strength | 10 - 25
+| Skill | 1 - 4
+| Intelligence | 14 - 20
+| Speed | 1 - 4
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 49.6 % | 1 - 10
+| Silver |
+| Gold |
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| pieces of flesh | 70 % |   |   |   | N |
+| a strangle hold | 30 % |   |   | Blunt: 1
+Air: 3 | Y |
+|
+| Armor | Protection | Efficiency
+| rotting flesh |   | Earth: High
+Fire: Low
+Mental: Immune
+Cleric: Immune
+Giant Rat
+|
+|
+| Time | %
+| Day |
+| Night | 6.9 %
+| Rain | 5.52 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 25
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 52 - 82 (~67)
+| Hit Points | 1 - 4
+| Strength | 3 - 6
+| Skill | 13 - 16
+| Intelligence | 1 - 4
+| Speed | 10 - 17
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper |
+| Silver |
+| Gold | 29.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| its foaming teeth | 80 % |   |   | Sharp: 2 | Y | Disease: Rabies
+Incubation: 9 days
+Effect: -3 hit points every 4 hours
+Natural cure: 0.05% every 4 hours (~0.3% each day)
+| its yellow claws | 20 % |   |   | Blunt: 1
+Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| hide | Blunt: 1
+Sharp: 1 |
+Orc
+|
+|
+| Time | %
+| Day |
+| Night | 1.37 %
+| Rain | 1.92 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 32
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 45 - 75 (~60)
+| Hit Points | 3 - 6
+| Strength | 6 - 9
+| Skill | 5 - 8
+| Intelligence | 3 - 6
+| Speed | 3 - 6
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper |
+| Silver |
+| Gold | 0.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a spear | 100 % |   |   | Sharp: 4 | Y |
+|
+| Armor | Protection | Efficiency
+| skin |   |
+Imp
+|
+|
+| Time | %
+| Day |
+| Night | 2.59 %
+| Rain | 3.2 %
+| Invisible | 7.66 %
+|
+| Stat | Value
+| Alignment | 33
+| Behaviour | Evil
+| Stealth | 30
+| Experience | 90 - 169 (~130)
+| Hit Points | 9 - 16
+| Strength | 3 - 5
+| Skill | 15 - 30
+| Intelligence | 9 - 16
+| Speed | 5 - 8
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment | 29.7 % | 1 - 2
+| Copper | 14.8 % | 1 - 15
+| Silver | 9.8 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| its claws | 50 % |   |   | Blunt: 1
+Sharp: 2 | Y |
+| its poisonous tail | 50 % |   |   | Blunt: 1
+Sharp: 2
+Power: 2 | N | Paralysed 2 rounds (by poison)
+|
+| Armor | Protection | Efficiency
+| hide |   | Blunt: High
+Sharp: High
+Mental: Low
+Cleric: Low
+Wolf
+|
+|
+| Time | %
+| Day |
+| Night | 2.86 %
+| Rain | 2.29 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 34
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 87 - 129 (~108)
+| Hit Points | 3 - 6
+| Strength | 13 - 20
+| Skill | 12 - 15
+| Intelligence | 3 - 6
+| Speed | 11 - 18
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper |
+| Silver |
+| Gold | 29.7 % | 1 - 2
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| its sharp teeth | 80 % |   |   | Sharp: 3 | Y |
+| its claws | 20 % |   |   | Blunt: 1
+Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| hide | Blunt: 1
+Sharp: 1 |
+Skeleton
+|
+|
+| Time | %
+| Day |
+| Night | 6.87 %
+| Rain | 8.49 %
+| Invisible | 17.09 %
+|
+| Stat | Value
+| Alignment | 45
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 57 - 121 (~89)
+| Hit Points | 3 - 7
+| Strength | 3 - 7
+| Skill | 12 - 24
+| Intelligence | 3 - 7
+| Speed | 3 - 10
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 98.4 % | 1 - 2
+| Silver | 89.5 % | 1
+| Gold | 9.8 % | 1
+| Gem(s) |
+| Jewelry | 0.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a sickle | 100 % |   |   | Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| bones |   | Sharp: High
+Earth: High
+Air: High
+Fire: Immune
+Water: Immune
+Mental: High
+Cleric: High
+Ghost (v1)
+|
+|
+| Time | %
+| Day |
+| Night | 7.65 %
+| Rain | 9.45 %
+| Invisible | 22.6 %
+|
+| Stat | Value
+| Alignment | 46
+| Behaviour | Evil
+| Stealth | 100
+| Experience | 133 - 251 (~192)
+| Hit Points | 7 - 14
+| Strength | 20 - 40
+| Skill | 15 - 25
+| Intelligence | 7 - 14
+| Speed | 17 - 24
+|
+| Treasure | % | Quantity
+| Potions | 39.8 % | 1 - 2
+| Equipment | 39.8 % | 1 - 3
+| Copper | 0.8 % | 1
+| Silver |
+| Gold | 29.7 % | 1
+| Gem(s) |
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a heart-breaking moan | 50 % |   |   | Mental: 2 | N |
+| a bolt of lightning | 40 % |   |   | Power: 7 | N |
+| a bone-chilling touch | 10 % |   |   | Power: 3
+Mental: 3
+Cleric: 2 | N | -1 base strength (by disease)
+|
+| Armor | Protection | Efficiency
+| etherealness |   | Blunt: Immune
+Sharp: Immune
+Earth: High
+Water: High
+Assassin
+|
+|
+| Time | %
+| Day | 0.46 %
+| Night | 0.06 %
+| Rain | 0.27 %
+| Invisible | 0.03 %
+|
+| Stat | Value
+| Alignment | 48
+| Behaviour | Evil
+| Stealth | 100
+| Experience | 132 - 244 (~188)
+| Hit Points | 12 - 19
+| Strength | 14 - 27
+| Skill | 14 - 29
+| Intelligence | 12 - 19
+| Speed | 14 - 21
+|
+| Treasure | % | Quantity
+| Potions | 2.0 % | 1
+| Equipment | 20.7 % | 1 - 5
+| Copper | 9.8 % | 1 - 50
+| Silver | 4.7 % | 1 - 30
+| Gold |
+| Gem(s) | 2.0 % | 1
+| Jewelry | 29.7 % | 1 - 3
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a greatsword | 15 % | 75 % | 1 | Sharp: 5 | Y |
+| a longsword | 5 % | 75 % | 1 | Sharp: 4 | Y |
+| a sword | 20 % | 67 % | 0 | Sharp: 3 | Y |
+| a poisoned shiriken | 20 % |   |   | Earth: 2
+Air: 2 | N |
+| a strangling wire | 20 % |   |   | Sharp: 2 | Y |
+| a poisoned dagger | 20 % |   |   | Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| jacket | Blunt: 1
+Sharp: 2
+Earth: 1
+Air: 1
+Fire: 1
+Water: 1
+Power: 1
+Mental: 2
+Cleric: 2 |
+Ghost (v2)
+|
+|
+| Time | %
+| Day |
+| Night |
+| Rain |
+| Invisible | 3.21 %
+|
+| Stat | Value
+| Alignment | 49
+| Behaviour | Evil
+| Stealth | 100
+| Experience | 133 - 251 (~192)
+| Hit Points | 7 - 14
+| Strength | 20 - 40
+| Skill | 15 - 25
+| Intelligence | 7 - 14
+| Speed | 17 - 24
+|
+| Treasure | % | Quantity
+| Potions | 39.8 % | 1 - 2
+| Equipment | 39.8 % | 1 - 3
+| Copper | 0.8 % | 1
+| Silver |
+| Gold | 29.7 % | 1
+| Gem(s) |
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a heart-breaking moan | 50 % |   |   | Mental: 2 | N |
+| a bolt of lightning | 40 % |   |   | Power: 7 | N |
+| a bone-chilling touch | 10 % |   |   | Power: 3
+Mental: 3
+Cleric: 2 | N | -1 base strength (by disease)
+|
+| Armor | Protection | Efficiency
+| etherealness |   | Blunt: Immune
+Sharp: Immune
+Earth: High
+Water: High
+Ghoul
+|
+|
+| Time | %
+| Day |
+| Night | 2.59 %
+| Rain | 3.2 %
+| Invisible | 7.66 %
+|
+| Stat | Value
+| Alignment | 49
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 90 - 192 (~141)
+| Hit Points | 9 - 21
+| Strength | 8 - 23
+| Skill | 10 - 13
+| Intelligence | 9 - 21
+| Speed | 5 - 8
+|
+| Treasure | % | Quantity
+| Potions | 9.8 % | 1
+| Equipment | 29.7 % | 1 - 2
+| Copper | 39.8 % | 1 - 35
+| Silver | 19.9 % | 1 - 20
+| Gold | 4.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a soul wrenching grasp | 80 % |   |   | Mental: 1 | N |
+| its claws | 20 % |   |   | Blunt: 1
+Sharp: 2 | Y | Disease: Gangrene
+Incubation: 23 hours
+Effect: -4 hit points each minute
+Natural cure: 0.05% each minute (~2.9% each hour)
+|
+| Armor | Protection | Efficiency
+| hide | Blunt: 3
+Sharp: 3 | Earth: High
+Fire: High
+Water: Low
+Gnoll
+|
+|
+| Time | %
+| Day |
+| Night | 1.88 %
+| Rain | 2.63 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 50
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 33 - 60 (~47)
+| Hit Points | 3 - 6
+| Strength | 2 - 4
+| Skill | 5 - 8
+| Intelligence | 3 - 6
+| Speed | 3 - 6
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper |
+| Silver |
+| Gold | 0.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a knurly club | 100 % | 75 % | 1 | Blunt: 3
+Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| skin |   |
+Goblin
+|
+|
+| Time | %
+| Day |
+| Night | 1.37 %
+| Rain | 1.92 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 54
+| Behaviour | Evil
+| Stealth | 0
+| Experience | 39 - 70 (~55)
+| Hit Points | 3 - 7
+| Strength | 3 - 5
+| Skill | 6 - 9
+| Intelligence | 3 - 7
+| Speed | 3 - 7
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 14.8 % | 1 - 5
+| Silver | 0.8 % | 1
+| Gold | 4.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a warhammer | 43 % |   |   | Blunt: 2 | Y |
+| a small axe | 57 % | 67 % | 0 | Blunt: 1
+Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| thick hide | Blunt: 1
+Sharp: 1
+Fire: 18
+Power: 18 |
+Troll
+|
+|
+| Time | %
+| Day |
+| Night | 0.92 %
+| Rain | 1.28 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 61
+| Behaviour | Evil
+| Stealth | 10
+| Experience | 52 - 122 (~87)
+| Hit Points | 1 - 8
+| Strength | 10 - 17
+| Skill | 6 - 13
+| Intelligence | 1 - 8
+| Speed | 4 - 7
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 9.8 % | 1
+| Copper | 59.8 % | 1 - 60
+| Silver | 39.8 % | 1 - 30
+| Gold | 29.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 19.9 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a knurly club | 50 % | 75 % | 1 | Blunt: 3
+Sharp: 1 | Y |
+| its claws | 40 % |   |   | Blunt: 1
+Sharp: 1 | Y |
+| its teeth | 10 % |   |   | Blunt: 1
+Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| tough skin | Blunt: 3
+Sharp: 2
+Earth: 1
+Water: 2 | Fire: Low
+Master Thief
+|
+|
+| Time | %
+| Day | 2.34 %
+| Night | 4.05 %
+| Rain | 2.07 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 65
+| Behaviour | Bad
+| Stealth | 100
+| Experience | 178 - 272 (~225)
+| Hit Points | 22 - 29
+| Strength | 10 - 17
+| Skill | 20 - 35
+| Intelligence | 22 - 29
+| Speed | 13 - 20
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 29.7 % | 1 - 10
+| Silver | 29.7 % | 1 - 10
+| Gold | 24.6 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a switchblade | 100 % |   |   | Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| skin |   |
+Cutthroat
+|
+|
+| Time | %
+| Day | 1.98 %
+| Night | 3.43 %
+| Rain | 1.75 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 66
+| Behaviour | Bad
+| Stealth | 20
+| Experience | 81 - 151 (~116)
+| Hit Points | 6 - 13
+| Strength | 9 - 16
+| Skill | 10 - 17
+| Intelligence | 6 - 13
+| Speed | 6 - 13
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 29.7 % | 1 - 10
+| Silver | 19.9 % | 1 - 5
+| Gold | 2.0 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a shortsword | 100 % | 50 % | 0 | Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| jacket | Blunt: 1 |
+Brigand
+|
+|
+| Time | %
+| Day | 0.36 %
+| Night | 0.62 %
+| Rain | 0.32 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 68
+| Behaviour | Bad
+| Stealth | 50
+| Experience | 56 - 126 (~91)
+| Hit Points | 5 - 12
+| Strength | 6 - 13
+| Skill | 6 - 13
+| Intelligence | 5 - 12
+| Speed | 4 - 11
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 29.7 % | 1 - 10
+| Silver | 19.9 % | 1 - 8
+| Gold | 0.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a small axe | 100 % | 67 % | 0 | Blunt: 1
+Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| jacket | Blunt: 1 |
+Thief
+|
+|
+| Time | %
+| Day | 0.99 %
+| Night | 1.72 %
+| Rain | 0.88 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 72
+| Behaviour | Bad
+| Stealth | 40
+| Experience | 90 - 160 (~125)
+| Hit Points | 6 - 13
+| Strength | 10 - 17
+| Skill | 12 - 19
+| Intelligence | 6 - 13
+| Speed | 6 - 13
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 19.9 % | 1 - 10
+| Silver | 29.7 % | 1 - 5
+| Gold | 2.0 % | 1
+| Gem(s) | 9.8 % | 1
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a dagger | 100 % |   |   | Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| jacket | Blunt: 1 |
+Mugger
+|
+|
+| Time | %
+| Day | 4.01 %
+| Night | 6.94 %
+| Rain | 3.54 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 80
+| Behaviour | Bad
+| Stealth | 0
+| Experience | 52 - 122 (~87)
+| Hit Points | 4 - 11
+| Strength | 6 - 13
+| Skill | 6 - 13
+| Intelligence | 4 - 11
+| Speed | 4 - 11
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 29.7 % | 1 - 10
+| Silver | 9.8 % | 1 - 5
+| Gold | 0.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a switchblade | 100 % |   |   | Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| jacket | Blunt: 1 |
+Robber
+|
+|
+| Time | %
+| Day | 0.48 %
+| Night | 0.82 %
+| Rain | 0.42 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 80
+| Behaviour | Bad
+| Stealth | 20
+| Experience | 100 - 185 (~143)
+| Hit Points | 10 - 17
+| Strength | 10 - 17
+| Skill | 10 - 22
+| Intelligence | 10 - 17
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 19.9 % | 1 - 10
+| Silver | 19.9 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 0.8 % | 1
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a dagger | 100 % |   |   | Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| leather jacket | Blunt: 2 |
+Fighter
+|
+|
+| Time | %
+| Day | 2.94 %
+| Night | 2.52 %
+| Rain | 1.85 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 96
+| Behaviour | Bad
+| Stealth | 0
+| Experience | 52 - 122 (~87)
+| Hit Points | 4 - 11
+| Strength | 6 - 13
+| Skill | 6 - 13
+| Intelligence | 4 - 11
+| Speed | 4 - 11
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 29.7 % | 1 - 10
+| Silver | 19.9 % | 1 - 5
+| Gold | 0.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a sword | 100 % | 67 % | 0 | Sharp: 3 | Y |
+|
+| Armor | Protection | Efficiency
+| jacket | Blunt: 1 |
+Gladiator
+|
+|
+| Time | %
+| Day | 1.6 %
+| Night | 1.37 %
+| Rain | 1.01 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 97
+| Behaviour | Bad
+| Stealth | 50
+| Experience | 56 - 126 (~91)
+| Hit Points | 5 - 12
+| Strength | 6 - 13
+| Skill | 6 - 13
+| Intelligence | 5 - 12
+| Speed | 4 - 11
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 29.7 % | 1 - 13
+| Silver | 19.9 % | 1 - 8
+| Gold | 0.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a flail | 100 % | 67 % | 0 | Blunt: 4 | N |
+|
+| Armor | Protection | Efficiency
+| leather jacket | Blunt: 2 |
+Warrior
+|
+|
+| Time | %
+| Day | 2.24 %
+| Night | 1.92 %
+| Rain | 1.41 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 98
+| Behaviour | Bad
+| Stealth | 50
+| Experience | 90 - 160 (~125)
+| Hit Points | 6 - 13
+| Strength | 12 - 19
+| Skill | 10 - 17
+| Intelligence | 6 - 13
+| Speed | 6 - 13
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 39.8 % | 1 - 10
+| Silver | 29.7 % | 1 - 5
+| Gold | 2.0 % | 1
+| Gem(s) |
+| Jewelry | 3.9 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a longsword | 100 % | 75 % | 1 | Sharp: 4 | Y |
+|
+| Armor | Protection | Efficiency
+| leather jacket | Blunt: 2 |
+Small Dragon
+|
+|
+| Time | %
+| Day |
+| Night | 1.38 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 99
+| Behaviour | Bad
+| Stealth | 40
+| Experience | 185 - 303 (~244)
+| Hit Points | 20 - 27
+| Strength | 25 - 40
+| Skill | 10 - 25
+| Intelligence | 20 - 27
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 49.6 % | 1 - 20
+| Silver | 29.7 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| its claws | 40 % |   |   | Blunt: 1
+Sharp: 2 | Y |
+| its teeth | 30 % |   |   | Sharp: 5 | Y |
+| its tail | 10 % |   |   | Blunt: 5 | Y |
+| a scorching breath of fire | 20 % |   |   | Fire: 12 | N |
+|
+| Armor | Protection | Efficiency
+| thick hide | Blunt: 9
+Sharp: 10
+Earth: 3
+Air: 3
+Fire: 3
+Water: 3
+Power: 3
+Mental: 3
+Cleric: 3 |
+Knight (v1)
+|
+|
+| Time | %
+| Day | 1.07 %
+| Night | 0.92 %
+| Rain | 0.67 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 101
+| Behaviour | Bad
+| Stealth | 40
+| Experience | 115 - 233 (~174)
+| Hit Points | 10 - 17
+| Strength | 15 - 30
+| Skill | 10 - 25
+| Intelligence | 10 - 17
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 39.8 % | 1 - 15
+| Silver | 29.7 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a greatsword | 100 % | 75 % | 1 | Sharp: 5 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Blunt: 4
+Sharp: 3
+Earth: 2
+Air: 2
+Fire: 2
+Water: 2
+Power: 2
+Mental: 2
+Cleric: 2 |
+Swordsman
+|
+|
+| Time | %
+| Day | 2.46 %
+| Night | 2.11 %
+| Rain | 1.54 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 104
+| Behaviour | Bad
+| Stealth | 20
+| Experience | 81 - 151 (~116)
+| Hit Points | 6 - 13
+| Strength | 10 - 17
+| Skill | 9 - 16
+| Intelligence | 6 - 13
+| Speed | 6 - 13
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment | 4.7 % | 1 - 2
+| Copper | 29.7 % | 1 - 10
+| Silver | 19.9 % | 1 - 5
+| Gold | 2.0 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a sword | 100 % | 67 % | 0 | Sharp: 3 | Y |
+|
+| Armor | Protection | Efficiency
+| jacket | Blunt: 1 |
+Weaponmaster
+|
+|
+| Time | %
+| Day | 0.27 %
+| Night | 0.23 %
+| Rain | 0.17 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 114
+| Behaviour | Bad
+| Stealth | 100
+| Experience | 144 - 262 (~203)
+| Hit Points | 12 - 19
+| Strength | 14 - 29
+| Skill | 18 - 33
+| Intelligence | 12 - 19
+| Speed | 12 - 19
+|
+| Treasure | % | Quantity
+| Potions | 2.0 % | 1
+| Equipment | 9.8 % | 1
+| Copper | 19.9 % | 1 - 10
+| Silver | 4.7 % | 1 - 6
+| Gold | 4.7 % | 1
+| Gem(s) |
+| Jewelry | 29.7 % | 1 - 3
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a longsword | 52 % | 75 % | 1 | Sharp: 4 | Y |
+| a sword | 48 % | 67 % | 0 | Sharp: 3 | Y |
+|
+| Armor | Protection | Efficiency
+| leather jacket | Blunt: 2 |
+Champion
+|
+|
+| Time | %
+| Day | 3.1 %
+| Night | 2.66 %
+| Rain | 1.95 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 121
+| Behaviour | Bad
+| Stealth | 100
+| Experience | 153 - 271 (~212)
+| Hit Points | 12 - 19
+| Strength | 20 - 35
+| Skill | 15 - 30
+| Intelligence | 12 - 19
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 39.8 % | 1 - 15
+| Silver | 29.7 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) |
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a greatsword | 100 % | 75 % | 1 | Sharp: 5 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Blunt: 4
+Sharp: 3
+Earth: 1
+Air: 1
+Fire: 1
+Water: 1
+Power: 1
+Mental: 1
+Cleric: 1 |
+Pauper
+|
+|
+| Time | %
+| Day | 1.68 %
+| Night | 0.07 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 128
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 30 - 72 (~51)
+| Hit Points | 3 - 9
+| Strength | 3 - 6
+| Skill | 3 - 6
+| Intelligence | 3 - 9
+| Speed | 3 - 6
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 0.8 % | 1
+| Silver |
+| Gold |
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| Bare Hands | 100 % |   |   | Blunt: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| skin |   |
+Merchant
+|
+|
+| Time | %
+| Day | 7.63 %
+| Night | 0.31 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 129
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 90 - 120 (~105)
+| Hit Points | 9 - 12
+| Strength | 9 - 12
+| Skill | 9 - 12
+| Intelligence | 9 - 12
+| Speed | 5 - 8
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 49.6 % | 1 - 20
+| Silver | 29.7 % | 1 - 10
+| Gold | 19.9 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 0.8 % | 1
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a long dagger | 100 % | 50 % | 0 | Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| leather jacket | Blunt: 2 |
+Hobbit
+|
+|
+| Time | %
+| Day |
+| Night | 1.37 %
+| Rain | 1.92 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 132
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 93 - 163 (~128)
+| Hit Points | 6 - 13
+| Strength | 7 - 14
+| Skill | 16 - 23
+| Intelligence | 6 - 13
+| Speed | 4 - 7
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 9.8 % | 1 - 15
+| Silver | 4.7 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a small axe | 100 % | 67 % | 0 | Blunt: 1
+Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| thick hide | Blunt: 3
+Sharp: 2
+Air: 2
+Water: 1
+Power: 1
+Mental: 1
+Cleric: 1 |
+Dwarf
+|
+|
+| Time | %
+| Day |
+| Night | 1.37 %
+| Rain | 1.92 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 134
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 114 - 184 (~149)
+| Hit Points | 6 - 13
+| Strength | 18 - 25
+| Skill | 12 - 19
+| Intelligence | 6 - 13
+| Speed | 4 - 7
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 19.9 % | 1 - 20
+| Silver | 9.8 % | 1 - 10
+| Gold | 9.8 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a sharp sword | 100 % | 75 % | 1 | Sharp: 4 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Blunt: 3
+Sharp: 2
+Air: 2
+Water: 1
+Power: 2
+Mental: 3
+Cleric: 3 | Earth: Immune
+Air: Low
+Fire: Immune
+Water: Low
+Power: Low
+Mental: Low
+Cleric: Low
+Giant
+|
+|
+| Time | %
+| Day |
+| Night | 3.43 %
+| Rain | 4.81 %
+| Invisible |
+|
+| Stat | Value
+| Alignment | 135
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 160 - 211 (~186)
+| Hit Points | 10 - 13
+| Strength | 30 - 40
+| Skill | 10 - 13
+| Intelligence | 10 - 13
+| Speed | 10 - 17
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 34.8 % | 1 - 70
+| Silver | 19.9 % | 1 - 40
+| Gold | 9.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a knurly club | 100 % | 75 % | 1 | Blunt: 3
+Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| tough skin | Blunt: 2
+Sharp: 1 |
+Commoner
+|
+|
+| Time | %
+| Day | 7.63 %
+| Night | 0.31 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 136
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 60 - 130 (~95)
+| Hit Points | 6 - 13
+| Strength | 6 - 13
+| Skill | 6 - 13
+| Intelligence | 6 - 13
+| Speed | 6 - 13
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 9.8 % | 1 - 3
+| Silver | 0.8 % | 1
+| Gold |
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a dagger | 100 % |   |   | Sharp: 1 | Y |
+|
+| Armor | Protection | Efficiency
+| skin |   |
+Acolyte
+|
+|
+| Time | %
+| Day | 6.87 %
+| Night | 0.92 %
+| Rain | 4.03 %
+| Invisible | 0.46 %
+|
+| Stat | Value
+| Alignment | 140
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 65 - 135 (~100)
+| Hit Points | 8 - 15
+| Strength | 4 - 11
+| Skill | 7 - 14
+| Intelligence | 8 - 15
+| Speed | 5 - 12
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment | 4.7 % | 1 - 2
+| Copper | 14.8 % | 1 - 5
+| Silver | 9.8 % | 1 - 3
+| Gold | 4.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a weak spell | 60 % |   |   | Earth: 2
+Air: 2 | N |
+| a spell | 40 % |   |   | Earth: 2
+Air: 2
+Water: 3 | N |
+|
+| Armor | Protection | Efficiency
+| tough skin | Blunt: 2
+Sharp: 1 |
+Courier
+|
+|
+| Time | %
+| Day | 6.1 %
+| Night | 0.24 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 144
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 93 - 123 (~108)
+| Hit Points | 9 - 12
+| Strength | 9 - 12
+| Skill | 10 - 13
+| Intelligence | 9 - 12
+| Speed | 5 - 8
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 29.7 % | 1 - 10
+| Silver | 4.7 % | 1 - 10
+| Gold | 9.8 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 0.8 % | 1
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a shortsword | 100 % | 50 % | 0 | Sharp: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Sharp: 1 |
+Apprentice
+|
+|
+| Time | %
+| Day | 6.98 %
+| Night | 0.93 %
+| Rain | 4.1 %
+| Invisible | 0.47 %
+|
+| Stat | Value
+| Alignment | 144
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 57 - 127 (~92)
+| Hit Points | 6 - 13
+| Strength | 4 - 11
+| Skill | 7 - 14
+| Intelligence | 6 - 13
+| Speed | 5 - 12
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment | 4.7 % | 1
+| Copper | 14.8 % | 1 - 5
+| Silver | 9.8 % | 1 - 3
+| Gold | 2.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a weak spell | 100 % |   |   | Earth: 2
+Air: 2 | N |
+|
+| Armor | Protection | Efficiency
+| tough skin | Blunt: 2
+Sharp: 1 |
+Novice
+|
+|
+| Time | %
+| Day | 4.58 %
+| Night | 0.61 %
+| Rain | 2.69 %
+| Invisible | 0.31 %
+|
+| Stat | Value
+| Alignment | 146
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 75 - 145 (~110)
+| Hit Points | 9 - 16
+| Strength | 5 - 12
+| Skill | 8 - 15
+| Intelligence | 9 - 16
+| Speed | 5 - 12
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 9.8 % | 1 - 2
+| Copper | 14.8 % | 1 - 7
+| Silver | 9.8 % | 1 - 5
+| Gold | 9.8 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a weak spell | 35 % |   |   | Earth: 2
+Air: 2 | N |
+| a spell | 35 % |   |   | Earth: 2
+Air: 2
+Water: 3 | N |
+| an incantation | 30 % |   |   | Earth: 2
+Air: 2
+Water: 3
+Power: 3 | N |
+|
+| Armor | Protection | Efficiency
+| magic! | Blunt: 2
+Sharp: 2
+Earth: 2
+Air: 2
+Fire: 32
+Water: 2
+Power: 2
+Mental: 2
+Cleric: 2 |
+Wizard
+|
+|
+| Time | %
+| Day | 3.2 %
+| Night | 0.43 %
+| Rain | 1.88 %
+| Invisible | 0.21 %
+|
+| Stat | Value
+| Alignment | 148
+| Behaviour | Neutral
+| Stealth | 40
+| Experience | 116 - 186 (~151)
+| Hit Points | 14 - 21
+| Strength | 6 - 13
+| Skill | 14 - 21
+| Intelligence | 14 - 21
+| Speed | 4 - 11
+|
+| Treasure | % | Quantity
+| Potions | 4.7 % | 1 - 2
+| Equipment | 29.7 % | 1 - 2
+| Copper | 19.9 % | 1 - 50
+| Silver | 9.8 % | 1 - 25
+| Gold | 29.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a weak spell | 30 % |   |   | Earth: 2
+Air: 2 | N |
+| a spell | 25 % |   |   | Earth: 2
+Air: 2
+Water: 3 | N |
+| an incantation | 25 % |   |   | Earth: 2
+Air: 2
+Water: 3
+Power: 3 | N |
+| a strong spell | 20 % |   |   | Earth: 2
+Air: 2
+Water: 3
+Power: 3
+Mental: 3 | N |
+|
+| Armor | Protection | Efficiency
+| magical robe | Blunt: 32
+Sharp: 32
+Earth: 32
+Air: 32
+Fire: 32
+Water: 32
+Power: 32
+Mental: 32
+Cleric: 32 |
+Mage
+|
+|
+| Time | %
+| Day | 0.46 %
+| Night | 0.06 %
+| Rain | 0.27 %
+| Invisible | 0.03 %
+|
+| Stat | Value
+| Alignment | 160
+| Behaviour | Neutral
+| Stealth | 80
+| Experience | 127 - 197 (~162)
+| Hit Points | 16 - 23
+| Strength | 7 - 14
+| Skill | 14 - 21
+| Intelligence | 16 - 23
+| Speed | 4 - 11
+|
+| Treasure | % | Quantity
+| Potions | 6.6 % | 1 - 2
+| Equipment | 29.7 % | 1 - 2
+| Copper | 29.7 % | 1 - 40
+| Silver | 14.8 % | 1 - 25
+| Gold | 24.6 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a weak spell | 30 % |   |   | Earth: 2
+Air: 2 | N |
+| a spell | 20 % |   |   | Earth: 2
+Air: 2
+Water: 3 | N |
+| an incantation | 20 % |   |   | Earth: 2
+Air: 2
+Water: 3
+Power: 3 | N |
+| a strong spell | 20 % |   |   | Earth: 2
+Air: 2
+Water: 3
+Power: 3
+Mental: 3 | N |
+| a dazzling spell | 10 % |   |   | Mental: 5 | N |
+|
+| Armor | Protection | Efficiency
+| magical robe | Blunt: 32
+Sharp: 96
+Earth: 96
+Air: 96
+Fire: 96
+Water: 96
+Power: 32
+Mental: 96
+Cleric: 96 |
+Arch-Mage
+|
+|
+| Time | %
+| Day | 6.75 %
+| Night | 0.9 %
+| Rain | 3.96 %
+| Invisible | 0.45 %
+|
+| Stat | Value
+| Alignment | 176
+| Behaviour | Neutral
+| Stealth | 120
+| Experience | 150 - 220 (~185)
+| Hit Points | 18 - 25
+| Strength | 8 - 15
+| Skill | 18 - 25
+| Intelligence | 18 - 25
+| Speed | 4 - 11
+|
+| Treasure | % | Quantity
+| Potions | 9.8 % | 1 - 2
+| Equipment | 49.6 % | 1 - 2
+| Copper | 39.8 % | 1 - 75
+| Silver | 14.8 % | 1 - 25
+| Gold | 29.7 % | 1
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a weak spell | 25 % |   |   | Earth: 2
+Air: 2 | N |
+| a spell | 20 % |   |   | Earth: 2
+Air: 2
+Water: 3 | N |
+| an incantation | 20 % |   |   | Earth: 2
+Air: 2
+Water: 3
+Power: 3 | N |
+| a strong spell | 20 % |   |   | Earth: 2
+Air: 2
+Water: 3
+Power: 3
+Mental: 3 | N |
+| a dazzling spell | 10 % |   |   | Mental: 5 | N |
+| an overpowering spell | 5 % |   |   | Earth: 1
+Air: 2
+Fire: 2
+Water: 2
+Power: 2
+Mental: 2 | N |
+|
+| Armor | Protection | Efficiency
+| magical robe | Blunt: 96
+Sharp: 96
+Earth: 96
+Air: 96
+Fire: 96
+Water: 96
+Power: 96
+Mental: 96
+Cleric: 96 |
+Guard (v1)
+|
+|
+| Time | %
+| Day | 16.02 %
+| Night | 0.64 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 179
+| Behaviour | Neutral
+| Stealth | 0
+| Experience | 107 - 201 (~154)
+| Hit Points | 8 - 15
+| Strength | 15 - 30
+| Skill | 10 - 17
+| Intelligence | 8 - 15
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 29.7 % | 1 - 15
+| Silver | 19.9 % | 1 - 10
+| Gold |
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a greatsword | 100 % | 75 % | 1 | Sharp: 5 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Blunt: 4
+Sharp: 3 |
+Nobleman
+|
+|
+| Time | %
+| Day | 1.86 %
+| Night | 0.19 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 192
+| Behaviour | Good
+| Stealth | 40
+| Experience | 106 - 200 (~153)
+| Hit Points | 10 - 17
+| Strength | 12 - 19
+| Skill | 10 - 25
+| Intelligence | 10 - 17
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 49.6 % | 1 - 25
+| Silver | 29.7 % | 1 - 20
+| Gold | 4.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a magical sword! | 100 % | 75 % | 1 | Sharp: 5
+Earth: 2 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Blunt: 2
+Sharp: 1
+Earth: 2
+Air: 2
+Fire: 2
+Water: 2
+Power: 2
+Mental: 2
+Cleric: 2 |
+Knight (v2)
+|
+|
+| Time | %
+| Day | 4.73 %
+| Night | 0.47 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 195
+| Behaviour | Good
+| Stealth | 40
+| Experience | 115 - 233 (~174)
+| Hit Points | 10 - 17
+| Strength | 15 - 30
+| Skill | 10 - 25
+| Intelligence | 10 - 17
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions | 0.8 % | 1
+| Equipment | 0.8 % | 1
+| Copper | 39.8 % | 1 - 15
+| Silver | 29.7 % | 1 - 10
+| Gold | 4.7 % | 1
+| Gem(s) | 0.8 % | 1
+| Jewelry | 9.8 % | 1 - 2
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a greatsword | 100 % | 75 % | 1 | Sharp: 5 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Blunt: 4
+Sharp: 3
+Earth: 2
+Air: 2
+Fire: 2
+Water: 2
+Power: 2
+Mental: 2
+Cleric: 2 |
+Guard (v2)
+|
+|
+| Time | %
+| Day | 1.22 %
+| Night | 0.12 %
+| Rain |
+| Invisible |
+|
+| Stat | Value
+| Alignment | 200
+| Behaviour | Good
+| Stealth | 0
+| Experience | 107 - 201 (~154)
+| Hit Points | 8 - 15
+| Strength | 15 - 30
+| Skill | 10 - 17
+| Intelligence | 8 - 15
+| Speed | 9 - 16
+|
+| Treasure | % | Quantity
+| Potions |
+| Equipment |
+| Copper | 29.7 % | 1 - 15
+| Silver | 19.9 % | 1 - 10
+| Gold |
+| Gem(s) |
+| Jewelry |
+|
+| Weapon | % | Parry | Damage | Use
+STR | Special
+(25% probability)
+| % | MBBD
+| a greatsword | 100 % | 75 % | 1 | Sharp: 5 | Y |
+|
+| Armor | Protection | Efficiency
+| armor | Blunt: 4
+Sharp: 3 |
+|
+visitors since 05/01/2006. Sitemap
+Copyright © 2006-2020 by Kroah. Total or partial reproduction forbidden.
+All trademarks and copyrights are the property of their respective owners. All rights reserved.

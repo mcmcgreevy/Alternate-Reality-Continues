@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <title>Kroah's Game Reverse Engineering Page - Alternate Reality - Stats</title>
+    <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+    <meta name="Description" content="Reverse Engineering page of old computer games for Atari ST and Atari 8-bit System. Discover all the information, data and algorithms used by these games and some specifically developped utilities." />
+    <meta name="KeyWords" content="reverse engineering,decompilation,disassembling,atari,computer,game,assembler,asm,68000,6502,source code,mule,dragon riders of pern,gateway to apshai,return of heracles,seven cities of gold,archon,time bandit,alternate reality,colonial conquest,phantasie 3,nikademus,axel,magic hammer,pandora,ranarama,chaos engine,grand prix manager,gods,speed ball 2,bard's tale,legend of faerghail,gods,captain blood,first samurai" />
+    <link rel="stylesheet" href="../Globals.css" type="text/css" />
+    <link rel="stylesheet" href="Locals.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/Logo.ico" />
+    <link rel="icon" type="image/png" href="../Images/Logo.png" />
+    <script src="../Globals.js" type="text/javascript"></script>
+  </head>
+<body>
+<table class="LayoutPage"><tr><td class="LayoutPage"><div>
+<table class="LayoutDouble">
+  <tr><td class="LayoutDouble LayoutHeader" colspan="2">
+    <table class="LayoutIndex" style="width: 100%;">
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+<a class="Logo" href="../"><img src="../Images/Logo Big.png" alt="Home" /></a>
+        </td>
+        <td class="LayoutIndex LayoutHeader" style="width: 80%;">
+<h1 class="HeaderTitle1">Kroah's Game Reverse Engineering Page</h1>
+        </td>
+          <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+&nbsp;
+        </td>
+    </tr>
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 100%;" colspan="3">
+<h1 class="HeaderTitle2">~&nbsp;Alternate Reality&nbsp;~</h1>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td class="LayoutDouble LayoutLocation" colspan="2">
+<div class="BoxLocation">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+You are here:&nbsp;&nbsp;<ul><li><a href="../index.php5">Home</a><ul><li>&#187;&nbsp;&nbsp;Alternate Reality<ul><li>&#187;&nbsp;&nbsp;Reverse Engineering<ul><li>&#187;&nbsp;&nbsp;Character<ul><li>&#187;&nbsp;&nbsp;<i>Stats</i></li></ul></li></ul></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+  </td></tr>
+  <tr>
+    <td class="LayoutDouble LayoutMenu">
+<div class="BoxMenu">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Menu</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ul><li><a href='../Ar/news.php5'>News</a></li><li><a href='../Ar/links.php5'>Links</a></li><li><a href='../../forum/'>Forum</a></li><li>&nbsp;</li><li>&nbsp;Reverse Engineering<ul><li><a href='../Ar/technicalNotes.php5'>Technical Notes</a></li><li><a href='../Ar/world.php5'>Xebec's Demise</a><ul><li><a class='Anchor' href='../Ar/world.php5#Calendar'>Calendar</a></li><li><a class='Anchor' href='../Ar/world.php5#TimeSpan'>Time Span</a></li><li><a class='Anchor' href='../Ar/world.php5#Weather'>Weather</a></li><li><a class='Anchor' href='../Ar/world.php5#Temperature'>Temperature</a></li><li><a class='Anchor' href='../Ar/world.php5#Map'>Map</a></li></ul></li><li>&nbsp;Character<ul><li><a href='../Ar/characterCreation.php5'>Creation</a></li><li>&nbsp;<i>Stats</i><ul><li><a class='Anchor' href='../Ar/characterStats.php5#Primary'>Primary</a></li><li><a class='Anchor' href='../Ar/characterStats.php5#Secondary'>Secondary</a></li></ul></li><li><a href='../Ar/characterMetabolism.php5'>Metabolism</a><ul><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Hunger'>Hunger</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Thirst'>Thirst</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Fatigue'>Fatigue</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Digestion'>Digestion</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Inebriation'>Inebriation</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Warmth'>Warmth</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Encumbrance'>Encumbrance</a></li></ul></li><li><a href='../Ar/characterItems.php5'>Items</a><ul><li><a class='Anchor' href='../Ar/characterItems.php5#Weapons'>Weapons</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Armor'>Armor</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Clothes'>Clothes</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Potions'>Potions</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Others'>Others</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Curses'>Curses</a></li></ul></li></ul></li><li>&nbsp;Encounters<ul><li><a href='../Ar/encountersDenizens.php5'>Denizens</a></li><li><a href='../Ar/encountersOpponent.php5'>Opponent</a><ul><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Frequency'>Frequency</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Creation'>Creation</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Melody'>Melody</a></li></ul></li><li><a href='../Ar/encountersCombat.php5'>Combat</a><ul><li><a class='Anchor' href='../Ar/encountersCombat.php5#Awareness'>Awareness</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Sequence'>Sequence</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Engagement'>Engagement</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AlignmentPenalty'>Alignment Penalty</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#CastSpell'>Cast a Spell</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AttackLunge'>Attack & Lunge</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#DamageResolution'>Damage Resolution</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Trick'>Trick</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Charm'>Charm</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Offer'>Offer</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Leave'>Leave</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#OpponentActions'>Opponent Actions</a></li></ul></li><li><a href='../Ar/encountersRewards.php5'>Rewards</a><ul><li><a class='Anchor' href='../Ar/encountersRewards.php5#Experience'>Experience</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#LevelUp'>Level Up</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Treasures'>Treasures</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Statistics'>Statistics</a></li></ul></li></ul></li><li>&nbsp;Establishments<ul><li><a href='../Ar/establishmentsInns.php5'>Inns</a><ul><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Sleeping'>Sleeping</a></li><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsTaverns.php5'>Taverns</a><ul><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#FoodsDrinks'>Foods & Drinks</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#BuyingRound'>Buying a Round</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsBanks.php5'>Banks</a><ul><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Accounts'>Accounts</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Appraisal'>Appraisal</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsShops.php5'>Shops</a><ul><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsSmithies.php5'>Smithies</a><ul><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsHealers.php5'>Healers</a><ul><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#Services'>Services</a></li></ul></li><li><a href='../Ar/establishmentsGuilds.php5'>Guilds</a><ul><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Bonuses'>Bonuses</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Spells'>Spells</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#RemovingCurses'>Removing Curses</a></li></ul></li><li><a href='../Ar/establishmentsJobsSummary.php5'>Jobs Summary</a></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+    <td class="LayoutDouble LayoutDocument">
+<div class="BoxDocument">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Stats</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ol>
+
+  <li><h3 id="Primary">Primary</h3>
+<p>The character is defined by 7 primary stats (6 visible and 1 hidden): Stamina, Charisma, Strength, Intelligence, Wisdom, Skill and Speed.</p>
+<p><img src="Images/Stats.png" alt="Stats" /></p>
+<p>Each primary stat is split in 5 sub-stats: Base, Effective, Displayed, Bonus and Penalty.</p>
+<p>When a primary stat is used by the game engine and no additional information is given about the concerned sub-stat (base, effective, displayed, ...), the effective one is taken into account.</p>
+<table>
+  <tr><th><b>Primary stat</b></th><th><b>Description</b></th></tr>
+  <tr><td><i>Stamina</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersRewards.php5#LevelUp">Level Up</a> for Effective, <a href="characterMetabolism.php5#Inebriation">Inebriation</a> for Effective.</p>
+<p>Affected by: <a href="establishmentsGuilds.php5#Spells">Stamina Spell</a> for Bonus, <a href="encountersDenizens.php5">Slimed! Disease</a> for Base.</p>
+    </td>
+  </tr>
+  <tr><td><i>Charisma</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersCombat.php5#Charm">Charm</a> for Effective.</p>
+<p>Affected by: <a href="encountersCombat.php5#Charm">Charm</a> for Base, <a href="characterItems.php5#Potions">Potion of Charisma</a> for Base, <a href="characterItems.php5#Potions">Potion of Ugliness</a> for Base, <a href="establishmentsGuilds.php5#Spells">Glamour Spell</a> for Bonus.</p>
+    </td>
+  </tr>
+  <tr><td><i>Strength</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersCombat.php5#StrengthBonus">Combat Strength Bonus</a> for Effective, <a href="characterStats.php5#Secondary">Encumbrance</a> for Effective.</p>
+<p>Affected by: <a href="characterItems.php5#Potions">Potion of Strength</a> for Base, <a href="characterItems.php5#Potions">Potion of Weakness</a> for Base, <a href="encountersDenizens.php5">'a bone-chilling touch' Disease</a> for Base, <a href="encountersCombat.php5#Initialization">Attack & Lunge Initialization</a> for Base, <a href="establishmentsGuilds.php5#Spells">Strength Spell</a> for Bonus.</p>
+    </td>
+  </tr>
+  <tr><td><i>Intelligence</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersCombat.php5#Trick">Trick</a> for Effective.</p>
+<p>Affected by: <a href="encountersCombat.php5#Trick">Trick</a> for Base, <a href="characterItems.php5#Potions">Potion of Intelligence</a> for Base, <a href="characterItems.php5#Potions">Potion of Dumbness</a> for Base, <a href="establishmentsGuilds.php5#Spells">Intelligence Spell</a> for Bonus.</p>
+    </td>
+  </tr>
+  <tr><td><i>Wisdom</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterItems.php5#Potions">Potion Sip</a> for Effective.</p>
+<p>Affected by: <a href="establishmentsGuilds.php5#Spells">Wisdom Spell</a> for Bonus.</p>
+    </td>
+  </tr>
+  <tr><td><i>Skill</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersCombat.php5#HitProbability">Hit Probability</a> for Effective.</p>
+<p>Affected by: <a href="establishmentsGuilds.php5#Spells">Dexterity Spell</a> for Bonus, <a href="characterStats.php5#Secondary">Warmth</a> for Penalty.</p>
+    </td>
+  </tr>
+  <tr><td><i>Speed<br />(Hidden)</i></td>
+    <td style="white-space: normal">
+<p>Speed is revealed when the character receives the base speed bonus of the Blue Wizards' guild.</p>
+<p>Used by: <a href="characterStats.php5#Secondary">Walking Speed</a> for Effective, <a href="encountersCombat.php5#Leave">Leave</a> for Effective.</p>
+<p>Affected by: <a href="characterItems.php5#Potions">Potion of Fleetness</a> for Base, <a href="characterItems.php5#Potions">Potion of Slowness</a> for Base, <a href="establishmentsGuilds.php5#Spells">Physical Speed Spell</a> for Bonus, <a href="characterStats.php5#Secondary">Digestion</a> for Penalty, <a href="characterStats.php5#Secondary">Warmth</a> for Penalty, <a href="characterStats.php5#Secondary">Encumbrance</a> for Malus.</p>
+    </td>
+  </tr>
+</table>
+<table>
+  <tr><th><b>Sub-Stat</b></th><th><b>Description</b></th></tr>
+  <tr><td><i>Base<br />(real)</i></td>
+    <td>
+<p>This is the intrinsic value of the stat. It evolves throughout the game.</p>
+<p>Affected by: <a href="encountersRewards.php5#LevelUp">Level Up</a>, <a href="establishmentsGuilds.php5#Bonuses">Guilds Bonuses</a> for Base.</p>
+    </td>
+  </tr>
+  <tr><td><i>Effective<br />(integer)</i></td>
+    <td>
+<p>This is the real value of the stat, including the bonus and penalty values:</p>
+<ul><li>effective value = integer part of the base value + bonus - penalty</li></ul>
+    </td></tr>
+  <tr><td><i>Displayed</i></td>
+    <td>
+<p>This is the perceived value by the player and shown in the upper stats bar.<br />Same as the effective value when the character is not affected by delusion.</p>
+<p>Affected by: <a href="characterStats.php5#Secondary">Delusion State</a>.
+    </td>
+  </tr>
+  <tr><td><i>Bonus</i></td>
+    <td>
+<p>The bonus is added to the effective value to reflect a temporary stat enhancement.</p>
+    </td>
+  </tr>
+  <tr><td><i>Penalty</i></td>
+    <td>
+<p>The penalty is subtracted to the effective value to reflect a temporary stat penalty.</p>
+<p>Affected by: <a href="characterMetabolism.php5#Hunger">Hunger</a>, <a href="characterMetabolism.php5#Fatigue">Fatigue</a>, <a href="characterMetabolism.php5#Thirst">Thirst</a>.</p>
+    </td>
+  </tr>
+</table>
+  </li>
+
+  <li><h3 id="Secondary">Secondary</h3>
+<p>In addition to the primary stats, the character features several secondary stats:</p>
+<table>
+  <tr><th><b>Secondary stat</b></th><th><b>Description</b></th></tr>
+  <tr><td colspan="2" style="font-variant: small-caps;"><b>General</b></td></tr>
+  <tr><td><i>Level</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersOpponent.php5#Creation">Opponent Creation</a>.</p>
+<p>Affected by: <a href="encountersRewards.php5#LevelUp">Level Up</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Hit Points</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersCombat.php5#OpponentActions">Opponent Actions</a>.</p>
+<p>Affected by:
+<a href="encountersRewards.php5#LevelUp">Level Up</a>,
+<a href="characterStats.php5#Secondary">Delusion State</a> for onscreen display,
+<a href="establishmentsGuilds.php5#Spells">Casting Spells</a>,
+<a href="establishmentsInns.php5#Jobs">Inns Jobs</a>,
+<a href="establishmentsTaverns.php5#Jobs">Taverns Jobs</a>,
+<a href="establishmentsBanks.php5#Jobs">Banks Jobs</a>,
+<a href="encountersCombat.php5#DamageResolution">Damage Resolution</a>,
+<a href="establishmentsInns.php5#Sleeping">Sleeping</a>,
+<a href="establishmentsGuilds.php5#Bonuses">Guilds Bonuses</a>,
+<a href="establishmentsHealers.php5#Services">Heal Service</a>,<br />
+<a href="characterItems.php5#Potions">Potion of ACID!</a>,
+<a href="characterItems.php5#Potions">Potion of Weak Poison</a>,
+<a href="characterItems.php5#Potions">Potion of Poison!</a>,
+<a href="characterItems.php5#Potions">Potion of Strong Poison!</a>,
+<a href="characterItems.php5#Potions">Potion of DEADLY POISION!</a>,
+<a href="characterItems.php5#Potions">Potion of Healing Minor Wounds</a>,
+<a href="characterItems.php5#Potions">Potion of Healing Wounds</a>,
+<a href="characterItems.php5#Potions">Potion of Healing Major Wounds</a>,
+<a href="characterItems.php5#Potions">Potion of Healing All Wounds</a>,<br />
+<a href="establishmentsGuilds.php5#Spells">Healing Minor Wounds Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">Healing Moderate Wounds Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">Healing Major Wounds Spell</a>,<br />
+<a href="encountersDenizens.php5">Gangrene Disease</a>,
+<a href="encountersDenizens.php5">Rabies Disease</a>,
+<a href="encountersDenizens.php5">Brown Mold Disease</a>,
+<a href="encountersDenizens.php5">Slimed! Disease</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Hit Points Maximum</i></td>
+    <td style="white-space: normal">
+<p>Used by: .</p>
+<p>Affected by: <a href="encountersRewards.php5#LevelUp">Level Up</a>,
+<a href="establishmentsGuilds.php5#Bonuses">Guilds Bonuses</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Experience</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersRewards.php5#LevelUp">Level Up</a>.</p>
+<p>Affected by: <a href="encountersRewards.php5#Experience">Experience Reward</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Required Experience</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersRewards.php5#LevelUp">Level Up</a>.</p>
+<p>Affected by: <a href="encountersRewards.php5#LevelUp">Level Up</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Alignment</i></td>
+    <td style="white-space: normal">
+<p>An unfinished section of code exists using a minimum or maximum alignment for activating entity effects.</p>
+<p>Actually, it seems the only way to increase alignment is by offering something to a pauper. The assembly code used to handle jobs and increase alignment is (voluntary?) bugged.</p>
+<p>Used by: <a href="encountersCombat.php5#OpponentActions">Opponent Actions</a>, <a href="encountersCombat.php5#Offer">Offer</a>.</p>
+<p>Affected by: <a href="encountersCombat.php5#Initialization">Attack & Lunge Initialization</a>,
+<a href="encountersCombat.php5#Trick">Trick</a>,
+<a href="encountersCombat.php5#Charm">Charm</a>,
+<a href="encountersCombat.php5#Offer">Offer</a>,
+<a href="establishmentsInns.php5#Jobs">Inns Jobs</a>,
+<a href="establishmentsTaverns.php5#Jobs">Taverns Jobs</a>,
+<a href="establishmentsBanks.php5#Jobs">Banks Jobs</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Stealth</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersCombat.php5#Awareness">Awareness</a>.</p>
+<p>Affected by: <a href="establishmentsGuilds.php5#Bonuses">Guilds Bonuses</a> for Base.</p>
+    </td>
+  </tr>
+  <tr><td><i>Unnoticeability</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersOpponent.php5#Frequency">Encounter Frequency</a>.</p>
+<p>Affected by: <a href="characterItems.php5#Potions">Potion of Noticeability</a>,
+<a href="characterItems.php5#Potions">Potion of Unnoticeability</a>,
+<a href="establishmentsGuilds.php5#Spells">Noticeability Spell</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Treasure Finding</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersRewards.php5#Treasures">Treasure Reward</a>.</p>
+<p>Affected by: <a href="encountersRewards.php5#Treasures">Treasure Reward</a>,
+<a href="characterItems.php5#Potions">Potion of TREASURE FINDING</a>,
+<a href="establishmentsGuilds.php5#Spells">Luck Spell</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Walking Speed</i></td>
+    <td style="white-space: normal">
+<p>The character walking speed is proportional to his effective speed:</p>
+<ul><li>walking speed = ((effective speed + 5) / 6) * 2</li></ul>
+<p>Because the character starts with a base speed of 13, initial walking speed is 6.</p>
+<p>Maximum value is 36.</p>
+<p>Affected by: <a href="characterStats.php5#Primary">Effective Speed</a>.</p>
+    </td>
+  </tr>
+  <tr><td colspan="2"><b><span style="font-variant: small-caps;">Metabolism</span> (see <a href="characterMetabolism.php5">Metabolism</a> for more details)</b></td></tr>
+  <tr><td><i><a href="characterMetabolism.php5#Hunger">Hunger</a></i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="establishmentsTaverns.php5#FoodsDrinks">Waitress</a>,
+<a href="characterStats.php5#Primary">Primary Stats</a> for Penalty.</p>
+<p>Affected by: <a href="characterStats.php5#Secondary">Hunger Rate</a>,
+<a href="establishmentsTaverns.php5#FoodsDrinks">Waitress</a>,
+<a href="establishmentsTaverns.php5#FoodsDrinks">Foods</a>,
+<a href="characterItems.php5#Others">Food Packet</a>,
+<a href="establishmentsGuilds.php5#Spells">Curing Hunger Spell</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Hunger Rate</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterStats.php5#Secondary">Hunger</a>.</p>
+<p>Affected by: <a href="establishmentsInns.php5#Sleeping">Sleeping</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i><a href="characterMetabolism.php5#Thirst">Thirst</a></i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="establishmentsTaverns.php5#FoodsDrinks">Barkeeper</a>,
+<a href="characterStats.php5#Primary">Primary Stats</a> for Penalty.</p>
+<p>Affected by:
+<a href="characterStats.php5#Secondary">Thirst Rate</a>,
+<a href="establishmentsTaverns.php5#FoodsDrinks">Barkeeper</a>,
+<a href="establishmentsTaverns.php5#FoodsDrinks">Drinks</a>,
+<a href="characterItems.php5#Others">Water Flask</a>,<br/>
+<a href="characterItems.php5#Potions">Potion of Water</a>,
+<a href="characterItems.php5#Potions">Potion of Milk</a>,
+<a href="characterItems.php5#Potions">Potion of Fruit Juice</a>,
+<a href="characterItems.php5#Potions">Potion of Mineral Water</a>,
+<a href="characterItems.php5#Potions">Potion of Saltwater</a>,
+<a href="characterItems.php5#Potions">Potion of Vinegar</a>,<br/>
+<a href="establishmentsGuilds.php5#Spells">Curing Thirst Spell</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Thirst Rate</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterStats.php5#Secondary">Thirst</a>.</p>
+<p>Affected by: <a href="establishmentsInns.php5#Sleeping">Sleeping</a>,
+<a href="characterStats.php5#Secondary">Warmth</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i><a href="characterMetabolism.php5#Fatigue">Fatigue</a></i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterStats.php5#Primary">Primary Stats</a> for Penalty.</p>
+<p>Affected by: <a href="characterStats.php5#Secondary">Fatigue Rate</a>,
+<a href="establishmentsInns.php5#Sleeping">Sleeping</a>,
+<a href="establishmentsGuilds.php5#Spells">Casting Spells</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Fatigue Rate</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterStats.php5#Secondary">Fatigue</a>.</p>
+<p>Affected by: <a href="establishmentsInns.php5#Sleeping">Sleeping</a>,
+<a href="characterStats.php5#Secondary">Warmth</a>,
+<a href="characterStats.php5#Secondary">Encumbrance</a>,
+<a href="establishmentsInns.php5#Jobs">Inns Jobs</a>,
+<a href="establishmentsTaverns.php5#Jobs">Taverns Jobs</a>,
+<a href="establishmentsBanks.php5#Jobs">Banks Jobs</a>,
+<a href="establishmentsGuilds.php5#Spells">Endurance</a>.</p>
+  </td>
+  </tr>
+  <tr><td><i><a href="characterMetabolism.php5#Digestion">Digestion</a></i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterStats.php5#Primary">Speed</a> for Penalty.</p>
+<p>Affected by: <a href="establishmentsTaverns.php5#FoodsDrinks">Foods</a>,
+<a href="characterItems.php5#Others">Food Packet</a>,
+<a href="characterItems.php5#Others">Water Flask</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Alcohol Blood Concentration</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>,
+<a href="encountersCombat.php5#Awareness">Awareness</a>,
+<a href="characterStats.php5#Secondary">Coordination</a>,
+<a href="characterStats.php5#Secondary">Balance</a>,
+<a href="characterStats.php5#Secondary">Coordination</a>,
+<a href="characterStats.php5#Secondary">Blackout Duration</a>.</p>
+<p>Affected by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>,
+<a href="establishmentsTaverns.php5#FoodsDrinks">Tavern Foods &amp; Drinks</a>,
+<a href="establishmentsHealers.php5#Services">Remove Alcohol Service</a>,
+<a href="establishmentsGuilds.php5#Spells">Removing Alcohol Spell</a>,<br/>
+<a href="characterItems.php5#Potions">Potion of Wine</a>,
+<a href="characterItems.php5#Potions">Potion of Spirits</a>,
+<a href="characterItems.php5#Potions">Potion of Inebriation</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Alcohol Intestine Concentration</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>.</p>
+<p>Affected by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>,
+<a href="establishmentsTaverns.php5#FoodsDrinks">Tavern Foods &amp; Drinks</a>,
+<a href="establishmentsHealers.php5#Services">Remove Alcohol Service</a>,
+<a href="establishmentsGuilds.php5#Spells">Removing Alcohol Spell</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Alcohol Digestion Rate</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>.</p>
+<p>Affected by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>,
+<a href="establishmentsHealers.php5#Services">Remove Alcohol Service</a>,
+<a href="establishmentsGuilds.php5#Spells">Removing Alcohol Spell</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Alcohol Blackout Duration</i></td>
+    <td style="white-space: normal">
+<p>Duration of the blackout.</p>
+<p>Affected by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>,
+<a href="characterStats.php5#Primary">Stamina</a> for Effective,
+<a href="establishmentsHealers.php5#Services">Remove Alcohol Service</a>,
+<a href="establishmentsGuilds.php5#Spells">Removing Alcohol Spell</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Coordination</i></td>
+    <td style="white-space: normal">
+<p>When affected, bottom status screen randomly changes.</p>
+<p>Affected by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>,
+<a href="characterStats.php5#Primary">Stamina</a> for Effective.</p>
+    </td>
+  </tr>
+  <tr><td><i>Balance</i></td>
+    <td style="white-space: normal">
+<p>When affected, movement is hampered (Random moves).</p>
+<p>Affected by: <a href="characterMetabolism.php5#Inebriation">Inebriation</a>,
+<a href="characterStats.php5#Primary">Stamina</a> for Effective.</p>
+    </td>
+  </tr>
+  <tr><td><i><a href="characterMetabolism.php5#Warmth">Warmth</a></i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterStats.php5#Primary">Speed</a> for Penalty,
+<a href="characterStats.php5#Primary">Skill</a> for Penalty,
+<a href="characterStats.php5#Secondary">Thirst Rate</a>,
+<a href="characterStats.php5#Secondary">Fatigue Rate</a>,
+<a href="characterStats.php5#Secondary">Clarity State</a>.</p>
+<p>Affected by: <a href="establishmentsShops.php5#WaresList">Clothes</a>,
+<a href="world.php5#Temperature">Weather Temperature</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i><a href="characterMetabolism.php5#Encumbrance">Encumbrance</a></i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="characterStats.php5#Primary">Speed</a> for Penalty,
+<a href="characterStats.php5#Secondary">Fatigue Rate</a>.</p>
+<p>Affected by: <a href="characterItems.php5">Items</a>,
+<a href="characterStats.php5#Primary">Strength</a> for Effective.</p>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="font-variant: small-caps;"><b>Temporary</b></td></tr>
+  <tr><td><i>Clarity State</i></td>
+    <td style="white-space: normal">
+<p>Used by: Nothing?</p>
+<p>Affected by: <a href="characterStats.php5#Secondary">Warmth</a>,
+<a href="establishmentsHealers.php5#Services">Restore Clarity Service</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Delusion State</i></td>
+    <td style="white-space: normal">
+<p>When the character suffers delusion, all his primary displayed stats and hit points are faked:</p>
+<ul>
+  <li>primary displayed stat += Random [0; 255]</li>
+  <li>onscreen hit points ~= Random [0; 65535]</li>
+</ul>
+<p>This update has a probability of 1/256 % to occur every 1/60 real seconds.</p>
+<p>Affected by: <a href="characterItems.php5#Potions">Potion of Delusion</a>,
+<a href="establishmentsGuilds.php5#Spells">Clear Vision Spell</a>,
+<a href="establishmentsHealers.php5#Services">Remove Delusions Service</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Invisibility State</i></td>
+    <td style="white-space: normal">
+<p>Used by: <a href="encountersOpponent.php5#Creation">Opponent Creation</a>.</p>
+<p>Affected by: <a href="characterItems.php5#Potions">Potion of Invisibility</a>,
+<a href="world.php5#Weather">Rain</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Paralysis</i></td>
+    <td style="white-space: normal">
+<p>Number of remaining turns the player stays paralyzed. Decreased by 1 each turn. If a combat ends with remaining paralyzed turns, the next combat the character will begin paralyzed.</p>
+<p>Used by: <a href="encountersCombat.php5#Sequence">Combat Sequence</a>.</p>
+<p>Affected by: <a href="encountersCombat.php5#Sequence">Combat Sequence</a>,
+<a href="encountersDenizens.php5">'its poisonous tail' Poison</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Magical Protection</i></td>
+    <td style="white-space: normal">
+<p>Character magical protection for each damage type (Blunt, Sharp, Earth, Air, Fire, Water, Power, Mental, Cleric, Evil (?)).</p>
+<p>Used by: <a href="encountersCombat.php5#MagicalProtection">Combat Magical Protection</a>.</p>
+<p>Affected by: <a href="characterItems.php5#Potions">Potion of Protection+1 (*)</a>,
+<a href="characterItems.php5#Potions">Potion of Protection+2 (*)</a>.</p>
+    </td>
+  </tr>
+  <tr><td><i>Magical Protection Efficiencies</i></td>
+    <td style="white-space: normal">
+<p>Character magical protection efficiency (Low, Normal, High, Immune) for each damage type (Blunt, Sharp, Earth, Air, Fire, Water, Power, Mental, Cleric, Evil (?)).</p>
+<p>Used by: <a href="encountersCombat.php5#MagicalProtection">Combat Magical Protection</a>.</p>
+<p>Affected by:
+<a href="characterItems.php5#Potions">Potion of Invulnerability Blunt</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Sharp</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Earth</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Air</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Fire</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Water</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Power</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Mental</a>,
+<a href="characterItems.php5#Potions">Potion of Invulnerability Cleric</a>,<br/>
+<a href="establishmentsGuilds.php5#Spells">Stone Flesh Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">Deflecting Weapons Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">Iron Flesh Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">The Force Field Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">The Ice Shield Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">The Energy Shield Spell</a>,
+<a href="establishmentsGuilds.php5#Spells">The Flame Shield Spell</a>.</p>
+    </td>
+  </tr>
+</table>
+  </li>
+
+</ol>
+      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+  </tr>
+  <tr><td class="LayoutDouble LayoutFooter" colspan="2">
+<div class="FooterVisitors">
+<img height="9.9px" src="http://perso0.free.fr/cgi-bin/wwwcount.cgi?df=bringerp.dat&amp;dd=atari8&amp;ft=0&amp;negate=F&amp;pad=F&amp;srgb=8CDEFF&amp;prgb=10D0D0&amp;tr=T&amp;trgb=1873C6" alt="Visitors" /> visitors since 05/01/2006. <a href="../sitemap.php5">Sitemap</a><br />
+</div>
+<div class="FooterCopyright">
+Copyright &copy; 2006-2020 by Kroah. Total or partial reproduction forbidden.<br />All trademarks and copyrights are the property of their respective owners. All rights reserved.<br />
+</div>
+<div class="FooterPartners">
+<a class="Picture" href="javascript: return (false);"><img width="80px" height="15px" src="../Images/Buttons/email.png" alt="Email Me" title="Email Me" onmouseover="javascript: this.src='../Images/Buttons/bringerp.png';" onmouseout="javascript: this.src='../Images/Buttons/email.png';" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://www.mozilla.org/products/firefox/"><img width="80px" height="15px" src="../Images/Buttons/Firefox.png" alt="Get Firefox" title="Get Firefox" /></a>
+<a class="Picture" href="http://www.waterproof.fr/products/PHPEdit/"><img width="80px" height="15px" src="../Images/Buttons/PHPEdit.png" alt="Powered by PHPEdit" title="Powered by PHPEdit" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://validator.w3.org/check?uri=referer&amp;verbose=1"><img width="80px" height="15px" src="../Images/Buttons/xhtml.png" alt="Valid XHTML 1.1" title="Valid XHTML 1.1" /></a>
+<a class="Picture" href="http://jigsaw.w3.org/css-validator/validator?uri=bringerp.free.fr/RE/Ar/characterStats.php5&amp;warning=2&amp;profile=css3&amp;usermedium=all"><img width="80px" height="15px" src="../Images/Buttons/css.png" alt="Valid CSS" title="Valid CSS" /></a>
+</div>
+  </td></tr>
+</table>
+</div>
+</td></tr></table>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

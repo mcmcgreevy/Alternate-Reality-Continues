@@ -1,0 +1,50 @@
+{
+  "cool-breeze": {
+    "file": "cool-breeze.ogg",
+    "seconds": 24.0,
+    "sample_rate": 24000,
+    "rms": 0.05543037876486778,
+    "peak": 0.3311271667480469,
+    "sha256": "539e4099ad0e3038cfafa165c1727ee138481c8c7e3fcd0315627e7ffe3cdad8"
+  },
+  "cold-wind": {
+    "file": "cold-wind.ogg",
+    "seconds": 24.0,
+    "sample_rate": 24000,
+    "rms": 0.07702840864658356,
+    "peak": 0.5625786781311035,
+    "sha256": "2fe051f420806f22ca1f2ddf94026eff9f9804fc4389a1734c3bc5203dfd09ee"
+  },
+  "rain": {
+    "file": "rain.ogg",
+    "seconds": 24.0,
+    "sample_rate": 24000,
+    "rms": 0.10261379182338715,
+    "peak": 0.5307203531265259,
+    "sha256": "0cfaf54202677130fd9ab275d3824a4dd17c71c18cbc3e95136bed9c3fb60c17"
+  },
+  "thunder-1": {
+    "file": "thunder-1.ogg",
+    "seconds": 8.0,
+    "sample_rate": 24000,
+    "rms": 0.04870060458779335,
+    "peak": 0.6446001529693604,
+    "sha256": "aab47be485c51f73744ee6e2e3c69eca6748ee49772f14d7b3349f25dbdfb2ea"
+  },
+  "thunder-2": {
+    "file": "thunder-2.ogg",
+    "seconds": 8.0,
+    "sample_rate": 24000,
+    "rms": 0.05973447859287262,
+    "peak": 0.6303768157958984,
+    "sha256": "f6b5fe2e3c974de59283e17a3a6f13f205e311bc1fe4fd9261730740ae529659"
+  },
+  "thunder-3": {
+    "file": "thunder-3.ogg",
+    "seconds": 8.0,
+    "sample_rate": 24000,
+    "rms": 0.06288988143205643,
+    "peak": 0.6516475677490234,
+    "sha256": "7a30c2b88eb6918c23ee6118b75157f11cdd4527d28c6a06023c4a40b133b773"
+  }
+}

@@ -1,0 +1,68 @@
+marker,category,source_name,source_locator,status
+0,Inns,Green Boar Inn,world.html Map legend,occurrences_not_fully_audited
+1,Inns,Lazy Griffin Inn,world.html Map legend,occurrences_not_fully_audited
+2,Inns,Sleeping Dragon Inn,world.html Map legend,occurrences_not_fully_audited
+3,Inns,Traveller's Inn,world.html Map legend,occurrences_not_fully_audited
+4,Inns,Midnight Inn,world.html Map legend,occurrences_not_fully_audited
+5,Inns,Warrior's Retreat,world.html Map legend,occurrences_not_fully_audited
+6,Inns,Royal Resort Inn,world.html Map legend,occurrences_not_fully_audited
+7,Taverns,Flaming Dragon Tavern,world.html Map legend,occurrences_not_fully_audited
+8,Taverns,Misty Mountain Tavern,world.html Map legend,occurrences_not_fully_audited
+9,Taverns,Screaming Siren Bar,world.html Map legend,occurrences_not_fully_audited
+10,Taverns,Happy Hunter Rest Stop,world.html Map legend,occurrences_not_fully_audited
+11,Taverns,Dancing Nymph Tavern,world.html Map legend,occurrences_not_fully_audited
+12,Taverns,Club,world.html Map legend,occurrences_not_fully_audited
+13,Taverns,Black Devil Tavern,world.html Map legend,occurrences_not_fully_audited
+14,Taverns,Lost Oasis,world.html Map legend,occurrences_not_fully_audited
+15,Taverns,Last Stop,world.html Map legend,occurrences_not_fully_audited
+16,Taverns,Tail of the Dog Tavern,world.html Map legend,occurrences_not_fully_audited
+17,Taverns,Club Babylon,world.html Map legend,occurrences_not_fully_audited
+18,Taverns,Lost Tears Tavern,world.html Map legend,occurrences_not_fully_audited
+19,Taverns,Mom's Bar,world.html Map legend,occurrences_not_fully_audited
+20,Taverns,Lusty Lloyds Tavern,world.html Map legend,occurrences_not_fully_audited
+21,Banks,First City Bank,world.html Map legend,occurrences_not_fully_audited
+22,Banks,Granite Bank,world.html Map legend,occurrences_not_fully_audited
+23,Banks,Gram's Gold Exchange,world.html Map legend,occurrences_not_fully_audited
+24,Shops,Smiley's Shop,world.html Map legend,occurrences_not_fully_audited
+25,Shops,Honest Trader,world.html Map legend,occurrences_not_fully_audited
+26,Shops,Adventurer's Outfitters,world.html Map legend,occurrences_not_fully_audited
+27,Shops,Warrior's Supplies,world.html Map legend,occurrences_not_fully_audited
+28,Shops,General Store,world.html Map legend,occurrences_not_fully_audited
+29,Shops,Exclusive Outfitters,world.html Map legend,occurrences_not_fully_audited
+30,Shops,Rocky's Emporium,world.html Map legend,occurrences_not_fully_audited
+31,Shops,Best Bargain Store,world.html Map legend,occurrences_not_fully_audited
+32,Shops,Special Imports Store,world.html Map legend,occurrences_not_fully_audited
+33,Shops,Betelgeuse Sales,world.html Map legend,occurrences_not_fully_audited
+34,Shops,Merchant's Grotto,world.html Map legend,occurrences_not_fully_audited
+35,Shops,Sunset Market,world.html Map legend,occurrences_not_fully_audited
+36,Shops,Pauline's Emporium,world.html Map legend,occurrences_not_fully_audited
+37,Shops,Da Place!,world.html Map legend,occurrences_not_fully_audited
+(38),Shops,Trade Winds,world.html Map legend,occurrences_not_fully_audited
+39,Smithies,Sharp Weaponsmiths,world.html Map legend,occurrences_not_fully_audited
+40,Smithies,Occum's Weaponsmiths,world.html Map legend,occurrences_not_fully_audited
+41,Smithies,Best Armorers,world.html Map legend,occurrences_not_fully_audited
+42,Smithies,Knight's Armorers,world.html Map legend,occurrences_not_fully_audited
+53,Healers,One Way Soothers,world.html Map legend,occurrences_not_fully_audited
+54,Healers,Alpha Omega Healers,world.html Map legend,occurrences_not_fully_audited
+55,Guilds,Thieves' Guild,world.html Map legend,occurrences_not_fully_audited
+56,Guilds,Blue Wizards' Guild,world.html Map legend,occurrences_not_fully_audited
+57,Guilds,Light Wizards' Guild,world.html Map legend,occurrences_not_fully_audited
+58,Guilds,Green Wizards' Academy,world.html Map legend,occurrences_not_fully_audited
+59,Guilds,Red Wizards' University,world.html Map legend,occurrences_not_fully_audited
+60,Guilds,Dark Wizards' Guild,world.html Map legend,occurrences_not_fully_audited
+61,Guilds,Star Wizards' Guild,world.html Map legend,occurrences_not_fully_audited
+62,Guilds,Wizards' of Chaos,world.html Map legend,occurrences_not_fully_audited
+63,Guilds,Wizards of Law,world.html Map legend,occurrences_not_fully_audited
+64,Guilds,Guild of Order,world.html Map legend,occurrences_not_fully_audited
+65,Guilds,Physicians' Guild,world.html Map legend,occurrences_not_fully_audited
+66,Guilds,Assassins' Guild,world.html Map legend,occurrences_not_fully_audited
+43,Scenarios,House of Ill Repute (QUARANTINED!),world.html Map legend,occurrences_not_fully_audited
+46,Scenarios,Arena,world.html Map legend,occurrences_not_fully_audited
+47,Scenarios,Palace,world.html Map legend,occurrences_not_fully_audited
+48,Scenarios,Palace Gates,world.html Map legend,occurrences_not_fully_audited
+49,Scenarios,Dungeon Entrance,world.html Map legend,occurrences_not_fully_audited
+50,Scenarios,Maximum Casino,world.html Map legend,occurrences_not_fully_audited
+52,Scenarios,Jack's Fitness Academy,world.html Map legend,occurrences_not_fully_audited
+73,Scenarios,Southern Gate,world.html Map legend,occurrences_not_fully_audited
+74,Scenarios,Northern Gate,world.html Map legend,occurrences_not_fully_audited
+75,Scenarios,Western Gate,world.html Map legend,occurrences_not_fully_audited

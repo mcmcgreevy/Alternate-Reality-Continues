@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <title>Kroah's Game Reverse Engineering Page - Alternate Reality - Smithies</title>
+    <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+    <meta name="Description" content="Reverse Engineering page of old computer games for Atari ST and Atari 8-bit System. Discover all the information, data and algorithms used by these games and some specifically developped utilities." />
+    <meta name="KeyWords" content="reverse engineering,decompilation,disassembling,atari,computer,game,assembler,asm,68000,6502,source code,mule,dragon riders of pern,gateway to apshai,return of heracles,seven cities of gold,archon,time bandit,alternate reality,colonial conquest,phantasie 3,nikademus,axel,magic hammer,pandora,ranarama,chaos engine,grand prix manager,gods,speed ball 2,bard's tale,legend of faerghail,gods,captain blood,first samurai" />
+    <link rel="stylesheet" href="../Globals.css" type="text/css" />
+    <link rel="stylesheet" href="Locals.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/Logo.ico" />
+    <link rel="icon" type="image/png" href="../Images/Logo.png" />
+    <script src="../Globals.js" type="text/javascript"></script>
+  </head>
+<body>
+<table class="LayoutPage"><tr><td class="LayoutPage"><div>
+<table class="LayoutDouble">
+  <tr><td class="LayoutDouble LayoutHeader" colspan="2">
+    <table class="LayoutIndex" style="width: 100%;">
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+<a class="Logo" href="../"><img src="../Images/Logo Big.png" alt="Home" /></a>
+        </td>
+        <td class="LayoutIndex LayoutHeader" style="width: 80%;">
+<h1 class="HeaderTitle1">Kroah's Game Reverse Engineering Page</h1>
+        </td>
+          <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+&nbsp;
+        </td>
+    </tr>
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 100%;" colspan="3">
+<h1 class="HeaderTitle2">~&nbsp;Alternate Reality&nbsp;~</h1>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td class="LayoutDouble LayoutLocation" colspan="2">
+<div class="BoxLocation">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+You are here:&nbsp;&nbsp;<ul><li><a href="../index.php5">Home</a><ul><li>&#187;&nbsp;&nbsp;Alternate Reality<ul><li>&#187;&nbsp;&nbsp;Reverse Engineering<ul><li>&#187;&nbsp;&nbsp;Establishments<ul><li>&#187;&nbsp;&nbsp;<i>Smithies</i></li></ul></li></ul></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+  </td></tr>
+  <tr>
+    <td class="LayoutDouble LayoutMenu">
+<div class="BoxMenu">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Menu</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ul><li><a href='../Ar/news.php5'>News</a></li><li><a href='../Ar/links.php5'>Links</a></li><li><a href='../../forum/'>Forum</a></li><li>&nbsp;</li><li>&nbsp;Reverse Engineering<ul><li><a href='../Ar/technicalNotes.php5'>Technical Notes</a></li><li><a href='../Ar/world.php5'>Xebec's Demise</a><ul><li><a class='Anchor' href='../Ar/world.php5#Calendar'>Calendar</a></li><li><a class='Anchor' href='../Ar/world.php5#TimeSpan'>Time Span</a></li><li><a class='Anchor' href='../Ar/world.php5#Weather'>Weather</a></li><li><a class='Anchor' href='../Ar/world.php5#Temperature'>Temperature</a></li><li><a class='Anchor' href='../Ar/world.php5#Map'>Map</a></li></ul></li><li>&nbsp;Character<ul><li><a href='../Ar/characterCreation.php5'>Creation</a></li><li><a href='../Ar/characterStats.php5'>Stats</a><ul><li><a class='Anchor' href='../Ar/characterStats.php5#Primary'>Primary</a></li><li><a class='Anchor' href='../Ar/characterStats.php5#Secondary'>Secondary</a></li></ul></li><li><a href='../Ar/characterMetabolism.php5'>Metabolism</a><ul><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Hunger'>Hunger</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Thirst'>Thirst</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Fatigue'>Fatigue</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Digestion'>Digestion</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Inebriation'>Inebriation</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Warmth'>Warmth</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Encumbrance'>Encumbrance</a></li></ul></li><li><a href='../Ar/characterItems.php5'>Items</a><ul><li><a class='Anchor' href='../Ar/characterItems.php5#Weapons'>Weapons</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Armor'>Armor</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Clothes'>Clothes</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Potions'>Potions</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Others'>Others</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Curses'>Curses</a></li></ul></li></ul></li><li>&nbsp;Encounters<ul><li><a href='../Ar/encountersDenizens.php5'>Denizens</a></li><li><a href='../Ar/encountersOpponent.php5'>Opponent</a><ul><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Frequency'>Frequency</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Creation'>Creation</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Melody'>Melody</a></li></ul></li><li><a href='../Ar/encountersCombat.php5'>Combat</a><ul><li><a class='Anchor' href='../Ar/encountersCombat.php5#Awareness'>Awareness</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Sequence'>Sequence</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Engagement'>Engagement</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AlignmentPenalty'>Alignment Penalty</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#CastSpell'>Cast a Spell</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AttackLunge'>Attack & Lunge</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#DamageResolution'>Damage Resolution</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Trick'>Trick</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Charm'>Charm</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Offer'>Offer</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Leave'>Leave</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#OpponentActions'>Opponent Actions</a></li></ul></li><li><a href='../Ar/encountersRewards.php5'>Rewards</a><ul><li><a class='Anchor' href='../Ar/encountersRewards.php5#Experience'>Experience</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#LevelUp'>Level Up</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Treasures'>Treasures</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Statistics'>Statistics</a></li></ul></li></ul></li><li>&nbsp;Establishments<ul><li><a href='../Ar/establishmentsInns.php5'>Inns</a><ul><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Sleeping'>Sleeping</a></li><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsTaverns.php5'>Taverns</a><ul><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#FoodsDrinks'>Foods & Drinks</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#BuyingRound'>Buying a Round</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsBanks.php5'>Banks</a><ul><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Accounts'>Accounts</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Appraisal'>Appraisal</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsShops.php5'>Shops</a><ul><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Bargaining'>Bargaining</a></li></ul></li><li>&nbsp;<i>Smithies</i><ul><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsHealers.php5'>Healers</a><ul><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#Services'>Services</a></li></ul></li><li><a href='../Ar/establishmentsGuilds.php5'>Guilds</a><ul><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Bonuses'>Bonuses</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Spells'>Spells</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#RemovingCurses'>Removing Curses</a></li></ul></li><li><a href='../Ar/establishmentsJobsSummary.php5'>Jobs Summary</a></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+    <td class="LayoutDouble LayoutDocument">
+<div class="BoxDocument">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Smithies</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<table class="NoBorder" style="width: 100%;">
+  <tr>
+    <th class="NoBorder">
+      <img width="640" height="144" src="Images/EstablishmentSmithy.png" alt="Smithy Establishment" />
+    </th>
+  </tr>
+</table>
+<ol>
+
+  <li><h3 id="Acceptance">Acceptance</h3>
+<p>Several checks are done when the character enters the smithy and as long as he is inside:</p>
+<ul>
+  <li>Opening hours:
+<table>
+  <tr><th><b>Smithy</b></th><th><b>Opening Hours</b></th></tr>
+  <tr><td><i>Sharp Weaponsmiths</i></td><th>04h to 20h</th></tr>
+  <tr><td><i>Occum's Weaponsmiths</i></td><th>05h to 21h</th></tr>
+  <tr><td><i>Best Armorers</i></td><th>08h to 19h</th></tr>
+  <tr><td><i>Knight's Armorers</i></td><th>11h to 15h</th></tr>
+</table>
+  </li>
+  <li>Character inebriation:
+<p>If the character is or becomes Very Drunk, he is shut-out and friendship is decreased by 0.09 (23/256).</p>
+  </li>
+  <li>Friendship:
+<p>If the friendship is or becomes &lt; 1.0, the character is shut-out by the smith.</p>
+  </li>
+</ul>
+  </li>
+
+  <li><h3 id="Friendship">Friendship</h3>
+<p>Initially 2.0 for each smith.</p>
+<p>When the character enters the smithy after 30 days without visiting it, the friendship may be updated:</p>
+<table>
+  <tr><th><b>Friendship</b></th><th><b>Result</b></th></tr>
+  <tr><td><i>[0.0; 1.0[</i></td><td>Friendship reset to 1.0.</td></tr>
+  <tr><td><i>[1.0; 2.0[</i></td><td>&nbsp;</td></tr>
+  <tr><td><i>[2.0; +oo[</i></td><td>Friendship decreased by 1.0.</td></tr>
+</table>
+<p>Friendship is used by:</p>
+<ul>
+  <li>The acceptance.</li>
+  <li>The welcome message.</li>
+  <li>The bargain.</li>
+</ul>
+  </li>
+
+  <li><h3 id="WelcomeMessage">Welcome Message</h3>
+<p>The welcome message is determined by the friendship and frequency:</p>
+<table>
+  <tr><th><b>Friendship</b></th><th><b>Frequency</b></th><th><b>Message</b></th></tr>
+  <tr><th><i>[1.0; 2.0[</i></th><th>&nbsp;</th><td>What do you want, insect?</td></tr>
+  <tr><th rowspan="2"><i>[2.0; 3.0[</i></th><th>1 or 2</th><td>Welcome Stranger!</td></tr>
+  <tr><th>&gt; 2</th><td>Welcome Adventurer!</td></tr>
+  <tr><th><i>[3.0; 4.0[</i></th><th>&nbsp;</th><td>Hello {name}!</td></tr>
+  <tr><th><i>[4.0; +oo[</i></th><th>&nbsp;</th><td>Dear Friend! Glad you came!</td></tr>
+</table>
+<p>The frequency is initially 0 for each smithy and is only used by the welcome message.</p>
+<p>It's reset when the character enters the smithy with a friendship &gt;= 1.0 after 30 days without visiting it.</p>
+<p>It's increased:</p>
+<ul>
+  <li>When entering (even if closed or if the character is shut-out for drunkness or low friendship).</li>
+  <li>After a bargain.</li>
+  <li>After the wares list.</li>
+</ul>
+  </li>
+
+  <li><h3 id="WaresList">Wares List</h3>
+<p>Every hour, when the characters enters the smithy, 10 distinct wares are randomly chosen among the following list:</p>
+<table>
+  <tr><th><b>Ware</b></th><th><b>Base price<br />(in coppers)</b></th><th><b>Corresponding<br />items</b></th></tr>
+  <tr><td colspan="3"><b>Weapons</b></td></tr>
+  <tr><td><i>a Tower Shield</i></td><th>9488</th><td>Tower Shield</td></tr>
+  <tr><td><i>a War Net</i></td><th>908</th><td>War Net</td></tr>
+  <tr><td><i>a Spiked Shield</i></td><th>6160</th><td>Spiked Shield</td></tr>
+  <tr><td><i>a Shield</i></td><th>4290</th><td>Shield</td></tr>
+  <tr><td><i>a Small Shield</i></td><th>2460</th><td>Small Shield</td></tr>
+  <tr><td><i>a Stiletto</i></td><th>113</th><td>Stilletto</td></tr>
+  <tr><td><i>a Dagger</i></td><th>129</th><td>Dagger</td></tr>
+  <tr><td><i>a Whip</i></td><th>396</th><td>Whip</td></tr>
+  <tr><td><i>a Shortsword</i></td><th>3146</th><td>Short Sword</td></tr>
+  <tr><td><i>a Flail</i></td><th>4620</th><td><Flail/td></tr>
+  <tr><td><i>a Battle Axe</i></td><th>6930</th><td>Battle Axe</td></tr>
+  <tr><td><i>a Sword</i></td><th>7680</th><td>Sword</td></tr>
+  <tr><td><i>a Battle Hammer</i></td><th>10285</th><td>Battle Hammer</td></tr>
+  <tr><td><i>a Longsword</i></td><th>11193</th><td>Longsword</td></tr>
+  <tr><td colspan="3"><b>Armor</b></td></tr>
+  <tr><td><i>some Padded Armor</i></td><th>2200</th><td>Padded Helmet<br />Padded Breastplate<br />Padded Gauntlets<br />Padded Greaves</td></tr>
+  <tr><td><i>some Leather Armor</i></td><th>4840</th><td>Leather Helmet<br />Leather Breastplate<br />Leather Gauntlets<br />Leather Greaves</td></tr>
+  <tr><td><i>some Studded Leather Armor</i></td><th>7260</th><td>Studded Helmet<br />Studded Breastplate<br />Studded Gauntlets<br />Studded Greaves</td></tr>
+  <tr><td><i>some Ring Mail</i></td><th>10010</th><td>Ringmail Hood<br />Ringmail Coat<br />Ringmail Leggings</td></tr>
+  <tr><td><i>some Scale Mail</i></td><th>14245</th><td>Scalemail Hood<br />Scalemail Coat<br />Scalemail Leggings</td></tr>
+  <tr><td><i>some Splint Mail</i></td><th>18975</th><td>Splintmail Hood<br />Splintmail Coat<br />Splintmail Leggings</td></tr>
+  <tr><td><i>some Chain Mail</i></td><th>24640</th><td>Chainmail Hood<br />Chainmail Coat<br />Chainmail Leggings</td></tr>
+  <tr><td><i>some Banded Armor</i></td><th>32000</th><td>Banded Helmet<br />Banded Breastplate<br />Banded Gauntlets<br />Banded Greaves</td></tr>
+  <tr><td><i>some Plated Armor</i></td><th>41500</th><td>Plated Helmet<br />Plated Breastplate<br />Plated Gauntlets<br />Plated Greaves</td></tr>
+</table>
+<p>Magical Flamesword, Elfinmail armor and Crystal armor are not sold at the smithy.</p>
+  </li>
+
+  <li><h3 id="Bargaining">Bargaining</h3>
+<p>Each smith uses a minimum and initial factor to compute the minimum and initial price:</p>
+<ul>
+  <li>minimum price = base price * minimum factor</li>
+  <li>initial price = base price * initial factor</li>
+</ul>
+<table>
+  <tr><th rowspan="2"><b>Smithy</b></th><th colspan="2"><b>Price factor</b></th></tr>
+  <tr><th><b>Minimum</b></th><th><b>Initial</b></th></tr>
+  <tr><td><i>Sharp Weaponsmiths</i></td><th>1.25</th><th>1.65</th></tr>
+  <tr><td><i>Occum's Weaponsmiths</i></td><th>1.10</th><th>1.35</th></tr>
+  <tr><td><i>Best Armorers</i></td><th>1.50</th><th>2.40</th></tr>
+  <tr><td><i>Knight's Armorers</i></td><th>1.60</th><th>2.35</th></tr>
+</table>
+<p>The character is allowed to make a limited number of unacceptable offers during a bargain. This number is equal to a random value &isin; [1; 4].</p>
+<p>An unacceptable offer is a price &lt;= to the highest price made by the character during the bargain.</p>
+<p>A bargain is composed of an unlimited number of rounds. It stops when at least one of the following conditions is met:</p>
+<ul>
+  <li>The character deliberately stops the bargain (he orders no sale or makes an offer of 0 copper).</li>
+  <li>The smith agrees with the character's offer.</li>
+  <li>The smith is outrageed because the character's offer is inferior to the minimum price.</li>
+  <li>The smith doesn't like the way the character bargains (he has exceeded the number of unacceptable offers).</li>
+</ul>
+<p>A round is composed of 2 actions:</p>
+<ul>
+  <li>A proposal made by the smith.</li>
+  <li>An offer made by the character.</li>
+</ul>
+<p>The proposal is equal to:</p>
+<ul>
+  <li>The initial price for the first round.</li>
+  <li>Else, a price resulting from the previous reaction of the smith.</li>
+</ul>
+<p>The reaction of the smith depends on the offer made by the character. The smith grades the character's offer (from <span style="color: #FF0000;">A</span> to <span style="color: #BBFFFF;">H</span>):</p>
+<table class="NoBorder">
+  <tr>
+    <th class="NoBorder" style="text-align: right;" width="10%"><br /><br />0</th>
+    <th class="NoBorder" width="10%"></th>
+    <th class="NoBorder" style="color: #FF8000;" width="20%" colspan="2"><br />Minimum price<br />0%</th>
+    <th class="NoBorder" width="20%" colspan="2">&nbsp;</th>
+    <th class="NoBorder" style="color: #00FF00;" width="20%" colspan="2">Proposal<br />100%<br />F</th>
+    <th class="NoBorder" style="color: #BBFFFF;" width="20%" colspan="2"><br /><br />+oo</th>
+  </tr>
+  <tr>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FF0000;" width="20%" colspan="2">A</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FF8000;" width="10%">B</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FFC000;" width="10%">C</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FFFF00;" width="10%">D</th>
+    <th style="border-color: #000000; color: #000000; background-color: #BBFF00;" width="10%">E</th>
+    <th style="border-color: #000000; color: #000000; background-color: #80FFBB;" width="10%">G</th>
+    <th style="border-color: #000000; color: #000000; background-color: #BBFFFF;" width="10%">H</th>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+  </tr>
+  <tr>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+    <th style="border-color: #000000; color: #FF0000;" width="20%" colspan="2">]0; minimum[</th>
+    <th style="border-color: #000000; color: #FF8000;" width="10%">[0%; 25%[</th>
+    <th style="border-color: #000000; color: #FFC000;" width="10%">[25%; 50%[</th>
+    <th style="border-color: #000000; color: #FFFF00;" width="10%">[50%; 75%[</th>
+    <th style="border-color: #000000; color: #BBFF00;" width="10%">[75%; 100%[</th>
+    <th style="border-color: #000000; color: #80FFBB;" width="10%">]100%; 125%[</th>
+    <th style="border-color: #000000; color: #BBFFFF;" width="10%">&gt;= 125%</th>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+  </tr>
+  <tr><th class="NoBorder" width="100%" colspan="10">&nbsp;</th></tr>
+</table>
+<p>The percents shown below the grades are equal to the delta (in percent) between the offer and the proposal (with the minimum price as the origin):</p>
+<ul><li>&Delta; = (offer - minimum) / (proposal - minimum)</li></ul>
+<p>For example, given a minimum price of 100 coppers with a proposal of 300 coppers, if the character offers 150 coppers, the resulting grade is <span style="color: #FFC000;">C</span>:</p>
+<ul><li>&Delta; = (150 - 100) / (300 - 100) = 50 / 200 = 25%</li></ul>
+<p>Here are the descriptions of the reactions according to the offers:</p>
+<table>
+  <tr><th colspan="2"><b>Offer</b></th><th rowspan="2" colspan="2"><b>Smith reaction</b></th></tr>
+  <tr><th><b>Grade</b></th><th><b>Price</b></th></tr>
+  <tr>
+    <th style="color: #FF0000;">A</th>
+    <th style="color: #FF0000;">price &isin; ]0; minimum[</th>
+    <td><ul><li>friendship -= 0.18</li></ul></td>
+    <td><p>The smith is outrageed and the character is shut-out.</p></td>
+  </tr>
+  <tr>
+    <th style="color: #FF8000;">B</th>
+    <td style="color: #FF8000;">&Delta; &isin; [0%; 25%[</td>
+    <td><ul><li>Probability of 25%:<br />Friendship -= 0.09</li><li>new proposal = initial price</li></ul></td>
+    <td rowspan="3">
+<p>If the offer is &lt;= to the highest character's offer (first offer does not count):</p>
+<ul><li>The number of unacceptable offers is increased by 1.</li></ul>
+    </td></tr>
+  <tr>
+    <th style="color: #FFC000;">C</th>
+    <td style="color: #FFC000;">&Delta; &isin; [25%; 50%[</td>
+    <td><ul><li>friendship -= 0.09</li><li>new proposal = new lower price</li></ul></td>
+  </tr>
+  <tr>
+    <th style="color: #FFFF00;">D</th>
+    <td style="color: #FFFF00;">&Delta; &isin; [50%; 75%[</td>
+    <td><ul><li>new proposal = new lower price</li></ul></td>
+  </tr>
+  <tr>
+    <th style="color: #BBFF00;">E</th>
+    <td style="color: #BBFF00;">&Delta; &isin; [75%; 100%[</td>
+    <td><ul><li>Probability of 50%:<br />friendship -= 0.09</li></ul></td>
+    <td rowspan="4">
+<ul>
+  <li>The smith agrees to sell the ware at the character price.</li>
+  <li>Probability of 50%:<br />friendship += 0.09</li>
+</ul>
+<p>If the character can't afford the ware, the smith is deeply offended:</p>
+<ul>
+  <li>friendship -= 0.45</li>
+</ul>
+<p>If the character's inventory is full, the smith says the item is out of stock.</p>
+    </td>
+  </tr>
+  <tr>
+    <th style="color: #00FF00;">F</th>
+    <td style="color: #00FF00;">&Delta; = 100%<br />(Smith's proposal)</td>
+    <td><ul><li>Probability of 50%:<br />friendship += 0.09</li></ul></td>
+  </tr>
+  <tr>
+    <th style="color: #80FFBB;">G</th>
+    <td style="color: #80FFBB;">&Delta; &isin; ]100%; 125%[</td>
+    <td><ul><li>friendship += 0.09</li></ul></td>
+  </tr>
+  <tr>
+    <th style="color: #BBFFFF;">H</th>
+    <td style="color: #BBFFFF;">&Delta; &gt;= 125%</td>
+    <td><ul><li>friendship += 0.27</li></ul></td>
+  </tr>
+</table>
+  </li>
+<p>The new lower price depends on the friendship, the last proposal and the minimum price. However, the new proposal for grade <span style="color: #FFC000;">C</span> is indirectly dependent of the character's offer, because the friendship is updated before calculation:</p>
+<ul>
+  <li>If the friendship is &gt;= 2.0:
+<p>new proposal = minimum price + 87.50% * (last proposal - minimum price)</p>
+  </li>
+  <li>If the friendship is &lt; 2.0:
+<p>new proposal = minimum price + 93.75% * (last proposal - minimum price)</p>
+  </li>
+</ul>
+<p>For information, the n-th proposal (for a constant friendship) is an arithmetico-geometric progression with an initial term p<sub>1</sub> = initial price and a general term equal to:</p>
+<ul>
+  <li>If the friendship is &gt;= 2.0:
+<p>n<sup>th</sup> proposal p<sub>n</sub> = minimum price + (87.50% <sup>n-1</sup>) * (last proposal - minimum price)</p>
+  </li>
+  <li>If the friendship is &lt; 2.0:
+<p>n<sup>th</sup> proposal p<sub>n</sub> = minimum price + (93.75% <sup>n-1</sup>) * (last proposal - minimum price)</p>
+  </li>
+</ul>
+<p>The easiest way (and one of the best strategy) to have the best price is:</p>
+<ul>
+  <li>Make the first offer at the lowest price at 50% inside grade <span style="color: #FFFF00;">D</span> (this will not lower the friendship).</li>
+  <li>Raise the following offers by 1 every round (this will not count as an unacceptable offer).</li>
+</ul>
+<p>With this tips, the character will be able to buy a ware at almost the price of the first offer:</p>
+<ul><li>~= minimum price + (initial price - minimum price) / 2 = base price * (minimum factor + initial factor) / 2</li></ul>
+<p>Example for a Battle Hammer at the Best Armorers with a friendship &gt;= 2.0:</p>
+<ul>
+  <li>minimum price = base price * minimum factor = 10285 * 384/256 ~= 10285 * 1.50 = 15427 coppers</li>
+  <li>initial price = base price * initial factor = 10285 * 614/256 ~= 10285 * 2.40 = 24667 coppers</li>
+</ul>
+<table class="NoBorder">
+  <tr>
+    <th class="NoBorder" style="text-align: right;" width="10%"><br /><br /><br />0</th>
+    <th class="NoBorder" width="10%"></th>
+    <th class="NoBorder" style="color: #FF8000;" width="20%" colspan="2"><br />Minimum price<br />(15427 coppers)<br />0%</th>
+    <th class="NoBorder" style="color: #FFFF00;" width="20%" colspan="2"><br />First offer<br />(20047 coppers)<br />50%</th>
+    <th class="NoBorder" style="color: #00FF00;" width="20%" colspan="2">Initial price<br />(24667 coppers)<br />100%<br />F</th>
+    <th class="NoBorder" style="color: #BBFFFF;" width="20%" colspan="2"><br /><br /><br />+oo</th>
+  </tr>
+  <tr>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FF0000;" width="20%" colspan="2">A</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FF8000;" width="10%">B</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FFC000;" width="10%">C</th>
+    <th style="border-color: #000000; color: #000000; background-color: #FFFF00;" width="10%">D</th>
+    <th style="border-color: #000000; color: #000000; background-color: #BBFF00;" width="10%">E</th>
+    <th style="border-color: #000000; color: #000000; background-color: #80FFBB;" width="10%">G</th>
+    <th style="border-color: #000000; color: #000000; background-color: #BBFFFF;" width="10%">H</th>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+  </tr>
+  <tr>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+    <th style="border-color: #000000; color: #FF0000;" width="20%" colspan="2">]0; minimum[</th>
+    <th style="border-color: #000000; color: #FF8000;" width="10%">[0%; 25%[</th>
+    <th style="border-color: #000000; color: #FFC000;" width="10%">[25%; 50%[</th>
+    <th style="border-color: #000000; color: #FFFF00;" width="10%">[50%; 75%[</th>
+    <th style="border-color: #000000; color: #BBFF00;" width="10%">[75%; 100%[</th>
+    <th style="border-color: #000000; color: #80FFBB;" width="10%">]100%; 125%[</th>
+    <th style="border-color: #000000; color: #BBFFFF;" width="10%">&gt;= 125%</th>
+    <th class="NoBorder" width="10%">&nbsp;</th>
+  </tr>
+  <tr><th class="NoBorder" width="100%" colspan="10">&nbsp;</th></tr>
+</table>
+<table>
+  <tr><th><b>Smith's proposal<br />(in coppers)</b></th><th><b>Character's offer<br />(in coppers)</b></th></tr>
+  <tr>
+    <td style="vertical-align: top;">= p<sub>1</sub> = initial price<br />= 24667</td>
+    <td style="vertical-align: top;">= first offer at 50% inside grade <span style="color: #FFFF00;">D</span><br />= minimum price + (proposal - minimum price) / 2<br />= 15427 + (24667 - 15427) / 2<br />= 20047</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">= p<sub>2</sub> = minimum price + 93.75% * (last proposal - minimum price)<br />= 15427 + 87.50% * (24667 - 15427)<br />= 23512</td>
+    <td style="vertical-align: top;">= last offer + 1<br /> = 20048</td>
+  </tr>
+  <tr><td style="vertical-align: top;">= p<sub>3</sub> = 22502</td><td style="vertical-align: top;">= last offer + 1<br /> = 20049</td></tr>
+  <tr><td style="vertical-align: top;">= p<sub>4</sub> = 21618</td><td style="vertical-align: top;">= last offer + 1<br /> = 20050</td></tr>
+  <tr><td style="vertical-align: top;">= p<sub>5</sub> = 20845</td><td style="vertical-align: top;">= last offer + 1<br /> = 20051</td></tr>
+</table>
+<p>Simth agrees for 20051 coppers because the character's offer is at ~85% inside grade <span style="color: #BBFF00;">E</span>:</p>
+<ul><li>&Delta; = (offer - minimum) / (proposal - minimum) = (20051 - 15427) / (20845 - 15427) ~= 85%</li></ul>
+  </li>
+
+</ol>
+      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+  </tr>
+  <tr><td class="LayoutDouble LayoutFooter" colspan="2">
+<div class="FooterVisitors">
+<img height="9.9px" src="http://perso0.free.fr/cgi-bin/wwwcount.cgi?df=bringerp.dat&amp;dd=atari8&amp;ft=0&amp;negate=F&amp;pad=F&amp;srgb=8CDEFF&amp;prgb=10D0D0&amp;tr=T&amp;trgb=1873C6" alt="Visitors" /> visitors since 05/01/2006. <a href="../sitemap.php5">Sitemap</a><br />
+</div>
+<div class="FooterCopyright">
+Copyright &copy; 2006-2020 by Kroah. Total or partial reproduction forbidden.<br />All trademarks and copyrights are the property of their respective owners. All rights reserved.<br />
+</div>
+<div class="FooterPartners">
+<a class="Picture" href="javascript: return (false);"><img width="80px" height="15px" src="../Images/Buttons/email.png" alt="Email Me" title="Email Me" onmouseover="javascript: this.src='../Images/Buttons/bringerp.png';" onmouseout="javascript: this.src='../Images/Buttons/email.png';" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://www.mozilla.org/products/firefox/"><img width="80px" height="15px" src="../Images/Buttons/Firefox.png" alt="Get Firefox" title="Get Firefox" /></a>
+<a class="Picture" href="http://www.waterproof.fr/products/PHPEdit/"><img width="80px" height="15px" src="../Images/Buttons/PHPEdit.png" alt="Powered by PHPEdit" title="Powered by PHPEdit" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://validator.w3.org/check?uri=referer&amp;verbose=1"><img width="80px" height="15px" src="../Images/Buttons/xhtml.png" alt="Valid XHTML 1.1" title="Valid XHTML 1.1" /></a>
+<a class="Picture" href="http://jigsaw.w3.org/css-validator/validator?uri=bringerp.free.fr/RE/Ar/establishmentsSmithies.php5&amp;warning=2&amp;profile=css3&amp;usermedium=all"><img width="80px" height="15px" src="../Images/Buttons/css.png" alt="Valid CSS" title="Valid CSS" /></a>
+</div>
+  </td></tr>
+</table>
+</div>
+</td></tr></table>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

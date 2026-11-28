@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <title>Kroah's Game Reverse Engineering Page - Alternate Reality - Guilds</title>
+    <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+    <meta name="Description" content="Reverse Engineering page of old computer games for Atari ST and Atari 8-bit System. Discover all the information, data and algorithms used by these games and some specifically developped utilities." />
+    <meta name="KeyWords" content="reverse engineering,decompilation,disassembling,atari,computer,game,assembler,asm,68000,6502,source code,mule,dragon riders of pern,gateway to apshai,return of heracles,seven cities of gold,archon,time bandit,alternate reality,colonial conquest,phantasie 3,nikademus,axel,magic hammer,pandora,ranarama,chaos engine,grand prix manager,gods,speed ball 2,bard's tale,legend of faerghail,gods,captain blood,first samurai" />
+    <link rel="stylesheet" href="../Globals.css" type="text/css" />
+    <link rel="stylesheet" href="Locals.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/Logo.ico" />
+    <link rel="icon" type="image/png" href="../Images/Logo.png" />
+    <script src="../Globals.js" type="text/javascript"></script>
+  </head>
+<body>
+<table class="LayoutPage"><tr><td class="LayoutPage"><div>
+<table class="LayoutDouble">
+  <tr><td class="LayoutDouble LayoutHeader" colspan="2">
+    <table class="LayoutIndex" style="width: 100%;">
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+<a class="Logo" href="../"><img src="../Images/Logo Big.png" alt="Home" /></a>
+        </td>
+        <td class="LayoutIndex LayoutHeader" style="width: 80%;">
+<h1 class="HeaderTitle1">Kroah's Game Reverse Engineering Page</h1>
+        </td>
+          <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+&nbsp;
+        </td>
+    </tr>
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 100%;" colspan="3">
+<h1 class="HeaderTitle2">~&nbsp;Alternate Reality&nbsp;~</h1>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td class="LayoutDouble LayoutLocation" colspan="2">
+<div class="BoxLocation">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+You are here:&nbsp;&nbsp;<ul><li><a href="../index.php5">Home</a><ul><li>&#187;&nbsp;&nbsp;Alternate Reality<ul><li>&#187;&nbsp;&nbsp;Reverse Engineering<ul><li>&#187;&nbsp;&nbsp;Establishments<ul><li>&#187;&nbsp;&nbsp;<i>Guilds</i></li></ul></li></ul></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+  </td></tr>
+  <tr>
+    <td class="LayoutDouble LayoutMenu">
+<div class="BoxMenu">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Menu</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ul><li><a href='../Ar/news.php5'>News</a></li><li><a href='../Ar/links.php5'>Links</a></li><li><a href='../../forum/'>Forum</a></li><li>&nbsp;</li><li>&nbsp;Reverse Engineering<ul><li><a href='../Ar/technicalNotes.php5'>Technical Notes</a></li><li><a href='../Ar/world.php5'>Xebec's Demise</a><ul><li><a class='Anchor' href='../Ar/world.php5#Calendar'>Calendar</a></li><li><a class='Anchor' href='../Ar/world.php5#TimeSpan'>Time Span</a></li><li><a class='Anchor' href='../Ar/world.php5#Weather'>Weather</a></li><li><a class='Anchor' href='../Ar/world.php5#Temperature'>Temperature</a></li><li><a class='Anchor' href='../Ar/world.php5#Map'>Map</a></li></ul></li><li>&nbsp;Character<ul><li><a href='../Ar/characterCreation.php5'>Creation</a></li><li><a href='../Ar/characterStats.php5'>Stats</a><ul><li><a class='Anchor' href='../Ar/characterStats.php5#Primary'>Primary</a></li><li><a class='Anchor' href='../Ar/characterStats.php5#Secondary'>Secondary</a></li></ul></li><li><a href='../Ar/characterMetabolism.php5'>Metabolism</a><ul><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Hunger'>Hunger</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Thirst'>Thirst</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Fatigue'>Fatigue</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Digestion'>Digestion</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Inebriation'>Inebriation</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Warmth'>Warmth</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Encumbrance'>Encumbrance</a></li></ul></li><li><a href='../Ar/characterItems.php5'>Items</a><ul><li><a class='Anchor' href='../Ar/characterItems.php5#Weapons'>Weapons</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Armor'>Armor</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Clothes'>Clothes</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Potions'>Potions</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Others'>Others</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Curses'>Curses</a></li></ul></li></ul></li><li>&nbsp;Encounters<ul><li><a href='../Ar/encountersDenizens.php5'>Denizens</a></li><li><a href='../Ar/encountersOpponent.php5'>Opponent</a><ul><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Frequency'>Frequency</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Creation'>Creation</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Melody'>Melody</a></li></ul></li><li><a href='../Ar/encountersCombat.php5'>Combat</a><ul><li><a class='Anchor' href='../Ar/encountersCombat.php5#Awareness'>Awareness</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Sequence'>Sequence</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Engagement'>Engagement</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AlignmentPenalty'>Alignment Penalty</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#CastSpell'>Cast a Spell</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AttackLunge'>Attack & Lunge</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#DamageResolution'>Damage Resolution</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Trick'>Trick</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Charm'>Charm</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Offer'>Offer</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Leave'>Leave</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#OpponentActions'>Opponent Actions</a></li></ul></li><li><a href='../Ar/encountersRewards.php5'>Rewards</a><ul><li><a class='Anchor' href='../Ar/encountersRewards.php5#Experience'>Experience</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#LevelUp'>Level Up</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Treasures'>Treasures</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Statistics'>Statistics</a></li></ul></li></ul></li><li>&nbsp;Establishments<ul><li><a href='../Ar/establishmentsInns.php5'>Inns</a><ul><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Sleeping'>Sleeping</a></li><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsTaverns.php5'>Taverns</a><ul><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#FoodsDrinks'>Foods & Drinks</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#BuyingRound'>Buying a Round</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsBanks.php5'>Banks</a><ul><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Accounts'>Accounts</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Appraisal'>Appraisal</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsShops.php5'>Shops</a><ul><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsSmithies.php5'>Smithies</a><ul><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsHealers.php5'>Healers</a><ul><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#Services'>Services</a></li></ul></li><li>&nbsp;<i>Guilds</i><ul><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Bonuses'>Bonuses</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Spells'>Spells</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#RemovingCurses'>Removing Curses</a></li></ul></li><li><a href='../Ar/establishmentsJobsSummary.php5'>Jobs Summary</a></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+    <td class="LayoutDouble LayoutDocument">
+<div class="BoxDocument">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Guilds</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<table class="NoBorder" style="width: 100%;">
+  <tr>
+    <th class="NoBorder">
+      <img width="640" height="144" src="Images/EstablishmentGuild.png" alt="Guild Establishment" />
+    </th>
+  </tr>
+</table>
+<ol>
+
+  <li><h3 id="Bonuses">Bonuses</h3>
+<p>Each guild gives a bonus at the first visit:</p>
+<table>
+  <tr><th><b>Guild</b></th><th><b>Bonus</b></th><th><b>Message</b></th></tr>
+  <tr><td><i>Thieves' Guild</i></td><td>+1 base skill</td><td class="Wrap">Master Thieves show you techniques that improve your skill.</td></tr>
+  <tr><td><i>Blue Wizards' Guild</i></td><td>+1 base speed</td><td class="Wrap">A Mage from The Guild of Blue Wizards uses special magic to increase your physical speed to X.</td></tr>
+  <tr><td><i>Light Wizards' Guild</i></td><td>+1 base wisdom</td><td class="Wrap">A Mage from The Guild of Light Wizards uses special magic to increase your wisdom to X.</td></tr>
+  <tr><td><i>Green Wizards' Academy</i></td><td>+1 base stamina</td><td class="Wrap">A Mage from The Academy of Green Wizards uses special magic to increase your Stamina to X.</td></tr>
+  <tr><td><i>Red Wizards' University</i></td><td>+1 base strength</td><td class="Wrap">A Mage from The University of Red Wizards uses special magic to increase your Strength to X.</td></tr>
+  <tr><td><i>Dark Wizards' Guild</i></td><td>+1 base charisma</td><td class="Wrap">A Mage from The Guild of Dark Wizards uses special magic to increase your Charm to X.</td></tr>
+  <tr><td><i>Star Wizards' Guild</i></td><td>+1 base strength<br />+5 max hit points<br />+5 current hit points</td><td class="Wrap">An Arch Mage from The Guild of Star Wizards uses special magic to increase your Hit Points and Strength.</td></tr>
+  <tr><td><i>Wizards' of Chaos</i></td><td>+1 base charisma</td><td class="Wrap">A Mage from The Guild of Chaos uses special magic to increase your Charm to X.</td></tr>
+  <tr><td><i>Wizards of Law</i></td><td>+1 base wisdom</td><td class="Wrap">A Mage from The Guild of Law uses special magic to increase your wisdom to X.</td></tr>
+  <tr><td><i>Guild of Order</i></td><td>+1 base intelligence</td><td class="Wrap">A Mage from The Guild of Order uses special magic to increase your Intelligence to X.</td></tr>
+  <tr><td><i>Physicians' Guild</i></td><td>+3 max hit points<br />+3 current hit points</td><td class="Wrap">A Doctor from The Guild of Physicians teaches you First Aid beyond what is commonly known. This increase your Hit Points.</td></tr>
+  <tr><td><i>Assassins' Guild</i></td><td>+30 stealth</td><td class="Wrap">Master Assassin shows you some basic forms of hiding and quiet approach which increase your ability to surprise attackers.</td></tr>
+</table>
+  </li>
+
+  <li><h3 id="Acceptance">Acceptance</h3>
+<p>The character can join any guild to learn spells if he fulfills the prerequisites. In addition, even they are met, guilds may not accept new memberships some days (acceptance probability). If so, try another day.</p>
+<table>
+  <tr><th rowspan="3"><b>Guild</b></th><th rowspan="3"><b>Acceptance<br />Probability</b></th><th rowspan="15">&nbsp;</th><th colspan="25"><b>Requirements (Displayed value)</b></th></tr>
+  <tr><th colspan="2"><b>STR</b></th><th rowspan="14">&nbsp;</th><th colspan="2"><b>INT</b></th><th rowspan="14">&nbsp;</th><th colspan="2"><b>WIS</b></th><th rowspan="14">&nbsp;</th><th colspan="2"><b>SKL</b></th><th rowspan="14">&nbsp;</th><th colspan="2"><b>STA</b></th><th rowspan="14">&nbsp;</th><th colspan="2"><b>CHA</b></th><th rowspan="14">&nbsp;</th><th colspan="2"><b>SPD</b></th><th rowspan="14">&nbsp;</th><th colspan="2"><b>Alignment</b></th><th rowspan="14">&nbsp;</th><th><b>Level</b></th></tr>
+  <tr><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>Min</b></th></tr>
+  <tr><td><i>Thieves' Guild</i></td><th>50 %</th><th>20</th><th>&nbsp;</th><th>20</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>64</th><th>128</th><th>3</th></tr>
+  <tr><td><i>Blue Wizards' Guild</i></td><th>25 %</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>&nbsp;</th><th>40</th><th>120</th><th>192</th><th>4</th></tr>
+  <tr><td><i>Light Wizards' Guild</i></td><th>90 %</th><th>10</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>22</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>10</th><th>&nbsp;</th><th>20</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>144</th><th>&nbsp;</th><th>5</th></tr>
+  <tr><td><i>Green Wizards' Academy</i></td><th>25 %</th><th>26</th><th>&nbsp;</th><th>15</th><th>30</th><th>15</th><th>30</th><th>22</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>18</th><th>40</th><th>17</th><th>&nbsp;</th><th>96</th><th>160</th><th>4</th></tr>
+  <tr><td><i>Red Wizards' University</i></td><th>20 %</th><th>15</th><th>&nbsp;</th><th>22</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>23</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>48</th><th>127</th><th>4</th></tr>
+  <tr><td><i>Dark Wizards' Guild</i></td><th>33 %</th><th>25</th><th>&nbsp;</th><th>25</th><th>&nbsp;</th><th>23</th><th>&nbsp;</th><th>21</th><th>&nbsp;</th><th>23</th><th>&nbsp;</th><th>19</th><th>&nbsp;</th><th>19</th><th>&nbsp;</th><th>&nbsp;</th><th>64</th><th>6</th></tr>
+  <tr><td><i>Star Wizards' Guild</i></td><th>98 %</th><th>18</th><th>&nbsp;</th><th>26</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>20</th><th>&nbsp;</th><th>22</th><th>&nbsp;</th><th>17</th><th>&nbsp;</th><th>120</th><th>176</th><th>5</th></tr>
+  <tr><td><i>Wizards' of Chaos</i></td><th>50 %</th><th>15</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>23</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>23</th><th>&nbsp;</th><th>25</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>64</th><th>128</th><th>3</th></tr>
+  <tr><td><i>Wizards of Law</i></td><th>15 %</th><th>18</th><th>&nbsp;</th><th>26</th><th>&nbsp;</th><th>26</th><th>&nbsp;</th><th>22</th><th>&nbsp;</th><th>20</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>152</th><th>208</th><th>6</th></tr>
+  <tr><td><i>Guild of Order</i></td><th>33 %</th><th>24</th><th>&nbsp;</th><th>28</th><th>&nbsp;</th><th>28</th><th>&nbsp;</th><th>25</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>26</th><th>&nbsp;</th><th>16</th><th>&nbsp;</th><th>176</th><th>&nbsp;</th><th>7</th></tr>
+  <tr><td><i>Physicians' Guild</i></td><th>10 %</th><th>10</th><th>&nbsp;</th><th>26</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>26</th><th>&nbsp;</th><th>23</th><th>&nbsp;</th><th>20</th><th>&nbsp;</th><th>15</th><th>&nbsp;</th><th>128</th><th>224</th><th>6</th></tr>
+  <tr><td><i>Assassins' Guild</i></td><th>80 %</th><th>25</th><th>&nbsp;</th><th>25</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>26</th><th>&nbsp;</th><th>24</th><th>&nbsp;</th><th>22</th><th>&nbsp;</th><th>18</th><th>&nbsp;</th><th>16</th><th>112</th><th>5</th></tr>
+</table>
+  </li>
+
+  <li><h3 id="Spells">Spells</h3>
+<ol>
+
+  <li><h3>Learning</h3>
+<p>Rules:</p>
+<ul>
+  <li>The character must join the guild to be able to learn spells from it.</li>
+  <li>A guild teaches only 1 spell at a time.</li>
+  <li>The character can learn more than 1 spell at a time by going to different guilds.</li>
+  <li>The character can't learn more than 8 spells. When learning a new one with the limit reached, he will be asked to choose a spell to forget.</li>
+  <li>To master a spell, the character must complete all the lessons by coming to the guild the required consecutive days (only one lesson per day).</li>
+  <li>The character can cast a spell even if it's not mastered (but the success probability of the spell will not be optimum).</li>
+  <li>If the character misses a lesson, it's defered to the following day (shifting the remaining ones).</li>
+  <li>When the character completes a lesson, the success probability of the spell is increased.</li>
+</ul>
+  </li>
+
+  <li><h3>Casting</h3>
+<p>The character can't cast spells at an inn.</p>
+<p>When the character casts a spell:</p>
+<p><img src="Images/Text - Casting.png" alt="Casting" /></p>
+<ul>
+  <li>Character's fatigue is increased by the spell fatigue drain.</li>
+  <li>If the spell succeeds (using the spell success probability):
+    <ul>
+      <li>Spell effects are applied.</li>
+      <li>Spell success probability is increased by 1/256 (0.39%).</li>
+      <li>Spell number of uses is decreased by 1.</li>
+      <li>If the number of uses is null, the spell is depleted (removed from the character spell list):
+        <p><img src="Images/Text - You have depleted the spell of.png" alt="You have depleted the spell of" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>If the spell fails:
+    <ul><li>Character hit points are decreased by the spell failure damage.
+    <p><img src="Images/Text - The spell failed!.png" alt="The spell failed" /></p>
+    </li></ul>
+  </li>
+</ul>
+  </li>
+
+  <li><h3>List</h3>
+<table>
+  <tr><th rowspan="2"><b>Spell</b></th><th rowspan="2"><b>Lessons<br />number</b></th><th colspan="3"><b>Success probability<br />to cast the spell</b></th><th rowspan="2"><b>Fatigue<br />per cast</b></th><th rowspan="2"><b>Failure<br />damage</b></th><th rowspan="2"><b>Uses<br />number</b></th><th rowspan="2"><b>Duration</b></th><th rowspan="2"><b>Description</b></th></tr>
+  <tr><th><b>Base</b></th><th><b>Increase<br />per lesson</b></th><th><b>Final</b></th></tr>
+  <tr><td><i>Dexterity</i></td><th>6</th><td class="Right">0 %</td><td class="Right">14.84 %</td><td class="Right">89 %</td><th>3</th><th>1</th><th>10</th><th>1h 30mn</th><td class="Wrap">Increases the skill bonus by 5.</td></tr>
+  <tr><td><i>Noticeability</i></td><th>8</th><td class="Right">0 %</td><td class="Right">11.33 %</td><td class="Right">91 %</td><th>1</th><th>5</th><th>30</th><th>8 hours</th><td class="Wrap">Decreases your unnoticeability by 5 (Increases your noticeability by 5).</td></tr>
+  <tr><td><i>Physical Speed</i></td><th>7</th><td class="Right">0 %</td><td class="Right">11.33 %</td><td class="Right">79 %</td><th>10</th><th>2</th><th>200</th><th>30 minutes</th><td class="Wrap">Increases the speed bonus by 5.</td></tr>
+  <tr><td><i>Continual Light</i></td><th>5</th><td class="Right">0 %</td><td class="Right">17.58 %</td><td class="Right">88 %</td><th>1</th><th>8</th><th>30</th><th>12 hours</th><td class="Wrap">No effect.</td></tr>
+  <tr><td><i>Healing Minor Wounds</i></td><th>7</th><td class="Right">0 %</td><td class="Right">12.11 %</td><td class="Right">85 %</td><th>3</th><th>2</th><th>10</th><th>&nbsp;</th><td class="Wrap">Restores 5 hit points.</td></tr>
+  <tr><td><i>Stormy Weather</i></td><th>8</th><td class="Right">0 %</td><td class="Right">11.33 %</td><td class="Right">91 %</td><th>12</th><th>7</th><th>15</th><th>&nbsp;</th><td class="Wrap">Changes the weather to type P (fully stormy) with a new duration (depending on the current month).</td></tr>
+  <tr><td><i>Slowness</i></td><th>10</th><td class="Right">0 %</td><td class="Right">7.42 %</td><td class="Right">74 %</td><th>4</th><th>3</th><th>40</th><th>&nbsp;</th><td class="Wrap">Decreases the encounter speed by 5.</td></tr>
+  <tr><td><i>The Water Hammer</i></td><th>11</th><td class="Right">0 %</td><td class="Right">7.42 %</td><td class="Right">82 %</td><th>11</th><th>7</th><th>20</th><th>&nbsp;</th><td class="Wrap">Inflicts 8 water damage to the encounter.</td></tr>
+  <tr><td><i>The Ice Shield</i></td><th>11</th><td class="Right">0 %</td><td class="Right">6.64 %</td><td class="Right">73 %</td><th>6</th><th>1</th><th>40</th><th>45 minutes</th><td class="Wrap">Immunizes to fire damage (bugged).</td></tr>
+  <tr><td><i>Numbness</i></td><th>8</th><td class="Right">0 %</td><td class="Right">10.55 %</td><td class="Right">84 %</td><th>5</th><th>5</th><th>37</th><th>&nbsp;</th><td class="Wrap">Decreases the encounter speed and skill by 5.</td></tr>
+  <tr><td><i>Blindness</i></td><th>7</th><td class="Right">0 %</td><td class="Right">10.16 %</td><td class="Right">71 %</td><th>8</th><th>8</th><th>33</th><th>&nbsp;</th><td class="Wrap">Sets encounter skill to 0.</td></tr>
+  <tr><td><i>Clear Vision</i></td><th>7</th><td class="Right">0 %</td><td class="Right">10.55 %</td><td class="Right">74 %</td><th>3</th><th>5</th><th>255</th><th>&nbsp;</th><td class="Wrap">Removes delusion.</td></tr>
+  <tr><td><i>The Energy Shield</i></td><th>10</th><td class="Right">0 %</td><td class="Right">7.81 %</td><td class="Right">78 %</td><th>10</th><th>9</th><th>38</th><th>45 minutes</th><td class="Wrap">Immunizes to power damage.<br />Increases resistance by 50% to sharp and blunt damage.</td></tr>
+  <tr><td><i>Curing Hunger</i></td><th>6</th><td class="Right">0 %</td><td class="Right">14.84 %</td><td class="Right">89 %</td><th>7</th><th>5</th><th>8</th><th>&nbsp;</th><td class="Wrap">Removes hunger.</td></tr>
+  <tr><td><i>Curing Thirst</i></td><th>6</th><td class="Right">0 %</td><td class="Right">14.84 %</td><td class="Right">89 %</td><th>7</th><th>5</th><th>11</th><th>&nbsp;</th><td class="Wrap">Removes thirst.</td></tr>
+  <tr><td><i>Strength</i></td><th>7</th><td class="Right">0 %</td><td class="Right">12.50 %</td><td class="Right">88 %</td><th>5</th><th>1</th><th>10</th><th>1h 30mn</th><td class="Wrap">Increases the strength bonus by 5.</td></tr>
+  <tr><td><i>Stone Flesh</i></td><th>11</th><td class="Right">0 %</td><td class="Right">7.42 %</td><td class="Right">82 %</td><th>9</th><th>1</th><th>43</th><th>45 minutes</th><td class="Wrap">Immunizes to sharp damage.</td></tr>
+  <tr><td><i>Healing Moderate Wounds</i></td><th>9</th><td class="Right">0 %</td><td class="Right">9.77 %</td><td class="Right">88 %</td><th>4</th><th>3</th><th>9</th><th>&nbsp;</th><td class="Wrap">Restores 8 hit points.</td></tr>
+  <tr><td><i>Endurance</i></td><th>10</th><td class="Right">0 %</td><td class="Right">9.77 %</td><td class="Right">98 %</td><th>3</th><th>1</th><th>16</th><th>2 days</th><td class="Wrap">Decreases fatigue rate by 0.25 (-50%).</td></tr>
+  <tr><td><i>The Hot Foot</i></td><th>11</th><td class="Right">0 %</td><td class="Right">6.25 %</td><td class="Right">69 %</td><th>7</th><th>4</th><th>55</th><th>&nbsp;</th><td class="Wrap">Inflicts 4 fire damage to the encounter.</td></tr>
+  <tr><td><i>Flame</i></td><th>10</th><td class="Right">0 %</td><td class="Right">7.81 %</td><td class="Right">78 %</td><th>7</th><th>6</th><th>60</th><th>&nbsp;</th><td class="Wrap">Inflicts 8 fire damage to the encounter.</td></tr>
+  <tr><td><i>The Fireball</i></td><th>12</th><td class="Right">0 %</td><td class="Right">7.03 %</td><td class="Right">84 %</td><th>11</th><th>8</th><th>20</th><th>&nbsp;</th><td class="Wrap">Inflicts 12 fire damage to the encounter.</td></tr>
+  <tr><td><i>Heat</i></td><th>9</th><td class="Right">0 %</td><td class="Right">8.59 %</td><td class="Right">77 %</td><th>7</th><th>7</th><th>77</th><th>&nbsp;</th><td class="Wrap">Sets weather temperature to 75&deg;F (23.9&deg;C).</td></tr>
+  <tr><td><i>The Flame Shield</i></td><th>10</th><td class="Right">0 %</td><td class="Right">7.42 %</td><td class="Right">74 %</td><th>9</th><th>7</th><th>109</th><th>45 minutes</th><td class="Wrap">Immunizes to water damage.</td></tr>
+  <tr><td><i>Paralysis</i></td><th>12</th><td class="Right">0 %</td><td class="Right">6.25 %</td><td class="Right">75 %</td><th>11</th><th>5</th><th>50</th><th>3 rounds</th><td class="Wrap">Paralyses the encounter.</td></tr>
+  <tr><td><i>Inflicting Serious Wounds</i></td><th>13</th><td class="Right">0 %</td><td class="Right">6.25 %</td><td class="Right">81 %</td><th>13</th><th>10</th><th>17</th><th>&nbsp;</th><td class="Wrap">Inflicts 12 'evil' damage to the encounter.</td></tr>
+  <tr><td><i>Fear</i></td><th>10</th><td class="Right">0 %</td><td class="Right">8.59 %</td><td class="Right">86 %</td><th>7</th><th>5</th><th>117</th><th>&nbsp;</th><td class="Wrap">Frightens the encounter.</td></tr>
+  <tr><td><i>Luck</i></td><th>8</th><td class="Right">0 %</td><td class="Right">12.11 %</td><td class="Right">97 %</td><th>5</th><th>3</th><th>13</th><th>12 hours</th><td class="Wrap">Increases treasure finding by 20 (removes 15 when ended! bug?).</td></tr>
+  <tr><td><i>Glamour</i></td><th>12</th><td class="Right">0 %</td><td class="Right">7.42 %</td><td class="Right">89 %</td><th>3</th><th>1</th><th>10</th><th>1h 30mn</th><td class="Wrap">Increases the charisma bonus by 10.</td></tr>
+  <tr><td><i>Deflecting Weapons</i></td><th>13</th><td class="Right">0 %</td><td class="Right">5.47 %</td><td class="Right">71 %</td><th>9</th><th>7</th><th>44</th><th>45 minutes</th><td class="Wrap">Immunizes to sharp and blunt damage.</td></tr>
+  <tr><td><i>Confusion</i></td><th>10</th><td class="Right">0 %</td><td class="Right">7.81 %</td><td class="Right">78 %</td><th>5</th><th>5</th><th>73</th><th>&nbsp;</th><td class="Wrap">Decreases encounter intelligence by 10.</td></tr>
+  <tr><td><i>Poisoning</i></td><th>11</th><td class="Right">0 %</td><td class="Right">6.25 %</td><td class="Right">69 %</td><th>7</th><th>10</th><th>45</th><th>20 minutes</th><td class="Wrap">Removes 2 hit points to the encounter every minutes (probability of 0.3% each minute to naturally cure).</td></tr>
+  <tr><td><i>Inflicting Moderate Wounds</i></td><th>13</th><td class="Right">0 %</td><td class="Right">5.86 %</td><td class="Right">76 %</td><th>9</th><th>6</th><th>22</th><th>&nbsp;</th><td class="Wrap">Inflicts 8 'evil' damage to the encounter.</td></tr>
+  <tr><td><i>Imprisonment</i></td><th>14</th><td class="Right">0 %</td><td class="Right">5.86 %</td><td class="Right">82 %</td><th>6</th><th>5</th><th>99</th><th>&nbsp;</th><td class="Wrap">Sets encounter speed to 0.</td></tr>
+  <tr><td><i>Healing Major Wounds</i></td><th>12</th><td class="Right">0 %</td><td class="Right">7.42 %</td><td class="Right">89 %</td><th>5</th><th>5</th><th>7</th><th>&nbsp;</th><td class="Wrap">Restores 16 hit points.</td></tr>
+  <tr><td><i>Iron Flesh</i></td><th>14</th><td class="Right">0 %</td><td class="Right">5.08 %</td><td class="Right">71 %</td><th>9</th><th>1</th><th>46</th><th>45 minutes</th><td class="Wrap">Immunizes to sharp and blunt damage.</td></tr>
+  <tr><td><i>Fair Weather</i></td><th>6</th><td class="Right">0 %</td><td class="Right">14.84 %</td><td class="Right">89 %</td><th>12</th><th>7</th><th>21</th><th>&nbsp;</th><td class="Wrap">Changes the weather to type A (fully sunny) with a new duration (depending on the current month).</td></tr>
+  <tr><td><i>Wisdom</i></td><th>15</th><td class="Right">0 %</td><td class="Right">5.86 %</td><td class="Right">88 %</td><th>5</th><th>1</th><th>10</th><th>1h 30mn</th><td class="Wrap">Increases the wisdom bonus by 5.</td></tr>
+  <tr><td><i>Intelligence</i></td><th>15</th><td class="Right">0 %</td><td class="Right">5.86 %</td><td class="Right">88 %</td><th>5</th><th>1</th><th>10</th><th>1h 30mn</th><td class="Wrap">Increases the intelligence bonus by 5.</td></tr>
+  <tr><td><i>Purification</i></td><th>9</th><td class="Right">0 %</td><td class="Right">9.77 %</td><td class="Right">88 %</td><th>3</th><th>2</th><th>5</th><th>&nbsp;</th><td class="Wrap">Cures diseases (in incubation or not).</td></tr>
+  <tr><td><i>Removing Poison</i></td><th>9</th><td class="Right">0 %</td><td class="Right">10.16 %</td><td class="Right">91 %</td><th>3</th><th>2</th><th>6</th><th>&nbsp;</th><td class="Wrap">Cures poisons (in incubation or not).</td></tr>
+  <tr><td><i>Removing Alcohol</i></td><th>9</th><td class="Right">0 %</td><td class="Right">10.16 %</td><td class="Right">91 %</td><th>7</th><th>5</th><th>12</th><th>&nbsp;</th><td class="Wrap">Cures inebriation. Clears alcohol blood and intestine concentration, digestion rate and blackouts.</td></tr>
+  <tr><td><i>Stamina</i></td><th>10</th><td class="Right">0 %</td><td class="Right">8.98 %</td><td class="Right">90 %</td><th>3</th><th>1</th><th>10</th><th>1h 30mn</th><td class="Wrap">Increases the stamina bonus by 5.</td></tr>
+  <tr><td><i>The Force Field</i></td><th>14</th><td class="Right">0 %</td><td class="Right">5.47 %</td><td class="Right">77 %</td><th>9</th><th>1</th><th>36</th><th>45 minutes</th><td class="Wrap">Immunizes to sharp and blunt damage.</td></tr>
+</table>
+<table class="NoBorder" style="width: 100%;">
+  <tr>
+    <th class="NoBorder">
+<p>Spells taught in each guild:</p>
+<table>
+  <tr><th><b>Guild</b></th><th><b>Spells</b></th></tr>
+  <tr><td><i>Thieves' Guild</i></td><td>Dexterity<br />Noticeability<br />Physical Speed<br />Continual Light<br />Healing Minor Wounds</td></tr>
+  <tr><td><i>Blue Wizards' Guild</i></td><td>Stormy Weather<br />Slowness<br />The Water Hammer<br />The Ice Shield<br />Numbness</td></tr>
+  <tr><td><i>Light Wizards' Guild</i></td><td>Continual Light<br />Blindness<br />Clear Vision<br />Noticeability<br />The Energy Shield<br />Physical Speed</td></tr>
+  <tr><td><i>Green Wizards' Academy</i></td><td>Curing Hunger<br />Curing Thirst<br />Strength<br />Stone Flesh<br />Healing Moderate Wounds<br />Endurance<br />Dexterity</td></tr>
+  <tr><td><i>Red Wizards' University</i></td><td>The Hot Foot<br />Flame<br />The Fireball<br />Heat<br />The Flame Shield<br />Continual Light<br />Intelligence</td></tr>
+  <tr><td><i>Dark Wizards' Guild</i></td><td>Blindness<br />Paralysis<br />Inflicting Serious Wounds<br />Fear</td></tr>
+  <tr><td><i>Star Wizards' Guild</i></td><td>Luck<br />Glamour<br />Physical Speed<br />The Fireball<br />Deflecting Weapons</td></tr>
+  <tr><td><i>Wizards' of Chaos</i></td><td>Confusion<br />Paralysis<br />Poisoning<br />Inflicting Moderate Wounds<br />Slowness<br />Stormy Weather</td></tr>
+  <tr><td><i>Wizards of Law</i></td><td>Imprisonment<br />Dexterity<br />Strength<br />Healing Major Wounds<br />Confusion</td></tr>
+  <tr><td><i>Guild of Order</i></td><td>Iron Flesh<br />Continual Light<br />Healing Major Wounds<br />Fair Weather<br />Wisdom<br />Intelligence</td></tr>
+  <tr><td><i>Physicians' Guild</i></td><td>Purification<br />Removing Poison<br />Removing Alcohol<br />Healing Major Wounds<br />Strength<br />Stamina<br />The Force Field</td></tr>
+  <tr><td><i>Assassins' Guild</i></td><td>Paralysis<br />Poisoning<br />Inflicting Serious Wounds<br />Blindness<br />Healing Major Wounds<br />Dexterity</td></tr>
+</table>
+    </th>
+    <th class="NoBorder">
+<p>Guilds where spells are taught:</p>
+<table>
+  <tr><th><b>Spell</b></th><th><b>Guilds</b></th></tr>
+  <tr><td><i>Dexterity</i></td><td>Thieves' Guild<br />Green Wizards' Academy<br />Wizards of Law<br />Assassins' Guild</td></tr>
+  <tr><td><i>Noticeability</i></td><td>Thieves' Guild<br />Light Wizards' Guild</td></tr>
+  <tr><td><i>Physical Speed</i></td><td>Thieves' Guild<br />Light Wizards' Guild<br />Star Wizards' Guild</td></tr>
+  <tr><td><i>Continual Light</i></td><td>Thieves' Guild<br />Light Wizards' Guild<br />Red Wizards' University<br />Guild of Order</td></tr>
+  <tr><td><i>Healing Minor Wounds</i></td><td>Thieves' Guild</td></tr>
+  <tr><td><i>Stormy Weather</i></td><td>Blue Wizards' Guild<br />Wizards' of Chaos</td></tr>
+  <tr><td><i>Slowness</i></td><td>Blue Wizards' Guild<br />Wizards' of Chaos</td></tr>
+  <tr><td><i>The Water Hammer</i></td><td>Blue Wizards' Guild</td></tr>
+  <tr><td><i>The Ice Shield</i></td><td>Blue Wizards' Guild</td></tr>
+  <tr><td><i>Numbness</i></td><td>Blue Wizards' Guild</td></tr>
+  <tr><td><i>Blindness</i></td><td>Light Wizards' Guild<br />Dark Wizards' Guild<br />Assassins' Guild</td></tr>
+  <tr><td><i>Clear Vision</i></td><td>Light Wizards' Guild</td></tr>
+  <tr><td><i>The Energy Shield</i></td><td>Light Wizards' Guild</td></tr>
+  <tr><td><i>Curing Hunger</i></td><td>Green Wizards' Academy</td></tr>
+  <tr><td><i>Curing Thirst</i></td><td>Green Wizards' Academy</td></tr>
+  <tr><td><i>Strength</i></td><td>Green Wizards' Academy<br />Wizards of Law<br />Physicians' Guild</td></tr>
+  <tr><td><i>Stone Flesh</i></td><td>Green Wizards' Academy</td></tr>
+  <tr><td><i>Healing Moderate Wounds</i></td><td>Green Wizards' Academy</td></tr>
+  <tr><td><i>Endurance</i></td><td>Green Wizards' Academy</td></tr>
+  <tr><td><i>The Hot Foot</i></td><td>Red Wizards' University</td></tr>
+  <tr><td><i>Flame</i></td><td>Red Wizards' University</td></tr>
+  <tr><td><i>The Fireball</i></td><td>Red Wizards' University<br />Star Wizards' Guild</td></tr>
+  <tr><td><i>Heat</i></td><td>Red Wizards' University</td></tr>
+  <tr><td><i>The Flame Shield</i></td><td>Red Wizards' University</td></tr>
+  <tr><td><i>Intelligence</i></td><td>Red Wizards' University<br />Guild of Order</td></tr>
+  <tr><td><i>Paralysis</i></td><td>Dark Wizards' Guild<br />Wizards' of Chaos<br />Assassins' Guild</td></tr>
+  <tr><td><i>Inflicting Serious Wounds</i></td><td>Dark Wizards' Guild<br />Assassins' Guild</td></tr>
+  <tr><td><i>Fear</i></td><td>Dark Wizards' Guild</td></tr>
+  <tr><td><i>Luck</i></td><td>Star Wizards' Guild</td></tr>
+  <tr><td><i>Glamour</i></td><td>Star Wizards' Guild</td></tr>
+  <tr><td><i>Deflecting Weapons</i></td><td>Star Wizards' Guild</td></tr>
+  <tr><td><i>Confusion</i></td><td>Wizards' of Chaos<br />Wizards of Law</td></tr>
+  <tr><td><i>Poisoning</i></td><td>Wizards' of Chaos<br />Assassins' Guild</td></tr>
+  <tr><td><i>Inflicting Moderate Wounds</i></td><td>Wizards' of Chaos</td></tr>
+  <tr><td><i>Imprisonment</i></td><td>Wizards of Law</td></tr>
+  <tr><td><i>Healing Major Wounds</i></td><td>Wizards of Law<br />Guild of Order<br />Physicians' Guild<br />Assassins' Guild</td></tr>
+  <tr><td><i>Iron Flesh</i></td><td>Guild of Order</td></tr>
+  <tr><td><i>Fair Weather</i></td><td>Guild of Order</td></tr>
+  <tr><td><i>Wisdom</i></td><td>Guild of Order</td></tr>
+  <tr><td><i>Purification</i></td><td>Physicians' Guild</td></tr>
+  <tr><td><i>Removing Poison</i></td><td>Physicians' Guild</td></tr>
+  <tr><td><i>Removing Alcohol</i></td><td>Physicians' Guild</td></tr>
+  <tr><td><i>Stamina</i></td><td>Physicians' Guild</td></tr>
+  <tr><td><i>The Force Field</i></td><td>Physicians' Guild</td></tr>
+</table>
+    </th>
+  </tr>
+</table>
+  </li>
+
+</ol>
+  </li>
+
+  <li><h3 id="RemovingCurses">Removing Curses</h3>
+<p>Guilds can remove:</p>
+<ul>
+  <li>All visible personal curses (even if personal curses aren't used in the City).</li>
+  <li>Curses on weapons and armor.</li>
+</ul>
+<table class="NoBorder" style="width: 100%;">
+  <tr>
+    <th class="NoBorder">
+<p>The price to remove all visible personal curses is:</p>
+<table>
+  <tr><th><b>Guild</b></th><th><b>Price<br />(in coppers)</b></th></tr>
+  <tr><td><i>Thieves' Guild</i></td><th>7000</th></tr>
+  <tr><td><i>Blue Wizards' Guild</i></td><th>2000</th></tr>
+  <tr><td><i>Light Wizards' Guild</i></td><th>1700</th></tr>
+  <tr><td><i>Green Wizards' Academy</i></td><th>1500</th></tr>
+  <tr><td><i>Red Wizards' University</i></td><th>1500</th></tr>
+  <tr><td><i>Dark Wizards' Guild</i></td><th>2100</th></tr>
+  <tr><td><i>Star Wizards' Guild</i></td><th>1300</th></tr>
+  <tr><td><i>Wizards' of Chaos</i></td><th>2000</th></tr>
+  <tr><td><i>Wizards of Law</i></td><th>1800</th></tr>
+  <tr><td><i>Guild of Order</i></td><th>2200</th></tr>
+  <tr><td><i>Physicians' Guild</i></td><th>4600</th></tr>
+  <tr><td><i>Assassins' Guild</i></td><th>8500</th></tr>
+</table>
+    </th>
+    <th class="NoBorder">
+<p>The price to remove all curses from weapons and armor is:</p>
+<table>
+  <tr><th><b>Guild</b></th><th><b>Price<br />(in coppers)</b></th></tr>
+  <tr><td><i>Thieves' Guild</i></td><th>9000</th></tr>
+  <tr><td><i>Blue Wizards' Guild</i></td><th>3000</th></tr>
+  <tr><td><i>Light Wizards' Guild</i></td><th>2700</th></tr>
+  <tr><td><i>Green Wizards' Academy</i></td><th>3000</th></tr>
+  <tr><td><i>Red Wizards' University</i></td><th>3000</th></tr>
+  <tr><td><i>Dark Wizards' Guild</i></td><th>3100</th></tr>
+  <tr><td><i>Star Wizards' Guild</i></td><th>2000</th></tr>
+  <tr><td><i>Wizards' of Chaos</i></td><th>4000</th></tr>
+  <tr><td><i>Wizards of Law</i></td><th>3800</th></tr>
+  <tr><td><i>Guild of Order</i></td><th>4000</th></tr>
+  <tr><td><i>Physicians' Guild</i></td><th>7000</th></tr>
+  <tr><td><i>Assassins' Guild</i></td><th>11000</th></tr>
+</table>
+    </th>
+  </tr>
+</table>
+  </li>
+
+</ol>
+      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+  </tr>
+  <tr><td class="LayoutDouble LayoutFooter" colspan="2">
+<div class="FooterVisitors">
+<img height="9.9px" src="http://perso0.free.fr/cgi-bin/wwwcount.cgi?df=bringerp.dat&amp;dd=atari8&amp;ft=0&amp;negate=F&amp;pad=F&amp;srgb=8CDEFF&amp;prgb=10D0D0&amp;tr=T&amp;trgb=1873C6" alt="Visitors" /> visitors since 05/01/2006. <a href="../sitemap.php5">Sitemap</a><br />
+</div>
+<div class="FooterCopyright">
+Copyright &copy; 2006-2020 by Kroah. Total or partial reproduction forbidden.<br />All trademarks and copyrights are the property of their respective owners. All rights reserved.<br />
+</div>
+<div class="FooterPartners">
+<a class="Picture" href="javascript: return (false);"><img width="80px" height="15px" src="../Images/Buttons/email.png" alt="Email Me" title="Email Me" onmouseover="javascript: this.src='../Images/Buttons/bringerp.png';" onmouseout="javascript: this.src='../Images/Buttons/email.png';" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://www.mozilla.org/products/firefox/"><img width="80px" height="15px" src="../Images/Buttons/Firefox.png" alt="Get Firefox" title="Get Firefox" /></a>
+<a class="Picture" href="http://www.waterproof.fr/products/PHPEdit/"><img width="80px" height="15px" src="../Images/Buttons/PHPEdit.png" alt="Powered by PHPEdit" title="Powered by PHPEdit" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://validator.w3.org/check?uri=referer&amp;verbose=1"><img width="80px" height="15px" src="../Images/Buttons/xhtml.png" alt="Valid XHTML 1.1" title="Valid XHTML 1.1" /></a>
+<a class="Picture" href="http://jigsaw.w3.org/css-validator/validator?uri=bringerp.free.fr/RE/Ar/establishmentsGuilds.php5&amp;warning=2&amp;profile=css3&amp;usermedium=all"><img width="80px" height="15px" src="../Images/Buttons/css.png" alt="Valid CSS" title="Valid CSS" /></a>
+</div>
+  </td></tr>
+</table>
+</div>
+</td></tr></table>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

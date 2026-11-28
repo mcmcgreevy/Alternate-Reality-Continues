@@ -1,5 +1,6 @@
 {
-  "name": "The Tavern",
+  "name": "Tail of the Dog Tavern",
+  "barkeep": {"name": "Grimthorn Redbeard", "ancestry": "dwarf", "appearance": "Bald, with a long red beard.", "roles": ["barkeep", "singer"], "song": "Hail and Welcome"},
   "sources": {
     "primary": "https://www.mocagh.org/datasoft/arcity-hintbook8bit-book.pdf",
     "prices_provisional": "https://gamefaqs.gamespot.com/atari8bit/575500-alternate-reality-the-city/faqs/1531",
@@ -14,6 +15,6 @@
     "soup": {"name": "Vegetable Soup", "copper": 4, "hunger": 8, "thirst": 0, "food": 0, "water": 0, "minutes": 15, "detail": "Eat here; eases hunger."},
     "sandwich": {"name": "Sandwich", "copper": 8, "hunger": 8, "thirst": 0, "food": 0, "water": 0, "minutes": 15, "detail": "Eat here; eases hunger."},
     "water_flask": {"name": "Water Flask", "copper": 4, "hunger": 0, "thirst": 0, "food": 0, "water": 1, "minutes": 1, "detail": "One flask for your provisions."},
-    "water": {"name": "Water", "copper": 0, "hunger": 0, "thirst": 8, "food": 0, "water": 0, "minutes": 1, "detail": "Drink here; free at The Tavern."}
+    "water": {"name": "Water", "copper": 0, "hunger": 0, "thirst": 8, "food": 0, "water": 0, "minutes": 1, "detail": "Drink here; free at Tail of the Dog Tavern."}
   }
 }

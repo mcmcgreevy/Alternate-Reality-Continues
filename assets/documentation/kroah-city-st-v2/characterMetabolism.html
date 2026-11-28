@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+  <head>
+    <title>Kroah's Game Reverse Engineering Page - Alternate Reality - Metabolism</title>
+    <meta http-equiv="Content-Type" content="text/HTML; charset=iso-8859-1" />
+    <meta name="Description" content="Reverse Engineering page of old computer games for Atari ST and Atari 8-bit System. Discover all the information, data and algorithms used by these games and some specifically developped utilities." />
+    <meta name="KeyWords" content="reverse engineering,decompilation,disassembling,atari,computer,game,assembler,asm,68000,6502,source code,mule,dragon riders of pern,gateway to apshai,return of heracles,seven cities of gold,archon,time bandit,alternate reality,colonial conquest,phantasie 3,nikademus,axel,magic hammer,pandora,ranarama,chaos engine,grand prix manager,gods,speed ball 2,bard's tale,legend of faerghail,gods,captain blood,first samurai" />
+    <link rel="stylesheet" href="../Globals.css" type="text/css" />
+    <link rel="stylesheet" href="Locals.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/Logo.ico" />
+    <link rel="icon" type="image/png" href="../Images/Logo.png" />
+    <script src="../Globals.js" type="text/javascript"></script>
+  </head>
+<body>
+<table class="LayoutPage"><tr><td class="LayoutPage"><div>
+<table class="LayoutDouble">
+  <tr><td class="LayoutDouble LayoutHeader" colspan="2">
+    <table class="LayoutIndex" style="width: 100%;">
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+<a class="Logo" href="../"><img src="../Images/Logo Big.png" alt="Home" /></a>
+        </td>
+        <td class="LayoutIndex LayoutHeader" style="width: 80%;">
+<h1 class="HeaderTitle1">Kroah's Game Reverse Engineering Page</h1>
+        </td>
+          <td class="LayoutIndex LayoutHeader" style="width: 10%;">
+&nbsp;
+        </td>
+    </tr>
+      <tr>
+        <td class="LayoutIndex LayoutHeader" style="width: 100%;" colspan="3">
+<h1 class="HeaderTitle2">~&nbsp;Alternate Reality&nbsp;~</h1>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+  <tr><td class="LayoutDouble LayoutLocation" colspan="2">
+<div class="BoxLocation">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+You are here:&nbsp;&nbsp;<ul><li><a href="../index.php5">Home</a><ul><li>&#187;&nbsp;&nbsp;Alternate Reality<ul><li>&#187;&nbsp;&nbsp;Reverse Engineering<ul><li>&#187;&nbsp;&nbsp;Character<ul><li>&#187;&nbsp;&nbsp;<i>Metabolism</i></li></ul></li></ul></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+  </td></tr>
+  <tr>
+    <td class="LayoutDouble LayoutMenu">
+<div class="BoxMenu">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Menu</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<ul><li><a href='../Ar/news.php5'>News</a></li><li><a href='../Ar/links.php5'>Links</a></li><li><a href='../../forum/'>Forum</a></li><li>&nbsp;</li><li>&nbsp;Reverse Engineering<ul><li><a href='../Ar/technicalNotes.php5'>Technical Notes</a></li><li><a href='../Ar/world.php5'>Xebec's Demise</a><ul><li><a class='Anchor' href='../Ar/world.php5#Calendar'>Calendar</a></li><li><a class='Anchor' href='../Ar/world.php5#TimeSpan'>Time Span</a></li><li><a class='Anchor' href='../Ar/world.php5#Weather'>Weather</a></li><li><a class='Anchor' href='../Ar/world.php5#Temperature'>Temperature</a></li><li><a class='Anchor' href='../Ar/world.php5#Map'>Map</a></li></ul></li><li>&nbsp;Character<ul><li><a href='../Ar/characterCreation.php5'>Creation</a></li><li><a href='../Ar/characterStats.php5'>Stats</a><ul><li><a class='Anchor' href='../Ar/characterStats.php5#Primary'>Primary</a></li><li><a class='Anchor' href='../Ar/characterStats.php5#Secondary'>Secondary</a></li></ul></li><li>&nbsp;<i>Metabolism</i><ul><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Hunger'>Hunger</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Thirst'>Thirst</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Fatigue'>Fatigue</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Digestion'>Digestion</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Inebriation'>Inebriation</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Warmth'>Warmth</a></li><li><a class='Anchor' href='../Ar/characterMetabolism.php5#Encumbrance'>Encumbrance</a></li></ul></li><li><a href='../Ar/characterItems.php5'>Items</a><ul><li><a class='Anchor' href='../Ar/characterItems.php5#Weapons'>Weapons</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Armor'>Armor</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Clothes'>Clothes</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Potions'>Potions</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Others'>Others</a></li><li><a class='Anchor' href='../Ar/characterItems.php5#Curses'>Curses</a></li></ul></li></ul></li><li>&nbsp;Encounters<ul><li><a href='../Ar/encountersDenizens.php5'>Denizens</a></li><li><a href='../Ar/encountersOpponent.php5'>Opponent</a><ul><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Frequency'>Frequency</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Creation'>Creation</a></li><li><a class='Anchor' href='../Ar/encountersOpponent.php5#Melody'>Melody</a></li></ul></li><li><a href='../Ar/encountersCombat.php5'>Combat</a><ul><li><a class='Anchor' href='../Ar/encountersCombat.php5#Awareness'>Awareness</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Sequence'>Sequence</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Engagement'>Engagement</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AlignmentPenalty'>Alignment Penalty</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#CastSpell'>Cast a Spell</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#AttackLunge'>Attack & Lunge</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#DamageResolution'>Damage Resolution</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Trick'>Trick</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Charm'>Charm</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Offer'>Offer</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#Leave'>Leave</a></li><li><a class='Anchor' href='../Ar/encountersCombat.php5#OpponentActions'>Opponent Actions</a></li></ul></li><li><a href='../Ar/encountersRewards.php5'>Rewards</a><ul><li><a class='Anchor' href='../Ar/encountersRewards.php5#Experience'>Experience</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#LevelUp'>Level Up</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Treasures'>Treasures</a></li><li><a class='Anchor' href='../Ar/encountersRewards.php5#Statistics'>Statistics</a></li></ul></li></ul></li><li>&nbsp;Establishments<ul><li><a href='../Ar/establishmentsInns.php5'>Inns</a><ul><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Sleeping'>Sleeping</a></li><li><a class='Anchor' href='../Ar/establishmentsInns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsTaverns.php5'>Taverns</a><ul><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#FoodsDrinks'>Foods & Drinks</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#BuyingRound'>Buying a Round</a></li><li><a class='Anchor' href='../Ar/establishmentsTaverns.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsBanks.php5'>Banks</a><ul><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Accounts'>Accounts</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Appraisal'>Appraisal</a></li><li><a class='Anchor' href='../Ar/establishmentsBanks.php5#Jobs'>Jobs</a></li></ul></li><li><a href='../Ar/establishmentsShops.php5'>Shops</a><ul><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsShops.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsSmithies.php5'>Smithies</a><ul><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Friendship'>Friendship</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WelcomeMessage'>Welcome Message</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#WaresList'>Wares List</a></li><li><a class='Anchor' href='../Ar/establishmentsSmithies.php5#Bargaining'>Bargaining</a></li></ul></li><li><a href='../Ar/establishmentsHealers.php5'>Healers</a><ul><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#OpeningHours'>Opening Hours</a></li><li><a class='Anchor' href='../Ar/establishmentsHealers.php5#Services'>Services</a></li></ul></li><li><a href='../Ar/establishmentsGuilds.php5'>Guilds</a><ul><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Bonuses'>Bonuses</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Acceptance'>Acceptance</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#Spells'>Spells</a></li><li><a class='Anchor' href='../Ar/establishmentsGuilds.php5#RemovingCurses'>Removing Curses</a></li></ul></li><li><a href='../Ar/establishmentsJobsSummary.php5'>Jobs Summary</a></li></ul></li></ul></li></ul>      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+    <td class="LayoutDouble LayoutDocument">
+<div class="BoxDocument">
+<div class="BoxFrame">
+  <table>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 1%;">
+      <h2 class="BoxTitle">Metabolism</h2>
+    </td></tr>
+    <tr><td style="border: none; padding: 0px; margin: 0px; height: 100%;">
+      <div class="BoxContent">
+<p>The player metabolism is made of 7 elements: Hunger, Thirst, Fatigue, Digestion, Alcohol, Warmth and Encumbrance.</p>
+<p>Depending on their state, they affect more or less in a negative way the player stats.</p>
+<ol>
+
+  <li><h3 id="Hunger">Hunger</h3>
+<p>Character naturally becomes hungry at a rate of 0.5 every 15 minutes (1 real minute).</p>
+<p>While sleeping, the rate is decreased by 0.25 (50%).</p>
+<p>To reduce hunger, the character must use a food packet, eat at a tavern or cast the spell Curing Hunger.</p>
+<p>The different stages of hunger, the time to reach them naturaly, and their effects are:</p>
+<table>
+  <tr><th><b>Hunger</b></th><th><b>Stage</b></th><th><b>Time</b></th><th><b>Effects</b></th></tr>
+  <tr><th><i>0 to 16</i></th><td>&nbsp;</td><td class="Right">&nbsp;</td><td>Removes all hunger penalties.</td></tr>
+  <tr><th><i>16 to 48</i></th><td>Famished</td><td class="Right">8 hours</td><td>&nbsp;</td></tr>
+  <tr><th><i>48 to 96</i></th><td>Hungry</td><td class="Right">24 hours</td><td>&nbsp;</td></tr>
+  <tr><th><i>96 to 255</i></th><td>Starving</td><td class="Right">48 hours</td><td>Probability of 50% to increase by 1 a random primary stat penalty every 15 minutes.</td></tr>
+</table>
+  </li>
+
+  <li><h3 id="Thirst">Thirst</h3>
+<p>Character naturally becomes thirsty at a rate of 0.5 every 15 minutes (1 real minute).</p>
+<p>The rate is increased by 1/12.8 ~= 0.08 (+15.6%) when the character warmth is at stage Hot.</p>
+<p>While sleeping, the rate is decreased by 0.25 (50%).</p>
+<p>To reduce thirst, the character must use a water flask, have a drink at a tavern or cast the spell Curing Thirst.</p>
+<p>The different stages of thirst, the time to reach them naturaly, and their effects are:</p>
+<table>
+  <tr><th><b>Thirst</b></th><th><b>Stage</b></th><th><b>Time</b></th><th><b>Effects</b></th></tr>
+  <tr><th><i>0 to 16</i></th><td>&nbsp;</td><td class="Right">&nbsp;</td><td>Removes all thirst penalties.</td></tr>
+  <tr><th><i>16 to 32</i></th><td>Thirsty</td><td class="Right">8 hours</td><td>&nbsp;</td></tr>
+  <tr><th><i>32 to 56</i></th><td>Very Thirsty</td><td class="Right">16 hours</td><td>&nbsp;</td></tr>
+  <tr><th><i>56 to 255</i></th><td>Parched</td><td class="Right">28 hours</td><td>Probability of 50% to increase by 1 a random primary stat penalty every 15 minutes.</td></tr>
+</table>
+  </li>
+
+  <li><h3 id="Fatigue">Fatigue</h3>
+<p>Character naturally becomes tired at a rate of 0.5 every 15 minutes (1 real minute).</p>
+<p>The rate is increased by:</p>
+<ul>
+  <li>1/12.8 ~= 0.08 (+15.6%) when the character warmth is at stage Hot.</li>
+  <li>0.125 (+25%) when the encumbrance is at stage Burdened.</li>
+</ul>
+<p>While sleeping, the rate is null. To reduce fatigue, the character must sleep at an inn.</p>
+<p>The different stages of fatigue, the time to reach them naturaly, and their effects are:</p>
+<table>
+  <tr><th><b>Fatigue</b></th><th><b>Stage</b></th><th><b>Time</b></th><th><b>Effects</b></th></tr>
+  <tr><th><i>0 to 40</i></th><td>&nbsp;</td><td class="Right">&nbsp;</td><td>Removes all fatigue penalties.</td></tr>
+  <tr><th><i>40 to 72</i></th><td>Weary</td><td class="Right">20 hours</td><td>&nbsp;</td></tr>
+  <tr><th><i>72 to 96</i></th><td>Tired</td><td class="Right">36 hours</td><td>&nbsp;</td></tr>
+  <tr><th><i>96 to 255</i></th><td>Very Tired</td><td class="Right">48 hours</td><td>Probability of 50% to increase by 1 a random primary stat penalty every 15 minutes.</td></tr>
+</table>
+  </li>
+
+  <li><h3 id="Digestion">Digestion</h3>
+<p>Character naturally digests at a rate of -3 every 15 minutes (1 real minute).</p>
+<p>Stomach bloats when the character uses food packets, water flasks or eats at a tavern.</p>
+<p>If too much is absorbed, the character becomes Bloated:</p>
+<table>
+  <tr><th><b>Digestion</b></th><th><b>Stage</b></th><th><b>Effects</b></th></tr>
+  <tr><th><i>0 to 127</i></th><td>&nbsp;</td><td>Removes the bloated penalty.</td></tr>
+  <tr><th><i>128 to 255</i></th><td>Bloated</td><td>Increases the speed penalty by 4.</td></tr>
+</table>
+  </li>
+
+  <li><h3 id="Inebriation">Inebriation</h3>
+<p>Note: I didn't succeed to exactly map the algorithm with the human metabolism. I've tried to give a meaning to the variables, but it's still inconsistent.</p>
+<p>What seems correct:</p>
+<ul>
+  <li>Human body eliminates alcohol in blood at a rate of 10 to 15 mg/mL every hour. In the algorithm, the rate is 12 mg/mL (4*3).</li>
+  <li>Alcohol concentration in blood affects the character (see below).</li>
+</ul>
+<p>What seems inconsistent:</p>
+<ul>
+  <li>The alcohol concentration in intestine is reduced by the "digestion rate" and not by the amount of alcohol absorbed in blood.</li>
+  <li>The character becomes drunk when the alcohol concentration in blood reaches the stamina value, which could be 20 mg/mL. Legal limit for driving in France is around 80 mg/mL...</li>
+</ul>
+<pre>
+// this algorithm is called every 15 minutes (1 real minute)
+if ((alcoholBloodConcentration != 0) || (alcoholIntestineConcentration != 0) {
+  // intestine -> blood
+  alcoholBloodConcentration += alcoholIntestineConcentration; (?)
+  // blood -> out
+  alcoholBloodConcentration -= 3;
+  // if there's something to absorb
+  if (alcoholIntestineConcentration != 0) {
+    // alcohol digestion rate in intestine increases with time (?)
+    alcoholDigestionRate ++;
+    // digest partially alcohol in intestine
+    alcoholIntestineConcentration -= digestionRate; (?)
+    // if no more alcohol in intestine, stop absorption and digestion
+    if (alcoholIntestineConcentration &lt; 0) {
+      alcoholIntestineConcentration = 0;
+      alcoholDigestionRate = 0;
+    }
+  }
+}
+</pre>
+<p>The different stages of inebriation and their effects are:</p>
+<table>
+  <tr><th><b>Alcohol blood<br />concentration</b></th><th><b>Stage</b></th><th><b>Effects</b></th></tr>
+  <tr><th><i>0</i></th><td><i>&nbsp;</i></td><td>&nbsp;</td></tr>
+  <tr><th><i>]0; Sta]</i></th><td><i>Tipsy</i></td><td>Loss of coordination: bottom status screen randomly changes.</td></tr>
+  <tr><th><i>]Sta; 2*Sta]</i></th><td><i>Drunk</i></td><td>Loss of balance: movement is hampered (random moves).<br />Banks and inns jobs are forbidden.</td></tr>
+  <tr><th><i>[2*Sta; +&#8734;[</i></th><td><i>Very Drunk</i></td><td>Loss of sight: random blackouts.<br />Entering smithies, shops and taverns are forbidden.</td></tr>
+</table>
+<p>The character resistance to inebriation depends on its effective stamina.</p>
+<p>The inebriation effects stack.</p>
+<p>The character stealth is temporary reduced by its alcohol blood concentration.</p>
+<p>When the character drinks alcohol in tavern, half of it goes directly in blood too.</p>
+<p>Here are examples of alcohol concentration in blood after some drinks (with a stamina of 20):</p>
+<ul>
+  <li>1:00 2 grogs (amount of 6)</li>
+  <li>2:30 All alcohol eliminated</li>
+  <li>3:00 2 grogs and 2 wine (amount of 10)</li>
+  <li>3:45 Character drunk</li>
+  <li>6:00 All alcohol eliminated</li>
+  <li>7:00 3 grogs (amount of 9)</li>
+  <li>8:45 4 grogs (amount of 12)</li>
+  <li>9:00 Character drunk</li>
+  <li>9:45 Character very drunk</li>
+  <li>13:30 All alcohol eliminated</li>
+</ul>
+<p><img src="Images/Alcohol.png" alt="Alcohol Metabolism" /></p>
+  </li>
+
+  <li><h3 id="Warmth">Warmth</h3>
+<p>The warmth perceived by the character depends on two factors: the weather temperature, the clothes worn and the character location. It's computed like this:</p>
+<ul>
+  <li>Each article of clothing worn adds to the character's protection.</li>
+  <li>If the protection isn't null, an additional protection of 10&deg;F (5.6&deg;C) is given.</li>
+  <li>The resulting value is bounded by 80&deg;F (44.4&deg;C), then increased by the weather temperature.</li>
+  <li>Warmth in buildings is always 72&deg;F (22.2&deg;C) regardless of the weather and the clothes the character is wearing.</li>
+</ul>
+<p>The different stages of warmth and their effects are:</p>
+<table>
+  <tr><th colspan="2"><b>Warmth</b></th><th><b>Stage</b></th><th><b>Effects</b></th></tr>
+  <tr><th><i>&lt; 48&deg;F</i></th><th><i>&lt; 8.9&deg;C</i></th><td>Cold!</td><td>Increases the speed penalty by 5.<br />Increases the skill penalty by 5.<br />Character loses clarity.<br />Removes all Hot penalties.</td></tr>
+  <tr><th><i>48&deg;F to 64&deg;F</i></th><th><i>8.9&deg;C to 17.8&deg;C</i></th><td>Cool</td><td rowspan="3">Removes all Hot and Cold penalties.</td></tr>
+  <tr><th><i>64&deg;F to 79&deg;F</i></th><th><i>17.8&deg;C to 26.1&deg;C</i></th><td>&nbsp;</td></tr>
+  <tr><th><i>79&deg;F to 99&deg;F</i></th><th><i>26.1&deg;C to 37.2&deg;C</i></th><td>Warm</td></tr>
+  <tr><th><i>&gt; 99&deg;F</i></th><th><i>&gt; 37.2&deg;C</i></th><td>Hot!</td><td>Increases the thirst rate by 1/12.8 ~= 0.08 (+15.6%).<br />Increases the fatigue rate by 1/12.8 ~= 0.08 (+15.6%).<br />Character loses clarity.<br />Removes all Cold penalties.</td></tr>
+</table>
+  </li>
+
+  <li><h3 id="Encumbrance">Encumbrance</h3>
+<p>The total weight is calculated by adding the weight of all carried items. This includes:</p>
+<ul>
+  <li>Water Flasks and Food Packets (1 unit for each pack of 16)</li>
+  <li>Gold, Silver and Copper coins (1 unit for each pack of 16)</li>
+  <li>Gems and Jewelry (1 unit for each pack of 16)</li>
+  <li>Items in inventory, equiped or worn (variable weight)</li>
+</ul>
+<p>The character can carry a base weight of 224 units. The encumbrance is defined by the following formula:</p>
+<ul><li>encumbrance = carried weight - (effective strength + 224)</li></ul>
+<p>The different stages of encumbrance and their effects are:</p>
+<table>
+  <tr><th><b>Encumbrance</b></th><th><b>Stage</b></th><th><b>Effects</b></th></tr>
+  <tr><th><i>&lt; 0</i></th><td>&nbsp;</td><td>Removes all encumbrance penalties.</td></tr>
+  <tr><th><i>[0; 16[</i></th><td>Burdened</td><td>Increases the fatigue rate by 0.125 (+25%).<br />Removes the Encumbered and Immobilized speed penalty penalties.</td></tr>
+  <tr><th><i>[16; 33[</i></th><td>Encumbered</td><td>Increases the speed penalty by 8.<br />Removes the Immobilized speed penalty penalty.</td></tr>
+  <tr><th><i>[33; +oo[</i></th><td>Immobilized!</td><td>Increases the speed penalty by 50.</td></tr>
+</table>
+  </li>
+
+</ol>
+      </div>
+    </td></tr>
+  </table>
+</div>
+</div>
+    </td>
+  </tr>
+  <tr><td class="LayoutDouble LayoutFooter" colspan="2">
+<div class="FooterVisitors">
+<img height="9.9px" src="http://perso0.free.fr/cgi-bin/wwwcount.cgi?df=bringerp.dat&amp;dd=atari8&amp;ft=0&amp;negate=F&amp;pad=F&amp;srgb=8CDEFF&amp;prgb=10D0D0&amp;tr=T&amp;trgb=1873C6" alt="Visitors" /> visitors since 05/01/2006. <a href="../sitemap.php5">Sitemap</a><br />
+</div>
+<div class="FooterCopyright">
+Copyright &copy; 2006-2020 by Kroah. Total or partial reproduction forbidden.<br />All trademarks and copyrights are the property of their respective owners. All rights reserved.<br />
+</div>
+<div class="FooterPartners">
+<a class="Picture" href="javascript: return (false);"><img width="80px" height="15px" src="../Images/Buttons/email.png" alt="Email Me" title="Email Me" onmouseover="javascript: this.src='../Images/Buttons/bringerp.png';" onmouseout="javascript: this.src='../Images/Buttons/email.png';" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://www.mozilla.org/products/firefox/"><img width="80px" height="15px" src="../Images/Buttons/Firefox.png" alt="Get Firefox" title="Get Firefox" /></a>
+<a class="Picture" href="http://www.waterproof.fr/products/PHPEdit/"><img width="80px" height="15px" src="../Images/Buttons/PHPEdit.png" alt="Powered by PHPEdit" title="Powered by PHPEdit" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="Picture" href="http://validator.w3.org/check?uri=referer&amp;verbose=1"><img width="80px" height="15px" src="../Images/Buttons/xhtml.png" alt="Valid XHTML 1.1" title="Valid XHTML 1.1" /></a>
+<a class="Picture" href="http://jigsaw.w3.org/css-validator/validator?uri=bringerp.free.fr/RE/Ar/characterMetabolism.php5&amp;warning=2&amp;profile=css3&amp;usermedium=all"><img width="80px" height="15px" src="../Images/Buttons/css.png" alt="Valid CSS" title="Valid CSS" /></a>
+</div>
+  </td></tr>
+</table>
+</div>
+</td></tr></table>
+<script src="http://bringerp.free.fr/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1737684-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
