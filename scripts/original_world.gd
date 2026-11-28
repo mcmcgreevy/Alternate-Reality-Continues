@@ -15,6 +15,7 @@ var doors: Dictionary = {}
 var revision := 0
 const JourneyRandom = preload("res://scripts/journey_random.gd")
 const SaveStore = preload("res://scripts/journey_save_store.gd")
+const CityGeometry = preload("res://scripts/city_geometry.gd")
 var gameplay_random = JourneyRandom.new(randi())
 var save_store = SaveStore.new()
 var weather_seed: int = randi_range(1, 2147483646)
@@ -534,9 +535,9 @@ func save_game(path: String = SAVE_PATH) -> Error:
 	return save_store.write(path, serialized)
 
 func save_snapshot() -> Dictionary:
-	return {"version": 8, "map_set": "original-route-1", "chapter": chapter,
+	return {"version": 9, "map_set": "original-route-1", "city_geometry_revision": CityGeometry.REVISION, "chapter": chapter,
 		"position": [position.x, position.y], "facing": facing, "character": character.duplicate(true),
-		"inventory": inventory.duplicate(true), "minutes": minutes, "flags": flags.duplicate(true), "doors": doors.duplicate(true),
+		"inventory": inventory.duplicate(true), "minutes": minutes, "flags": flags.duplicate(true), "doors": CityGeometry.normalized_doors(doors, false),
 		"needs": needs.duplicate(true), "provisions": provisions.duplicate(true), "weather_seed": weather_seed,
 		"minute_fraction": minute_fraction, "clock": game_clock.snapshot(),
 		"effects": journey_effects.save_payload(), "gameplay_random": gameplay_random.snapshot()}
@@ -585,8 +586,13 @@ func _validated_save(input: Variant) -> Dictionary:
 
 	if not save_data is Dictionary or save_data.get("map_set") != "original-route-1":
 		return {}
-	if not CharacterStats.integer_value(save_data.get("version"), 8) or save_data.version < 3:
+	if not CharacterStats.integer_value(save_data.get("version"), 9) or save_data.version < 3:
 		return {}
+	if save_data.version == 9:
+		if not CharacterStats.integer_value(save_data.get("city_geometry_revision"), CityGeometry.REVISION) or save_data.city_geometry_revision != CityGeometry.REVISION:
+			return {}
+	elif save_data.has("city_geometry_revision"):
+		return {} # Do not reinterpret a downgraded revision-aware save as legacy.
 	if not save_data.get("chapter") is String or not maps.has(save_data.chapter):
 		return {}
 	if not save_data.get("position") is Array or save_data.position.size() != 2:
@@ -633,6 +639,8 @@ func _validated_save(input: Variant) -> Dictionary:
 	for key in save_data.doors:
 		if not save_data.doors[key] is bool:
 			return {}
+	# Work only on the detached candidate: later rejection cannot change live doors.
+	save_data.doors = CityGeometry.normalized_doors(save_data.doors, save_data.version < 9)
 	if not save_data.get("inventory") is Array:
 		return {}
 	for item in save_data.inventory:
@@ -665,7 +673,7 @@ func _validated_save(input: Variant) -> Dictionary:
 		# A downgraded version must not silently discard an effect payload.
 		return {}
 	var saved_random = JourneyRandom.new(1701)
-	if save_data.version == 8:
+	if save_data.version >= 8:
 		if not saved_random.restore(save_data.get("gameplay_random")):
 			return {}
 	elif save_data.has("gameplay_random"):

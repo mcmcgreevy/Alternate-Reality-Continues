@@ -22,6 +22,6 @@ Uses accepted F02/F03 and existing movement. Does not depend on completing all f
 
 Evidence: docs/S05_REVIEW_HANDOFF.md, docs/s05/review-dispositions.csv, docs/s05/proposed-eight-face-route-review.json, docs/S05_PRIORITY_PASSAGES.md.
 
-Parent: F05 (#12). Split from S05 #38, November 28, 2026. Backlog; no sprint commitment.
+Parent: F05 (#12). Committed to the November 30 sprint. Implemented November 28; automated checks pass, manual acceptance pending. See [implementation and migration policy](../S108_ACCEPTANCE_REVIEW.md) and [playtest](../S108_PLAYTEST.md).
 GitHub: https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/144
 

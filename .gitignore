@@ -14,3 +14,5 @@ export_credentials.cfg
 builds/
 
 tools/appdata-sprint-playtest/
+
+tools/appdata-s108*/

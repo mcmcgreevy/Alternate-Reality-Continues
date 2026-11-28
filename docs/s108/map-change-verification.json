@@ -1,0 +1,58 @@
+{
+  "changes": [
+    {
+      "cell": "10,30",
+      "direction": 2,
+      "before": 13,
+      "after": 3
+    },
+    {
+      "cell": "10,31",
+      "direction": 0,
+      "before": 13,
+      "after": 3
+    },
+    {
+      "cell": "11,31",
+      "direction": 1,
+      "before": 13,
+      "after": 3
+    },
+    {
+      "cell": "12,31",
+      "direction": 3,
+      "before": 13,
+      "after": 3
+    },
+    {
+      "cell": "10,32",
+      "direction": 1,
+      "before": 13,
+      "after": 3
+    },
+    {
+      "cell": "11,32",
+      "direction": 3,
+      "before": 13,
+      "after": 3
+    },
+    {
+      "cell": "26,34",
+      "direction": 2,
+      "before": 5,
+      "after": 13
+    },
+    {
+      "cell": "26,35",
+      "direction": 0,
+      "before": 5,
+      "after": 13
+    }
+  ],
+  "unchanged_cells_and_other_fields": true,
+  "source_hashes": {
+    "assets/documentation/kroah-city-st-v2/Map.png": "6f90a1f6ad1da0dabb53b5242f3e112c52dc66f9d273fb684208ae732c8af835",
+    "docs/s05/candidate-st-cells.csv": "7be352ee51f1d8d64769c48f40f7b9b4b70fbeb37fd07579001fbbc6ebaaa659"
+  },
+  "map_sha256_after": "98c81dc007f5dbc4c0790afad1ab9d73ecb676cf63ee234e7ad1cb92ac10e932"
+}
