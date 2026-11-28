@@ -35,7 +35,7 @@ The manual establishes these dependencies:
 - Indoor shelter prevents further outdoor exposure. Recovery rates remain unverified.
 - Clothing needs distinct insulation and rain protection: fur-lined cloaks are strongest against cold, Dragonskin Raincoats against precipitation (not flame-resistant), and fur-lined raincoats are described as ideal all-weather clothing.
 
-Do not label invented damage, temperature, fatigue, protection or speed formulas as original. Verify source behavior or document provisional balancing. Future speed penalties must cooperate with held movement while retaining per-step simulation costs.
+Do not label invented damage, temperature, fatigue, protection or speed formulas as original. Verify source behavior or document provisional balancing. Future speed penalties should populate the effective-Speed modifiers used by incremental travel; elapsed simulation time already runs continuously. See [movement mechanics](MOVEMENT.md).
 
 ## Verification
 

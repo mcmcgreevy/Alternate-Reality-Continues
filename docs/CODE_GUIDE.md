@@ -51,14 +51,22 @@ Door state keys include chapter, cell coordinates **and facing**. Opening one fa
 ## Three clocks
 
 - **Simulation time:** `game_clock.gd` owns integer game microseconds; `minutes` and `minute_fraction` are compatibility views. Ordinary frames, accelerated services and explicit costs share one advancement path. Overview/focus loss pause; map/tavern menus stay live. See S03 below.
-- **Frame seconds:** `_process(delta)` advances the shared clock, animates rain/torches and schedules held keys. A delayed frame can produce at most one repeated action, never a burst of catch-up steps.
-- **Audio seconds:** the synchronized audio playhead drives lyric cues and song progress. Moving the simulation clock does not seek the song.
+- **Frame seconds:** `_process(delta)` advances simulation and travel, then updates camera, weather and HUD. Travel stops processing at one arrival per frame, discarding excess movement delta after a stall while the clock still accounts for elapsed time.
+- **Audio seconds:** the synchronized audio playhead drives lyric cues and song progress independently; pausing simulation does not seek or pause the song.
 
-Hold movement routes through the same action handler as a tap. A release, fresh key, focus loss, blocked step or transition cancels it. The map allows movement; tavern and modal menus do not. Interactions and purchases are never repeated by the hold timer.
+### Speed and incremental travel
+
+`effective_speed()` combines character `speed` (default 13), `speed_bonus` and `speed_penalty` (default zero). `walking_speed()` implements ST integer arithmetic: `min(36, ((effective_speed + 5) / 6) * 2)`. Speed remains hidden from the player as in the starting original character. Equipment and weather do not yet populate the modifiers.
+
+The reference does not establish walking units per tile. `WALKING_UNITS_PER_TILE = 6` is an explicit reconstruction calibration: initial Speed crosses one tile in one real second. Lower Speed takes longer and therefore costs more game time for the same distance. This scale is tunable without changing the documented relative rates. The City formula is also applied to our Dungeon exploration as an adaptation, not a verified Dungeon rule.
+
+`begin_travel()` validates the source face before starting. `travel_position()` exposes the fractional position to both the 3D camera and map marker. The authoritative integer `position` changes only at the destination center, when arrival links and tavern entry resolve once. Opposite boundary faces remain independent. A tap completes one stride; release prevents further strides. Turns and interactions require a settled cell and are not queued mid-stride. Holding starts the next stride immediately after arrival; turning retains its separate repeat delay. Zero walking Speed blocks travel. Direct model `move()` calls use the same calculated duration; animated arrival commits without charging that time twice.
+
+See [MOVEMENT.md](MOVEMENT.md) for calibration and testing.
 
 ## State and persistence
 
-`user://original_route.json` is the current journey save, now version 6 with precise clock and stat state. Versions 3/4/5 preserve elapsed time on migration; see S03 below. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
+`user://original_route.json` is the current journey save, now version 6 with precise clock and stat state. Versions 3/4/5 preserve elapsed time on migration; see S03 below. Version 3 migrates to the version 4 fields with neutral needs and no provisions. Version 4 saves without weather retain compatibility through a fixed fallback seed. Missing Speed fields migrate to 13/0/0 and missing fractional time to zero. Saves are accepted only at tile centers; mid-stride save requests return `ERR_BUSY`, and the UI asks the player to finish the stride. Loads reset transient travel state only after validation succeeds. `load_game()` validates a temporary dictionary before assigning live state; keep that ordering when adding fields.
 
 Movement preferences live in `user://controls.cfg`, and audio preferences in `user://music_settings.cfg`. They are intentionally independent of journey saves. The legacy prototype uses `user://journey.json` with its own versions and coordinates.
 

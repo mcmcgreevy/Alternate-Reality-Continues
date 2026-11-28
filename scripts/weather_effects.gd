@@ -12,6 +12,9 @@ const THUNDER = [
     preload('res://assets/audio/weather/thunder-3.ogg'),
 ]
 const LEVELS_DB = {'Cool': -17.0, 'Cold': -11.0, 'Rainy': -12.0}
+# Half the original linear audio level for every weather sound, including thunder.
+const WEATHER_GAIN_DB := -6.0206
+const THUNDER_LEVEL_DB := -9.0 + WEATHER_GAIN_DB
 const SILENT_DB := -60.0
 const FLASH_SECONDS := 0.22
 var ambience_players: Dictionary = {}
@@ -34,7 +37,7 @@ func _ready() -> void:
         player.volume_db = SILENT_DB
         add_child(player)
         ambience_players[condition] = player
-    thunder_player.volume_db = -9.0
+    thunder_player.volume_db = THUNDER_LEVEL_DB
     add_child(thunder_player)
 
 ## Cancel pending thunder as well as current sounds when shelter ends exposure.
@@ -69,7 +72,7 @@ func advance(world, delta_seconds: float, audio_muted: bool) -> void:
         var selected: bool = condition == active_condition
         if selected and not player.playing:
             player.play()
-        var target_db: float = LEVELS_DB[condition] if selected else SILENT_DB
+        var target_db: float = LEVELS_DB[condition] + WEATHER_GAIN_DB if selected else SILENT_DB
         if muted:
             player.volume_db = -80.0
         else:
@@ -77,7 +80,7 @@ func advance(world, delta_seconds: float, audio_muted: bool) -> void:
             player.volume_db = move_toward(player.volume_db, target_db, delta_seconds * 55.0)
         if not selected and player.volume_db <= SILENT_DB:
             player.stop()
-    thunder_player.volume_db = -80.0 if muted else -9.0
+    thunder_player.volume_db = -80.0 if muted else THUNDER_LEVEL_DB
     lightning_remaining = maxf(0.0, lightning_remaining - delta_seconds)
     if active_condition != 'Rainy':
         return

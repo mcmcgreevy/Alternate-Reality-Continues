@@ -17,6 +17,12 @@ func key(code: Key) -> void:
 	event.keycode = code
 	event.pressed = true
 	scene._unhandled_key_input(event)
+	# Exercise complete animated taps without waiting for wall-clock rendering.
+	scene.cancel_held_movement()
+	if scene.world.is_travelling():
+		var stride_seconds: float = scene.world.tile_travel_seconds()
+		scene.world.advance_real_seconds(stride_seconds)
+		scene.advance_held_movement(stride_seconds)
 
 func face(bearing: int) -> void:
 	for attempt in range(4):
@@ -120,7 +126,7 @@ func run() -> void:
 	key(KEY_TAB)
 	key(KEY_3)
 	check(scene.world.position == Vector2i(39, 35) and not scene.music.playing, "Leave choice uses mapped south boundary and stops music")
-	check(scene.world.minutes == start_time + 16, "Leaving costs one mapped step")
+	check(scene.world.minutes == start_time + 15, "Leaving costs a fractional game minute")
 	check(scene.world.load_game("user://test_tavern_menu.json"), "Restore establishment save")
 	hero = scene.world.character
 	pack = scene.world.inventory
