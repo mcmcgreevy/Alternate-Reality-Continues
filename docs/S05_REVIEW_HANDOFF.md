@@ -1,5 +1,7 @@
 # S05 research review and correction handoff
 
+November 28 scope update: [S05 ownership split](S05_SCOPE_SPLIT.md) transfers correction implementation to S108, remaining face classification to S109, visual reconciliation to S110 and held passage contracts to S111. S05 retains the inventory/identity audit. The prior sprint playtests and final rendering retest are accepted; their historical pending status below is superseded.
+
 Reviewed 2026-11-27. **Review of the identified candidate/current differences is complete with explicit dispositions. S05 itself is not complete.** This is a research handoff, not a claim of complete historical City fidelity or approval to implement every candidate difference.
 
 ## Review decision

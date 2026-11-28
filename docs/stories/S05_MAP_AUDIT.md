@@ -1,3 +1,40 @@
+# S05 — City establishment inventory and identity audit
+Parent: F05 (#12). Scope split November 28, 2026. Remains open; this split does not certify the original broad scope complete or commit a sprint.
+
+## Outcome
+Maintain an auditable City establishment inventory that distinguishes source marker, spatial occurrence, runtime category, service-state identity and approved remake identity.
+
+## Completed evidence
+The inventory accounts for all 67 canonical legend entries, 66 observed marker IDs, 463 numbered cells and 73 connected labeled components. Trade Winds is explicitly absent. The current map has 81 location components and 710 perimeter faces. Candidate category dispatch and shared Da Place shop state are documented. These findings do not prove every original entrance or callback.
+
+## Retained acceptance
+- Reconcile every legend entry and spatial occurrence to a stable identity record, source locator, confidence and existing location-story owner, including repeated and inaccessible occurrences.
+- Keep category plus marker, spatial identity and shared service-state identity distinct. Record the two Da Place entrances sharing state; do not reinterpret scenario markers as services.
+- Clearly identify Tail of the Dog/Grimthorn, music and northern cross-edition travel adaptations, plus absent Trade Winds and repeated southeast marker 49.
+- Review unresolved identity/dispatch findings against the inventory and link each to an existing owner; no silent assertion of historical correctness.
+- Publish the final inventory acceptance review and verify coverage/counts and issue links. Close only after that review; no automatic closure from this split.
+
+## Scope transferred, not discarded
+| Story | Owned outcome |
+| --- | --- |
+| S108 #144 | Three missing doorways and one wall; eight directed faces, migration and route acceptance |
+| S109 #145 | Remaining face-level evidence classifications across all 16384 directed faces |
+| S110 #146 | Wall/colonnade visual reconciliation without changing passage behavior |
+| S111 #147 | Evidence-backed contracts for 30 held direction/interaction/access faces |
+
+These are sibling stories under F05, not hidden checklists or new parents of the existing location stories. F05 retains the aggregate obligations of the former broad S05 scope. Full face audit, correction implementation and visual reconciliation are not required to close the narrowed inventory story, but remain required in their explicit owners before claiming the corresponding feature coverage.
+
+S77 #111 and S78 #112 retain Arena/Palace scenario implementation. Existing service, gate and inaccessible-duplicate stories retain their scope; S111 supplies passage contracts and dependencies without duplicating those implementations.
+
+## Current readiness
+The prior playtest hold is resolved and main includes the accepted F02/F03 build. This change is planning only. S108 still needs its save/geometry revision policy refined; the new stories remain Backlog, not sprint commitments. Historical updates below preserve their dates and are superseded where they refer to the old broad scope or pending playtest.
+
+Evidence: docs/S05_SCOPE_SPLIT.md, docs/S05_REVIEW_HANDOFF.md, docs/S05_LOCATION_COMPARISON.md, docs/S05_SERVICE_IDENTITIES.md, docs/S05_SHOP_STATE_AND_TRIAGE.md and docs/S05_CATEGORY_DISPATCH.md.
+
+
+
+## Historical specification before split
+
 # S05 — City geography and establishment audit
 Parent: F05 (#12). Research review consolidated 2026-11-27. See [review decision and exact correction proposal](../S05_REVIEW_HANDOFF.md). All 256 identified differences have dispositions; full historical verification and implementation acceptance remain incomplete. User completed the sprint playtest; two fixes await retest. S05 work remains research-only under the current instruction. Existing issue #38 remains the story; checklist items below are not hidden sub-issues.
 

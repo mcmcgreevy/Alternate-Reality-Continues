@@ -1,5 +1,7 @@
 # Development backlog
 
+2026-11-28: [S05 scope split](S05_SCOPE_SPLIT.md) adds S108–S111 under F05. S05 retains inventory/identity acceptance; corrections, face classification, visual reconciliation and held passage contracts now have independent owners. All remain open. The user subsequently committed S05, S108 and S06 to the [November 30 sprint](SPRINT_2026-11-30.md); readiness gates remain in force. The earlier coding pause is resolved by the accepted F02/F03 playtests.
+
 2026-11-22: [Location-specific stories S33–S107](LOCATION_STORIES.md) expand the S05 inventory into real GitHub sub-issues under F05, F15–F21 and F23. Existing S15–S21 own shared service behavior; location stories own configuration, integration and acceptance. All new issues remain Backlog and code is paused pending user testing. The original feature/story outline below remains the baseline, not the exhaustive current story list.
 
 Published to GitHub on 2026-11-17: [live roadmap and epic index](https://github.com/mcmcgreevy/Alternate-Reality-Continues/issues/61). Live issues are the workflow-status authority; this file preserves the planning baseline. See [issue ID mapping](GITHUB_BACKLOG_INDEX.json) and the [live GitHub Project](https://github.com/users/mcmcgreevy/projects/1).
