@@ -1,0 +1,67 @@
+{
+  "unrestricted_map_graph": {
+    "before": 3267,
+    "after": 3601,
+    "added": 334,
+    "lost": 0,
+    "added_by_type": {
+      "0": 124,
+      "6": 206,
+      "8": 4
+    },
+    "lost_cells": []
+  },
+  "scenario_cells_terminal": {
+    "before": 3263,
+    "after": 3265,
+    "added": 2,
+    "lost": 0,
+    "added_by_type": {
+      "6": 2
+    },
+    "lost_cells": []
+  },
+  "changed_faces": [
+    {
+      "x": 6,
+      "y": 7,
+      "direction": "E",
+      "candidate_value": 14
+    },
+    {
+      "x": 25,
+      "y": 8,
+      "direction": "W",
+      "candidate_value": 4
+    },
+    {
+      "x": 16,
+      "y": 12,
+      "direction": "W",
+      "candidate_value": 14
+    },
+    {
+      "x": 16,
+      "y": 12,
+      "direction": "E",
+      "candidate_value": 14
+    },
+    {
+      "x": 59,
+      "y": 16,
+      "direction": "S",
+      "candidate_value": 6
+    }
+  ],
+  "terminal_model_new_cells": [
+    [
+      24,
+      8
+    ],
+    [
+      59,
+      17
+    ]
+  ],
+  "limitations": "Counterfactual current movement graph; supported doors assumed examinable. Terminal scenario model stops at type6 cells and does not emulate original scenario behavior."
+}

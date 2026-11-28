@@ -64,3 +64,7 @@ S05 owns the bounded geography/identity reconciliation and its migration/accepta
 - [Drawing rules](S05_BOUNDARY_RENDERING.md), [decoded artwork](S05_BOUNDARY_ARTWORK.md), [canonical colonnade limits](S05_COLONNADE_IMAGE_REVIEW.md).
 
 This handoff supersedes earlier progress statements suggesting all raw differences are still untriaged. It does not supersede the canonical Kroah baseline, approved shared-mechanics precedence, or explicitly recorded evidence limitations.
+
+## One-way integration follow-up — 2026-11-27
+
+[Five-pair impact review](S05_ONE_WAY_INTEGRATION.md) demonstrates why those held approaches cannot be fixed by raw map substitution: 334 cells become reachable in the unrestricted current-rule model, versus only the two scenario destinations when scenario cells are terminal. S77/S78 scenario behavior is an explicit prerequisite. The eight-face proposed correction scope is unchanged.

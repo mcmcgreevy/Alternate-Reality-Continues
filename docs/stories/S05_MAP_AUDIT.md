@@ -85,3 +85,7 @@ Evidence gathering has no code dependency. Any correction must wait for test res
 ## Whole-map directional pairs — 2026-11-27
 
 [8064-pair review](../S05_DIRECTIONAL_PAIR_REVIEW.md) finds 450 candidate threshold-one-way pairs, 445 preserved by current potential movement. Of 92 differing movement pairs, 77 involve service encodings and 15 other boundaries. This adds complete pair-level numeric coverage, not historical runtime verification or new approved corrections.
+
+## One-way integration risk — 2026-11-27
+
+[Five-pair review](../S05_ONE_WAY_INTEGRATION.md) establishes a scenario-handling prerequisite before enabling held Arena/Palace approaches. Pure boundary substitution exposes 334 extra cells in the current graph; the analysis model stopping at scenario cells adds only two destinations. No gameplay changes.
